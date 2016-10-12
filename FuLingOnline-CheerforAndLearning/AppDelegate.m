@@ -158,6 +158,8 @@
     }];
     [alertController addAction:alertAction];
     
+    [self.window.rootViewController presentViewController:alertController animated:YES completion:nil];
+    
 //    UIAlertController *alert = [[UIAlertView alloc] initWithTitle:@"正在查看本地通知"
 //                                                    message:notMess
 //                                                   delegate:nil
