@@ -9,7 +9,10 @@
 #import "FLXKLaunchViewController.h"
 
 @interface FLXKLaunchViewController ()
-
+{
+    UIImageView* adImageView;
+    UIImageView* componyImageView;
+}
 @end
 
 @implementation FLXKLaunchViewController
@@ -23,6 +26,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//判断是否加载公告页
++(void)loadAdvertisementImages{
+    
+}
+
+//加载上部广告视图
+-(void)adImageView{
+    
+}
+//请求广告图片
++(void)loadAdvertisementImages{
+    
+}
+//加载倒计时动画
+//加载底部视图
 
 /*
 #pragma mark - Navigation

@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface FLXKLaunchViewController : UIViewController
-
+//判断是否加载公告页
++(void)checkIfNeedloadAdvertisement;
+//加载上部广告视图
+-(void)adImageView;
+//请求广告图片
++(void)loadAdvertisementImages;
+//加载倒计时动画
+//加载底部视图
 @end

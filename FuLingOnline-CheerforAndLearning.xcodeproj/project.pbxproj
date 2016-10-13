@@ -1,628 +1,1532 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B900259B1DAE244A00B34438 /* FLXKAppNotification.m */; };
-		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
-		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
-		B9D854B71DAC8BE2001AD79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B61DAC8BE2001AD79C /* main.m */; };
-		B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B91DAC8BE2001AD79C /* AppDelegate.m */; };
-		B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854BC1DAC8BE2001AD79C /* ViewController.m */; };
-		B9D854C01DAC8BE2001AD79C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D854BE1DAC8BE2001AD79C /* Main.storyboard */; };
-		B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */; };
-		B9D854D01DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854CF1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m */; };
-		B9D854DB1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B9D854CC1DAC8BE2001AD79C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9D854AA1DAC8BE2001AD79C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9D854B11DAC8BE2001AD79C;
-			remoteInfo = "FuLingOnline-CheerforAndLearning";
-		};
-		B9D854D71DAC8BE2001AD79C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B9D854AA1DAC8BE2001AD79C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B9D854B11DAC8BE2001AD79C;
-			remoteInfo = "FuLingOnline-CheerforAndLearning";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Bridging-Header.h"; sourceTree = "<group>"; };
-		B900259A1DAE244A00B34438 /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
-		B900259B1DAE244A00B34438 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
-		B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLaunchViewController.h; sourceTree = "<group>"; };
-		B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLaunchViewController.m; sourceTree = "<group>"; };
-		B94BD68F1DAE480C0094CA9D /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D854B61DAC8BE2001AD79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B9D854B81DAC8BE2001AD79C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B9D854B91DAC8BE2001AD79C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B9D854BB1DAC8BE2001AD79C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B9D854BC1DAC8BE2001AD79C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B9D854BF1DAC8BE2001AD79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B9D854C41DAC8BE2001AD79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B9D854C61DAC8BE2001AD79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9D854CB1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D854CF1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuLingOnline_CheerforAndLearningTests.m; sourceTree = "<group>"; };
-		B9D854D11DAC8BE2001AD79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9D854D61DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuLingOnline_CheerforAndLearningUITests.m; sourceTree = "<group>"; };
-		B9D854DC1DAC8BE2001AD79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		B9D854AF1DAC8BE2001AD79C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854C81DAC8BE2001AD79C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854D31DAC8BE2001AD79C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ToolKitty;
-			sourceTree = "<group>";
-		};
-		B900258E1DAE1E9100B34438 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		B900258F1DAE1E9A00B34438 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		B90025901DAE1EA500B34438 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		B90025911DAE1EB100B34438 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				B90025921DAE1EB100B34438 /* Bundle */,
-				B90025931DAE1EB100B34438 /* Image */,
-				B90025941DAE1EB100B34438 /* Voice */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
-		B90025921DAE1EB100B34438 /* Bundle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Bundle;
-			sourceTree = "<group>";
-		};
-		B90025931DAE1EB100B34438 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
-		B90025941DAE1EB100B34438 /* Voice */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Voice;
-			sourceTree = "<group>";
-		};
-		B90025951DAE1EC000B34438 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		B90025961DAE1EEB00B34438 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Module;
-			sourceTree = "<group>";
-		};
-		B9D854A91DAC8BE2001AD79C = {
-			isa = PBXGroup;
-			children = (
-				B9D854B41DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */,
-				B9D854CE1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests */,
-				B9D854D91DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests */,
-				B9D854B31DAC8BE2001AD79C /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		B9D854B31DAC8BE2001AD79C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */,
-				B9D854CB1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests.xctest */,
-				B9D854D61DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B9D854B41DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */ = {
-			isa = PBXGroup;
-			children = (
-				B9D854B81DAC8BE2001AD79C /* AppDelegate.h */,
-				B9D854B91DAC8BE2001AD79C /* AppDelegate.m */,
-				B900259A1DAE244A00B34438 /* FLXKAppNotification.h */,
-				B900259B1DAE244A00B34438 /* FLXKAppNotification.m */,
-				B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */,
-				B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */,
-				B9D854BB1DAC8BE2001AD79C /* ViewController.h */,
-				B9D854BC1DAC8BE2001AD79C /* ViewController.m */,
-				B9D854BE1DAC8BE2001AD79C /* Main.storyboard */,
-				B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */,
-				B9D854C61DAC8BE2001AD79C /* Info.plist */,
-				B94BD68F1DAE480C0094CA9D /* images.xcassets */,
-				B900258F1DAE1E9A00B34438 /* Config */,
-				B900258E1DAE1E9100B34438 /* Entity */,
-				B90025961DAE1EEB00B34438 /* Module */,
-				B90025901DAE1EA500B34438 /* Category */,
-				B900237B1DAE1E8300B34438 /* ToolKitty */,
-				B90025951DAE1EC000B34438 /* ViewController */,
-				B90025911DAE1EB100B34438 /* Resource */,
-				B9D854B51DAC8BE2001AD79C /* Supporting Files */,
-				B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */,
-			);
-			path = "FuLingOnline-CheerforAndLearning";
-			sourceTree = "<group>";
-		};
-		B9D854B51DAC8BE2001AD79C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B9D854B61DAC8BE2001AD79C /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B9D854CE1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests */ = {
-			isa = PBXGroup;
-			children = (
-				B9D854CF1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m */,
-				B9D854D11DAC8BE2001AD79C /* Info.plist */,
-			);
-			path = "FuLingOnline-CheerforAndLearningTests";
-			sourceTree = "<group>";
-		};
-		B9D854D91DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */,
-				B9D854DC1DAC8BE2001AD79C /* Info.plist */,
-			);
-			path = "FuLingOnline-CheerforAndLearningUITests";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9D854DF1DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearning" */;
-			buildPhases = (
-				B9D854AE1DAC8BE2001AD79C /* Sources */,
-				B9D854AF1DAC8BE2001AD79C /* Frameworks */,
-				B9D854B01DAC8BE2001AD79C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FuLingOnline-CheerforAndLearning";
-			productName = "FuLingOnline-CheerforAndLearning";
-			productReference = B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */;
-			productType = "com.apple.product-type.application";
-		};
-		B9D854CA1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9D854E21DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearningTests" */;
-			buildPhases = (
-				B9D854C71DAC8BE2001AD79C /* Sources */,
-				B9D854C81DAC8BE2001AD79C /* Frameworks */,
-				B9D854C91DAC8BE2001AD79C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9D854CD1DAC8BE2001AD79C /* PBXTargetDependency */,
-			);
-			name = "FuLingOnline-CheerforAndLearningTests";
-			productName = "FuLingOnline-CheerforAndLearningTests";
-			productReference = B9D854CB1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		B9D854D51DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B9D854E51DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearningUITests" */;
-			buildPhases = (
-				B9D854D21DAC8BE2001AD79C /* Sources */,
-				B9D854D31DAC8BE2001AD79C /* Frameworks */,
-				B9D854D41DAC8BE2001AD79C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B9D854D81DAC8BE2001AD79C /* PBXTargetDependency */,
-			);
-			name = "FuLingOnline-CheerforAndLearningUITests";
-			productName = "FuLingOnline-CheerforAndLearningUITests";
-			productReference = B9D854D61DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		B9D854AA1DAC8BE2001AD79C /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = com.FuLing;
-				TargetAttributes = {
-					B9D854B11DAC8BE2001AD79C = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UMWN7VGEE4;
-					};
-					B9D854CA1DAC8BE2001AD79C = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = B9D854B11DAC8BE2001AD79C;
-					};
-					B9D854D51DAC8BE2001AD79C = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = B9D854B11DAC8BE2001AD79C;
-					};
-				};
-			};
-			buildConfigurationList = B9D854AD1DAC8BE2001AD79C /* Build configuration list for PBXProject "FuLingOnline-CheerforAndLearning" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = B9D854A91DAC8BE2001AD79C;
-			productRefGroup = B9D854B31DAC8BE2001AD79C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */,
-				B9D854CA1DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningTests */,
-				B9D854D51DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		B9D854B01DAC8BE2001AD79C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */,
-				B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */,
-				B9D854C01DAC8BE2001AD79C /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854C91DAC8BE2001AD79C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854D41DAC8BE2001AD79C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		B9D854AE1DAC8BE2001AD79C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
-				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
-				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
-				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
-				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854C71DAC8BE2001AD79C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9D854D01DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B9D854D21DAC8BE2001AD79C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B9D854DB1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B9D854CD1DAC8BE2001AD79C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */;
-			targetProxy = B9D854CC1DAC8BE2001AD79C /* PBXContainerItemProxy */;
-		};
-		B9D854D81DAC8BE2001AD79C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */;
-			targetProxy = B9D854D71DAC8BE2001AD79C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B9D854BE1DAC8BE2001AD79C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D854BF1DAC8BE2001AD79C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B9D854C41DAC8BE2001AD79C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		B9D854DD1DAC8BE2001AD79C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B9D854DE1DAC8BE2001AD79C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		B9D854E01DAC8BE2001AD79C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		B9D854E11DAC8BE2001AD79C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		B9D854E31DAC8BE2001AD79C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearningTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearningTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuLingOnline-CheerforAndLearning.app/FuLingOnline-CheerforAndLearning";
-			};
-			name = Debug;
-		};
-		B9D854E41DAC8BE2001AD79C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearningTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearningTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuLingOnline-CheerforAndLearning.app/FuLingOnline-CheerforAndLearning";
-			};
-			name = Release;
-		};
-		B9D854E61DAC8BE2001AD79C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearningUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearningUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "FuLingOnline-CheerforAndLearning";
-			};
-			name = Debug;
-		};
-		B9D854E71DAC8BE2001AD79C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearningUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearningUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = "FuLingOnline-CheerforAndLearning";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		B9D854AD1DAC8BE2001AD79C /* Build configuration list for PBXProject "FuLingOnline-CheerforAndLearning" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9D854DD1DAC8BE2001AD79C /* Debug */,
-				B9D854DE1DAC8BE2001AD79C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B9D854DF1DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearning" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9D854E01DAC8BE2001AD79C /* Debug */,
-				B9D854E11DAC8BE2001AD79C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B9D854E21DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearningTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9D854E31DAC8BE2001AD79C /* Debug */,
-				B9D854E41DAC8BE2001AD79C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B9D854E51DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearningUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9D854E61DAC8BE2001AD79C /* Debug */,
-				B9D854E71DAC8BE2001AD79C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = B9D854AA1DAC8BE2001AD79C /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>29C56B35CBB4500AD771DE78</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>41F46BC93DB4219428C97CC3</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>29C56B35CBB4500AD771DE78</string>
+				<string>5F5B72A2F25635274EB9364D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>483ACC2EC35E7BF36AA3D9D7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52C276BA2D1AFFC158619EE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>51D2F220072F338FA406E906</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>52C276BA2D1AFFC158619EE2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-FuLingOnline-CheerforAndLearning.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>5F5B72A2F25635274EB9364D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-FuLingOnline-CheerforAndLearning.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>73427F28B1AE73D37DB133B0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>52C276BA2D1AFFC158619EE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8EA8023138C20737CAEE0A31</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>B900237B1DAE1E8300B34438</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9DF70711DAF76E7004C23E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ToolKitty</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B900258E1DAE1E9100B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Entity</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B900258F1DAE1E9A00B34438</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9DF707B1DAF78F5004C23E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Config</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025901DAE1EA500B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Category</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025911DAE1EB100B34438</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B90025921DAE1EB100B34438</string>
+				<string>B90025931DAE1EB100B34438</string>
+				<string>B90025941DAE1EB100B34438</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Resource</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025921DAE1EB100B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Bundle</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025931DAE1EB100B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Image</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025941DAE1EB100B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Voice</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025951DAE1EC000B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>ViewController</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025961DAE1EEB00B34438</key>
+		<dict>
+			<key>children</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Module</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B90025971DAE21F300B34438</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearning-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B900259A1DAE244A00B34438</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FLXKAppNotification.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B900259B1DAE244A00B34438</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FLXKAppNotification.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B900259C1DAE244A00B34438</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B900259B1DAE244A00B34438</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B94BD6881DAE40560094CA9D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FLXKLaunchViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B94BD6891DAE40560094CA9D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FLXKLaunchViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B94BD68A1DAE40560094CA9D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B94BD6891DAE40560094CA9D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B94BD68F1DAE480C0094CA9D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B94BD6901DAE480C0094CA9D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B94BD68F1DAE480C0094CA9D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854A91DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854B41DAC8BE2001AD79C</string>
+				<string>B9D854CE1DAC8BE2001AD79C</string>
+				<string>B9D854D91DAC8BE2001AD79C</string>
+				<string>B9D854B31DAC8BE2001AD79C</string>
+				<string>41F46BC93DB4219428C97CC3</string>
+				<string>73427F28B1AE73D37DB133B0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854AA1DAC8BE2001AD79C</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>com.FuLing</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>B9D854B11DAC8BE2001AD79C</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>DevelopmentTeam</key>
+						<string>UMWN7VGEE4</string>
+					</dict>
+					<key>B9D854CA1DAC8BE2001AD79C</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>TestTargetID</key>
+						<string>B9D854B11DAC8BE2001AD79C</string>
+					</dict>
+					<key>B9D854D51DAC8BE2001AD79C</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>TestTargetID</key>
+						<string>B9D854B11DAC8BE2001AD79C</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>B9D854AD1DAC8BE2001AD79C</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>B9D854A91DAC8BE2001AD79C</string>
+			<key>productRefGroup</key>
+			<string>B9D854B31DAC8BE2001AD79C</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>B9D854B11DAC8BE2001AD79C</string>
+				<string>B9D854CA1DAC8BE2001AD79C</string>
+				<string>B9D854D51DAC8BE2001AD79C</string>
+			</array>
+		</dict>
+		<key>B9D854AD1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B9D854DD1DAC8BE2001AD79C</string>
+				<string>B9D854DE1DAC8BE2001AD79C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>B9D854AE1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B9DF70791DAF76E7004C23E6</string>
+				<string>B900259C1DAE244A00B34438</string>
+				<string>B9D854BD1DAC8BE2001AD79C</string>
+				<string>B9DF70781DAF76E7004C23E6</string>
+				<string>B94BD68A1DAE40560094CA9D</string>
+				<string>B9D854BA1DAC8BE2001AD79C</string>
+				<string>B9D854B71DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854AF1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>483ACC2EC35E7BF36AA3D9D7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854B01DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B94BD6901DAE480C0094CA9D</string>
+				<string>B9D854C51DAC8BE2001AD79C</string>
+				<string>B9D854C01DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854B11DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>B9D854DF1DAC8BE2001AD79C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>51D2F220072F338FA406E906</string>
+				<string>B9D854AE1DAC8BE2001AD79C</string>
+				<string>B9D854AF1DAC8BE2001AD79C</string>
+				<string>B9D854B01DAC8BE2001AD79C</string>
+				<string>8EA8023138C20737CAEE0A31</string>
+				<string>C259388CFE11B10373E9554D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FuLingOnline-CheerforAndLearning</string>
+			<key>productName</key>
+			<string>FuLingOnline-CheerforAndLearning</string>
+			<key>productReference</key>
+			<string>B9D854B21DAC8BE2001AD79C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>B9D854B21DAC8BE2001AD79C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearning.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B9D854B31DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854B21DAC8BE2001AD79C</string>
+				<string>B9D854CB1DAC8BE2001AD79C</string>
+				<string>B9D854D61DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854B41DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854B81DAC8BE2001AD79C</string>
+				<string>B9D854B91DAC8BE2001AD79C</string>
+				<string>B900259A1DAE244A00B34438</string>
+				<string>B900259B1DAE244A00B34438</string>
+				<string>B94BD6881DAE40560094CA9D</string>
+				<string>B94BD6891DAE40560094CA9D</string>
+				<string>B9D854BB1DAC8BE2001AD79C</string>
+				<string>B9D854BC1DAC8BE2001AD79C</string>
+				<string>B9D854BE1DAC8BE2001AD79C</string>
+				<string>B9D854C31DAC8BE2001AD79C</string>
+				<string>B9D854C61DAC8BE2001AD79C</string>
+				<string>B94BD68F1DAE480C0094CA9D</string>
+				<string>B900258F1DAE1E9A00B34438</string>
+				<string>B900258E1DAE1E9100B34438</string>
+				<string>B90025961DAE1EEB00B34438</string>
+				<string>B90025901DAE1EA500B34438</string>
+				<string>B900237B1DAE1E8300B34438</string>
+				<string>B90025951DAE1EC000B34438</string>
+				<string>B90025911DAE1EB100B34438</string>
+				<string>B9D854B51DAC8BE2001AD79C</string>
+				<string>B90025971DAE21F300B34438</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearning</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854B51DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854B61DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854B61DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854B71DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854B61DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854B81DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854B91DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854BA1DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854B91DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854BB1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854BC1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854BD1DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854BC1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854BE1DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854BF1DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854BF1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854C01DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854BE1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854C31DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854C41DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854C41DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854C51DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854C31DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854C61DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854C71DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B9D854D01DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854C81DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854C91DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854CA1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>B9D854E21DAC8BE2001AD79C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>B9D854C71DAC8BE2001AD79C</string>
+				<string>B9D854C81DAC8BE2001AD79C</string>
+				<string>B9D854C91DAC8BE2001AD79C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>B9D854CD1DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FuLingOnline-CheerforAndLearningTests</string>
+			<key>productName</key>
+			<string>FuLingOnline-CheerforAndLearningTests</string>
+			<key>productReference</key>
+			<string>B9D854CB1DAC8BE2001AD79C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>B9D854CB1DAC8BE2001AD79C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearningTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B9D854CC1DAC8BE2001AD79C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>B9D854AA1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>B9D854B11DAC8BE2001AD79C</string>
+			<key>remoteInfo</key>
+			<string>FuLingOnline-CheerforAndLearning</string>
+		</dict>
+		<key>B9D854CD1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>B9D854B11DAC8BE2001AD79C</string>
+			<key>targetProxy</key>
+			<string>B9D854CC1DAC8BE2001AD79C</string>
+		</dict>
+		<key>B9D854CE1DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854CF1DAC8BE2001AD79C</string>
+				<string>B9D854D11DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearningTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854CF1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FuLingOnline_CheerforAndLearningTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854D01DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854CF1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854D11DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854D21DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B9D854DB1DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854D31DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854D41DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B9D854D51DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>B9D854E51DAC8BE2001AD79C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>B9D854D21DAC8BE2001AD79C</string>
+				<string>B9D854D31DAC8BE2001AD79C</string>
+				<string>B9D854D41DAC8BE2001AD79C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>B9D854D81DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FuLingOnline-CheerforAndLearningUITests</string>
+			<key>productName</key>
+			<string>FuLingOnline-CheerforAndLearningUITests</string>
+			<key>productReference</key>
+			<string>B9D854D61DAC8BE2001AD79C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>B9D854D61DAC8BE2001AD79C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearningUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B9D854D71DAC8BE2001AD79C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>B9D854AA1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>B9D854B11DAC8BE2001AD79C</string>
+			<key>remoteInfo</key>
+			<string>FuLingOnline-CheerforAndLearning</string>
+		</dict>
+		<key>B9D854D81DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>B9D854B11DAC8BE2001AD79C</string>
+			<key>targetProxy</key>
+			<string>B9D854D71DAC8BE2001AD79C</string>
+		</dict>
+		<key>B9D854D91DAC8BE2001AD79C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9D854DA1DAC8BE2001AD79C</string>
+				<string>B9D854DC1DAC8BE2001AD79C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FuLingOnline-CheerforAndLearningUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854DA1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FuLingOnline_CheerforAndLearningUITests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854DB1DAC8BE2001AD79C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9D854DA1DAC8BE2001AD79C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9D854DC1DAC8BE2001AD79C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9D854DD1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B9D854DE1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B9D854DF1DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B9D854E01DAC8BE2001AD79C</string>
+				<string>B9D854E11DAC8BE2001AD79C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>B9D854E01DAC8BE2001AD79C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>29C56B35CBB4500AD771DE78</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearning/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearning</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B9D854E11DAC8BE2001AD79C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>5F5B72A2F25635274EB9364D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearning/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearning</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B9D854E21DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B9D854E31DAC8BE2001AD79C</string>
+				<string>B9D854E41DAC8BE2001AD79C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>B9D854E31DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearningTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearningTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/FuLingOnline-CheerforAndLearning.app/FuLingOnline-CheerforAndLearning</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B9D854E41DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearningTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearningTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/FuLingOnline-CheerforAndLearning.app/FuLingOnline-CheerforAndLearning</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B9D854E51DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B9D854E61DAC8BE2001AD79C</string>
+				<string>B9D854E71DAC8BE2001AD79C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>B9D854E61DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearningUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearningUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>FuLingOnline-CheerforAndLearning</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B9D854E71DAC8BE2001AD79C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>FuLingOnline-CheerforAndLearningUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.psylife.FuLingOnline-CheerforAndLearningUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>FuLingOnline-CheerforAndLearning</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>B9DF70711DAF76E7004C23E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9DF70721DAF76E7004C23E6</string>
+				<string>B9DF70751DAF76E7004C23E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FLXKNetworkHelper</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70721DAF76E7004C23E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9DF70731DAF76E7004C23E6</string>
+				<string>B9DF70741DAF76E7004C23E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FLXKHttpHelper</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70731DAF76E7004C23E6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FLXKHttpRequest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70741DAF76E7004C23E6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FLXKHttpRequest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70751DAF76E7004C23E6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B9DF70761DAF76E7004C23E6</string>
+				<string>B9DF70771DAF76E7004C23E6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>FLXKSocketHelper</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70761DAF76E7004C23E6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FLXKSocketHelper.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70771DAF76E7004C23E6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FLXKSocketHelper.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9DF70781DAF76E7004C23E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9DF70741DAF76E7004C23E6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9DF70791DAF76E7004C23E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B9DF70771DAF76E7004C23E6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B9DF707B1DAF78F5004C23E6</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>config.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C259388CFE11B10373E9554D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>B9D854AA1DAC8BE2001AD79C</string>
+</dict>
+</plist>
