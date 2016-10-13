@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B90025991DAE21F300B34438 /* FLXKAppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90025981DAE21F300B34438 /* FLXKAppNotification.swift */; };
 		B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B900259B1DAE244A00B34438 /* FLXKAppNotification.m */; };
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Bridging-Header.h"; sourceTree = "<group>"; };
-		B90025981DAE21F300B34438 /* FLXKAppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLXKAppNotification.swift; sourceTree = "<group>"; };
 		B900259A1DAE244A00B34438 /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
 		B900259B1DAE244A00B34438 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLaunchViewController.h; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 			children = (
 				B9D854B81DAC8BE2001AD79C /* AppDelegate.h */,
 				B9D854B91DAC8BE2001AD79C /* AppDelegate.m */,
-				B90025981DAE21F300B34438 /* FLXKAppNotification.swift */,
 				B900259A1DAE244A00B34438 /* FLXKAppNotification.h */,
 				B900259B1DAE244A00B34438 /* FLXKAppNotification.m */,
 				B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */,
@@ -369,7 +366,6 @@
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
-				B90025991DAE21F300B34438 /* FLXKAppNotification.swift in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 			);
