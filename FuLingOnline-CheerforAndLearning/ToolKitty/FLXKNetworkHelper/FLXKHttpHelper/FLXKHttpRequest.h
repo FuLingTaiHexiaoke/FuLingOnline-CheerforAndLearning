@@ -6,7 +6,13 @@
 //  Copyright © 2016年 apple. All rights reserved.
 //
 
-
+/**
+ *为了实现自主便捷的网络访问，不采用继承于AFHTTPSessionManager。尽管官方建议。
+ *在应用实践中发现我们请求网络时越简单越好。
+ *如有特殊需求再另外生成。
+ *
+ *
+ */
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 

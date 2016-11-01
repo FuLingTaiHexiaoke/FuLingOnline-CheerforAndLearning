@@ -36,9 +36,9 @@
     
 }
 //请求广告图片
-+(void)loadAdvertisementImages{
-    
-}
+//+(void)loadAdvertisementImages{
+//    
+//}
 //加载倒计时动画
 //加载底部视图
 
