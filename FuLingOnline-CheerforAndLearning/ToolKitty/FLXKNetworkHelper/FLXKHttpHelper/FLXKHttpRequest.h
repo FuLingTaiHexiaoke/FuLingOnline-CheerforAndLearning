@@ -18,7 +18,7 @@
 
 typedef void (^successBlock)(NSURLSessionDataTask *task, id  responseObject);
 typedef void (^failureBlock)(NSURLSessionDataTask *task, NSError *error);
-
+typedef void (^taskProgress)(NSProgress *);
 @interface FLXKHttpRequest : NSObject
 
 //get请求
