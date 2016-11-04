@@ -25,6 +25,18 @@
     return afHTTPSessionManager;
 }
 
+//检查网络
++(void)detectNetwork{
+    AFNetworkReachabilityManager *reachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    [reachabilityManager startMonitoring];
+}
+
+//判断是否有网,
+//不封装在下面的方法里。增大程序的灵活性。
++(BOOL)isReachable{
+  return  [AFNetworkReachabilityManager sharedManager].isReachable;
+}
+
 //get请求
 +(void)get:(NSString*)URLString success:(successBlock)success failure:(failureBlock)failure{
     [FLXKHttpRequest get:URLString parameters:nil success:success failure:failure];
@@ -32,6 +44,8 @@
 +(void)get:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure{
     [[FLXKHttpRequest sharedAFManager] GET:URLString parameters:urlParameters progress:nil success:success failure:failure];
 }
+
+
 //post请求
 +(void)post:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success success:(failureBlock)failure{
     [[FLXKHttpRequest sharedAFManager] POST:URLString parameters:urlParameters progress:nil success:success failure:failure];
@@ -39,12 +53,13 @@
 //文件\图片上传
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success success:(failureBlock)failure{
     NSArray<NSString *> * filePathStringArray=[NSArray arrayWithObject:filePathString];
-
+    
     [FLXKHttpRequest upload:URLString parameters:urlParameters filePathStringArray:filePathStringArray progress:nil success:success  failure:failure];
 }
+
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray progress:(taskProgress)taskProgress success:(successBlock)success failure:(failureBlock)failure{
     [[FLXKHttpRequest sharedAFManager] POST:URLString parameters:urlParameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-
+        
         [filePathStringArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSURL  *fileURL=[NSURL fileURLWithPath:obj];
             NSString* name = [fileURL.lastPathComponent stringByDeletingPathExtension];
@@ -56,16 +71,49 @@
                 return ;
             }
         }];
-
+        
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         taskProgress(uploadProgress);
     } success:success
                                     failure:failure];
 }
-//文件下载
-+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters savePathString:(NSString*)savePathString success:(successBlock)success success:(failureBlock)failure{
 
+//文件下载
++(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters progress:(taskProgress)taskProgress savePathString:(NSString*)savePathString success:(successBlock)success success:(failureBlock)failure{
+    //make the NSURLRequest
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request = [[FLXKHttpRequest sharedAFManager].requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:[FLXKHttpRequest sharedAFManager].baseURL] absoluteString] parameters:urlParameters constructingBodyWithBlock:nil error:&serializationError];
+    if (serializationError) {
+        if (failure) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async([FLXKHttpRequest sharedAFManager].completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        
+        return;
+    }
+    //start the request
+    NSURLSessionDownloadTask * task=[[FLXKHttpRequest sharedAFManager] downloadTaskWithRequest:request progress:taskProgress destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        return [NSURL fileURLWithPath:savePathString];
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        if (error) {
+            if (failure) {
+                failure(nil, error);
+            }
+        } else {
+            if (success) {
+                //应该返回路径，但前面已经存在。故公用successBlock
+                success(nil, response);
+            }
+        }
+    }];
+    [task resume];
 }
+
+//暂时用不到此方法
 +(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success success:(failureBlock)failure{
     
 }

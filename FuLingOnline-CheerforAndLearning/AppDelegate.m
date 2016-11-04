@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FLXKAppNotification.h"
+#import "FLXKLaunchViewController.h"//广告，动画引导页面等
 
 @interface AppDelegate ()
 
@@ -28,7 +29,7 @@
     //我们可以通过本地通知开发日志事件功能
     //[FLXKAppNotification registerLocalNotification:5];
     //取消掉所有已经注册的本地通知
-    //[FLXKAppNotification removeAllLocalNotification];
+    [FLXKAppNotification removeAllLocalNotification];
     
     
     //收集AppLaunchDate，AppInstallDateIfNil，logAppNumberOfDaysSinceInstall

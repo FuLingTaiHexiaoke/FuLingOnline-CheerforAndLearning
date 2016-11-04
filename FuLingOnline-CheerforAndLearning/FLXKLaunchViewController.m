@@ -7,33 +7,43 @@
 //
 
 #import "FLXKLaunchViewController.h"
-
+#import "FLXKHttpRequest.h"
 @interface FLXKLaunchViewController ()
 {
-    UIImageView* adImageView;
-    UIImageView* componyImageView;
+
 }
+@property (weak, nonatomic) IBOutlet UIImageView *advImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *companyLogoView;
 @end
 
 @implementation FLXKLaunchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //加载广告图片
+    [self httpLoadImageWithImageName:@"" withImageView:self.advImageView];
+    //加载公司logo
+    [self httpLoadImageWithImageName:@"" withImageView:self.companyLogoView];
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//判断是否加载公告页
-+(void)loadAdvertisementImages{
-    
-}
+////判断是否加载公告页
+//+(void)loadAdvertisementImages{
+//    
+//}
+//
+////加载上部广告视图
+//-(void)adImageView{
+//    
+//}
 
-//加载上部广告视图
--(void)adImageView{
-    
+-(void)httpLoadImageWithImageName:(NSString*)imageName withImageView:(UIImageView*)imageContainerView{
+//    NSString* urlString=[NSString stringWithFormat:@"",]
+//    FLXKHttpRequest download:<#(NSString *)#> parameters:<#(NSDictionary *)#> savePathString:<#(NSString *)#> success:<#^(NSURLSessionDataTask *task, id responseObject)success#> success:<#^(NSURLSessionDataTask *task, NSError *error)failure#>
 }
 //请求广告图片
 //+(void)loadAdvertisementImages{
