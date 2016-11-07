@@ -34,7 +34,8 @@
     
     //收集AppLaunchDate，AppInstallDateIfNil，logAppNumberOfDaysSinceInstall
     //初始化RootView（广告，动画引导页面等）
-    
+    FLXKLaunchViewController* vc=[FLXKLaunchViewController initialAppViewControllerFromDefaultStoryBoard];
+     [vc launchAppInWindow:self.window];
     //初始化基本控件Appearance
     //
     //

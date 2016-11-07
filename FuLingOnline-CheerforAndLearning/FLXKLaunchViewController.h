@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface FLXKLaunchViewController : UIViewController
+
++(FLXKLaunchViewController*)initialAppViewControllerFromDefaultStoryBoard;
+
+- (void)launchAppInWindow:(UIWindow*)window;
+
 //判断是否加载公告页
 +(void)checkIfNeedloadAdvertisement;
 //加载上部广告视图

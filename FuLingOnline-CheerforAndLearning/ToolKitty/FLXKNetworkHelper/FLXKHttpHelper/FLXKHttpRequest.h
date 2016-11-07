@@ -29,18 +29,18 @@ typedef void (^taskProgress)(NSProgress *);
 +(BOOL)isReachable;
 
 //get请求
-+(void)get:(NSString*)URLString success:(successBlock)success success:(failureBlock)failure;
-+(void)get:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success success:(failureBlock)failure;
++(void)get:(NSString*)URLString success:(successBlock)success failure:(failureBlock)failure;
++(void)get:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure;
 
 //post请求
-+(void)post:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success success:(failureBlock)failure;
++(void)post:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure;
 
 //文件\图片上传
-+(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success success:(failureBlock)failure;
-+(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray success:(successBlock)success success:(failureBlock)failure;
++(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success failure:(failureBlock)failure;
++(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray success:(successBlock)success failure:(failureBlock)failure;
 
 //文件下载
-+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters savePathString:(NSString*)savePathString success:(successBlock)success success:(failureBlock)failure;
++(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters savePathString:(NSString*)savePathString success:(successBlock)success failure:(failureBlock)failure;
 
 //暂时用不到此方法
 //+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success success:(failureBlock)failure;

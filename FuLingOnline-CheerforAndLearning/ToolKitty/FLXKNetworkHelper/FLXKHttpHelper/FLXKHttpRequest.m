@@ -14,8 +14,8 @@
 ///单例话AFHTTPSessionManager，其基类AFURLSessionManager会用数组帮我们保存每一个请求。关键的地方就在于返回类型的AFHTTPResponseSerializer的验证。虽然都可以返回json，但type不正确就报错。
 +(AFHTTPSessionManager*)sharedAFManager{
     static  AFHTTPSessionManager* afHTTPSessionManager;
-    static  dispatch_once_t* onceToken;
-    dispatch_once(onceToken, ^{
+    static  dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         afHTTPSessionManager=[[AFHTTPSessionManager alloc]init];
         //1)默认为AFJSONResponseSerializer，我们再次加上AFHTTPResponseSerializer，以保证验证通过。基本够用。
         NSSet <NSString *>*  acceptableContentTypes= afHTTPSessionManager.responseSerializer.acceptableContentTypes;
@@ -47,11 +47,11 @@
 
 
 //post请求
-+(void)post:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success success:(failureBlock)failure{
++(void)post:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure{
     [[FLXKHttpRequest sharedAFManager] POST:URLString parameters:urlParameters progress:nil success:success failure:failure];
 }
 //文件\图片上传
-+(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success success:(failureBlock)failure{
++(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success failure:(failureBlock)failure{
     NSArray<NSString *> * filePathStringArray=[NSArray arrayWithObject:filePathString];
     
     [FLXKHttpRequest upload:URLString parameters:urlParameters filePathStringArray:filePathStringArray progress:nil success:success  failure:failure];
@@ -79,7 +79,7 @@
 }
 
 //文件下载
-+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters progress:(taskProgress)taskProgress savePathString:(NSString*)savePathString success:(successBlock)success success:(failureBlock)failure{
++(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters progress:(taskProgress)taskProgress savePathString:(NSString*)savePathString success:(successBlock)success failure:(failureBlock)failure{
     //make the NSURLRequest
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [[FLXKHttpRequest sharedAFManager].requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:[FLXKHttpRequest sharedAFManager].baseURL] absoluteString] parameters:urlParameters constructingBodyWithBlock:nil error:&serializationError];
@@ -114,7 +114,7 @@
 }
 
 //暂时用不到此方法
-+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success success:(failureBlock)failure{
++(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success failure:(failureBlock)failure{
     
 }
 @end

@@ -14,6 +14,10 @@
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
+		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
+		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
+		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
+		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
 		B9D854B71DAC8BE2001AD79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B61DAC8BE2001AD79C /* main.m */; };
 		B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B91DAC8BE2001AD79C /* AppDelegate.m */; };
 		B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854BC1DAC8BE2001AD79C /* ViewController.m */; };
@@ -57,6 +61,11 @@
 		B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLXKLaunchViewController.storyboard; sourceTree = "<group>"; };
 		B94E83DE1DCC92DD00D2823B /* baseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baseConfig.h; sourceTree = "<group>"; };
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
+		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
+		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
+		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
+		B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "整体逻辑思路.rtf"; sourceTree = "<group>"; };
+		B97B38DE1DD029D400D8F004 /* 重点难点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "重点难点.rtf"; sourceTree = "<group>"; };
 		B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D854B61DAC8BE2001AD79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D854B81DAC8BE2001AD79C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -145,6 +154,9 @@
 				B94E83DE1DCC92DD00D2823B /* baseConfig.h */,
 				B9F9A2EC1DB7359A002B1626 /* CodeBack.h */,
 				B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */,
+				B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */,
+				B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */,
+				B97B38DE1DD029D400D8F004 /* 重点难点.rtf */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -201,6 +213,15 @@
 			path = Module;
 			sourceTree = "<group>";
 		};
+		B97B38D81DD014F300D8F004 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */,
+				B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B9D854A91DAC8BE2001AD79C = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +262,7 @@
 				B94BD68F1DAE480C0094CA9D /* images.xcassets */,
 				B900258F1DAE1E9A00B34438 /* Config */,
 				B900258E1DAE1E9100B34438 /* Entity */,
+				B97B38D81DD014F300D8F004 /* Model */,
 				B90025961DAE1EEB00B34438 /* Module */,
 				B90025901DAE1EA500B34438 /* Category */,
 				B900237B1DAE1E8300B34438 /* ToolKitty */,
@@ -418,8 +440,11 @@
 				B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */,
 				B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */,
 				B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */,
+				B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */,
 				B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */,
+				B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */,
 				B9D854C01DAC8BE2001AD79C /* Main.storyboard in Resources */,
+				B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +519,7 @@
 			files = (
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
+				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,

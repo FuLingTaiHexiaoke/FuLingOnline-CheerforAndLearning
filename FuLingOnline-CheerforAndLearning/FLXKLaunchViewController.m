@@ -8,12 +8,18 @@
 
 #import "FLXKLaunchViewController.h"
 #import "FLXKHttpRequest.h"
+#import "UIImageView+WebCache.h"
+#import "FLXKAdImageInfoModel.h"
+#import "config.h"
+//#import "baseConfig.h"
 @interface FLXKLaunchViewController ()
 {
 
 }
 @property (weak, nonatomic) IBOutlet UIImageView *advImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *companyLogoView;
+@property (strong, nonatomic)  NSArray *adImageInfoArray;
+@property (strong, nonatomic)  FLXKAdImageInfoModel *adImageInfoModel;
 @end
 
 @implementation FLXKLaunchViewController
@@ -21,9 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //加载广告图片
-    [self httpLoadImageWithImageName:@"" withImageView:self.advImageView];
+//    [self httpLoadImageWithImageName:@"" withImageView:self.advImageView];
     //加载公司logo
-    [self httpLoadImageWithImageName:@"" withImageView:self.companyLogoView];
+//    [self httpLo#import "UIImageView+WebCache.h"adImageWithImageName:@"" withImageView:self.companyLogoView];
+    
+    //1)get the image url from server
+    [self getAdImageInfo];
+    //加载广告图片
+//    [self.advImageView sd_setImageWithURL:[NSURL URLWithString:_adImageInfoModel.imageUrl] placeholderImage:[UIImage imageNamed:@""]];
+    //加载公司logo
    
 }
 
@@ -31,15 +43,55 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-////判断是否加载公告页
-//+(void)loadAdvertisementImages{
+
++(FLXKLaunchViewController*)initialAppViewControllerFromDefaultStoryBoard{
+      return [[UIStoryboard storyboardWithName:NSStringFromClass([FLXKLaunchViewController class]) bundle:nil] instantiateInitialViewController];
+}
+
+- (void)launchAppInWindow:(UIWindow*)window {
+//    WMFStyleManager* manager = [WMFStyleManager new];
+//    [manager applyStyleToWindow:window];
+//    [WMFStyleManager setSharedStyleManager:manager];
+    
+    [window setRootViewController:self];
+    [window makeKeyAndVisible];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForegroundWithNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackgroundWithNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    
+//    [self showSplashView];
+    
+//    @weakify(self)
 //    
-//}
-//
-////加载上部广告视图
-//-(void)adImageView{
-//    
-//}
+//    [self.savedArticlesFetcher fetchAndObserveSavedPageList];
+//    if ([[NSProcessInfo processInfo] wmf_isOperatingSystemMajorVersionAtLeast:9]) {
+//        self.spotlightManager = [[WMFSavedPageSpotlightManager alloc] initWithDataStore:self.session.dataStore];
+//    }
+//    [self presentOnboardingIfNeededWithCompletion:^(BOOL didShowOnboarding) {
+//        @strongify(self)
+//        [self loadMainUI];
+//        [self hideSplashViewAnimated:!didShowOnboarding];
+//        [self resumeApp];
+//        [[PiwikTracker wmf_configuredInstance] wmf_logView:[self rootViewControllerForTab:WMFAppTabTypeExplore]];
+//    }];
+}
+
+-(void)getAdImageInfo{
+//    http://127.0.0.1:3000/api/getAdimg
+    
+    [FLXKHttpRequest get:[NSString stringWithFormat:@"%@/api/getAdimg",BaseURL] success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray* dicArray=(NSArray*)responseObject;
+        if (dicArray.count>0) {
+            NSDictionary* dic=(NSDictionary*)[dicArray lastObject];
+            FLXKAdImageInfoModel* adImageInfoModel=[[FLXKAdImageInfoModel alloc]init];
+            [adImageInfoModel setValuesForKeysWithDictionary:dic];
+            self.adImageInfoModel=adImageInfoModel;
+            [self.advImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",BaseURL,_adImageInfoModel.imgUrl]] placeholderImage:[UIImage imageNamed:@""]];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        FLXKLog(@"%@",error.description);
+    }];
+}
 
 -(void)httpLoadImageWithImageName:(NSString*)imageName withImageView:(UIImageView*)imageContainerView{
 //    NSString* urlString=[NSString stringWithFormat:@"",]
