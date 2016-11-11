@@ -10,7 +10,8 @@
 #ifndef config_h
 #define config_h
 //Http Request Part
-#define BaseURL @"http://127.0.0.1:3000"
+//#define BaseURL @"http://127.0.0.1:3000"
+#define BaseURL(relativeString) [NSString stringWithFormat:@"%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
 
 
 #endif

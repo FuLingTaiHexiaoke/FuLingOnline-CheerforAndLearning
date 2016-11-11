@@ -28,6 +28,12 @@ typedef void (^taskProgress)(NSProgress *);
 //不封装在下面的方法里。增大程序的灵活性。
 +(BOOL)isReachable;
 
+
+/*
+ *responseObject数据解析格式默认为json
+ */
+
+
 //get请求
 +(void)get:(NSString*)URLString success:(successBlock)success failure:(failureBlock)failure;
 +(void)get:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure;

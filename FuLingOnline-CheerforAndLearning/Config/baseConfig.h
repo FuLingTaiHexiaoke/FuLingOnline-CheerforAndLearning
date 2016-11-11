@@ -76,7 +76,8 @@
 #define TTBG RGB(239, 239, 244)
 
 #define FileManager     ([NSFileManager defaultManager])
-#define TheUserDefaults ([NSUserDefaults standardUserDefaults])
+#define UserDefaults ([NSUserDefaults standardUserDefaults])
+#define UserDefaultsObjForKey(key) (  [[NSUserDefaults standardUserDefaults]objectForKey:key])
 #define VoiceMessageDir ([[NSString documentPath] stringByAppendingPathComponent:@"/VoiceMessageDir/"])
 #define BlacklistDir ([[NSString documentPath] stringByAppendingPathComponent:@"/BlacklistDir/"])
 #define Departmentlist ([[NSString documentPath] stringByAppendingPathComponent:@"/department.plist"])
