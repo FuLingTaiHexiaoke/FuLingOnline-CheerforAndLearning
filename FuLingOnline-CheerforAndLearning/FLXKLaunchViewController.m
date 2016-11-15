@@ -46,9 +46,10 @@
     _companyLogoView.backgroundColor=RGB(54,196,126);
     
     //add click timing animation
-    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(self.view.right-50, 20, 30, 30)];
     [btn setTitle:@"跳过" forState:UIControlStateNormal];
-    [_companyLogoView addSubview:btn];
+    btn.titleLabel.font=[UIFont  systemFontOfSize:10];
+    [_advImageView addSubview:btn];
     [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"Duration", 5.0) animationDidStopBlock:^{
         NSLog(@"animation did stop!");
     }];
