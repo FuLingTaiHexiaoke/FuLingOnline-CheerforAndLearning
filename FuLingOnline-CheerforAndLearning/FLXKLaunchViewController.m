@@ -12,6 +12,8 @@
 #import "FLXKAdImageInfoModel.h"
 #import "config.h"
 //#import "baseConfig.h"
+#import "CALayer+FLXKAddition.h"
+
 @interface FLXKLaunchViewController ()
 {
     
@@ -38,6 +40,13 @@
     //加载公司logo
     _companyLogoView.backgroundColor=RGB(54,196,126);
     
+    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [btn setTitle:@"跳过" forState:UIControlStateNormal];
+//    btn.backgroundColor=[UIColor yellowColor];
+    [_companyLogoView addSubview:btn];
+    
+//    [CALayer createClockTickCircleAminationLayerWithFrame:CGRectMake(0, 0, 100, 100) inView:_companyLogoView duration:5.0f];
+     [CALayer createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:5.0f];
 }
 
 - (void)didReceiveMemoryWarning {

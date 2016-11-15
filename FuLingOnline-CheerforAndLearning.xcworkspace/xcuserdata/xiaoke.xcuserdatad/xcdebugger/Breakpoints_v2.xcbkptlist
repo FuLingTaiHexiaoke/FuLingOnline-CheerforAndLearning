@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/FLXKLaunchViewController.m"
-            timestampString = "500551130.901629"
+            timestampString = "500866872.123604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-getAdImageInfo"
             landmarkType = "5">
          </BreakpointContent>
