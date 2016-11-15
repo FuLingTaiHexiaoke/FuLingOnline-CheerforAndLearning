@@ -10,9 +10,11 @@
 #import "FLXKHttpRequest.h"
 #import "UIImageView+WebCache.h"
 #import "FLXKAdImageInfoModel.h"
-#import "config.h"
-//#import "baseConfig.h"
+#import "AppConfig.h"
+//#import "Global.h"
 #import "CALayer+FLXKAddition.h"
+
+//#import <libextobjc/EXTScope.h>
 
 @interface FLXKLaunchViewController ()
 {
@@ -26,33 +28,34 @@
 
 @implementation FLXKLaunchViewController
 
+#pragma mark - ViewController LifeCircle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //加载广告图片
-    //    [self httpLoadImageWithImageName:@"" withImageView:self.advImageView];
-    //加载公司logo
-    //    [self httpLo#import "UIImageView+WebCache.h"adImageWithImageName:@"" withImageView:self.companyLogoView];
-    
-    //1)get the image url from server
+    //get the image url from server
     [self getAdImageInfo];
-    //加载广告图片
-    //    [self.advImageView sd_setImageWithURL:[NSURL URLWithString:_adImageInfoModel.imageUrl] placeholderImage:[UIImage imageNamed:@""]];
+
     //加载公司logo
     _companyLogoView.backgroundColor=RGB(54,196,126);
     
+    //add click timing animation
     UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [btn setTitle:@"跳过" forState:UIControlStateNormal];
-//    btn.backgroundColor=[UIColor yellowColor];
     [_companyLogoView addSubview:btn];
-    
-//    [CALayer createClockTickCircleAminationLayerWithFrame:CGRectMake(0, 0, 100, 100) inView:_companyLogoView duration:5.0f];
-     [CALayer createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:5.0f];
+    [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:20.0f animationDidStopBlock:^{
+        NSLog(@"animation did stop!");
+    }];
+   
 }
+
+#pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Public Methods
 
 +(FLXKLaunchViewController*)initialAppViewControllerFromDefaultStoryBoard{
     return [[UIStoryboard storyboardWithName:NSStringFromClass([FLXKLaunchViewController class]) bundle:nil] instantiateInitialViewController];
@@ -87,15 +90,19 @@
 
 }
 
+#pragma mark - Private Methods
+
+//1)get the image url from server
 -(void)getAdImageInfo{
     //    http://127.0.0.1:3000/api/getAdimg
-    
+    @weakify(self);
     [FLXKHttpRequest get:BaseURL(@"api/getAdimg") success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray* dicArray=(NSArray*)responseObject;
         if (dicArray.count>0) {
             NSDictionary* dic=(NSDictionary*)[dicArray lastObject];
             FLXKAdImageInfoModel* adImageInfoModel=[[FLXKAdImageInfoModel alloc]init];
             [adImageInfoModel setValuesForKeysWithDictionary:dic];
+            @strongify(self);
             self.adImageInfoModel=adImageInfoModel;
             [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@""]];
         }
@@ -105,17 +112,7 @@
     
 }
 
--(void)httpLoadImageWithImageName:(NSString*)imageName withImageView:(UIImageView*)imageContainerView{
-    //    NSString* urlString=[NSString stringWithFormat:@"",]
-    //    FLXKHttpRequest download:<#(NSString *)#> parameters:<#(NSDictionary *)#> savePathString:<#(NSString *)#> success:<#^(NSURLSessionDataTask *task, id responseObject)success#> success:<#^(NSURLSessionDataTask *task, NSError *error)failure#>
-}
-//请求广告图片
-//+(void)loadAdvertisementImages{
-//
-//}
-//加载倒计时动画
-//加载底部视图
-
+//注册app动态参数
 -(void)loadAppSettingFromBundle{
     NSString* settingBundlePath=[[NSBundle mainBundle]pathForResource:@"Settings" ofType:@"bundle"];
     NSString* rootPlistPath=nil;
@@ -125,7 +122,6 @@
     else{
         rootPlistPath=[settingBundlePath stringByAppendingPathComponent:@"Root.plist"];
     }
-    
     if ([[NSFileManager defaultManager]fileExistsAtPath:rootPlistPath]) {
         NSDictionary* settingDic=[NSDictionary dictionaryWithContentsOfFile:rootPlistPath];
         NSArray* settingArray=[settingDic objectForKey:@"PreferenceSpecifiers"];
@@ -141,5 +137,6 @@
     }
 }
 
+#pragma mark - Delegates
 
 @end

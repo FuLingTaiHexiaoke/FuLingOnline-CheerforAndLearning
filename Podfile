@@ -1,11 +1,16 @@
 target ‘FuLingOnline-CheerforAndLearning’ do
-    #    网络请求
-    #    PsyHttpHelper
+    ##     网络请求
+    ##     PsyHttpHelper
     pod 'AFNetworking', '~> 3.1.0'
     pod 'SDWebImage'
-#    布局
+##    布局
 pod 'Masonry','~>1.0.2'
 
+## Utilities
+pod 'libextobjc/EXTScope','~>0.4.1'
+
+## Diagnostics
+pod 'Tweaks'
 end
 
 

@@ -24,25 +24,45 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Tweaks.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>libextobjc.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A00C4D737537C4539B04018469B64B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0EE5634CAD0D778C76414552FE5B44AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>173C9A54358970D7C0F25F22B1B9155C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>739A5E1331271CB27607F905CDC7351F</key>
+		<key>5EE6DD21534CF1E690D6085F3E763D1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B223248BD2BF4DBE13BA4FAD37A9BA34</key>
 		<dict>
 			<key>primary</key>
 			<true/>

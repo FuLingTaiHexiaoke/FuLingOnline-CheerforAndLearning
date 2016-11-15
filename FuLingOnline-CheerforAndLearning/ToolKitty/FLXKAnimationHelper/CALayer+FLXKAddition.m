@@ -9,16 +9,16 @@
 #import "CALayer+FLXKAddition.h"
 #define degreesToRadians(x) (M_PI*(x)/180.0) //把角度转换成PI的方式
 
-typedef void(^animationDidStopBlock)(void);
 
-@implementation CALayer (FLXKAddition)
+
+@implementation CAShapeLayer (FLXKAddition)
 
 //圆形定时器动画
-+(void)createClockTickCircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock {
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+-(void)createClockTickCircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock {
+    CAShapeLayer *shapeLayer = self;
     shapeLayer.frame =frame;
     //UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:frame];
-    UIBezierPath *path = [CALayer getClockTickCirclePathWithFrame:frame];
+    UIBezierPath *path = [CAShapeLayer getClockTickCirclePathWithFrame:frame];
     shapeLayer.path = path.CGPath;
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
     shapeLayer.lineWidth = 2.0f;
@@ -33,14 +33,16 @@ typedef void(^animationDidStopBlock)(void);
     pathAnima.toValue = [NSNumber numberWithFloat:0.0f];
     pathAnima.fillMode = kCAFillModeForwards;
     pathAnima.removedOnCompletion = NO;
-    pathAnima.repeatCount=100;
+    pathAnima.repeatCount=1;
+    
+    //add delegate and actions
     pathAnima.delegate=self;
+    self.animationDidStopBlock=animationDidStopBlock;
     
     [shapeLayer addAnimation:pathAnima forKey:@"ClockTickCircleAmination"];
 }
 
 +(UIBezierPath*)getClockTickCirclePathWithFrame:(CGRect)frame{
-    
     CGFloat width=   CGRectGetWidth(frame);
     CGFloat height=   CGRectGetHeight(frame);
     UIBezierPath* path=[UIBezierPath bezierPath];
@@ -55,10 +57,8 @@ typedef void(^animationDidStopBlock)(void);
     
 }
 
-
-
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    
+    self.animationDidStopBlock();
 }
 
 @end

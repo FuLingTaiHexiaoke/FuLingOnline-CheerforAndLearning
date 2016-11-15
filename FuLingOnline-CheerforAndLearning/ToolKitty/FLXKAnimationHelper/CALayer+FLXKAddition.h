@@ -9,7 +9,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@interface CALayer (FLXKAddition)
+typedef void(^animationDidStopBlock)(void);
+
+@interface CAShapeLayer (FLXKAddition)
+
+@property(nonatomic)animationDidStopBlock animationDidStopBlock;
 
 /**
  *  圆形定时器动画,模仿的网易新闻广告业加载倒计时动画效果。
@@ -18,5 +22,5 @@
  *  @param viewContainer viewContainer to contain the circle layer
  *  @param duration      the animation duration
  */
-+(void)createClockTickCircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration;
+-(void)createClockTickCircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
 @end

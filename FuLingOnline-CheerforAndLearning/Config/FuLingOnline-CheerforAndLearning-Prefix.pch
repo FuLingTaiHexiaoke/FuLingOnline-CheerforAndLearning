@@ -1,0 +1,17 @@
+//
+//  FuLingOnline-CheerforAndLearning-Prefix.pch
+//  FuLingOnline-CheerforAndLearning
+//
+//  Created by 肖科 on 16/11/15.
+//  Copyright © 2016年 com.FuLing. All rights reserved.
+//
+
+#ifndef FuLingOnline_CheerforAndLearning_Prefix_pch
+#define FuLingOnline_CheerforAndLearning_Prefix_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "Global.h"
+
+#endif /* FuLingOnline_CheerforAndLearning_Prefix_pch */
