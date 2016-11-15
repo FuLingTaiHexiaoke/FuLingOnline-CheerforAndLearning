@@ -10,6 +10,7 @@
 		483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */; };
 		B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B900259B1DAE244A00B34438 /* FLXKAppNotification.m */; };
 		B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */ = {isa = PBXBuildFile; fileRef = B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */; };
+		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
 		B92B55BB1DD98099009A373A /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B81DD98099009A373A /* UIColor+Extensions.m */; };
 		B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55BA1DD98099009A373A /* UIView+Extensions.m */; };
@@ -61,6 +62,7 @@
 		B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FLXKHttpRequest副本.m"; sourceTree = "<group>"; };
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
+		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
 		B92B55B31DD9679E009A373A /* CALayer+FLXKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FLXKAddition.h"; sourceTree = "<group>"; };
 		B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FLXKAddition.m"; sourceTree = "<group>"; };
 		B92B55B71DD98099009A373A /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		B900258F1DAE1E9A00B34438 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				B923B4DA1DDB148900410CFC /* back */,
 				B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */,
 				B923B4D51DDABC9D00410CFC /* Global.h */,
 				B9DF707B1DAF78F5004C23E6 /* AppConfig.h */,
@@ -229,6 +232,14 @@
 			children = (
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		B923B4DA1DDB148900410CFC /* back */ = {
+			isa = PBXGroup;
+			children = (
+				B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */,
+			);
+			path = back;
 			sourceTree = "<group>";
 		};
 		B92B55AF1DD96651009A373A /* FLXKAnimationHelper */ = {
@@ -559,6 +570,7 @@
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
+				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,

@@ -10,6 +10,10 @@
 #import "FLXKAppNotification.h"
 #import "FLXKLaunchViewController.h"//广告，动画引导页面等
 
+//FBTweak
+#import <Tweaks/FBTweakShakeWindow.h>
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,17 @@
 @implementation AppDelegate
 
 #pragma mark -UIApplication Lifecircle
+
+- (UIWindow*)window {
+    if (!_window) {
+        if (DEBUG) {
+            _window = [[FBTweakShakeWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        } else {
+            _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        }
+    }
+    return _window;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //输出路径

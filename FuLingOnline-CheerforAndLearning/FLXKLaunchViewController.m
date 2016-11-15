@@ -16,7 +16,14 @@
 
 //#import <libextobjc/EXTScope.h>
 
-@interface FLXKLaunchViewController ()
+//dignostic
+#import <Tweaks/FBTweakInline.h>
+#import "FBTweakViewController.h"
+
+//Utilities
+#import "UIView+Extensions.h"
+
+@interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
     
 }
@@ -42,10 +49,16 @@
     UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [btn setTitle:@"跳过" forState:UIControlStateNormal];
     [_companyLogoView addSubview:btn];
-    [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:20.0f animationDidStopBlock:^{
+    [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"Duration", 5.0) animationDidStopBlock:^{
         NSLog(@"animation did stop!");
     }];
    
+    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.height-20, self.view.width, 20)];
+    [_tweaksButton setTitle:@"Show Tweaks" forState:UIControlStateNormal];
+    [_tweaksButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_tweaksButton addTarget:self action:@selector(showTweaksView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_tweaksButton];
+    
 }
 
 #pragma mark - Memory Warning
@@ -112,6 +125,7 @@
     
 }
 
+#pragma mark - Register AppSetting
 //注册app动态参数
 -(void)loadAppSettingFromBundle{
     NSString* settingBundlePath=[[NSBundle mainBundle]pathForResource:@"Settings" ofType:@"bundle"];
@@ -139,4 +153,25 @@
 
 #pragma mark - Delegates
 
+
+#pragma mark - FBTweakViewController And Delegate
+
+- (void)showTweaksView
+{
+    FBTweakViewController *viewController = [[FBTweakViewController alloc] initWithStore:[FBTweakStore sharedInstance]];
+    viewController.tweaksDelegate = self;
+    [self presentViewController:viewController animated:YES completion:NULL];
+}
+
+-(void)tweakViewControllerPressedDone:(FBTweakViewController *)tweakViewController
+{
+    [tweakViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)tweakDidChange:(FBTweak *)tweak
+{
+//    if (tweak == _flipTweak) {
+////        _window.layer.sublayerTransform = CATransform3DMakeScale(1.0, [_flipTweak.currentValue boolValue] ? -1.0 : 1.0, 1.0);
+//    }
+}
 @end
