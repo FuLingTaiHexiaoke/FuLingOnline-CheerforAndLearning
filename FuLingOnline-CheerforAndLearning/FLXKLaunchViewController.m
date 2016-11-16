@@ -53,13 +53,32 @@
     [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"Duration", 5.0) animationDidStopBlock:^{
         NSLog(@"animation did stop!");
     }];
+    
+    @weakify(self)
+    [[CAShapeLayer layer]createFuLingMemoryAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"F_Duration", 10.0) animationDidStopBlock:^{
+        NSLog(@"animation did stop!");
+        @strongify(self)
+      [[CAShapeLayer layer]  createFlowingWaterAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
+          
+      }];
+    }];
+
    
-    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.height-20, self.view.width, 20)];
+    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, self.view.width-50, 20)];
     [_tweaksButton setTitle:@"Show Tweaks" forState:UIControlStateNormal];
     [_tweaksButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_tweaksButton addTarget:self action:@selector(showTweaksView) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_tweaksButton];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - Memory Warning
