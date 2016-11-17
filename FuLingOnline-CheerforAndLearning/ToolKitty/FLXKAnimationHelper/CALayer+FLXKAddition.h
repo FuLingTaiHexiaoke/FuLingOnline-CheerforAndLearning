@@ -11,7 +11,7 @@
 
 typedef void(^animationDidStopBlock)(void);
 
-@interface CAShapeLayer (FLXKAddition)
+@interface CALayer (FLXKAddition)
 
 @property(nonatomic)animationDidStopBlock animationDidStopBlock;
 
@@ -29,4 +29,6 @@ typedef void(^animationDidStopBlock)(void);
 
 //水流动动画
 -(void)createFlowingWaterAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
+//水流动动画
+-(void)createFlowingWater1AminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
 @end

@@ -58,9 +58,12 @@
     [[CAShapeLayer layer]createFuLingMemoryAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"F_Duration", 10.0) animationDidStopBlock:^{
         NSLog(@"animation did stop!");
         @strongify(self)
-      [[CAShapeLayer layer]  createFlowingWaterAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
-          
-      }];
+//      [[CAShapeLayer layer]  createFlowingWater1AminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
+//          
+//      }];
+        [[CAEmitterLayer layer]  createFlowingWater1AminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
+            
+        }];
     }];
 
    
