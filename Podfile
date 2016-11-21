@@ -13,7 +13,9 @@ pod 'BlocksKit/UIKit', '~> 2.2.0'
 pod 'KVOController'
 
 ## Diagnostics
+#百度
 pod 'BaiduMobStat'
+#腾讯
 pod 'Bugly'
 pod 'Tweaks'
 end

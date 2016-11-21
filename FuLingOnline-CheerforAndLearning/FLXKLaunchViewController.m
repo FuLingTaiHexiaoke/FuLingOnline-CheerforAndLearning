@@ -8,9 +8,14 @@
 
 #import "FLXKLaunchViewController.h"
 
+// Networking
 #import "FLXKHttpRequest.h"
 #import "UIImageView+WebCache.h"
+
+// Model
 #import "FLXKAdImageInfoModel.h"
+
+//Animation
 #import "CALayer+FLXKAddition.h"
 
 
