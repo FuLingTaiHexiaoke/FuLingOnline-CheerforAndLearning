@@ -7,21 +7,12 @@
 //
 
 #import "FLXKLaunchViewController.h"
+
 #import "FLXKHttpRequest.h"
 #import "UIImageView+WebCache.h"
 #import "FLXKAdImageInfoModel.h"
-#import "AppConfig.h"
-//#import "Global.h"
 #import "CALayer+FLXKAddition.h"
 
-//#import <libextobjc/EXTScope.h>
-
-//dignostic
-#import <Tweaks/FBTweakInline.h>
-#import "FBTweakViewController.h"
-
-//Utilities
-#import "UIView+Extensions.h"
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
@@ -41,38 +32,10 @@
     [super viewDidLoad];
     //get the image url from server
     [self getAdImageInfo];
-
     //加载公司logo
     _companyLogoView.backgroundColor=RGB(54,196,126);
-    
-    //add click timing animation
-    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(self.view.right-50, 20, 30, 30)];
-    [btn setTitle:@"跳过" forState:UIControlStateNormal];
-    btn.titleLabel.font=[UIFont  systemFontOfSize:10];
-    [_advImageView addSubview:btn];
-    [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"Duration", 5.0) animationDidStopBlock:^{
-        NSLog(@"animation did stop!");
-    }];
-    
-    @weakify(self)
-    [[CAShapeLayer layer]createFuLingMemoryAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"F_Duration", 10.0) animationDidStopBlock:^{
-        NSLog(@"animation did stop!");
-        @strongify(self)
-//      [[CAShapeLayer layer]  createFlowingWater1AminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
-//          
-//      }];
-        [[CAEmitterLayer layer]  createFlowingWater1AminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 animationDidStopBlock:^{
-            
-        }];
-    }];
-
-   
-    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, self.view.width-50, 20)];
-    [_tweaksButton setTitle:@"Show Tweaks" forState:UIControlStateNormal];
-    [_tweaksButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_tweaksButton addTarget:self action:@selector(showTweaksView) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_tweaksButton];
-    
+    [self loadAppAnimation];
+    [self showTweaksButton];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -148,6 +111,34 @@
     
 }
 
+
+-(void)loadAppAnimation{
+    
+    //add click timing animation
+    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(self.view.right-50, 20, 30, 30)];
+    [btn setTitle:@"跳过" forState:UIControlStateNormal];
+    btn.titleLabel.font=[UIFont  systemFontOfSize:10];
+    [_advImageView addSubview:btn];
+    
+    [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"TickCircle_Duration", 5.0) animationDidStopBlock:^{
+        NSLog(@"animation did stop!");
+    }];
+    
+    @weakify(self)
+    [[CAShapeLayer layer]createFuLingMemoryAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"FuLingMemory_Duration", 10.0) animationDidStopBlock:^{
+        NSLog(@"animation did stop!");
+        @strongify(self)
+        //长江
+        [[CAEmitterLayer layer]  createFlowingWater_CircleAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 isYangtze:YES  animationDidStopBlock:^{
+            
+        }];
+        //乌江
+        [[CAEmitterLayer layer]  createFlowingWater_CircleAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 isYangtze:NO  animationDidStopBlock:^{
+            
+        }];
+    }];
+}
+
 #pragma mark - Register AppSetting
 //注册app动态参数
 -(void)loadAppSettingFromBundle{
@@ -178,6 +169,14 @@
 
 
 #pragma mark - FBTweakViewController And Delegate
+
+- (void)showTweaksButton{
+    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, self.view.width-50, 20)];
+    [_tweaksButton setTitle:@"Show Tweaks" forState:UIControlStateNormal];
+    [_tweaksButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_tweaksButton addTarget:self action:@selector(showTweaksView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_tweaksButton];
+}
 
 - (void)showTweaksView
 {

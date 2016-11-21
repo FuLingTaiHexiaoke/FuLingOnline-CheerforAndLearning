@@ -27,8 +27,9 @@ typedef void(^animationDidStopBlock)(void);
 //涪陵印象动画
 -(void)createFuLingMemoryAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
 
-//水流动动画
--(void)createFlowingWaterAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
-//水流动动画
--(void)createFlowingWater1AminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
+//水流动动画-水波纹形式
+-(void)createFlowingWater_SpindriftAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
+
+//水流动动画-圆圈形式(长江)
+-(void)createFlowingWater_CircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration  isYangtze:(BOOL)isYangtze  animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
 @end

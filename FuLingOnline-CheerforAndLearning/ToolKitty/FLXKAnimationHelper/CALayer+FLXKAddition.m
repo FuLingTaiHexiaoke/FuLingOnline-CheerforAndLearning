@@ -6,9 +6,6 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
-//dignostic
-#import <Tweaks/FBTweakInline.h>
-#import "FBTweakViewController.h"
 
 
 #import "CALayer+FLXKAddition.h"
@@ -60,7 +57,13 @@
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
     shapeLayer.lineWidth = 2.0f;
     shapeLayer.strokeEnd = 0.0f;
-    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+//    shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    shapeLayer.strokeColor = [UIColor colorWithRed:FBTweakValue(@"Animation", @"FuLingMemory_strokeColor", @"Red", 0.9, 0.0, 1.0)
+                                                               green:FBTweakValue(@"Animation", @"FuLingMemory_strokeColor", @"Green", 0.9, 0.0, 1.0)
+                                                                blue:FBTweakValue(@"Animation", @"FuLingMemory_strokeColor", @"Blue", 0.9, 0.0, 1.0)
+                                                               alpha:1.0].CGColor;
+    
+    
     [viewContainer.layer addSublayer:shapeLayer];
     
     CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
@@ -80,36 +83,46 @@
 }
 
 
-//水流动动画
--(void)createFlowingWaterAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock{
-    CAShapeLayer *shapeLayer = ( CAShapeLayer *)self;
-    shapeLayer.frame = CGRectMake(0, 0, 80, 30);
-    UIBezierPath *path = [CALayer getFlowingWaterPathWithFrame: shapeLayer.frame];
-    shapeLayer.path = path.CGPath;
-    shapeLayer.fillColor = [UIColor clearColor].CGColor;
-    shapeLayer.lineWidth = 2.0f;
-    shapeLayer.strokeEnd = 1.0f;
-    shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
-    [viewContainer.layer addSublayer:shapeLayer];
+//水流动动画-水波纹形式
+-(void)createFlowingWater_SpindriftAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock{
+    //create particle emitter layer
+    CAEmitterLayer *emitterLayer = ( CAEmitterLayer *)self;
+    emitterLayer.frame = CGRectMake(0, 0, 20, 20);
+    [viewContainer.layer addSublayer:emitterLayer];
+    //configure emitter
+    
+    emitterLayer.renderMode = kCAEmitterLayerAdditive;
+    emitterLayer.emitterPosition = CGPointMake(emitterLayer.frame.size.width / 2.0, emitterLayer.frame.size.height / 2.0);
+    //create a particle template
+    CAEmitterCell *cell = [[CAEmitterCell alloc] init];
+    cell.contents=(__bridge id _Nullable)([CALayer getFlowingWater_SpindriftWithSize:CGSizeMake(20, 20)].CGImage);
+    cell.birthRate = 10;
+    cell.lifetime = 5.0;
+    cell.alphaSpeed = -0.4;
+    cell.velocity = 20;
+    cell.velocityRange = 50;
+    cell.emissionRange = M_PI/3;
+    //add particle template to emitter
+    emitterLayer.emitterCells = @[cell];
     
     CAKeyframeAnimation* pathAnima=[CAKeyframeAnimation animationWithKeyPath:@"position"];
     pathAnima.duration = duration;
     pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    pathAnima.path=[[CALayer getFlowingWaterRoutePathWithFrame:frame]CGPath];
+    pathAnima.path=[[CALayer getYangtzeFlowingWaterRoutePathWithFrame:frame]CGPath];
     pathAnima.fillMode = kCAFillModeForwards;
     pathAnima.removedOnCompletion = NO;
-    pathAnima.repeatCount=FBTweakValue(@"Animation", @"LaunchViewController",  @"FlowingWater_repeatCount", 5.0);
+    pathAnima.repeatCount=FBTweakValue(@"Animation", @"LaunchViewController",  @"Water_Spind_repeatCount", 5.0);
     
     //add delegate and actions
     pathAnima.delegate=self;
     self.animationDidStopBlock=animationDidStopBlock;
     
-    [shapeLayer addAnimation:pathAnima forKey:@"FlowingWaterAmination"];
+    [emitterLayer addAnimation:pathAnima forKey:@"FlowingWater_SpindriftAmination"];
+    
 }
 
-
-//水流动动画
--(void)createFlowingWater1AminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock{
+//水流动动画-圆圈形式(长江)
+-(void)createFlowingWater_CircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration  isYangtze:(BOOL)isYangtze  animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock{
     //create particle emitter layer
     CAEmitterLayer *emitterLayer = ( CAEmitterLayer *)self;
     emitterLayer.frame = CGRectMake(0, 0, 20, 20);
@@ -118,35 +131,44 @@
     //    emitterLayer.birthRate=10;
     //    emitterLayer.lifetime=5;
     
-    emitterLayer.renderMode = kCAEmitterLayerAdditive;
+    emitterLayer.renderMode = kCAEmitterLayerOldestFirst;
     emitterLayer.emitterPosition = CGPointMake(emitterLayer.frame.size.width / 2.0, emitterLayer.frame.size.height / 2.0);
     //create a particle template
     CAEmitterCell *cell = [[CAEmitterCell alloc] init];
-//        cell.contents = (__bridge id)[UIImage imageNamed:@"Spark.png"].CGImage;
-    cell.contents=(__bridge id _Nullable)([CALayer getFlowingWaterWithSize:CGSizeMake(10, 10)].CGImage);
-    cell.birthRate = 10;
-    cell.lifetime = 5.0;
-    cell.color = [UIColor colorWithRed:1 green:0.5 blue:0.1 alpha:1.0].CGColor;
     cell.alphaSpeed = -0.4;
     cell.velocity = 50;
     cell.velocityRange = 50;
     cell.emissionRange = M_PI * 2.0;
+    cell.birthRate = 10;
+    cell.lifetime = 5.0;
+    cell.color = [UIColor colorWithRed:FBTweakValue(@"Animation", @"Water_CircleColor", @"Red", 0.9, 0.0, 1.0)
+                                             green:FBTweakValue(@"Animation", @"Water_CircleColor", @"Green", 0.9, 0.0, 1.0)
+                                              blue:FBTweakValue(@"Animation", @"Water_CircleColor", @"Blue", 0.9, 0.0, 1.0)
+                                             alpha:1.0].CGColor;
+
+    cell.contents=(__bridge id _Nullable)([CALayer getFlowingWaterWithSize:CGSizeMake(10, 10) withFillColor:cell.color].CGImage );
+
     //add particle template to emitter
     emitterLayer.emitterCells = @[cell];
     
     CAKeyframeAnimation* pathAnima=[CAKeyframeAnimation animationWithKeyPath:@"position"];
     pathAnima.duration = duration;
     pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    pathAnima.path=[[CALayer getFlowingWaterRoutePathWithFrame:frame]CGPath];
+    if(isYangtze){
+          pathAnima.path=[[CALayer getYangtzeFlowingWaterRoutePathWithFrame:frame]CGPath];
+    }
+    else{
+          pathAnima.path=[[CALayer getWujiangRiverFlowingWaterRoutePathWithFrame:frame]CGPath];
+    }
     pathAnima.fillMode = kCAFillModeForwards;
     pathAnima.removedOnCompletion = NO;
-    pathAnima.repeatCount=FBTweakValue(@"Animation", @"LaunchViewController",  @"FlowingWater_repeatCount", 5.0);
+    pathAnima.repeatCount=FBTweakValue(@"Animation", @"LaunchViewController",  @"Water_Circle_repeatCount", 5.0);
     
     //add delegate and actions
     pathAnima.delegate=self;
     self.animationDidStopBlock=animationDidStopBlock;
     
-    [emitterLayer addAnimation:pathAnima forKey:@"FlowingWaterAmination1"];
+    [emitterLayer addAnimation:pathAnima forKey:@"FlowingWater_CircleAmination"];
 }
 
 
@@ -195,7 +217,7 @@
     return path;
 }
 
-+(UIBezierPath*)getFlowingWaterRoutePathWithFrame:(CGRect)frame{
++(UIBezierPath*)getYangtzeFlowingWaterRoutePathWithFrame:(CGRect)frame{
     CGFloat width=   CGRectGetWidth(frame);
     CGFloat height=   CGRectGetHeight(frame);
     UIBezierPath* path=[UIBezierPath bezierPath];
@@ -206,17 +228,49 @@
     return path;
 }
 
++(UIBezierPath*)getWujiangRiverFlowingWaterRoutePathWithFrame:(CGRect)frame{
+    CGFloat width=   CGRectGetWidth(frame);
+    CGFloat height=   CGRectGetHeight(frame);
+    UIBezierPath* path=[UIBezierPath bezierPath];
+    
 
-+(UIImage*)getFlowingWaterWithSize:(CGSize)size{
+    [path moveToPoint:CGPointMake(width-20, height)];
+    [path  addQuadCurveToPoint:CGPointMake(width-20, 0) controlPoint:CGPointMake(4*width/5, height/2)];
+    
+    return path;
+}
+
++(UIImage*)getFlowingWaterWithSize:(CGSize)size withFillColor:(CGColorRef )color{
     
     UIGraphicsBeginImageContext(size);
     CGContextRef ctx= UIGraphicsGetCurrentContext();
     
     CGContextSetStrokeColorWithColor(ctx, [UIColor whiteColor].CGColor);
-    CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
+    CGContextSetFillColorWithColor(ctx, color);
     
-//    CGContextStrokeEllipseInRect(ctx, CGRectMake(0, 0, 10, 10));
+    //    CGContextStrokeEllipseInRect(ctx, CGRectMake(0, 0, 10, 10));
     CGContextFillEllipseInRect(ctx, CGRectMake(0, 0, 10, 10));
+    
+    UIImage* image=UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
++(UIImage*)getFlowingWater_SpindriftWithSize:(CGSize)size{
+    
+    UIGraphicsBeginImageContext(size);
+    CGContextRef ctx= UIGraphicsGetCurrentContext();
+    
+    CGContextSetStrokeColorWithColor(ctx, [UIColor blueColor].CGColor);
+    //    CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
+    //    CGContextStrokeEllipseInRect(ctx, CGRectMake(0, 0, 10, 10));
+    //    CGContextFillEllipseInRect(ctx, CGRectMake(0, 0, 10, 10));
+    
+    CGContextMoveToPoint(ctx, 0, 0);
+    CGContextAddArc(ctx,5, 0, 15, 20, M_PI/3, YES);
+    CGContextStrokePath(ctx);
     
     UIImage* image=UIGraphicsGetImageFromCurrentImageContext();
     
@@ -235,4 +289,37 @@
     self.animationDidStopBlock();
 }
 
+
+
 @end
+
+
+
+
+
+////水流动动画-水波纹形式
+//-(void)createFlowingWater_SpindriftAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock{
+//    CAShapeLayer *shapeLayer = ( CAShapeLayer *)self;
+//    shapeLayer.frame = CGRectMake(0, 0, 80, 30);
+//    UIBezierPath *path = [CALayer getFlowingWaterPathWithFrame: shapeLayer.frame];
+//    shapeLayer.path = path.CGPath;
+//    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+//    shapeLayer.lineWidth = 2.0f;
+//    shapeLayer.strokeEnd = 1.0f;
+//    shapeLayer.strokeColor = [UIColor whiteColor].CGColor;
+//    [viewContainer.layer addSublayer:shapeLayer];
+//
+//    CAKeyframeAnimation* pathAnima=[CAKeyframeAnimation animationWithKeyPath:@"position"];
+//    pathAnima.duration = duration;
+//    pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+//    pathAnima.path=[[CALayer getFlowingWaterRoutePathWithFrame:frame]CGPath];
+//    pathAnima.fillMode = kCAFillModeForwards;
+//    pathAnima.removedOnCompletion = NO;
+//    pathAnima.repeatCount=FBTweakValue(@"Animation", @"LaunchViewController",  @"FlowingWater_repeatCount", 5.0);
+//
+//    //add delegate and actions
+//    pathAnima.delegate=self;
+//    self.animationDidStopBlock=animationDidStopBlock;
+//
+//    [shapeLayer addAnimation:pathAnima forKey:@"FlowingWaterAmination"];
+//}

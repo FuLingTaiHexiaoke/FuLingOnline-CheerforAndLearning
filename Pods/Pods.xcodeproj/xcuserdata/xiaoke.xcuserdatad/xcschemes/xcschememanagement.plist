@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BlocksKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KVOController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,7 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0A00C4D737537C4539B04018469B64B1</key>
+		<key>0172F0764427B7929E494601F1E1E333</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,22 +57,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>173C9A54358970D7C0F25F22B1B9155C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5EE6DD21534CF1E690D6085F3E763D1F</key>
+		<key>65E86FC8F874CD855F1291330BDE16D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9BF307645E4F16A908B5B1AB3E23BFB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A09533DD9FC5A476C6424520C88CABFB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA55E2D129D695FAFE216D8B7F1EC50F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

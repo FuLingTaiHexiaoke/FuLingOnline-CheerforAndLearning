@@ -8,8 +8,13 @@ pod 'Masonry','~>1.0.2'
 
 ## Utilities
 pod 'libextobjc/EXTScope','~>0.4.1'
+pod 'BlocksKit/Core', '~> 2.2.0'
+pod 'BlocksKit/UIKit', '~> 2.2.0'
+pod 'KVOController'
 
 ## Diagnostics
+pod 'BaiduMobStat'
+pod 'Bugly'
 pod 'Tweaks'
 end
 

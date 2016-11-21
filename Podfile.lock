@@ -14,6 +14,14 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - BaiduMobStat (4.1.0)
+  - BlocksKit/Core (2.2.5)
+  - BlocksKit/DynamicDelegate (2.2.5)
+  - BlocksKit/UIKit (2.2.5):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - Bugly (2.4.0)
+  - KVOController (1.2.0)
   - libextobjc/EXTScope (0.4.1):
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
@@ -25,6 +33,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
+  - BaiduMobStat
+  - BlocksKit/Core (~> 2.2.0)
+  - BlocksKit/UIKit (~> 2.2.0)
+  - Bugly
+  - KVOController
   - libextobjc/EXTScope (~> 0.4.1)
   - Masonry (~> 1.0.2)
   - SDWebImage
@@ -32,6 +45,10 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  BaiduMobStat: 38dbc9b5cb95c9d8570081a9f6d86390ceb02722
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  Bugly: 3b56d8365c5687f74fd6fbb50c5b7ede3cdac96c
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c

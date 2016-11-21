@@ -7,6 +7,17 @@
    Done as a separate header so it can be reused in unit tests.
  */
 
+//dignostic
+#import <Tweaks/FBTweakInline.h>
+#import "FBTweakViewController.h"
+
+
+//Utilities
+#import "AppConfig.h"
+#import "UIView+Extensions.h"
+
+
+
 //#import "WMFLogging.h"
 //#import "WMFDirectoryPaths.h"
 //#import "WMFGCDHelpers.h"

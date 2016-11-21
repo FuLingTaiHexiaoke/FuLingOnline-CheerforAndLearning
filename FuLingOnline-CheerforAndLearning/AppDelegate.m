@@ -13,6 +13,9 @@
 //FBTweak
 #import <Tweaks/FBTweakShakeWindow.h>
 
+//Diagnostics
+#import <Bugly/Bugly.h>
+#import "BaiduMobStat.h" 
 
 @interface AppDelegate ()
 
@@ -39,6 +42,11 @@
     NSLog(@"\n\nSimulator documents directory:\n\t%@\n\n",
           [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
 #endif
+    //系统奔溃检查（腾讯）
+    [Bugly startWithAppId:@"900059996"];
+    //系统奔溃检查（百度）
+    [[BaiduMobStat defaultStat] startWithAppId:@"91c2c7b088"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
+
     //注册消息推送
     //[FLXKAppNotification registerRemoteNotification:application];
     //我们可以通过本地通知开发日志事件功能
