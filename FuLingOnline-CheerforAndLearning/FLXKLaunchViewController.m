@@ -18,6 +18,9 @@
 //Animation
 #import "CALayer+FLXKAddition.h"
 
+//Autolayout
+#import "Masonry.h"
+
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
@@ -96,6 +99,25 @@
 
 #pragma mark - Private Methods
 
+#pragma mark - Setup
+
+- (void)loadMainUI {
+//    if ([self uiIsLoaded]) {
+//        return;
+//    }
+    UINavigationController* navc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+    [self addChildViewController:navc];
+    [self.view addSubview:navc.view];
+    [navc.view mas_makeConstraints:^(MASConstraintMaker* make) {
+        make.top.and.bottom.and.leading.and.trailing.equalTo(self.view);
+    }];
+    //not clear
+    //Container View Controller how to implement
+    //if no transition then call this function immediately
+    [navc didMoveToParentViewController:self];
+
+}
+
 //1)get the image url from server
 -(void)getAdImageInfo{
     //    http://127.0.0.1:3000/api/getAdimg
@@ -121,9 +143,10 @@
     
     //add click timing animation
     UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(self.view.right-50, 20, 30, 30)];
+    [btn addTarget:self action:@selector(loadMainUI) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"跳过" forState:UIControlStateNormal];
     btn.titleLabel.font=[UIFont  systemFontOfSize:10];
-    [_advImageView addSubview:btn];
+    [self.view addSubview:btn];
     
     [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"TickCircle_Duration", 5.0) animationDidStopBlock:^{
         NSLog(@"animation did stop!");

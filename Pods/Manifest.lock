@@ -39,6 +39,7 @@ DEPENDENCIES:
   - Bugly
   - KVOController
   - libextobjc/EXTScope (~> 0.4.1)
+  - Masonry
   - Masonry (~> 1.0.2)
   - SDWebImage
   - Tweaks

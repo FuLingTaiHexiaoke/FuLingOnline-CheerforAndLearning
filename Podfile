@@ -18,6 +18,9 @@ pod 'BaiduMobStat'
 #腾讯
 pod 'Bugly'
 pod 'Tweaks'
+
+## Autolayout
+pod 'Masonry'
 end
 
 
