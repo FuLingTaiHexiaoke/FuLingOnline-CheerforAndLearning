@@ -21,6 +21,8 @@
 //Autolayout
 #import "Masonry.h"
 
+//Style
+#import "FLXKStyleManager.h"
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
@@ -48,7 +50,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,13 +71,14 @@
 }
 
 - (void)launchAppInWindow:(UIWindow*)window {
-    //    WMFStyleManager* manager = [WMFStyleManager new];
-    //    [manager applyStyleToWindow:window];
-    //    [WMFStyleManager setSharedStyleManager:manager];
+    FLXKStyleManager* manager = [FLXKStyleManager new];
+    [manager applyStyleToWindow:window];
+    [FLXKStyleManager setSharedStyleManager:manager];
+    
     [self loadAppSettingFromBundle];
     [window setRootViewController:self];
     [window makeKeyAndVisible];
-    
+    //    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForegroundWithNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackgroundWithNotification:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
@@ -94,7 +97,7 @@
     //        [self resumeApp];
     //        [[PiwikTracker wmf_configuredInstance] wmf_logView:[self rootViewControllerForTab:WMFAppTabTypeExplore]];
     //    }];
-
+    
 }
 
 #pragma mark - Private Methods
@@ -102,9 +105,9 @@
 #pragma mark - Setup
 
 - (void)loadMainUI {
-//    if ([self uiIsLoaded]) {
-//        return;
-//    }
+    //    if ([self uiIsLoaded]) {
+    //        return;
+    //    }
     UINavigationController* navc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
     [self addChildViewController:navc];
     [self.view addSubview:navc.view];
@@ -115,7 +118,7 @@
     //Container View Controller how to implement
     //if no transition then call this function immediately
     [navc didMoveToParentViewController:self];
-
+    
 }
 
 //1)get the image url from server
@@ -220,8 +223,8 @@
 
 - (void)tweakDidChange:(FBTweak *)tweak
 {
-//    if (tweak == _flipTweak) {
-////        _window.layer.sublayerTransform = CATransform3DMakeScale(1.0, [_flipTweak.currentValue boolValue] ? -1.0 : 1.0, 1.0);
-//    }
+    //    if (tweak == _flipTweak) {
+    ////        _window.layer.sublayerTransform = CATransform3DMakeScale(1.0, [_flipTweak.currentValue boolValue] ? -1.0 : 1.0, 1.0);
+    //    }
 }
 @end

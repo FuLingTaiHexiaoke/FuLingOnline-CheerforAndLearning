@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-350" y="322"/>
         </scene>
-        <!--11-->
+        <!--首页-->
         <scene sceneID="TJ1-Bs-B3m">
             <objects>
-                <viewController id="Si8-0d-24c" sceneMemberID="viewController">
+                <viewController id="Si8-0d-24c" customClass="HomeNewsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o7q-7J-OzE"/>
                         <viewControllerLayoutGuide type="bottom" id="fbs-hZ-t3G"/>
@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="11" image="tabbar-home" id="nGB-Lb-P8p"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar-home" id="nGB-Lb-P8p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uG8-LO-VAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,13 +46,16 @@
         <!--Tab Bar Controller-->
         <scene sceneID="gGW-hv-03w">
             <objects>
-                <tabBarController id="etB-Oy-FnC" sceneMemberID="viewController">
+                <tabBarController id="etB-Oy-FnC" customClass="FLXKTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="e11-Om-vgN"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="yEp-i7-OBj">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yEp-i7-OBj" customClass="FLXKTabBar">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.28627450980000002" green="0.73333333329999995" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="TabBartintColor">
+                                <color key="value" red="0.27058823529999998" green="0.73333333329999995" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Si8-0d-24c" kind="relationship" relationship="viewControllers" id="OK3-Lq-grC"/>
@@ -70,6 +73,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aw9-2P-OwZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="etB-Oy-FnC" kind="relationship" relationship="rootViewController" id="jxL-Vh-dL1"/>

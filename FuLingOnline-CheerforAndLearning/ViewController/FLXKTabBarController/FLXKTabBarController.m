@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    // 设置TabBar tintColor
+    // 方式一
+//    self.tabBar.tintColor = [UIColor colorWithRed:255/255 green:0/255 blue:0/255 alpha:1];
 }
 
 - (void)didReceiveMemoryWarning {

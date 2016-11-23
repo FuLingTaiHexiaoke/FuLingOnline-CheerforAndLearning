@@ -24,4 +24,17 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
+- (NSString*)hexString {
+    CGFloat red;
+    CGFloat green;
+    CGFloat blue;
+    CGFloat alpha;
+    [self getRed:&red green:&green blue:&blue alpha:&alpha];
+    return [NSString stringWithFormat:@"%02x%02x%02x%02x",
+            (int)(255.0 * red),
+            (int)(255.0 * green),
+            (int)(255.0 * blue),
+            (int)(255.0 * alpha)];
+}
+
 @end
