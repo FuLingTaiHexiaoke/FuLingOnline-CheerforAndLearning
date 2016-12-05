@@ -8,6 +8,9 @@
 
 #import "HomeNewsViewController.h"
 
+//views
+#import "HomeHeaderView.h"
+
 #define HEADER_HEIGHT 200.0f
 #define HEADER_INIT_FRAME CGRectMake(0, 0, self.view.frame.size.width, HEADER_HEIGHT)
 #define CELL_HEIGHT 45.0f
@@ -34,6 +37,7 @@
     
 }
 
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
@@ -48,8 +52,11 @@
 #pragma mark - Header View
 - (void)createHeaderView
 {
-   UIView* _headerView = [[UIView alloc]initWithFrame:HEADER_INIT_FRAME];
-    _headerView.backgroundColor=[UIColor yellowColor];
+//    NSArray *nib= [[NSBundle mainBundle]loadNibNamed:@"HomeHeaderView" owner:self options:nil];
+    HomeHeaderView* _headerView  = [HomeHeaderView newInstance];
+    
+//   HomeHeaderView* _headerView = [[HomeHeaderView alloc]initWithFrame:HEADER_INIT_FRAME];
+//    _headerView.backgroundColor=[UIColor yellowColor];
     [_tableView setTableHeaderView:_headerView];
 }
 

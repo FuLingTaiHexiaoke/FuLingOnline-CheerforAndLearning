@@ -24,10 +24,15 @@
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
+		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
+		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
+		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
 		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
+		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
+		B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */; };
 		B9D854B71DAC8BE2001AD79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B61DAC8BE2001AD79C /* main.m */; };
 		B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B91DAC8BE2001AD79C /* AppDelegate.m */; };
 		B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854BC1DAC8BE2001AD79C /* ViewController.m */; };
@@ -91,11 +96,20 @@
 		B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLXKLaunchViewController.storyboard; sourceTree = "<group>"; };
 		B94E83DE1DCC92DD00D2823B /* BaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
+		B95A66B81DE6ACD500AB42E4 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
+		B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
+		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
+		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
 		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
 		B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "整体逻辑思路.rtf"; sourceTree = "<group>"; };
 		B97B38DE1DD029D400D8F004 /* 重点难点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "重点难点.rtf"; sourceTree = "<group>"; };
+		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
+		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
+		B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsController.h; sourceTree = "<group>"; };
+		B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsController.m; sourceTree = "<group>"; };
 		B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D854B61DAC8BE2001AD79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D854B81DAC8BE2001AD79C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -239,6 +253,7 @@
 		B90025951DAE1EC000B34438 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B99FC60D1DF5634A0093BBAE /* PublishNewsController */,
 				B941F7701DE598D700598437 /* Home */,
 				B940CE3E1DE42C33004427F0 /* FLXKTabBarController */,
 			);
@@ -329,10 +344,21 @@
 		B941F7701DE598D700598437 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B95A66B71DE6ACB400AB42E4 /* HeaderView */,
 				B941F7711DE59B2600598437 /* HomeNewsViewController.h */,
 				B941F7721DE59B2600598437 /* HomeNewsViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B95A66B71DE6ACB400AB42E4 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				B95A66B81DE6ACD500AB42E4 /* HomeHeaderView.h */,
+				B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */,
+				B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		B97B38D81DD014F300D8F004 /* Model */ = {
@@ -340,8 +366,21 @@
 			children = (
 				B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */,
 				B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */,
+				B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */,
+				B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */,
+				B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */,
+				B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B99FC60D1DF5634A0093BBAE /* PublishNewsController */ = {
+			isa = PBXGroup;
+			children = (
+				B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */,
+				B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */,
+			);
+			path = PublishNewsController;
 			sourceTree = "<group>";
 		};
 		B9D854A91DAC8BE2001AD79C = {
@@ -382,13 +421,13 @@
 				B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */,
 				B9D854C61DAC8BE2001AD79C /* Info.plist */,
 				B94BD68F1DAE480C0094CA9D /* images.xcassets */,
+				B90025951DAE1EC000B34438 /* ViewController */,
 				B900258F1DAE1E9A00B34438 /* Config */,
 				B900258E1DAE1E9100B34438 /* Entity */,
 				B97B38D81DD014F300D8F004 /* Model */,
 				B90025961DAE1EEB00B34438 /* Module */,
 				B90025901DAE1EA500B34438 /* Category */,
 				B900237B1DAE1E8300B34438 /* ToolKitty */,
-				B90025951DAE1EC000B34438 /* ViewController */,
 				B90025911DAE1EB100B34438 /* Resource */,
 				B9D854B51DAC8BE2001AD79C /* Supporting Files */,
 				B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */,
@@ -522,7 +561,8 @@
 				TargetAttributes = {
 					B9D854B11DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = TQ772LEHW3;
+						DevelopmentTeam = UMWN7VGEE4;
+						ProvisioningStyle = Automatic;
 					};
 					B9D854CA1DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -565,6 +605,7 @@
 				B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */,
 				B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */,
 				B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */,
+				B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */,
 				B9D854C01DAC8BE2001AD79C /* Main.storyboard in Resources */,
 				B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */,
 				B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */,
@@ -641,6 +682,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
+				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
+				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
@@ -653,10 +696,12 @@
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
+				B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 				B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */,
 				B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */,
 				B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */,
+				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,6 +797,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "84f6f28c-9a4d-48b2-9ca5-71dd9a12aa0b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -790,6 +836,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "84f6f28c-9a4d-48b2-9ca5-71dd9a12aa0b";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -803,6 +850,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UMWN7VGEE4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
@@ -811,6 +859,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -823,6 +873,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UMWN7VGEE4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
@@ -831,6 +882,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning-Bridging-Header.h";
 			};
 			name = Release;
