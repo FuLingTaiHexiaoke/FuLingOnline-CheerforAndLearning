@@ -11,7 +11,7 @@ pod 'libextobjc/EXTScope','~>0.4.1'
 pod 'BlocksKit/Core', '~> 2.2.0'
 pod 'BlocksKit/UIKit', '~> 2.2.0'
 pod 'KVOController'
-
+pod 'TZImagePickerController'
 ## Diagnostics
 #百度
 pod 'BaiduMobStat'

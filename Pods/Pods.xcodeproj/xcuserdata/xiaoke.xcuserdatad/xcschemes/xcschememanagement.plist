@@ -34,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TZImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Tweaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +52,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0172F0764427B7929E494601F1E1E333</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>0EE5634CAD0D778C76414552FE5B44AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>15CE4F19CCA6C655FC31482A23B95350</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63287F2CB9F730F8824F39EC78BF4736</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +82,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BF307645E4F16A908B5B1AB3E23BFB8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A09533DD9FC5A476C6424520C88CABFB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>AA55E2D129D695FAFE216D8B7F1EC50F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C3E4E1313D4378F54A46D8CBDD589DA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F54496504F3F891E1173A9191B4A0CE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

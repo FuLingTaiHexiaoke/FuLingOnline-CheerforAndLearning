@@ -13,6 +13,8 @@
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
 		B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55BA1DD98099009A373A /* UIView+Extensions.m */; };
+		B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */; };
+		B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */; };
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B940CE401DE42C65004427F0 /* FLXKTabBarController.m */; };
 		B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7621DE58AFC00598437 /* FLXKStyleManager.m */; };
@@ -77,6 +79,10 @@
 		B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FLXKAddition.m"; sourceTree = "<group>"; };
 		B92B55B91DD98099009A373A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		B92B55BA1DD98099009A373A /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
+		B92F6C841DF6865500185DF0 /* FLXKPublishCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishCollectionViewCell.h; sourceTree = "<group>"; };
+		B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishCollectionViewCell.m; sourceTree = "<group>"; };
+		B92F6C871DF6BBB300185DF0 /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
+		B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
 		B930C1F81DE548D4004F729B /* FLXKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBar.h; sourceTree = "<group>"; };
 		B930C1F91DE548D4004F729B /* FLXKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBar.m; sourceTree = "<group>"; };
 		B940CE3F1DE42C65004427F0 /* FLXKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBarController.h; sourceTree = "<group>"; };
@@ -290,6 +296,8 @@
 				B941F7681DE58E7B00598437 /* UIColor+Extensions */,
 				B92B55B91DD98099009A373A /* UIView+Extensions.h */,
 				B92B55BA1DD98099009A373A /* UIView+Extensions.m */,
+				B92F6C871DF6BBB300185DF0 /* UIAlertController+Extensions.h */,
+				B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */,
 			);
 			path = "FLXK+Addition";
 			sourceTree = "<group>";
@@ -379,6 +387,8 @@
 			children = (
 				B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */,
 				B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */,
+				B92F6C841DF6865500185DF0 /* FLXKPublishCollectionViewCell.h */,
+				B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */,
 			);
 			path = PublishNewsController;
 			sourceTree = "<group>";
@@ -686,6 +696,8 @@
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
+				B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */,
+				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
