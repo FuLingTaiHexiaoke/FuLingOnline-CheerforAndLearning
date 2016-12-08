@@ -14,7 +14,7 @@
 /**
  *  基本信息区分
  */
-@property(nonatomic,copy)NSNumber* id;//source_id
+@property(nonatomic)NSInteger id;//source_id
 @property(nonatomic,copy)NSNumber* type_id;//Home explore community
 @property(nonatomic,strong)NSString* type_name;
 @property(nonatomic,copy)NSNumber* sub_type_id;//cell header

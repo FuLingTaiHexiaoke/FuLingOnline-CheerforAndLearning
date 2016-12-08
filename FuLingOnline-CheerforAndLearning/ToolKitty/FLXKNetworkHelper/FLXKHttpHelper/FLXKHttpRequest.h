@@ -43,6 +43,9 @@ typedef void (^taskProgress)(NSProgress *);
 
 //文件\图片上传
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathString:(NSString*)filePathString success:(successBlock)success failure:(failureBlock)failure;
+
++(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters images:(NSArray<UIImage*>*)images success:(successBlock)success failure:(failureBlock)failure;
+
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray success:(successBlock)success failure:(failureBlock)failure;
 
 //文件下载

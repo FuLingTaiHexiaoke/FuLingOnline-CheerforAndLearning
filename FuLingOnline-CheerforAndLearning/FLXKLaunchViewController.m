@@ -125,7 +125,7 @@
 -(void)getAdImageInfo{
     //    http://127.0.0.1:3000/api/getAdimg
     @weakify(self);
-    [FLXKHttpRequest get:BaseURL(@"api/getAdimg") success:^(NSURLSessionDataTask *task, id responseObject) {
+    [FLXKHttpRequest get:Url_GetAdvertisementImageInfo success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray* dicArray=(NSArray*)responseObject;
         if (dicArray.count>0) {
             NSDictionary* dic=(NSDictionary*)[dicArray lastObject];
@@ -133,7 +133,7 @@
             [adImageInfoModel setValuesForKeysWithDictionary:dic];
             @strongify(self);
             self.adImageInfoModel=adImageInfoModel;
-            [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@""]];
+            [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@""] options:SDWebImageAllowInvalidSSLCertificates];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         FLXKLog(@"%@",error.description);

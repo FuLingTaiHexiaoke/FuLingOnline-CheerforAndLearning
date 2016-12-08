@@ -18,9 +18,9 @@
     dispatch_once(&onceToken, ^{
         afHTTPSessionManager=[[AFHTTPSessionManager alloc]init];
         //1)默认为AFJSONResponseSerializer，我们再次加上AFHTTPResponseSerializer，以保证验证通过。基本够用。
-        NSSet <NSString *>*  acceptableContentTypes= afHTTPSessionManager.responseSerializer.acceptableContentTypes;
-        NSSet <NSString *>*  appendContentTypes=  [AFHTTPResponseSerializer serializer].acceptableContentTypes;
-        afHTTPSessionManager.responseSerializer.acceptableContentTypes=[acceptableContentTypes setByAddingObjectsFromSet:appendContentTypes];
+        afHTTPSessionManager.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+        
+        [FLXKHttpRequest setAFSecurityPolicy:afHTTPSessionManager];
     });
     return afHTTPSessionManager;
 }
@@ -34,7 +34,7 @@
 //判断是否有网,
 //不封装在下面的方法里。增大程序的灵活性。
 +(BOOL)isReachable{
-  return  [AFNetworkReachabilityManager sharedManager].isReachable;
+    return  [AFNetworkReachabilityManager sharedManager].isReachable;
 }
 
 //get请求
@@ -55,6 +55,17 @@
     NSArray<NSString *> * filePathStringArray=[NSArray arrayWithObject:filePathString];
     
     [FLXKHttpRequest upload:URLString parameters:urlParameters filePathStringArray:filePathStringArray progress:nil success:success  failure:failure];
+}
+
++(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters images:(NSArray<UIImage*>*)images success:(successBlock)success failure:(failureBlock)failure{
+    [[FLXKHttpRequest sharedAFManager] POST:URLString parameters:urlParameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+    [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+               NSData* imageData=UIImageJPEGRepresentation(obj,0.7);
+            [formData appendPartWithFileData:imageData name:@"uploadImage" fileName:@"uploadImage.jpg" mimeType:@"image/jpeg" ];
+        }];
+        
+    } progress:nil success:success  failure:failure];
 }
 
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray progress:(taskProgress)taskProgress success:(successBlock)success failure:(failureBlock)failure{
@@ -116,5 +127,67 @@
 //暂时用不到此方法
 +(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success failure:(failureBlock)failure{
     
+}
+
++(void)setAFSecurityPolicy:(AFHTTPSessionManager*)manager{
+    
+//    NSSet * certificates= [AFSecurityPolicy  certificatesInBundle:[NSBundle mainBundle]];
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certificates];
+    
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+//    securityPolicy.allowInvalidCertificates = YES;
+    securityPolicy.validatesDomainName = NO;
+//
+    manager.securityPolicy=securityPolicy;
+    
+    
+    __weak __typeof(manager) weakManager=manager;
+    [manager setSessionDidReceiveAuthenticationChallengeBlock:^NSURLSessionAuthChallengeDisposition(NSURLSession *session, NSURLAuthenticationChallenge *challenge, NSURLCredential *__autoreleasing *_credential) {
+        
+        SecTrustRef serverTrust = [[challenge protectionSpace] serverTrust];
+        /**
+         *  导入多张CA证书（Certification Authority，支持SSL证书以及自签名的CA），请替换掉你的证书名称
+         */
+        NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"https_fulingonline" ofType:@"cer"];//自签名证书
+        NSData* caCert = [NSData dataWithContentsOfFile:cerPath];
+        //        NSArray<NSData*> *cerArray = @[caCert];
+        NSSet* cerArray=[NSSet setWithObjects:caCert, nil];
+        weakManager.securityPolicy.pinnedCertificates = cerArray;
+        CFDataRef caCertRef=(__bridge CFDataRef)caCert;
+        SecCertificateRef caRef = SecCertificateCreateWithData(NULL,caCertRef);
+        NSCAssert(caRef != nil, @"caRef is nil");
+        NSArray *caArray = @[(__bridge id)(caRef)];
+        NSCAssert(caArray != nil, @"caArray is nil");
+        
+        OSStatus status = SecTrustSetAnchorCertificates(serverTrust, (__bridge CFArrayRef)caArray);
+        SecTrustSetAnchorCertificatesOnly(serverTrust,NO);
+        NSCAssert(errSecSuccess == status, @"SecTrustSetAnchorCertificates failed");
+        
+        
+        //        我们通过protectionSpace.authenticationMethod判断是否信任服务器证书
+        //        - NSURLSessionAuthChallengeUseCredential = 0, 使用凭据 ，信任服务器证书
+        //        - NSURLSessionAuthChallengePerformDefaultHandling = 1, 默认处理，忽略服务器证书
+        //        - NSURLSessionAuthChallengeCancelAuthenticationChallenge = 2, 整个请求被取消 凭据被忽略
+        //        - NSURLSessionAuthChallengeRejectProtectionSpace = 3, 本次拒绝，下次重试
+        
+        NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+        __autoreleasing NSURLCredential *credential = nil;
+        if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+            if ([weakManager.securityPolicy evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:challenge.protectionSpace.host]) {
+                credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+                if (credential) {
+                    disposition = NSURLSessionAuthChallengeUseCredential;
+                } else {
+                    disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+                }
+            } else {
+                disposition = NSURLSessionAuthChallengeCancelAuthenticationChallenge;
+            }
+        } else {
+            disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+        }
+        
+        return disposition;
+    }];
 }
 @end
