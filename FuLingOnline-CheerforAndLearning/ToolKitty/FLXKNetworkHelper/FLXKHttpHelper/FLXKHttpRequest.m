@@ -39,9 +39,11 @@
 
 //get请求
 +(void)get:(NSString*)URLString success:(successBlock)success failure:(failureBlock)failure{
+    FLXKLog(@"%@",URLString);
     [FLXKHttpRequest get:URLString parameters:nil success:success failure:failure];
 }
 +(void)get:(NSString*)URLString parameters:(NSDictionary*)urlParameters success:(successBlock)success failure:(failureBlock)failure{
+    FLXKLog(@"%@",URLString);
     [[FLXKHttpRequest sharedAFManager] GET:URLString parameters:urlParameters progress:nil success:success failure:failure];
 }
 
@@ -58,6 +60,7 @@
 }
 
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters images:(NSArray<UIImage*>*)images success:(successBlock)success failure:(failureBlock)failure{
+    FLXKLog(@"%@",URLString);
     [[FLXKHttpRequest sharedAFManager] POST:URLString parameters:urlParameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
     [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

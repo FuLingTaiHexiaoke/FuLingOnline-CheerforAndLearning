@@ -107,11 +107,12 @@
     model.id=arc4random();
     model.type_name=@"test";
    NSDictionary *modelDict= model.mj_keyValues;
-[FLXKHttpRequest upload:<#(NSString *)#> parameters:modelDict images:_selectedPhotos success:^(NSURLSessionDataTask *task, id responseObject) {
+//    NSDictionary *modelDict=@{'_csrf'=_csrf} ;
+[FLXKHttpRequest upload:Url_UploadPublishNews parameters:modelDict images:_selectedPhotos success:^(NSURLSessionDataTask *task, id responseObject) {
     NSLog(@"success");
 } failure:^(NSURLSessionDataTask *task, NSError *error) {
       NSLog(@"failure");
-}]
+}];
     
 }
 
