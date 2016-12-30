@@ -21,7 +21,10 @@ pod 'Bugly'
 pod 'Tweaks'
 
 ## Autolayout
-pod 'Masonry'
+#pod 'Masonry'
+
+##custom views
+# pod 'HPGrowingTextView'
 end
 
 

@@ -14,84 +14,83 @@
 /**
  *  基本信息区分
  */
-@property(nonatomic)NSInteger id;//source_id
-@property(nonatomic,copy)NSNumber* type_id;//Home explore community
+@property(nonatomic,assign)NSInteger id;//source_id
+@property(nonatomic,assign)NSInteger type_id;//Home explore community
 @property(nonatomic,strong)NSString* type_name;
-@property(nonatomic,copy)NSNumber* sub_type_id;//cell header
+@property(nonatomic,assign)NSInteger sub_type_id;//cell header
 @property(nonatomic,strong)NSString* sub_type_name;
 
 
 /**
  *  发布时间
  */
-@property (nonatomic,copy) NSString *ptime;
+@property (nonatomic) NSDate *ptime;
 
 
 /**
  *  标题
  */
-@property (nonatomic,copy) NSString *title;
+@property (nonatomic) NSString *title;
 
 
 /**
  *  具体描述
  */
-@property (nonatomic,copy) NSString *subtitle;
-@property (nonatomic,copy) NSString *detail_url;
+@property (nonatomic) NSString *subtitle;
+@property (nonatomic) NSString *detail_url;
 
 
 
 /**
  *  新闻
  */
-@property (nonatomic,copy) NSString *doc_id;
-@property (nonatomic,copy) NSString *is_topic;
-@property (nonatomic,copy) NSString *doc_url;
-//@property (nonatomic,assign)BOOL has_image;
-@property (nonatomic,assign)NSNumber* has_image;
-@property (nonatomic,copy)NSNumber *has_head;
-//@property (nonatomic,assign)BOOL has_video;
-@property (nonatomic,assign)NSNumber * has_video;
-@property (nonatomic,copy) NSString *video_id;
+@property (nonatomic) NSString *doc_id;
+@property (nonatomic) NSString *is_topic;
+@property (nonatomic) NSString *doc_content;
+@property (nonatomic) NSString *doc_url;
+@property (nonatomic,assign)NSInteger has_image;
+@property (nonatomic,assign)NSInteger has_head;
+@property (nonatomic,assign)NSInteger has_video;
+@property (nonatomic) NSString *video_id;
 
-@property (nonatomic,copy)NSNumber *hasAD;
+@property (nonatomic,assign)NSInteger *hasAD;
 
-@property (nonatomic,copy)NSNumber *priority;
+@property (nonatomic,assign)NSInteger *priority;
 
 /**
  *  图片类型
  */
-@property (nonatomic,copy)NSNumber *image_type;
+@property (nonatomic,assign)NSInteger *image_type;
 
 
 /**
  *  图片链接
  */
-@property (nonatomic,copy) NSString *image_url;
-@property (nonatomic,copy) NSString *head_url;
-//@property (nonatomic,copy) NSArray<NSString *>* image_urls;
-@property (nonatomic,copy)NSString * image_urls;
-@property (nonatomic,copy)NSNumber *order;
+@property (nonatomic) NSString *image_url;
+@property (nonatomic) NSString *head_url;
+//@property (nonatomic) NSArray<NSString *>* image_urls;
+@property (nonatomic)NSString * image_urls;
+@property (nonatomic,assign)NSInteger order;
 
 
 /**
  *  视频链接
  */
-@property (nonatomic,copy) NSString *video_url;
+@property (nonatomic) NSString *video_url;
 
 
 /**
  *  作者
  */
-@property (nonatomic,strong)NSArray *editor;
+@property (nonatomic,strong)NSString *editor;
 
 
 /**
  *  跟帖人数
  */
-@property (nonatomic,copy)NSNumber *replyCount;
-@property (nonatomic,copy)NSNumber *votecount;
-@property (nonatomic,copy) NSString *commentid;
+@property (nonatomic,assign)NSInteger replyCount;
+@property (nonatomic,assign)NSInteger thumbsupCount;
+@property (nonatomic) NSString *commentid;
 
 
 @end

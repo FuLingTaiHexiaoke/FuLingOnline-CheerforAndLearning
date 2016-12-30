@@ -17,7 +17,7 @@
 
 #define Url_GetAdvertisementImageInfo BaseURL(@"launch/getAdvertisementImage")
 
-//https://192.168.2.110:3000/publishNewsController/PublishNewsModel
+//https://127.0.0.1:3000/publishNewsController/PublishNewsModel
 #define Url_UploadPublishNews BaseURL(@"publishNewsController/PublishNewsModel")
 
 #endif
