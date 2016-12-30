@@ -69,6 +69,7 @@
     return self;
 }
 
+
 #pragma mark - changeKeyBoard
 //- (void)changeKeyboardType:(InputViewType)type
 //{

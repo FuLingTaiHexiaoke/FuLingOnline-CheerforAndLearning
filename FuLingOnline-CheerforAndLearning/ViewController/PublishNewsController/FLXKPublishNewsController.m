@@ -180,8 +180,8 @@
 - (IBAction)showEmotionView:(UIBarButtonItem *)sender{
     static int i=0;
     if (i) {
-        //     self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-        //        [self.view addSubview: self.emotionKeyBoard];
+             self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
+                [self.view addSubview: self.emotionKeyBoard];
         [UIView animateWithDuration:0.5 animations:^{
             self.publishToolBarView.frame=CGRectMake(0, 238,320, 78);
         }];
