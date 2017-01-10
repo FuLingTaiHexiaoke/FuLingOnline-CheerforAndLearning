@@ -60,13 +60,13 @@
     [super viewDidLoad];
     //setup data properties
     [self initDataProperty];
-    
+
     //set up collectionview
     [self initCollectionView];
-    
+
     //set up subviews
     [self   initSubViews];
-    
+
     [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(self.publishToolBarPositionView);
         make.bottom.equalTo(self.view.mas_bottom);
@@ -119,7 +119,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKPublishCollectionViewCell * cell= (FLXKPublishCollectionViewCell *) [_publishImageChoosingCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell_PublishImageChoosingCollectionView" forIndexPath:indexPath];
     NSInteger count= _selectedPhotos.count;
-    
+
     //add selected images
     if (indexPath.item<count) {
         cell.choosedImageDisplayImageView.image=_selectedPhotos[indexPath.item];
@@ -129,7 +129,7 @@
         cell.deleteChoosedImageButton.tag=indexPath.item;
         [cell.choosedImageDisplayButton removeTarget:self action:@selector(chooseSharingPhotos) forControlEvents:UIControlEventTouchUpInside];
     }
-    
+
     //add last
     if (indexPath.row==count) {
         cell.choosedImageDisplayImageView.image=[UIImage imageNamed:@"btn_album_add"];
@@ -143,19 +143,19 @@
 
 //set up collectionview
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender {
-    
+
     FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
     model.type_id=001;
     model.type_name=@"个人状态发布";
     model.doc_content=_publishTextView.text;
     model.editor=@"psylife";
-    
+
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         NSLog(@"success");
     } failureCallback:^(NSError *err) {
         NSLog(@"failure");
     }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
-    
+
 }
 
 #pragma mark - UITextViewDelegate
@@ -178,25 +178,68 @@
 
 #pragma mark - Private Methods
 - (IBAction)showEmotionView:(UIBarButtonItem *)sender{
-    static int i=0;
-    if (i) {
-             self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-                [self.view addSubview: self.emotionKeyBoard];
-        [UIView animateWithDuration:0.5 animations:^{
-            self.publishToolBarView.frame=CGRectMake(0, 238,320, 78);
-        }];
-        [self.publishTextView becomeFirstResponder];
-        
-        
+    static BOOL isShowingEmotionBoard=NO;
+    if (!self.emotionKeyBoard) {
+        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
+//        [self.view addSubview: self.emotionKeyBoard];
+
     }
     else{
-        [self.publishTextView resignFirstResponder];
-        //        [self.emotionKeyBoard removeFromSuperview];
-        [UIView animateWithDuration:0.5 animations:^{
-            self.publishToolBarView.frame=CGRectMake(0, 490,320, 78);
-        }];
+        if (!isShowingEmotionBoard) {
+//                        [self.publishTextView resignFirstResponder];
+            self.publishTextView.inputView=self.emotionKeyBoard;
+            [self.publishTextView reloadInputViews];
+//                        [self.publishTextView becomeFirstResponder];
+        }
+        else{
+//                  [self.publishTextView resignFirstResponder];
+//            [self.emotionKeyBoard removeFromSuperview];
+            self.publishTextView.inputView=nil;
+              [self.publishTextView reloadInputViews];
+//              [self.publishTextView becomeFirstResponder];
+        }
+
+        isShowingEmotionBoard=!isShowingEmotionBoard;
+//        //已经上移
+//        if (self.emotionKeyBoard.top>self.publishToolBarView.top) {
+//            [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                make.height.mas_equalTo(78);
+//                make.left.and.right.mas_equalTo(self.view);
+//                make.bottom.equalTo(self.view.mas_bottom).offset(self.emotionKeyBoard.height);
+//            }];
+//            self.publishTextView.inputView=self.emotionKeyBoard;
+//            [self.publishTextView becomeFirstResponder];
+//
+//        }
+//        //还在底部
+//        else{
+//            [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                make.height.mas_equalTo(78);
+//                make.left.and.right.mas_equalTo(self.view);
+//                make.bottom.equalTo(self.view.mas_bottom);
+//            }];
+//        }
+//        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//            [self.view layoutIfNeeded];
+//        } completion:^(BOOL finished) {
+//
+//        }];
+
+
+
     }
-    i=!i;
+
+
+
+
+    //    else{
+    //        [self.publishTextView resignFirstResponder];
+    //        //        [self.emotionKeyBoard removeFromSuperview];
+    //        [UIView animateWithDuration:0.5 animations:^{
+    //            self.publishToolBarView.frame=CGRectMake(0, 490,320, 78);
+    //        }];
+    //    }
+    //    i=!i;
 }
 
 -(void)initDataProperty{
@@ -215,7 +258,7 @@
     flowLayout.minimumLineSpacing=5;
     //    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 0, 5);
     _publishImageChoosingCollectionView.collectionViewLayout=flowLayout;
-    
+
     _publishImageChoosingCollectionView.delegate=self;
     _publishImageChoosingCollectionView.dataSource=self;
 }
@@ -223,7 +266,7 @@
 - (void)deleteBtnClik:(UIButton *)sender {
     [_selectedPhotos removeObjectAtIndex:sender.tag];
     [_selectedAssets removeObjectAtIndex:sender.tag];
-    
+
     [_publishImageChoosingCollectionView performBatchUpdates:^{
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
         [_publishImageChoosingCollectionView deleteItemsAtIndexPaths:@[indexPath]];
@@ -236,7 +279,7 @@
     TZImagePickerController* imagePickerVc=[[TZImagePickerController alloc]initWithMaxImagesCount:9 delegate:nil];
     imagePickerVc.selectedAssets=_selectedAssets;
     imagePickerVc.sortAscendingByModificationDate=NO;
-    
+
     @weakify(self)
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray * assets, BOOL isSelectOriginalPhoto) {
         @strongify(self)
@@ -251,21 +294,21 @@
 }
 
 -(void)keyboardWillChangeFrame:(NSNotification*)notif{
-    
-    NSLog(@"keyboardChange:%@",[notif userInfo]);
+
+//    NSLog(@"keyboardChange:%@",[notif userInfo]);
     float keyboadHeightBegin = 0;
     float keyboadHeightEnd = 0;
-    
+
     float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
-    
+
     CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
     keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
-    
-        NSLog(@"self.publishToolBarView.frame:%@,To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightBegin);
-    
+
+    NSLog(@"11111self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightBegin);
+
     if (keyboadHeightBegin>0) {
         [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(78);
@@ -281,11 +324,11 @@
         }];
     }
     [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-    [self.view layoutIfNeeded];
+        [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
     }];
-
-    NSLog(@"self.publishToolBarView.frame:%@,To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightEnd);
+    
+    NSLog(@"22222self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightEnd);
     
 }
 

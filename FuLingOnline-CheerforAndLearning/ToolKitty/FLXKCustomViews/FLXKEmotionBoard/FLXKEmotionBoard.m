@@ -64,7 +64,7 @@
         //set textview focused
         self.editingTextView.inputView=self;
         //添加键盘弹出-隐藏通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     }
     return self;
 }
@@ -232,31 +232,31 @@
 }
 
 #pragma mark Keyboard
--(void)keyboardWillChangeFrame:(NSNotification*)notif{
-    NSLog(@"keyboardChange:%@",[notif userInfo]);
-    float keyboadHeightBegin = 0;
-    float keyboadHeightEnd = 0;
-    
-    float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
-
-    CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
-    keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
-
-    NSLog(@"keyboardHeightChangeFrom:%.2f,To:%.2f",keyboadHeightBegin,keyboadHeightEnd);
-    if (keyboadHeightBegin>0) {
-        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-            self.swithButtonContainer.top=self.swithButtonContainer.top+keyboadHeightBegin;
-        } completion:^(BOOL finished) {
-        }];
-    }
-    else{
-        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-            self.swithButtonContainer.top=self.swithButtonContainer.top-keyboadHeightEnd;
-        } completion:^(BOOL finished) {
-        }];
-    }
-}
+//-(void)keyboardWillChangeFrame:(NSNotification*)notif{
+//    NSLog(@"keyboardChange:%@",[notif userInfo]);
+//    float keyboadHeightBegin = 0;
+//    float keyboadHeightEnd = 0;
+//    
+//    float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
+//    UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
+//
+//    CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+//    CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
+//    keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
+//
+//    NSLog(@"keyboardHeightChangeFrom:%.2f,To:%.2f",keyboadHeightBegin,keyboadHeightEnd);
+//    if (keyboadHeightBegin>0) {
+//        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+//            self.swithButtonContainer.top=self.swithButtonContainer.top+keyboadHeightBegin;
+//        } completion:^(BOOL finished) {
+//        }];
+//    }
+//    else{
+//        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+//            self.swithButtonContainer.top=self.swithButtonContainer.top-keyboadHeightEnd;
+//        } completion:^(BOOL finished) {
+//        }];
+//    }
+//}
 @end
