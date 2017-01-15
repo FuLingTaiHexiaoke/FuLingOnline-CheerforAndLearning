@@ -39,6 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *publishTopicChooseButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *publishEmotionChooseButton;
 
+//status change
+@property (assign, nonatomic)NSInteger isChangeInputView;
 
 //IBAction
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender;
@@ -75,6 +77,8 @@
 
     //添加键盘弹出-隐藏通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -181,65 +185,41 @@
     static BOOL isShowingEmotionBoard=NO;
     if (!self.emotionKeyBoard) {
         self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-//        [self.view addSubview: self.emotionKeyBoard];
+        //        [self.view addSubview: self.emotionKeyBoard];
 
     }
     else{
-        if (!isShowingEmotionBoard) {
-//                        [self.publishTextView resignFirstResponder];
-            self.publishTextView.inputView=self.emotionKeyBoard;
-            [self.publishTextView reloadInputViews];
-//                        [self.publishTextView becomeFirstResponder];
-        }
-        else{
-//                  [self.publishTextView resignFirstResponder];
-//            [self.emotionKeyBoard removeFromSuperview];
-            self.publishTextView.inputView=nil;
-              [self.publishTextView reloadInputViews];
-//              [self.publishTextView becomeFirstResponder];
-        }
-
-        isShowingEmotionBoard=!isShowingEmotionBoard;
-//        //已经上移
-//        if (self.emotionKeyBoard.top>self.publishToolBarView.top) {
-//            [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.height.mas_equalTo(78);
-//                make.left.and.right.mas_equalTo(self.view);
-//                make.bottom.equalTo(self.view.mas_bottom).offset(self.emotionKeyBoard.height);
-//            }];
-//            self.publishTextView.inputView=self.emotionKeyBoard;
-//            [self.publishTextView becomeFirstResponder];
-//
-//        }
-//        //还在底部
-//        else{
-//            [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.height.mas_equalTo(78);
-//                make.left.and.right.mas_equalTo(self.view);
-//                make.bottom.equalTo(self.view.mas_bottom);
-//            }];
-//        }
-//        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            [self.view layoutIfNeeded];
-//        } completion:^(BOOL finished) {
-//
-//        }];
+        //        if (!isShowingEmotionBoard) {
+        ////                        [self.publishTextView resignFirstResponder];
+        //            self.publishTextView.inputView=self.emotionKeyBoard;
+        //            [self.publishTextView reloadInputViews];
+        ////                        [self.publishTextView becomeFirstResponder];
+        //        }
+        //        else{
+        ////                  [self.publishTextView resignFirstResponder];
+        ////            [self.emotionKeyBoard removeFromSuperview];
+        //            self.publishTextView.inputView=nil;
+        //              [self.publishTextView reloadInputViews];
+        ////              [self.publishTextView becomeFirstResponder];
+        //        }
+        //
+        //        isShowingEmotionBoard=!isShowingEmotionBoard;
 
 
+        _isChangeInputView=YES;
+        [self.publishTextView resignFirstResponder];
 
+
+//        self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
+//        _isChangeInputView=NO;
+//        [self.publishTextView becomeFirstResponder];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.15f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
+            _isChangeInputView=NO;
+            [self.publishTextView becomeFirstResponder];
+        });
     }
 
-
-
-
-    //    else{
-    //        [self.publishTextView resignFirstResponder];
-    //        //        [self.emotionKeyBoard removeFromSuperview];
-    //        [UIView animateWithDuration:0.5 animations:^{
-    //            self.publishToolBarView.frame=CGRectMake(0, 490,320, 78);
-    //        }];
-    //    }
-    //    i=!i;
 }
 
 -(void)initDataProperty{
@@ -294,8 +274,10 @@
 }
 
 -(void)keyboardWillChangeFrame:(NSNotification*)notif{
+//    [self.publishToolBarView removeConstraints: self.publishToolBarView.constraints];
+//    [self.view updateConstraints];
 
-//    NSLog(@"keyboardChange:%@",[notif userInfo]);
+    //    NSLog(@"keyboardChange:%@",[notif userInfo]);
     float keyboadHeightBegin = 0;
     float keyboadHeightEnd = 0;
 
@@ -308,6 +290,13 @@
     keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
 
     NSLog(@"11111self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightBegin);
+    if ([NSStringFromCGRect(keyboardBeginFrame) isEqualToString:NSStringFromCGRect(keyboardEndFrame) ]) {
+        return;
+    }
+
+    if (_isChangeInputView) {
+             return;
+    }
 
     if (keyboadHeightBegin>0) {
         [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -332,4 +321,12 @@
     
 }
 
+-(void)keyboardWillChangeFrame1:(NSNotification*)notif{
+
+        NSLog(@"keyboardWillChangeFrame1");
+}
+-(void)keyboardWillChangeFrame2:(NSNotification*)notif{
+
+    NSLog(@"keyboardWillChangeFrame2");
+}
 @end
