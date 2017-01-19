@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FLXKEmotionBoard : UIView
++(instancetype)sharedEmotionBoard;
 -(id)initWithFrame:(CGRect)frame editingTextView:(UITextView*)editingTextView containerView:(UIView*)containerView;
 @end

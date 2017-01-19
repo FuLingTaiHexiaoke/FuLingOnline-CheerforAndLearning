@@ -24,6 +24,10 @@
 //Style
 #import "FLXKStyleManager.h"
 
+//utilities
+#import "EntityGeneratorViewController.h"
+
+
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
     
@@ -46,6 +50,13 @@
     _companyLogoView.backgroundColor=RGB(54,196,126);
     [self loadAppAnimation];
     [self showTweaksButton];
+    
+    if (DEBUG) {
+        UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
+        [btn addTarget:self action:@selector(showEntityGenerator) forControlEvents:UIControlEventTouchUpInside];
+        btn.backgroundColor=[UIColor yellowColor];
+        [self.view addSubview:btn];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -227,4 +238,10 @@
     ////        _window.layer.sublayerTransform = CATransform3DMakeScale(1.0, [_flipTweak.currentValue boolValue] ? -1.0 : 1.0, 1.0);
     //    }
 }
+
+-(void)showEntityGenerator{
+    EntityGeneratorViewController* entityGeneratorViewController=[[EntityGeneratorViewController alloc]initWithNibName:@"EntityGeneratorViewController" bundle:nil];
+    [self presentViewController:entityGeneratorViewController animated:YES completion:nil];
+}
+
 @end

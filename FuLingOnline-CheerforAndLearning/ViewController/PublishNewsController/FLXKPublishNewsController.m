@@ -77,8 +77,8 @@
 
     //添加键盘弹出-隐藏通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -184,42 +184,22 @@
 - (IBAction)showEmotionView:(UIBarButtonItem *)sender{
     static BOOL isShowingEmotionBoard=NO;
     if (!self.emotionKeyBoard) {
-        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-        //        [self.view addSubview: self.emotionKeyBoard];
+//        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
+        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
+//                [self.view addSubview: self.emotionKeyBoard];
+        
+////        self.emotionKeyBoard=   [FLXKEmotionBoardTest sharedEmotionBoard];
+//        [self.view addSubview: self.emotionKeyBoard];
 
     }
-    else{
-        //        if (!isShowingEmotionBoard) {
-        ////                        [self.publishTextView resignFirstResponder];
-        //            self.publishTextView.inputView=self.emotionKeyBoard;
-        //            [self.publishTextView reloadInputViews];
-        ////                        [self.publishTextView becomeFirstResponder];
-        //        }
-        //        else{
-        ////                  [self.publishTextView resignFirstResponder];
-        ////            [self.emotionKeyBoard removeFromSuperview];
-        //            self.publishTextView.inputView=nil;
-        //              [self.publishTextView reloadInputViews];
-        ////              [self.publishTextView becomeFirstResponder];
-        //        }
-        //
-        //        isShowingEmotionBoard=!isShowingEmotionBoard;
-
-
         _isChangeInputView=YES;
         [self.publishTextView resignFirstResponder];
 
-
-//        self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
-//        _isChangeInputView=NO;
-//        [self.publishTextView becomeFirstResponder];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.15f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
             _isChangeInputView=NO;
             [self.publishTextView becomeFirstResponder];
         });
-    }
-
 }
 
 -(void)initDataProperty{

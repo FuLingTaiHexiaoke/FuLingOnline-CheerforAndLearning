@@ -8,17 +8,82 @@
 
 #import "FLXKEmotionBoard.h"
 #import "EmojiTextAttachment.h"
+
+//entity
+#import "EmotionGroup.h"
+#import "EmotionItem.h"
+#import "EmotionRecentItems.h"
+
+//models
+#import "EmotionGroupDetailModel.h"
+
 @interface FLXKEmotionBoard ()<UIScrollViewDelegate>
-@property(nonatomic)UIPageControl* pageControl;
+//@property(nonatomic)UIPageControl* pageControl;
 @property(nonatomic,strong)NSMutableArray *faces;
 @property(nonatomic,strong)UIScrollView *faceScroll;
 @property(nonatomic,strong)UITextView *editingTextView;
 @property(nonatomic,strong)UIView *swithButtonContainer;
+
+//IBOutlet views
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (weak, nonatomic) IBOutlet UIScrollView *emotionContainerScrollView;
+@property (weak, nonatomic) IBOutlet UICollectionView *emotionGroupIndexCollectionView;
+@property (weak, nonatomic) IBOutlet UIButton *leftBottomButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightBottomButton;
+
+//models
+@property(nonatomic,strong)NSMutableArray<EmotionGroupDetailModel *>* emotionGroupDetailModels;
 @end
 
 @implementation FLXKEmotionBoard
 
 #pragma mark - Public Methods
+
++(instancetype)sharedEmotionBoard{
+    static FLXKEmotionBoard* sharedEmotionBoard=nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray* nibViews =  [[NSBundle mainBundle] loadNibNamed:@"FLXKEmotionBoard" owner:nil options:nil];
+        sharedEmotionBoard=[nibViews objectAtIndex:0];
+    });
+    return sharedEmotionBoard;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [EmotionGroup createTable];
+        [EmotionItem createTable];
+        [EmotionRecentItems createTable];
+        
+    }
+    return self;
+}
+
+//读取表情配置文件生成models
+-(NSMutableArray<EmotionGroupDetailModel *>*)emotionGroupDetailModels{
+    NSMutableArray<EmotionGroupDetailModel *>* emotionGroupDetailModels=[NSMutableArray array];
+    [[EmotionGroup selectAll]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        EmotionGroupDetailModel * model=[[EmotionGroupDetailModel alloc]init];
+        model.groupId=obj.id;
+        model.groupName=obj.emotionGroupName;
+        model.groupImageUrl=obj.emotionGroupImageUrl;
+        [emotionGroupDetailModels addObject:model];
+    }];
+    return emotionGroupDetailModels;
+}
+
+//将这些models打入scrollview
+//-(void)setupEmotionViewInScrollView{
+//    [self.emotionGroupDetailModels enumerateObjectsUsingBlock:^(EmotionGroupDetailModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSArray<FLXKEmotionShowingScrollView*>* emotionViews=[FLXKEmotionShowingScrollView setupEmotionViews];
+//    }];
+//}
+
+
+
 
 //初始化表情视图
 -(id)initWithFrame:(CGRect)frame editingTextView:(UITextView*)editingTextView containerView:(UIView*)containerView{
@@ -64,7 +129,7 @@
         //set textview focused
         self.editingTextView.inputView=self;
         //添加键盘弹出-隐藏通知
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     }
     return self;
 }
@@ -94,8 +159,8 @@
 //            break;
 //    }
 //    //    [self.inputView removeFromSuperview];
-//    
-//    
+//
+//
 //    if (self.isFirstResponder)
 //    {
 //        [self.internalTextView reloadInputViews];
@@ -171,7 +236,7 @@
                 [button addTarget:self action:@selector(didSelectAFace:)forControlEvents:UIControlEventTouchUpInside];
                 
                 [page addSubview:button];
-
+                
             }//for (int j=0; j<eachRowFaceCount;
             
             
@@ -222,13 +287,13 @@
     
     //Insert emoji image
     [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]
-                                                      atIndex:self.editingTextView.selectedRange.location];
+                                                     atIndex:self.editingTextView.selectedRange.location];
     
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
     
     //Reset text style
-//    [self resetTextStyle];
+    //    [self resetTextStyle];
 }
 
 #pragma mark Keyboard
@@ -236,7 +301,7 @@
 //    NSLog(@"keyboardChange:%@",[notif userInfo]);
 //    float keyboadHeightBegin = 0;
 //    float keyboadHeightEnd = 0;
-//    
+//
 //    float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
 //    UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
 //
