@@ -12,15 +12,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FLXKEmotionBoard">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-Iu-kYW" customClass="FLXKEmotionShowingScrollView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="197"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
                     <color key="backgroundColor" red="0.94117647059999998" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="245" id="p0T-oe-W7V"/>
+                    </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gys-lV-Wzv">
-                    <rect key="frame" x="0.0" y="217" width="45" height="35"/>
+                    <rect key="frame" x="0.0" y="181" width="45" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="gXe-7f-InT"/>
                         <constraint firstAttribute="height" constant="35" id="qbe-8K-IYP"/>
@@ -28,7 +31,7 @@
                     <state key="normal" image="dd_utility"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zda-v3-1X6">
-                    <rect key="frame" x="0.0" y="197" width="375" height="20"/>
+                    <rect key="frame" x="0.0" y="245" width="375" height="20"/>
                     <subviews>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s00-yq-tgC">
                             <rect key="frame" x="168" y="-8" width="39" height="37"/>
@@ -41,21 +44,21 @@
                         <constraint firstItem="s00-yq-tgC" firstAttribute="centerY" secondItem="zda-v3-1X6" secondAttribute="centerY" id="gZk-Ot-z0O"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-7M-RTQ">
-                    <rect key="frame" x="45" y="217" width="285" height="35"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-7M-RTQ" customClass="FLXKEmotionGroupIndexCollectionView">
+                    <rect key="frame" x="45" y="181" width="285" height="35"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="F0p-Xs-TCe"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OVn-NS-gbf">
-                        <size key="itemSize" width="50" height="50"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OVn-NS-gbf">
+                        <size key="itemSize" width="30" height="30"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-PW-dYw">
-                    <rect key="frame" x="330" y="217" width="45" height="35"/>
+                    <rect key="frame" x="330" y="265" width="45" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="ByT-R4-Ba8"/>
                         <constraint firstAttribute="height" constant="35" id="wbJ-m4-cZ7"/>

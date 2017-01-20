@@ -11,9 +11,6 @@
 		B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B900259B1DAE244A00B34438 /* FLXKAppNotification.m */; };
 		B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */ = {isa = PBXBuildFile; fileRef = B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
-		B924D8CF1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D8CE1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.m */; };
-		B924D8D21E2F60C800A5D9F6 /* FLXKEmotionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D8D11E2F60C800A5D9F6 /* FLXKEmotionCollectionView.m */; };
-		B924D8D41E2F60F300A5D9F6 /* FLXKEmotionCollectionViewNomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B924D8D31E2F60F300A5D9F6 /* FLXKEmotionCollectionViewNomalCell.xib */; };
 		B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */; };
 		B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */; };
 		B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */; };
@@ -26,7 +23,6 @@
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B93AF5C01E30A2B100F51E26 /* FLXKEmotionResouceBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B93AF5BF1E30A2B100F51E26 /* FLXKEmotionResouceBundle.bundle */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
-		B93AF5C61E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C51E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.m */; };
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKViewControllerBase.m */; };
 		B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B940CE401DE42C65004427F0 /* FLXKTabBarController.m */; };
@@ -40,6 +36,15 @@
 		B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */ = {isa = PBXBuildFile; fileRef = B94C60271DF93D25005739A6 /* https_fulingonline.cer */; };
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
+		B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */; };
+		B95A32551E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A32491E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib */; };
+		B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A324B1E31B95600E71D9D /* FLXKEmotionBoard.m */; };
+		B95A32571E31B95600E71D9D /* FLXKEmotionBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A324C1E31B95600E71D9D /* FLXKEmotionBoard.xib */; };
+		B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A324F1E31B95600E71D9D /* FLXKEmotionCollectionView.m */; };
+		B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32511E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m */; };
+		B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */; };
+		B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A325D1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m */; };
+		B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A325E1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib */; };
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
@@ -170,7 +175,6 @@
 		B966A9B61E0CFF5B00222095 /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B966A9B21E0CFF5B00222095 /* HPTextViewInternal.m */; };
 		B966A9B71E0CFF5B00222095 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = B966A9B31E0CFF5B00222095 /* LICENSE.txt */; };
 		B966A9B81E0CFF5B00222095 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B966A9B41E0CFF5B00222095 /* README.md */; };
-		B966A9BC1E0D0F7900222095 /* FLXKEmotionBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B966A9BB1E0D0F7900222095 /* FLXKEmotionBoard.m */; };
 		B966DF171E139D9200BFE3EA /* NSDate+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
@@ -184,13 +188,13 @@
 		B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619C1E2DEC76008B6356 /* FMDatabaseQueue.m */; };
 		B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619F1E2DEC76008B6356 /* FMResultSet.m */; };
 		B97261AD1E2DED0E008B6356 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */; };
-		B97261AF1E2DF779008B6356 /* FLXKEmotionBoard.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261AE1E2DF779008B6356 /* FLXKEmotionBoard.xib */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
 		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
 		B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */; };
+		B9C9153E1E31E28B0060051E /* UIImage+EmotionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C9153D1E31E28B0060051E /* UIImage+EmotionExtension.m */; };
 		B9D854B71DAC8BE2001AD79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B61DAC8BE2001AD79C /* main.m */; };
 		B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B91DAC8BE2001AD79C /* AppDelegate.m */; };
 		B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854BC1DAC8BE2001AD79C /* ViewController.m */; };
@@ -232,11 +236,6 @@
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
-		B924D8CD1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionShowingScrollView.h; sourceTree = "<group>"; };
-		B924D8CE1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionShowingScrollView.m; sourceTree = "<group>"; };
-		B924D8D01E2F60C800A5D9F6 /* FLXKEmotionCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionView.h; sourceTree = "<group>"; };
-		B924D8D11E2F60C800A5D9F6 /* FLXKEmotionCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionView.m; sourceTree = "<group>"; };
-		B924D8D31E2F60F300A5D9F6 /* FLXKEmotionCollectionViewNomalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKEmotionCollectionViewNomalCell.xib; sourceTree = "<group>"; };
 		B924D8D61E2F648A00A5D9F6 /* FLXKEmotionDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionDBHelper.h; sourceTree = "<group>"; };
 		B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionDBHelper.m; sourceTree = "<group>"; };
 		B924D9131E2F66EC00A5D9F6 /* EmotionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroup.h; sourceTree = "<group>"; };
@@ -259,8 +258,6 @@
 		B93AF5BF1E30A2B100F51E26 /* FLXKEmotionResouceBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FLXKEmotionResouceBundle.bundle; sourceTree = "<group>"; };
 		B93AF5C11E30AADA00F51E26 /* EmotionGroupDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroupDetailModel.h; sourceTree = "<group>"; };
 		B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionGroupDetailModel.m; sourceTree = "<group>"; };
-		B93AF5C41E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionViewNomalCell.h; sourceTree = "<group>"; };
-		B93AF5C51E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionViewNomalCell.m; sourceTree = "<group>"; };
 		B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHttpRequestModelHelper.h; sourceTree = "<group>"; };
 		B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHttpRequestModelHelper.m; sourceTree = "<group>"; };
 		B93FF8891E01285800070BD4 /* FLXKViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKViewControllerBase.h; sourceTree = "<group>"; };
@@ -283,6 +280,22 @@
 		B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLXKLaunchViewController.storyboard; sourceTree = "<group>"; };
 		B94E83DE1DCC92DD00D2823B /* BaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
+		B95A32411E31AF9D00E71D9D /* FLXKEmotionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionConfig.h; sourceTree = "<group>"; };
+		B95A32471E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionViewNomalCell.h; sourceTree = "<group>"; };
+		B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionViewNomalCell.m; sourceTree = "<group>"; };
+		B95A32491E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKEmotionCollectionViewNomalCell.xib; sourceTree = "<group>"; };
+		B95A324A1E31B95600E71D9D /* FLXKEmotionBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionBoard.h; sourceTree = "<group>"; };
+		B95A324B1E31B95600E71D9D /* FLXKEmotionBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionBoard.m; sourceTree = "<group>"; };
+		B95A324C1E31B95600E71D9D /* FLXKEmotionBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKEmotionBoard.xib; sourceTree = "<group>"; };
+		B95A324E1E31B95600E71D9D /* FLXKEmotionCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionView.h; sourceTree = "<group>"; };
+		B95A324F1E31B95600E71D9D /* FLXKEmotionCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionView.m; sourceTree = "<group>"; };
+		B95A32501E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionGroupIndexCollectionView.h; sourceTree = "<group>"; };
+		B95A32511E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionGroupIndexCollectionView.m; sourceTree = "<group>"; };
+		B95A32521E31B95600E71D9D /* FLXKEmotionShowingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionShowingScrollView.h; sourceTree = "<group>"; };
+		B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionShowingScrollView.m; sourceTree = "<group>"; };
+		B95A325C1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNormalEmotionGroupCollectionViewCell.h; sourceTree = "<group>"; };
+		B95A325D1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNormalEmotionGroupCollectionViewCell.m; sourceTree = "<group>"; };
+		B95A325E1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKNormalEmotionGroupCollectionViewCell.xib; sourceTree = "<group>"; };
 		B95A66B81DE6ACD500AB42E4 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
@@ -424,8 +437,6 @@
 		B966A9B21E0CFF5B00222095 /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
 		B966A9B31E0CFF5B00222095 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B966A9B41E0CFF5B00222095 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B966A9BA1E0D0F7900222095 /* FLXKEmotionBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionBoard.h; sourceTree = "<group>"; };
-		B966A9BB1E0D0F7900222095 /* FLXKEmotionBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionBoard.m; sourceTree = "<group>"; };
 		B966DF151E139D9200BFE3EA /* NSDate+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extensions.h"; sourceTree = "<group>"; };
 		B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extensions.m"; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
@@ -450,7 +461,6 @@
 		B972619E1E2DEC76008B6356 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		B972619F1E2DEC76008B6356 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		B97261AE1E2DF779008B6356 /* FLXKEmotionBoard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKEmotionBoard.xib; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
 		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
@@ -460,6 +470,8 @@
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
 		B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsController.h; sourceTree = "<group>"; };
 		B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsController.m; sourceTree = "<group>"; };
+		B9C9153C1E31E28B0060051E /* UIImage+EmotionExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EmotionExtension.h"; sourceTree = "<group>"; };
+		B9C9153D1E31E28B0060051E /* UIImage+EmotionExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EmotionExtension.m"; sourceTree = "<group>"; };
 		B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D854B61DAC8BE2001AD79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D854B81DAC8BE2001AD79C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -637,6 +649,8 @@
 			children = (
 				B924D8D61E2F648A00A5D9F6 /* FLXKEmotionDBHelper.h */,
 				B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */,
+				B9C9153C1E31E28B0060051E /* UIImage+EmotionExtension.h */,
+				B9C9153D1E31E28B0060051E /* UIImage+EmotionExtension.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -761,6 +775,44 @@
 				B941F7721DE59B2600598437 /* HomeNewsViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B95A32401E31AF7C00E71D9D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				B95A32411E31AF9D00E71D9D /* FLXKEmotionConfig.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B95A32451E31B95600E71D9D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B95A32461E31B95600E71D9D /* Cells */,
+				B95A324A1E31B95600E71D9D /* FLXKEmotionBoard.h */,
+				B95A324B1E31B95600E71D9D /* FLXKEmotionBoard.m */,
+				B95A324C1E31B95600E71D9D /* FLXKEmotionBoard.xib */,
+				B95A324E1E31B95600E71D9D /* FLXKEmotionCollectionView.h */,
+				B95A324F1E31B95600E71D9D /* FLXKEmotionCollectionView.m */,
+				B95A32501E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.h */,
+				B95A32511E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m */,
+				B95A32521E31B95600E71D9D /* FLXKEmotionShowingScrollView.h */,
+				B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B95A32461E31B95600E71D9D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B95A32471E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.h */,
+				B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */,
+				B95A32491E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib */,
+				B95A325C1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.h */,
+				B95A325D1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m */,
+				B95A325E1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B95A66B71DE6ACB400AB42E4 /* HeaderView */ = {
@@ -967,19 +1019,11 @@
 		B966A9B91E0D0F3800222095 /* FLXKEmotionBoard */ = {
 			isa = PBXGroup;
 			children = (
+				B95A32401E31AF7C00E71D9D /* Config */,
 				B924D9121E2F657300A5D9F6 /* Model */,
 				B924D9111E2F656700A5D9F6 /* Entity */,
 				B924D8D51E2F648A00A5D9F6 /* Utilities */,
-				B966A9BA1E0D0F7900222095 /* FLXKEmotionBoard.h */,
-				B966A9BB1E0D0F7900222095 /* FLXKEmotionBoard.m */,
-				B97261AE1E2DF779008B6356 /* FLXKEmotionBoard.xib */,
-				B924D8CD1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.h */,
-				B924D8CE1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.m */,
-				B924D8D01E2F60C800A5D9F6 /* FLXKEmotionCollectionView.h */,
-				B924D8D11E2F60C800A5D9F6 /* FLXKEmotionCollectionView.m */,
-				B924D8D31E2F60F300A5D9F6 /* FLXKEmotionCollectionViewNomalCell.xib */,
-				B93AF5C41E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.h */,
-				B93AF5C51E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.m */,
+				B95A32451E31B95600E71D9D /* ViewController */,
 				B93AF5BA1E30A21900F51E26 /* Resouce */,
 			);
 			path = FLXKEmotionBoard;
@@ -1337,8 +1381,8 @@
 				B966A9A21E0CFAD200222095 /* smiley_9.png in Resources */,
 				B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */,
 				B966A9791E0CFAD200222095 /* smiley_52.png in Resources */,
+				B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */,
 				B966A96F1E0CFAD200222095 /* smiley_43.png in Resources */,
-				B97261AF1E2DF779008B6356 /* FLXKEmotionBoard.xib in Resources */,
 				B966A9691E0CFAD200222095 /* smiley_38.png in Resources */,
 				B966A9731E0CFAD200222095 /* smiley_47.png in Resources */,
 				B966A9711E0CFAD200222095 /* smiley_45.png in Resources */,
@@ -1378,6 +1422,7 @@
 				B966A94F1E0CFAD200222095 /* smiley_14.png in Resources */,
 				B966A93C1E0CFAD200222095 /* dd_input_normal.png in Resources */,
 				B966A9891E0CFAD200222095 /* smiley_67.png in Resources */,
+				B95A32571E31B95600E71D9D /* FLXKEmotionBoard.xib in Resources */,
 				B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */,
 				B966A99E1E0CFAD200222095 /* smiley_86.png in Resources */,
 				B966A9881E0CFAD200222095 /* smiley_66.png in Resources */,
@@ -1398,12 +1443,12 @@
 				B966A94A1E0CFAD200222095 /* smiley_103.png in Resources */,
 				B966A93F1E0CFAD200222095 /* dd_record_normal@2x.png in Resources */,
 				B966A9811E0CFAD200222095 /* smiley_6.png in Resources */,
+				B95A32551E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib in Resources */,
 				B966A95A1E0CFAD200222095 /* smiley_24.png in Resources */,
 				B966A93E1E0CFAD200222095 /* dd_record_normal.png in Resources */,
 				B966A9911E0CFAD200222095 /* smiley_74.png in Resources */,
 				B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */,
 				B966A9A11E0CFAD200222095 /* smiley_89.png in Resources */,
-				B924D8D41E2F60F300A5D9F6 /* FLXKEmotionCollectionViewNomalCell.xib in Resources */,
 				B966A9541E0CFAD200222095 /* smiley_19.png in Resources */,
 				B966A9701E0CFAD200222095 /* smiley_44.png in Resources */,
 				B966A9AC1E0CFAD200222095 /* smiley_99.png in Resources */,
@@ -1548,39 +1593,42 @@
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B966A9371E0CFAD200222095 /* NSAttributedString+EmojiExtension.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
+				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
 				B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */,
 				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B966A9331E0CFAD200222095 /* FaceKeyBoard.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
+				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
 				B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */,
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
+				B9C9153E1E31E28B0060051E /* UIImage+EmotionExtension.m in Sources */,
 				B966A9B61E0CFF5B00222095 /* HPTextViewInternal.m in Sources */,
 				B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */,
 				B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
 				B966DF171E139D9200BFE3EA /* NSDate+Extensions.m in Sources */,
+				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
-				B966A9BC1E0D0F7900222095 /* FLXKEmotionBoard.m in Sources */,
 				B966A9311E0CFAD200222095 /* EmojiTextAttachment.m in Sources */,
 				B966A9B81E0CFF5B00222095 /* README.md in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
-				B924D8CF1E2F5F8200A5D9F6 /* FLXKEmotionShowingScrollView.m in Sources */,
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
 				B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */,
-				B924D8D21E2F60C800A5D9F6 /* FLXKEmotionCollectionView.m in Sources */,
 				B966A9381E0CFAD200222095 /* SubHPGrowingTextView.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
+				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
+				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */,
 				B966A9321E0CFAD200222095 /* EmotionKeyBoard.m in Sources */,
 				B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */,
@@ -1591,8 +1639,8 @@
 				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
 				B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */,
+				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,
-				B93AF5C61E30C39000F51E26 /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B966A9B51E0CFF5B00222095 /* HPGrowingTextView.m in Sources */,
 				B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */,
 			);

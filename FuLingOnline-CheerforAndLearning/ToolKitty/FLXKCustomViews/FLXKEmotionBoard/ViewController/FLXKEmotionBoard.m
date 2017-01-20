@@ -58,6 +58,8 @@
         [EmotionItem createTable];
         [EmotionRecentItems createTable];
         
+        //setup the relationship between subview control
+        _emotionContainerScrollView.delegate=self;
     }
     return self;
 }
@@ -81,6 +83,33 @@
 //        NSArray<FLXKEmotionShowingScrollView*>* emotionViews=[FLXKEmotionShowingScrollView setupEmotionViews];
 //    }];
 //}
+
+
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+}
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+}- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    
+}
 
 
 
@@ -255,22 +284,22 @@
 #pragma mark scrollDelegate
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    [self setPageNumOfPageControl:scrollView];
-}
-
-- (void)setPageNumOfPageControl:(UIScrollView *)scrollView{
-    //see which page should be
-    float scrollOffset=scrollView.contentOffset.x;
-    float curentPage=scrollOffset/scrollView.frame.size.width;
-    float mode=((int)scrollOffset)%((int)scrollView.frame.size.width);
-    //set numberpage
-    if (mode>0.5) {
-        self.pageControl.currentPage=curentPage+1;
-    }else{
-        self.pageControl.currentPage=curentPage;
-    }
-}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+//    [self setPageNumOfPageControl:scrollView];
+//}
+//
+//- (void)setPageNumOfPageControl:(UIScrollView *)scrollView{
+//    //see which page should be
+//    float scrollOffset=scrollView.contentOffset.x;
+//    float curentPage=scrollOffset/scrollView.frame.size.width;
+//    float mode=((int)scrollOffset)%((int)scrollView.frame.size.width);
+//    //set numberpage
+//    if (mode>0.5) {
+//        self.pageControl.currentPage=curentPage+1;
+//    }else{
+//        self.pageControl.currentPage=curentPage;
+//    }
+//}
 
 
 - (void)insertEmoji:(NSString*)emotionName imageName:(NSString*)imageName {

@@ -11,5 +11,5 @@
 
 @interface FLXKEmotionCollectionViewNomalCell : UICollectionViewCell
 @property(nonatomic,strong)EmotionItem* item;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *emotionButton;
 @end

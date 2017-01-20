@@ -8,6 +8,12 @@
 
 #import "FLXKEmotionCollectionView.h"
 
+//utilities
+#import "UIImage+EmotionExtension.h"
+
+//configv
+#import "FLXKEmotionConfig.h"
+
 //views
 #import "FLXKEmotionCollectionViewNomalCell.h"
 
@@ -16,12 +22,16 @@
 
 
 
-#define CollectionViewFrame CGRectMake(0, 0, FULL_WIDTH, 197)
-#define Cell_FLXKEmotionCollectionViewNomalCell @"FLXKEmotionCollectionViewNomalCell"
+
+
 
 @interface FLXKEmotionCollectionView()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,assign)NSInteger groupId;
 @property(nonatomic,strong)NSArray<EmotionItem*>* emotionItems;
+
+//layout property
+@property (nonatomic) CGFloat miniInteritemSpacing;
+@property (nonatomic) CGFloat miniLineSpacing;
 @end
 
 @implementation FLXKEmotionCollectionView
@@ -40,15 +50,24 @@
 
 -(instancetype)initWithFrame:(CGRect)frame withEmotionItems:(NSArray<EmotionItem*>*)emotionItems{
     UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
-    flowLayout.itemSize=CGSizeMake(50, 50);
-//    self.collectionViewLayout=flowLayout;
+    //    flowLayout.itemSize=CGSizeMake(30, 30);
+    NSInteger  itemWidth=FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"itemWidth", 30);
+    self.miniInteritemSpacing=(Screen_Width-7*itemWidth)/8;
+    self.miniLineSpacing=(CollectionViewHeight-3*itemWidth)/4;
+    flowLayout.minimumInteritemSpacing= self.miniInteritemSpacing;
+    flowLayout.minimumLineSpacing=self.miniLineSpacing;
+    flowLayout.itemSize=CGSizeMake(itemWidth, itemWidth);
     
-//    self=[super initWithFrame:frame];
-   self= [super initWithFrame:frame collectionViewLayout:flowLayout];
+    self= [super initWithFrame:frame collectionViewLayout:flowLayout];
     if (self) {
-//        UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
-//        flowLayout.itemSize=CGSizeMake(50, 50);
-//        self.collectionViewLayout=flowLayout;
+        //        UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
+        //        flowLayout.itemSize=CGSizeMake(Screen_Width/7, CollectionViewHeight/3);
+        //        self.collectionViewLayout=flowLayout;
+        
+        self.pagingEnabled=YES;
+//        self.contentInset=UIEdgeInsetsMake(FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"Inset-top", 20), 10, 10, 10);
+        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
+        self.backgroundColor=RGBA(243,244,246,1.0);
         self.emotionItems=emotionItems;
         self.dataSource=self;
         self.delegate=self;
@@ -66,8 +85,9 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
-//    cell.item= self.emotionItems[indexPath.item];
-    cell.imageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+    //    cell.item= self.emotionItems[indexPath.item];
+    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
+    //    cell.imageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
     return cell;
 }
 

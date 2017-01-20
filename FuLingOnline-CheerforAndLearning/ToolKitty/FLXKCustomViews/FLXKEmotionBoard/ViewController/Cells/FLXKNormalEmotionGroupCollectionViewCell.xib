@@ -11,29 +11,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9uu-I8-TPQ" customClass="FLXKEmotionCollectionViewNomalCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FLXKNormalEmotionGroupCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6wR-bt-kAY">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-i6-qqH">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    </imageView>
+                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="6wR-bt-kAY" firstAttribute="top" secondItem="9uu-I8-TPQ" secondAttribute="top" id="6AL-3t-rky"/>
-                <constraint firstAttribute="trailing" secondItem="6wR-bt-kAY" secondAttribute="trailing" id="aLT-al-7Ab"/>
-                <constraint firstAttribute="bottom" secondItem="6wR-bt-kAY" secondAttribute="bottom" id="oR0-pu-tPV"/>
-                <constraint firstItem="6wR-bt-kAY" firstAttribute="leading" secondItem="9uu-I8-TPQ" secondAttribute="leading" id="wGF-Js-38L"/>
+                <constraint firstAttribute="trailing" secondItem="0Ig-i6-qqH" secondAttribute="trailing" id="4Et-c6-w11"/>
+                <constraint firstAttribute="bottom" secondItem="0Ig-i6-qqH" secondAttribute="bottom" id="7im-ae-hAh"/>
+                <constraint firstItem="0Ig-i6-qqH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EgO-To-Qyf"/>
+                <constraint firstItem="0Ig-i6-qqH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MLR-02-njl"/>
             </constraints>
-            <size key="customSize" width="78" height="93"/>
             <connections>
-                <outlet property="imageView" destination="6wR-bt-kAY" id="Y6M-bF-Xaz"/>
+                <outlet property="groupEmotionButton" destination="0Ig-i6-qqH" id="K4S-q7-5mn"/>
             </connections>
-            <point key="canvasLocation" x="40" y="73"/>
         </collectionViewCell>
     </objects>
 </document>

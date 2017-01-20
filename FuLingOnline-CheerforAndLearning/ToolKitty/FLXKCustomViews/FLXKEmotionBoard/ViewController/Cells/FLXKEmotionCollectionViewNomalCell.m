@@ -19,7 +19,7 @@
 -(void)setItem:(EmotionItem *)item{
     self.item=item;
     UIImage* image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
-    self.imageView.image=image;
+    [self.emotionButton setImage:image forState:UIControlStateNormal];
 }
 
 @end
