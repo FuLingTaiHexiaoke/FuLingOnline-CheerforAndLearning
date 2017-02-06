@@ -66,7 +66,8 @@
         
         self.pagingEnabled=YES;
 //        self.contentInset=UIEdgeInsetsMake(FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"Inset-top", 20), 10, 10, 10);
-        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
+//        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
+          self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
         self.backgroundColor=RGBA(243,244,246,1.0);
         self.emotionItems=emotionItems;
         self.dataSource=self;

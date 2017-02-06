@@ -8,6 +8,9 @@
 
 #import "FLXKEmotionShowingScrollView.h"
 
+//config
+#import "FLXKEmotionConfig.h"
+
 //views
 #import "FLXKEmotionCollectionView.h"
 
@@ -22,15 +25,18 @@
         [[EmotionGroup selectAll]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (idx==0) {
                 NSArray<FLXKEmotionCollectionView*>* views=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id];
-                self.contentSize=CGSizeMake( self.width*views.count, self.height);
+                self.contentSize=CGSizeMake( Screen_Width*views.count, self.height);
                 for (int i=0; i<views.count; i++) {
-                    views[i].left=self.width*i;
-                    NSLog(@"%@",NSStringFromCGRect(views[i].frame));
+                    views[i].left=Screen_Width*i;
+                    NSLog(@"NSStringFromCGRect:%d %@", i,NSStringFromCGRect(views[i].frame));
                     [self addSubview:views[i]];
                 }
             }
         }];
     }
+    
+    self.pagingEnabled=YES;
+    
     return self;
 }
 

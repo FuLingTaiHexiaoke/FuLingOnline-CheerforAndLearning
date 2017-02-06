@@ -16,10 +16,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKa-Iu-kYW" customClass="FLXKEmotionShowingScrollView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
                     <color key="backgroundColor" red="0.94117647059999998" green="0.94509803920000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="245" id="p0T-oe-W7V"/>
+                        <constraint firstAttribute="height" constant="161" id="p0T-oe-W7V"/>
                     </constraints>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gys-lV-Wzv">
@@ -31,7 +31,7 @@
                     <state key="normal" image="dd_utility"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zda-v3-1X6">
-                    <rect key="frame" x="0.0" y="245" width="375" height="20"/>
+                    <rect key="frame" x="0.0" y="161" width="375" height="20"/>
                     <subviews>
                         <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s00-yq-tgC">
                             <rect key="frame" x="168" y="-8" width="39" height="37"/>
@@ -58,7 +58,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-PW-dYw">
-                    <rect key="frame" x="330" y="265" width="45" height="35"/>
+                    <rect key="frame" x="330" y="181" width="45" height="35"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="ByT-R4-Ba8"/>
                         <constraint firstAttribute="height" constant="35" id="wbJ-m4-cZ7"/>

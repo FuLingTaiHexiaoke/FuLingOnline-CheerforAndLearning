@@ -60,6 +60,7 @@
         
         //setup the relationship between subview control
         _emotionContainerScrollView.delegate=self;
+        _emotionContainerScrollView.pagingEnabled=YES;
     }
     return self;
 }
