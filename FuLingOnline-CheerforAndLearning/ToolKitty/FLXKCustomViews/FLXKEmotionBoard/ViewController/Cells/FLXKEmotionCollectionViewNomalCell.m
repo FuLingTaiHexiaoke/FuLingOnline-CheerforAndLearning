@@ -7,7 +7,8 @@
 //
 
 #import "FLXKEmotionCollectionViewNomalCell.h"
-#import "EmotionItem.h"
+
+#import "UIImage+EmotionExtension.h"
 
 @interface FLXKEmotionCollectionViewNomalCell()
 
@@ -16,10 +17,11 @@
 
 @implementation FLXKEmotionCollectionViewNomalCell
 
--(void)setItem:(EmotionItem *)item{
-    self.item=item;
-    UIImage* image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
-    [self.emotionButton setImage:image forState:UIControlStateNormal];
-}
+//-(void)setItem:(EmotionItem *)item{
+//    self.item=item;
+//    UIImage* image=[UIImage ImageWithName:item.emotionItemSmallImageUrl];
+//    [self.emotionButton setImage:image forState:UIControlStateNormal];
+//
+//}
 
 @end

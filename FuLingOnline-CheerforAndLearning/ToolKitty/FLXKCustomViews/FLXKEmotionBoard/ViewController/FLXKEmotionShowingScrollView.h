@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EmotionItem;
+@protocol FLXKEmotionShowingScrollViewDelegate <NSObject>
+
+@optional
+-(void)didSelectedEmotionItem:(EmotionItem*)emotionItem;
+
+@end
 
 @interface FLXKEmotionShowingScrollView : UIScrollView
+
+@property (nonatomic,weak) id<FLXKEmotionShowingScrollViewDelegate> emotionSelectedDelegate;
+
 +(NSArray<FLXKEmotionShowingScrollView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId;
 @end

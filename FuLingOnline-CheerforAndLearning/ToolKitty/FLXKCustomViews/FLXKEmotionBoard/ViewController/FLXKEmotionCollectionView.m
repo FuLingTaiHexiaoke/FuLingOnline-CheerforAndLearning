@@ -57,22 +57,22 @@
     flowLayout.minimumInteritemSpacing= self.miniInteritemSpacing;
     flowLayout.minimumLineSpacing=self.miniLineSpacing;
     flowLayout.itemSize=CGSizeMake(itemWidth, itemWidth);
-    
+
     self= [super initWithFrame:frame collectionViewLayout:flowLayout];
     if (self) {
         //        UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
         //        flowLayout.itemSize=CGSizeMake(Screen_Width/7, CollectionViewHeight/3);
         //        self.collectionViewLayout=flowLayout;
-        
+
         self.pagingEnabled=YES;
-//        self.contentInset=UIEdgeInsetsMake(FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"Inset-top", 20), 10, 10, 10);
-//        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
-          self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
+        //        self.contentInset=UIEdgeInsetsMake(FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"Inset-top", 20), 10, 10, 10);
+        //        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
+        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
         self.backgroundColor=RGBA(243,244,246,1.0);
         self.emotionItems=emotionItems;
         self.dataSource=self;
         self.delegate=self;
-        
+
         [self registerNib:[UINib nibWithNibName:@"FLXKEmotionCollectionViewNomalCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell];
     }
     return self;
@@ -86,10 +86,23 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
-    //    cell.item= self.emotionItems[indexPath.item];
-    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
-    //    cell.imageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+    cell.item= self.emotionItems[indexPath.item];
+    NSLog(@"indexPath.item %ld", (long)indexPath.item);
+    //    [cell setItem:self.emotionItems[indexPath.item]];
+    //    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
+    cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"indexPath.item %ld", (long)indexPath.item);
+    if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+    {
+        [self.emotionSelectedDelegate didSelectedEmotionItem: self.emotionItems[indexPath.item]];
+    }
+
 }
 
 #pragma mark - Private Methods

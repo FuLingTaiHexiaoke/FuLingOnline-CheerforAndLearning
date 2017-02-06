@@ -15,18 +15,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M6I-nY-CJq"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xP-0V-cio"/>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="M6I-nY-CJq" firstAttribute="top" secondItem="9uu-I8-TPQ" secondAttribute="top" id="34w-R7-oNi"/>
-                <constraint firstAttribute="trailing" secondItem="M6I-nY-CJq" secondAttribute="trailing" id="T8I-80-jPZ"/>
-                <constraint firstItem="M6I-nY-CJq" firstAttribute="leading" secondItem="9uu-I8-TPQ" secondAttribute="leading" id="bwt-4h-wgt"/>
-                <constraint firstAttribute="bottom" secondItem="M6I-nY-CJq" secondAttribute="bottom" id="iUt-MS-28Y"/>
+                <constraint firstItem="7xP-0V-cio" firstAttribute="leading" secondItem="9uu-I8-TPQ" secondAttribute="leading" id="74H-O4-cJ4"/>
+                <constraint firstItem="7xP-0V-cio" firstAttribute="top" secondItem="9uu-I8-TPQ" secondAttribute="top" id="87S-YH-Nmg"/>
+                <constraint firstAttribute="bottom" secondItem="7xP-0V-cio" secondAttribute="bottom" id="qzl-hD-WBT"/>
+                <constraint firstAttribute="trailing" secondItem="7xP-0V-cio" secondAttribute="trailing" id="xha-Cu-rTl"/>
             </constraints>
             <size key="customSize" width="78" height="93"/>
             <connections>
-                <outlet property="emotionImageView" destination="M6I-nY-CJq" id="U5m-Jp-CdI"/>
+                <outlet property="emotionButton" destination="7xP-0V-cio" id="mg7-3T-XQx"/>
             </connections>
             <point key="canvasLocation" x="40" y="73"/>
         </collectionViewCell>

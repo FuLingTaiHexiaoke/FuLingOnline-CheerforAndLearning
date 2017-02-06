@@ -9,6 +9,10 @@
 #import "FLXKEmotionBoard.h"
 #import "EmojiTextAttachment.h"
 
+//subviews
+#import "FLXKEmotionCollectionView.h"
+#import "FLXKEmotionShowingScrollView.h"
+
 //entity
 #import "EmotionGroup.h"
 #import "EmotionItem.h"
@@ -17,7 +21,7 @@
 //models
 #import "EmotionGroupDetailModel.h"
 
-@interface FLXKEmotionBoard ()<UIScrollViewDelegate>
+@interface FLXKEmotionBoard ()<UIScrollViewDelegate,FLXKEmotionShowingScrollViewDelegate>
 //@property(nonatomic)UIPageControl* pageControl;
 @property(nonatomic,strong)NSMutableArray *faces;
 @property(nonatomic,strong)UIScrollView *faceScroll;
@@ -26,7 +30,7 @@
 
 //IBOutlet views
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
-@property (weak, nonatomic) IBOutlet UIScrollView *emotionContainerScrollView;
+@property (weak, nonatomic) IBOutlet FLXKEmotionShowingScrollView *emotionContainerScrollView;
 @property (weak, nonatomic) IBOutlet UICollectionView *emotionGroupIndexCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *leftBottomButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightBottomButton;
@@ -61,8 +65,19 @@
         //setup the relationship between subview control
         _emotionContainerScrollView.delegate=self;
         _emotionContainerScrollView.pagingEnabled=YES;
+        _emotionContainerScrollView.emotionSelectedDelegate=self;
+//        [self setDelegateForSubViewsInScrollView];
     }
     return self;
+}
+
+//-(void)setDelegateForSubViewsInScrollView{
+//_emotionContainerScrollView.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//    <#code#>
+//}
+//}
+-(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
+    NSLog(@"%@", emotionItem);
 }
 
 //读取表情配置文件生成models

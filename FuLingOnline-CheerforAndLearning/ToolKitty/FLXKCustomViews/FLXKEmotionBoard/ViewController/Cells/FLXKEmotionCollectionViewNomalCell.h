@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class EmotionItem;
+
+#import "EmotionItem.h"
+//@class EmotionItem;
 
 @interface FLXKEmotionCollectionViewNomalCell : UICollectionViewCell
 @property(nonatomic,strong)EmotionItem* item;
-@property (weak, nonatomic) IBOutlet UIButton *emotionButton;
+//@property (weak, nonatomic) IBOutlet UIButton *emotionButton;
+@property (weak, nonatomic) IBOutlet UIImageView *emotionImageView;
+//-(void)setItem:(EmotionItem *)item;
 @end

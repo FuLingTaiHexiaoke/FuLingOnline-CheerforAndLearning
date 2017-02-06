@@ -17,6 +17,10 @@
 //Entity
 #import "EmotionGroup.h"
 
+@interface FLXKEmotionShowingScrollView() <FLXKEmotionCollectionViewDelegate>
+
+@end
+
 @implementation FLXKEmotionShowingScrollView
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -30,6 +34,9 @@
                     views[i].left=Screen_Width*i;
                     NSLog(@"NSStringFromCGRect:%d %@", i,NSStringFromCGRect(views[i].frame));
                     [self addSubview:views[i]];
+
+                    //get FLXKEmotionBoard
+                    views[i].emotionSelectedDelegate= self;
                 }
             }
         }];
@@ -40,4 +47,11 @@
     return self;
 }
 
+-(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
+
+    if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+    {
+        [self.emotionSelectedDelegate didSelectedEmotionItem: emotionItem];
+    }
+}
 @end

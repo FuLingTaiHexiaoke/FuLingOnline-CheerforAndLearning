@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class EmotionItem;
+
+@protocol FLXKEmotionCollectionViewDelegate <NSObject>
+
+@optional
+-(void)didSelectedEmotionItem:(EmotionItem*)emotionItem;
+
+@end
 
 @interface FLXKEmotionCollectionView : UICollectionView
+
+@property (nonatomic,weak) id<FLXKEmotionCollectionViewDelegate> emotionSelectedDelegate;
+
 +(NSArray<FLXKEmotionCollectionView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId;
 @end
