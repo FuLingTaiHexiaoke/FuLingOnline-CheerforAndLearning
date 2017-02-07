@@ -10,6 +10,8 @@
 
 @implementation EmojiTextAttachment
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex {
-    return CGRectMake(0, 0, _emojiSize.width, _emojiSize.height);
+//    return CGRectMake(0, 0, _emojiSize.width, _emojiSize.height);
+//     return CGRectMake(0, 0, _emojiSize.width, lineFrag.size.height);
+        return CGRectMake(0, -lineFrag.size.height/5, lineFrag.size.height, lineFrag.size.height);
 }
 @end

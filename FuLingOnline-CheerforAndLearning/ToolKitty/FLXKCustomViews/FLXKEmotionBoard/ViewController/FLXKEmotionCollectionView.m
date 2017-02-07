@@ -15,6 +15,7 @@
 #import "FLXKEmotionConfig.h"
 
 //views
+
 #import "FLXKEmotionCollectionViewNomalCell.h"
 
 //models
@@ -81,29 +82,46 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return   self.emotionItems.count;
+    return   self.emotionItems.count+1;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
-    cell.item= self.emotionItems[indexPath.item];
-    NSLog(@"indexPath.item %ld", (long)indexPath.item);
-    //    [cell setItem:self.emotionItems[indexPath.item]];
-    //    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
-    cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+    if (indexPath.item<20) {
+        cell.item= self.emotionItems[indexPath.item];
+        NSLog(@"indexPath.item %ld", (long)indexPath.item);
+        //    [cell setItem:self.emotionItems[indexPath.item]];
+        //    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
+        cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+        cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
+            if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+            {
+                [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
+            }
+        };
+    }
+    else{
+        cell.emotionImageView.image=[UIImage imageNamed:@"del_emoji_normal@2x.png"];
+        cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
+            if ([self.emotionSelectedDelegate respondsToSelector:@selector(deleteElementInTextView)])
+            {
+                [self.emotionSelectedDelegate deleteElementInTextView];
+            }
+        };
+    }
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"indexPath.item %ld", (long)indexPath.item);
-    if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
-    {
-        [self.emotionSelectedDelegate didSelectedEmotionItem: self.emotionItems[indexPath.item]];
-    }
-
-}
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"indexPath.item %ld", (long)indexPath.item);
+//    if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+//    {
+//        [self.emotionSelectedDelegate didSelectedEmotionItem: self.emotionItems[indexPath.item]];
+//    }
+//
+//}
 
 #pragma mark - Private Methods
 //-(NSArray<EmotionItem*>*)emotionItems{

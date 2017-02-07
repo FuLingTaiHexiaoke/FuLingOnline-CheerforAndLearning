@@ -92,7 +92,11 @@
 
 #define FileManager     ([NSFileManager defaultManager])
 #define UserDefaults ([NSUserDefaults standardUserDefaults])
-#define UserDefaultsObjForKey(key) (  [[NSUserDefaults standardUserDefaults]objectForKey:key])
+#define UserDefaultsObjForKey(key) (  [[NSUserDefaults standardUserDefaults]objectForKey:key] )
+#define UserDefaultsSetObjForKey(obj,key) ( [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key] )
+#define UserDefaultsRemoveObjForKey(key) ( [[NSUserDefaults standardUserDefaults]removeObjectForKey:key] )
+#define UserDefaultsSynchronize [ [NSUserDefaults standardUserDefaults] synchronize];
+
 #define VoiceMessageDir ([[NSString documentPath] stringByAppendingPathComponent:@"/VoiceMessageDir/"])
 #define BlacklistDir ([[NSString documentPath] stringByAppendingPathComponent:@"/BlacklistDir/"])
 #define Departmentlist ([[NSString documentPath] stringByAppendingPathComponent:@"/department.plist"])

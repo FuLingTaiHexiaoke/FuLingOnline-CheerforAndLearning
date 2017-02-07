@@ -13,7 +13,7 @@
 
 @optional
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem;
-
+-(void)deleteElementInTextView;
 @end
 
 @interface FLXKEmotionCollectionView : UICollectionView

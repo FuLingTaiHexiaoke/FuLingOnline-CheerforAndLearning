@@ -12,7 +12,7 @@
 
 @optional
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem;
-
+-(void)deleteElementInTextView;
 @end
 
 @interface FLXKEmotionShowingScrollView : UIScrollView

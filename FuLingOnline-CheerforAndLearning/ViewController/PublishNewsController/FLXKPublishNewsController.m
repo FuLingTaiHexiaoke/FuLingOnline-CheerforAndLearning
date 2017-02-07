@@ -24,6 +24,7 @@
 //#import "MJExtension.h"
 #import "FLXKHttpRequestModelHelper.h"
 #import "Masonry.h"
+#import "NSAttributedString+EmotionExtension.h"
 
 
 
@@ -79,6 +80,22 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
+    
+    if (UserDefaultsObjForKey( @"plainString")) {
+        self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
+        [self resetTextStyle];
+    }
+}
+
+- (void)resetTextStyle {
+    
+    //After changing text selection, should reset style.
+    NSRange wholeRange = NSMakeRange(0, self.publishTextView.textStorage.length);
+    
+    [self.publishTextView.textStorage removeAttribute:NSFontAttributeName range:wholeRange];
+    
+    [self.publishTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -143,22 +160,25 @@
     return cell;
 }
 
+
 #pragma mark - UICollectionViewDelegate
 
 //set up collectionview
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender {
 
-    FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
-    model.type_id=001;
-    model.type_name=@"个人状态发布";
-    model.doc_content=_publishTextView.text;
-    model.editor=@"psylife";
-
-    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        NSLog(@"success");
-    } failureCallback:^(NSError *err) {
-        NSLog(@"failure");
-    }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
+//    [FLXKEmotionBoard getPlainTextString];
+     [self.publishTextView.attributedText getPlainStringtest];
+//    FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
+//    model.type_id=001;
+//    model.type_name=@"个人状态发布";
+//    model.doc_content=_publishTextView.text;
+//    model.editor=@"psylife";
+//
+//    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+//        NSLog(@"success");
+//    } failureCallback:^(NSError *err) {
+//        NSLog(@"failure");
+//    }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
 
 }
 
@@ -177,7 +197,9 @@
 #pragma mark -UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    [self.view endEditing:YES];
+    if (_publishScrollViewContainer==scrollView) {
+            [self.view endEditing:YES];
+    }
 }
 
 #pragma mark - Private Methods
@@ -185,7 +207,8 @@
     static BOOL isShowingEmotionBoard=NO;
     if (!self.emotionKeyBoard) {
 //        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
+//        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
+        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButtonContainer:self.publishToolBarView swithButton:nil];
 //                [self.view addSubview: self.emotionKeyBoard];
         
 ////        self.emotionKeyBoard=   [FLXKEmotionBoardTest sharedEmotionBoard];

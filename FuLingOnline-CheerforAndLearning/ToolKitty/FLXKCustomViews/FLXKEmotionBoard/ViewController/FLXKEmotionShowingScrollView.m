@@ -12,6 +12,7 @@
 #import "FLXKEmotionConfig.h"
 
 //views
+#import "FLXKEmotionBoard.h"
 #import "FLXKEmotionCollectionView.h"
 
 //Entity
@@ -36,22 +37,28 @@
                     [self addSubview:views[i]];
 
                     //get FLXKEmotionBoard
-                    views[i].emotionSelectedDelegate= self;
+                        views[i].emotionSelectedDelegate= self;
+//                    views[i].emotionSelectedDelegate= [FLXKEmotionBoard sharedEmotionBoard];
                 }
             }
         }];
     }
-    
     self.pagingEnabled=YES;
     
     return self;
 }
 
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
-
     if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
     {
         [self.emotionSelectedDelegate didSelectedEmotionItem: emotionItem];
+    }
+}
+
+-(void)deleteElementInTextView{
+    if ([self.emotionSelectedDelegate respondsToSelector:@selector(deleteElementInTextView)])
+    {
+        [self.emotionSelectedDelegate deleteElementInTextView];
     }
 }
 @end

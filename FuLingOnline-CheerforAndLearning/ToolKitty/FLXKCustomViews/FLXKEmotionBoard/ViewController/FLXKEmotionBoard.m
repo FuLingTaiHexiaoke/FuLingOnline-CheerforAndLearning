@@ -7,11 +7,16 @@
 //
 
 #import "FLXKEmotionBoard.h"
-#import "EmojiTextAttachment.h"
 
 //subviews
-#import "FLXKEmotionCollectionView.h"
+
 #import "FLXKEmotionShowingScrollView.h"
+
+//utilites
+#import "UIImage+EmotionExtension.h"
+#import "EmojiTextAttachment.h"
+#import "EmotionTextAttachment.h"
+#import "NSAttributedString+EmotionExtension.h"
 
 //entity
 #import "EmotionGroup.h"
@@ -27,6 +32,7 @@
 @property(nonatomic,strong)UIScrollView *faceScroll;
 @property(nonatomic,strong)UITextView *editingTextView;
 @property(nonatomic,strong)UIView *swithButtonContainer;
+@property(nonatomic,strong)UIView *swithButton;
 
 //IBOutlet views
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
@@ -42,6 +48,14 @@
 @implementation FLXKEmotionBoard
 
 #pragma mark - Public Methods
+
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton{
+    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
+    sharedEmotionBoard.editingTextView=editingTextView;
+    sharedEmotionBoard.swithButtonContainer=swithButtonContainer;
+    sharedEmotionBoard.swithButton=swithButton;
+    return sharedEmotionBoard;
+}
 
 +(instancetype)sharedEmotionBoard{
     static FLXKEmotionBoard* sharedEmotionBoard=nil;
@@ -62,13 +76,24 @@
         [EmotionItem createTable];
         [EmotionRecentItems createTable];
         
-        //setup the relationship between subview control
-        _emotionContainerScrollView.delegate=self;
-        _emotionContainerScrollView.pagingEnabled=YES;
-        _emotionContainerScrollView.emotionSelectedDelegate=self;
-//        [self setDelegateForSubViewsInScrollView];
+        //        NSString *path=[[NSBundle mainBundle] pathForResource:@"expression" ofType:@"plist"];
+        //        NSDictionary *faceDic=[NSDictionary dictionaryWithContentsOfFile:path];
+        //        NSArray<NSString*>* a=[faceDic allValues];
+        //        NSMutableString* b=[NSMutableString string];
+        //        for (int i=0; i<a.count; i++) {
+        //              [b appendString:[NSString stringWithFormat:@"%@\n",a[i]]];
+        //        }
+        //         NSLog(@"%@\n", b);
     }
     return self;
+}
+
+-(void)awakeFromNib{
+    //setup the relationship between subview control
+    _emotionContainerScrollView.delegate=self;
+    _emotionContainerScrollView.pagingEnabled=YES;
+    _emotionContainerScrollView.emotionSelectedDelegate=self;
+    //        [self setDelegateForSubViewsInScrollView];
 }
 
 //-(void)setDelegateForSubViewsInScrollView{
@@ -78,6 +103,7 @@
 //}
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
     NSLog(@"%@", emotionItem);
+    [self insertEmotion:emotionItem.id emotionName:emotionItem.emotionItemName imageName:emotionItem.emotionItemSmallImageUrl];
 }
 
 //读取表情配置文件生成models
@@ -93,14 +119,47 @@
     return emotionGroupDetailModels;
 }
 
-//将这些models打入scrollview
-//-(void)setupEmotionViewInScrollView{
-//    [self.emotionGroupDetailModels enumerateObjectsUsingBlock:^(EmotionGroupDetailModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        NSArray<FLXKEmotionShowingScrollView*>* emotionViews=[FLXKEmotionShowingScrollView setupEmotionViews];
-//    }];
-//}
 
+- (void)insertEmotion:(NSInteger)emotionID emotionName:(NSString*)emotionName imageName:(NSString*)imageName{
+    //Create emoji attachment
+    EmotionTextAttachment *emotionTextAttachment = [EmotionTextAttachment new];
+    
+    //Set tag and image
+    emotionTextAttachment.emotionName =emotionName;
+    emotionTextAttachment.image = [UIImage ImageWithName:imageName];
+    
+    //Set emoji size
+    emotionTextAttachment.emotionSize =  CGSizeMake(20, 20);
+    
+    //Insert emoji image
+    [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emotionTextAttachment]
+                                                     atIndex:self.editingTextView.selectedRange.location];
+    
+    //Move selection location
+    self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
+    
+    //Reset text style
+    [self resetTextStyle];
+}
 
+- (void)resetTextStyle {
+    
+    //After changing text selection, should reset style.
+    NSRange wholeRange = NSMakeRange(0, self.editingTextView.textStorage.length);
+    
+    [self.editingTextView.textStorage removeAttribute:NSFontAttributeName range:wholeRange];
+    
+    [self.editingTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
+    
+}
+
+-(void)deleteElementInTextView{
+
+}
+
++(NSString*)getPlainTextString{
+    return    [[FLXKEmotionBoard sharedEmotionBoard].editingTextView.attributedText getPlainStringtest];
+}
 
 
 #pragma mark - UIScrollViewDelegate
@@ -318,6 +377,8 @@
 //}
 
 
+
+
 - (void)insertEmoji:(NSString*)emotionName imageName:(NSString*)imageName {
     //Create emoji attachment
     EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
@@ -340,6 +401,8 @@
     //Reset text style
     //    [self resetTextStyle];
 }
+
+
 
 #pragma mark Keyboard
 //-(void)keyboardWillChangeFrame:(NSNotification*)notif{

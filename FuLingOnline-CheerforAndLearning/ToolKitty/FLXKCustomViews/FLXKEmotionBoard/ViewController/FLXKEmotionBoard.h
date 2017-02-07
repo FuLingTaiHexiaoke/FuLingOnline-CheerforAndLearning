@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FLXKEmotionCollectionView.h"
 
-@interface FLXKEmotionBoard : UIView
-+(instancetype)sharedEmotionBoard;
--(id)initWithFrame:(CGRect)frame editingTextView:(UITextView*)editingTextView containerView:(UIView*)containerView;
+@interface FLXKEmotionBoard : UIView<UIScrollViewDelegate,FLXKEmotionCollectionViewDelegate>
+
+//便利方法，同事注册多个控件
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
+
+//+(instancetype)sharedEmotionBoard;
+
+//获取富文本的文字表达形式
++(NSString*)getPlainTextString;
 @end
