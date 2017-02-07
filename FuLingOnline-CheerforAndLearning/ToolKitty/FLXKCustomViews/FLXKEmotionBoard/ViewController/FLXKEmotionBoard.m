@@ -75,7 +75,7 @@
         [EmotionGroup createTable];
         [EmotionItem createTable];
         [EmotionRecentItems createTable];
-        
+
         //        NSString *path=[[NSBundle mainBundle] pathForResource:@"expression" ofType:@"plist"];
         //        NSDictionary *faceDic=[NSDictionary dictionaryWithContentsOfFile:path];
         //        NSArray<NSString*>* a=[faceDic allValues];
@@ -123,38 +123,51 @@
 - (void)insertEmotion:(NSInteger)emotionID emotionName:(NSString*)emotionName imageName:(NSString*)imageName{
     //Create emoji attachment
     EmotionTextAttachment *emotionTextAttachment = [EmotionTextAttachment new];
-    
+
     //Set tag and image
     emotionTextAttachment.emotionName =emotionName;
     emotionTextAttachment.image = [UIImage ImageWithName:imageName];
-    
+
     //Set emoji size
     emotionTextAttachment.emotionSize =  CGSizeMake(20, 20);
-    
+
     //Insert emoji image
     [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emotionTextAttachment]
                                                      atIndex:self.editingTextView.selectedRange.location];
-    
+
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
-    
+
     //Reset text style
     [self resetTextStyle];
 }
 
 - (void)resetTextStyle {
-    
+
     //After changing text selection, should reset style.
     NSRange wholeRange = NSMakeRange(0, self.editingTextView.textStorage.length);
-    
+
     [self.editingTextView.textStorage removeAttribute:NSFontAttributeName range:wholeRange];
-    
+
     [self.editingTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
-    
+
 }
 
 -(void)deleteElementInTextView{
+//    NSLog(@"location:%lu", (unsigned long)self.editingTextView.selectedRange.location);
+//    NSLog(@"length:%lu", (unsigned long)self.editingTextView.textStorage.length);
 
+    if (self.editingTextView.selectedRange.location>0) {
+        if (self.editingTextView.selectedRange.location==self.editingTextView.textStorage.length) {
+            NSRange deleteRange=NSMakeRange(self.editingTextView.selectedRange.location-1, 1);
+            [self.editingTextView.textStorage  deleteCharactersInRange:deleteRange];
+        }
+        else{
+            NSRange deleteRange=NSMakeRange(self.editingTextView.selectedRange.location-1, 1);
+            [self.editingTextView.textStorage  deleteCharactersInRange:deleteRange];
+            self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location-1, self.editingTextView.selectedRange.length);
+        }
+    }
 }
 
 +(NSString*)getPlainTextString{
@@ -165,33 +178,30 @@
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    
+
 }
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    
+
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    
+
 }- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    
+
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
+
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    
+
 }
-
-
-
 
 //初始化表情视图
 -(id)initWithFrame:(CGRect)frame editingTextView:(UITextView*)editingTextView containerView:(UIView*)containerView{
-    
+
     float addY=0.0;
     if (isIOS7) {
         addY=20.0;
@@ -199,10 +209,10 @@
     self=[super initWithFrame:frame];
     if (self) {
         self.backgroundColor=[UIColor whiteColor];
-        
+
         NSString *path=[[NSBundle mainBundle] pathForResource:@"expression" ofType:@"plist"];
         NSDictionary *faceDic=[NSDictionary dictionaryWithContentsOfFile:path];
-        
+
         NSMutableArray *temp=[[NSMutableArray alloc] init];
         for (int i = 0;i<105;i++){
             NSMutableString *mstr=[[NSMutableString alloc] initWithString:@"smiley_"];
@@ -222,12 +232,12 @@
         self.faceScroll.pagingEnabled=YES;
         self.faceScroll.delegate=self;
         [self addSubview:self.faceScroll];
-        
+
         [self setupUIPageControl];
         [self drawEmotionViews];
-        
+
         self.editingTextView=editingTextView;
-        
+
         //get swithButton.container
         self.swithButtonContainer=containerView;
         //set textview focused
@@ -299,7 +309,7 @@
     pageControl.enabled = YES;
     [self addSubview:pageControl];
     _pageControl = pageControl;
-    
+
 }
 
 //draw the emotion views and add to srollview
@@ -318,7 +328,7 @@
     int rowsInEachView=(height-20)/(face_height);
     //
     int pageCount=totalRowCount%rowsInEachView?totalRowCount/rowsInEachView+1:totalRowCount/rowsInEachView;
-    
+
     int i=0;//rowIndex
     int j=0;//faceIndex
     //    //start to splite the faces into each view
@@ -331,29 +341,29 @@
                 button.frame = CGRectMake(10 + j*32, 10 + (i%rowsInEachView)*32, 32.0f, 32.0f);
                 NSMutableDictionary *tempdic = [self.faces objectAtIndex:((i*eachRowFaceCount)+j)];
                 NSString *key=[[tempdic allKeys] objectAtIndex:0];
-                
+
                 UIImage *tempImage = [tempdic valueForKey:key];
                 [button setBackgroundImage:tempImage forState:UIControlStateNormal];
-                
+
                 button.tag = ((i*eachRowFaceCount)+j);
-                
+
                 [button addTarget:self action:@selector(didSelectAFace:)forControlEvents:UIControlEventTouchUpInside];
-                
+
                 [page addSubview:button];
-                
+
             }//for (int j=0; j<eachRowFaceCount;
-            
-            
+
+
         }//for (int i=0; i<rowsInEachView; i++)
-        
+
         [self.faceScroll addSubview:page];
-        
+
     }// for (int pageindex=0; pageindex<pageCount; pageCount++)
-    
-    
+
+
     self.pageControl.numberOfPages=pageCount;
     [self.faceScroll setContentSize:CGSizeMake(pageCount*width, height)];
-    
+
 }
 
 #pragma mark scrollDelegate
@@ -382,22 +392,22 @@
 - (void)insertEmoji:(NSString*)emotionName imageName:(NSString*)imageName {
     //Create emoji attachment
     EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
-    
+
     //Set tag and image
     emojiTextAttachment.emojiTag =emotionName;
     emojiTextAttachment.image = [UIImage imageNamed:imageName];
-    
+
     //Set emoji size
     //        emojiTextAttachment.emojiSize = CGSizeMake(_emojiSizeSlider.value * EMOJI_MAX_SIZE, _emojiSizeSlider.value * EMOJI_MAX_SIZE);
     emojiTextAttachment.emojiSize =  CGSizeMake(20, 20);
-    
+
     //Insert emoji image
     [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]
                                                      atIndex:self.editingTextView.selectedRange.location];
-    
+
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
-    
+
     //Reset text style
     //    [self resetTextStyle];
 }

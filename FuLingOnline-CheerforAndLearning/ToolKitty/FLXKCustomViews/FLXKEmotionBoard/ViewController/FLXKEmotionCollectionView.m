@@ -41,8 +41,10 @@
 +(NSArray<FLXKEmotionCollectionView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId{
     NSMutableArray<FLXKEmotionCollectionView*>* collectionViews=[NSMutableArray array];
     NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)groupId]];
-    for (NSInteger i=0; i<60; i+=20) {
-        NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, 20)]];
+    NSInteger itemleft=0;
+    for (NSInteger i=0; i<totalEmotionItems.count; i+=20) {
+        itemleft=i+20<totalEmotionItems.count?20:totalEmotionItems.count-i;
+        NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, itemleft)]];
         FLXKEmotionCollectionView*  collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems];
         [collectionViews addObject:collectionView];
     }
@@ -87,7 +89,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
-    if (indexPath.item<20) {
+    if (indexPath.item<self.emotionItems.count) {
         cell.item= self.emotionItems[indexPath.item];
         NSLog(@"indexPath.item %ld", (long)indexPath.item);
         //    [cell setItem:self.emotionItems[indexPath.item]];
@@ -101,7 +103,7 @@
         };
     }
     else{
-        cell.emotionImageView.image=[UIImage imageNamed:@"del_emoji_normal@2x.png"];
+        cell.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
         cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
             if ([self.emotionSelectedDelegate respondsToSelector:@selector(deleteElementInTextView)])
             {
