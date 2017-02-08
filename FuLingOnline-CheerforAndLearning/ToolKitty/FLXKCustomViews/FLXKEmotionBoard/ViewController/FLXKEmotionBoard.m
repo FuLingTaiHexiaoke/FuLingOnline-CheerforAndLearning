@@ -202,29 +202,31 @@
     //    }
     
     NSRange range = self.editingTextView.selectedRange;
-//    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
+    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
     if (self.editingTextView.text.length > 0) {
         NSUInteger location  = self.editingTextView.selectedRange.location;
         NSString *head = [self.editingTextView.text substringToIndex:location];
-//        NSLog(@"%@",head);
-        if (range.length ==0) {
-            
-        }else{
-//            NSLog(@"文字为全选");
-            self.editingTextView.text =@"";
+        //部分选中
+        if (range.length>0&&location>0){
+            NSMutableAttributedString *str = self.editingTextView.textStorage;
+            [str deleteCharactersInRange:range];
+            self.editingTextView.attributedText = str;
+            self.editingTextView.selectedRange = NSMakeRange(location,0);
         }
-        if (location > 0) {
+        //没有选中
+        else if (range.length==0 && location > 0){
             NSMutableAttributedString *str = self.editingTextView.textStorage;
             [self lastRange:head];
-//            NSLog(@"%zd===%zd",[self lastRange:head].location,[self lastRange:head].length);
-//            NSLog(@"%@",str);
             [str deleteCharactersInRange:[self lastRange:head]];
-//            NSLog(@"%@",str);
             self.editingTextView.attributedText = str;
             self.editingTextView.selectedRange = NSMakeRange([self lastRange:head].location,0);
-            
-        } else {
+        }
+        else if (range.length==0 && location == 0){
             self.editingTextView.selectedRange = NSMakeRange(0,0);
+        }
+        //全选
+        else{
+            self.editingTextView.text =@"";
         }
     }
 }
