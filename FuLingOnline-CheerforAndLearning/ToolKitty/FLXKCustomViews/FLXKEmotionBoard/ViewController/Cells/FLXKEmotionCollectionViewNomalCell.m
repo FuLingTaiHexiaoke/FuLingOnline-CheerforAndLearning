@@ -9,6 +9,7 @@
 #import "FLXKEmotionCollectionViewNomalCell.h"
 
 #import "UIImage+EmotionExtension.h"
+#import "UIImage+GIF.h"
 
 @interface FLXKEmotionCollectionViewNomalCell()
 
@@ -52,17 +53,20 @@
         return;
     }
         self.item=item;
-        if ( item.emotionItemImageType==0||item.emotionItemImageType==5) {
+        if ( item.emotionItemImageType==0) {
 //            [self sendSubviewToBack:self.emotionButton];
 //            self.emotionButton.hidden=YES;
 //            self.emotionImageView.hidden=NO;
-            [self.emotionButton setImage:[UIImage imageNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+            [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
 //            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
         }
         else  if (item.emotionItemImageType==1) {
 //            self.emotionButton.hidden=NO;
 //            self.emotionImageView.hidden=YES;
             [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
+        }
+        else  if (item.emotionItemImageType==5) {
+   [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
         }
 }
 

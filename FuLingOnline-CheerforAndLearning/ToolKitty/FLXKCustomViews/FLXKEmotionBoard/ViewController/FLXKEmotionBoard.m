@@ -17,7 +17,7 @@
 #import "EmojiTextAttachment.h"
 #import "EmotionTextAttachment.h"
 #import "NSAttributedString+EmotionExtension.h"
-
+#import "UIImage+GIF.h"
 //entity
 #import "EmotionGroup.h"
 #import "EmotionItem.h"
@@ -130,8 +130,9 @@
     
     //Set tag and image
     emotionTextAttachment.emotionName =emotionName;
+
     emotionTextAttachment.image = [UIImage ImageWithName:imageName];
-    
+//  emotionTextAttachment.image = [UIImage sd_animatedGIFNamed:imageName];
     //Set emoji size
     emotionTextAttachment.emotionSize =  CGSizeMake(20, 20);
     
