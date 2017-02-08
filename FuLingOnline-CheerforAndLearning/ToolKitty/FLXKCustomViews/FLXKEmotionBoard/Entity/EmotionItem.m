@@ -11,7 +11,6 @@
 //
 @implementation EmotionItem
 
-
 //createTable
 + (BOOL)createTable
 {
@@ -23,7 +22,7 @@
             return ;
         }
         NSString *tableName = NSStringFromClass(self.class);
-        NSString *columeAndType = @"id INTEGER,emotionItemName TEXT,emotionItemSmallImageUrl TEXT,emotionItemNormalImageUrl TEXT,emotionItemGifImageUrl TEXT,emotionItemImageType INTEGER,groupId INTEGER";
+        NSString *columeAndType = @"id INTEGER,emotionItemName TEXT,emotionItemSmallImageUrl TEXT,emotionItemNormalImageUrl TEXT,emotionItemGifImageUrl TEXT,emotionItemImageType INTEGER,emotionItemInsertTimeStamp TEXT,groupId INTEGER";
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@);",tableName,columeAndType];
         if (![db executeUpdate:sql]) {
             res = NO;
@@ -66,6 +65,7 @@
             entity.emotionItemNormalImageUrl=[resultSet stringForColumn:@"emotionItemNormalImageUrl"];
             entity.emotionItemGifImageUrl=[resultSet stringForColumn:@"emotionItemGifImageUrl"];
             entity.emotionItemImageType=[resultSet longLongIntForColumn:@"emotionItemImageType"];
+            entity.emotionItemInsertTimeStamp=[resultSet stringForColumn:@"emotionItemInsertTimeStamp"];
             entity.groupId=[resultSet longLongIntForColumn:@"groupId"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -89,6 +89,7 @@
             entity.emotionItemNormalImageUrl=[resultSet stringForColumn:@"emotionItemNormalImageUrl"];
             entity.emotionItemGifImageUrl=[resultSet stringForColumn:@"emotionItemGifImageUrl"];
             entity.emotionItemImageType=[resultSet longLongIntForColumn:@"emotionItemImageType"];
+            entity.emotionItemInsertTimeStamp=[resultSet stringForColumn:@"emotionItemInsertTimeStamp"];
             entity.groupId=[resultSet longLongIntForColumn:@"groupId"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -101,17 +102,17 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,groupId";
-    //NSString *valueString =@"?,?,?,?,?,?,?";
-    //NSString *insertValues =@"@(obj.id),obj.emotionItemName,obj.emotionItemSmallImageUrl,obj.emotionItemNormalImageUrl,obj.emotionItemGifImageUrl,@(obj.emotionItemImageType),@(obj.groupId)";
+    //NSString *keyString =@"id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,emotionItemInsertTimeStamp,groupId";
+    //NSString *valueString =@"?,?,?,?,?,?,?,?";
+    //NSString *insertValues =@"@(obj.id),obj.emotionItemName,obj.emotionItemSmallImageUrl,obj.emotionItemNormalImageUrl,obj.emotionItemGifImageUrl,@(obj.emotionItemImageType),obj.emotionItemInsertTimeStamp,@(obj.groupId)";
     
     
     
     FLXKEmotionDBHelper *FLXKDB = [FLXKEmotionDBHelper shareInstance];
     [FLXKDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         @try {
-            NSString *sql = @"INSERT OR REPLACE INTO EmotionItem(id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,groupId) VALUES (?,?,?,?,?,?,?)";
-            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionItemName,obj.emotionItemSmallImageUrl,obj.emotionItemNormalImageUrl,obj.emotionItemGifImageUrl,@(obj.emotionItemImageType),@(obj.groupId)];
+            NSString *sql = @"INSERT OR REPLACE INTO EmotionItem(id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,emotionItemInsertTimeStamp,groupId) VALUES (?,?,?,?,?,?,?,?)";
+            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionItemName,obj.emotionItemSmallImageUrl,obj.emotionItemNormalImageUrl,obj.emotionItemGifImageUrl,@(obj.emotionItemImageType),obj.emotionItemInsertTimeStamp,@(obj.groupId)];
             if (!result)
             {
                 *rollback = YES;
@@ -151,9 +152,9 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,groupId";
-    //NSString *valueString =@"?,?,?,?,?,?,?";
-    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)";
+    //NSString *keyString =@"id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,emotionItemInsertTimeStamp,groupId";
+    //NSString *valueString =@"?,?,?,?,?,?,?,?";
+    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)";
     
     
     
@@ -163,8 +164,8 @@
             EmotionItem* entity = (EmotionItem*)obj;
             
             @try {
-                NSString *sql = @"INSERT OR REPLACE INTO EmotionItem(id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,groupId) VALUES (?,?,?,?,?,?,?)";
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)];
+                NSString *sql = @"INSERT OR REPLACE INTO EmotionItem(id,emotionItemName,emotionItemSmallImageUrl,emotionItemNormalImageUrl,emotionItemGifImageUrl,emotionItemImageType,emotionItemInsertTimeStamp,groupId) VALUES (?,?,?,?,?,?,?,?)";
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)];
                 if (!result)
                 {
                     *rollback = YES;
@@ -205,8 +206,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , groupId= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)";
+    //NSString *keyString =@" id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , emotionItemInsertTimeStamp= ? , groupId= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)";
     
     
     
@@ -215,9 +216,9 @@
         EmotionItem* entity = (EmotionItem*)obj;
         
         @try {
-            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionItem set  id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , groupId= ? "];
+            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionItem set  id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , emotionItemInsertTimeStamp= ? , groupId= ? "];
             NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)];
+            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)];
             if (!result)
             {
                 *rollback = YES;
@@ -257,8 +258,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , groupId= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)";
+    //NSString *keyString =@" id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , emotionItemInsertTimeStamp= ? , groupId= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)";
     
     
     
@@ -268,9 +269,9 @@
             EmotionItem* entity = (EmotionItem*)obj;
             
             @try {
-                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionItem set  id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , groupId= ? "];
+                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionItem set  id= ? , emotionItemName= ? , emotionItemSmallImageUrl= ? , emotionItemNormalImageUrl= ? , emotionItemGifImageUrl= ? , emotionItemImageType= ? , emotionItemInsertTimeStamp= ? , groupId= ? "];
                 NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),@(entity.groupId)];
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionItemName,entity.emotionItemSmallImageUrl,entity.emotionItemNormalImageUrl,entity.emotionItemGifImageUrl,@(entity.emotionItemImageType),entity.emotionItemInsertTimeStamp,@(entity.groupId)];
                 if (!result)
                 {
                     *rollback = YES;

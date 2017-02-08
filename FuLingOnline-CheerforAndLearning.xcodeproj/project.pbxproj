@@ -15,7 +15,6 @@
 		B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */; };
 		B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */; };
 		B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */; };
-		B924D91D1E2F7A0F00A5D9F6 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B924D91C1E2F7A0F00A5D9F6 /* FLXKEmotionDB.sqlite */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
 		B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55BA1DD98099009A373A /* UIView+Extensions.m */; };
 		B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57011E499888001D8C2A /* EmotionTextAttachment.m */; };
@@ -189,6 +188,7 @@
 		B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619C1E2DEC76008B6356 /* FMDatabaseQueue.m */; };
 		B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619F1E2DEC76008B6356 /* FMResultSet.m */; };
 		B97261AD1E2DED0E008B6356 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */; };
+		B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
@@ -245,7 +245,6 @@
 		B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionItem.m; sourceTree = "<group>"; };
 		B924D9191E2F766F00A5D9F6 /* EmotionRecentItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionRecentItems.h; sourceTree = "<group>"; };
 		B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionRecentItems.m; sourceTree = "<group>"; };
-		B924D91C1E2F7A0F00A5D9F6 /* FLXKEmotionDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FLXKEmotionDB.sqlite; sourceTree = "<group>"; };
 		B92B55B31DD9679E009A373A /* CALayer+FLXKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FLXKAddition.h"; sourceTree = "<group>"; };
 		B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FLXKAddition.m"; sourceTree = "<group>"; };
 		B92B55B91DD98099009A373A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
@@ -465,6 +464,7 @@
 		B972619E1E2DEC76008B6356 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		B972619F1E2DEC76008B6356 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FLXKEmotionDB.sqlite; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
 		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		B924D9111E2F656700A5D9F6 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				B924D91C1E2F7A0F00A5D9F6 /* FLXKEmotionDB.sqlite */,
+				B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */,
 				B924D9131E2F66EC00A5D9F6 /* EmotionGroup.h */,
 				B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */,
 				B924D9191E2F766F00A5D9F6 /* EmotionRecentItems.h */,
@@ -1412,6 +1412,7 @@
 				B966A9A91E0CFAD200222095 /* smiley_96.png in Resources */,
 				B966A9601E0CFAD200222095 /* smiley_3.png in Resources */,
 				B93AF5C01E30A2B100F51E26 /* FLXKEmotionResouceBundle.bundle in Resources */,
+				B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */,
 				B966A93D1E0CFAD200222095 /* dd_input_normal@2x.png in Resources */,
 				B966A9991E0CFAD200222095 /* smiley_81.png in Resources */,
 				B966A9771E0CFAD200222095 /* smiley_50.png in Resources */,
@@ -1462,7 +1463,6 @@
 				B966A9641E0CFAD200222095 /* smiley_33.png in Resources */,
 				B966A98B1E0CFAD200222095 /* smiley_69.png in Resources */,
 				B966A97D1E0CFAD200222095 /* smiley_56.png in Resources */,
-				B924D91D1E2F7A0F00A5D9F6 /* FLXKEmotionDB.sqlite in Resources */,
 				B966A9431E0CFAD200222095 /* savebutnew.png in Resources */,
 				B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */,
 				B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */,

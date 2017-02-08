@@ -21,28 +21,60 @@
     [super awakeFromNib];
     
     //add GestureRecognizer
+    self.emotionImageView.hidden=YES;
     self.emotionImageView.userInteractionEnabled=YES;//must be set to yes for user Interaction Enable
+    
     
     UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(emotionTaped:)];
     
     [self.emotionImageView addGestureRecognizer:tapGesture];
+    [self.emotionButton addGestureRecognizer:tapGesture];
     
     UILongPressGestureRecognizer* longPressGesture=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(emotionLongPressed:)];
     [self.emotionImageView addGestureRecognizer:longPressGesture];
+    [self.emotionButton addGestureRecognizer:longPressGesture];
 }
 
-//-(void)setItem:(EmotionItem *)item{
-//    self.item=item;
-//    UIImage* image=[UIImage ImageWithName:item.emotionItemSmallImageUrl];
-//    [self.emotionButton setImage:image forState:UIControlStateNormal];
-//
-//}
+//0:basic_text_emotion_image
+//1:emoji_text_emotion_image
+//2:additonal_text_emotion_image
+//3:recent_text_emotion_image
+//4:big_static_image
+//5:big_gif_image
+
+-(void)setEmotionItem:(EmotionItem *)item{
+    if (!item) {
+//        self.emotionButton.hidden=YES;
+//        self.emotionImageView.hidden=NO;
+//        self.emotionImageView.userInteractionEnabled=YES;
+//        self.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
+             [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
+        return;
+    }
+        self.item=item;
+        if ( item.emotionItemImageType==0||item.emotionItemImageType==5) {
+//            [self sendSubviewToBack:self.emotionButton];
+//            self.emotionButton.hidden=YES;
+//            self.emotionImageView.hidden=NO;
+            [self.emotionButton setImage:[UIImage imageNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+//            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
+        }
+        else  if (item.emotionItemImageType==1) {
+//            self.emotionButton.hidden=NO;
+//            self.emotionImageView.hidden=YES;
+            [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
+        }
+}
 
 -(void)emotionTaped:(UITapGestureRecognizer*)gestureRecognizer{
-    self.emotionCellTapGestureBlock(self.item);
+    if (self.emotionCellTapGestureBlock) {
+        self.emotionCellTapGestureBlock(self.item);
+    }
 }
 
 -(void)emotionLongPressed:(UILongPressGestureRecognizer*)gestureRecognizer{
-    self.emotionCellLongPressedGestureBlock(self.item);
+    if (self.emotionCellLongPressedGestureBlock) {
+        self.emotionCellLongPressedGestureBlock(self.item);
+    }
 }
 @end

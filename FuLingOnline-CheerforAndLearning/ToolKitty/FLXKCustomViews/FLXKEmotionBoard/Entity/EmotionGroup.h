@@ -11,8 +11,14 @@
 @interface EmotionGroup : NSObject
 @property(nonatomic,assign)NSInteger id;
 @property(nonatomic,strong)NSString* emotionGroupName;
+//0:basic_text_emotion_image
+//1:emoji_text_emotion_image
+//2:additonal_text_emotion_image
+//3:recent_text_emotion_image
+//4:big_static_image
+//5:big_gif_image
+@property(nonatomic,assign)NSInteger emotionGroupImageType;
 @property(nonatomic,strong)NSString* emotionGroupImageUrl;
-//@property(nonatomic,strong)NSString* emotionGroupImagePath;
 
 
 

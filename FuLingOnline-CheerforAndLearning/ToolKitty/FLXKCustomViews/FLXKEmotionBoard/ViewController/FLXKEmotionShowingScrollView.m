@@ -28,7 +28,7 @@
     self=[super initWithCoder:aDecoder];
     if (self) {
         [[EmotionGroup selectAll]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (idx==0) {
+            if (idx==1) {
                 NSArray<FLXKEmotionCollectionView*>* views=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id];
                 self.contentSize=CGSizeMake( Screen_Width*views.count, self.height);
                 for (int i=0; i<views.count; i++) {

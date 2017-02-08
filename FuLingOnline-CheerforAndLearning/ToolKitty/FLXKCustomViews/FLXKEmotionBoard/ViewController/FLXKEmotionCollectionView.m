@@ -60,13 +60,13 @@
     flowLayout.minimumInteritemSpacing= self.miniInteritemSpacing;
     flowLayout.minimumLineSpacing=self.miniLineSpacing;
     flowLayout.itemSize=CGSizeMake(itemWidth, itemWidth);
-
+    
     self= [super initWithFrame:frame collectionViewLayout:flowLayout];
     if (self) {
         //        UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
         //        flowLayout.itemSize=CGSizeMake(Screen_Width/7, CollectionViewHeight/3);
         //        self.collectionViewLayout=flowLayout;
-
+        
         self.pagingEnabled=YES;
         //        self.contentInset=UIEdgeInsetsMake(FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"Inset-top", 20), 10, 10, 10);
         //        self.contentInset=UIEdgeInsetsMake(self.miniLineSpacing, self.miniInteritemSpacing,self.miniLineSpacing , self.miniInteritemSpacing);
@@ -75,7 +75,7 @@
         self.emotionItems=emotionItems;
         self.dataSource=self;
         self.delegate=self;
-
+        
         [self registerNib:[UINib nibWithNibName:@"FLXKEmotionCollectionViewNomalCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell];
     }
     return self;
@@ -88,23 +88,27 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
+     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
     if (indexPath.item<self.emotionItems.count) {
-        cell.item= self.emotionItems[indexPath.item];
-        NSLog(@"indexPath.item %ld", (long)indexPath.item);
-        //    [cell setItem:self.emotionItems[indexPath.item]];
-        //    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
-        cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
-        cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
-            if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
-            {
-                [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
-            }
-        };
-    }
+        [cell setEmotionItem: self.emotionItems[indexPath.item]];
+//        NSLog(@"indexPath.item %ld", (long)indexPath.item);
+//        //    [cell setItem:self.emotionItems[indexPath.item]];
+//        //    [cell.emotionButton setImage:[UIImage ImageWithName:self.emotionItems[indexPath.item].emotionItemSmallImageUrl] forState:UIControlStateNormal];
+//            cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+            cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
+                if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+                {
+                    [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
+                }
+            };
+        }
     else{
-        cell.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
-        cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
+//        cell.emotionButton.hidden=YES;
+//        cell.emotionImageView.hidden=NO;
+//        cell.emotionImageView.userInteractionEnabled=YES;
+//        cell.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
+         [cell setEmotionItem:nil];
+            cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
             if ([self.emotionSelectedDelegate respondsToSelector:@selector(deleteElementInTextView)])
             {
                 [self.emotionSelectedDelegate deleteElementInTextView];
@@ -113,6 +117,32 @@
     }
     return cell;
 }
+
+-(__kindof UICollectionViewCell *)cellForEmotionItem:(EmotionItem*)emotionItem withCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath{
+    //0:basic_text_emotion_image
+    //1:emoji_text_emotion_image
+    //2:additonal_text_emotion_image
+    //3:recent_text_emotion_image
+    //4:big_static_image
+    //5:big_gif_image
+    
+    FLXKEmotionCollectionViewNomalCell* cell=nil;
+    if ( emotionItem.emotionItemImageType==0) {
+        FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
+        if (indexPath.item<self.emotionItems.count) {
+            cell.item= self.emotionItems[indexPath.item];
+                cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
+                cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
+                    if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+                    {
+                        [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
+                    }
+                };
+        }
+    }
+    return cell;
+}
+
 
 #pragma mark - UICollectionViewDelegate
 

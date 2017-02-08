@@ -22,7 +22,7 @@
             return ;
         }
         NSString *tableName = NSStringFromClass(self.class);
-        NSString *columeAndType = @"id INTEGER,emotionGroupName TEXT,emotionGroupImageUrl TEXT";
+        NSString *columeAndType = @"id INTEGER,emotionGroupName TEXT,emotionGroupImageType INTEGER,emotionGroupImageUrl TEXT";
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@);",tableName,columeAndType];
         if (![db executeUpdate:sql]) {
             res = NO;
@@ -61,6 +61,7 @@
             EmotionGroup *entity = [[EmotionGroup alloc] init];
             entity.id=[resultSet longLongIntForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
+            entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -80,6 +81,7 @@
             EmotionGroup *entity = [[EmotionGroup alloc] init];
             entity.id=[resultSet longLongIntForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
+            entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -92,17 +94,17 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageUrl";
-    //NSString *valueString =@"?,?,?";
-    //NSString *insertValues =@"@(obj.id),obj.emotionGroupName,obj.emotionGroupImageUrl";
+    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl";
+    //NSString *valueString =@"?,?,?,?";
+    //NSString *insertValues =@"@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),obj.emotionGroupImageUrl";
     
     
     
     FLXKEmotionDBHelper *FLXKDB = [FLXKEmotionDBHelper shareInstance];
     [FLXKDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         @try {
-            NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageUrl) VALUES (?,?,?)";
-            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionGroupName,obj.emotionGroupImageUrl];
+            NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl) VALUES (?,?,?,?)";
+            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),obj.emotionGroupImageUrl];
             if (!result)
             {
                 *rollback = YES;
@@ -142,9 +144,9 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageUrl";
-    //NSString *valueString =@"?,?,?";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl";
+    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl";
+    //NSString *valueString =@"?,?,?,?";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
     
     
     
@@ -154,8 +156,8 @@
             EmotionGroup* entity = (EmotionGroup*)obj;
             
             @try {
-                NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageUrl) VALUES (?,?,?)";
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl];
+                NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl) VALUES (?,?,?,?)";
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
                 if (!result)
                 {
                     *rollback = YES;
@@ -196,8 +198,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageUrl= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl";
+    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
     
     
     
@@ -206,9 +208,9 @@
         EmotionGroup* entity = (EmotionGroup*)obj;
         
         @try {
-            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageUrl= ? "];
+            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? "];
             NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl];
+            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
             if (!result)
             {
                 *rollback = YES;
@@ -248,8 +250,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageUrl= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl";
+    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
     
     
     
@@ -259,9 +261,9 @@
             EmotionGroup* entity = (EmotionGroup*)obj;
             
             @try {
-                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageUrl= ? "];
+                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? "];
                 NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,entity.emotionGroupImageUrl];
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
                 if (!result)
                 {
                     *rollback = YES;

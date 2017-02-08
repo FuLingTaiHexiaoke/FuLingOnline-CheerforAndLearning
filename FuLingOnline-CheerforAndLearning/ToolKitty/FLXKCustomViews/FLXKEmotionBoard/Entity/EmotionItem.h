@@ -14,7 +14,14 @@
 @property(nonatomic,strong)NSString* emotionItemSmallImageUrl;
 @property(nonatomic,strong)NSString* emotionItemNormalImageUrl;
 @property(nonatomic,strong)NSString* emotionItemGifImageUrl;
-@property(nonatomic,assign)NSInteger emotionItemImageType;//0:normal 1:gif
+//0:basic_text_emotion_image
+//1:emoji_text_emotion_image
+//2:additonal_text_emotion_image
+//3:recent_text_emotion_image
+//4:big_static_image
+//5:big_gif_image
+@property(nonatomic,assign)NSInteger emotionItemImageType;
+@property(nonatomic,strong)NSString* emotionItemInsertTimeStamp;//方便进行数据更新，删除，添加
 @property(nonatomic,assign)NSInteger groupId;
 
 

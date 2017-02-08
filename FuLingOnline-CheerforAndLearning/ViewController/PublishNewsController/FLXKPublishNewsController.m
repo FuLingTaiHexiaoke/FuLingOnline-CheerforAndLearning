@@ -218,7 +218,7 @@
         _isChangeInputView=YES;
         [self.publishTextView resignFirstResponder];
 
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.15f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.09f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
             _isChangeInputView=NO;
             [self.publishTextView becomeFirstResponder];
