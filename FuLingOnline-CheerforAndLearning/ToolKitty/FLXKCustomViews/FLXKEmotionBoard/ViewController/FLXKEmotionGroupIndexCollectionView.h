@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FLXKEmotionGroupIndexCollectionViewDelegate <NSObject>
+
+@optional
+-(void)didSelectedEmotionGroupItem:(NSRange)range;
+
+@end
+
 @interface FLXKEmotionGroupIndexCollectionView : UICollectionView
+
+@property (nonatomic,weak) id<FLXKEmotionGroupIndexCollectionViewDelegate> emotionGroupSelectedDelegate;
 
 @end

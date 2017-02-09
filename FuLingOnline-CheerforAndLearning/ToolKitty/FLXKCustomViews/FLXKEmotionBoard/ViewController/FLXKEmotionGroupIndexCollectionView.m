@@ -35,11 +35,16 @@
         //init self properties
         self.dataSource=self;
         self.delegate=self;
-                [self registerNib:[UINib nibWithNibName:Cell_FLXKNormalEmotionGroupCollectionViewCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Cell_FLXKNormalEmotionGroupCollectionViewCell];
+        [self registerNib:[UINib nibWithNibName:Cell_FLXKNormalEmotionGroupCollectionViewCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Cell_FLXKNormalEmotionGroupCollectionViewCell];
     }
     return self;
 }
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.dataSource=self;
+    self.delegate=self;
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -49,11 +54,37 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKNormalEmotionGroupCollectionViewCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKNormalEmotionGroupCollectionViewCell forIndexPath:indexPath];
-    //    cell.item= self.emotionItems[indexPath.item];
-    [cell.groupEmotionButton setImage:[UIImage ImageWithName:self.emotionGroups[indexPath.item].emotionGroupImageUrl] forState:UIControlStateNormal];
+    cell.emotionGroup= self.emotionGroups[indexPath.item];
+    //    cell.groupEmotionCellTapGestureBlock=^(NSRange range){
+    //        if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
+    //        {
+    //            [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
+    //        }
+    //    };
+    //    [cell.groupEmotionButton setImage:[UIImage ImageWithName:self.emotionGroups[indexPath.item].emotionGroupImageUrl] forState:UIControlStateNormal];
     //    cell.imageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    //reset selected state
+    NSArray<__kindof FLXKNormalEmotionGroupCollectionViewCell *>*  cells=(NSArray<__kindof FLXKNormalEmotionGroupCollectionViewCell *>*)[collectionView visibleCells];
+    [cells enumerateObjectsUsingBlock:^(__kindof FLXKNormalEmotionGroupCollectionViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.groupEmotionBackgroundView.backgroundColor=[UIColor whiteColor];
+        obj.groupEmotionButton.backgroundColor=[UIColor whiteColor];
+    }];
+    
+    FLXKNormalEmotionGroupCollectionViewCell* cell= ( FLXKNormalEmotionGroupCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([self.emotionGroupSelectedDelegate respondsToSelector:@selector(didSelectedEmotionGroupItem:)])
+    {
+        [self.emotionGroupSelectedDelegate didSelectedEmotionGroupItem:cell.groupPagesRange];
+    }
+    
+    //set selected state
+    cell.groupEmotionBackgroundView.backgroundColor=RGBA(243,244,246,1.0);
+    cell.groupEmotionButton.backgroundColor=RGBA(243,244,246,1.0);
+}
 
 @end

@@ -11,6 +11,7 @@
 //subviews
 
 #import "FLXKEmotionShowingScrollView.h"
+#import "FLXKEmotionGroupIndexCollectionView.h"
 
 //utilites
 #import "UIImage+EmotionExtension.h"
@@ -18,6 +19,7 @@
 #import "EmotionTextAttachment.h"
 #import "NSAttributedString+EmotionExtension.h"
 #import "UIImage+GIF.h"
+#import "FLXKEmotionConfig.h"
 //entity
 #import "EmotionGroup.h"
 #import "EmotionItem.h"
@@ -26,7 +28,7 @@
 //models
 #import "EmotionGroupDetailModel.h"
 
-@interface FLXKEmotionBoard ()<UIScrollViewDelegate,FLXKEmotionShowingScrollViewDelegate>
+@interface FLXKEmotionBoard ()<UIScrollViewDelegate,FLXKEmotionShowingScrollViewDelegate,FLXKEmotionGroupIndexCollectionViewDelegate>
 //@property(nonatomic)UIPageControl* pageControl;
 @property(nonatomic,strong)NSMutableArray *faces;
 @property(nonatomic,strong)UIScrollView *faceScroll;
@@ -37,7 +39,7 @@
 //IBOutlet views
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet FLXKEmotionShowingScrollView *emotionContainerScrollView;
-@property (weak, nonatomic) IBOutlet UICollectionView *emotionGroupIndexCollectionView;
+@property (weak, nonatomic) IBOutlet FLXKEmotionGroupIndexCollectionView *emotionGroupIndexCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *leftBottomButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightBottomButton;
 
@@ -89,11 +91,14 @@
 }
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
     //setup the relationship between subview control
     _emotionContainerScrollView.delegate=self;
     _emotionContainerScrollView.pagingEnabled=YES;
     _emotionContainerScrollView.emotionSelectedDelegate=self;
     //        [self setDelegateForSubViewsInScrollView];
+    _emotionGroupIndexCollectionView.emotionGroupSelectedDelegate=self;
+    
 }
 
 //-(void)setDelegateForSubViewsInScrollView{
@@ -108,6 +113,11 @@
     else{
         [self insertEmotion:emotionItem.id emotionName:emotionItem.emotionItemName imageName:emotionItem.emotionItemSmallImageUrl];
     }
+}
+
+-(void)didSelectedEmotionGroupItem:(NSRange)range{
+    [_emotionContainerScrollView setContentOffset:CGPointMake(range.location*Screen_Width, 0) animated:NO];
+        [_emotionContainerScrollView setCurrentShowingPageIndex:range.location] ;
 }
 
 //读取表情配置文件生成models
@@ -267,7 +277,7 @@
     
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
+    [_emotionContainerScrollView setCurrentShowingPageIndex:(NSInteger) scrollView.contentOffset.x/(Screen_Width)] ;
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{

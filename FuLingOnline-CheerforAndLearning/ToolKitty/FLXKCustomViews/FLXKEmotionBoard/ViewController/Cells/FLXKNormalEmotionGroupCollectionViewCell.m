@@ -10,20 +10,46 @@
 
 //entity
 #import "EmotionGroup.h"
+#import "EmotionItem.h"
 
+static NSInteger lastViewIndex;
 
 @implementation FLXKNormalEmotionGroupCollectionViewCell
 
-- (void)awakeFromNib {
+-(void)awakeFromNib{
     [super awakeFromNib];
-    // Initialization code
+    
+    //add GestureRecognizer
+    
+    //    UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(groupEmotionButtonTaped:)];
+    //    [self.groupEmotionButton addGestureRecognizer:tapGesture];
 }
 
-
--(void)setGroupItem:(EmotionGroup *)groupItem{
-    self.groupItem=groupItem;
-    UIImage* image=[UIImage imageNamed:groupItem.emotionGroupImageUrl];
-    [self.groupEmotionButton setImage:image forState:UIControlStateNormal];
+-(void)setEmotionGroup:(EmotionGroup *)emotionGroup{
+    emotionGroup=emotionGroup;
+    //set image
+    
+    self.groupEmotionButton.userInteractionEnabled=NO;
+    if (emotionGroup.emotionGroupImageType==1) {
+        [self.groupEmotionButton setTitle:emotionGroup.emotionGroupImageUrl forState:UIControlStateNormal];
+    }
+    else{
+        if (emotionGroup.emotionGroupImageType==5){
+            if (![emotionGroup.emotionGroupImageUrl containsString:@".gif"]) {
+                emotionGroup.emotionGroupImageUrl=[NSString stringWithFormat:@"%@.gif",emotionGroup.emotionGroupImageUrl ];
+            }
+        }
+        UIImage* image=[UIImage imageNamed:emotionGroup.emotionGroupImageUrl];
+        [self.groupEmotionButton setImage:image forState:UIControlStateNormal];
+    }
+    
+    //get group showing range
+    NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)emotionGroup.id]];
+    NSInteger pageCount= totalEmotionItems.count/emotionGroup.emotionGroupPerPageCount;
+    pageCount=(totalEmotionItems.count%emotionGroup.emotionGroupPerPageCount)>0?pageCount+1:pageCount;
+    self.groupPagesRange=NSMakeRange(lastViewIndex, pageCount);
+    
+    lastViewIndex+=pageCount;
 }
 
 @end

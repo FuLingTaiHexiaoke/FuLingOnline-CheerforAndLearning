@@ -22,10 +22,11 @@
             return ;
         }
         NSString *tableName = NSStringFromClass(self.class);
-        NSString *columeAndType = @"id INTEGER,emotionGroupName TEXT,emotionGroupImageType INTEGER,emotionGroupImageUrl TEXT";
+        NSString *columeAndType = @"id INTEGER,emotionGroupName TEXT,emotionGroupImageType INTEGER,emotionGroupPerPageCount INTEGER,emotionGroupPerPageColunms INTEGER,emotionGroupPerPageLines INTEGER,emotionGroupPerPageItemWidth INTEGER,emotionGroupIsShowingDeleteButton INTEGER,emotionGroupImageUrl TEXT";
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@);",tableName,columeAndType];
         if (![db executeUpdate:sql]) {
             res = NO;
+            
             *rollback = YES;
         };
     }];
@@ -62,6 +63,11 @@
             entity.id=[resultSet longLongIntForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
             entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
+            entity.emotionGroupPerPageCount=[resultSet longLongIntForColumn:@"emotionGroupPerPageCount"];
+            entity.emotionGroupPerPageColunms=[resultSet longLongIntForColumn:@"emotionGroupPerPageColunms"];
+            entity.emotionGroupPerPageLines=[resultSet longLongIntForColumn:@"emotionGroupPerPageLines"];
+            entity.emotionGroupPerPageItemWidth=[resultSet longLongIntForColumn:@"emotionGroupPerPageItemWidth"];
+            entity.emotionGroupIsShowingDeleteButton=[resultSet longLongIntForColumn:@"emotionGroupIsShowingDeleteButton"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -82,6 +88,11 @@
             entity.id=[resultSet longLongIntForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
             entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
+            entity.emotionGroupPerPageCount=[resultSet longLongIntForColumn:@"emotionGroupPerPageCount"];
+            entity.emotionGroupPerPageColunms=[resultSet longLongIntForColumn:@"emotionGroupPerPageColunms"];
+            entity.emotionGroupPerPageLines=[resultSet longLongIntForColumn:@"emotionGroupPerPageLines"];
+            entity.emotionGroupPerPageItemWidth=[resultSet longLongIntForColumn:@"emotionGroupPerPageItemWidth"];
+            entity.emotionGroupIsShowingDeleteButton=[resultSet longLongIntForColumn:@"emotionGroupIsShowingDeleteButton"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -94,17 +105,17 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl";
-    //NSString *valueString =@"?,?,?,?";
-    //NSString *insertValues =@"@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),obj.emotionGroupImageUrl";
+    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupPerPageCount,emotionGroupPerPageColunms,emotionGroupPerPageLines,emotionGroupPerPageItemWidth,emotionGroupIsShowingDeleteButton,emotionGroupImageUrl";
+    //NSString *valueString =@"?,?,?,?,?,?,?,?,?";
+    //NSString *insertValues =@"@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),@(obj.emotionGroupPerPageCount),@(obj.emotionGroupPerPageColunms),@(obj.emotionGroupPerPageLines),@(obj.emotionGroupPerPageItemWidth),@(obj.emotionGroupIsShowingDeleteButton),obj.emotionGroupImageUrl";
     
     
     
     FLXKEmotionDBHelper *FLXKDB = [FLXKEmotionDBHelper shareInstance];
     [FLXKDB.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         @try {
-            NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl) VALUES (?,?,?,?)";
-            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),obj.emotionGroupImageUrl];
+            NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupPerPageCount,emotionGroupPerPageColunms,emotionGroupPerPageLines,emotionGroupPerPageItemWidth,emotionGroupIsShowingDeleteButton,emotionGroupImageUrl) VALUES (?,?,?,?,?,?,?,?,?)";
+            BOOL result = [db executeUpdate:sql,@(obj.id),obj.emotionGroupName,@(obj.emotionGroupImageType),@(obj.emotionGroupPerPageCount),@(obj.emotionGroupPerPageColunms),@(obj.emotionGroupPerPageLines),@(obj.emotionGroupPerPageItemWidth),@(obj.emotionGroupIsShowingDeleteButton),obj.emotionGroupImageUrl];
             if (!result)
             {
                 *rollback = YES;
@@ -144,9 +155,9 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl";
-    //NSString *valueString =@"?,?,?,?";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
+    //NSString *keyString =@"id,emotionGroupName,emotionGroupImageType,emotionGroupPerPageCount,emotionGroupPerPageColunms,emotionGroupPerPageLines,emotionGroupPerPageItemWidth,emotionGroupIsShowingDeleteButton,emotionGroupImageUrl";
+    //NSString *valueString =@"?,?,?,?,?,?,?,?,?";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl";
     
     
     
@@ -156,8 +167,9 @@
             EmotionGroup* entity = (EmotionGroup*)obj;
             
             @try {
-                NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupImageUrl) VALUES (?,?,?,?)";
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
+                
+                NSString *sql = @"INSERT OR REPLACE INTO EmotionGroup(id,emotionGroupName,emotionGroupImageType,emotionGroupPerPageCount,emotionGroupPerPageColunms,emotionGroupPerPageLines,emotionGroupPerPageItemWidth,emotionGroupIsShowingDeleteButton,emotionGroupImageUrl) VALUES (?,?,?,?,?,?,?,?,?)";
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl];
                 if (!result)
                 {
                     *rollback = YES;
@@ -198,8 +210,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
+    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupPerPageCount= ? , emotionGroupPerPageColunms= ? , emotionGroupPerPageLines= ? , emotionGroupPerPageItemWidth= ? , emotionGroupIsShowingDeleteButton= ? , emotionGroupImageUrl= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl";
     
     
     
@@ -208,9 +220,9 @@
         EmotionGroup* entity = (EmotionGroup*)obj;
         
         @try {
-            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? "];
+            NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupPerPageCount= ? , emotionGroupPerPageColunms= ? , emotionGroupPerPageLines= ? , emotionGroupPerPageItemWidth= ? , emotionGroupIsShowingDeleteButton= ? , emotionGroupImageUrl= ? "];
             NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
+            BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl];
             if (!result)
             {
                 *rollback = YES;
@@ -250,8 +262,8 @@
 {
     __block BOOL isRollBack = NO;
     __block BOOL result = NO;
-    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? ";
-    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl";
+    //NSString *keyString =@" id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupPerPageCount= ? , emotionGroupPerPageColunms= ? , emotionGroupPerPageLines= ? , emotionGroupPerPageItemWidth= ? , emotionGroupIsShowingDeleteButton= ? , emotionGroupImageUrl= ? ";
+    //NSString *insertValues =@"@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl";
     
     
     
@@ -261,9 +273,9 @@
             EmotionGroup* entity = (EmotionGroup*)obj;
             
             @try {
-                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupImageUrl= ? "];
+                NSString *tempSql = [NSString stringWithFormat:@"UPDATE EmotionGroup set  id= ? , emotionGroupName= ? , emotionGroupImageType= ? , emotionGroupPerPageCount= ? , emotionGroupPerPageColunms= ? , emotionGroupPerPageLines= ? , emotionGroupPerPageItemWidth= ? , emotionGroupIsShowingDeleteButton= ? , emotionGroupImageUrl= ? "];
                 NSString *sql = [NSString stringWithFormat:@"%@ %@",tempSql,where];
-                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),entity.emotionGroupImageUrl];
+                BOOL result = [db executeUpdate:sql,@(entity.id),entity.emotionGroupName,@(entity.emotionGroupImageType),@(entity.emotionGroupPerPageCount),@(entity.emotionGroupPerPageColunms),@(entity.emotionGroupPerPageLines),@(entity.emotionGroupPerPageItemWidth),@(entity.emotionGroupIsShowingDeleteButton),entity.emotionGroupImageUrl];
                 if (!result)
                 {
                     *rollback = YES;

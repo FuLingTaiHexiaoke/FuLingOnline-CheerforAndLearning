@@ -43,7 +43,7 @@
 //4:big_static_image
 //5:big_gif_image
 
--(void)setEmotionItem:(EmotionItem *)item{
+-(void)setItem:(EmotionItem *)item{
     if (!item) {
 //        self.emotionButton.hidden=YES;
 //        self.emotionImageView.hidden=NO;
@@ -52,7 +52,7 @@
              [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
         return;
     }
-        self.item=item;
+        _item=item;
         if ( item.emotionItemImageType==0) {
 //            [self sendSubviewToBack:self.emotionButton];
 //            self.emotionButton.hidden=YES;

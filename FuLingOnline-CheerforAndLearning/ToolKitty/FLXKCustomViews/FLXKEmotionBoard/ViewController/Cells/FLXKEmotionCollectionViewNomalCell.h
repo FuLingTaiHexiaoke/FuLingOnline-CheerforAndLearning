@@ -11,8 +11,8 @@
 #import "EmotionItem.h"
 //@class EmotionItem;
 
-typedef void(^emotionCellTapGestureBlock)(EmotionItem*);
-typedef void(^emotionCellLongPressedGestureBlock)(EmotionItem*);
+typedef void(^EmotionCellTapGestureBlock)(EmotionItem*);
+typedef void(^EmotionCellLongPressedGestureBlock)(EmotionItem*);
 
 @interface FLXKEmotionCollectionViewNomalCell : UICollectionViewCell
 //IBOutlet
@@ -23,7 +23,7 @@ typedef void(^emotionCellLongPressedGestureBlock)(EmotionItem*);
 @property(nonatomic,strong)EmotionItem* item;
 
 //public methods
--(void)setEmotionItem:(EmotionItem *)item;
-@property(nonatomic,strong)emotionCellTapGestureBlock emotionCellTapGestureBlock;
-@property(nonatomic,strong)emotionCellLongPressedGestureBlock emotionCellLongPressedGestureBlock;
+//-(void)setEmotionItem:(EmotionItem *)item;
+@property(nonatomic,strong)EmotionCellTapGestureBlock emotionCellTapGestureBlock;
+@property(nonatomic,strong)EmotionCellLongPressedGestureBlock emotionCellLongPressedGestureBlock;
 @end

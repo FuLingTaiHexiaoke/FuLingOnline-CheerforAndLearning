@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-@class EmotionGroup;
-@interface FLXKNormalEmotionGroupCollectionViewCell : UICollectionViewCell
-@property(nonatomic,strong)EmotionGroup* groupItem;
-@property (weak, nonatomic) IBOutlet UIButton *groupEmotionButton;
 
+@class EmotionGroup;
+
+typedef void(^GroupEmotionCellTapGestureBlock)(NSRange);
+
+@interface FLXKNormalEmotionGroupCollectionViewCell : UICollectionViewCell
+@property(nonatomic,strong)EmotionGroup* emotionGroup;
+@property (weak, nonatomic) IBOutlet UIView *groupEmotionBackgroundView;
+@property (weak, nonatomic) IBOutlet UIButton *groupEmotionButton;
+//@property(nonatomic,assign)NSInteger groupStartPageIndex;
+//@property(nonatomic,assign)NSInteger groupPagesCount;
+@property(nonatomic,assign)NSRange groupPagesRange;
+
+@property(nonatomic,strong)GroupEmotionCellTapGestureBlock groupEmotionCellTapGestureBlock;
 @end

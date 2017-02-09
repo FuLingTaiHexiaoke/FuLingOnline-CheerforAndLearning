@@ -18,6 +18,11 @@
 //4:big_static_image
 //5:big_gif_image
 @property(nonatomic,assign)NSInteger emotionGroupImageType;
+@property(nonatomic,assign)NSInteger emotionGroupPerPageCount;
+@property(nonatomic,assign)NSInteger emotionGroupPerPageColunms;
+@property(nonatomic,assign)NSInteger emotionGroupPerPageLines;
+@property(nonatomic,assign)NSInteger emotionGroupPerPageItemWidth;
+@property(nonatomic,assign)NSInteger emotionGroupIsShowingDeleteButton;
 @property(nonatomic,strong)NSString* emotionGroupImageUrl;
 
 
