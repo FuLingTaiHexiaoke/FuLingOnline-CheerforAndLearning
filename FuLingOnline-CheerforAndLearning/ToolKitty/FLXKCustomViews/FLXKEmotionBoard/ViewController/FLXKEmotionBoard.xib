@@ -33,15 +33,20 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zda-v3-1X6">
                     <rect key="frame" x="0.0" y="161" width="375" height="20"/>
                     <subviews>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="s00-yq-tgC">
-                            <rect key="frame" x="168" y="-8" width="39" height="37"/>
-                        </pageControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1G-aL-qC7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.94117647058823528" green="0.94509803921568625" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="t1G-aL-qC7" secondAttribute="bottom" id="0VW-MV-ftZ"/>
                         <constraint firstAttribute="height" constant="20" id="2XC-ap-Wp5"/>
-                        <constraint firstItem="s00-yq-tgC" firstAttribute="centerX" secondItem="zda-v3-1X6" secondAttribute="centerX" id="HEt-Ab-38u"/>
-                        <constraint firstItem="s00-yq-tgC" firstAttribute="centerY" secondItem="zda-v3-1X6" secondAttribute="centerY" id="gZk-Ot-z0O"/>
+                        <constraint firstItem="t1G-aL-qC7" firstAttribute="top" secondItem="zda-v3-1X6" secondAttribute="top" id="6Jy-Vs-rEf"/>
+                        <constraint firstItem="t1G-aL-qC7" firstAttribute="centerY" secondItem="zda-v3-1X6" secondAttribute="centerY" id="E5u-Uy-zKF"/>
+                        <constraint firstItem="t1G-aL-qC7" firstAttribute="leading" secondItem="zda-v3-1X6" secondAttribute="leading" id="eem-y3-hQB"/>
+                        <constraint firstAttribute="trailing" secondItem="t1G-aL-qC7" secondAttribute="trailing" id="p15-TD-Gls"/>
+                        <constraint firstItem="t1G-aL-qC7" firstAttribute="centerX" secondItem="zda-v3-1X6" secondAttribute="centerX" id="ufx-Tn-wOR"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hhO-7M-RTQ" customClass="FLXKEmotionGroupIndexCollectionView">
@@ -88,7 +93,7 @@
                 <outlet property="emotionContainerScrollView" destination="MKa-Iu-kYW" id="vX6-Uu-kcy"/>
                 <outlet property="emotionGroupIndexCollectionView" destination="hhO-7M-RTQ" id="fh5-gh-vIV"/>
                 <outlet property="leftBottomButton" destination="gys-lV-Wzv" id="MQb-NR-56s"/>
-                <outlet property="pageControl" destination="s00-yq-tgC" id="NGC-fh-J7o"/>
+                <outlet property="pageControlPlaceholder" destination="t1G-aL-qC7" id="Tt1-v8-TCm"/>
                 <outlet property="rightBottomButton" destination="SL4-PW-dYw" id="HYF-G4-VLC"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="53"/>

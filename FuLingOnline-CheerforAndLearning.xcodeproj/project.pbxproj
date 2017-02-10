@@ -23,6 +23,12 @@
 		B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */; };
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
+		B93D3F611E4DAD9900DD6B9B /* GooeyCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F561E4DAD9900DD6B9B /* GooeyCircle.m */; };
+		B93D3F621E4DAD9900DD6B9B /* Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F581E4DAD9900DD6B9B /* Indicator.m */; };
+		B93D3F631E4DAD9900DD6B9B /* KYAnimatedPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F5A1E4DAD9900DD6B9B /* KYAnimatedPageControl.m */; };
+		B93D3F641E4DAD9900DD6B9B /* KYSpringLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F5C1E4DAD9900DD6B9B /* KYSpringLayerAnimation.m */; };
+		B93D3F651E4DAD9900DD6B9B /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F5E1E4DAD9900DD6B9B /* Line.m */; };
+		B93D3F661E4DAD9900DD6B9B /* RotateRect.m in Sources */ = {isa = PBXBuildFile; fileRef = B93D3F601E4DAD9900DD6B9B /* RotateRect.m */; };
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKViewControllerBase.m */; };
 		B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B940CE401DE42C65004427F0 /* FLXKTabBarController.m */; };
@@ -581,6 +587,18 @@
 		B930C1F91DE548D4004F729B /* FLXKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBar.m; sourceTree = "<group>"; };
 		B93AF5C11E30AADA00F51E26 /* EmotionGroupDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroupDetailModel.h; sourceTree = "<group>"; };
 		B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionGroupDetailModel.m; sourceTree = "<group>"; };
+		B93D3F551E4DAD9900DD6B9B /* GooeyCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooeyCircle.h; sourceTree = "<group>"; };
+		B93D3F561E4DAD9900DD6B9B /* GooeyCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooeyCircle.m; sourceTree = "<group>"; };
+		B93D3F571E4DAD9900DD6B9B /* Indicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Indicator.h; sourceTree = "<group>"; };
+		B93D3F581E4DAD9900DD6B9B /* Indicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Indicator.m; sourceTree = "<group>"; };
+		B93D3F591E4DAD9900DD6B9B /* KYAnimatedPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYAnimatedPageControl.h; sourceTree = "<group>"; };
+		B93D3F5A1E4DAD9900DD6B9B /* KYAnimatedPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYAnimatedPageControl.m; sourceTree = "<group>"; };
+		B93D3F5B1E4DAD9900DD6B9B /* KYSpringLayerAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYSpringLayerAnimation.h; sourceTree = "<group>"; };
+		B93D3F5C1E4DAD9900DD6B9B /* KYSpringLayerAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYSpringLayerAnimation.m; sourceTree = "<group>"; };
+		B93D3F5D1E4DAD9900DD6B9B /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		B93D3F5E1E4DAD9900DD6B9B /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
+		B93D3F5F1E4DAD9900DD6B9B /* RotateRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateRect.h; sourceTree = "<group>"; };
+		B93D3F601E4DAD9900DD6B9B /* RotateRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateRect.m; sourceTree = "<group>"; };
 		B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHttpRequestModelHelper.h; sourceTree = "<group>"; };
 		B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHttpRequestModelHelper.m; sourceTree = "<group>"; };
 		B93FF8891E01285800070BD4 /* FLXKViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKViewControllerBase.h; sourceTree = "<group>"; };
@@ -1292,6 +1310,7 @@
 		B924D8D51E2F648A00A5D9F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B93D3F541E4DAD9900DD6B9B /* KYAnimatedPageControl */,
 				B92F57001E499888001D8C2A /* EmotionTextAttachment.h */,
 				B92F57011E499888001D8C2A /* EmotionTextAttachment.m */,
 				B92F57021E499888001D8C2A /* NSAttributedString+EmotionExtension.h */,
@@ -1362,6 +1381,25 @@
 				B97505E01E4C58F600A577E7 /* image */,
 			);
 			path = Resouce;
+			sourceTree = "<group>";
+		};
+		B93D3F541E4DAD9900DD6B9B /* KYAnimatedPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				B93D3F551E4DAD9900DD6B9B /* GooeyCircle.h */,
+				B93D3F561E4DAD9900DD6B9B /* GooeyCircle.m */,
+				B93D3F571E4DAD9900DD6B9B /* Indicator.h */,
+				B93D3F581E4DAD9900DD6B9B /* Indicator.m */,
+				B93D3F591E4DAD9900DD6B9B /* KYAnimatedPageControl.h */,
+				B93D3F5A1E4DAD9900DD6B9B /* KYAnimatedPageControl.m */,
+				B93D3F5B1E4DAD9900DD6B9B /* KYSpringLayerAnimation.h */,
+				B93D3F5C1E4DAD9900DD6B9B /* KYSpringLayerAnimation.m */,
+				B93D3F5D1E4DAD9900DD6B9B /* Line.h */,
+				B93D3F5E1E4DAD9900DD6B9B /* Line.m */,
+				B93D3F5F1E4DAD9900DD6B9B /* RotateRect.h */,
+				B93D3F601E4DAD9900DD6B9B /* RotateRect.m */,
+			);
+			path = KYAnimatedPageControl;
 			sourceTree = "<group>";
 		};
 		B93FF8881E01285800070BD4 /* FLXKViewControllerBase */ = {
@@ -2930,14 +2968,17 @@
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
+				B93D3F621E4DAD9900DD6B9B /* Indicator.m in Sources */,
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B966A9341E0CFAD200222095 /* FunctionKeyboard.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
+				B93D3F641E4DAD9900DD6B9B /* KYSpringLayerAnimation.m in Sources */,
 				B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B966A9371E0CFAD200222095 /* NSAttributedString+EmojiExtension.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
+				B93D3F611E4DAD9900DD6B9B /* GooeyCircle.m in Sources */,
 				B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */,
 				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
@@ -2963,6 +3004,7 @@
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
+				B93D3F631E4DAD9900DD6B9B /* KYAnimatedPageControl.m in Sources */,
 				B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */,
 				B966A9381E0CFAD200222095 /* SubHPGrowingTextView.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
@@ -2971,6 +3013,7 @@
 				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
+				B93D3F661E4DAD9900DD6B9B /* RotateRect.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */,
@@ -2982,6 +3025,7 @@
 				B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */,
 				B966A9301E0CFAD200222095 /* PsyInputView_Simple.m in Sources */,
 				B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */,
+				B93D3F651E4DAD9900DD6B9B /* Line.m in Sources */,
 				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
 				B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */,
