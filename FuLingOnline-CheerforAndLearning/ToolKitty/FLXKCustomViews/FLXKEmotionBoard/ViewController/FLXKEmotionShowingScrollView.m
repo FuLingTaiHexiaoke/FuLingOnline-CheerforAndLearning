@@ -65,11 +65,19 @@
             }
         }];
         [self setCurrentShowingPageIndex:0];
-        self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), self.height);
+        self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), CollectionViewHeight);
+               NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
         self.pagingEnabled=YES;
     }
     
     return self;
+}
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    [self setCurrentShowingPageIndex:0];
+    self.contentSize=CGSizeMake( Screen_Width*self.totalShowingCollectionViews.count, CollectionViewHeight);
+    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
 }
 
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{

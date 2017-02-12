@@ -7,9 +7,12 @@
 
 
 //相邻小球之间的距离
-#define DISTANCE ((self.frame.size.width - self.ballDiameter) / (self.pageCount - 1))
+//#define DISTANCE ((self.frame.size.width - self.ballDiameter) / (self.pageCount - 1))
+
 #import "Line.h"
 #import "KYSpringLayerAnimation.h"
+
+#import "KYConfig.h"
 
 @implementation Line{
     CGFloat initialSelectedLineLength; // 记录上一次选中的长度
@@ -25,7 +28,7 @@
         //属性默认值
         self.selectedPage = 1;
         self.lineHeight = 2.0;
-        self.ballDiameter = 10.0;
+        self.ballDiameter = 8.0;
         self.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
         self.selectedColor   = [UIColor redColor];
         self.shouldShowProgressLine = YES;
@@ -50,7 +53,7 @@
         self.bindScrollView = layer.bindScrollView;
         self.masksToBounds = layer.masksToBounds;
     }
-    
+
     return self;
 }
 
@@ -72,14 +75,11 @@
 
 //invoke when call setNeedDisplay
 - (void)drawInContext:(CGContextRef)ctx {
-          NSLog(@"pageCount:%ld", (long)self.pageCount );
-//    self.pageCount=10;
-    NSLog(@"selectedPage:%ld", (long)self.selectedPage );
-      NSLog(@"pageCount:%ld", (long)self.pageCount );
+
     NSAssert(self.selectedPage <= self.pageCount,
              @"ERROR:PageCount can not less than selectedPage");
     NSAssert(self.selectedPage != 0, @"ERROR:SelectedPage can not be ZERO!");
-    
+
     if (self.pageCount == 1) {
         CGMutablePathRef linePath = CGPathCreateMutable();
         CGPathMoveToPoint(linePath, nil, self.frame.size.width / 2,
@@ -89,25 +89,25 @@
                    self.frame.size.height / 2 - self.ballDiameter / 2,
                    self.ballDiameter, self.ballDiameter);
         CGPathAddEllipseInRect(linePath, nil, circleRect);
-        
+
         CGContextAddPath(ctx, linePath);
         CGContextSetFillColorWithColor(ctx, self.selectedColor.CGColor);
         CGContextFillPath(ctx);
-        
+
         return;
     }
-    
+
     CGMutablePathRef linePath = CGPathCreateMutable();
     CGPathMoveToPoint(linePath, nil, self.ballDiameter / 2,
                       self.frame.size.height / 2);
-    
+
     //画默认颜色的背景线
-    CGPathAddRoundedRect(
-                         linePath, nil,
-                         CGRectMake(self.ballDiameter / 2,
-                                    self.frame.size.height / 2 - self.lineHeight / 2,
-                                    self.frame.size.width - self.ballDiameter, self.lineHeight),
-                         0, 0);
+    //    CGPathAddRoundedRect(
+    //                         linePath, nil,
+    //                         CGRectMake(self.ballDiameter / 2,
+    //                                    self.frame.size.height / 2 - self.lineHeight / 2,
+    //                                    self.frame.size.width - self.ballDiameter, self.lineHeight),
+    //                         0, 0);
     //画pageCount个小圆
     for (NSInteger i = 0; i < self.pageCount; i++) {
         CGRect circleRect = CGRectMake(
@@ -115,11 +115,12 @@
                                        self.ballDiameter, self.ballDiameter);
         CGPathAddEllipseInRect(linePath, nil, circleRect);
     }
-    
+
     CGContextAddPath(ctx, linePath);
+    CGContextSetStrokeColorWithColor(ctx, self.unSelectedColor.CGColor);
     CGContextSetFillColorWithColor(ctx, self.unSelectedColor.CGColor);
     CGContextFillPath(ctx);
-    
+
     if (self.shouldShowProgressLine == YES) {
         CGContextBeginPath(ctx);
         linePath = CGPathCreateMutable();
@@ -132,7 +133,7 @@
                              0, 0);
         //画pageCount个有色小圆
         for (NSInteger i = 0; i < self.pageCount; i++) {
-            
+
             if (i * DISTANCE <= self.selectedLineLength + 0.1) {
                 CGRect circleRect =
                 CGRectMake(0 + i * DISTANCE,
@@ -141,37 +142,37 @@
                 CGPathAddEllipseInRect(linePath, nil, circleRect);
             }
         }
-        
+
         CGContextAddPath(ctx, linePath);
         CGContextSetFillColorWithColor(ctx, self.selectedColor.CGColor);
         CGContextFillPath(ctx);
     }
-    
+
 }
 
 #pragma mark -- length animation
 //tap index to scroll
 - (void)animateSelectedLineToNewIndex:(NSInteger)newIndex {
-    
+
     CGFloat newLineLength = (newIndex - 1) * DISTANCE;
     // Spring Animation
     //    CAKeyframeAnimation *anim = [[KYSpringLayerAnimation sharedAnimManager]
     //    createSpringAnima:@"selectedLineLength" duration:1.0
     //    usingSpringWithDamping:0.5 initialSpringVelocity:3
     //    fromValue:@(self.selectedLineLength) toValue:@(newLineLength)];
-    
+
     // Half curve animation
     CAKeyframeAnimation *anim = [[KYSpringLayerAnimation sharedAnimManager]
                                  createHalfCurveAnima:@"selectedLineLength"
                                  duration:1.0
                                  fromValue:@(self.selectedLineLength)
                                  toValue:@(newLineLength)];
-    
+
     // line animation
     //    CAKeyframeAnimation *anim = [[KYSpringLayerAnimation sharedAnimManager]
     //    createBasicAnima:@"selectedLineLength" duration:0.2
     //    fromValue:@(self.selectedLineLength) toValue:@(newLineLength)];
-    
+
     self.selectedLineLength = newLineLength;
     anim.delegate = self;
     anim.removedOnCompletion = YES;
@@ -185,7 +186,7 @@
     if (scrollView.contentOffset.x <= 0) {
         return;
     }
-    
+
     CGFloat offSetX = scrollView.contentOffset.x - lastContentOffsetX;
     self.selectedLineLength = initialSelectedLineLength +
     (offSetX / scrollView.frame.size.width) * DISTANCE;
@@ -203,7 +204,14 @@
 
 -(void)setPageCount:(NSInteger)pageCount{
     _pageCount=pageCount;
-    self.selectedLineLength=0;
-       [self setNeedsDisplay];
+    //动态算出此时frame所需的实际宽度
+    CGRect newFrame=self.frame;
+    CGFloat newWidth=(pageCount - 1)*DISTANCE+ self.ballDiameter;
+    newFrame.origin.x=(FULL_WIDTH_-newWidth)/2;
+    newFrame.size.width=newWidth;
+    self.frame=newFrame;
+
+    //    self.selectedLineLength=0;
+    [self setNeedsDisplay];
 }
 @end

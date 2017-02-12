@@ -19,6 +19,7 @@ typedef enum ScrollDirection {
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "KYConfig.h"
 
 @class KYAnimatedPageControl;
 
@@ -33,7 +34,7 @@ typedef enum ScrollDirection {
                           andIndicator:(KYAnimatedPageControl *)pgctl;
 
 - (void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
-                     andIndicatorFrame:(CGRect)frame;
+                     currentShowingRange:(NSRange)currentShowingRange;
 
 - (void)restoreAnimation:(id)howmanydistance;
 

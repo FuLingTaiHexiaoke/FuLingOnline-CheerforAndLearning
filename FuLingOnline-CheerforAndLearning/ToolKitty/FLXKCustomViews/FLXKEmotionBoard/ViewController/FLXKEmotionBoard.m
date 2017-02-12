@@ -15,7 +15,7 @@
 
 //utilites
 #import "UIImage+EmotionExtension.h"
-#import "EmojiTextAttachment.h"
+//#import "EmojiTextAttachment.h"
 #import "EmotionTextAttachment.h"
 #import "NSAttributedString+EmotionExtension.h"
 #import "UIImage+GIF.h"
@@ -47,6 +47,11 @@
 
 //models
 @property(nonatomic,strong)NSMutableArray<EmotionGroupDetailModel *>* emotionGroupDetailModels;
+
+//state record
+@property(nonatomic, assign) NSRange currentShowingRange;//当前显示的表情组的范围
+
+
 @end
 
 @implementation FLXKEmotionBoard
@@ -88,6 +93,11 @@
         //              [b appendString:[NSString stringWithFormat:@"%@\n",a[i]]];
         //        }
         //         NSLog(@"%@\n", b);
+        NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+
+        //添加键盘弹出-隐藏通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
     }
     return self;
 }
@@ -102,6 +112,15 @@
     _emotionGroupIndexCollectionView.emotionGroupSelectedDelegate=self;
     
     [self setupUIPageControl];
+    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+
+}
+
+
+-(void)keyboardDidShowNotification:(NSNotification*)notification{
+    if (self.editingTextView.inputView) {
+        [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:0];
+    }
 }
 
 //-(void)setDelegateForSubViewsInScrollView{
@@ -109,6 +128,11 @@
 //    <#code#>
 //}
 //}
+
+-(void)didSelectedEmotionGroupItem:(NSRange)range{
+    [self setCurrentShowingRange:range];
+}
+
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
     if (emotionItem.emotionItemImageType==1) {
         [self   insertEmoji:emotionItem.emotionItemName];
@@ -118,9 +142,21 @@
     }
 }
 
--(void)didSelectedEmotionGroupItem:(NSRange)range{
-    [_emotionContainerScrollView setContentOffset:CGPointMake(range.location*Screen_Width, 0) animated:NO];
-        [_emotionContainerScrollView setCurrentShowingPageIndex:range.location] ;
+-(void)setCurrentShowingRange:(NSRange)currentShowingRange{
+    _currentShowingRange=currentShowingRange;
+
+    //_emotionContainerScrollView
+    CGFloat tempStartLength=currentShowingRange.location*Screen_Width;
+    CGFloat tempContentLength=(currentShowingRange.length-1)*Screen_Width;
+    CGFloat  contentOffset=  _emotionContainerScrollView.contentOffset.x;
+    if (tempStartLength>contentOffset || contentOffset>tempContentLength+tempStartLength) {
+        [_emotionContainerScrollView setContentOffset:CGPointMake(currentShowingRange.location*Screen_Width, 0) animated:NO];
+    }
+
+    [_emotionContainerScrollView setCurrentShowingPageIndex:currentShowingRange.location] ;
+
+    //pagecontrol
+    [self changePageControlShowing];
 }
 
 //读取表情配置文件生成models
@@ -290,16 +326,16 @@
 //    
 //    frame=  [self.pageControlPlaceholder.superview convertRect:self.pageControlPlaceholder.frame toView:self];
 //    NSLog(@"frame4:%@", NSStringFromCGRect(frame));
-//    
+    
     self.pageControl = [[KYAnimatedPageControl alloc]
                         initWithFrame:self.pageControlPlaceholder.superview.frame];
     self.pageControl.pageCount = 8;
     self.pageControl.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
-    self.pageControl.selectedColor = [UIColor redColor];
+    self.pageControl.selectedColor = [UIColor colorWithWhite:0.6 alpha:1];
     self.pageControl.bindScrollView = self.emotionContainerScrollView;
     self.pageControl.shouldShowProgressLine = NO;
     self.pageControl.indicatorStyle = IndicatorStyleGooeyCircle;
-    self.pageControl.indicatorSize = 20;
+    self.pageControl.indicatorSize = 10;
     self.pageControl.swipeEnable = YES;
      [self addSubview:self.pageControl];
     self.pageControl.didSelectIndexBlock = ^(NSInteger index) {
@@ -307,57 +343,42 @@
     };
 }
 
-//
-//#pragma mark - UIScrollViewDelegate
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    
-//}
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-//    
-//}
-//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-//    
-//}
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    
-//}- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-//    
-//}
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//
-//}
-//
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-//    
-//}
-
 #pragma mark-- UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    // Indicator动画
-    [self.pageControl.indicator animateIndicatorWithScrollView:scrollView
-                                                  andIndicator:self.pageControl];
+    [self changePageControlShowing];
     
-    if (scrollView.dragging || scrollView.isDecelerating || scrollView.tracking) {
-        //背景线条动画
-        [self.pageControl.pageControlLine
-         animateSelectedLineWithScrollView:scrollView];
-    }
+//    [self.emotionGroupIndexCollectionView selectedItemAtIndexPath:];
+//    if (scrollView.dragging || scrollView.isDecelerating || scrollView.tracking) {
+//        //背景线条动画
+//        [self.pageControl.pageControlLine
+//         animateSelectedLineWithScrollView:scrollView];
+//    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     self.pageControl.indicator.lastContentOffset = scrollView.contentOffset.x;
+
+      [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:scrollView.contentOffset.x];
+
         [_emotionContainerScrollView setCurrentShowingPageIndex:(NSInteger) scrollView.contentOffset.x/(Screen_Width)] ;
+
+
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    [self.pageControl.indicator
-     restoreAnimation:@(1.0 / self.pageControl.pageCount)];
+//    [self.pageControl.indicator restoreAnimation:@(1.0 / self.pageControl.pageCount)];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     self.pageControl.indicator.lastContentOffset = scrollView.contentOffset.x;
 }
+
+-(void)changePageControlShowing{
+    [self.pageControl setCurrentShowingRange:self.currentShowingRange];
+}
+
+
+
 //初始化表情视图
 -(id)initWithFrame:(CGRect)frame editingTextView:(UITextView*)editingTextView containerView:(UIView*)containerView{
     
@@ -443,18 +464,6 @@
 //    }
 //}
 
-#pragma mark - Private Methods
-
--(void)didSelectAFace:(id)sender
-{
-    UIButton *tempbtn = (UIButton *)sender;
-    NSMutableDictionary *tempdic = [self.faces objectAtIndex:tempbtn.tag];
-    NSArray *temparray = [tempdic allKeys];
-    NSString *faceStr= [NSString stringWithFormat:@"%@",[temparray objectAtIndex:0]];
-    //    self.clickEmotionBlock(faceStr);
-    [self insertEmoji:faceStr imageName:[NSString stringWithFormat:@"smiley_%ld.png",(long)tempbtn.tag]];
-}
-
 
 ////draw the emotion views and add to srollview
 //-(void)drawEmotionViews{
@@ -532,29 +541,6 @@
 
 
 
-
-- (void)insertEmoji:(NSString*)emotionName imageName:(NSString*)imageName {
-    //Create emoji attachment
-    EmojiTextAttachment *emojiTextAttachment = [EmojiTextAttachment new];
-    
-    //Set tag and image
-    emojiTextAttachment.emojiTag =emotionName;
-    emojiTextAttachment.image = [UIImage imageNamed:imageName];
-    
-    //Set emoji size
-    //        emojiTextAttachment.emojiSize = CGSizeMake(_emojiSizeSlider.value * EMOJI_MAX_SIZE, _emojiSizeSlider.value * EMOJI_MAX_SIZE);
-    emojiTextAttachment.emojiSize =  CGSizeMake(20, 20);
-    
-    //Insert emoji image
-    [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emojiTextAttachment]
-                                                     atIndex:self.editingTextView.selectedRange.location];
-    
-    //Move selection location
-    self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
-    
-    //Reset text style
-    //    [self resetTextStyle];
-}
 
 
 

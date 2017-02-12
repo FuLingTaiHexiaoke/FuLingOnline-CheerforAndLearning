@@ -37,6 +37,7 @@
         self.lastContentOffset = layer.lastContentOffset;
         self.scrollDirection = layer.scrollDirection;
         self.factor = layer.factor;
+        self.masksToBounds=NO;
     }
     return self;
 }
@@ -105,9 +106,10 @@
 #pragma mark-- override superclass method
 //- (void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
 //                          andIndicator:(KYAnimatedPageControl *)pgctl {
-
-    - (void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
-andIndicatorFrame:(CGRect)frame {
+- (void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
+                   currentShowingRange:(NSRange)currentShowingRange{
+//    - (void)animateIndicatorWithScrollView:(UIScrollView *)scrollView
+//andIndicatorFrame:(CGRect)frame {
     if ((scrollView.contentOffset.x - self.lastContentOffset) >= 0 &&
         (scrollView.contentOffset.x - self.lastContentOffset) <=
         (scrollView.frame.size.width) / 2) {
@@ -118,38 +120,32 @@ andIndicatorFrame:(CGRect)frame {
         self.scrollDirection = ScrollDirectionRight;
     }
     
-    if (!beginGooeyAnim) {
-        _factor = MIN(
-                      1, MAX(0, (ABS(scrollView.contentOffset.x - self.lastContentOffset) /
-                                 scrollView.frame.size.width)));
-    }
-//    CGFloat originX = (scrollView.contentOffset.x / scrollView.frame.size.width) *
-//    (pgctl.frame.size.width / (pgctl.pageCount - 1));
+//    if (!beginGooeyAnim) {
+//        _factor = MIN(
+//                      1, MAX(0, (ABS(scrollView.contentOffset.x - self.lastContentOffset) /
+//                                 scrollView.frame.size.width)));
+//    }
+    NSInteger pageCount=currentShowingRange.length;
+    //动态算出此时frame所需的实际宽度
+    CGRect newFrame=self.frame;
+    CGFloat newWidth=(pageCount - 1)*DISTANCE+ self.indicatorSize;
+    newFrame.origin.x=(FULL_WIDTH_-newWidth)/2;
+    newFrame.size.width=newWidth;
+    self.frame=newFrame;
 
-    CGFloat originX = (scrollView.contentOffset.x / scrollView.contentSize.width ) *
-    (frame.size.width-self.indicatorSize);
+    CGFloat currentRangeOffset=scrollView.contentOffset.x-currentShowingRange.location*scrollView.frame.size.width;
+    CGFloat currentRangeContentLength=(currentShowingRange.length-1)*scrollView.frame.size.width;
+
+    CGFloat originX = (currentRangeOffset / currentRangeContentLength) *
+    (self.frame.size.width-self.indicatorSize);
+
     NSLog(@"originX:%f",originX);
     self.currentRect = CGRectMake(originX, self.frame.size.height / 2 - self.indicatorSize / 2,self.indicatorSize, self.indicatorSize);
-    
-    
-//    if (originX - self.indicatorSize / 2 <= 0) {
-//        self.currentRect =
-//        CGRectMake(0, self.frame.size.height / 2 - self.indicatorSize / 2,
-//                   self.indicatorSize, self.indicatorSize);
-//    } else if ((originX - self.indicatorSize / 2) >=
-//               self.frame.size.width - self.indicatorSize) {
-//        self.currentRect =
-//        CGRectMake(self.frame.size.width - self.indicatorSize,
-//                   self.frame.size.height / 2 - self.indicatorSize / 2,
-//                   self.indicatorSize, self.indicatorSize);
-//    } else {
-//        self.currentRect =
-//        CGRectMake(originX - self.indicatorSize / 2,
-//                   self.frame.size.height / 2 - self.indicatorSize / 2,
-//                   self.indicatorSize, self.indicatorSize);
-//    }
-    
-    if (scrollView.contentOffset.x <= 0) {
+    NSLog(@"frame %@", NSStringFromCGRect(self.frame ));
+
+    NSLog(@"currentRect %@", NSStringFromCGRect(self.currentRect ));
+
+    if (currentRangeOffset< 0 ||originX<0  || currentRangeOffset>(currentRangeContentLength)) {
         return;
     }
     

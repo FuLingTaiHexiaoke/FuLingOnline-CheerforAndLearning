@@ -24,6 +24,9 @@ typedef enum : NSUInteger {
 //page的个数 The count of all pages
 @property(nonatomic, assign) NSInteger pageCount;
 
+//当前显示的表情组的范围
+@property(nonatomic, assign) NSRange currentShowingRange;
+
 //第一次显示的page 第一页为1,类推 2,3,4...  The default selected page ,if you
 //wanna show fourth page, set 4
 @property(nonatomic, assign) NSInteger selectedPage;

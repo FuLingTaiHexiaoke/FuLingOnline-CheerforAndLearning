@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,17 +17,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-OY-C5F">
-                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44I-nE-2OD">
-                                <rect key="frame" x="39" y="4" width="1" height="32"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="0.5" id="E5e-O7-Y0a"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ig-i6-qqH">
-                                <rect key="frame" x="4" y="4" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0Ig-i6-qqH" secondAttribute="height" multiplier="15:15" id="laJ-e7-is9"/>
                                 </constraints>
@@ -39,8 +33,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Ig-i6-qqH" firstAttribute="centerX" secondItem="mKE-OY-C5F" secondAttribute="centerX" id="2ck-lV-EU0"/>
-                            <constraint firstAttribute="bottom" secondItem="0Ig-i6-qqH" secondAttribute="bottom" constant="4" id="8GG-mP-pLZ"/>
+                            <constraint firstAttribute="bottom" secondItem="0Ig-i6-qqH" secondAttribute="bottom" constant="2" id="8GG-mP-pLZ"/>
                             <constraint firstAttribute="bottom" secondItem="44I-nE-2OD" secondAttribute="bottom" constant="4" id="AKY-PK-N00"/>
+                            <constraint firstItem="0Ig-i6-qqH" firstAttribute="top" secondItem="mKE-OY-C5F" secondAttribute="top" constant="2" id="cfT-Rg-rlX"/>
                             <constraint firstItem="0Ig-i6-qqH" firstAttribute="centerY" secondItem="mKE-OY-C5F" secondAttribute="centerY" id="kN1-iS-uhm"/>
                             <constraint firstAttribute="trailing" secondItem="44I-nE-2OD" secondAttribute="trailing" id="kut-fC-ee7"/>
                             <constraint firstItem="44I-nE-2OD" firstAttribute="top" secondItem="mKE-OY-C5F" secondAttribute="top" constant="4" id="xX6-r6-oit"/>

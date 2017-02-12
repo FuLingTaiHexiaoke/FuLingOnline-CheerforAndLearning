@@ -22,7 +22,8 @@
 
 @interface FLXKEmotionGroupIndexCollectionView()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)NSArray<EmotionGroup*>* emotionGroups;
-
+@property(nonatomic,assign)NSRange currentEmotionGroupsRange;
+@property(nonatomic,strong)NSMutableArray<NSValue*>*  emotionGroupsRanges;
 @end
 
 @implementation FLXKEmotionGroupIndexCollectionView
@@ -31,7 +32,7 @@
     self=[super initWithCoder:aDecoder];
     if (self) {
         _emotionGroups=[EmotionGroup selectAll];
-        
+        self.emotionGroupsRanges =[NSMutableArray array];
         //init self properties
         self.dataSource=self;
         self.delegate=self;
@@ -44,6 +45,29 @@
     [super awakeFromNib];
     self.dataSource=self;
     self.delegate=self;
+
+
+}
+
+-(void)selecteItemAtContentOffset:(CGFloat)contentOffset{
+    //set init selected emotion group
+//    if (!(self.currentEmotionGroupsRange.length>0)) {
+//        NSIndexPath* initIndexPath= [NSIndexPath indexPathForItem:0 inSection:0];
+//        [self  collectionView:self didSelectItemAtIndexPath:initIndexPath ];
+//    }
+//    else{
+        [self.emotionGroupsRanges enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange tempRange=obj.rangeValue;
+            CGFloat tempStartLength=tempRange.location*Screen_Width;
+            CGFloat tempContentLength=(tempRange.length-1)*Screen_Width;
+            if (tempStartLength<=contentOffset&& contentOffset<=tempContentLength+tempStartLength) {
+                NSIndexPath* currentIndexPath= [NSIndexPath indexPathForItem:idx inSection:0];
+                [self  collectionView:self didSelectItemAtIndexPath:currentIndexPath ];
+                *stop=YES;
+            }
+        }];
+
+//    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -55,6 +79,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKNormalEmotionGroupCollectionViewCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKNormalEmotionGroupCollectionViewCell forIndexPath:indexPath];
     cell.emotionGroup= self.emotionGroups[indexPath.item];
+    [self.emotionGroupsRanges addObject:[NSValue valueWithRange:cell.groupPagesRange]];
     //    cell.groupEmotionCellTapGestureBlock=^(NSRange range){
     //        if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
     //        {
@@ -75,16 +100,34 @@
         obj.groupEmotionBackgroundView.backgroundColor=[UIColor whiteColor];
         obj.groupEmotionButton.backgroundColor=[UIColor whiteColor];
     }];
-    
+
     FLXKNormalEmotionGroupCollectionViewCell* cell= ( FLXKNormalEmotionGroupCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     if ([self.emotionGroupSelectedDelegate respondsToSelector:@selector(didSelectedEmotionGroupItem:)])
     {
         [self.emotionGroupSelectedDelegate didSelectedEmotionGroupItem:cell.groupPagesRange];
+        self.currentEmotionGroupsRange=cell.groupPagesRange;
     }
-    
+
     //set selected state
     cell.groupEmotionBackgroundView.backgroundColor=RGBA(243,244,246,1.0);
     cell.groupEmotionButton.backgroundColor=RGBA(243,244,246,1.0);
 }
+
+
+
+//- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+//       //set init selected emotion group
+//    if (indexPath.section==0&&indexPath.item==0) {
+////        [self selectItemAtIndexPath:indexPath];
+//             [self  collectionView:self didSelectItemAtIndexPath:indexPath ];
+////        [self selectItemAtIndexPath:indexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+//    }
+////    //set init selected emotion group
+////    if (!(self.currentEmotionGroupsRange.length>0)) {
+////        NSIndexPath* initIndexPath= [NSIndexPath indexPathForItem:0 inSection:0];
+////        [self  collectionView:self didSelectItemAtIndexPath:initIndexPath ];
+////        //        selectItemAtIndexPath:initIndexPath animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+////    }
+//}
 
 @end

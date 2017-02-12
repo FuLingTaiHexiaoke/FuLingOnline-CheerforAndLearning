@@ -10,7 +10,6 @@
 
 //used view controllers
 #import "TZImagePickerController.h"
-#import "PsyInputView_Simple.h"
 #import "FLXKEmotionBoard.h"
 
 //subview
@@ -28,7 +27,7 @@
 
 
 
-@interface FLXKPublishNewsController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate,UIScrollViewDelegate,PsyInputView_SimpleDelegate>
+@interface FLXKPublishNewsController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate,UIScrollViewDelegate>
 //IBOutlet
 @property (weak, nonatomic) IBOutlet UIScrollView *publishScrollViewContainer;
 @property (weak, nonatomic) IBOutlet UITextView *publishTextView;
