@@ -30,6 +30,8 @@
 		B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76B1DE58E7B00598437 /* UIColor+Custom.m */; };
 		B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */; };
 		B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7721DE59B2600598437 /* HomeNewsViewController.m */; };
+		B944ADDF1E5189BD00449C62 /* FLXKFriendsSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */; };
+		B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B944ADE41E51988000449C62 /* UIViewController+Extensions.m */; };
 		B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B948CBE91DD5C7A800E6ED93 /* Settings.bundle */; };
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
@@ -475,6 +477,10 @@
 		B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		B941F7711DE59B2600598437 /* HomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsViewController.h; sourceTree = "<group>"; };
 		B941F7721DE59B2600598437 /* HomeNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsViewController.m; sourceTree = "<group>"; };
+		B944ADDD1E5189BD00449C62 /* FLXKFriendsSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController.h; sourceTree = "<group>"; };
+		B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController.m; sourceTree = "<group>"; };
+		B944ADE31E51988000449C62 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
+		B944ADE41E51988000449C62 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
 		B948CBE91DD5C7A800E6ED93 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLaunchViewController.h; sourceTree = "<group>"; };
 		B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLaunchViewController.m; sourceTree = "<group>"; };
@@ -1109,6 +1115,8 @@
 				B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */,
 				B95A56D51E4B6B9600BDE324 /* NSBundle+Extensions.h */,
 				B95A56D61E4B6B9600BDE324 /* NSBundle+Extensions.m */,
+				B944ADE31E51988000449C62 /* UIViewController+Extensions.h */,
+				B944ADE41E51988000449C62 /* UIViewController+Extensions.m */,
 			);
 			path = "FLXK+Addition";
 			sourceTree = "<group>";
@@ -1775,6 +1783,8 @@
 				B90025951DAE1EC000B34438 /* ViewController */,
 				B9D854BB1DAC8BE2001AD79C /* ViewController.h */,
 				B9D854BC1DAC8BE2001AD79C /* ViewController.m */,
+				B944ADDD1E5189BD00449C62 /* FLXKFriendsSharingViewController.h */,
+				B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */,
 				B9D854BE1DAC8BE2001AD79C /* Main.storyboard */,
 				B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */,
 				B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */,
@@ -2409,6 +2419,7 @@
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
+				B944ADDF1E5189BD00449C62 /* FLXKFriendsSharingViewController.m in Sources */,
 				B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */,
 				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
 				B9CDF0211E4F36690007F638 /* Indicator.m in Sources */,
@@ -2434,6 +2445,7 @@
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
+				B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */,
 				B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */,
@@ -2613,7 +2625,7 @@
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2636,7 +2648,7 @@
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

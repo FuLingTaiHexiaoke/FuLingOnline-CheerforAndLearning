@@ -13,7 +13,7 @@
 
 //便利方法，同事注册多个控件
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
-
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView;
 //+(instancetype)sharedEmotionBoard;
 
 //获取富文本的文字表达形式

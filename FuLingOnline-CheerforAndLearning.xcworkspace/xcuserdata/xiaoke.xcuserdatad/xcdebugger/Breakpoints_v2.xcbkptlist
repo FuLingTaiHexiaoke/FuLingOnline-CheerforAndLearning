@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionGroupIndexCollectionView.m"
-            timestampString = "508574917.861611"
+            timestampString = "508664564.625401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-selecteItemAtContentOffset:"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionGroupIndexCollectionView.m"
-            timestampString = "508575207.150388"
+            timestampString = "508664564.625401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-selecteItemAtContentOffset:"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
-            timestampString = "508575860.436195"
+            timestampString = "508673715.398091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-setCurrentShowingRange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,12 +186,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
-            timestampString = "508575871.328446"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-setCurrentShowingRange:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-setCurrentShowingRange:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "-setCurrentShowingRange:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/Utilities/KYAnimatedPageControl/KYAnimatedPageControl.m"
+            timestampString = "508647487.379874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "-setCurrentShowingRange:"
+            landmarkName = "-tapAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -202,12 +250,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
-            timestampString = "508575889.716435"
+            timestampString = "508673715.398091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-setCurrentShowingRange:"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "-scrollViewDidScroll:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -218,12 +266,204 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
-            timestampString = "508576346.095679"
+            timestampString = "508673715.398091"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "-setCurrentShowingRange:"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "-scrollViewDidEndDecelerating:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-scrollViewDidScroll:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/Utilities/KYAnimatedPageControl/KYAnimatedPageControl.m"
+            timestampString = "508648669.510043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-animateToIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/PublishNewsController/FLXKPublishNewsController.m"
+            timestampString = "508672268.774305"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "-dealloc"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-keyboardDidShowNotification:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionGroupIndexCollectionView.m"
+            timestampString = "508664652.826174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-selecteItemAtContentOffset:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-willMoveToSuperview:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-willMoveToSuperview:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673715.398091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "-changeInputViewType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673586.858518"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "+sharedEmotionBoardWithEditingTextView:swithButton:swithButtonContainer:emotionEditingVCView:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508673719.538311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "+sharedEmotionBoardWithEditingTextView:swithButton:swithButtonContainer:emotionEditingVCView:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508674665.058184"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
+            landmarkName = "-keyboardWillChangeFrame:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/ViewController/FLXKEmotionBoard.m"
+            timestampString = "508675348.170361"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
+            landmarkName = "-keyboardWillChangeFrame:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

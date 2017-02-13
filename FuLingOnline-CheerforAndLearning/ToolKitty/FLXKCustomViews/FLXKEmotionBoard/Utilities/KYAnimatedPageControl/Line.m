@@ -76,9 +76,9 @@
 //invoke when call setNeedDisplay
 - (void)drawInContext:(CGContextRef)ctx {
 
-    NSAssert(self.selectedPage <= self.pageCount,
-             @"ERROR:PageCount can not less than selectedPage");
-    NSAssert(self.selectedPage != 0, @"ERROR:SelectedPage can not be ZERO!");
+//    NSAssert(self.selectedPage <= self.pageCount,
+//             @"ERROR:PageCount can not less than selectedPage");
+//    NSAssert(self.selectedPage != 0, @"ERROR:SelectedPage can not be ZERO!");
 
     if (self.pageCount == 1) {
         CGMutablePathRef linePath = CGPathCreateMutable();

@@ -45,17 +45,20 @@
     [super awakeFromNib];
     self.dataSource=self;
     self.delegate=self;
-
-
+    
+    
 }
 
 -(void)selecteItemAtContentOffset:(CGFloat)contentOffset{
     //set init selected emotion group
-//    if (!(self.currentEmotionGroupsRange.length>0)) {
-//        NSIndexPath* initIndexPath= [NSIndexPath indexPathForItem:0 inSection:0];
-//        [self  collectionView:self didSelectItemAtIndexPath:initIndexPath ];
-//    }
-//    else{
+    if  (contentOffset==0 && (self.currentEmotionGroupsRange.length!=0 || self.currentEmotionGroupsRange.location!=0)){
+        return;
+    }
+    else if  (contentOffset==0 && self.currentEmotionGroupsRange.length==0 && self.currentEmotionGroupsRange.location==0) {
+        NSIndexPath* initIndexPath= [NSIndexPath indexPathForItem:0 inSection:0];
+        [self  collectionView:self didSelectItemAtIndexPath:initIndexPath ];
+    }
+    else{
         [self.emotionGroupsRanges enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSRange tempRange=obj.rangeValue;
             CGFloat tempStartLength=tempRange.location*Screen_Width;
@@ -66,8 +69,7 @@
                 *stop=YES;
             }
         }];
-
-//    }
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -100,14 +102,14 @@
         obj.groupEmotionBackgroundView.backgroundColor=[UIColor whiteColor];
         obj.groupEmotionButton.backgroundColor=[UIColor whiteColor];
     }];
-
+    
     FLXKNormalEmotionGroupCollectionViewCell* cell= ( FLXKNormalEmotionGroupCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
     if ([self.emotionGroupSelectedDelegate respondsToSelector:@selector(didSelectedEmotionGroupItem:)])
     {
         [self.emotionGroupSelectedDelegate didSelectedEmotionGroupItem:cell.groupPagesRange];
         self.currentEmotionGroupsRange=cell.groupPagesRange;
     }
-
+    
     //set selected state
     cell.groupEmotionBackgroundView.backgroundColor=RGBA(243,244,246,1.0);
     cell.groupEmotionButton.backgroundColor=RGBA(243,244,246,1.0);

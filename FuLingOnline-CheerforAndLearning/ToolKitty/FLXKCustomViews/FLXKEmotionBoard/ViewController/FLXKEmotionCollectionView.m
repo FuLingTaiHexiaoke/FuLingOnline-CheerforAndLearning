@@ -55,12 +55,15 @@
         leftItems=i+PerPageItemsCount<totalEmotionItems.count?PerPageItemsCount:totalEmotionItems.count-i;
         NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, leftItems)]];
         FLXKEmotionCollectionView*  collectionView=nil;
-        if (i==0) {
-        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
-        }
-        else{
         collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
-        }
+
+        
+//        if (i==0) {
+//        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
+//        }
+//        else{
+//        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
+//        }
         [subEmotionItemsPerView addObject:subEmotionItems];
         [collectionViews addObject:collectionView];
     }

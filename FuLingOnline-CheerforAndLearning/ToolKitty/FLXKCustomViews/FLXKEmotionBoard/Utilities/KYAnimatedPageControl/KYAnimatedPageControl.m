@@ -36,7 +36,7 @@
         [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                 action:@selector(panAction:)];
         [self addGestureRecognizer:pan];
-
+        
         self.layer.masksToBounds = NO;
     }
     return self;
@@ -54,7 +54,7 @@
         [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                 action:@selector(panAction:)];
         [self addGestureRecognizer:pan];
-
+        
         self.layer.masksToBounds = NO;
     }
     return self;
@@ -81,7 +81,7 @@
         _line.bindScrollView = self.bindScrollView;
         _line.contentsScale = [UIScreen mainScreen].scale;
     }
-
+    
     return _line;
 }
 
@@ -94,7 +94,7 @@
         _gooeyCircle.indicatorSize = self.indicatorSize;
         _gooeyCircle.contentsScale = [UIScreen mainScreen].scale;
     }
-
+    
     return _gooeyCircle;
 }
 
@@ -107,7 +107,7 @@
         _rotateRect.indicatorSize = self.indicatorSize;
         _rotateRect.contentsScale = [UIScreen mainScreen].scale;
     }
-
+    
     return _rotateRect;
 }
 
@@ -123,11 +123,11 @@
             default:
                 break;
         }
-
+        
         [_indicator animateIndicatorWithScrollView:self.bindScrollView
                                       andIndicator:self];
     }
-
+    
     return _indicator;
 }
 
@@ -139,16 +139,18 @@
 
 #pragma mark-- UITapGestureRecognizer tapAction
 - (void)tapAction:(UITapGestureRecognizer *)ges {
-
+    
     NSAssert(self.bindScrollView != nil,
              @"You can not scroll without assigning bindScrollView");
     CGPoint location = [ges locationInView:self];
     if (CGRectContainsPoint(self.line.frame, location)) {
-//        CGFloat ballDistance = self.frame.size.width / (self.pageCount - 1);
+        //        CGFloat ballDistance = self.frame.size.width / (self.pageCount - 1);
         CGFloat ballDistance =DISTANCE;
-
+        
+        location= [self.layer convertPoint:location toLayer:self.line];
+        
         NSInteger index = location.x / ballDistance;
-//          NSInteger index = location.x / DISTANCE;
+        //          NSInteger index = location.x / DISTANCE;
         if ((location.x - index * ballDistance) >= ballDistance / 2) {
             index += 1;
         }
@@ -158,21 +160,18 @@
                       (self.line.pageCount - 1)))) /
         ((self.line.frame.size.width - self.line.ballDiameter) /
          (self.line.pageCount - 1));
-
+        
         //背景线条动画
         [self.line animateSelectedLineToNewIndex:index + 1];
-
+        
         // scrollview 滑动
-        [self.bindScrollView
-         setContentOffset:CGPointMake(
-                                      self.bindScrollView.frame.size.width * index, 0)
-         animated:YES];
-
+        [self.bindScrollView setContentOffset:CGPointMake(self.bindScrollView.frame.size.width *(index+_currentShowingRange.location), 0) animated:NO];
+        
         //恢复动画
         [self.indicator performSelector:@selector(restoreAnimation:)
                              withObject:@(HOWMANYDISTANCE / self.pageCount)
                              afterDelay:0.2];
-
+        
         if (self.didSelectIndexBlock) {
             self.didSelectIndexBlock(index + 1);
         }
@@ -180,43 +179,34 @@
 }
 
 - (void)animateToIndex:(NSInteger)index {
-    NSAssert(self.bindScrollView != nil,
-             @"You can not scroll without assigning bindScrollView");
-    CGFloat HOWMANYDISTANCE =
-    ABS((self.line.selectedLineLength -
-         index * ((self.line.frame.size.width - self.line.ballDiameter) /
-                  (self.line.pageCount - 1)))) /
-    ((self.line.frame.size.width - self.line.ballDiameter) /
-     (self.line.pageCount - 1));
-
+    NSAssert(self.bindScrollView != nil,@"You can not scroll without assigning bindScrollView");
+    CGFloat HOWMANYDISTANCE = ABS((self.line.selectedLineLength - index * ((self.line.frame.size.width - self.line.ballDiameter) /  (self.line.pageCount - 1)))) /((self.line.frame.size.width -self.line.ballDiameter) / (self.line.pageCount - 1));
+    
     //背景线条动画
-    [self.line animateSelectedLineToNewIndex:index + 1];
-
+//    [self.line animateSelectedLineToNewIndex:index + 1];
+    
     // scrollview 滑动
-    [self.bindScrollView
-     setContentOffset:CGPointMake(self.bindScrollView.frame.size.width * index,
-                                  0)
-     animated:YES];
-
+    [self.bindScrollView setContentOffset:CGPointMake(self.bindScrollView.frame.size.width * (index+_currentShowingRange.location), 0) animated:NO];
+    
     //恢复动画
-    [self.indicator performSelector:@selector(restoreAnimation:)
-                         withObject:@(HOWMANYDISTANCE / self.pageCount)
-                         afterDelay:0.2];
+//    [self.indicator performSelector:@selector(restoreAnimation:) withObject:@(HOWMANYDISTANCE / self.pageCount) afterDelay:0.2];
 }
 
 - (void)panAction:(UIPanGestureRecognizer *)pan {
     if (!_swipeEnable) {
         return;
     }
-
+    
     CGPoint location = [pan locationInView:self];
     if (CGRectContainsPoint(self.line.frame, location)) {
-        CGFloat ballDistance = self.frame.size.width / (self.pageCount - 1);
+        location= [self.layer convertPoint:location toLayer:self.line];
+        //        CGFloat ballDistance = self.frame.size.width / (self.pageCount - 1);
+        CGFloat ballDistance =DISTANCE;
         NSInteger index = location.x / ballDistance;
         if ((location.x - index * ballDistance) >= ballDistance / 2) {
             index += 1;
         }
-
+        
         if (index != _lastIndex) {
             [self animateToIndex:index];
             _lastIndex = index;
@@ -250,7 +240,7 @@
     self.line.pageCount=currentShowingRange.length;
     // Indicator动画
     [self.indicator animateIndicatorWithScrollView:self.bindScrollView currentShowingRange:currentShowingRange];
-
+    
     _currentShowingRange=currentShowingRange;
 }
 

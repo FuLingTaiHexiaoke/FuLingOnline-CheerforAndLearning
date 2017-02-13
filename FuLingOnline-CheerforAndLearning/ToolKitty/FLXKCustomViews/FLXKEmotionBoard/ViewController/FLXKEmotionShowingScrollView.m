@@ -45,7 +45,7 @@
         __block NSInteger lastCollectionViewIndex=-1;
         [[EmotionGroup selectAll]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             //save loaded image page
-            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
+//            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
             
             //get viewsAndEntities
             NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj];

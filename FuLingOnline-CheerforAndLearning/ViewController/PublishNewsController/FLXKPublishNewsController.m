@@ -74,12 +74,13 @@
         make.bottom.equalTo(self.view.mas_bottom);
     }];
 
+    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishLocationButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view];
 
-    //添加键盘弹出-隐藏通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
-    
+//    //添加键盘弹出-隐藏通知
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+////        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
+////        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
+//    
     if (UserDefaultsObjForKey( @"plainString")) {
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
