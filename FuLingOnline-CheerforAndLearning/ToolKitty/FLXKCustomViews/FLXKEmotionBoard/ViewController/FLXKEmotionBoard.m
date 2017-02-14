@@ -72,6 +72,9 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 #pragma mark - Public Methods
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption {
+    //add emotionGroupOptions
+    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
@@ -80,10 +83,36 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     //add action
     [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
     sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
-    
+    //add notification
     [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
+//    //add emotionGroupOptions
+//    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+
     return sharedEmotionBoard;
+}
++(void)setEmotionGroupOptions:(EmotionGroupShowingOption)emotionGroupOptions{
+    NSMutableString* where=[NSMutableString stringWithFormat:@" where emotionGroupImageType in ( "];
+//    if (emotionGroupOptions&EmotionGroup_basic_text_emotion_image) {
+        [where appendString:@" 0 "];
+//    }
+    if (emotionGroupOptions&EmotionGroup_emoji_text_emotion_image) {
+        [where appendString:@",1"];
+    }
+    if (emotionGroupOptions&EmotionGroup_additonal_text_emotion_image) {
+        [where appendString:@",2"];
+    }
+    if (emotionGroupOptions&EmotionGroup_recent_text_emotion_image) {
+        [where appendString:@",3"];
+    }
+    if (emotionGroupOptions&EmotionGroup_big_static_image) {
+        [where appendString:@",4"];
+    }
+    if (emotionGroupOptions&EmotionGroup_big_gif_image) {
+        [where appendString:@",5"];
+    }
+ [where appendString:@" ) "];
+    FLXKUserDefaultsSetObjForKey(where, SelectedEmotionGroupOptionsUserDefaultsKey);
+    FLXKUserDefaultsSynchronize
 }
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView{

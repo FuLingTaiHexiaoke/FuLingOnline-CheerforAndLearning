@@ -74,7 +74,7 @@
         make.bottom.equalTo(self.view.mas_bottom);
     }];
 
-    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishLocationButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view];
+    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishLocationButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image)];
 
 //    //添加键盘弹出-隐藏通知
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];

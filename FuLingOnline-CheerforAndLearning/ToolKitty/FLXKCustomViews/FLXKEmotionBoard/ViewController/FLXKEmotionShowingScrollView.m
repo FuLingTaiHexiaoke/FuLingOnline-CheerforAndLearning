@@ -43,7 +43,7 @@
         //set kvo for currentShowingPageIndex
         
         __block NSInteger lastCollectionViewIndex=-1;
-        [[EmotionGroup selectAll]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             //save loaded image page
 //            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
             

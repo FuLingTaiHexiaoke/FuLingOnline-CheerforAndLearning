@@ -31,7 +31,7 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        _emotionGroups=[EmotionGroup selectAll];
+        _emotionGroups=[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)];
         self.emotionGroupsRanges =[NSMutableArray array];
         //init self properties
         self.dataSource=self;
