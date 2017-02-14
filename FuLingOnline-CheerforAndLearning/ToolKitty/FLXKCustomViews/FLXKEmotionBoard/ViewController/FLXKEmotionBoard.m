@@ -51,9 +51,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 //state record
 @property(nonatomic, assign) NSRange currentShowingRange;//当前显示的表情组的范围
 @property(nonatomic, assign)BOOL isChangingInputView;
+
+
 //控制bottombar类型控件的升降外部属性
 @property(nonatomic,weak)UITextView *editingTextView;
 @property(nonatomic,weak)UIButton* emotionSwithButton;
+@property(nonatomic,weak)UIBarButtonItem* emotionSwithBarButtonItem;
 @property(nonatomic,weak)UIView *emotionSwithButtonContainer;
 @property(nonatomic,weak)UIView *emotionEditingVCView;
 //预留工具箱、语音记录按钮属性
@@ -68,18 +71,35 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 #pragma mark - Public Methods
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView{
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption {
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
     sharedEmotionBoard.emotionSwithButton=swithButton;
-    sharedEmotionBoard.emotionEditingVCView=sharedEmotionBoard;
+    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
     //add action
     [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
     sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
+    return sharedEmotionBoard;
+}
 
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView{
+    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
+    sharedEmotionBoard.editingTextView=editingTextView;
+    sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
+    sharedEmotionBoard.emotionSwithBarButtonItem=emotionSwithBarButtonItem;
+    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
+    
+    //add action
+    sharedEmotionBoard.emotionSwithBarButtonItem.target=self;
+    sharedEmotionBoard.emotionSwithBarButtonItem.action=@selector(changeInputViewTypeWithBarButtonItem:);
+    sharedEmotionBoard.emotionSwithBarButtonItem.tag=FLXKEmotionKeyboard;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
     return sharedEmotionBoard;
 }
 
@@ -123,13 +143,13 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 -(void)willMoveToSuperview:(UIView *)newSuperview{
     if (!newSuperview) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        //        [[NSNotificationCenter defaultCenter] removeObserver:self];
     }
     else{
         //添加键盘弹出-隐藏通知
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
         //添加键盘弹出-隐藏通知
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
         
     }
 }
@@ -141,26 +161,24 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 }
 
 -(void)changeInputViewType:(UIButton *)sender{
+    sender.tag= self.editingTextView.inputView?FLXKSystemKeyboard:FLXKSystemKeyboard;
     InputViewType inputViewType=sender.tag;
     switch (inputViewType) {
         case FLXKSystemKeyboard:
-            sender.tag=FLXKEmotionKeyboard;
+            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"b_keyboard_emotion" ] forState:UIControlStateNormal];
             break;
         case FLXKEmotionKeyboard:
-            sender.tag=FLXKSystemKeyboard;
-            
-            
+            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"b_keyboard_system" ] forState:UIControlStateNormal];
             break;
         case FLXKToolKitBoard:
-              sender.tag=FLXKSystemKeyboard;
+            sender.tag=FLXKSystemKeyboard;
             break;
         case FLXKVoiceRecordBoard:
-              sender.tag=FLXKSystemKeyboard;
+            sender.tag=FLXKSystemKeyboard;
             break;
         default:
             break;
     }
-    
     _isChangingInputView=YES;
     [self.editingTextView resignFirstResponder];
     
@@ -171,7 +189,34 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     });
 }
 
-
+-(void)changeInputViewTypeWithBarButtonItem:(UIBarButtonItem *)sender{
+    sender.tag= self.editingTextView.inputView?FLXKSystemKeyboard:FLXKSystemKeyboard;
+    InputViewType inputViewType=sender.tag;
+    switch (inputViewType) {
+        case FLXKSystemKeyboard:
+            self.emotionSwithBarButtonItem.title=@"键盘";
+            break;
+        case FLXKEmotionKeyboard:
+            self.emotionSwithBarButtonItem.title=@"表情";
+            break;
+        case FLXKToolKitBoard:
+            sender.tag=FLXKSystemKeyboard;
+            break;
+        case FLXKVoiceRecordBoard:
+            sender.tag=FLXKSystemKeyboard;
+            break;
+        default:
+            break;
+    }
+    _isChangingInputView=YES;
+    [self.editingTextView resignFirstResponder];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.09f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.editingTextView.inputView=self.editingTextView.inputView?nil:self;
+        _isChangingInputView=NO;
+        [self.editingTextView becomeFirstResponder];
+    });
+}
 
 -(void)didSelectedEmotionGroupItem:(NSRange)range{
     [self setCurrentShowingRange:range];
@@ -220,19 +265,15 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 - (void)insertEmotion:(NSInteger)emotionID emotionName:(NSString*)emotionName imageName:(NSString*)imageName{
     //Create emoji attachment
     EmotionTextAttachment *emotionTextAttachment = [EmotionTextAttachment new];
-    
     //Set tag and image
     emotionTextAttachment.emotionName =emotionName;
-    
     emotionTextAttachment.image = [UIImage ImageWithName:imageName];
-    //  emotionTextAttachment.image = [UIImage sd_animatedGIFNamed:imageName];
     //Set emoji size
     emotionTextAttachment.emotionSize =  CGSizeMake(20, 20);
     
     //Insert emoji image
     [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emotionTextAttachment]
                                                      atIndex:self.editingTextView.selectedRange.location];
-    
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
     
@@ -241,17 +282,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 }
 
 - (void)insertEmoji:(NSString*)EmojiName{
-    //Insert emoji image
-    NSLog(@"location:%lu", (unsigned long)self.editingTextView.selectedRange.location);
-    NSLog(@"length:%lu", (unsigned long)self.editingTextView.textStorage.length);
-    //    [self.editingTextView.textStorage insertAttributedString:[[NSAttributedString alloc] initWithString: EmojiName]
+    //Insert emoji
     [self.editingTextView.textStorage insertAttributedString:[[NSAttributedString alloc] initWithString: EmojiName]
                                                      atIndex:self.editingTextView.selectedRange.location];
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 2, self.editingTextView.selectedRange.length);
-    
-    NSLog(@"location:%lu", (unsigned long)self.editingTextView.selectedRange.location);
-    NSLog(@"length:%lu", (unsigned long)self.editingTextView.textStorage.length);
     
     //Reset text style
     [self resetTextStyle];
@@ -283,18 +318,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 //}
 
 -(void)deleteElementInTextView{
-    //    if (self.editingTextView.selectedRange.location>0) {
-    //        if (self.editingTextView.selectedRange.location==self.editingTextView.textStorage.length) {
-    //            NSRange deleteRange=NSMakeRange(self.editingTextView.selectedRange.location-2, 2);
-    //            [self.editingTextView.textStorage  deleteCharactersInRange:deleteRange];
-    //        }
-    //        else{
-    //            NSRange deleteRange=NSMakeRange(self.editingTextView.selectedRange.location-2, 2);
-    //            [self.editingTextView.textStorage  deleteCharactersInRange:deleteRange];
-    //            self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location-2, self.editingTextView.selectedRange.length);
-    //        }
-    //    }
-    
     NSRange range = self.editingTextView.selectedRange;
     NSLog(@"%zd-表情删除-%zd",range.length,range.location);
     if (self.editingTextView.text.length > 0) {
@@ -327,11 +350,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 
 /**
- *  计算选中的最后一个是字符还是表情所占长度
- *
- *  @param str 要计算的字符串
- *
- *  @return 返回一个 NSRange
+ *  计算选中的最后一个是字符还是表情返回最后的rang长度
  */
 - (NSRange)lastRange:(NSString *)str {
     NSRange lastRange = [str rangeOfComposedCharacterSequenceAtIndex:str.length-1];
@@ -345,32 +364,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 
 -(void)setupUIPageControl{
-    //    //setup the pagecontroller
-    //    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height-20, self.frame.size.width,20)];
-    //    //    pageControl.numberOfPages = 6; // 一共显示多少个圆点（多少页）
-    //    // 设置非选中页的圆点颜色
-    //    pageControl.pageIndicatorTintColor = [UIColor grayColor];
-    //    // 设置选中页的圆点颜色
-    //    pageControl.currentPageIndicatorTintColor = [UIColor blueColor];
-    //    // 禁止默认的点击功能
-    //    pageControl.enabled = YES;
-    //    [self addSubview:pageControl];
-    //    _pageControl = pageControl;
-    //    self.pageControlPlaceholder.superview.frame
-    NSLog(@"self.pageControlPlaceholder.superview.frame:%@", NSStringFromCGRect(self.pageControlPlaceholder.superview.frame));
-    
-    CGRect frame=  [self.pageControlPlaceholder convertRect:self.pageControlPlaceholder.frame toView:self];
-    //        NSLog(@"frame1:%@", NSStringFromCGRect(frame));
-    //
-    //   frame=  [self convertRect:self.pageControlPlaceholder.superview.frame toView:self];
-    //    NSLog(@"frame2:%@", NSStringFromCGRect(frame));
-    //
-    //    frame=  [self.pageControlPlaceholder convertRect:self.pageControlPlaceholder.frame toView:self];
-    //    NSLog(@"frame3:%@", NSStringFromCGRect(frame));
-    //
-    //    frame=  [self.pageControlPlaceholder.superview convertRect:self.pageControlPlaceholder.frame toView:self];
-    //    NSLog(@"frame4:%@", NSStringFromCGRect(frame));
-    
     self.pageControl = [[KYAnimatedPageControl alloc]
                         initWithFrame:self.pageControlPlaceholder.superview.frame];
     self.pageControl.pageCount = 8;
@@ -387,18 +380,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     };
 }
 
-#pragma mark-- UIScrollViewDelegate
+#pragma mark -  UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self changePageControlShowing];
-    
     [_emotionContainerScrollView setCurrentShowingPageIndex:(NSInteger) scrollView.contentOffset.x/(Screen_Width)] ;
-    
-    //    [self.emotionGroupIndexCollectionView selectedItemAtIndexPath:];
-    //    if (scrollView.dragging || scrollView.isDecelerating || scrollView.tracking) {
-    //        //背景线条动画
-    //        [self.pageControl.pageControlLine
-    //         animateSelectedLineWithScrollView:scrollView];
-    //    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -407,8 +392,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:scrollView.contentOffset.x];
     
     [_emotionContainerScrollView setCurrentShowingPageIndex:(NSInteger) scrollView.contentOffset.x/(Screen_Width)] ;
-    
-    
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -426,231 +409,97 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 
 -(void)keyboardWillChangeFrame:(NSNotification*)notif{
-    //    [self.publishToolBarView removeConstraints: self.publishToolBarView.constraints];
-    //    [self.view updateConstraints];
-    
-    //    NSLog(@"keyboardChange:%@",[notif userInfo]);
-    float keyboadHeightBegin = 0;
-    float keyboadHeightEnd = 0;
-    
+    //get animation properties
     float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
     
-    CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
-    keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
+    //get keyboard frame properties
+    CGRect keyboardStartingFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    CGRect keyboardEndingFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    float  keyboadStartingHeight =Screen_Height - keyboardStartingFrame.origin.y;
+    float  keyboadEndingHeight = Screen_Height- keyboardEndingFrame.origin.y;
     
-    NSLog(@"11111self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.editingTextView.frame),keyboadHeightBegin);
-    if ([NSStringFromCGRect(keyboardBeginFrame) isEqualToString:NSStringFromCGRect(keyboardEndFrame) ]) {
+    
+    //I do not why this happened,if you know tell me.
+    if ([NSStringFromCGRect(keyboardStartingFrame) isEqualToString:NSStringFromCGRect(keyboardEndingFrame) ]) {
+        if (animationDuration!=0) {
+            [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight+1 keyboadEndingHeight:keyboadEndingHeight];
+        }
         return;
     }
     
-    if (_isChangingInputView) {
+    if(_isChangingInputView) {
         return;
     }
     
-//    if (keyboadHeightBegin>0) {
-//        [self.emotionSwithButtonContainer mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(78);
-//            make.left.and.right.mas_equalTo(self.emotionEditingVCView);
-//            make.bottom.equalTo(self.emotionEditingVCView.mas_bottom);
-//        }];
-//    }
-//    else{
-//        [self.emotionSwithButtonContainer mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(78);
-//            make.left.and.right.mas_equalTo(self.emotionEditingVCView);
-//            make.bottom.equalTo(self.emotionEditingVCView.mas_bottom).offset(-keyboadHeightEnd);
-//        }];
-//    }
-    
-    
-        if (keyboadHeightBegin>0) {
-//            [self.emotionSwithButtonContainer mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.height.mas_equalTo(78);
-//                make.left.and.right.mas_equalTo(self.emotionEditingVCView);
-//                make.bottom.equalTo(self.emotionEditingVCView.mas_bottom);
-//            }];
-//            
-            // 4.1.4高度约束
-            NSLayoutConstraint *blueHeightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:kNilOptions multiplier:1.0 constant:78];
-            [self.emotionSwithButtonContainer addConstraint:blueHeightCos];
-            
-            // 2.1底部约束
-            NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
-            [self.emotionEditingVCView addConstraint:bottomCos];
-            
-        }
-        else{
-//            [self.emotionSwithButtonContainer mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.height.mas_equalTo(78);
-//                make.left.and.right.mas_equalTo(self.emotionEditingVCView);
-//                make.bottom.equalTo(self.emotionEditingVCView.mas_bottom).offset(-keyboadHeightEnd);
-//            }];
-//            
-            // 4.1.4高度约束
-            NSLayoutConstraint *blueHeightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:kNilOptions multiplier:1.0 constant:78];
-            [self.emotionSwithButtonContainer addConstraint:blueHeightCos];
-            
-            // 2.1底部约束
-//            NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-keyboadHeightEnd];
-//            [self.emotionEditingVCView addConstraint:bottomCos];
-        }
-
-    
-    
-    [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-        [self.emotionEditingVCView layoutIfNeeded];
-    } completion:^(BOOL finished) {
-    }];
-    
-    NSLog(@"22222self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.emotionSwithButtonContainer.frame),keyboadHeightEnd);
+    [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight keyboadEndingHeight:keyboadEndingHeight];
     
 }
 
+-(void)changeEmotionSwithButtonContainerWithAnimationDuration:(CGFloat)animationDuration animationCurve:(UIViewAnimationCurve)animationCurve
+                                        keyboadStartingHeight:(CGFloat)keyboadStartingHeight keyboadEndingHeight:(CGFloat)keyboadEndingHeight{
 
-#pragma mark - changeKeyBoard
-//- (void)changeKeyboardType:(InputViewType)type
-//{
-//    switch (type)
-//    {
-//        case KeyboardSystem:
-//        {
-//            self.internalTextView.inputView = nil;
-//            break;
-//        }
-//        case KeyboardFunction:
-//        {
-//            self.internalTextView.inputView = self.functionKeyboard;
-//            break;
-//        }
-//        case KeyboardEmotion:
-//        {
-//            self.internalTextView.inputView = self.faceKeyboard;
-//            break;
-//        }
-//        default:
-//            break;
-//    }
-//    //    [self.inputView removeFromSuperview];
-//
-//
-//    if (self.isFirstResponder)
-//    {
-//        [self.internalTextView reloadInputViews];
-//    }else
-//    {
-//        [self.internalTextView becomeFirstResponder];
-//    }
-//}
+    //在此，我们需要判断用户程序中emotionSwithButtonContainer是用Layout布局还是Frame，并根据不同的布局方式，动态调整emotionSwithButtonContainer的高度。
+    __block  BOOL isAutoLayout=NO;
+    [self.emotionEditingVCView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstItem==self.emotionSwithButtonContainer ) {
+            isAutoLayout=YES;
+            *stop=YES;
+        }
+    }];
+    
+    //keyboadStartingHeight>0代表keyboard目前处于显示阶段
+    CGFloat  heightToChange= keyboadStartingHeight>0?0:keyboadEndingHeight;
+    
+    if (!isAutoLayout) {
+        //此时是frame,所以我们需要更改frame.origin.x
+        CGRect oldFrame=self.emotionSwithButtonContainer.frame;
+        oldFrame.origin.x=Screen_Height-heightToChange-oldFrame.size.height;
+        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+            self.emotionSwithButtonContainer.frame=oldFrame;
+        } completion:^(BOOL finished) {
+        }];
+    }
+    else{
+        //删除以前添加的约束
+        [self.emotionEditingVCView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.firstItem==self.emotionSwithButtonContainer ) {
+                [self.emotionEditingVCView removeConstraint:obj];
+            }
+        }];
+        
+        __block CGFloat containerHeight=0;
+        [self.emotionSwithButtonContainer.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            containerHeight=obj.constant==0?self.emotionSwithButtonContainer.frame.size.height:obj.constant;
+            [self.emotionSwithButtonContainer removeConstraint:obj];
+        }];
+        
+        //高度约束
+        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
+        NSLayoutConstraint *heightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:kNilOptions multiplier:1.0 constant:containerHeight];
+        [self.emotionSwithButtonContainer addConstraint:heightCos];
+        
+        //左边约束
+        NSLayoutConstraint *leftCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
+        [self.emotionEditingVCView addConstraint:leftCos];
+        
+        //底部约束
+        NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-heightToChange];
+        [self.emotionEditingVCView addConstraint:bottomCos];
+        
+        //右边约束
+        NSLayoutConstraint *rightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+        [self.emotionEditingVCView addConstraint:rightCos];
+        
+        //        NSLog(@"frame %@",NSStringFromCGRect(self.emotionSwithButtonContainer.frame) );
+        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+            [self.emotionEditingVCView layoutIfNeeded];
+        } completion:^(BOOL finished) {
+        }];
+    }
+    //    NSLog(@"frame %@",NSStringFromCGRect(self.emotionSwithButtonContainer.frame) );
+    //    NSLog(@"%@",self.emotionSwithButtonContainer.constraints);
+    //    NSLog(@"emotionEditingVCView %@",self.emotionEditingVCView.constraints);
+}
 
-
-////draw the emotion views and add to srollview
-//-(void)drawEmotionViews{
-//    float width=  CGRectGetWidth(self.frame);
-//    float height= CGRectGetHeight(self.frame);
-//    float face_width=32;
-//    float face_height=32;
-//    //caculator out how many page shoulb be
-//    int totalFaceCount= self.faces.count;
-//    //how many face one row can contain
-//    int eachRowFaceCount=(width-20)/face_width;
-//    //how many  row can be
-//    int totalRowCount=totalFaceCount/eachRowFaceCount+1;
-//    //how many  rows can be in each view
-//    int rowsInEachView=(height-20)/(face_height);
-//    //
-//    int pageCount=totalRowCount%rowsInEachView?totalRowCount/rowsInEachView+1:totalRowCount/rowsInEachView;
-//
-//    int i=0;//rowIndex
-//    int j=0;//faceIndex
-//    //    //start to splite the faces into each view
-//    for (int pageindex=0; pageindex<pageCount; pageindex++) {
-//        UIView* page=[[UIView alloc]initWithFrame:CGRectMake(5+pageindex*(width),0, (width), height-30)];
-//        for ( ; i<totalRowCount && i<(pageindex+1)*rowsInEachView; i++) {
-//            for (int j=0; j<eachRowFaceCount && ((i*eachRowFaceCount)+j)<totalFaceCount; j++) {
-//                //
-//                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//                button.frame = CGRectMake(10 + j*32, 10 + (i%rowsInEachView)*32, 32.0f, 32.0f);
-//                NSMutableDictionary *tempdic = [self.faces objectAtIndex:((i*eachRowFaceCount)+j)];
-//                NSString *key=[[tempdic allKeys] objectAtIndex:0];
-//
-//                UIImage *tempImage = [tempdic valueForKey:key];
-//                [button setBackgroundImage:tempImage forState:UIControlStateNormal];
-//
-//                button.tag = ((i*eachRowFaceCount)+j);
-//
-//                [button addTarget:self action:@selector(didSelectAFace:)forControlEvents:UIControlEventTouchUpInside];
-//
-//                [page addSubview:button];
-//
-//            }//for (int j=0; j<eachRowFaceCount;
-//
-//
-//        }//for (int i=0; i<rowsInEachView; i++)
-//
-//        [self.faceScroll addSubview:page];
-//
-//    }// for (int pageindex=0; pageindex<pageCount; pageCount++)
-//
-//
-//    self.pageControl.numberOfPages=pageCount;
-//    [self.faceScroll setContentSize:CGSizeMake(pageCount*width, height)];
-//
-//}
-
-#pragma mark scrollDelegate
-
-
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    [self setPageNumOfPageControl:scrollView];
-//}
-//
-//- (void)setPageNumOfPageControl:(UIScrollView *)scrollView{
-//    //see which page should be
-//    float scrollOffset=scrollView.contentOffset.x;
-//    float curentPage=scrollOffset/scrollView.frame.size.width;
-//    float mode=((int)scrollOffset)%((int)scrollView.frame.size.width);
-//    //set numberpage
-//    if (mode>0.5) {
-//        self.pageControl.currentPage=curentPage+1;
-//    }else{
-//        self.pageControl.currentPage=curentPage;
-//    }
-//}
-
-
-
-
-
-
-#pragma mark Keyboard
-//-(void)keyboardWillChangeFrame:(NSNotification*)notif{
-//    NSLog(@"keyboardChange:%@",[notif userInfo]);
-//    float keyboadHeightBegin = 0;
-//    float keyboadHeightEnd = 0;
-//
-//    float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-//    UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
-//
-//    CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-//    CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-//    keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
-//    keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
-//
-//    NSLog(@"keyboardHeightChangeFrom:%.2f,To:%.2f",keyboadHeightBegin,keyboadHeightEnd);
-//    if (keyboadHeightBegin>0) {
-//        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-//            self.swithButtonContainer.top=self.swithButtonContainer.top+keyboadHeightBegin;
-//        } completion:^(BOOL finished) {
-//        }];
-//    }
-//    else{
-//        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-//            self.swithButtonContainer.top=self.swithButtonContainer.top-keyboadHeightEnd;
-//        } completion:^(BOOL finished) {
-//        }];
-//    }
-//}
 @end

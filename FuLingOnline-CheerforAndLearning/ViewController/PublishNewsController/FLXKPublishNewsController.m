@@ -197,33 +197,37 @@
 #pragma mark -UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+//    if (_publishScrollViewContainer==scrollView) {
+//            [self.view endEditing:YES];
+//    }
+}
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     if (_publishScrollViewContainer==scrollView) {
-            [self.view endEditing:YES];
+        [self.view endEditing:YES];
     }
 }
-
 #pragma mark - Private Methods
-- (IBAction)showEmotionView:(UIBarButtonItem *)sender{
-    static BOOL isShowingEmotionBoard=NO;
-    if (!self.emotionKeyBoard) {
-//        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-//        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
-        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButtonContainer:self.publishToolBarView swithButton:nil];
-//                [self.view addSubview: self.emotionKeyBoard];
-        
-////        self.emotionKeyBoard=   [FLXKEmotionBoardTest sharedEmotionBoard];
-//        [self.view addSubview: self.emotionKeyBoard];
-
-    }
-        _isChangeInputView=YES;
-        [self.publishTextView resignFirstResponder];
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.09f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
-            _isChangeInputView=NO;
-            [self.publishTextView becomeFirstResponder];
-        });
-}
+//- (IBAction)showEmotionView:(UIBarButtonItem *)sender{
+//    static BOOL isShowingEmotionBoard=NO;
+//    if (!self.emotionKeyBoard) {
+////        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
+////        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
+//        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButtonContainer:self.publishToolBarView swithButton:nil];
+////                [self.view addSubview: self.emotionKeyBoard];
+//        
+//////        self.emotionKeyBoard=   [FLXKEmotionBoardTest sharedEmotionBoard];
+////        [self.view addSubview: self.emotionKeyBoard];
+//
+//    }
+//        _isChangeInputView=YES;
+//        [self.publishTextView resignFirstResponder];
+//
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.09f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
+//            _isChangeInputView=NO;
+//            [self.publishTextView becomeFirstResponder];
+//        });
+//}
 
 -(void)initDataProperty{
     _selectedPhotos=[NSMutableArray arrayWithCapacity:9];

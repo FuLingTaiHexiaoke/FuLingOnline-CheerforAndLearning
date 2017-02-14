@@ -308,15 +308,11 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="mtj-sP-eJe"/>
-                                            <barButtonItem title="#话题" id="grg-zR-uxS"/>
+                                            <barButtonItem title="# 话题" id="grg-zR-uxS"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="9TT-vW-EdE"/>
                                             <barButtonItem title="|" id="op3-fs-JWU"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="IfW-X9-VCu"/>
-                                            <barButtonItem title="表情" id="al9-hS-q2x">
-                                                <connections>
-                                                    <action selector="showEmotionView:" destination="zaO-lD-Y3P" id="uu9-L6-mbr"/>
-                                                </connections>
-                                            </barButtonItem>
+                                            <barButtonItem title="表情" id="al9-hS-q2x"/>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="8ww-26-lcu"/>
                                         </items>
                                     </toolbar>

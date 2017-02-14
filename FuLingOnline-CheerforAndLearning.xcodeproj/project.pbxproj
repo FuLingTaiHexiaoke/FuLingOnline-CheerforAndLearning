@@ -376,10 +376,10 @@
 		B97507CE1E4C58F700A577E7 /* _expression_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = B975068D1E4C58F600A577E7 /* _expression_en.plist */; };
 		B97507CF1E4C58F700A577E7 /* active_page_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B975068F1E4C58F600A577E7 /* active_page_image.png */; };
 		B97507D01E4C58F700A577E7 /* active_page_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506901E4C58F600A577E7 /* active_page_image@2x.png */; };
-		B97507D11E4C58F700A577E7 /* board_emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506911E4C58F600A577E7 /* board_emoji.png */; };
-		B97507D21E4C58F700A577E7 /* board_emoji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506921E4C58F600A577E7 /* board_emoji@2x.png */; };
-		B97507D31E4C58F700A577E7 /* board_system.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506931E4C58F600A577E7 /* board_system.png */; };
-		B97507D41E4C58F700A577E7 /* board_system@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506941E4C58F600A577E7 /* board_system@2x.png */; };
+		B97507D11E4C58F700A577E7 /* b_keyboard_emotion.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */; };
+		B97507D21E4C58F700A577E7 /* b_keyboard_emotion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */; };
+		B97507D31E4C58F700A577E7 /* b_keyboard_system.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506931E4C58F600A577E7 /* b_keyboard_system.png */; };
+		B97507D41E4C58F700A577E7 /* b_keyboard_system@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */; };
 		B97507D51E4C58F700A577E7 /* del_emoji_select.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506951E4C58F600A577E7 /* del_emoji_select.png */; };
 		B97507D61E4C58F700A577E7 /* del_emoji_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */; };
 		B97507D71E4C58F700A577E7 /* inactive_page_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506971E4C58F600A577E7 /* inactive_page_image.png */; };
@@ -848,10 +848,10 @@
 		B975068D1E4C58F600A577E7 /* _expression_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _expression_en.plist; sourceTree = "<group>"; };
 		B975068F1E4C58F600A577E7 /* active_page_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_page_image.png; sourceTree = "<group>"; };
 		B97506901E4C58F600A577E7 /* active_page_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_page_image@2x.png"; sourceTree = "<group>"; };
-		B97506911E4C58F600A577E7 /* board_emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_emoji.png; sourceTree = "<group>"; };
-		B97506921E4C58F600A577E7 /* board_emoji@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "board_emoji@2x.png"; sourceTree = "<group>"; };
-		B97506931E4C58F600A577E7 /* board_system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board_system.png; sourceTree = "<group>"; };
-		B97506941E4C58F600A577E7 /* board_system@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "board_system@2x.png"; sourceTree = "<group>"; };
+		B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b_keyboard_emotion.png; sourceTree = "<group>"; };
+		B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "b_keyboard_emotion@2x.png"; sourceTree = "<group>"; };
+		B97506931E4C58F600A577E7 /* b_keyboard_system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b_keyboard_system.png; sourceTree = "<group>"; };
+		B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "b_keyboard_system@2x.png"; sourceTree = "<group>"; };
 		B97506951E4C58F600A577E7 /* del_emoji_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_emoji_select.png; sourceTree = "<group>"; };
 		B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_emoji_select@2x.png"; sourceTree = "<group>"; };
 		B97506971E4C58F600A577E7 /* inactive_page_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_page_image.png; sourceTree = "<group>"; };
@@ -1679,10 +1679,10 @@
 			children = (
 				B975068F1E4C58F600A577E7 /* active_page_image.png */,
 				B97506901E4C58F600A577E7 /* active_page_image@2x.png */,
-				B97506911E4C58F600A577E7 /* board_emoji.png */,
-				B97506921E4C58F600A577E7 /* board_emoji@2x.png */,
-				B97506931E4C58F600A577E7 /* board_system.png */,
-				B97506941E4C58F600A577E7 /* board_system@2x.png */,
+				B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */,
+				B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */,
+				B97506931E4C58F600A577E7 /* b_keyboard_system.png */,
+				B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */,
 				B97506951E4C58F600A577E7 /* del_emoji_select.png */,
 				B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */,
 				B97506971E4C58F600A577E7 /* inactive_page_image.png */,
@@ -2003,7 +2003,7 @@
 				B97507631E4C58F600A577E7 /* 033.png in Resources */,
 				B97507AD1E4C58F700A577E7 /* 070.png in Resources */,
 				B97261A51E2DEC76008B6356 /* LICENSE.txt in Resources */,
-				B97507D11E4C58F700A577E7 /* board_emoji.png in Resources */,
+				B97507D11E4C58F700A577E7 /* b_keyboard_emotion.png in Resources */,
 				B97506AF1E4C58F600A577E7 /* smiley_21.png in Resources */,
 				B97506DE1E4C58F600A577E7 /* smiley_64.png in Resources */,
 				B97507571E4C58F600A577E7 /* 027.png in Resources */,
@@ -2012,7 +2012,7 @@
 				B975070F1E4C58F600A577E7 /* gif300_2.gif in Resources */,
 				B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */,
 				B97507A71E4C58F700A577E7 /* 067.png in Resources */,
-				B97507D31E4C58F700A577E7 /* board_system.png in Resources */,
+				B97507D31E4C58F700A577E7 /* b_keyboard_system.png in Resources */,
 				B97506D51E4C58F600A577E7 /* smiley_56.png in Resources */,
 				B975077E1E4C58F700A577E7 /* 046@2x.png in Resources */,
 				B97507421E4C58F600A577E7 /* 016@2x.png in Resources */,
@@ -2082,7 +2082,7 @@
 				B97506FB1E4C58F600A577E7 /* smiley_90.png in Resources */,
 				B97506AE1E4C58F600A577E7 /* smiley_20.png in Resources */,
 				B97507711E4C58F700A577E7 /* 040.png in Resources */,
-				B97507D41E4C58F700A577E7 /* board_system@2x.png in Resources */,
+				B97507D41E4C58F700A577E7 /* b_keyboard_system@2x.png in Resources */,
 				B97507181E4C58F600A577E7 /* gif400_10.gif in Resources */,
 				B975077F1E4C58F700A577E7 /* 047.png in Resources */,
 				B97506EE1E4C58F600A577E7 /* smiley_79.png in Resources */,
@@ -2181,7 +2181,7 @@
 				B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */,
 				B975077C1E4C58F700A577E7 /* 045@2x.png in Resources */,
 				B97507071E4C58F600A577E7 /* gif300_11.gif in Resources */,
-				B97507D21E4C58F700A577E7 /* board_emoji@2x.png in Resources */,
+				B97507D21E4C58F700A577E7 /* b_keyboard_emotion@2x.png in Resources */,
 				B97506C31E4C58F600A577E7 /* smiley_4.png in Resources */,
 				B97507611E4C58F600A577E7 /* 032.png in Resources */,
 				B97506F31E4C58F600A577E7 /* smiley_83.png in Resources */,
