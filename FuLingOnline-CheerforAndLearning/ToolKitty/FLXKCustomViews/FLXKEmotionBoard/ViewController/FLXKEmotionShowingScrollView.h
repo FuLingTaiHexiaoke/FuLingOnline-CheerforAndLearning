@@ -25,4 +25,6 @@
 //-(void)setCurrentShowingPageIndextest:(NSInteger)currentShowingPageIndex;
 
 +(NSArray<FLXKEmotionShowingScrollView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId;
+
+-(void)loadPagesAccordingEmotionGroupOptions;
 @end

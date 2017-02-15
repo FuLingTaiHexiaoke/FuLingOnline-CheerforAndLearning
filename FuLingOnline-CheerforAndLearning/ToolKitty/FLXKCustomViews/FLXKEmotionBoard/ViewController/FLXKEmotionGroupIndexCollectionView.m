@@ -16,12 +16,13 @@
 
 //entity
 #import "EmotionGroup.h"
+#import "EmotionItem.h"
 
 //subviews
 #import "FLXKNormalEmotionGroupCollectionViewCell.h"
 
 @interface FLXKEmotionGroupIndexCollectionView()<UICollectionViewDataSource,UICollectionViewDelegate>
-@property(nonatomic,strong)NSArray<EmotionGroup*>* emotionGroups;
+@property(nonatomic,strong)NSMutableArray<EmotionGroup*>* emotionGroups;
 @property(nonatomic,assign)NSRange currentEmotionGroupsRange;
 @property(nonatomic,strong)NSMutableArray<NSValue*>*  emotionGroupsRanges;
 @end
@@ -31,7 +32,9 @@
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
     if (self) {
-        _emotionGroups=[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)];
+        [self loadGroupsAccordingEmotionGroupOptions];
+        //        _emotionGroups=[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)];
+         self.emotionGroups =[NSMutableArray array];
         self.emotionGroupsRanges =[NSMutableArray array];
         //init self properties
         self.dataSource=self;
@@ -45,14 +48,51 @@
     [super awakeFromNib];
     self.dataSource=self;
     self.delegate=self;
+}
+
+-(void)loadGroupsAccordingEmotionGroupOptions{
+    //clear current showing data
+    [self.emotionGroupsRanges removeAllObjects];
+    [self.emotionGroups removeAllObjects];
     
-    
+    //start to reload EmotionGroup
+  NSArray<EmotionGroup*> *  tempEmotionGroups=[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsSQLUserDefaultsKey)];
+    [tempEmotionGroups enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",obj.id]];
+        if (totalEmotionItems.count>0) {
+            [self.emotionGroups addObject:obj];
+        }
+    }];
+    [self reloadData];
+}
+
+-(void)getLastShowingEmotionGroupRange{
+    //set currentEmotionGroupsRange
+    __block NSRange tempCurrentEmotionGroupsRange=NSMakeRange(0, 0);
+    [self.emotionGroupsRanges enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSRange tempRange=obj.rangeValue;
+        if (NSEqualRanges(tempRange,self.currentEmotionGroupsRange)) {
+            tempCurrentEmotionGroupsRange=self.currentEmotionGroupsRange;
+            //            NSIndexPath* currentIndexPath= [NSIndexPath indexPathForItem:idx inSection:0];
+            //            [self  collectionView:self didSelectItemAtIndexPath:currentIndexPath ];
+            *stop=YES;
+        }
+    }];
+    self.currentEmotionGroupsRange=tempCurrentEmotionGroupsRange;
 }
 
 -(void)selecteItemAtContentOffset:(CGFloat)contentOffset{
+    [self getLastShowingEmotionGroupRange];
     //set init selected emotion group
     if  (contentOffset==0 && (self.currentEmotionGroupsRange.length!=0 || self.currentEmotionGroupsRange.location!=0)){
-        return;
+        [self.emotionGroupsRanges enumerateObjectsUsingBlock:^(NSValue * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange tempRange=obj.rangeValue;
+            if (NSEqualRanges(tempRange,self.currentEmotionGroupsRange)) {
+                NSIndexPath* currentIndexPath= [NSIndexPath indexPathForItem:idx inSection:0];
+                [self  collectionView:self didSelectItemAtIndexPath:currentIndexPath ];
+                *stop=YES;
+            }
+        }];
     }
     else if  (contentOffset==0 && self.currentEmotionGroupsRange.length==0 && self.currentEmotionGroupsRange.location==0) {
         NSIndexPath* initIndexPath= [NSIndexPath indexPathForItem:0 inSection:0];
@@ -80,7 +120,8 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKNormalEmotionGroupCollectionViewCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKNormalEmotionGroupCollectionViewCell forIndexPath:indexPath];
-    cell.emotionGroup= self.emotionGroups[indexPath.item];
+    //    cell.emotionGroup= self.emotionGroups[indexPath.item];
+    [cell setEmotionGroup:self.emotionGroups[indexPath.item] itemIndex:indexPath.item];
     [self.emotionGroupsRanges addObject:[NSValue valueWithRange:cell.groupPagesRange]];
     //    cell.groupEmotionCellTapGestureBlock=^(NSRange range){
     //        if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])

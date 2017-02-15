@@ -11,11 +11,11 @@
 //utilities
 #import "UIImage+EmotionExtension.h"
 
-//configv
+//config
 #import "FLXKEmotionConfig.h"
 
 //views
-
+#import "FLXKEmotionBoard.h"
 #import "FLXKEmotionCollectionViewNomalCell.h"
 
 //models
@@ -25,7 +25,7 @@
 
 @interface FLXKEmotionCollectionView()<UICollectionViewDataSource,UICollectionViewDelegate>
 @property(nonatomic,strong)EmotionGroup* emotionGroup;
-
+//@property(nonatomic,strong)NSMutableDictionary<UIImage*,NSString*>* reuseImagesDictionary;
 
 @end
 
@@ -45,9 +45,9 @@
 //    }
 //    return collectionViews;
 //}
-+(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup{
++(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup {
     NSMutableArray<FLXKEmotionCollectionView*>* collectionViews=[NSMutableArray array];
-     NSMutableArray< NSArray<EmotionItem*>*>* subEmotionItemsPerView=[NSMutableArray array];
+    NSMutableArray< NSArray<EmotionItem*>*>* subEmotionItemsPerView=[NSMutableArray array];
     NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)groupId]];
     NSInteger leftItems=0;
     NSInteger PerPageItemsCount=emotionGroup.emotionGroupPerPageCount;
@@ -56,24 +56,23 @@
         NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, leftItems)]];
         FLXKEmotionCollectionView*  collectionView=nil;
         collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
-
-        
-//        if (i==0) {
-//        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
-//        }
-//        else{
-//        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
-//        }
+        //        if (i==0) {
+        //        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
+        //        }
+        //        else{
+        //        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
+        //        }
         [subEmotionItemsPerView addObject:subEmotionItems];
         [collectionViews addObject:collectionView];
     }
     return @[collectionViews,subEmotionItemsPerView];
-//    return collectionViews;
+    //    return collectionViews;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame withEmotionItems:(NSArray<EmotionItem*>*)emotionItems  emotionGroup:(EmotionGroup*)emotionGroup{
     
     self.emotionGroup=emotionGroup;
+    //    self.reuseImagesDictionary=reuseImagesDictionary;
     
     UICollectionViewFlowLayout* flowLayout=[[UICollectionViewFlowLayout alloc]init];
     //    NSInteger  itemWidth=FBTweakValue(@"Emotion", @"FLXKEmotionCollectionView",  @"itemWidth", 30);
@@ -103,17 +102,18 @@
     if (self.emotionItems) {
         return   self.emotionGroup.emotionGroupIsShowingDeleteButton?self.emotionItems.count+1:self.emotionItems.count;
     }
-        return 0;
+    return 0;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
     if (indexPath.item<self.emotionItems.count) {
-//        [cell setEmotionItem: self.emotionItems[indexPath.item]];
+        //        [cell setEmotionItem: self.emotionItems[indexPath.item]];
         [cell setItem: self.emotionItems[indexPath.item]];
         cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
             if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
             {
+                [self recordRecentSelectedEmotionItem:emotionItem];
                 [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
             }
         };
@@ -130,29 +130,28 @@
     return cell;
 }
 
--(__kindof UICollectionViewCell *)cellForEmotionItem:(EmotionItem*)emotionItem withCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath{
-    //0:basic_text_emotion_image
-    //1:emoji_text_emotion_image
-    //2:additonal_text_emotion_image
-    //3:recent_text_emotion_image
-    //4:big_static_image
-    //5:big_gif_image
+//0:basic_text_emotion_image
+//1:emoji_text_emotion_image
+//2:additonal_text_emotion_image
+//3:recent_text_emotion_image
+//4:big_static_image
+//5:big_gif_image
+
+-(void)recordRecentSelectedEmotionItem:(EmotionItem* )emotionItem{
+    EmotionItem* item=[emotionItem copy];
     
-    FLXKEmotionCollectionViewNomalCell* cell=nil;
-    if ( emotionItem.emotionItemImageType==0) {
-        FLXKEmotionCollectionViewNomalCell* cell=[collectionView dequeueReusableCellWithReuseIdentifier:Cell_FLXKEmotionCollectionViewNomalCell forIndexPath:indexPath];
-        if (indexPath.item<self.emotionItems.count) {
-            cell.item= self.emotionItems[indexPath.item];
-            cell.emotionImageView.image=[UIImage imageNamed:self.emotionItems[indexPath.item].emotionItemSmallImageUrl];
-            cell.emotionCellTapGestureBlock=^(EmotionItem* emotionItem){
-                if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])
-                {
-                    [self.emotionSelectedDelegate didSelectedEmotionItem:emotionItem];
-                }
-            };
-        }
+    item.id=[[NSDate date]timeIntervalSince1970];
+    item.groupId=5;
+    
+    [EmotionItem insertWithObject:item success:^{    } failure:nil];
+    
+    NSArray<EmotionItem*> * tempItems=[EmotionItem selectByCriteria:@" where groupId=5 order by id asc "];
+    if (tempItems.count>21) {
+        [EmotionItem deleteWithWhereString:[NSString stringWithFormat:@" where id=%ld ",(long)tempItems[0].id] success:nil failure:nil];
     }
-    return cell;
+    
+//    [FLXKEmotionBoard reloadPages];
 }
+
 
 @end

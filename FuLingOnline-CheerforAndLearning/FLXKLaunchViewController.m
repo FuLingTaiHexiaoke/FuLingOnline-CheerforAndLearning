@@ -213,7 +213,7 @@
 #pragma mark - FBTweakViewController And Delegate
 
 - (void)showTweaksButton{
-    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, self.view.width-50, 20)];
+    UIButton* _tweaksButton = [[UIButton alloc] initWithFrame:CGRectMake(self.view.width/4, 20, self.view.width/2, 20)];
     [_tweaksButton setTitle:@"Show Tweaks" forState:UIControlStateNormal];
     [_tweaksButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_tweaksButton addTarget:self action:@selector(showTweaksView) forControlEvents:UIControlEventTouchUpInside];

@@ -10,9 +10,16 @@
 
 //utilites
 #import "UIViewController+Extensions.h"
+#import "FLXKEmotionBoard.h"
+
 
 @interface FLXKFriendsSharingViewController ()
+@property (weak, nonatomic) IBOutlet UIView *container;
+@property (weak, nonatomic) IBOutlet UIButton *switchButton;
+@property (weak, nonatomic) IBOutlet UITextView *publishTextView;
 
+//subviews
+@property (strong, nonatomic) UIView* emotionKeyBoard;
 @end
 
 @implementation FLXKFriendsSharingViewController
@@ -20,6 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self registerGestureForResignViewEditing];
+    
+//    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithReload:YES editingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+        self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_recent_text_emotion_image)];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,12 +26,20 @@ typedef NS_OPTIONS(NSUInteger, EmotionGroupShowingOption) {
 
 @interface FLXKEmotionBoard : UIView<UIScrollViewDelegate,FLXKEmotionCollectionViewDelegate>
 
++(instancetype)sharedEmotionBoard;
+
 //便利方法，同事注册多个控件
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
 
+//+(instancetype)sharedEmotionBoardWithReload:(BOOL)reloadViews editingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
+
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView;
+
+-(void)removeNotifications;
+
++(void)reloadPages;
 
 //获取富文本的文字表达形式
 +(NSString*)getPlainTextString;

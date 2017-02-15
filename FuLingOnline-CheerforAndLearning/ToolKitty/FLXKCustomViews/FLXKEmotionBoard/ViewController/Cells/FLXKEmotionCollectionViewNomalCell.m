@@ -44,31 +44,61 @@
 //5:big_gif_image
 
 -(void)setItem:(EmotionItem *)item{
+//    [self.emotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     if (!item) {
-//        self.emotionButton.hidden=YES;
-//        self.emotionImageView.hidden=NO;
-//        self.emotionImageView.userInteractionEnabled=YES;
-//        self.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
-             [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
+        //        self.emotionButton.hidden=YES;
+        //        self.emotionImageView.hidden=NO;
+        //        self.emotionImageView.userInteractionEnabled=YES;
+        //        self.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
+        [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
         return;
     }
-        _item=item;
-        if ( item.emotionItemImageType==0) {
-//            [self sendSubviewToBack:self.emotionButton];
-//            self.emotionButton.hidden=YES;
-//            self.emotionImageView.hidden=NO;
-            [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
-//            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
-        }
-        else  if (item.emotionItemImageType==1) {
-//            self.emotionButton.hidden=NO;
-//            self.emotionImageView.hidden=YES;
-            [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
-        }
-        else  if (item.emotionItemImageType==5) {
-   [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
-        }
+    _item=item;
+    if ( item.emotionItemImageType==0) {
+        //            [self sendSubviewToBack:self.emotionButton];
+        //            self.emotionButton.hidden=YES;
+        //            self.emotionImageView.hidden=NO;
+        [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+        //            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
+    }
+    else  if (item.emotionItemImageType==1) {
+        //            self.emotionButton.hidden=NO;
+        //            self.emotionImageView.hidden=YES;
+        [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
+    }
+    else  if (item.emotionItemImageType==5) {
+        [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+    }
 }
+
+//-(void)setEmotionItemP:(EmotionItem*) item withReuseImagesDictionary:(NSMutableDictionary<UIImage*,NSString*>*)reuseImagesDictionary{
+//
+//        if (!item) {
+//            //        self.emotionButton.hidden=YES;
+//            //        self.emotionImageView.hidden=NO;
+//            //        self.emotionImageView.userInteractionEnabled=YES;
+//            //        self.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
+//            [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
+//            return;
+//        }
+//        _item=item;
+//        if ( item.emotionItemImageType==0) {
+//            //            [self sendSubviewToBack:self.emotionButton];
+//            //            self.emotionButton.hidden=YES;
+//            //            self.emotionImageView.hidden=NO;
+//            [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+//            //            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
+//        }
+//        else  if (item.emotionItemImageType==1) {
+//            //            self.emotionButton.hidden=NO;
+//            //            self.emotionImageView.hidden=YES;
+//            [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
+//        }
+//        else  if (item.emotionItemImageType==5) {
+//            [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+//        }
+//
+//}
 
 -(void)emotionTaped:(UITapGestureRecognizer*)gestureRecognizer{
     if (self.emotionCellTapGestureBlock) {

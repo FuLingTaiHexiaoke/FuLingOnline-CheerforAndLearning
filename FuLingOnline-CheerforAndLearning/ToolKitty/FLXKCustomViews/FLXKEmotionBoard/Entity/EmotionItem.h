@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EmotionItem : NSObject
+@interface EmotionItem : NSObject<NSCopying>
 @property(nonatomic,assign)NSInteger id;
 @property(nonatomic,strong)NSString* emotionItemName;
 @property(nonatomic,strong)NSString* emotionItemSmallImageUrl;

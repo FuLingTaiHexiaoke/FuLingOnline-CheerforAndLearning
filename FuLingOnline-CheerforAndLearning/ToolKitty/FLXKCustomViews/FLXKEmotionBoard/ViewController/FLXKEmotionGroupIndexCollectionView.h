@@ -20,4 +20,6 @@
 @property (nonatomic,weak) id<FLXKEmotionGroupIndexCollectionViewDelegate> emotionGroupSelectedDelegate;
 //-(void)selectedItemAtIndexPath:(NSIndexPath*)indexPath;
 -(void)selecteItemAtContentOffset:(CGFloat)contentOffset;
+
+-(void)loadGroupsAccordingEmotionGroupOptions;
 @end

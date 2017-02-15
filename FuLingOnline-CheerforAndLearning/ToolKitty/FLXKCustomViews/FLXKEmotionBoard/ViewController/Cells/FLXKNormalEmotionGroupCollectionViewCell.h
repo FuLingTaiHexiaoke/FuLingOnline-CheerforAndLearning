@@ -21,4 +21,6 @@ typedef void(^GroupEmotionCellTapGestureBlock)(NSRange);
 @property(nonatomic,assign)NSRange groupPagesRange;
 
 @property(nonatomic,strong)GroupEmotionCellTapGestureBlock groupEmotionCellTapGestureBlock;
+
+-(void)setEmotionGroup:(EmotionGroup *)emotionGroup itemIndex:(NSInteger)itemIndex;
 @end

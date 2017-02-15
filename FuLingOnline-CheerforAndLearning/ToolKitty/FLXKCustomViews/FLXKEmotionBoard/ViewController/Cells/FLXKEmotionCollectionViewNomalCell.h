@@ -23,6 +23,8 @@ typedef void(^EmotionCellLongPressedGestureBlock)(EmotionItem*);
 @property(nonatomic,strong)EmotionItem* item;
 
 //public methods
+//-(void)setEmotionItemP:(EmotionItem*) item withReuseImagesDictionary:(NSMutableDictionary<UIImage*,NSString*>*)reuseImagesDictionary;
+
 //-(void)setEmotionItem:(EmotionItem *)item;
 @property(nonatomic,strong)EmotionCellTapGestureBlock emotionCellTapGestureBlock;
 @property(nonatomic,strong)EmotionCellLongPressedGestureBlock emotionCellLongPressedGestureBlock;

@@ -11,6 +11,21 @@
 //
 @implementation EmotionItem
 
+- (id)copyWithZone:(nullable NSZone *)zone{
+    EmotionItem* entity=[[self class] allocWithZone:zone];
+    entity.id=self.id;
+    entity.emotionItemName= self.emotionItemName;
+    entity.emotionItemSmallImageUrl=self.emotionItemSmallImageUrl;
+    entity.emotionItemNormalImageUrl=self.emotionItemNormalImageUrl;
+    entity.emotionItemGifImageUrl=self.emotionItemGifImageUrl;
+    entity.emotionItemImageType=self.emotionItemImageType;
+    entity.emotionItemInsertTimeStamp=self.emotionItemInsertTimeStamp;
+    entity.groupId=self.groupId;
+
+    return entity;
+}
+
+
 //createTable
 + (BOOL)createTable
 {

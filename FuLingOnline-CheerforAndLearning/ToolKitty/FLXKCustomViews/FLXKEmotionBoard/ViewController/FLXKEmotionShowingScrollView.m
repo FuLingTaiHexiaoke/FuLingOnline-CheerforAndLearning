@@ -27,7 +27,7 @@
 @property(nonatomic,strong)NSMutableArray<NSNumber*>* imageLoadedPageIndexArray;
 @property(nonatomic,strong)NSMutableArray<FLXKEmotionCollectionView*>* totalShowingCollectionViews;
 @property(nonatomic,strong)NSMutableArray<NSArray<EmotionItem*>*>* totalShowingEmotionItems;
-
+@property(nonatomic,strong)NSMutableDictionary<UIImage*,NSString*>* reuseImagesDictionary;
 @end
 
 @implementation FLXKEmotionShowingScrollView
@@ -39,34 +39,36 @@
         self.imageLoadedPageIndexArray=[NSMutableArray array];
         self.totalShowingCollectionViews=[NSMutableArray array];
         self.totalShowingEmotionItems=[NSMutableArray array];
+        self.reuseImagesDictionary=[NSMutableDictionary dictionary];
         
-        //set kvo for currentShowingPageIndex
-        
-        __block NSInteger lastCollectionViewIndex=-1;
-        [[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            //save loaded image page
-//            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
-            
-            //get viewsAndEntities
-            NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj];
-            
-            //insert containers
-            NSArray<FLXKEmotionCollectionView*>* views=viewsAndEntities[0];
-            [self.totalShowingCollectionViews  addObjectsFromArray:views];
-            [self.totalShowingEmotionItems  addObjectsFromArray:viewsAndEntities[1]];
-            
-            //add subviews
-            for (int i=0; i<views.count; i++) {
-                lastCollectionViewIndex++;
-                views[i].left=Screen_Width*lastCollectionViewIndex;
-                NSLog(@"NSStringFromCGRect:%d %@", i,NSStringFromCGRect(views[i].frame));
-                [self addSubview:views[i]];
-                views[i].emotionSelectedDelegate= self;
-            }
-        }];
-        [self setCurrentShowingPageIndex:0];
-        self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), CollectionViewHeight);
-               NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+        [self loadPagesAccordingEmotionGroupOptions];
+        //        //set kvo for currentShowingPageIndex
+        //
+        //        __block NSInteger lastCollectionViewIndex=-1;
+        //        [[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey)]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //            //save loaded image page
+        ////            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
+        //
+        //            //get viewsAndEntities
+        //            NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj];
+        //
+        //            //insert containers
+        //            NSArray<FLXKEmotionCollectionView*>* views=viewsAndEntities[0];
+        //            [self.totalShowingCollectionViews  addObjectsFromArray:views];
+        //            [self.totalShowingEmotionItems  addObjectsFromArray:viewsAndEntities[1]];
+        //
+        //            //add subviews
+        //            for (int i=0; i<views.count; i++) {
+        //                lastCollectionViewIndex++;
+        //                views[i].left=Screen_Width*lastCollectionViewIndex;
+        //                NSLog(@"NSStringFromCGRect:%d %@", i,NSStringFromCGRect(views[i].frame));
+        //                [self addSubview:views[i]];
+        //                views[i].emotionSelectedDelegate= self;
+        //            }
+        //        }];
+        //        [self setCurrentShowingPageIndex:0];
+        //        self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), CollectionViewHeight);
+        //               NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
         self.pagingEnabled=YES;
     }
     
@@ -75,10 +77,53 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    [self setCurrentShowingPageIndex:0];
-    self.contentSize=CGSizeMake( Screen_Width*self.totalShowingCollectionViews.count, CollectionViewHeight);
-    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+//    [self setCurrentShowingPageIndex:0];
+//    self.contentSize=CGSizeMake( Screen_Width*self.totalShowingCollectionViews.count, CollectionViewHeight);
+    //    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
 }
+
+-(void)loadPagesAccordingEmotionGroupOptions{
+    //clear current showing data
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    [self.totalShowingCollectionViews removeAllObjects];
+    [self.totalShowingEmotionItems removeAllObjects];
+    [self.imageLoadedPageIndexArray removeAllObjects];
+    
+    
+    NSInteger preferedShowingPageIndex=_currentShowingPageIndex;
+    
+    //start to reload pages
+    __block NSInteger lastCollectionViewIndex=-1;
+    [[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsSQLUserDefaultsKey)]enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //save loaded image page
+        //            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
+        
+        //get viewsAndEntities
+        NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj];
+        
+        //insert containers
+        if (viewsAndEntities) {
+            NSArray<FLXKEmotionCollectionView*>* views=viewsAndEntities[0];
+            [self.totalShowingCollectionViews  addObjectsFromArray:views];
+            [self.totalShowingEmotionItems  addObjectsFromArray:viewsAndEntities[1]];
+            
+            //add subviews
+            for (int i=0; i<views.count; i++) {
+                lastCollectionViewIndex++;
+                views[i].left=Screen_Width*lastCollectionViewIndex;
+                //            NSLog(@"NSStringFromCGRect:%d %@", i,NSStringFromCGRect(views[i].frame));
+                [self addSubview:views[i]];
+                views[i].emotionSelectedDelegate= self;
+            }
+        }
+    }];
+    
+    [self setCurrentShowingPageIndex:preferedShowingPageIndex>lastCollectionViewIndex?0:preferedShowingPageIndex];
+    self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), CollectionViewHeight);
+}
+
 
 -(void)didSelectedEmotionItem:(EmotionItem*)emotionItem{
     if ([self.emotionSelectedDelegate respondsToSelector:@selector(didSelectedEmotionItem:)])

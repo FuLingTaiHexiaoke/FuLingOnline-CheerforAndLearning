@@ -11,6 +11,7 @@
 //entity
 #import "EmotionGroup.h"
 #import "EmotionItem.h"
+#import "UIImage+EmotionExtension.h"
 
 static NSInteger lastViewIndex;
 
@@ -25,7 +26,13 @@ static NSInteger lastViewIndex;
     //    [self.groupEmotionButton addGestureRecognizer:tapGesture];
 }
 
--(void)setEmotionGroup:(EmotionGroup *)emotionGroup{
+-(void)setEmotionGroup:(EmotionGroup *)emotionGroup itemIndex:(NSInteger)itemIndex{
+    if (itemIndex==0) {
+        lastViewIndex=0;
+    }
+    [self.groupEmotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [self.groupEmotionButton setTitle:@"" forState:UIControlStateNormal];
+    
     emotionGroup=emotionGroup;
     //set image
     
@@ -39,7 +46,7 @@ static NSInteger lastViewIndex;
                 emotionGroup.emotionGroupImageUrl=[NSString stringWithFormat:@"%@.gif",emotionGroup.emotionGroupImageUrl ];
             }
         }
-        UIImage* image=[UIImage imageNamed:emotionGroup.emotionGroupImageUrl];
+        UIImage* image=[UIImage ImageWithName:emotionGroup.emotionGroupImageUrl];
         [self.groupEmotionButton setImage:image forState:UIControlStateNormal];
     }
     

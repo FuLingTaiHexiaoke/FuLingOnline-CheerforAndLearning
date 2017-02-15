@@ -74,7 +74,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption {
     //add emotionGroupOptions
     [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
-
+    
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
@@ -83,18 +83,31 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     //add action
     [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
     sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
-    //add notification
-    [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-//    //add emotionGroupOptions
-//    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
-
+    
+    //    //add emotionGroupOptions
+    //    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+    
+    NSNumber*  lastOptions=( NSNumber* ) FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey);
+    if (lastOptions.integerValue!=emotionGroupShowingOption) {
+        [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
+        [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
+    }
+    FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
+    FLXKUserDefaultsSynchronize
+ 
     return sharedEmotionBoard;
 }
-+(void)setEmotionGroupOptions:(EmotionGroupShowingOption)emotionGroupOptions{
+
++(void)reloadPages{
+    [[FLXKEmotionBoard sharedEmotionBoard].emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
+    [[FLXKEmotionBoard sharedEmotionBoard].emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
+}
+
++(void)setEmotionGroupOptions:(EmotionGroupShowingOption)emotionGroupOptions {
     NSMutableString* where=[NSMutableString stringWithFormat:@" where emotionGroupImageType in ( "];
-//    if (emotionGroupOptions&EmotionGroup_basic_text_emotion_image) {
-        [where appendString:@" 0 "];
-//    }
+    
+    [where appendString:@" 0 "];
+    
     if (emotionGroupOptions&EmotionGroup_emoji_text_emotion_image) {
         [where appendString:@",1"];
     }
@@ -110,27 +123,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     if (emotionGroupOptions&EmotionGroup_big_gif_image) {
         [where appendString:@",5"];
     }
- [where appendString:@" ) "];
-    FLXKUserDefaultsSetObjForKey(where, SelectedEmotionGroupOptionsUserDefaultsKey);
-    FLXKUserDefaultsSynchronize
+    [where appendString:@" ) "];
+    FLXKUserDefaultsSetObjForKey(where, SelectedEmotionGroupOptionsSQLUserDefaultsKey);
+    FLXKUserDefaultsSynchronize;
 }
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView{
-    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
-    sharedEmotionBoard.editingTextView=editingTextView;
-    sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
-    sharedEmotionBoard.emotionSwithBarButtonItem=emotionSwithBarButtonItem;
-    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
-    
-    //add action
-    sharedEmotionBoard.emotionSwithBarButtonItem.target=self;
-    sharedEmotionBoard.emotionSwithBarButtonItem.action=@selector(changeInputViewTypeWithBarButtonItem:);
-    sharedEmotionBoard.emotionSwithBarButtonItem.tag=FLXKEmotionKeyboard;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
-    return sharedEmotionBoard;
-}
 
 +(instancetype)sharedEmotionBoard{
     static FLXKEmotionBoard* sharedEmotionBoard=nil;
@@ -138,8 +135,21 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     dispatch_once(&onceToken, ^{
         NSArray* nibViews =  [[NSBundle mainBundle] loadNibNamed:@"FLXKEmotionBoard" owner:nil options:nil];
         sharedEmotionBoard=[nibViews objectAtIndex:0];
+        
     });
+    
+    //delete registered notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:sharedEmotionBoard];
+    //add notification
+    [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:sharedEmotionBoard selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
     return sharedEmotionBoard;
+}
+
+-(void)removeNotifications{
+    //delete registered notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder
@@ -150,9 +160,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         [EmotionGroup createTable];
         [EmotionItem createTable];
         [EmotionRecentItems createTable];
-        //        //添加键盘弹出-隐藏通知
-        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
-        
     }
     return self;
 }
@@ -170,27 +177,14 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
 }
 
--(void)willMoveToSuperview:(UIView *)newSuperview{
-    if (!newSuperview) {
-        //        [[NSNotificationCenter defaultCenter] removeObserver:self];
-    }
-    else{
-        //添加键盘弹出-隐藏通知
-        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShowNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
-        //添加键盘弹出-隐藏通知
-        //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-        
-    }
-}
-
--(void)keyboardDidShowNotification:(NSNotification*)notification{
+-(void)keyboardWillShowNotification:(NSNotification*)notification{
     if (self.editingTextView.inputView) {
         [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:0];
     }
 }
 
 -(void)changeInputViewType:(UIButton *)sender{
-    sender.tag= self.editingTextView.inputView?FLXKSystemKeyboard:FLXKSystemKeyboard;
+    sender.tag= self.editingTextView.inputView?FLXKSystemKeyboard:FLXKEmotionKeyboard;
     InputViewType inputViewType=sender.tag;
     switch (inputViewType) {
         case FLXKSystemKeyboard:
@@ -271,7 +265,9 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         [_emotionContainerScrollView setContentOffset:CGPointMake(currentShowingRange.location*Screen_Width, 0) animated:NO];
     }
     
-    [_emotionContainerScrollView setCurrentShowingPageIndex:currentShowingRange.location] ;
+    if (currentShowingRange.length!=0) {
+        [_emotionContainerScrollView setCurrentShowingPageIndex:currentShowingRange.location] ;
+    }
     
     //pagecontrol
     [self changePageControlShowing];
@@ -450,12 +446,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
     
     //I do not why this happened,if you know tell me.
-    if ([NSStringFromCGRect(keyboardStartingFrame) isEqualToString:NSStringFromCGRect(keyboardEndingFrame) ]) {
-        if (animationDuration!=0) {
-            [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight+1 keyboadEndingHeight:keyboadEndingHeight];
-        }
-        return;
-    }
+//    if ([NSStringFromCGRect(keyboardStartingFrame) isEqualToString:NSStringFromCGRect(keyboardEndingFrame) ]) {
+//        if (animationDuration!=0 && !self.editingTextView.isFirstResponder) {
+//            [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight keyboadEndingHeight:keyboadEndingHeight];
+//        }
+//        return;
+//    }
     
     if(_isChangingInputView) {
         return;
@@ -467,7 +463,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 -(void)changeEmotionSwithButtonContainerWithAnimationDuration:(CGFloat)animationDuration animationCurve:(UIViewAnimationCurve)animationCurve
                                         keyboadStartingHeight:(CGFloat)keyboadStartingHeight keyboadEndingHeight:(CGFloat)keyboadEndingHeight{
-
+    
     //在此，我们需要判断用户程序中emotionSwithButtonContainer是用Layout布局还是Frame，并根据不同的布局方式，动态调整emotionSwithButtonContainer的高度。
     __block  BOOL isAutoLayout=NO;
     [self.emotionEditingVCView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -478,7 +474,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     }];
     
     //keyboadStartingHeight>0代表keyboard目前处于显示阶段
-    CGFloat  heightToChange= keyboadStartingHeight>0?0:keyboadEndingHeight;
+    CGFloat  heightToChange= keyboadStartingHeight>0?(keyboadStartingHeight<=keyboadEndingHeight?keyboadEndingHeight:0):keyboadEndingHeight;
     
     if (!isAutoLayout) {
         //此时是frame,所以我们需要更改frame.origin.x
@@ -499,8 +495,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         
         __block CGFloat containerHeight=0;
         [self.emotionSwithButtonContainer.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            containerHeight=obj.constant==0?self.emotionSwithButtonContainer.frame.size.height:obj.constant;
-            [self.emotionSwithButtonContainer removeConstraint:obj];
+            //            containerHeight=obj.constant==0?self.emotionSwithButtonContainer.frame.size.height:obj.constant;
+            if (obj.firstAttribute==NSLayoutAttributeHeight) {
+                [self.emotionSwithButtonContainer removeConstraint:obj];
+            }
+            
         }];
         
         //高度约束
