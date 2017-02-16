@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLXKPublishCollectionViewCell : UICollectionViewCell
+@interface FLXKNewsPublishCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *choosedImageDisplayImageView;
 @property (weak, nonatomic) IBOutlet UIButton *choosedImageDisplayButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteChoosedImageButton;

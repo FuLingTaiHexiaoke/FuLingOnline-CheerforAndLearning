@@ -6,9 +6,9 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
-#import "FLXKPublishCollectionViewCell.h"
+#import "FLXKNewsPublishCollectionViewCell.h"
 
-@implementation FLXKPublishCollectionViewCell
+@implementation FLXKNewsPublishCollectionViewCell
 
 //
 //#pragma mark Keyboard

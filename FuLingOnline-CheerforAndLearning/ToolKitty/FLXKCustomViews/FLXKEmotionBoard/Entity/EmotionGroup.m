@@ -60,14 +60,14 @@
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
             EmotionGroup *entity = [[EmotionGroup alloc] init];
-            entity.id=[resultSet longLongIntForColumn:@"id"];
+            entity.id=[resultSet intForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
-            entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
-            entity.emotionGroupPerPageCount=[resultSet longLongIntForColumn:@"emotionGroupPerPageCount"];
-            entity.emotionGroupPerPageColunms=[resultSet longLongIntForColumn:@"emotionGroupPerPageColunms"];
-            entity.emotionGroupPerPageLines=[resultSet longLongIntForColumn:@"emotionGroupPerPageLines"];
-            entity.emotionGroupPerPageItemWidth=[resultSet longLongIntForColumn:@"emotionGroupPerPageItemWidth"];
-            entity.emotionGroupIsShowingDeleteButton=[resultSet longLongIntForColumn:@"emotionGroupIsShowingDeleteButton"];
+            entity.emotionGroupImageType=[resultSet intForColumn:@"emotionGroupImageType"];
+            entity.emotionGroupPerPageCount=[resultSet intForColumn:@"emotionGroupPerPageCount"];
+            entity.emotionGroupPerPageColunms=[resultSet intForColumn:@"emotionGroupPerPageColunms"];
+            entity.emotionGroupPerPageLines=[resultSet intForColumn:@"emotionGroupPerPageLines"];
+            entity.emotionGroupPerPageItemWidth=[resultSet intForColumn:@"emotionGroupPerPageItemWidth"];
+            entity.emotionGroupIsShowingDeleteButton=[resultSet intForColumn:@"emotionGroupIsShowingDeleteButton"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);
@@ -85,14 +85,14 @@
         FMResultSet *resultSet = [db executeQuery:sql];
         while ([resultSet next]) {
             EmotionGroup *entity = [[EmotionGroup alloc] init];
-            entity.id=[resultSet longLongIntForColumn:@"id"];
+            entity.id=[resultSet intForColumn:@"id"];
             entity.emotionGroupName=[resultSet stringForColumn:@"emotionGroupName"];
-            entity.emotionGroupImageType=[resultSet longLongIntForColumn:@"emotionGroupImageType"];
-            entity.emotionGroupPerPageCount=[resultSet longLongIntForColumn:@"emotionGroupPerPageCount"];
-            entity.emotionGroupPerPageColunms=[resultSet longLongIntForColumn:@"emotionGroupPerPageColunms"];
-            entity.emotionGroupPerPageLines=[resultSet longLongIntForColumn:@"emotionGroupPerPageLines"];
-            entity.emotionGroupPerPageItemWidth=[resultSet longLongIntForColumn:@"emotionGroupPerPageItemWidth"];
-            entity.emotionGroupIsShowingDeleteButton=[resultSet longLongIntForColumn:@"emotionGroupIsShowingDeleteButton"];
+            entity.emotionGroupImageType=[resultSet intForColumn:@"emotionGroupImageType"];
+            entity.emotionGroupPerPageCount=[resultSet intForColumn:@"emotionGroupPerPageCount"];
+            entity.emotionGroupPerPageColunms=[resultSet intForColumn:@"emotionGroupPerPageColunms"];
+            entity.emotionGroupPerPageLines=[resultSet intForColumn:@"emotionGroupPerPageLines"];
+            entity.emotionGroupPerPageItemWidth=[resultSet intForColumn:@"emotionGroupPerPageItemWidth"];
+            entity.emotionGroupIsShowingDeleteButton=[resultSet intForColumn:@"emotionGroupIsShowingDeleteButton"];
             entity.emotionGroupImageUrl=[resultSet stringForColumn:@"emotionGroupImageUrl"];
             [entitiyResults addObject:entity];
             FMDBRelease(entity);

@@ -188,10 +188,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     InputViewType inputViewType=sender.tag;
     switch (inputViewType) {
         case FLXKSystemKeyboard:
-            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"b_keyboard_emotion" ] forState:UIControlStateNormal];
+            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"emotion_b_keyboard" ] forState:UIControlStateNormal];
             break;
         case FLXKEmotionKeyboard:
-            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"b_keyboard_system" ] forState:UIControlStateNormal];
+            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"emotion_b_keyboard_system" ] forState:UIControlStateNormal];
             break;
         case FLXKToolKitBoard:
             sender.tag=FLXKSystemKeyboard;

@@ -6,14 +6,14 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
-#import "FLXKPublishNewsController.h"
+#import "FLXKNewsPublishController.h"
 
 //used view controllers
 #import "TZImagePickerController.h"
 #import "FLXKEmotionBoard.h"
 
 //subview
-#import "FLXKPublishCollectionViewCell.h"
+#import "FLXKNewsPublishCollectionViewCell.h"
 
 ////model
 //#import "FLXKPublishNewsModel.h"
@@ -27,7 +27,7 @@
 
 
 
-@interface FLXKPublishNewsController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate,UIScrollViewDelegate>
+@interface FLXKNewsPublishController ()<UICollectionViewDelegate,UICollectionViewDataSource,UITextViewDelegate,UIScrollViewDelegate>
 //IBOutlet
 @property (weak, nonatomic) IBOutlet UIScrollView *publishScrollViewContainer;
 @property (weak, nonatomic) IBOutlet UITextView *publishTextView;
@@ -36,9 +36,10 @@
 @property (weak, nonatomic) IBOutlet UIView *publishToolBarPositionView;
 @property (weak, nonatomic) IBOutlet UIView *publishToolBarView;
 @property (weak, nonatomic) IBOutlet UIButton *publishLocationButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *publishTopicChooseButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *publishEmotionChooseButton;
-
+@property (weak, nonatomic) IBOutlet UIButton *publishTopicChooseButton;
+@property (weak, nonatomic) IBOutlet UILabel *publishTopicChooseLabel;
+@property (weak, nonatomic) IBOutlet UIButton *publishEmotionChooseButton;
+@property (weak, nonatomic) IBOutlet UILabel *publishEmotionChooseLabel;
 //status change
 @property (assign, nonatomic)NSInteger isChangeInputView;
 
@@ -55,7 +56,7 @@
 @property (strong, nonatomic) UIView* emotionKeyBoard;
 @end
 
-@implementation FLXKPublishNewsController
+@implementation FLXKNewsPublishController
 
 #pragma mark - ViewController LifeCircle
 - (void)viewDidLoad {
@@ -100,7 +101,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishLocationButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image|EmotionGroup_recent_text_emotion_image)];
+    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image|EmotionGroup_recent_text_emotion_image)];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -139,7 +140,7 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    FLXKPublishCollectionViewCell * cell= (FLXKPublishCollectionViewCell *) [_publishImageChoosingCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell_PublishImageChoosingCollectionView" forIndexPath:indexPath];
+    FLXKNewsPublishCollectionViewCell * cell= (FLXKNewsPublishCollectionViewCell *) [_publishImageChoosingCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell_PublishImageChoosingCollectionView" forIndexPath:indexPath];
     NSInteger count= _selectedPhotos.count;
 
     //add selected images

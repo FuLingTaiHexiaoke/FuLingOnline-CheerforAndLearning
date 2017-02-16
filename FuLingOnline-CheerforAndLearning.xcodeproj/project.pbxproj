@@ -19,7 +19,9 @@
 		B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55BA1DD98099009A373A /* UIView+Extensions.m */; };
 		B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57011E499888001D8C2A /* EmotionTextAttachment.m */; };
 		B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57031E499888001D8C2A /* NSAttributedString+EmotionExtension.m */; };
-		B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */; };
+		B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */; };
+		B92F57681E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */; };
+		B92F57691E5547C40010A84A /* FLXKNewsPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */; };
 		B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */; };
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
@@ -30,7 +32,6 @@
 		B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76B1DE58E7B00598437 /* UIColor+Custom.m */; };
 		B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */; };
 		B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7721DE59B2600598437 /* HomeNewsViewController.m */; };
-		B944ADDF1E5189BD00449C62 /* FLXKFriendsSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */; };
 		B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B944ADE41E51988000449C62 /* UIViewController+Extensions.m */; };
 		B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B948CBE91DD5C7A800E6ED93 /* Settings.bundle */; };
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
@@ -376,9 +377,9 @@
 		B97507CE1E4C58F700A577E7 /* _expression_en.plist in Resources */ = {isa = PBXBuildFile; fileRef = B975068D1E4C58F600A577E7 /* _expression_en.plist */; };
 		B97507CF1E4C58F700A577E7 /* active_page_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B975068F1E4C58F600A577E7 /* active_page_image.png */; };
 		B97507D01E4C58F700A577E7 /* active_page_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506901E4C58F600A577E7 /* active_page_image@2x.png */; };
-		B97507D11E4C58F700A577E7 /* b_keyboard_emotion.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */; };
-		B97507D21E4C58F700A577E7 /* b_keyboard_emotion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */; };
-		B97507D31E4C58F700A577E7 /* b_keyboard_system.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506931E4C58F600A577E7 /* b_keyboard_system.png */; };
+		B97507D11E4C58F700A577E7 /* emotion_b_keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506911E4C58F600A577E7 /* emotion_b_keyboard.png */; };
+		B97507D21E4C58F700A577E7 /* emotion_b_keyboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506921E4C58F600A577E7 /* emotion_b_keyboard@2x.png */; };
+		B97507D31E4C58F700A577E7 /* emotion_b_keyboard_system.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506931E4C58F600A577E7 /* emotion_b_keyboard_system.png */; };
 		B97507D41E4C58F700A577E7 /* b_keyboard_system@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */; };
 		B97507D51E4C58F700A577E7 /* del_emoji_select.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506951E4C58F600A577E7 /* del_emoji_select.png */; };
 		B97507D61E4C58F700A577E7 /* del_emoji_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */; };
@@ -390,7 +391,6 @@
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
 		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
-		B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */; };
 		B9C9153E1E31E28B0060051E /* UIImage+EmotionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C9153D1E31E28B0060051E /* UIImage+EmotionExtension.m */; };
 		B9CDF0201E4F36690007F638 /* GooeyCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDF0141E4F36690007F638 /* GooeyCircle.m */; };
 		B9CDF0211E4F36690007F638 /* Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDF0161E4F36690007F638 /* Indicator.m */; };
@@ -455,8 +455,12 @@
 		B92F57011E499888001D8C2A /* EmotionTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionTextAttachment.m; sourceTree = "<group>"; };
 		B92F57021E499888001D8C2A /* NSAttributedString+EmotionExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+EmotionExtension.h"; sourceTree = "<group>"; };
 		B92F57031E499888001D8C2A /* NSAttributedString+EmotionExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+EmotionExtension.m"; sourceTree = "<group>"; };
-		B92F6C841DF6865500185DF0 /* FLXKPublishCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishCollectionViewCell.h; sourceTree = "<group>"; };
-		B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishCollectionViewCell.m; sourceTree = "<group>"; };
+		B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController.h; sourceTree = "<group>"; };
+		B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController.m; sourceTree = "<group>"; };
+		B92F57631E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNewsPublishCollectionViewCell.h; sourceTree = "<group>"; };
+		B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNewsPublishCollectionViewCell.m; sourceTree = "<group>"; };
+		B92F57651E5547C40010A84A /* FLXKNewsPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNewsPublishController.h; sourceTree = "<group>"; };
+		B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNewsPublishController.m; sourceTree = "<group>"; };
 		B92F6C871DF6BBB300185DF0 /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
 		B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
 		B930C1F81DE548D4004F729B /* FLXKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBar.h; sourceTree = "<group>"; };
@@ -477,8 +481,6 @@
 		B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		B941F7711DE59B2600598437 /* HomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsViewController.h; sourceTree = "<group>"; };
 		B941F7721DE59B2600598437 /* HomeNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsViewController.m; sourceTree = "<group>"; };
-		B944ADDD1E5189BD00449C62 /* FLXKFriendsSharingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController.h; sourceTree = "<group>"; };
-		B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController.m; sourceTree = "<group>"; };
 		B944ADE31E51988000449C62 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
 		B944ADE41E51988000449C62 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
 		B948CBE91DD5C7A800E6ED93 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -848,9 +850,9 @@
 		B975068D1E4C58F600A577E7 /* _expression_en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _expression_en.plist; sourceTree = "<group>"; };
 		B975068F1E4C58F600A577E7 /* active_page_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_page_image.png; sourceTree = "<group>"; };
 		B97506901E4C58F600A577E7 /* active_page_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active_page_image@2x.png"; sourceTree = "<group>"; };
-		B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b_keyboard_emotion.png; sourceTree = "<group>"; };
-		B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "b_keyboard_emotion@2x.png"; sourceTree = "<group>"; };
-		B97506931E4C58F600A577E7 /* b_keyboard_system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b_keyboard_system.png; sourceTree = "<group>"; };
+		B97506911E4C58F600A577E7 /* emotion_b_keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_b_keyboard.png; sourceTree = "<group>"; };
+		B97506921E4C58F600A577E7 /* emotion_b_keyboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emotion_b_keyboard@2x.png"; sourceTree = "<group>"; };
+		B97506931E4C58F600A577E7 /* emotion_b_keyboard_system.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emotion_b_keyboard_system.png; sourceTree = "<group>"; };
 		B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "b_keyboard_system@2x.png"; sourceTree = "<group>"; };
 		B97506951E4C58F600A577E7 /* del_emoji_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_emoji_select.png; sourceTree = "<group>"; };
 		B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_emoji_select@2x.png"; sourceTree = "<group>"; };
@@ -864,8 +866,6 @@
 		B97B38DE1DD029D400D8F004 /* 重点难点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "重点难点.rtf"; sourceTree = "<group>"; };
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
-		B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsController.h; sourceTree = "<group>"; };
-		B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsController.m; sourceTree = "<group>"; };
 		B9C9153C1E31E28B0060051E /* UIImage+EmotionExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EmotionExtension.h"; sourceTree = "<group>"; };
 		B9C9153D1E31E28B0060051E /* UIImage+EmotionExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EmotionExtension.m"; sourceTree = "<group>"; };
 		B9CDF0131E4F36690007F638 /* GooeyCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooeyCircle.h; sourceTree = "<group>"; };
@@ -1031,9 +1031,9 @@
 			isa = PBXGroup;
 			children = (
 				B93FF8881E01285800070BD4 /* FLXKViewControllerBase */,
-				B99FC60D1DF5634A0093BBAE /* PublishNewsController */,
 				B941F7701DE598D700598437 /* Home */,
 				B940CE3E1DE42C33004427F0 /* FLXKTabBarController */,
+				B92F57601E5547C40010A84A /* FLXKFriendsSharing */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1119,6 +1119,19 @@
 				B944ADE41E51988000449C62 /* UIViewController+Extensions.m */,
 			);
 			path = "FLXK+Addition";
+			sourceTree = "<group>";
+		};
+		B92F57601E5547C40010A84A /* FLXKFriendsSharing */ = {
+			isa = PBXGroup;
+			children = (
+				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
+				B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */,
+				B92F57631E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.h */,
+				B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */,
+				B92F57651E5547C40010A84A /* FLXKNewsPublishController.h */,
+				B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */,
+			);
+			path = FLXKFriendsSharing;
 			sourceTree = "<group>";
 		};
 		B93AF5BA1E30A21900F51E26 /* Resouce */ = {
@@ -1679,9 +1692,9 @@
 			children = (
 				B975068F1E4C58F600A577E7 /* active_page_image.png */,
 				B97506901E4C58F600A577E7 /* active_page_image@2x.png */,
-				B97506911E4C58F600A577E7 /* b_keyboard_emotion.png */,
-				B97506921E4C58F600A577E7 /* b_keyboard_emotion@2x.png */,
-				B97506931E4C58F600A577E7 /* b_keyboard_system.png */,
+				B97506911E4C58F600A577E7 /* emotion_b_keyboard.png */,
+				B97506921E4C58F600A577E7 /* emotion_b_keyboard@2x.png */,
+				B97506931E4C58F600A577E7 /* emotion_b_keyboard_system.png */,
 				B97506941E4C58F600A577E7 /* b_keyboard_system@2x.png */,
 				B97506951E4C58F600A577E7 /* del_emoji_select.png */,
 				B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */,
@@ -1710,17 +1723,6 @@
 				B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B99FC60D1DF5634A0093BBAE /* PublishNewsController */ = {
-			isa = PBXGroup;
-			children = (
-				B99FC6111DF564490093BBAE /* FLXKPublishNewsController.h */,
-				B99FC6121DF564490093BBAE /* FLXKPublishNewsController.m */,
-				B92F6C841DF6865500185DF0 /* FLXKPublishCollectionViewCell.h */,
-				B92F6C851DF6865500185DF0 /* FLXKPublishCollectionViewCell.m */,
-			);
-			path = PublishNewsController;
 			sourceTree = "<group>";
 		};
 		B9CDF0121E4F36690007F638 /* KYAnimatedPageControl */ = {
@@ -1783,8 +1785,6 @@
 				B90025951DAE1EC000B34438 /* ViewController */,
 				B9D854BB1DAC8BE2001AD79C /* ViewController.h */,
 				B9D854BC1DAC8BE2001AD79C /* ViewController.m */,
-				B944ADDD1E5189BD00449C62 /* FLXKFriendsSharingViewController.h */,
-				B944ADDE1E5189BD00449C62 /* FLXKFriendsSharingViewController.m */,
 				B9D854BE1DAC8BE2001AD79C /* Main.storyboard */,
 				B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */,
 				B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */,
@@ -1926,7 +1926,7 @@
 				TargetAttributes = {
 					B9D854B11DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UMWN7VGEE4;
+						DevelopmentTeam = TQ772LEHW3;
 						ProvisioningStyle = Automatic;
 					};
 					B9D854CA1DAC8BE2001AD79C = {
@@ -2003,7 +2003,7 @@
 				B97507631E4C58F600A577E7 /* 033.png in Resources */,
 				B97507AD1E4C58F700A577E7 /* 070.png in Resources */,
 				B97261A51E2DEC76008B6356 /* LICENSE.txt in Resources */,
-				B97507D11E4C58F700A577E7 /* b_keyboard_emotion.png in Resources */,
+				B97507D11E4C58F700A577E7 /* emotion_b_keyboard.png in Resources */,
 				B97506AF1E4C58F600A577E7 /* smiley_21.png in Resources */,
 				B97506DE1E4C58F600A577E7 /* smiley_64.png in Resources */,
 				B97507571E4C58F600A577E7 /* 027.png in Resources */,
@@ -2012,7 +2012,7 @@
 				B975070F1E4C58F600A577E7 /* gif300_2.gif in Resources */,
 				B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */,
 				B97507A71E4C58F700A577E7 /* 067.png in Resources */,
-				B97507D31E4C58F700A577E7 /* b_keyboard_system.png in Resources */,
+				B97507D31E4C58F700A577E7 /* emotion_b_keyboard_system.png in Resources */,
 				B97506D51E4C58F600A577E7 /* smiley_56.png in Resources */,
 				B975077E1E4C58F700A577E7 /* 046@2x.png in Resources */,
 				B97507421E4C58F600A577E7 /* 016@2x.png in Resources */,
@@ -2181,7 +2181,7 @@
 				B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */,
 				B975077C1E4C58F700A577E7 /* 045@2x.png in Resources */,
 				B97507071E4C58F600A577E7 /* gif300_11.gif in Resources */,
-				B97507D21E4C58F700A577E7 /* b_keyboard_emotion@2x.png in Resources */,
+				B97507D21E4C58F700A577E7 /* emotion_b_keyboard@2x.png in Resources */,
 				B97506C31E4C58F600A577E7 /* smiley_4.png in Resources */,
 				B97507611E4C58F600A577E7 /* 032.png in Resources */,
 				B97506F31E4C58F600A577E7 /* smiley_83.png in Resources */,
@@ -2419,10 +2419,9 @@
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
-				B944ADDF1E5189BD00449C62 /* FLXKFriendsSharingViewController.m in Sources */,
-				B92F6C861DF6865500185DF0 /* FLXKPublishCollectionViewCell.m in Sources */,
 				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
 				B9CDF0211E4F36690007F638 /* Indicator.m in Sources */,
+				B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
@@ -2445,14 +2444,15 @@
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
+				B92F57681E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m in Sources */,
 				B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */,
 				B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
-				B99FC6131DF564490093BBAE /* FLXKPublishNewsController.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
 				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
+				B92F57691E5547C40010A84A /* FLXKNewsPublishController.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
@@ -2619,13 +2619,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = UMWN7VGEE4;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2642,13 +2642,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = UMWN7VGEE4;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLXKPublishNewsController : UIViewController
+@interface FLXKNewsPublishController : UIViewController
 
 @end
