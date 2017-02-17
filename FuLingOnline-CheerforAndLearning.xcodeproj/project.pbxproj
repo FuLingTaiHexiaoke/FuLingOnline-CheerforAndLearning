@@ -16,23 +16,28 @@
 		B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */; };
 		B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
-		B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55BA1DD98099009A373A /* UIView+Extensions.m */; };
 		B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57011E499888001D8C2A /* EmotionTextAttachment.m */; };
 		B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57031E499888001D8C2A /* NSAttributedString+EmotionExtension.m */; };
 		B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */; };
 		B92F57681E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */; };
 		B92F57691E5547C40010A84A /* FLXKNewsPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */; };
-		B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */; };
+		B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B930985F1E568C0600306F39 /* NSBundle+Extensions.m */; };
+		B930986D1E568C0600306F39 /* NSDate+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098611E568C0600306F39 /* NSDate+Extensions.m */; };
+		B930986E1E568C0600306F39 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098631E568C0600306F39 /* NSString+Extensions.m */; };
+		B930986F1E568C0600306F39 /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098651E568C0600306F39 /* UIAlertController+Extensions.m */; };
+		B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098671E568C0600306F39 /* UIColor+Extensions.m */; };
+		B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098691E568C0600306F39 /* UIView+Extensions.m */; };
+		B93098721E568C0600306F39 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B930986B1E568C0600306F39 /* UIViewController+Extensions.m */; };
+		B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B93098741E568D2200306F39 /* CLLocationManager+blocks.m */; };
+		B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B930987A1E568D9A00306F39 /* CLLocationManager+Extensions.m */; };
+		B930987D1E56974C00306F39 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B930987C1E56974C00306F39 /* CoreLocation.framework */; };
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKViewControllerBase.m */; };
 		B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B940CE401DE42C65004427F0 /* FLXKTabBarController.m */; };
 		B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7621DE58AFC00598437 /* FLXKStyleManager.m */; };
-		B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76B1DE58E7B00598437 /* UIColor+Custom.m */; };
-		B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */; };
 		B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7721DE59B2600598437 /* HomeNewsViewController.m */; };
-		B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B944ADE41E51988000449C62 /* UIViewController+Extensions.m */; };
 		B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B948CBE91DD5C7A800E6ED93 /* Settings.bundle */; };
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
@@ -48,11 +53,9 @@
 		B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */; };
 		B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A325D1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m */; };
 		B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A325E1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib */; };
-		B95A56D71E4B6B9600BDE324 /* NSBundle+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A56D61E4B6B9600BDE324 /* NSBundle+Extensions.m */; };
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
-		B966DF171E139D9200BFE3EA /* NSDate+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
 		B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B972618D1E2DEC76008B6356 /* TestEntity.m */; };
@@ -407,7 +410,6 @@
 		B9D854DB1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */; };
 		B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF70741DAF76E7004C23E6 /* FLXKHttpRequest.m */; };
 		B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF70771DAF76E7004C23E6 /* FLXKSocketHelper.m */; };
-		B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA12D01E0BD14900476C48 /* NSString+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -449,8 +451,6 @@
 		B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionRecentItems.m; sourceTree = "<group>"; };
 		B92B55B31DD9679E009A373A /* CALayer+FLXKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FLXKAddition.h"; sourceTree = "<group>"; };
 		B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FLXKAddition.m"; sourceTree = "<group>"; };
-		B92B55B91DD98099009A373A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
-		B92B55BA1DD98099009A373A /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
 		B92F57001E499888001D8C2A /* EmotionTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionTextAttachment.h; sourceTree = "<group>"; };
 		B92F57011E499888001D8C2A /* EmotionTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionTextAttachment.m; sourceTree = "<group>"; };
 		B92F57021E499888001D8C2A /* NSAttributedString+EmotionExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+EmotionExtension.h"; sourceTree = "<group>"; };
@@ -461,8 +461,25 @@
 		B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNewsPublishCollectionViewCell.m; sourceTree = "<group>"; };
 		B92F57651E5547C40010A84A /* FLXKNewsPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNewsPublishController.h; sourceTree = "<group>"; };
 		B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNewsPublishController.m; sourceTree = "<group>"; };
-		B92F6C871DF6BBB300185DF0 /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
-		B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
+		B930985E1E568C0600306F39 /* NSBundle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extensions.h"; sourceTree = "<group>"; };
+		B930985F1E568C0600306F39 /* NSBundle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extensions.m"; sourceTree = "<group>"; };
+		B93098601E568C0600306F39 /* NSDate+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extensions.h"; sourceTree = "<group>"; };
+		B93098611E568C0600306F39 /* NSDate+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extensions.m"; sourceTree = "<group>"; };
+		B93098621E568C0600306F39 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		B93098631E568C0600306F39 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		B93098641E568C0600306F39 /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
+		B93098651E568C0600306F39 /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
+		B93098661E568C0600306F39 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		B93098671E568C0600306F39 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		B93098681E568C0600306F39 /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
+		B93098691E568C0600306F39 /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
+		B930986A1E568C0600306F39 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
+		B930986B1E568C0600306F39 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
+		B93098731E568D2200306F39 /* CLLocationManager+blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+blocks.h"; sourceTree = "<group>"; };
+		B93098741E568D2200306F39 /* CLLocationManager+blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+blocks.m"; sourceTree = "<group>"; };
+		B93098791E568D9A00306F39 /* CLLocationManager+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocationManager+Extensions.h"; sourceTree = "<group>"; };
+		B930987A1E568D9A00306F39 /* CLLocationManager+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocationManager+Extensions.m"; sourceTree = "<group>"; };
+		B930987C1E56974C00306F39 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B930C1F81DE548D4004F729B /* FLXKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBar.h; sourceTree = "<group>"; };
 		B930C1F91DE548D4004F729B /* FLXKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBar.m; sourceTree = "<group>"; };
 		B93AF5C11E30AADA00F51E26 /* EmotionGroupDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroupDetailModel.h; sourceTree = "<group>"; };
@@ -475,14 +492,8 @@
 		B940CE401DE42C65004427F0 /* FLXKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBarController.m; sourceTree = "<group>"; };
 		B941F7611DE58AFC00598437 /* FLXKStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKStyleManager.h; sourceTree = "<group>"; };
 		B941F7621DE58AFC00598437 /* FLXKStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKStyleManager.m; sourceTree = "<group>"; };
-		B941F76A1DE58E7B00598437 /* UIColor+Custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Custom.h"; sourceTree = "<group>"; };
-		B941F76B1DE58E7B00598437 /* UIColor+Custom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Custom.m"; sourceTree = "<group>"; };
-		B941F76C1DE58E7B00598437 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
-		B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
 		B941F7711DE59B2600598437 /* HomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsViewController.h; sourceTree = "<group>"; };
 		B941F7721DE59B2600598437 /* HomeNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsViewController.m; sourceTree = "<group>"; };
-		B944ADE31E51988000449C62 /* UIViewController+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extensions.h"; sourceTree = "<group>"; };
-		B944ADE41E51988000449C62 /* UIViewController+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extensions.m"; sourceTree = "<group>"; };
 		B948CBE91DD5C7A800E6ED93 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLaunchViewController.h; sourceTree = "<group>"; };
 		B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLaunchViewController.m; sourceTree = "<group>"; };
@@ -507,15 +518,11 @@
 		B95A325C1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNormalEmotionGroupCollectionViewCell.h; sourceTree = "<group>"; };
 		B95A325D1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNormalEmotionGroupCollectionViewCell.m; sourceTree = "<group>"; };
 		B95A325E1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKNormalEmotionGroupCollectionViewCell.xib; sourceTree = "<group>"; };
-		B95A56D51E4B6B9600BDE324 /* NSBundle+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Extensions.h"; sourceTree = "<group>"; };
-		B95A56D61E4B6B9600BDE324 /* NSBundle+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Extensions.m"; sourceTree = "<group>"; };
 		B95A66B81DE6ACD500AB42E4 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
-		B966DF151E139D9200BFE3EA /* NSDate+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extensions.h"; sourceTree = "<group>"; };
-		B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extensions.m"; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
 		B97261871E2DEC76008B6356 /* EntityGeneratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityGeneratorViewController.h; sourceTree = "<group>"; };
 		B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityGeneratorViewController.m; sourceTree = "<group>"; };
@@ -902,8 +909,6 @@
 		B9DF70771DAF76E7004C23E6 /* FLXKSocketHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSocketHelper.m; sourceTree = "<group>"; };
 		B9DF707B1DAF78F5004C23E6 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
 		B9F9A2EC1DB7359A002B1626 /* CodeBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeBack.h; sourceTree = "<group>"; };
-		B9FA12CF1E0BD14900476C48 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
-		B9FA12D01E0BD14900476C48 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -911,6 +916,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B930987D1E56974C00306F39 /* CoreLocation.framework in Frameworks */,
 				B97261AD1E2DED0E008B6356 /* libsqlite3.0.tbd in Frameworks */,
 				483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */,
 			);
@@ -945,6 +951,7 @@
 		73427F28B1AE73D37DB133B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B930987C1E56974C00306F39 /* CoreLocation.framework */,
 				B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */,
 				52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */,
 			);
@@ -955,11 +962,11 @@
 			isa = PBXGroup;
 			children = (
 				B97261841E2DEC76008B6356 /* FLXKFMDB */,
+				B9DF70711DAF76E7004C23E6 /* FLXKNetworkHelper */,
+				B930985D1E568C0600306F39 /* FLXK+Extensions */,
 				B97A545D1E07EE6B0086D0F5 /* FLXKCustomViews */,
 				B941F75F1DE58AFC00598437 /* FLXKStyle */,
-				B92B55B61DD97F4E009A373A /* FLXK+Addition */,
 				B92B55AF1DD96651009A373A /* FLXKAnimationHelper */,
-				B9DF70711DAF76E7004C23E6 /* FLXKNetworkHelper */,
 			);
 			path = ToolKitty;
 			sourceTree = "<group>";
@@ -1101,26 +1108,6 @@
 			path = FLXKAnimationHelper;
 			sourceTree = "<group>";
 		};
-		B92B55B61DD97F4E009A373A /* FLXK+Addition */ = {
-			isa = PBXGroup;
-			children = (
-				B941F7681DE58E7B00598437 /* UIColor+Extensions */,
-				B92B55B91DD98099009A373A /* UIView+Extensions.h */,
-				B92B55BA1DD98099009A373A /* UIView+Extensions.m */,
-				B92F6C871DF6BBB300185DF0 /* UIAlertController+Extensions.h */,
-				B92F6C881DF6BBB300185DF0 /* UIAlertController+Extensions.m */,
-				B9FA12CF1E0BD14900476C48 /* NSString+Extensions.h */,
-				B9FA12D01E0BD14900476C48 /* NSString+Extensions.m */,
-				B966DF151E139D9200BFE3EA /* NSDate+Extensions.h */,
-				B966DF161E139D9200BFE3EA /* NSDate+Extensions.m */,
-				B95A56D51E4B6B9600BDE324 /* NSBundle+Extensions.h */,
-				B95A56D61E4B6B9600BDE324 /* NSBundle+Extensions.m */,
-				B944ADE31E51988000449C62 /* UIViewController+Extensions.h */,
-				B944ADE41E51988000449C62 /* UIViewController+Extensions.m */,
-			);
-			path = "FLXK+Addition";
-			sourceTree = "<group>";
-		};
 		B92F57601E5547C40010A84A /* FLXKFriendsSharing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1132,6 +1119,31 @@
 				B92F57661E5547C40010A84A /* FLXKNewsPublishController.m */,
 			);
 			path = FLXKFriendsSharing;
+			sourceTree = "<group>";
+		};
+		B930985D1E568C0600306F39 /* FLXK+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B93098731E568D2200306F39 /* CLLocationManager+blocks.h */,
+				B93098741E568D2200306F39 /* CLLocationManager+blocks.m */,
+				B93098791E568D9A00306F39 /* CLLocationManager+Extensions.h */,
+				B930987A1E568D9A00306F39 /* CLLocationManager+Extensions.m */,
+				B930985E1E568C0600306F39 /* NSBundle+Extensions.h */,
+				B930985F1E568C0600306F39 /* NSBundle+Extensions.m */,
+				B93098601E568C0600306F39 /* NSDate+Extensions.h */,
+				B93098611E568C0600306F39 /* NSDate+Extensions.m */,
+				B93098621E568C0600306F39 /* NSString+Extensions.h */,
+				B93098631E568C0600306F39 /* NSString+Extensions.m */,
+				B93098641E568C0600306F39 /* UIAlertController+Extensions.h */,
+				B93098651E568C0600306F39 /* UIAlertController+Extensions.m */,
+				B93098661E568C0600306F39 /* UIColor+Extensions.h */,
+				B93098671E568C0600306F39 /* UIColor+Extensions.m */,
+				B93098681E568C0600306F39 /* UIView+Extensions.h */,
+				B93098691E568C0600306F39 /* UIView+Extensions.m */,
+				B930986A1E568C0600306F39 /* UIViewController+Extensions.h */,
+				B930986B1E568C0600306F39 /* UIViewController+Extensions.m */,
+			);
+			path = "FLXK+Extensions";
 			sourceTree = "<group>";
 		};
 		B93AF5BA1E30A21900F51E26 /* Resouce */ = {
@@ -1179,25 +1191,6 @@
 				B941F7621DE58AFC00598437 /* FLXKStyleManager.m */,
 			);
 			path = FLXKStyleManager;
-			sourceTree = "<group>";
-		};
-		B941F7681DE58E7B00598437 /* UIColor+Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B941F7691DE58E7B00598437 /* UIColor+Custom */,
-				B941F76C1DE58E7B00598437 /* UIColor+Extensions.h */,
-				B941F76D1DE58E7B00598437 /* UIColor+Extensions.m */,
-			);
-			path = "UIColor+Extensions";
-			sourceTree = "<group>";
-		};
-		B941F7691DE58E7B00598437 /* UIColor+Custom */ = {
-			isa = PBXGroup;
-			children = (
-				B941F76A1DE58E7B00598437 /* UIColor+Custom.h */,
-				B941F76B1DE58E7B00598437 /* UIColor+Custom.m */,
-			);
-			path = "UIColor+Custom";
 			sourceTree = "<group>";
 		};
 		B941F7701DE598D700598437 /* Home */ = {
@@ -1926,7 +1919,7 @@
 				TargetAttributes = {
 					B9D854B11DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = TQ772LEHW3;
+						DevelopmentTeam = UMWN7VGEE4;
 						ProvisioningStyle = Automatic;
 					};
 					B9D854CA1DAC8BE2001AD79C = {
@@ -2415,19 +2408,22 @@
 				B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
 				B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */,
+				B930986D1E568C0600306F39 /* NSDate+Extensions.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
-				B92F6C891DF6BBB300185DF0 /* UIAlertController+Extensions.m in Sources */,
+				B93098721E568C0600306F39 /* UIViewController+Extensions.m in Sources */,
 				B9CDF0211E4F36690007F638 /* Indicator.m in Sources */,
 				B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
+				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
+				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
 				B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */,
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
@@ -2437,16 +2433,14 @@
 				B9CDF0221E4F36690007F638 /* KYAnimatedPageControl.m in Sources */,
 				B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
-				B966DF171E139D9200BFE3EA /* NSDate+Extensions.m in Sources */,
 				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
+				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
 				B92F57681E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m in Sources */,
-				B944ADE51E51988000449C62 /* UIViewController+Extensions.m in Sources */,
-				B9FA12D11E0BD14900476C48 /* NSString+Extensions.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
 				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
@@ -2456,16 +2450,16 @@
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
-				B941F76F1DE58E7B00598437 /* UIColor+Extensions.m in Sources */,
 				B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */,
-				B95A56D71E4B6B9600BDE324 /* NSBundle+Extensions.m in Sources */,
-				B92B55BC1DD98099009A373A /* UIView+Extensions.m in Sources */,
+				B930986E1E568C0600306F39 /* NSString+Extensions.m in Sources */,
+				B930986F1E568C0600306F39 /* UIAlertController+Extensions.m in Sources */,
 				B97261A81E2DEC76008B6356 /* FMDatabaseAdditions.m in Sources */,
-				B941F76E1DE58E7B00598437 /* UIColor+Custom.m in Sources */,
 				B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */,
 				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
+				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */,
+				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,
 				B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */,
@@ -2619,13 +2613,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TQ772LEHW3;
+				DEVELOPMENT_TEAM = UMWN7VGEE4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2642,13 +2636,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = TQ772LEHW3;
+				DEVELOPMENT_TEAM = UMWN7VGEE4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

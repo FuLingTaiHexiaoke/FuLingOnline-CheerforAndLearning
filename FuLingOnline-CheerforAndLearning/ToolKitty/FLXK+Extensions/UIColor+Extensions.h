@@ -14,4 +14,12 @@
 
 + (UIColor *)colorWithHex:(long)hexColor alpha:(CGFloat)alpha;
 
++ (instancetype)customGray;
+
++ (instancetype)blueTintColor;
+
++ (instancetype)customGreen;
+
++ (instancetype)customRed;
+
 @end

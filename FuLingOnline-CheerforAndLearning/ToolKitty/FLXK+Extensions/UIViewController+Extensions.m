@@ -8,6 +8,8 @@
 
 #import "UIViewController+Extensions.h"
 
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+
 @implementation UIViewController (Extensions)
 //提示框
 - (void)showAlertWithMessage:(NSString*)message  comfirmAction:(dispatch_block_t)comfirmAction {

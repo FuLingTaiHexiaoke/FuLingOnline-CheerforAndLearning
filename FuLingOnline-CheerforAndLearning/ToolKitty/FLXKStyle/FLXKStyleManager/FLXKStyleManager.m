@@ -7,7 +7,7 @@
 //
 
 #import "FLXKStyleManager.h"
-#import "UIColor+Custom.h"
+#import "UIColor+Extensions.h"
 
 static FLXKStyleManager* _styleManager = nil;
 

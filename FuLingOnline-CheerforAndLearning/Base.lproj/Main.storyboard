@@ -458,6 +458,9 @@
                                         <state key="normal" title="显示位置" image="location_b_n">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getUserCurrentLocation:" destination="rAo-Cr-03N" eventType="touchUpInside" id="K32-6f-abb"/>
+                                        </connections>
                                     </button>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ri7-ao-g8R">
                                         <rect key="frame" x="0.0" y="34" width="375" height="44"/>

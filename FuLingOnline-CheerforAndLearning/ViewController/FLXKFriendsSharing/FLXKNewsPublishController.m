@@ -21,6 +21,7 @@
 //utilities
 //#import "FLXKHttpRequest.h"
 //#import "MJExtension.h"
+#import "CLLocationManager+Extensions.h"
 #import "FLXKHttpRequestModelHelper.h"
 #import "Masonry.h"
 #import "NSAttributedString+EmotionExtension.h"
@@ -43,9 +44,12 @@
 //status change
 @property (assign, nonatomic)NSInteger isChangeInputView;
 
+
 //IBAction
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender;
 - (IBAction)showEmotionView:(UIBarButtonItem *)sender;
+- (IBAction)getUserCurrentLocation:(UIButton *)sender;
+
 
 
 //data properties
@@ -75,13 +79,6 @@
         make.bottom.equalTo(self.view.mas_bottom);
     }];
 
-//    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithReload:YES editingTextView:self.publishTextView swithButton:self.publishLocationButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
-
-//    //添加键盘弹出-隐藏通知
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-////        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame1:) name:UIKeyboardWillShowNotification object:nil];
-////        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame2:) name:UIKeyboardWillHideNotification object:nil];
-//    
     if (UserDefaultsObjForKey( @"plainString")) {
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
@@ -209,27 +206,6 @@
     }
 }
 #pragma mark - Private Methods
-//- (IBAction)showEmotionView:(UIBarButtonItem *)sender{
-//    static BOOL isShowingEmotionBoard=NO;
-//    if (!self.emotionKeyBoard) {
-////        self.emotionKeyBoard=   [[FLXKEmotionBoard alloc]initWithFrame:CGRectMake(0, self.view.height-210, self.view.width, 210) editingTextView:self.publishTextView containerView:self.publishToolBarView];
-////        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoard];
-//        self.emotionKeyBoard=   [FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButtonContainer:self.publishToolBarView swithButton:nil];
-////                [self.view addSubview: self.emotionKeyBoard];
-//        
-//////        self.emotionKeyBoard=   [FLXKEmotionBoardTest sharedEmotionBoard];
-////        [self.view addSubview: self.emotionKeyBoard];
-//
-//    }
-//        _isChangeInputView=YES;
-//        [self.publishTextView resignFirstResponder];
-//
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.09f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            self.publishTextView.inputView=self.publishTextView.inputView?nil:self.emotionKeyBoard;
-//            _isChangeInputView=NO;
-//            [self.publishTextView becomeFirstResponder];
-//        });
-//}
 
 -(void)initDataProperty{
     _selectedPhotos=[NSMutableArray arrayWithCapacity:9];
@@ -274,68 +250,16 @@
         @strongify(self)
         _selectedAssets=[NSMutableArray arrayWithArray:assets];
         _selectedPhotos=[NSMutableArray arrayWithArray:photos];
-        //        [photos enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        //            [self.publishCollectionViewImageArray addObject:obj];
-        //        }];
         [self.publishImageChoosingCollectionView reloadData];
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
 
--(void)keyboardWillChangeFrame:(NSNotification*)notif{
-//    [self.publishToolBarView removeConstraints: self.publishToolBarView.constraints];
-//    [self.view updateConstraints];
-
-    //    NSLog(@"keyboardChange:%@",[notif userInfo]);
-    float keyboadHeightBegin = 0;
-    float keyboadHeightEnd = 0;
-
-    float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
-
-    CGRect keyboardBeginFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
-    CGRect keyboardEndFrame = [[[notif userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboadHeightBegin =[UIApplication sharedApplication].keyWindow.height - keyboardBeginFrame.origin.y;
-    keyboadHeightEnd = [UIApplication sharedApplication].keyWindow.height - keyboardEndFrame.origin.y;
-
-    NSLog(@"11111self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightBegin);
-    if ([NSStringFromCGRect(keyboardBeginFrame) isEqualToString:NSStringFromCGRect(keyboardEndFrame) ]) {
-        return;
-    }
-
-    if (_isChangeInputView) {
-             return;
-    }
-
-    if (keyboadHeightBegin>0) {
-        [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(78);
-            make.left.and.right.mas_equalTo(self.view);
-            make.bottom.equalTo(self.view.mas_bottom);
-        }];
-    }
-    else{
-        [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(78);
-            make.left.and.right.mas_equalTo(self.view);
-            make.bottom.equalTo(self.view.mas_bottom).offset(-keyboadHeightEnd);
-        }];
-    }
-    [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
+- (IBAction)getUserCurrentLocation:(UIButton *)sender {
+    [[CLLocationManager sharedLocationManager] getAddressesFromDeviceLocationWithCompleteBlock:^(NSArray<CLPlacemark *> *placemarks, NSError *error, BOOL *stopUpdating) {
+        NSLog(@"%@", placemarks[0].addressDictionary[@"FormattedAddressLines"])
     }];
-    
-    NSLog(@"22222self.publishToolBarView.frame:%@,keyboadHeightBegin To:%.2f",NSStringFromCGRect(self.publishToolBarView.frame),keyboadHeightEnd);
-    
+
 }
 
--(void)keyboardWillChangeFrame1:(NSNotification*)notif{
-
-        NSLog(@"keyboardWillChangeFrame1");
-}
--(void)keyboardWillChangeFrame2:(NSNotification*)notif{
-
-    NSLog(@"keyboardWillChangeFrame2");
-}
 @end
