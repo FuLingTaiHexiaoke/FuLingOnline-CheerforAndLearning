@@ -37,6 +37,9 @@
 @property (weak, nonatomic) IBOutlet UIView *publishToolBarPositionView;
 @property (weak, nonatomic) IBOutlet UIView *publishToolBarView;
 @property (weak, nonatomic) IBOutlet UIButton *publishLocationButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *publishLocationLoadingIndicator;
+@property (weak, nonatomic) IBOutlet UIButton *clearCurrentLocationButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *publishTopicChooseButton;
 @property (weak, nonatomic) IBOutlet UILabel *publishTopicChooseLabel;
 @property (weak, nonatomic) IBOutlet UIButton *publishEmotionChooseButton;
@@ -47,8 +50,8 @@
 
 //IBAction
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender;
-- (IBAction)showEmotionView:(UIBarButtonItem *)sender;
 - (IBAction)getUserCurrentLocation:(UIButton *)sender;
+- (IBAction)clearCurrentLocationAction:(id)sender;
 
 
 
@@ -65,20 +68,23 @@
 #pragma mark - ViewController LifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.clearCurrentLocationButton.hidden=YES;
+    
     //setup data properties
     [self initDataProperty];
-
+    
     //set up collectionview
     [self initCollectionView];
-
+    
     //set up subviews
     [self   initSubViews];
-
-    [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(self.publishToolBarPositionView);
-        make.bottom.equalTo(self.view.mas_bottom);
-    }];
-
+    
+    //    [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    //        make.size.mas_equalTo(self.publishToolBarPositionView);
+    //        make.bottom.equalTo(self.view.mas_bottom);
+    //    }];
+    
     if (UserDefaultsObjForKey( @"plainString")) {
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
@@ -98,7 +104,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image|EmotionGroup_recent_text_emotion_image)];
+    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -106,7 +112,7 @@
 }
 
 -(void)viewDidLayoutSubviews{
-
+    
 }
 
 -(void)dealloc{
@@ -139,7 +145,7 @@
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     FLXKNewsPublishCollectionViewCell * cell= (FLXKNewsPublishCollectionViewCell *) [_publishImageChoosingCollectionView dequeueReusableCellWithReuseIdentifier:@"Cell_PublishImageChoosingCollectionView" forIndexPath:indexPath];
     NSInteger count= _selectedPhotos.count;
-
+    
     //add selected images
     if (indexPath.item<count) {
         cell.choosedImageDisplayImageView.image=_selectedPhotos[indexPath.item];
@@ -149,7 +155,7 @@
         cell.deleteChoosedImageButton.tag=indexPath.item;
         [cell.choosedImageDisplayButton removeTarget:self action:@selector(chooseSharingPhotos) forControlEvents:UIControlEventTouchUpInside];
     }
-
+    
     //add last
     if (indexPath.row==count) {
         cell.choosedImageDisplayImageView.image=[UIImage imageNamed:@"btn_album_add"];
@@ -164,21 +170,23 @@
 
 //set up collectionview
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender {
-
-//    [FLXKEmotionBoard getPlainTextString];
-     [self.publishTextView.attributedText getPlainStringtest];
-//    FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
-//    model.type_id=001;
-//    model.type_name=@"个人状态发布";
-//    model.doc_content=_publishTextView.text;
-//    model.editor=@"psylife";
-//
-//    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-//        NSLog(@"success");
-//    } failureCallback:^(NSError *err) {
-//        NSLog(@"failure");
-//    }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
-
+    
+    //    [FLXKEmotionBoard getPlainTextString];
+    NSString * newsToPublish=[self.publishTextView.attributedText getPlainStringtest];
+    
+    FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
+    model.type_id=001;
+    model.type_name=@"个人状态发布";
+    model.doc_content=newsToPublish;
+    model.editor=@"xiaoke";
+    model.video_url=self.publishLocationButton.titleLabel.text;
+    
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        NSLog(@"success");
+    } failureCallback:^(NSError *err) {
+        NSLog(@"failure");
+    }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
+    
 }
 
 #pragma mark - UITextViewDelegate
@@ -196,9 +204,9 @@
 #pragma mark -UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    if (_publishScrollViewContainer==scrollView) {
-//            [self.view endEditing:YES];
-//    }
+    //    if (_publishScrollViewContainer==scrollView) {
+    //            [self.view endEditing:YES];
+    //    }
 }
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     if (_publishScrollViewContainer==scrollView) {
@@ -223,7 +231,7 @@
     flowLayout.minimumLineSpacing=5;
     //    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 0, 5);
     _publishImageChoosingCollectionView.collectionViewLayout=flowLayout;
-
+    
     _publishImageChoosingCollectionView.delegate=self;
     _publishImageChoosingCollectionView.dataSource=self;
 }
@@ -231,7 +239,7 @@
 - (void)deleteBtnClik:(UIButton *)sender {
     [_selectedPhotos removeObjectAtIndex:sender.tag];
     [_selectedAssets removeObjectAtIndex:sender.tag];
-
+    
     [_publishImageChoosingCollectionView performBatchUpdates:^{
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:sender.tag inSection:0];
         [_publishImageChoosingCollectionView deleteItemsAtIndexPaths:@[indexPath]];
@@ -244,7 +252,7 @@
     TZImagePickerController* imagePickerVc=[[TZImagePickerController alloc]initWithMaxImagesCount:9 delegate:nil];
     imagePickerVc.selectedAssets=_selectedAssets;
     imagePickerVc.sortAscendingByModificationDate=NO;
-
+    
     @weakify(self)
     [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray * assets, BOOL isSelectOriginalPhoto) {
         @strongify(self)
@@ -256,10 +264,27 @@
 }
 
 - (IBAction)getUserCurrentLocation:(UIButton *)sender {
+    [_publishLocationLoadingIndicator startAnimating];
+    self.publishLocationButton.enabled=NO;
+    @weakify(self)
     [[CLLocationManager sharedLocationManager] getAddressesFromDeviceLocationWithCompleteBlock:^(NSArray<CLPlacemark *> *placemarks, NSError *error, BOOL *stopUpdating) {
-        NSLog(@"%@", placemarks[0].addressDictionary[@"FormattedAddressLines"])
+        *stopUpdating=YES;
+        @strongify(self)
+        [_publishLocationLoadingIndicator stopAnimating];
+        self.publishLocationButton.enabled=YES;
+        self.clearCurrentLocationButton.hidden=NO;
+        NSDictionary  *addressDictionary=placemarks[0].addressDictionary;
+        [self.publishLocationButton setTitle:[NSString stringWithFormat:@"%@·%@%@        ",addressDictionary[@"City"],addressDictionary[@"SubLocality"],addressDictionary[@"Name"]] forState:UIControlStateNormal];
+        [self.publishLocationButton sizeToFit];
     }];
+}
 
+- (IBAction)clearCurrentLocationAction:(id)sender {
+    self.clearCurrentLocationButton.hidden=YES;
+    [self.publishLocationButton setTitle:@"显示位置" forState:UIControlStateNormal];
+    [self.publishLocationButton sizeToFit];
+    self.publishLocationButton.enabled=YES;
+    
 }
 
 @end

@@ -79,7 +79,7 @@
     [super awakeFromNib];
 //    [self setCurrentShowingPageIndex:0];
 //    self.contentSize=CGSizeMake( Screen_Width*self.totalShowingCollectionViews.count, CollectionViewHeight);
-    //    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+//        NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
 }
 
 -(void)loadPagesAccordingEmotionGroupOptions{
@@ -101,7 +101,7 @@
         //            [self.imageLoadedPageIndexArray addObject:@(lastCollectionViewIndex+1)];
         
         //get viewsAndEntities
-        NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj];
+        NSArray* viewsAndEntities=[FLXKEmotionCollectionView setupEmotionViewsWithGroupId:obj.id emotionGroup:obj withFrame:self.frame];
         
         //insert containers
         if (viewsAndEntities) {
@@ -121,7 +121,7 @@
     }];
     
     [self setCurrentShowingPageIndex:preferedShowingPageIndex>lastCollectionViewIndex?0:preferedShowingPageIndex];
-    self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), CollectionViewHeight);
+    self.contentSize=CGSizeMake( Screen_Width*(lastCollectionViewIndex+1), self.frame.size.height);
 }
 
 
@@ -147,15 +147,17 @@
     
     NSArray<NSNumber*> *shouldLoadImagePageIndexs=@[@(frontPageIndex),@(currentShowingPageIndex),@(nextPageIndex)];
     
-    [shouldLoadImagePageIndexs enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([self.imageLoadedPageIndexArray containsObject:obj]) {
-            return ;
-        }
-        else{
-            [self.imageLoadedPageIndexArray addObject:obj];
-            self.totalShowingCollectionViews[obj.integerValue].emotionItems= self.totalShowingEmotionItems[obj.integerValue];
-            [self.totalShowingCollectionViews[obj.integerValue] reloadData];
-        }
-    }];
-}
+    if (self.totalShowingCollectionViews.count>0&&self.totalShowingEmotionItems.count>0) {
+        [shouldLoadImagePageIndexs enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([self.imageLoadedPageIndexArray containsObject:obj]) {
+                return ;
+            }
+            else{
+                [self.imageLoadedPageIndexArray addObject:obj];
+                self.totalShowingCollectionViews[obj.integerValue].emotionItems= self.totalShowingEmotionItems[obj.integerValue];
+                [self.totalShowingCollectionViews[obj.integerValue] reloadData];
+            }
+        }];
+    }
+   }
 @end

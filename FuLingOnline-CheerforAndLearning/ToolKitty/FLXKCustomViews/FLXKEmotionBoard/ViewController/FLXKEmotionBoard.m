@@ -47,11 +47,13 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 @property (weak, nonatomic) IBOutlet FLXKEmotionGroupIndexCollectionView *emotionGroupIndexCollectionView;
 @property (weak, nonatomic) IBOutlet UIButton *leftBottomButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightBottomButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *emotionContainerScrollViewHeight;
+
 
 //state record
 @property(nonatomic, assign) NSRange currentShowingRange;//当前显示的表情组的范围
 @property(nonatomic, assign)BOOL isChangingInputView;
-
+@property (assign, nonatomic)  CGFloat lastEmotionViewHeight;
 
 //控制bottombar类型控件的升降外部属性
 @property(nonatomic,weak)UITextView *editingTextView;
@@ -91,14 +93,15 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     if (lastOptions.integerValue!=emotionGroupShowingOption) {
         [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
         [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
+//        [self reloadPages];
     }
     FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
     FLXKUserDefaultsSynchronize
- 
+    
     return sharedEmotionBoard;
 }
 
-+(void)reloadPages{
+-(void)reloadPages{
     [[FLXKEmotionBoard sharedEmotionBoard].emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
     [[FLXKEmotionBoard sharedEmotionBoard].emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
 }
@@ -172,14 +175,38 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     _emotionContainerScrollView.emotionSelectedDelegate=self;
     //        [self setDelegateForSubViewsInScrollView];
     _emotionGroupIndexCollectionView.emotionGroupSelectedDelegate=self;
+    self.lastEmotionViewHeight=self.frame.size.height;
     [self setupUIPageControl];
-    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
+    //    NSLog(@"NSStringFromCGRect self.height: %@",NSStringFromCGRect(self.frame));
     
+}
+
+-(void)willMoveToSuperview:(UIView *)newSuperview{
+//    BOOL isHeightChanged=self.lastEmotionViewHeight==self.frame.size.height?NO:YES;
+//    if (newSuperview && isHeightChanged) {
+//        self.lastEmotionViewHeight=self.frame.size.height;
+//        [self reloadPages];
+//        self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
+//          NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+//    }
 }
 
 -(void)keyboardWillShowNotification:(NSNotification*)notification{
     if (self.editingTextView.inputView) {
+
+        
         [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:0];
+    }
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    BOOL isHeightChanged=self.lastEmotionViewHeight==self.frame.size.height?NO:YES;
+    if (isHeightChanged) {
+        self.lastEmotionViewHeight=self.frame.size.height;
+        [self reloadPages];
+        self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
+        NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     }
 }
 
@@ -390,7 +417,8 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 -(void)setupUIPageControl{
     self.pageControl = [[KYAnimatedPageControl alloc]
-                        initWithFrame:self.pageControlPlaceholder.superview.frame];
+                        initWithFrame:CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height)];
+     NSLog(@"pageControl.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     self.pageControl.pageCount = 8;
     self.pageControl.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.pageControl.selectedColor = [UIColor colorWithWhite:0.6 alpha:1];
@@ -399,7 +427,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.pageControl.indicatorStyle = IndicatorStyleGooeyCircle;
     self.pageControl.indicatorSize = 10;
     self.pageControl.swipeEnable = YES;
-    [self addSubview:self.pageControl];
+    [self.pageControlPlaceholder addSubview:self.pageControl];
     self.pageControl.didSelectIndexBlock = ^(NSInteger index) {
         NSLog(@"Did Selected index : %ld", (long)index);
     };
@@ -434,6 +462,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 
 -(void)keyboardWillChangeFrame:(NSNotification*)notif{
+    //remove added notification
+    if (self.editingTextView==nil) {
+        [self removeNotifications];
+    }
+    
     //get animation properties
     float animationDuration = [[[notif userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
     UIViewAnimationCurve animationCurve = [[[notif userInfo] objectForKey:UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue];
@@ -444,14 +477,22 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     float  keyboadStartingHeight =Screen_Height - keyboardStartingFrame.origin.y;
     float  keyboadEndingHeight = Screen_Height- keyboardEndingFrame.origin.y;
     
+    NSLog(@"keyboardStartingFrame %@",NSStringFromCGRect(keyboardStartingFrame) );
+    NSLog(@"keyboardEndingFrame %@",NSStringFromCGRect(keyboardEndingFrame) );
+    NSLog(@"self.frame:%@",NSStringFromCGRect(self.frame) );
+        NSLog(@"self.emotionContainerScrollViewframe:%@",NSStringFromCGRect(self.emotionContainerScrollView.frame) );
+    NSLog(@"keyboadStartingHeight: %f",keyboadStartingHeight);
+    NSLog(@"keyboadEndingHeight: %f",keyboadEndingHeight);
+    NSLog(@"_emotionContainerScrollViewHeight: %f",_emotionContainerScrollViewHeight.constant);
+    
     
     //I do not why this happened,if you know tell me.
-//    if ([NSStringFromCGRect(keyboardStartingFrame) isEqualToString:NSStringFromCGRect(keyboardEndingFrame) ]) {
-//        if (animationDuration!=0 && !self.editingTextView.isFirstResponder) {
-//            [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight keyboadEndingHeight:keyboadEndingHeight];
-//        }
-//        return;
-//    }
+    //    if ([NSStringFromCGRect(keyboardStartingFrame) isEqualToString:NSStringFromCGRect(keyboardEndingFrame) ]) {
+    //        if (animationDuration!=0 && !self.editingTextView.isFirstResponder) {
+    //            [self changeEmotionSwithButtonContainerWithAnimationDuration:animationDuration animationCurve:animationCurve keyboadStartingHeight:keyboadStartingHeight keyboadEndingHeight:keyboadEndingHeight];
+    //        }
+    //        return;
+    //    }
     
     if(_isChangingInputView) {
         return;
@@ -525,6 +566,15 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         } completion:^(BOOL finished) {
         }];
     }
+    
+//    CGFloat tempEmotionContainerScrollViewHeight= keyboadEndingHeight-35-20;
+//    if (self.editingTextView.inputView&&_emotionContainerScrollViewHeight.constant!=tempEmotionContainerScrollViewHeight) {
+//        _emotionContainerScrollViewHeight.constant=tempEmotionContainerScrollViewHeight;
+//        [self layoutIfNeeded];
+//    [self reloadPages];
+//    [self setupUIPageControl];
+//    }
+    
     //    NSLog(@"frame %@",NSStringFromCGRect(self.emotionSwithButtonContainer.frame) );
     //    NSLog(@"%@",self.emotionSwithButtonContainer.constraints);
     //    NSLog(@"emotionEditingVCView %@",self.emotionEditingVCView.constraints);

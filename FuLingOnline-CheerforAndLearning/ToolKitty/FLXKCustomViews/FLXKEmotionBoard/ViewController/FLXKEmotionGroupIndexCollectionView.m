@@ -58,7 +58,7 @@
     //start to reload EmotionGroup
   NSArray<EmotionGroup*> *  tempEmotionGroups=[EmotionGroup selectByCriteria:FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsSQLUserDefaultsKey)];
     [tempEmotionGroups enumerateObjectsUsingBlock:^(EmotionGroup * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",obj.id]];
+        NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)obj.id]];
         if (totalEmotionItems.count>0) {
             [self.emotionGroups addObject:obj];
         }

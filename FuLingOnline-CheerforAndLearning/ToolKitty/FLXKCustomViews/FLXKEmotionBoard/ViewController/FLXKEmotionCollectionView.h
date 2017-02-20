@@ -23,5 +23,6 @@
 @property (nonatomic,weak) id<FLXKEmotionCollectionViewDelegate> emotionSelectedDelegate;
 
 //+(NSArray<FLXKEmotionCollectionView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup;
-+(NSArray*)setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup;
+//+(NSArray*)setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup;
++(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup withFrame:(CGRect)frame;
 @end

@@ -45,7 +45,7 @@
 //    }
 //    return collectionViews;
 //}
-+(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup {
++(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup withFrame:(CGRect)frame {
     NSMutableArray<FLXKEmotionCollectionView*>* collectionViews=[NSMutableArray array];
     NSMutableArray< NSArray<EmotionItem*>*>* subEmotionItemsPerView=[NSMutableArray array];
     NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)groupId]];
@@ -55,7 +55,8 @@
         leftItems=i+PerPageItemsCount<totalEmotionItems.count?PerPageItemsCount:totalEmotionItems.count-i;
         NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, leftItems)]];
         FLXKEmotionCollectionView*  collectionView=nil;
-        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:nil emotionGroup:emotionGroup];
+        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:frame withEmotionItems:nil emotionGroup:emotionGroup];
+             NSLog(@"FLXKEmotionCollectionView.frame:%@",NSStringFromCGRect(frame) );
         //        if (i==0) {
         //        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
         //        }
@@ -80,7 +81,7 @@
     NSInteger  colunms=self.emotionGroup.emotionGroupPerPageColunms;
     NSInteger  rows=self.emotionGroup.emotionGroupPerPageLines;
     flowLayout.minimumInteritemSpacing= (Screen_Width-colunms*itemWidth)/(colunms+1);
-    flowLayout.minimumLineSpacing=(CollectionViewHeight-rows*itemWidth)/(rows+1);
+    flowLayout.minimumLineSpacing=(frame.size.height-rows*itemWidth)/(rows+1);
     flowLayout.itemSize=CGSizeMake(itemWidth, itemWidth);
     self= [super initWithFrame:frame collectionViewLayout:flowLayout];
     

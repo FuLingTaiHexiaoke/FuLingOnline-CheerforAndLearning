@@ -63,19 +63,6 @@ static void *updateAuthorizationDescriptionKey = &updateAuthorizationDescription
     return locationManager;
 }
 
--(void)setDesiredAccuracy:(CLLocationAccuracy)desiredAccuracy distanceFilter:(CLLocationDistance)distanceFilter updateAuthorizationDescription:(CLLocationUpdateAuthorizationDescription)updateAuthorizationDescription{
-    if (desiredAccuracy==0&&distanceFilter==0) {
-        self.desiredAccuracy=kCLLocationAccuracyBestForNavigation;
-        self.distanceFilter=20;
-        self.updateAuthorizationDescription=[NSNumber numberWithInteger: CLLocationUpdateAuthorizationDescriptionWhenInUse];
-    }
-    else{
-        self.desiredAccuracy=desiredAccuracy;
-        self.distanceFilter=distanceFilter;
-        self.updateAuthorizationDescription=[NSNumber numberWithInteger: updateAuthorizationDescription];
-    }
-}
-
 //get address from current location
 -(void)getAddressesFromDeviceLocationWithCompleteBlock:(LocationManagerCompleteTaskBlock)blcok{
     self.locationManagerCompleteTaskBlock=blcok;
@@ -96,6 +83,22 @@ static void *updateAuthorizationDescriptionKey = &updateAuthorizationDescription
 }
 
 #pragma mark - Private Methods
+
+
+-(void)setDesiredAccuracy:(CLLocationAccuracy)desiredAccuracy distanceFilter:(CLLocationDistance)distanceFilter updateAuthorizationDescription:(CLLocationUpdateAuthorizationDescription)updateAuthorizationDescription{
+    if (desiredAccuracy==0&&distanceFilter==0) {
+        self.desiredAccuracy=kCLLocationAccuracyBestForNavigation;
+        self.distanceFilter=20;
+        self.updateAuthorizationDescription=[NSNumber numberWithInteger: CLLocationUpdateAuthorizationDescriptionWhenInUse];
+    }
+    else{
+        self.desiredAccuracy=desiredAccuracy;
+        self.distanceFilter=distanceFilter;
+        self.updateAuthorizationDescription=[NSNumber numberWithInteger: updateAuthorizationDescription];
+    }
+}
+
+
 -(void)getAddressesFromLocations:(NSArray<CLLocation *> *)locations{
     __block  NSMutableArray<CLPlacemark*>* totalPlacemarks=[NSMutableArray array];
     //setup GCD control
@@ -128,7 +131,7 @@ static void *updateAuthorizationDescriptionKey = &updateAuthorizationDescription
         }
         //这里就是所有异步任务请求结束后执行的代码
         LocationManagerCompleteTaskBlock completeTaskBlock = self.locationManagerCompleteTaskBlock;
-        if (completeTaskBlock) {
+        if (completeTaskBlock && totalPlacemarks.count>0) {
             __block BOOL stopUpdates = NO;
             completeTaskBlock( totalPlacemarks, nil, &stopUpdates);
             
@@ -169,21 +172,6 @@ static void *updateAuthorizationDescriptionKey = &updateAuthorizationDescription
 
 #pragma mark - CLGeocoder
 
-// reverse geocode requests
-- (void)reverseGeocodeLocation:(CLLocation *)location completionHandler:(CLGeocodeCompletionHandler)completionHandler{
-    
-}
-
-// forward geocode requests
-// geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
-// You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
-// Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
-
-//- (void)geocodeAddressDictionary:(NSDictionary *)addressDictionary completionHandler:(CLGeocodeCompletionHandler)completionHandler;
-//- (void)geocodeAddressString:(NSString *)addressString completionHandler:(CLGeocodeCompletionHandler)completionHandler;
-//- (void)geocodeAddressString:(NSString *)addressString inRegion:(nullable CLRegion *)region completionHandler:(CLGeocodeCompletionHandler)completionHandler;
-//
-//- (void)cancelGeocode;
 
 #pragma mark - Dynamic Extensions Properties
 

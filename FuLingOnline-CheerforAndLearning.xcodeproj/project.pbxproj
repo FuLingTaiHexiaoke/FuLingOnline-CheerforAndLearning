@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */; };
 		B900259C1DAE244A00B34438 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B900259B1DAE244A00B34438 /* FLXKAppNotification.m */; };
-		B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */ = {isa = PBXBuildFile; fileRef = B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */; };
 		B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */; };
@@ -436,8 +435,6 @@
 		B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Bridging-Header.h"; sourceTree = "<group>"; };
 		B900259A1DAE244A00B34438 /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
 		B900259B1DAE244A00B34438 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
-		B9232F591DC6D698002D80FE /* FLXKHttpRequest副本.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FLXKHttpRequest副本.h"; sourceTree = "<group>"; };
-		B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FLXKHttpRequest副本.m"; sourceTree = "<group>"; };
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
@@ -1831,8 +1828,6 @@
 			children = (
 				B9DF70731DAF76E7004C23E6 /* FLXKHttpRequest.h */,
 				B9DF70741DAF76E7004C23E6 /* FLXKHttpRequest.m */,
-				B9232F591DC6D698002D80FE /* FLXKHttpRequest副本.h */,
-				B9232F5A1DC6D698002D80FE /* FLXKHttpRequest副本.m */,
 				B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */,
 				B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */,
 			);
@@ -2458,7 +2453,6 @@
 				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
-				B9232F5B1DC6D698002D80FE /* FLXKHttpRequest副本.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,

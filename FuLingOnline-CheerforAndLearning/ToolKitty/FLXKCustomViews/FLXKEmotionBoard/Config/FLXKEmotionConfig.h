@@ -28,6 +28,6 @@
 #define Cell_FLXKEmotionCollectionViewNomalCell @"FLXKEmotionCollectionViewNomalCell"
 #define Cell_FLXKNormalEmotionGroupCollectionViewCell @"FLXKNormalEmotionGroupCollectionViewCell"
 
-#define SelectedEmotionGroupOptionsSQLUserDefaultsKey @"SelectedEmotionGroupOptions"
+#define SelectedEmotionGroupOptionsSQLUserDefaultsKey @"SelectedEmotionGroupOptionsSQLString"
 #define SelectedEmotionGroupOptionsUserDefaultsKey @"SelectedEmotionGroupOptions"
 #endif /* FLXKEmotionConfig_h */
