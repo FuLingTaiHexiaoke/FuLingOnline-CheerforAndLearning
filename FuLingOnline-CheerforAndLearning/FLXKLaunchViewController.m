@@ -129,7 +129,7 @@
     //Container View Controller how to implement
     //if no transition then call this function immediately
     [navc didMoveToParentViewController:self];
-        [self showTweaksButton];
+//        [self showTweaksButton];
 }
 
 //1)get the image url from server

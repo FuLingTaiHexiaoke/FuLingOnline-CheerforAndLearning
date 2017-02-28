@@ -24,5 +24,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark -
+#pragma mark - ViewController LifeCircle
 
+#pragma mark -
+#pragma mark - Memory Warning
+
+#pragma mark -
+#pragma mark - UI Delegates
+#pragma mark - UICollectionViewDataSource
+
+#pragma mark -
+#pragma mark - Public Methods
+
+#pragma mark -
+#pragma mark - Private Methods
 @end

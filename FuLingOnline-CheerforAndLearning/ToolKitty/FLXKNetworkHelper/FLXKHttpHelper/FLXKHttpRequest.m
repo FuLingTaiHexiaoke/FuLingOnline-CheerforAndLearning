@@ -134,11 +134,11 @@
 
 +(void)setAFSecurityPolicy:(AFHTTPSessionManager*)manager{
     
-//    NSSet * certificates= [AFSecurityPolicy  certificatesInBundle:[NSBundle mainBundle]];
-//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certificates];
+    NSSet * certificates= [AFSecurityPolicy  certificatesInBundle:[NSBundle mainBundle]];
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:certificates];
     
-    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-//    securityPolicy.allowInvalidCertificates = YES;
+//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    securityPolicy.allowInvalidCertificates = YES;
     securityPolicy.validatesDomainName = NO;
 //
     manager.securityPolicy=securityPolicy;

@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,15 +64,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" image="tabbar-explore" id="SDX-xW-kTq"/>
                     <navigationItem key="navigationItem" title="Title" id="iYp-t9-bqQ">
-                        <rightBarButtonItems>
-                            <barButtonItem title="tab" id="pSC-bm-1zf">
-                                <connections>
-                                    <segue destination="rAo-Cr-03N" kind="show" id="HbD-xu-xO8"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="test" id="OSr-gg-NBM"/>
-                            <barButtonItem title="pub" id="Ag4-J2-SnR"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="tab" id="pSC-bm-1zf">
+                            <connections>
+                                <segue destination="rAo-Cr-03N" kind="show" id="HbD-xu-xO8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="container" destination="Te6-7S-iV6" id="0gC-5t-WoG"/>
@@ -110,7 +105,7 @@
             <objects>
                 <navigationController id="wY1-Lk-oJv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="p76-AI-r52"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqV-zu-kup">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iqV-zu-kup">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -152,7 +147,7 @@
             <objects>
                 <navigationController id="up3-kB-Vwn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="C8y-u9-aj1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-bq-xZ9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpe-bq-xZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -334,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IkG-xH-Kib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1516" y="218"/>
+            <point key="canvasLocation" x="-2204" y="958"/>
         </scene>
         <!--News Publish Controller-->
         <scene sceneID="U73-DS-FUT">
@@ -484,7 +479,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="y5e-Xv-k6u"/>
                                             <barButtonItem style="plain" id="K33-QJ-cUM">
                                                 <view key="customView" contentMode="scaleToFill" id="NKG-Vt-3o9">
-                                                    <rect key="frame" x="26" y="5.5" width="139" height="33"/>
+                                                    <rect key="frame" x="26" y="6" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O44-FK-2xd">
