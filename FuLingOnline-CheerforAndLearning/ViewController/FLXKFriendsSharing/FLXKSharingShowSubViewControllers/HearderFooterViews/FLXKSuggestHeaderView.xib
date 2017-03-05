@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLXKSuggestHeaderView"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="C7N-Da-2gA" customClass="FLXKSuggestHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4F-yA-umR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="jo7-D2-dQS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uo-85-Nib">
+                    <rect key="frame" x="0.0" y="10" width="375" height="34"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="推荐话题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBV-Xi-1LG">
+                            <rect key="frame" x="16" y="9" width="58" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4v8-tR-kJL">
+                            <rect key="frame" x="0.0" y="8" width="6" height="18"/>
+                            <color key="backgroundColor" red="1" green="0.65948173639999996" blue="0.15051828289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="XLt-wr-e60"/>
+                                <constraint firstAttribute="width" constant="6" id="zSY-9I-neQ"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfk-13-NuY">
+                            <rect key="frame" x="332" y="9" width="35" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Pfk-13-NuY" firstAttribute="centerY" secondItem="4v8-tR-kJL" secondAttribute="centerY" id="5AG-Q4-uPy"/>
+                        <constraint firstItem="4v8-tR-kJL" firstAttribute="centerY" secondItem="0uo-85-Nib" secondAttribute="centerY" id="9of-Nr-S2y"/>
+                        <constraint firstAttribute="trailing" secondItem="Pfk-13-NuY" secondAttribute="trailing" constant="8" id="ED8-eJ-4q1"/>
+                        <constraint firstItem="vBV-Xi-1LG" firstAttribute="centerY" secondItem="4v8-tR-kJL" secondAttribute="centerY" id="Kp2-dB-Yp9"/>
+                        <constraint firstItem="4v8-tR-kJL" firstAttribute="leading" secondItem="0uo-85-Nib" secondAttribute="leading" id="TjM-XR-Ogv"/>
+                        <constraint firstItem="vBV-Xi-1LG" firstAttribute="leading" secondItem="4v8-tR-kJL" secondAttribute="trailing" constant="10" id="vqT-PX-wBR"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0uo-85-Nib" secondAttribute="trailing" id="Oe7-E9-oza"/>
+                <constraint firstItem="B4F-yA-umR" firstAttribute="leading" secondItem="C7N-Da-2gA" secondAttribute="leading" id="VPf-S6-GT1"/>
+                <constraint firstAttribute="bottom" secondItem="0uo-85-Nib" secondAttribute="bottom" id="hS4-v9-LgP"/>
+                <constraint firstItem="0uo-85-Nib" firstAttribute="leading" secondItem="C7N-Da-2gA" secondAttribute="leading" id="qmT-zx-3jS"/>
+                <constraint firstItem="0uo-85-Nib" firstAttribute="top" secondItem="B4F-yA-umR" secondAttribute="bottom" id="ukI-u9-nDY"/>
+                <constraint firstItem="B4F-yA-umR" firstAttribute="top" secondItem="C7N-Da-2gA" secondAttribute="top" id="v96-Zp-973"/>
+                <constraint firstAttribute="trailing" secondItem="B4F-yA-umR" secondAttribute="trailing" id="xMV-dE-COt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-1" y="-850"/>
+        </view>
+    </objects>
+</document>

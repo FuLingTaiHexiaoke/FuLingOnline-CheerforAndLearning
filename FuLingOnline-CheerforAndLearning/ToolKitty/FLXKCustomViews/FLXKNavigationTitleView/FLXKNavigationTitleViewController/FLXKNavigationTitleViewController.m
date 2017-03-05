@@ -36,7 +36,12 @@
     //add children to scrollview container
     [self setupScrollViewWithVCs:self.viewControllers];
     
-    
+    NSLog(@"self.view.frame 3 %@", NSStringFromCGRect( self.view.frame));
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    NSLog(@"self.view.frame 4 %@", NSStringFromCGRect( self.view.frame));
 }
 
 #pragma mark -
@@ -65,7 +70,7 @@
     vc.viewControllers=viewControllers;
     //    vc.view.frame=parentVC.view.frame;
     [parentVC addChildViewController:vc];
-    vc.view.frame=parentVC.view.frame;
+    vc.view.frame=parentVC.view.bounds;
     [parentVC.view addSubview:vc.view];
     return vc;
 }

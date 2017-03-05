@@ -29,7 +29,7 @@
 
 - (void)drawRect:(CGRect)rect {
     //self set
-    
+
 
     self.showingButtons=[NSMutableArray array];
     NSInteger  titlesCount= self.viewControllerTitles.count;
@@ -45,7 +45,7 @@
         [btn addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:btn];
         [_showingButtons addObject:btn];
-        
+
         if (_currentTitleIndex==idx) {
             btn.selected=YES;
         }
@@ -53,10 +53,10 @@
     //draw base line layer
     CGFloat bottom_line_height=_bottomLineHeight;
     CGFloat line_origin_y=self.height-bottom_line_height;
-    
-    
+
+
     _selectIndexLine=[CALayer layer];
-    _selectIndexLine.frame=CGRectMake(0, line_origin_y, button_width, bottom_line_height);
+    _selectIndexLine.frame=CGRectMake(_currentTitleIndex*button_width, line_origin_y, button_width, bottom_line_height);
     _selectIndexLine.backgroundColor=_bottomLineColor.CGColor;
     [self.layer addSublayer:_selectIndexLine];
     CGFloat centerY= CGRectGetMidY(_selectIndexLine.frame);
@@ -69,23 +69,23 @@
 #pragma mark - Public Methods
 
 -(void)setCurrentTitleIndex:(NSInteger)currentTitleIndex{
-    
+
     NSInteger selectedIndex=currentTitleIndex;
     if (_currentTitleIndex==selectedIndex) {
         return;
     }
-    
+
     _currentTitleIndex=selectedIndex;
     [_showingButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         obj.selected=NO;
         if (idx==currentTitleIndex) {
-             obj.selected=YES;
+            obj.selected=YES;
         }
     }];
-    
+
     //start animation
     [self beginAnimation:selectedIndex];
-    
+
     if (self.titleSegmentSelectedBlock) {
         self.titleSegmentSelectedBlock(selectedIndex);
     }
@@ -100,8 +100,10 @@
 }
 
 -(void)beginAnimation:(NSInteger)selectedIndex{
+
+    CGFloat newCenterX=(selectedIndex+0.5)*_button_width;
     CGFloat centerY= CGRectGetMidY(_selectIndexLine.frame);
-    CGPoint  newPosition=CGPointMake((selectedIndex+0.5)*_button_width,centerY);
+    CGPoint  newPosition=CGPointMake(newCenterX,centerY);
 
     CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position"];
     anim.duration = 0.2;

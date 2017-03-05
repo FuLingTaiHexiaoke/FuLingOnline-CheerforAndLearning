@@ -392,6 +392,13 @@
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
 		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
+		B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */; };
+		B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */; };
+		B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */; };
+		B9A3F9641E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9631E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m */; };
+		B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */; };
+		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
+		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
 		B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */; };
 		B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */; };
@@ -927,6 +934,18 @@
 		B97B38DE1DD029D400D8F004 /* 重点难点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "重点难点.rtf"; sourceTree = "<group>"; };
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
+		B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsSharing.storyboard; sourceTree = "<group>"; };
+		B9A3F95C1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXSuggestedSharingTableViewController.h; sourceTree = "<group>"; };
+		B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXSuggestedSharingTableViewController.m; sourceTree = "<group>"; };
+		B9A3F95F1E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXTopicGalaxyTableViewController.h; sourceTree = "<group>"; };
+		B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXTopicGalaxyTableViewController.m; sourceTree = "<group>"; };
+		B9A3F9621E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXActivePeopleRateTableViewController.h; sourceTree = "<group>"; };
+		B9A3F9631E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXActivePeopleRateTableViewController.m; sourceTree = "<group>"; };
+		B9A3F9671E6BF56D007CA4B2 /* FLXKSuggestHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestHeaderView.h; sourceTree = "<group>"; };
+		B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestHeaderView.m; sourceTree = "<group>"; };
+		B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestFooterView.h; sourceTree = "<group>"; };
+		B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestFooterView.m; sourceTree = "<group>"; };
+		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
 		B9C6AAD51E651B4A0003C50A /* FLXKNavigationTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleViewController.h; sourceTree = "<group>"; };
 		B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNavigationTitleViewController.m; sourceTree = "<group>"; };
 		B9C6AAD81E651C490003C50A /* FLXKNavigationTitleSegmentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleSegmentsView.h; sourceTree = "<group>"; };
@@ -1264,6 +1283,7 @@
 		B92F57601E5547C40010A84A /* FLXKFriendsSharing */ = {
 			isa = PBXGroup;
 			children = (
+				B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */,
 				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
 				B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */,
 				B92F57631E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.h */,
@@ -1875,6 +1895,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B9A3F9651E6BF3EE007CA4B2 /* Cells */,
+				B9A3F9661E6BF3EE007CA4B2 /* HearderFooterViews */,
+				B9A3F95C1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.h */,
+				B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */,
+				B9A3F95F1E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.h */,
+				B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */,
+				B9A3F9621E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.h */,
+				B9A3F9631E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m */,
+			);
+			path = FLXKSharingShowSubViewControllers;
+			sourceTree = "<group>";
+		};
+		B9A3F9651E6BF3EE007CA4B2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B9A3F9661E6BF3EE007CA4B2 /* HearderFooterViews */ = {
+			isa = PBXGroup;
+			children = (
+				B9A3F9671E6BF56D007CA4B2 /* FLXKSuggestHeaderView.h */,
+				B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */,
+				B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */,
+				B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */,
+				B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */,
+			);
+			path = HearderFooterViews;
+			sourceTree = "<group>";
+		};
 		B9C6AAD21E651B040003C50A /* FLXKNavigationTitleView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2290,6 +2344,7 @@
 				B90025951DAE1EC000B34438 /* ViewController */,
 				B9D854BB1DAC8BE2001AD79C /* ViewController.h */,
 				B9D854BC1DAC8BE2001AD79C /* ViewController.m */,
+				B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */,
 				B9D854BE1DAC8BE2001AD79C /* Main.storyboard */,
 				B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */,
 				B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */,
@@ -2718,6 +2773,7 @@
 				B97507621E4C58F600A577E7 /* 032@2x.png in Resources */,
 				B97506D71E4C58F600A577E7 /* smiley_58.png in Resources */,
 				B97506B91E4C58F600A577E7 /* smiley_30.png in Resources */,
+				B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */,
 				B9D854C01DAC8BE2001AD79C /* Main.storyboard in Resources */,
 				B97506A21E4C58F600A577E7 /* smiley_103.png in Resources */,
 				B97507781E4C58F700A577E7 /* 043@2x.png in Resources */,
@@ -2830,6 +2886,7 @@
 				B97506EA1E4C58F600A577E7 /* smiley_75.png in Resources */,
 				B97507921E4C58F700A577E7 /* 056@2x.png in Resources */,
 				B97506CC1E4C58F600A577E7 /* smiley_48.png in Resources */,
+				B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */,
 				B97507B21E4C58F700A577E7 /* 072@2x.png in Resources */,
 				B97507CE1E4C58F700A577E7 /* _expression_en.plist in Resources */,
 				B97506FE1E4C58F600A577E7 /* smiley_93.png in Resources */,
@@ -2968,6 +3025,7 @@
 				B9C6AAEB1E6547690003C50A /* FLXKCheckAppVersion.m in Sources */,
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
+				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
@@ -2989,6 +3047,7 @@
 				B9C6ACA11E6548550003C50A /* SGGenerateQRCodeVC.m in Sources */,
 				B9C6ACAD1E6548550003C50A /* UIFont+FontAwesome.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
+				B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B9C6AC901E6548550003C50A /* UITableView+rrn_extensions.m in Sources */,
 				B9C6AC941E6548550003C50A /* StarsSectionHeaderView.m in Sources */,
@@ -2997,6 +3056,7 @@
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
 				B92F57681E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m in Sources */,
+				B9A3F9641E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
 				B9C6ACAF1E6548550003C50A /* FLXKSegmentContainerViewController.m in Sources */,
@@ -3023,8 +3083,10 @@
 				B97261A81E2DEC76008B6356 /* FMDatabaseAdditions.m in Sources */,
 				B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */,
 				B9C6ACA21E6548550003C50A /* SGScanningQRCodeVC.m in Sources */,
+				B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */,
 				B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
+				B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */,
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,

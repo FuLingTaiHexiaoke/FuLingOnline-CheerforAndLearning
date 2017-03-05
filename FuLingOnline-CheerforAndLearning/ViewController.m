@@ -6,6 +6,10 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
+
+
+
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -24,6 +28,17 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+//utilites
+
+
+//child viewController
+
+
+//subviews
+
 #pragma mark -
 #pragma mark - ViewController LifeCircle
 
