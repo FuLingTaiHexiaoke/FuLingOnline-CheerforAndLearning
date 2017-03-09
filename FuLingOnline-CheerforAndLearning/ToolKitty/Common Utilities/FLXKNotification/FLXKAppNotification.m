@@ -12,6 +12,8 @@
 //#import <UserNotifications/UserNotifications.h>
 
 //注意，关于 iOS10 系统版本的判断，可以用下面这个宏来判断。不能再用截取字符的方法。
+
+
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 #define SYSTEM_VERSION_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -19,6 +21,7 @@
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+#define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
 
 @implementation FLXKAppNotification
 
@@ -26,7 +29,7 @@
 +(void)removeAllLocalNotification{
     [[UIApplication sharedApplication]cancelAllLocalNotifications];
 }
-#pragma mark -
+#pragma mark -#import <UserNotifications/UserNotifications.h>
 #pragma mark - RemoteNotification
 
 //注册远程服务器消息推送
@@ -65,49 +68,133 @@
 }
 
 
++(void)ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:(NSDictionary*)launchOptions{
+    if (launchOptions) {
+        UserDefaultsSetObjForKey(launchOptions,@"UIApplicationLaunchOptionsRemoteNotificationKey1");
+    }
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    //判断是否由远程消息通知触发应用程序启动
+    if (launchOptions && [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]!=nil && SYSTEM_VERSION_LESS_THAN(@"10.0")) {
+        id pushInfo_temp = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (pushInfo_temp && [NSJSONSerialization isValidJSONObject:pushInfo_temp])
+        {
+            NSDictionary* pushInfo= [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+            UserDefaultsSetObjForKey(pushInfo,@"UIApplicationLaunchOptionsRemoteNotificationKey");
+            NSDictionary *apsInfo = [pushInfo objectForKey:@"aps"];
+            if(apsInfo)
+            {
+                id message_json = [apsInfo objectForKey:@"message_json"];
+                if (!message_json) {
+                    message_json=[pushInfo objectForKey:@"message_json"];
+                }
+                if (![NSJSONSerialization isValidJSONObject:message_json]) {
+                    NSMutableString *message_json_string =message_json;
+                    message_json = [NSJSONSerialization JSONObjectWithData:[message_json_string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+                }
+                
+                id title_dic = [apsInfo objectForKey:@"alert"];// 推送消息的标题
+                NSString *title =@"";
+                if ([title_dic isKindOfClass:NSClassFromString(@"NSDictionary") ] ) {
+                    title = [title_dic objectForKey:@"title"];
+                }
+                else{
+                    title =title_dic;
+                }
+                
+                NSString *content =@"";  //  收到推送的消息内容
+                if ([message_json isKindOfClass:NSClassFromString(@"NSDictionary") ] ) {
+                    NSDictionary * content_dic=  (NSDictionary *)[message_json objectForKey:@"content"];
+                    if ([content_dic isKindOfClass:   NSClassFromString(@"NSDictionary") ] ) {
+                        content = [content_dic objectForKey:@"message_content"];  //  收到推送的消息内容
+                    }
+                    else{
+                        content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
+                    }
+                }
+                //        UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
+                //        [alert show];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+                        [AudioServices playSystemSoundID:1002];
+                    }
+                    [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+                    //                    if ([FLXKAppNotification getCurrentVC]) {
+                    //                        [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
+                    //                    }
+                    //                    else{
+                    //                        [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+                    //
+                    //                    }
+                });
+            }
+        }
+    }
+    
+}
+
+
+
 #pragma mark - UNUserNotificationCenterDelegate
 
 
 +(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    
-    NSDictionary * userInfo = notification.request.content.userInfo;
-    //    UNNotificationRequest *request = notification.request; // 收到推送的请求
-    //    UNNotificationContent *content = request.content; // 收到推送的消息内容
-    //    NSNumber *badge = content.badge;  // 推送消息的角标
-    //    NSString *body = content.body;    // 推送消息体
-    //    UNNotificationSound *sound = content.sound;  // 推送消息的声音
-    //    NSString *subtitle = content.subtitle;  // 推送消息的副标题
-    //    NSString *title = content.title;  // 推送消息的标题
-    
+    NSDictionary * userInfo =notification.request.content.userInfo;
     if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
         
     }
     else {
-
+        
     }
-//        completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
-    
-    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
-    
+    // completionHandler(UNNotificationPresentationOptionBadge|UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以设置
+    completionHandler(UNNotificationPresentationOptionSound|UNNotificationPresentationOptionAlert);
 }
+
+
 +(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
-    
     NSDictionary * userInfo = response.notification.request.content.userInfo;
-    //    UNNotificationRequest *request = response.notification.request; // 收到推送的请求
-    //    UNNotificationContent *content = request.content; // 收到推送的消息内容
-    //    NSNumber *badge = content.badge;  // 推送消息的角标
-    //    NSString *body = content.body;    // 推送消息体
-    //    UNNotificationSound *sound = content.sound;  // 推送消息的声音
-    //    NSString *subtitle = content.subtitle;  // 推送消息的副标题
-    //    NSString *title = content.title;  // 推送消息的标题
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
         NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
+        NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+        id message_json = [apsInfo objectForKey:@"message_json"];
+        if (![NSJSONSerialization isValidJSONObject:message_json]) {
+            NSMutableString *message_json_string = [userInfo objectForKey:@"message_json"];
+            message_json = [NSJSONSerialization JSONObjectWithData:[message_json_string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+        }
         
+        id title_dic = [apsInfo objectForKey:@"alert"];// 推送消息的标题
+        NSString *title =@"";
+        if ([title_dic isKindOfClass:   NSClassFromString(@"NSDictionary") ] ) {
+            title = [title_dic objectForKey:@"title"];
+        }
+        else{
+            title =title_dic;
+        }
+        
+        NSDictionary * content_dic=  (NSDictionary *)[message_json objectForKey:@"content"];
+        NSString *content =@"";  //  收到推送的消息内容
+        if ([content_dic isKindOfClass:   NSClassFromString(@"NSDictionary") ] ) {
+            content = [content_dic objectForKey:@"message_content"];  //  收到推送的消息内容
+        }
+        else{
+            content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
+        }
+        [AudioServices playSystemSoundID:1002];
+        [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        //                    [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
+        
+        //        if ([FLXKAppNotification getCurrentVC]) {
+        //            [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
+        //        }
+        //        else{
+        //            [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        //        }
+        //        UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
+        //        [alert show];
     }
     else {
     }
-
+    
     completionHandler();  // 系统要求执行这个方法
 }
 
@@ -121,6 +208,7 @@
     dn=[dn stringByReplacingOccurrencesOfString:@" " withString:@""];
     UserDefaultsSetObjForKey(dn,apns_deviceToken);
     NSLog(@"获取令牌:  %@",dn);
+    //    5ab38850ededae838e770e0fd004b9241566982e903d93bba00fa2130d550823
 }
 
 + (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -140,21 +228,51 @@
 //    "message_json" = "{\"content\":\"\U5185\U7a7a\",\"up\":\"\U79c1\U6709\U5185\U5bb91\"}";
 //}
 
+//{"title":"有新的服务需求被发布","content":{"message_content":"#测推送#【测推送】测推送","lvcontent_id":10010},"up":""}
+
 +(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
-    NSMutableString *message_json_string = [userInfo objectForKey:@"message_json"];
-    NSDictionary *       message_json = [NSJSONSerialization JSONObjectWithData:[message_json_string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
     if (application.applicationState == UIApplicationStateActive) {
         [AudioServices playSystemSoundID:1002];
     }
     if(apsInfo)
     {
-        NSString *title = [apsInfo objectForKey:@"alert"];  // 推送消息的标题
-        NSString *content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
-        UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-        [alert show];
+        id message_json = [apsInfo objectForKey:@"message_json"];
+        if (![NSJSONSerialization isValidJSONObject:message_json]) {
+            NSMutableString *message_json_string = [userInfo objectForKey:@"message_json"];
+            message_json = [NSJSONSerialization JSONObjectWithData:[message_json_string dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+        }
         
-        [[NSNotificationCenter defaultCenter]postNotificationName:SeverRemoteNotificationCameKey object:nil userInfo:nil];
+        id title_dic = [apsInfo objectForKey:@"alert"];// 推送消息的标题
+        NSString *title =@"";
+        if ([title_dic isKindOfClass:   NSClassFromString(@"NSDictionary") ] ) {
+            title = [title_dic objectForKey:@"title"];
+        }
+        else{
+            title =title_dic;
+        }
+        
+        NSDictionary * content_dic=  (NSDictionary *)[message_json objectForKey:@"content"];
+        NSString *content =@"";  //  收到推送的消息内容
+        
+        if ([content_dic isKindOfClass:   NSClassFromString(@"NSDictionary") ] ) {
+            content = [content_dic objectForKey:@"message_content"];  //  收到推送的消息内容
+        }
+        else{
+            content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
+        }
+        [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        //                UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
+        //                [alert show];
+        //                    [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
+        
+        //        if ([FLXKAppNotification getCurrentVC]) {
+        //            [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
+        //        }
+        //        else{
+        //            [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+        //
+        //        }
     }
 }
 
@@ -223,40 +341,50 @@
     [UIApplication sharedApplication].applicationIconBadgeNumber = badge;
 }
 
+//获取当前屏幕显示的viewcontroller
++ (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+        result = nextResponder;
+    else
+        result = window.rootViewController;
+    
+    return result;
+}
 
-
++ (void)showAlertWithTitle:(NSString *)title  message:(NSString*)message cancelButtonTitle:(NSString*)cancelButtonTitle withPresentingController:(UIViewController*)presentingController {
+    if (iOS8Later) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:nil]];
+        [presentingController presentViewController:alertController animated:YES completion:nil];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil, nil] show];
+#pragma clang diagnostic pop
+    }
+}
 
 @end
 
 
 
-
-//
-//#pragma mark - LocalNotification CallBack
-//
-//- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-//    [FLXKAppNotification application:application didReceiveLocalNotification:notification];
-//}
-//
-//#pragma mark - RemoteNotification CallBack
-//
-//- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-//    [FLXKAppNotification application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
-//}
-//
-//- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-//    [FLXKAppNotification application:application didFailToRegisterForRemoteNotificationsWithError:error];
-//}
-//
-//- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
-//    [FLXKAppNotification application:application didReceiveRemoteNotification:userInfo];
-//}
-//
-//#pragma mark - UNUserNotificationCenterDelegate
-//
-//- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-//    [FLXKAppNotification userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
-//}
-//- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
-//    [FLXKAppNotification userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-//}

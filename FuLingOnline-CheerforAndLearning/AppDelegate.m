@@ -48,7 +48,8 @@
     [[BaiduMobStat defaultStat] startWithAppId:@"91c2c7b088"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
 
     //注册消息推送
-    //[FLXKAppNotification registerRemoteNotification:application];
+    [FLXKAppNotification ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:[launchOptions copy]];
+    [FLXKAppNotification registerRemoteNotification:application];
     //我们可以通过本地通知开发日志事件功能
     //[FLXKAppNotification registerLocalNotification:5];
     //取消掉所有已经注册的本地通知
@@ -92,11 +93,14 @@
 
 
 
-#pragma mark - RemoteNotification CallBack
+
+#pragma mark - LocalNotification CallBack
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
     [FLXKAppNotification application:application didReceiveLocalNotification:notification];
 }
+
+#pragma mark - RemoteNotification CallBack
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     [FLXKAppNotification application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
@@ -108,6 +112,15 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     [FLXKAppNotification application:application didReceiveRemoteNotification:userInfo];
+}
+
+#pragma mark - UNUserNotificationCenterDelegate
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    [FLXKAppNotification userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+}
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    [FLXKAppNotification userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 
 @end

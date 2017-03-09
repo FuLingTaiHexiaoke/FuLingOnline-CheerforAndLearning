@@ -54,6 +54,10 @@
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
+		B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */; };
+		B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B96D30321E716A62003BDFD0 /* emotionDB.xlsx */; };
+		B96D30371E716A62003BDFD0 /* FuLingOnline_aps.cer in Resources */ = {isa = PBXBuildFile; fileRef = B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */; };
+		B96D30381E716A62003BDFD0 /* FuLingOnline_aps_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
 		B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B972618D1E2DEC76008B6356 /* TestEntity.m */; };
@@ -402,7 +406,6 @@
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
 		B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */; };
 		B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */; };
-		B9C6AAE61E6547590003C50A /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAE21E6547590003C50A /* FLXKAppNotification.m */; };
 		B9C6AAE71E6547590003C50A /* UISGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAE51E6547590003C50A /* UISGAlertView.m */; };
 		B9C6AAEB1E6547690003C50A /* FLXKCheckAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAEA1E6547690003C50A /* FLXKCheckAppVersion.m */; };
 		B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AB921E6548550003C50A /* RRNCollapsableTableViewController.m */; };
@@ -466,6 +469,7 @@
 		B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDF01B1E4F36690007F638 /* KYSpringLayerAnimation.m */; };
 		B9CDF0241E4F36690007F638 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDF01D1E4F36690007F638 /* Line.m */; };
 		B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */ = {isa = PBXBuildFile; fileRef = B9CDF01F1E4F36690007F638 /* RotateRect.m */; };
+		B9D6399C1E6D36B4004122B9 /* 知识点记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */; };
 		B9D854B71DAC8BE2001AD79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B61DAC8BE2001AD79C /* main.m */; };
 		B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854B91DAC8BE2001AD79C /* AppDelegate.m */; };
 		B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854BC1DAC8BE2001AD79C /* ViewController.m */; };
@@ -584,6 +588,12 @@
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
+		B96D302D1E71609E003BDFD0 /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
+		B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
+		B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FuLingOnline-CheerforAndLearning.entitlements"; sourceTree = "<group>"; };
+		B96D30321E716A62003BDFD0 /* emotionDB.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = emotionDB.xlsx; sourceTree = "<group>"; };
+		B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps.cer; sourceTree = "<group>"; };
+		B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps_development.cer; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
 		B97261871E2DEC76008B6356 /* EntityGeneratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityGeneratorViewController.h; sourceTree = "<group>"; };
 		B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityGeneratorViewController.m; sourceTree = "<group>"; };
@@ -952,8 +962,6 @@
 		B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNavigationTitleSegmentsView.m; sourceTree = "<group>"; };
 		B9C6AADC1E6524E80003C50A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
-		B9C6AAE11E6547590003C50A /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
-		B9C6AAE21E6547590003C50A /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B9C6AAE41E6547590003C50A /* UISGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISGAlertView.h; sourceTree = "<group>"; };
 		B9C6AAE51E6547590003C50A /* UISGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISGAlertView.m; sourceTree = "<group>"; };
 		B9C6AAE91E6547690003C50A /* FLXKCheckAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKCheckAppVersion.h; sourceTree = "<group>"; };
@@ -1059,6 +1067,7 @@
 		B9CDF01D1E4F36690007F638 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		B9CDF01E1E4F36690007F638 /* RotateRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateRect.h; sourceTree = "<group>"; };
 		B9CDF01F1E4F36690007F638 /* RotateRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotateRect.m; sourceTree = "<group>"; };
+		B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "知识点记录.rtf"; sourceTree = "<group>"; };
 		B9D854B21DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D854B61DAC8BE2001AD79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9D854B81DAC8BE2001AD79C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1153,6 +1162,8 @@
 		B900258F1DAE1E9A00B34438 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				B96D30311E716A62003BDFD0 /* 备份 */,
+				B96D30331E716A62003BDFD0 /* 推送证书 */,
 				B923B4DA1DDB148900410CFC /* back */,
 				B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */,
 				B923B4D51DDABC9D00410CFC /* Global.h */,
@@ -1163,6 +1174,7 @@
 				B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */,
 				B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */,
 				B97B38DE1DD029D400D8F004 /* 重点难点.rtf */,
+				B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1437,6 +1449,23 @@
 				B93AF5BA1E30A21900F51E26 /* Resouce */,
 			);
 			path = FLXKEmotionBoard;
+			sourceTree = "<group>";
+		};
+		B96D30311E716A62003BDFD0 /* 备份 */ = {
+			isa = PBXGroup;
+			children = (
+				B96D30321E716A62003BDFD0 /* emotionDB.xlsx */,
+			);
+			path = "备份";
+			sourceTree = "<group>";
+		};
+		B96D30331E716A62003BDFD0 /* 推送证书 */ = {
+			isa = PBXGroup;
+			children = (
+				B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */,
+				B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */,
+			);
+			path = "推送证书";
 			sourceTree = "<group>";
 		};
 		B97261841E2DEC76008B6356 /* FLXKFMDB */ = {
@@ -1978,8 +2007,8 @@
 		B9C6AAE01E6547580003C50A /* FLXKNotification */ = {
 			isa = PBXGroup;
 			children = (
-				B9C6AAE11E6547590003C50A /* FLXKAppNotification.h */,
-				B9C6AAE21E6547590003C50A /* FLXKAppNotification.m */,
+				B96D302D1E71609E003BDFD0 /* FLXKAppNotification.h */,
+				B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */,
 				B9C6AAE31E6547590003C50A /* SGAlertView */,
 			);
 			path = FLXKNotification;
@@ -2331,6 +2360,7 @@
 		B9D854B41DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */ = {
 			isa = PBXGroup;
 			children = (
+				B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */,
 				B900258F1DAE1E9A00B34438 /* Config */,
 				B90025901DAE1EA500B34438 /* Category */,
 				B90025961DAE1EEB00B34438 /* Module */,
@@ -2484,8 +2514,13 @@
 				TargetAttributes = {
 					B9D854B11DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = UMWN7VGEE4;
+						DevelopmentTeam = TQ772LEHW3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					B9D854CA1DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2638,6 +2673,7 @@
 				B97506AA1E4C58F600A577E7 /* smiley_17.png in Resources */,
 				B975072B1E4C58F600A577E7 /* 005.png in Resources */,
 				B97506CF1E4C58F600A577E7 /* smiley_50.png in Resources */,
+				B96D30381E716A62003BDFD0 /* FuLingOnline_aps_development.cer in Resources */,
 				B97506BF1E4C58F600A577E7 /* smiley_36.png in Resources */,
 				B97507C51E4C58F700A577E7 /* 082.png in Resources */,
 				B97506FB1E4C58F600A577E7 /* smiley_90.png in Resources */,
@@ -2734,6 +2770,7 @@
 				B97506A01E4C58F600A577E7 /* smiley_101.png in Resources */,
 				B975069A1E4C58F600A577E7 /* del_emoji_normal.png in Resources */,
 				B97507A01E4C58F700A577E7 /* 063@2x.png in Resources */,
+				B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */,
 				B975071B1E4C58F600A577E7 /* gif400_2.gif in Resources */,
 				B975076B1E4C58F700A577E7 /* 037.png in Resources */,
 				B975078A1E4C58F700A577E7 /* 052@2x.png in Resources */,
@@ -2767,6 +2804,7 @@
 				B97507871E4C58F700A577E7 /* 051.png in Resources */,
 				B975069F1E4C58F600A577E7 /* smiley_100.png in Resources */,
 				B975079B1E4C58F700A577E7 /* 061.png in Resources */,
+				B9D6399C1E6D36B4004122B9 /* 知识点记录.rtf in Resources */,
 				B97506AC1E4C58F600A577E7 /* smiley_19.png in Resources */,
 				B97507731E4C58F700A577E7 /* 041.png in Resources */,
 				B97507101E4C58F600A577E7 /* gif300_3.gif in Resources */,
@@ -2863,6 +2901,7 @@
 				B97506FD1E4C58F600A577E7 /* smiley_92.png in Resources */,
 				B975069C1E4C58F600A577E7 /* smiley_0.png in Resources */,
 				B97506D01E4C58F600A577E7 /* smiley_51.png in Resources */,
+				B96D30371E716A62003BDFD0 /* FuLingOnline_aps.cer in Resources */,
 				B97507B01E4C58F700A577E7 /* 071@2x.png in Resources */,
 				B97507D01E4C58F700A577E7 /* active_page_image@2x.png in Resources */,
 				B97506C51E4C58F600A577E7 /* smiley_41.png in Resources */,
@@ -3067,7 +3106,6 @@
 				B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */,
 				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
 				B9C6AD3C1E6548550003C50A /* CWStarRateView.m in Sources */,
-				B9C6AAE61E6547590003C50A /* FLXKAppNotification.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
 				B9C6AD461E65493F0003C50A /* AudioServices+Extensions.m in Sources */,
@@ -3089,6 +3127,7 @@
 				B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */,
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
+				B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B9C6ACB01E6548550003C50A /* JRSegmentControl.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,
@@ -3241,15 +3280,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = UMWN7VGEE4;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3264,15 +3304,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = UMWN7VGEE4;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning.test";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

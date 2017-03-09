@@ -9,6 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< Updated upstream
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKNavigationTitleView/FLXKNavigationTitleSegmentsView/FLXKNavigationTitleSegmentsView.m"
             timestampString = "510393976.652665"
             startingColumnNumber = "9223372036854775807"
@@ -16,6 +17,15 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "-setCurrentTitleIndex:"
+=======
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/Utilities/KYAnimatedPageControl/Line.m"
+            timestampString = "510124108.847931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "+needsDisplayForKey:"
+>>>>>>> Stashed changes
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,6 +35,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< Updated upstream
             filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKNavigationTitleView/FLXKNavigationTitleSegmentsView/FLXKNavigationTitleSegmentsView.m"
             timestampString = "510393339.48432"
             startingColumnNumber = "9223372036854775807"
@@ -176,6 +187,15 @@
             startingLineNumber = "71"
             endingLineNumber = "71"
             landmarkName = "-tableView:viewForHeaderInSection:"
+=======
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKCustomViews/FLXKEmotionBoard/Utilities/KYAnimatedPageControl/Line.m"
+            timestampString = "510124113.202342"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "-animateSelectedLineToNewIndex:"
+>>>>>>> Stashed changes
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

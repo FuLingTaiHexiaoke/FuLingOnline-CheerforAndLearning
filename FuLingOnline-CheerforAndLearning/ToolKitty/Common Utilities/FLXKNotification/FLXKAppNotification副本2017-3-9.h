@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UserNotifications/UserNotifications.h>
 #import "AppDelegate.h"
+#import <UserNotifications/UserNotifications.h>
+
 @interface FLXKAppNotification : NSObject
 
 //注册远程服务器消息推送
@@ -19,8 +20,6 @@
 
 //取消掉所有已经注册的本地通知
 +(void)removeAllLocalNotification;
-
-+(void)ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:(NSDictionary*)launchOptions;
 
 #pragma mark - UNUserNotificationCenterDelegate
 
@@ -38,5 +37,4 @@
 #pragma mark - LocalNotification CallBack
 
 +(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
-
 @end
