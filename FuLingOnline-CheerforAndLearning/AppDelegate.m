@@ -17,6 +17,9 @@
 #import <Bugly/Bugly.h>
 #import "BaiduMobStat.h" 
 
+//utilities
+#import "XYWdispatcher.h"
+
 @interface AppDelegate ()
 
 @end
@@ -53,7 +56,11 @@
     //我们可以通过本地通知开发日志事件功能
     //[FLXKAppNotification registerLocalNotification:5];
     //取消掉所有已经注册的本地通知
-    [FLXKAppNotification removeAllLocalNotification];
+//        [[FLXKAppNotification new]  requestLocationNotification];
+    
+//    [FLXKAppNotification removeAllLocalNotification];
+    
+
     
     
     //收集AppLaunchDate，AppInstallDateIfNil，logAppNumberOfDaysSinceInstall
@@ -121,6 +128,40 @@
 }
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
     [FLXKAppNotification userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+}
+
+
+#pragma mark -
+#pragma mark - URL scheme
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([XYWdispatcher HandleOpenURL:url withScheme:@"XYWdispatcher"]) {
+        return YES;
+    }else{//其他sdk代码
+        return NO;
+    }
+    //    return [XYWdispatcher HandleOpenURL:url withScheme:@"roter"];
+}
+
+//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+//        return YES;
+//}
+//
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+//    NSLog(@"URL scheme:%@", [url scheme]);
+//    NSLog(@"URL query: %@", [url query]);
+//    
+//    return YES;
+//}
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
+//        NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+        NSLog(@"URL scheme:%@", [url scheme]);
+        NSLog(@"URL query: %@", [url query]);
+    
+        return YES;
 }
 
 @end

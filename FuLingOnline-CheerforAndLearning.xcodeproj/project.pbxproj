@@ -56,8 +56,6 @@
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
 		B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */; };
 		B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B96D30321E716A62003BDFD0 /* emotionDB.xlsx */; };
-		B96D30371E716A62003BDFD0 /* FuLingOnline_aps.cer in Resources */ = {isa = PBXBuildFile; fileRef = B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */; };
-		B96D30381E716A62003BDFD0 /* FuLingOnline_aps_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
 		B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B972618D1E2DEC76008B6356 /* TestEntity.m */; };
@@ -395,6 +393,16 @@
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
 		B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DE1DD029D400D8F004 /* 重点难点.rtf */; };
+		B97CC07F1E7249B9000D548B /* FuLingOnline_aps.cer in Resources */ = {isa = PBXBuildFile; fileRef = B97CC07C1E7249B9000D548B /* FuLingOnline_aps.cer */; };
+		B97CC0801E7249B9000D548B /* FuLingOnline_aps_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B97CC07D1E7249B9000D548B /* FuLingOnline_aps_development.cer */; };
+		B97CC0861E724A3A000D548B /* UISGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0851E724A3A000D548B /* UISGAlertView.m */; };
+		B97CC08B1E724A89000D548B /* icon_certification_status1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97CC0871E724A89000D548B /* icon_certification_status1@2x.png */; };
+		B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */ = {isa = PBXBuildFile; fileRef = B97CC0881E724A89000D548B /* gif_image_test.gif */; };
+		B97CC08D1E724A89000D548B /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B97CC0891E724A89000D548B /* image01.jpg */; };
+		B97CC08E1E724A89000D548B /* flv视频测试用例1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */; };
+		B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */; };
+		B97CC0981E72B238000D548B /* XYWdispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0961E72B238000D548B /* XYWdispatcher.m */; };
+		B97CC0991E72B238000D548B /* XYWdispatcherRouter.plist in Resources */ = {isa = PBXBuildFile; fileRef = B97CC0971E72B238000D548B /* XYWdispatcherRouter.plist */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
 		B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */; };
 		B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */; };
@@ -406,7 +414,6 @@
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
 		B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */; };
 		B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */; };
-		B9C6AAE71E6547590003C50A /* UISGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAE51E6547590003C50A /* UISGAlertView.m */; };
 		B9C6AAEB1E6547690003C50A /* FLXKCheckAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAEA1E6547690003C50A /* FLXKCheckAppVersion.m */; };
 		B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AB921E6548550003C50A /* RRNCollapsableTableViewController.m */; };
 		B9C6AC8F1E6548550003C50A /* RRNTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AB951E6548550003C50A /* RRNTableViewHeaderFooterView.m */; };
@@ -592,8 +599,6 @@
 		B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FuLingOnline-CheerforAndLearning.entitlements"; sourceTree = "<group>"; };
 		B96D30321E716A62003BDFD0 /* emotionDB.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = emotionDB.xlsx; sourceTree = "<group>"; };
-		B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps.cer; sourceTree = "<group>"; };
-		B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps_development.cer; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
 		B97261871E2DEC76008B6356 /* EntityGeneratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityGeneratorViewController.h; sourceTree = "<group>"; };
 		B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityGeneratorViewController.m; sourceTree = "<group>"; };
@@ -942,6 +947,20 @@
 		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
 		B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "整体逻辑思路.rtf"; sourceTree = "<group>"; };
 		B97B38DE1DD029D400D8F004 /* 重点难点.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "重点难点.rtf"; sourceTree = "<group>"; };
+		B97CC07C1E7249B9000D548B /* FuLingOnline_aps.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps.cer; sourceTree = "<group>"; };
+		B97CC07D1E7249B9000D548B /* FuLingOnline_aps_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = FuLingOnline_aps_development.cer; sourceTree = "<group>"; };
+		B97CC07E1E7249B9000D548B /* RemoteNotificationNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteNotificationNote.h; sourceTree = "<group>"; };
+		B97CC0841E724A3A000D548B /* UISGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISGAlertView.h; sourceTree = "<group>"; };
+		B97CC0851E724A3A000D548B /* UISGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISGAlertView.m; sourceTree = "<group>"; };
+		B97CC0871E724A89000D548B /* icon_certification_status1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_certification_status1@2x.png"; sourceTree = "<group>"; };
+		B97CC0881E724A89000D548B /* gif_image_test.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_image_test.gif; sourceTree = "<group>"; };
+		B97CC0891E724A89000D548B /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
+		B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flv视频测试用例1.mp4"; sourceTree = "<group>"; };
+		B97CC0901E7287AD000D548B /* FLXKAPPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAPPHelper.h; sourceTree = "<group>"; };
+		B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAPPHelper.m; sourceTree = "<group>"; };
+		B97CC0951E72B238000D548B /* XYWdispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYWdispatcher.h; sourceTree = "<group>"; };
+		B97CC0961E72B238000D548B /* XYWdispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYWdispatcher.m; sourceTree = "<group>"; };
+		B97CC0971E72B238000D548B /* XYWdispatcherRouter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = XYWdispatcherRouter.plist; sourceTree = "<group>"; };
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
 		B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsSharing.storyboard; sourceTree = "<group>"; };
@@ -962,8 +981,6 @@
 		B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNavigationTitleSegmentsView.m; sourceTree = "<group>"; };
 		B9C6AADC1E6524E80003C50A /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
 		B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
-		B9C6AAE41E6547590003C50A /* UISGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISGAlertView.h; sourceTree = "<group>"; };
-		B9C6AAE51E6547590003C50A /* UISGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISGAlertView.m; sourceTree = "<group>"; };
 		B9C6AAE91E6547690003C50A /* FLXKCheckAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKCheckAppVersion.h; sourceTree = "<group>"; };
 		B9C6AAEA1E6547690003C50A /* FLXKCheckAppVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKCheckAppVersion.m; sourceTree = "<group>"; };
 		B9C6AB901E6548550003C50A /* CollapsableTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTable.h; sourceTree = "<group>"; };
@@ -1163,7 +1180,6 @@
 			isa = PBXGroup;
 			children = (
 				B96D30311E716A62003BDFD0 /* 备份 */,
-				B96D30331E716A62003BDFD0 /* 推送证书 */,
 				B923B4DA1DDB148900410CFC /* back */,
 				B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */,
 				B923B4D51DDABC9D00410CFC /* Global.h */,
@@ -1457,15 +1473,6 @@
 				B96D30321E716A62003BDFD0 /* emotionDB.xlsx */,
 			);
 			path = "备份";
-			sourceTree = "<group>";
-		};
-		B96D30331E716A62003BDFD0 /* 推送证书 */ = {
-			isa = PBXGroup;
-			children = (
-				B96D30341E716A62003BDFD0 /* FuLingOnline_aps.cer */,
-				B96D30351E716A62003BDFD0 /* FuLingOnline_aps_development.cer */,
-			);
-			path = "推送证书";
 			sourceTree = "<group>";
 		};
 		B97261841E2DEC76008B6356 /* FLXKFMDB */ = {
@@ -1924,6 +1931,71 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B97CC07B1E7249B9000D548B /* 推送证书 */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC07C1E7249B9000D548B /* FuLingOnline_aps.cer */,
+				B97CC07D1E7249B9000D548B /* FuLingOnline_aps_development.cer */,
+				B97CC07E1E7249B9000D548B /* RemoteNotificationNote.h */,
+			);
+			path = "推送证书";
+			sourceTree = "<group>";
+		};
+		B97CC0811E724A10000D548B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0871E724A89000D548B /* icon_certification_status1@2x.png */,
+				B97CC0881E724A89000D548B /* gif_image_test.gif */,
+				B97CC0891E724A89000D548B /* image01.jpg */,
+				B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B97CC0821E724A10000D548B /* ToolKitty */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0831E724A3A000D548B /* SGAlertView */,
+			);
+			path = ToolKitty;
+			sourceTree = "<group>";
+		};
+		B97CC0831E724A3A000D548B /* SGAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0841E724A3A000D548B /* UISGAlertView.h */,
+				B97CC0851E724A3A000D548B /* UISGAlertView.m */,
+			);
+			path = SGAlertView;
+			sourceTree = "<group>";
+		};
+		B97CC08F1E728792000D548B /* FLXKAPPHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0901E7287AD000D548B /* FLXKAPPHelper.h */,
+				B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */,
+			);
+			path = FLXKAPPHelper;
+			sourceTree = "<group>";
+		};
+		B97CC0931E72B22E000D548B /* FLXKUrlSchema */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0941E72B238000D548B /* XYWdispatcher */,
+			);
+			path = FLXKUrlSchema;
+			sourceTree = "<group>";
+		};
+		B97CC0941E72B238000D548B /* XYWdispatcher */ = {
+			isa = PBXGroup;
+			children = (
+				B97CC0951E72B238000D548B /* XYWdispatcher.h */,
+				B97CC0961E72B238000D548B /* XYWdispatcher.m */,
+				B97CC0971E72B238000D548B /* XYWdispatcherRouter.plist */,
+			);
+			path = XYWdispatcher;
+			sourceTree = "<group>";
+		};
 		B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1998,6 +2070,8 @@
 		B9C6AADF1E6547500003C50A /* Common Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B97CC0931E72B22E000D548B /* FLXKUrlSchema */,
+				B97CC08F1E728792000D548B /* FLXKAPPHelper */,
 				B9C6AAE81E6547690003C50A /* FLXKCheckAppVersion */,
 				B9C6AAE01E6547580003C50A /* FLXKNotification */,
 			);
@@ -2007,20 +2081,13 @@
 		B9C6AAE01E6547580003C50A /* FLXKNotification */ = {
 			isa = PBXGroup;
 			children = (
+				B97CC0811E724A10000D548B /* Resource */,
+				B97CC0821E724A10000D548B /* ToolKitty */,
+				B97CC07B1E7249B9000D548B /* 推送证书 */,
 				B96D302D1E71609E003BDFD0 /* FLXKAppNotification.h */,
 				B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */,
-				B9C6AAE31E6547590003C50A /* SGAlertView */,
 			);
 			path = FLXKNotification;
-			sourceTree = "<group>";
-		};
-		B9C6AAE31E6547590003C50A /* SGAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				B9C6AAE41E6547590003C50A /* UISGAlertView.h */,
-				B9C6AAE51E6547590003C50A /* UISGAlertView.m */,
-			);
-			path = SGAlertView;
 			sourceTree = "<group>";
 		};
 		B9C6AAE81E6547690003C50A /* FLXKCheckAppVersion */ = {
@@ -2625,6 +2692,7 @@
 				B97507AC1E4C58F700A577E7 /* 069@2x.png in Resources */,
 				B97507B51E4C58F700A577E7 /* 074.png in Resources */,
 				B97507311E4C58F600A577E7 /* 008.png in Resources */,
+				B97CC08D1E724A89000D548B /* image01.jpg in Resources */,
 				B97507451E4C58F600A577E7 /* 018.png in Resources */,
 				B97507751E4C58F700A577E7 /* 042.png in Resources */,
 				B97507361E4C58F600A577E7 /* 010@2x.png in Resources */,
@@ -2655,12 +2723,14 @@
 				B97506FF1E4C58F600A577E7 /* smiley_94.png in Resources */,
 				B97507A21E4C58F700A577E7 /* 064@2x.png in Resources */,
 				B97507C71E4C58F700A577E7 /* 083.png in Resources */,
+				B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */,
 				B97506EF1E4C58F600A577E7 /* smiley_8.png in Resources */,
 				B97506DA1E4C58F600A577E7 /* smiley_60.png in Resources */,
 				B97507601E4C58F600A577E7 /* 031@2x.png in Resources */,
 				B97507B11E4C58F700A577E7 /* 072.png in Resources */,
 				B975079D1E4C58F700A577E7 /* 062.png in Resources */,
 				B97506B11E4C58F600A577E7 /* smiley_23.png in Resources */,
+				B97CC08B1E724A89000D548B /* icon_certification_status1@2x.png in Resources */,
 				B9C6AD3F1E6548550003C50A /* star_gray3.png in Resources */,
 				B97507331E4C58F600A577E7 /* 009.png in Resources */,
 				B9C6ACAB1E6548550003C50A /* FontAwesome.ttf in Resources */,
@@ -2673,7 +2743,7 @@
 				B97506AA1E4C58F600A577E7 /* smiley_17.png in Resources */,
 				B975072B1E4C58F600A577E7 /* 005.png in Resources */,
 				B97506CF1E4C58F600A577E7 /* smiley_50.png in Resources */,
-				B96D30381E716A62003BDFD0 /* FuLingOnline_aps_development.cer in Resources */,
+				B97CC0801E7249B9000D548B /* FuLingOnline_aps_development.cer in Resources */,
 				B97506BF1E4C58F600A577E7 /* smiley_36.png in Resources */,
 				B97507C51E4C58F700A577E7 /* 082.png in Resources */,
 				B97506FB1E4C58F600A577E7 /* smiley_90.png in Resources */,
@@ -2758,6 +2828,7 @@
 				B9C6ACB71E6548550003C50A /* OpinionzAlertIconWarning.png in Resources */,
 				B97507B41E4C58F700A577E7 /* 073@2x.png in Resources */,
 				B975071D1E4C58F600A577E7 /* gif400_4.gif in Resources */,
+				B97CC08E1E724A89000D548B /* flv视频测试用例1.mp4 in Resources */,
 				B97507211E4C58F600A577E7 /* gif400_8.gif in Resources */,
 				B97507471E4C58F600A577E7 /* 019.png in Resources */,
 				B97507041E4C58F600A577E7 /* smiley_99.png in Resources */,
@@ -2825,6 +2896,7 @@
 				B97507951E4C58F700A577E7 /* 058.png in Resources */,
 				B97507981E4C58F700A577E7 /* 059@2x.png in Resources */,
 				B97507411E4C58F600A577E7 /* 016.png in Resources */,
+				B97CC0991E72B238000D548B /* XYWdispatcherRouter.plist in Resources */,
 				B97506AB1E4C58F600A577E7 /* smiley_18.png in Resources */,
 				B97506A81E4C58F600A577E7 /* smiley_15.png in Resources */,
 				B9C6AD411E6548550003C50A /* star_yellow2.png in Resources */,
@@ -2901,7 +2973,7 @@
 				B97506FD1E4C58F600A577E7 /* smiley_92.png in Resources */,
 				B975069C1E4C58F600A577E7 /* smiley_0.png in Resources */,
 				B97506D01E4C58F600A577E7 /* smiley_51.png in Resources */,
-				B96D30371E716A62003BDFD0 /* FuLingOnline_aps.cer in Resources */,
+				B97CC07F1E7249B9000D548B /* FuLingOnline_aps.cer in Resources */,
 				B97507B01E4C58F700A577E7 /* 071@2x.png in Resources */,
 				B97507D01E4C58F700A577E7 /* active_page_image@2x.png in Resources */,
 				B97506C51E4C58F600A577E7 /* smiley_41.png in Resources */,
@@ -3065,8 +3137,10 @@
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
 				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
+				B97CC0981E72B238000D548B /* XYWdispatcher.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
+				B97CC0861E724A3A000D548B /* UISGAlertView.m in Sources */,
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
 				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
@@ -3084,6 +3158,7 @@
 				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
 				B9C6AC991E6548550003C50A /* FLXKCollapsableTableViewController.m in Sources */,
 				B9C6ACA11E6548550003C50A /* SGGenerateQRCodeVC.m in Sources */,
+				B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */,
 				B9C6ACAD1E6548550003C50A /* UIFont+FontAwesome.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
 				B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */,
@@ -3099,7 +3174,6 @@
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
 				B9C6ACAF1E6548550003C50A /* FLXKSegmentContainerViewController.m in Sources */,
-				B9C6AAE71E6547590003C50A /* UISGAlertView.m in Sources */,
 				B9C6AC9A1E6548550003C50A /* FLXKSectionHeaderView.m in Sources */,
 				B9C6ACB81E6548550003C50A /* OpinionzAlertView.m in Sources */,
 				B9C6ACAC1E6548550003C50A /* UIAwesomeButton.m in Sources */,

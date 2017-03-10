@@ -26,6 +26,7 @@
 
 //utilities
 #import "EntityGeneratorViewController.h"
+#import "FLXKAppNotification.h"
 
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
@@ -56,6 +57,12 @@
         [btn addTarget:self action:@selector(showEntityGenerator) forControlEvents:UIControlEventTouchUpInside];
         btn.backgroundColor=[UIColor yellowColor];
         [self.view addSubview:btn];
+        
+        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+        [btn1 addTarget:self action:@selector(requestLocationNotification) forControlEvents:UIControlEventTouchUpInside];
+        btn1.backgroundColor=[UIColor grayColor];
+        [self.view addSubview:btn1];
+
     }
 }
 
@@ -112,6 +119,10 @@
 }
 
 #pragma mark - Private Methods
+
+-(void)requestLocationNotification{
+          [[FLXKAppNotification new]  requestLocationNotification];
+}
 
 #pragma mark - Setup
 

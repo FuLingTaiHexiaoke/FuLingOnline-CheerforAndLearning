@@ -39,4 +39,8 @@
 
 +(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
 
+
+#pragma mark - Notification TEST AND WRAP
+
+- (void)requestLocationNotification;
 @end
