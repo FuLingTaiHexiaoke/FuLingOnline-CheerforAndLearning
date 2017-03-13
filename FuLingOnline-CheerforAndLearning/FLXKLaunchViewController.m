@@ -26,7 +26,6 @@
 
 //utilities
 #import "EntityGeneratorViewController.h"
-#import "FLXKAppNotification.h"
 
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
@@ -59,20 +58,36 @@
         [self.view addSubview:btn];
         
         UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
-        [btn1 addTarget:self action:@selector(requestLocationNotification) forControlEvents:UIControlEventTouchUpInside];
-        btn1.backgroundColor=[UIColor grayColor];
+        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+        [btn1 setTitle:@"showTabBar" forState:UIControlStateNormal];
+        btn1.backgroundColor=[UIColor yellowColor];
         [self.view addSubview:btn1];
-
+        
+        UIButton* btn2=[[UIButton alloc]initWithFrame:CGRectMake(150, 150, 50, 50)];
+        [btn2 addTarget:self action:@selector(showRouter_Launch_NotificationCenter) forControlEvents:UIControlEventTouchUpInside];
+        [btn2 setTitle:@"NotificationCenter" forState:UIControlStateNormal];
+        btn2.backgroundColor=[UIColor yellowColor];
+        [self.view addSubview:btn2];
+        
     }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    self.navigationController.navigationBarHidden=YES;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+-(void)dealloc{
+     NSLog(@"%@ 销毁",NSStringFromClass(self.class));
 }
 
 #pragma mark - Memory Warning
@@ -84,7 +99,7 @@
 
 #pragma mark - Public Methods
 
-+(FLXKLaunchViewController*)initialAppViewControllerFromDefaultStoryBoard{
++(UINavigationController*)initialAppViewControllerFromDefaultStoryBoard{
     return [[UIStoryboard storyboardWithName:NSStringFromClass([FLXKLaunchViewController class]) bundle:nil] instantiateInitialViewController];
 }
 
@@ -94,7 +109,7 @@
     [FLXKStyleManager setSharedStyleManager:manager];
     
     [self loadAppSettingFromBundle];
-    [window setRootViewController:self];
+    [window setRootViewController:self.navigationController];
     [window makeKeyAndVisible];
     //    [[UIApplication sharedApplication] keyWindow].tintColor = [UIColor orangeColor];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForegroundWithNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -120,27 +135,30 @@
 
 #pragma mark - Private Methods
 
--(void)requestLocationNotification{
-          [[FLXKAppNotification new]  requestLocationNotification];
-}
-
 #pragma mark - Setup
 
 - (void)loadMainUI {
     //    if ([self uiIsLoaded]) {
     //        return;
     //    }
-    UINavigationController* navc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    [self addChildViewController:navc];
-    [self.view addSubview:navc.view];
-    [navc.view mas_makeConstraints:^(MASConstraintMaker* make) {
-        make.top.and.bottom.and.leading.and.trailing.equalTo(self.view);
-    }];
-    //not clear
-    //Container View Controller how to implement
-    //if no transition then call this function immediately
-    [navc didMoveToParentViewController:self];
-//        [self showTweaksButton];
+    
+    
+    
+    //    UINavigationController* navc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+    //    [self addChildViewController:navc];
+    //    [self.view addSubview:navc.view];
+    //    [navc.view mas_makeConstraints:^(MASConstraintMaker* make) {
+    //        make.top.and.bottom.and.leading.and.trailing.equalTo(self.view);
+    //    }];
+    //    //not clear
+    //    //Container View Controller how to implement
+    //    //if no transition then call this function immediately
+    //    [navc didMoveToParentViewController:self];
+    
+    
+    
+    
+    //        [self showTweaksButton];
 }
 
 //1)get the image url from server
@@ -168,7 +186,7 @@
     
     //add click timing animation
     UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(self.view.right-50, 20, 30, 30)];
-    [btn addTarget:self action:@selector(loadMainUI) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(loadMainVC) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"跳过" forState:UIControlStateNormal];
     btn.titleLabel.font=[UIFont  systemFontOfSize:10];
     [self.view addSubview:btn];
@@ -253,6 +271,21 @@
 -(void)showEntityGenerator{
     EntityGeneratorViewController* entityGeneratorViewController=[[EntityGeneratorViewController alloc]initWithNibName:@"EntityGeneratorViewController" bundle:nil];
     [self presentViewController:entityGeneratorViewController animated:YES completion:nil];
+}
+
+- (void)loadMainVC {
+        UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+        [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
+//    Router(Router_FLXKTabBarController)
+}
+
+
+-(void)showTabBar{
+    Router(Router_FLXKTabBarController)
+    Router(Router_TabBar_FriendsSharing_NewsPublish)
+}
+-(void)showRouter_Launch_NotificationCenter{
+    Router(Router_Launch_NotificationCenter)
 }
 
 @end

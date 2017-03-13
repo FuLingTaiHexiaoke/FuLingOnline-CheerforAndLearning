@@ -24,22 +24,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-   self.tableView=[[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.navigationController.navigationBarHidden=NO;
+    self.tableView=[[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     [self.view addSubview:self.tableView];
     [self createHeaderView];
+    
+    if (DEBUG) {
+        
+        
+        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+        btn1.backgroundColor=[UIColor grayColor];
+        [self.view addSubview:btn1];
+        
+        
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
+    self.navigationController.navigationBarHidden=NO;
 }
-
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark - Memory Warning
@@ -52,11 +66,11 @@
 #pragma mark - Header View
 - (void)createHeaderView
 {
-//    NSArray *nib= [[NSBundle mainBundle]loadNibNamed:@"HomeHeaderView" owner:self options:nil];
+    //    NSArray *nib= [[NSBundle mainBundle]loadNibNamed:@"HomeHeaderView" owner:self options:nil];
     HomeHeaderView* _headerView  = [HomeHeaderView newInstance];
     
-//   HomeHeaderView* _headerView = [[HomeHeaderView alloc]initWithFrame:HEADER_INIT_FRAME];
-//    _headerView.backgroundColor=[UIColor yellowColor];
+    //   HomeHeaderView* _headerView = [[HomeHeaderView alloc]initWithFrame:HEADER_INIT_FRAME];
+    //    _headerView.backgroundColor=[UIColor yellowColor];
     [_tableView setTableHeaderView:_headerView];
 }
 
@@ -107,6 +121,10 @@
     
     
     return cell;
+}
+
+-(void)showTabBar{
+    Router(Router_TabBar_FriendsSharing_NewsPublish)
 }
 
 

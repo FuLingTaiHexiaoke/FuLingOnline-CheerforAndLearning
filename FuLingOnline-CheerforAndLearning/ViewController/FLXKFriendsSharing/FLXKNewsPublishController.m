@@ -116,6 +116,7 @@
 }
 
 -(void)dealloc{
+      NSLog(@"%@ 销毁",NSStringFromClass(self.class));
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 

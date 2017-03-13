@@ -10,7 +10,7 @@
 
 @interface FLXKLaunchViewController : UIViewController
 
-+(FLXKLaunchViewController*)initialAppViewControllerFromDefaultStoryBoard;
++(UINavigationController*)initialAppViewControllerFromDefaultStoryBoard;
 
 - (void)launchAppInWindow:(UIWindow*)window;
 

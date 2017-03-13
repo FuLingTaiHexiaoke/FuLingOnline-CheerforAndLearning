@@ -56,7 +56,7 @@
         NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, leftItems)]];
         FLXKEmotionCollectionView*  collectionView=nil;
         collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:frame withEmotionItems:nil emotionGroup:emotionGroup];
-             NSLog(@"FLXKEmotionCollectionView.frame:%@",NSStringFromCGRect(frame) );
+//             NSLog(@"FLXKEmotionCollectionView.frame:%@",NSStringFromCGRect(frame) );
         //        if (i==0) {
         //        collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
         //        }

@@ -13,6 +13,7 @@
 //subviews
 #import "FLXKNavigationTitleSegmentsView.h"
 //utilities
+#import "Masonry.h"
 
 @interface FLXKNavigationTitleViewController ()<UIScrollViewDelegate>
 
@@ -28,20 +29,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
-    
-    //add navigation title view
-    [self setupNavigationTitleSegmentsView];
-    
-    //setup a scrollview container
-    //add children to scrollview container
-    [self setupScrollViewWithVCs:self.viewControllers];
-    
-    NSLog(@"self.view.frame 3 %@", NSStringFromCGRect( self.view.frame));
-
+//            //add navigation title view
+//        [self setupNavigationTitleSegmentsView];
+//    
+//        //setup a scrollview container
+//        //add children to scrollview container
+//        [self setupScrollViewWithVCs:self.viewControllers];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"self.view.frame 4 %@", NSStringFromCGRect( self.view.frame));
+    //      //add navigation title view
+    [self setupNavigationTitleSegmentsView];
+    //setup a scrollview container
+    //add children to scrollview container
+    [self setupScrollViewWithVCs:self.viewControllers];
 }
 
 #pragma mark -
@@ -68,10 +69,6 @@
     FLXKNavigationTitleViewController* vc=[[FLXKNavigationTitleViewController alloc ]init];
     vc.viewControllerTitles=viewControllerTitles;
     vc.viewControllers=viewControllers;
-    //    vc.view.frame=parentVC.view.frame;
-    [parentVC addChildViewController:vc];
-    vc.view.frame=parentVC.view.bounds;
-    [parentVC.view addSubview:vc.view];
     return vc;
 }
 
@@ -87,7 +84,7 @@
     _titleView.titleSelectedColor= [UIColor whiteColor];
     _titleView.bottomLineColor=[UIColor whiteColor];
     _titleView.bottomLineHeight=3;
-
+    
     __weak __typeof(self) weakSelf=self;
     _titleView.titleSegmentSelectedBlock=^(NSInteger selectedIndex){
         [UIView animateWithDuration:0.3 delay:0.0 usingSpringWithDamping:1.0f initialSpringVelocity:15.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -95,35 +92,43 @@
         } completion:^(BOOL finished) {
             
         }];
-        
-        
-//        [UIView animateWithDuration:0.3 animations:^{
-//            weakSelf.scrollView.contentOffset =CGPointMake((selectedIndex*SCREEN_WIDTH), 0);
-//        }];
-//              [weakSelf.scrollView setContentOffset:CGPointMake((selectedIndex*SCREEN_WIDTH), 0) animated:NO];
-//        CGRect frame=weakSelf.scrollView.frame;
-//        frame.origin.x=selectedIndex*SCREEN_WIDTH;
-//        [weakSelf.scrollView   scrollRectToVisible:frame animated:YES];
     };
     self.parentViewController.navigationItem.titleView=_titleView;
-    
 }
 
+
 -(void)setupScrollViewWithVCs:(NSArray<UIViewController*>*)viewControllers{
-    _scrollView=[[UIScrollView alloc]initWithFrame:self.view.frame];
+    NSLog(@"self.view.frame scrollView1 %@", NSStringFromCGRect( self.view.frame));
+    _scrollView=[[UIScrollView alloc]init];
+    _scrollView.backgroundColor=[UIColor blueColor];
     _scrollView.delegate=self;
     _scrollView.pagingEnabled=YES;
-    [self.view addSubview:_scrollView];
+    _scrollView.showsVerticalScrollIndicator=NO;
+    _scrollView.showsHorizontalScrollIndicator=NO;
     
-    //add children to _scrollView container
-    __block   CGRect frame=_scrollView.frame;
-    CGFloat width= _scrollView.frame.size.width;
+    [self.view addSubview:_scrollView];
+    [_scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.top);
+        make.left.mas_equalTo(self.view.left);
+        make.bottom.mas_equalTo(self.view.bottom);
+        make.width.mas_equalTo(SCREEN_WIDTH);
+    }];
+    [self.view setNeedsLayout];
+    [self.view layoutIfNeeded];
+        NSLog(@"self.view.frame scrollView2 %@", NSStringFromCGRect( self.scrollView.frame));
+    CGFloat scrollWidth=CGRectGetWidth(self.scrollView.frame);
+    
     [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:obj];
-        frame.origin.x=idx*width;
-        obj.view.frame=frame;
         [_scrollView addSubview:obj.view];
+        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.scrollView.top);
+            make.left.mas_equalTo(self.scrollView.left).offset(idx*scrollWidth);
+            make.bottom.mas_equalTo(self.scrollView.bottom);
+            make.width.mas_equalTo(scrollWidth);
+        }];
     }];
-    _scrollView.contentSize=CGSizeMake(width*viewControllers.count, _scrollView.frame.size.height);;
+    
+    _scrollView.contentSize=CGSizeMake(scrollWidth*viewControllers.count,0);;
 }
 @end

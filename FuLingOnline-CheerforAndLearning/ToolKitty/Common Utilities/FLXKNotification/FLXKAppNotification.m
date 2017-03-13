@@ -111,21 +111,11 @@
                         content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
                     }
                 }
-                //        UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-                //        [alert show];
-                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
                         [AudioServices playSystemSoundID:1002];
                     }
                     [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-                    //                    if ([FLXKAppNotification getCurrentVC]) {
-                    //                        [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
-                    //                    }
-                    //                    else{
-                    //                        [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-                    //
-                    //                    }
                 });
             }
         }
@@ -182,18 +172,36 @@
         [AudioServices playSystemSoundID:1002];
         [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
         //                    [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
-        
-        //        if ([FLXKAppNotification getCurrentVC]) {
-        //            [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
-        //        }
-        //        else{
-        //            [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-        //        }
-        //        UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-        //        [alert show];
     }
     else {
         
+        //  UNNotificationResponse 是普通按钮的Response
+        NSString* actionIdentifierStr = response.actionIdentifier;
+        if (actionIdentifierStr) {
+            if ([actionIdentifierStr isEqualToString:@"IdentifierJoinAppA"]) {
+                //  do anything
+            } else if ([actionIdentifierStr isEqualToString:@"IdentifierJoinAppB"]) {
+                [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+            }
+        }
+        
+        //  UNTextInputNotificationResponse 是带文本输入框按钮的Response
+        if ([response isKindOfClass:[UNTextInputNotificationResponse class]]) {
+            NSString* userSayStr = [(UNTextInputNotificationResponse *)response userText];
+            if (userSayStr) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [[[UIAlertView alloc] initWithTitle:@"UNTextInputNotificationResponse" message:userSayStr delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+                });
+            }
+        }
+        
+        /*
+         UNNotificationContent* content = response.notification.request.content;
+         NSDictionary* userInfo = response.notification.request.content.userInfo;
+         UNNotificationAttachment* attachments = response.notification.request.content.attachments;
+         */
+        
+        //        completionHandler();
         
     }
     
@@ -264,17 +272,8 @@
             content = [message_json objectForKey:@"content"];  //  收到推送的消息内容
         }
         [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-        //                UISGAlertView *alert = [UISGAlertView alertViewWithTitle:title delegate:nil contentTitle:content alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
-        //                [alert show];
         //                    [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
-        
-        //        if ([FLXKAppNotification getCurrentVC]) {
-        //            [FLXKAppNotification  showAlertWithTitle:title message:content cancelButtonTitle:@"确定" withPresentingController:[FLXKAppNotification getCurrentVC]];
-        //        }
-        //        else{
-        //            [[[UIAlertView alloc] initWithTitle:title message:content delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
-        //
-        //        }
+
     }
 }
 
@@ -343,6 +342,7 @@
     badge = badge >= 0 ? badge : 0;
     [UIApplication sharedApplication].applicationIconBadgeNumber = badge;
 }
+
 
 //获取当前屏幕显示的viewcontroller
 + (UIViewController *)getCurrentVC

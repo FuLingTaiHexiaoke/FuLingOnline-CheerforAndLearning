@@ -18,7 +18,7 @@
 #import "BaiduMobStat.h" 
 
 //utilities
-#import "XYWdispatcher.h"
+#import "FLXKAPPRouter.h"
 
 @interface AppDelegate ()
 
@@ -65,8 +65,8 @@
     
     //收集AppLaunchDate，AppInstallDateIfNil，logAppNumberOfDaysSinceInstall
     //初始化RootView（广告，动画引导页面等）
-    FLXKLaunchViewController* vc=[FLXKLaunchViewController initialAppViewControllerFromDefaultStoryBoard];
-     [vc launchAppInWindow:self.window];
+    UINavigationController* navigationVC=[FLXKLaunchViewController initialAppViewControllerFromDefaultStoryBoard];
+    [(FLXKLaunchViewController*)navigationVC.topViewController launchAppInWindow:self.window];
     //初始化基本控件Appearance
     //
     //
@@ -136,7 +136,7 @@
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    if ([XYWdispatcher HandleOpenURL:url withScheme:@"XYWdispatcher"]) {
+    if ([FLXKAPPRouter openURL:url withScheme:@"FuLingOnLineScheme"]) {
         return YES;
     }else{//其他sdk代码
         return NO;

@@ -206,7 +206,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         self.lastEmotionViewHeight=self.frame.size.height;
         [self reloadPages];
         self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
-        NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+//        NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     }
 }
 
@@ -371,7 +371,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 -(void)deleteElementInTextView{
     NSRange range = self.editingTextView.selectedRange;
-    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
+//    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
     if (self.editingTextView.text.length > 0) {
         NSUInteger location  = self.editingTextView.selectedRange.location;
         NSString *head = [self.editingTextView.text substringToIndex:location];
@@ -418,7 +418,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 -(void)setupUIPageControl{
     self.pageControl = [[KYAnimatedPageControl alloc]
                         initWithFrame:CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height)];
-     NSLog(@"pageControl.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+//     NSLog(@"pageControl.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     self.pageControl.pageCount = 8;
     self.pageControl.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.pageControl.selectedColor = [UIColor colorWithWhite:0.6 alpha:1];
@@ -429,7 +429,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.pageControl.swipeEnable = YES;
     [self.pageControlPlaceholder addSubview:self.pageControl];
     self.pageControl.didSelectIndexBlock = ^(NSInteger index) {
-        NSLog(@"Did Selected index : %ld", (long)index);
+//        NSLog(@"Did Selected index : %ld", (long)index);
     };
 }
 
@@ -477,13 +477,13 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     float  keyboadStartingHeight =Screen_Height - keyboardStartingFrame.origin.y;
     float  keyboadEndingHeight = Screen_Height- keyboardEndingFrame.origin.y;
     
-    NSLog(@"keyboardStartingFrame %@",NSStringFromCGRect(keyboardStartingFrame) );
-    NSLog(@"keyboardEndingFrame %@",NSStringFromCGRect(keyboardEndingFrame) );
-    NSLog(@"self.frame:%@",NSStringFromCGRect(self.frame) );
-        NSLog(@"self.emotionContainerScrollViewframe:%@",NSStringFromCGRect(self.emotionContainerScrollView.frame) );
-    NSLog(@"keyboadStartingHeight: %f",keyboadStartingHeight);
-    NSLog(@"keyboadEndingHeight: %f",keyboadEndingHeight);
-    NSLog(@"_emotionContainerScrollViewHeight: %f",_emotionContainerScrollViewHeight.constant);
+//    NSLog(@"keyboardStartingFrame %@",NSStringFromCGRect(keyboardStartingFrame) );
+//    NSLog(@"keyboardEndingFrame %@",NSStringFromCGRect(keyboardEndingFrame) );
+//    NSLog(@"self.frame:%@",NSStringFromCGRect(self.frame) );
+//        NSLog(@"self.emotionContainerScrollViewframe:%@",NSStringFromCGRect(self.emotionContainerScrollView.frame) );
+//    NSLog(@"keyboadStartingHeight: %f",keyboadStartingHeight);
+//    NSLog(@"keyboadEndingHeight: %f",keyboadEndingHeight);
+//    NSLog(@"_emotionContainerScrollViewHeight: %f",_emotionContainerScrollViewHeight.constant);
     
     
     //I do not why this happened,if you know tell me.

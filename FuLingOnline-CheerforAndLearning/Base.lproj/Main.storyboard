@@ -62,7 +62,7 @@
                             <constraint firstItem="gpp-NR-I7J" firstAttribute="leading" secondItem="DRJ-Ug-IpY" secondAttribute="leading" id="plx-Ol-yOR"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="tabbar-explore" id="SDX-xW-kTq"/>
+                    <tabBarItem key="tabBarItem" title="涪友圈" image="tabbar-explore" id="SDX-xW-kTq"/>
                     <navigationItem key="navigationItem" title="Title" id="iYp-t9-bqQ">
                         <barButtonItem key="rightBarButtonItem" title="tab" id="pSC-bm-1zf">
                             <connections>
@@ -105,7 +105,7 @@
             <objects>
                 <navigationController id="wY1-Lk-oJv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="p76-AI-r52"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iqV-zu-kup">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqV-zu-kup">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -120,7 +120,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="gGW-hv-03w">
             <objects>
-                <tabBarController id="etB-Oy-FnC" customClass="FLXKTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="stid_FLXKTabBarController" id="etB-Oy-FnC" customClass="FLXKTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="e11-Om-vgN">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="3Z9-qg-JqP"/>
                     </navigationItem>
@@ -147,7 +147,7 @@
             <objects>
                 <navigationController id="up3-kB-Vwn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="C8y-u9-aj1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpe-bq-xZ9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-bq-xZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -334,7 +334,7 @@
         <!--News Publish Controller-->
         <scene sceneID="U73-DS-FUT">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="rAo-Cr-03N" customClass="FLXKNewsPublishController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stid_FLXKNewsPublishController" hidesBottomBarWhenPushed="YES" id="rAo-Cr-03N" customClass="FLXKNewsPublishController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hFw-zG-YDv"/>
                         <viewControllerLayoutGuide type="bottom" id="2eO-vq-5wd"/>

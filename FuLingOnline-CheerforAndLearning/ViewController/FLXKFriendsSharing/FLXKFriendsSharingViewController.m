@@ -11,6 +11,7 @@
 //utilites
 #import "UIViewController+Extensions.h"
 #import "FLXKEmotionBoard.h"
+#import "Masonry.h"
 
 //child viewController
 #import "FLXKNavigationTitleViewController.h"
@@ -18,6 +19,7 @@
 
 //subviews
 #import "FLXKNavigationTitleSegmentsView.h"
+
 
 
 @interface FLXKFriendsSharingViewController ()
@@ -34,46 +36,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self registerGestureForResignViewEditing];
+    self.navigationController.navigationBarHidden=NO;
     
+    [self registerGestureForResignViewEditing];
     
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
     for (int i=0; i<3; i++) {
-//        FLXSuggestedSharingTableViewController* vc= [[FLXSuggestedSharingTableViewController alloc]init];
-        FLXSuggestedSharingTableViewController* vc=(        FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
-
-//        vc.view.backgroundColor=[UIColor colorWithWhite:0.5 alpha:0.1*i];
+        FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
         [viewControllers addObject:vc];
     }
     
     //add child viewController
-    NSLog(@"self.view.frame 1 %@", NSStringFromCGRect( self.view.frame));
-//    _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"test1",@"test2",@"test3"] viewControllers:viewControllers parentVC:self];
-//        [self addChildViewController:_childVC];
-////        _childVC=[[FLXKNavigationTitleViewController alloc]init];
-//    _childVC.view.backgroundColor=[UIColor whiteColor];
-////    _childVC.viewControllers=viewControllers;
-////    _childVC.viewControllerTitles= @[@"test1",@"test2",@"test3"];
-//    [self addChildViewController:_childVC];
-//    _childVC.view.frame=self.view.frame;
-//    [self.view addSubview:_childVC.view];
-    
-    //    //add navigation title view
-    //    FLXKNavigationTitleSegmentsView* a= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 0, self.view.width-100, 44)];
-    //    a.viewControllerTitles= @[@"test1",@"test2",@"test3"];
-    //    self.navigationItem.titleView=a;
-    
-    //    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithReload:YES editingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
+    NSLog(@"self.view.frame viewDidLoad %@", NSStringFromCGRect( self.view.frame));
+    _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"test1",@"test2",@"test3"] viewControllers:viewControllers parentVC:self];
+    [self addChildViewController:_childVC];
+    [self.view addSubview:_childVC.view];
+    [_childVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+                    make.left.mas_equalTo(self.view.left);
+                    make.bottom.mas_equalTo(self.view.bottom);
+                    make.width.mas_equalTo(self.view.width);
+    }];
+
+
+    if (DEBUG) {
+        
+        
+        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+        btn1.backgroundColor=[UIColor grayColor];
+        [self.view addSubview:btn1];
+    }
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
-    NSLog(@"self.view.frame 2 %@", NSStringFromCGRect( self.view.frame));
-
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
-//        [self.view addSubview:_childVC.view];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"self.view.frame viewDidAppear %@", NSStringFromCGRect( self.view.frame));
+    [super viewDidAppear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+}
+
+-(void)dealloc{
+    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,5 +102,9 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+-(void)showTabBar{
+    Router(Router_TabBar_FriendsSharing_NewsPublish)
+}
 
 @end

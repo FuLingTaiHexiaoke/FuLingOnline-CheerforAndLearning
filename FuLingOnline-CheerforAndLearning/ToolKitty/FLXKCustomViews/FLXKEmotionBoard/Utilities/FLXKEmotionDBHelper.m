@@ -44,7 +44,7 @@ static FLXKEmotionDBHelper *_instance = nil;
         [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
     }
     NSString *dbpath = [docsdir stringByAppendingPathComponent:@"FLXKEmotionDB.sqlite"];
-    NSLog(@"FLXKEmotionDB Directory:\n%@",dbpath);
+//    NSLog(@"FLXKEmotionDB Directory:\n%@",dbpath);
     
     //check if already sqlite exist
         BOOL dbExit =[filemanage fileExistsAtPath:dbpath];
