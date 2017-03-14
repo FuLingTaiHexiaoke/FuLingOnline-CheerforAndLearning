@@ -52,10 +52,10 @@
     [self addChildViewController:_childVC];
     [self.view addSubview:_childVC.view];
     [_childVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
-                    make.left.mas_equalTo(self.view.left);
-                    make.bottom.mas_equalTo(self.view.bottom);
-                    make.width.mas_equalTo(self.view.width);
+        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
+        make.left.mas_equalTo(self.view.mas_left);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.right.mas_equalTo(self.view.mas_right);
     }];
 
 

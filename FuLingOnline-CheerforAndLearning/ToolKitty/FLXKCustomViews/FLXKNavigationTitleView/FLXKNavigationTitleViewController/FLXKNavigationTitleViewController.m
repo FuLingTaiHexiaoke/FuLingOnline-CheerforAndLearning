@@ -108,10 +108,10 @@
     
     [self.view addSubview:_scrollView];
     [_scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.top);
-        make.left.mas_equalTo(self.view.left);
-        make.bottom.mas_equalTo(self.view.bottom);
-        make.width.mas_equalTo(SCREEN_WIDTH);
+        make.top.mas_equalTo(self.view.mas_top);
+        make.left.mas_equalTo(self.view.mas_left);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
+        make.right.mas_equalTo(self.view.mas_right);
     }];
     [self.view setNeedsLayout];
     [self.view layoutIfNeeded];
@@ -122,10 +122,10 @@
         [self addChildViewController:obj];
         [_scrollView addSubview:obj.view];
         [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.scrollView.top);
+            make.top.mas_equalTo(self.view.mas_top);
             make.left.mas_equalTo(self.scrollView.left).offset(idx*scrollWidth);
-            make.bottom.mas_equalTo(self.scrollView.bottom);
-            make.width.mas_equalTo(scrollWidth);
+            make.bottom.mas_equalTo(self.view.mas_bottom);
+            make.right.mas_equalTo(self.view.mas_right);
         }];
     }];
     
