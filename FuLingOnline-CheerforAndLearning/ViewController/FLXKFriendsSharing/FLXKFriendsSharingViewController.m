@@ -47,7 +47,7 @@
     }
     
     //add child viewController
-    _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"test1",@"test2",@"test3"] viewControllers:viewControllers parentVC:self];
+    _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"话题",@"推荐",@"达人"] viewControllers:viewControllers parentVC:self];
     [self addChildViewController:_childVC];
     [self.view addSubview:_childVC.view];
     [_childVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -68,7 +68,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBarTintColor:RGBA(244, 126, 37, 1.0)];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
 }
 

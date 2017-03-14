@@ -80,7 +80,7 @@
 #pragma mark -
 #pragma mark - Private Methods
 -(void)setupNavigationTitleSegmentsView{
-    _titleView= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 10, self.view.width-100, 34)];
+    _titleView= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 10, 150,FBTweakValue(@"NavTitle", @"titleView", @"titleViewH", 36.0))];
     _titleView.viewControllerTitles=_viewControllerTitles;
     _titleView.currentTitleIndex= 1;
     _titleView.backgroundColor= [UIColor orangeColor];
