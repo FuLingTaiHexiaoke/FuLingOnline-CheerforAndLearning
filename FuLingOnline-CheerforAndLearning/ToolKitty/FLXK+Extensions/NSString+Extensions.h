@@ -13,4 +13,7 @@
 - (BOOL)isPureInt:(NSString*)string;
 //判断是否为浮点形：
 - (BOOL)isPureFloat:(NSString*)string;
+
++ (NSString *)randomText;
+
 @end

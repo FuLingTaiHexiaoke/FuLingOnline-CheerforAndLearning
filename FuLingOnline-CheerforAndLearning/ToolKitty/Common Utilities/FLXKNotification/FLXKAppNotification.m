@@ -52,17 +52,22 @@
             } else {
                 // 点击不允许
                 NSLog(@"注册失败");
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[[UIAlertView alloc] initWithTitle:@"提示" message:@"应用未允许推送通知，请去-> [设置 - 团.在一起 - 通知 - ] 打开允许推送通知" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+                });
             }
         }];
     }else if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")){
         //iOS8 - iOS10
         // [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge categories:nil]];
+         [FLXKAppNotification isAllowedNotification];
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil]];
         [application registerForRemoteNotifications];
         
     }else if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
         //iOS8系统以下
         //[application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+          [FLXKAppNotification isAllowedNotification];
         [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
     }
 }
@@ -388,6 +393,23 @@
 }
 
 
+
++ (BOOL)isAllowedNotification {
+    
+    if (iOS8Later) { //iOS8以上包含iOS8
+        if ([[UIApplication sharedApplication] currentUserNotificationSettings].types  == UIRemoteNotificationTypeNone) {
+            [[[UIAlertView alloc] initWithTitle:@"提示" message:@"应用未允许推送通知，请去-> [设置 - 团.在一起 - 通知 - ] 打开允许推送通知" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+            return NO;
+        }
+    }else{ // ios7 一下
+        if ([[UIApplication sharedApplication] enabledRemoteNotificationTypes]  == UIRemoteNotificationTypeNone) {
+            [[[UIAlertView alloc] initWithTitle:@"提示" message:@"应用未允许推送通知，请去-> [设置 - 团.在一起 - 通知 - ] 打开允许推送通知" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+            return NO;
+        }
+    }
+    return YES;
+}
+
 #pragma mark -
 #pragma mark - Notification TEST AND WRAP
 
@@ -485,14 +507,7 @@
     //把通知加到UNUserNotificationCenter, 到指定触发点会被触发
     [[UNUserNotificationCenter currentNotificationCenter] addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
     }];
-    
-    
-    
-    
-    
-    
-    
-    
+  
 }
 
 @end

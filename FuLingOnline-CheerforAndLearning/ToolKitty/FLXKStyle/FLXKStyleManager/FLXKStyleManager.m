@@ -18,20 +18,28 @@ static FLXKStyleManager* _styleManager = nil;
 
 - (void)applyStyleToWindow:(UIWindow*)window {
     window.backgroundColor = [UIColor whiteColor];
+#pragma mark - UIButton
     [[UIButton appearance] setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
     [[UIButton appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"] forState:UIControlStateNormal];
     [[UIButton appearance] setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     
-//    UIImage* backChevron = [UIImage wmf_imageFlippedForRTLLayoutDirectionNamed:@"chevron-left"];
-//    [[UINavigationBar appearance] setBackIndicatorImage:backChevron];
-//    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backChevron];
+#pragma mark - UINavigationBar
     
-    [[UINavigationBar appearance] setTintColor:[UIColor colorWithRed:0.305 green:0.305 blue:0.296 alpha:1]];
+    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
+//    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
     [[UINavigationBar appearance] setTranslucent:YES];
-    [[UITabBar appearance] setTranslucent:NO];
     
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];
-    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tabbar-shadow"]];
+//    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"btn_navigation_back"]];
+//    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"btn_navigation_back"]];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+//    [[UIBarButtonItem appearance] setBackButtonBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+//    [[UIBarButtonItem appearance] setBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+
+    
+#pragma mark - UITabBar
+    [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
+    //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];
+    //    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tabbar-shadow"]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor customGray] }
                                              forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor customRed] }
@@ -40,6 +48,7 @@ static FLXKStyleManager* _styleManager = nil;
     [[UITabBar appearance] setTintColor:[UIColor customRed]];
     [[UIBarButtonItem appearanceWhenContainedIn:[UIToolbar class], nil] setTintColor:[UIColor blueTintColor]];
     
+#pragma mark - UISwitch
     [[UISwitch appearance] setOnTintColor:[UIColor customGreen]];
 }
 @end

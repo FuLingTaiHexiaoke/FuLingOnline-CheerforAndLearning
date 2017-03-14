@@ -47,7 +47,6 @@
     }
     
     //add child viewController
-    NSLog(@"self.view.frame viewDidLoad %@", NSStringFromCGRect( self.view.frame));
     _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"test1",@"test2",@"test3"] viewControllers:viewControllers parentVC:self];
     [self addChildViewController:_childVC];
     [self.view addSubview:_childVC.view];
@@ -57,11 +56,8 @@
         make.bottom.mas_equalTo(self.view.mas_bottom);
         make.right.mas_equalTo(self.view.mas_right);
     }];
-
-
+    
     if (DEBUG) {
-        
-        
         UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
         [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
         btn1.backgroundColor=[UIColor grayColor];
@@ -72,6 +68,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:RGBA(244, 126, 37, 1.0)];
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
 }
 
@@ -80,8 +77,14 @@
     [super viewDidAppear:animated];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBarTintColor:nil];
+}
+
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
+    //     [[UINavigationBar appearance] setBarTintColor:nil];
 }
 
 -(void)dealloc{

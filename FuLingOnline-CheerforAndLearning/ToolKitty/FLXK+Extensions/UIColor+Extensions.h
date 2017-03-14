@@ -10,6 +10,8 @@
 
 @interface UIColor (Extensions)
 
++ (UIColor *)randomColor;
+
 + (UIColor *)colorWithHex:(long)hexColor;
 
 + (UIColor *)colorWithHex:(long)hexColor alpha:(CGFloat)alpha;

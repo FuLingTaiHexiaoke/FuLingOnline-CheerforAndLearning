@@ -76,6 +76,7 @@
 		B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7621DE58AFC00598437 /* FLXKStyleManager.m */; };
 		B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7721DE59B2600598437 /* HomeNewsViewController.m */; };
 		B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B948CBE91DD5C7A800E6ED93 /* Settings.bundle */; };
+		B949C2A41E77F83300ECD21D /* FuLingOnLineSampleImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B949C2A31E77F83300ECD21D /* FuLingOnLineSampleImages.xcassets */; };
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
 		B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */ = {isa = PBXBuildFile; fileRef = B94C60271DF93D25005739A6 /* https_fulingonline.cer */; };
@@ -713,6 +714,7 @@
 		B941F7711DE59B2600598437 /* HomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsViewController.h; sourceTree = "<group>"; };
 		B941F7721DE59B2600598437 /* HomeNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNewsViewController.m; sourceTree = "<group>"; };
 		B948CBE91DD5C7A800E6ED93 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B949C2A31E77F83300ECD21D /* FuLingOnLineSampleImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FuLingOnLineSampleImages.xcassets; sourceTree = "<group>"; };
 		B94BD6881DAE40560094CA9D /* FLXKLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLaunchViewController.h; sourceTree = "<group>"; };
 		B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLaunchViewController.m; sourceTree = "<group>"; };
 		B94BD68F1DAE480C0094CA9D /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
@@ -1402,6 +1404,7 @@
 		B90025931DAE1EB100B34438 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B949C2A31E77F83300ECD21D /* FuLingOnLineSampleImages.xcassets */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -3341,6 +3344,7 @@
 				B97506F61E4C58F600A577E7 /* smiley_86.png in Resources */,
 				B97507491E4C58F600A577E7 /* 020.png in Resources */,
 				B97507991E4C58F700A577E7 /* 060.png in Resources */,
+				B949C2A41E77F83300ECD21D /* FuLingOnLineSampleImages.xcassets in Resources */,
 				B9C6ACB31E6548550003C50A /* OpinionzAlertIconInfo.png in Resources */,
 				B975075D1E4C58F600A577E7 /* 030.png in Resources */,
 				B97507C31E4C58F700A577E7 /* 081.png in Resources */,
@@ -4129,6 +4133,7 @@
 				B90CD9A01E76468D00278EDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B90CD9B61E76475200278EDB /* Build configuration list for PBXNativeTarget "NotificationContentExtensionDefault" */ = {
 			isa = XCConfigurationList;
@@ -4137,6 +4142,7 @@
 				B90CD9B81E76475200278EDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B90CD9CB1E76476600278EDB /* Build configuration list for PBXNativeTarget "NotificationContentExtensionDefaultHidden" */ = {
 			isa = XCConfigurationList;
@@ -4145,6 +4151,7 @@
 				B90CD9CD1E76476600278EDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B90CD9E01E76477600278EDB /* Build configuration list for PBXNativeTarget "NotificationContentExtensionContentFeedback" */ = {
 			isa = XCConfigurationList;
@@ -4153,6 +4160,7 @@
 				B90CD9E21E76477600278EDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9D854AD1DAC8BE2001AD79C /* Build configuration list for PBXProject "FuLingOnline-CheerforAndLearning" */ = {
 			isa = XCConfigurationList;

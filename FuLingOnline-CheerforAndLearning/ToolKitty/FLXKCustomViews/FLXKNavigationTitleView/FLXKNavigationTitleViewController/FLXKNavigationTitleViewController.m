@@ -29,20 +29,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
-//            //add navigation title view
-//        [self setupNavigationTitleSegmentsView];
-//    
-//        //setup a scrollview container
-//        //add children to scrollview container
-//        [self setupScrollViewWithVCs:self.viewControllers];
+                //add navigation title view
+            [self setupNavigationTitleSegmentsView];
+    
+            //setup a scrollview container
+            //add children to scrollview container
+            [self setupScrollViewWithVCs:self.viewControllers];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    //      //add navigation title view
-    [self setupNavigationTitleSegmentsView];
-    //setup a scrollview container
-    //add children to scrollview container
-    [self setupScrollViewWithVCs:self.viewControllers];
+//    //      //add navigation title view
+//    [self setupNavigationTitleSegmentsView];
+//    //setup a scrollview container
+//    //add children to scrollview container
+//    [self setupScrollViewWithVCs:self.viewControllers];
+       NSLog(@" self.view.frame  %@", NSStringFromCGRect(  self.view.frame));
+    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@" obj.view.frame  %@", NSStringFromCGRect(  obj.view.frame));
+    }];
 }
 
 #pragma mark -
@@ -80,7 +84,7 @@
     _titleView.viewControllerTitles=_viewControllerTitles;
     _titleView.currentTitleIndex= 1;
     _titleView.backgroundColor= [UIColor orangeColor];
-    _titleView.titleColor= [UIColor orangeColor];
+    _titleView.titleColor= [UIColor colorWithRed:169/255.0 green:71/255.0 blue:18/255.0 alpha:1.0];
     _titleView.titleSelectedColor= [UIColor whiteColor];
     _titleView.bottomLineColor=[UIColor whiteColor];
     _titleView.bottomLineHeight=3;
@@ -98,37 +102,51 @@
 
 
 -(void)setupScrollViewWithVCs:(NSArray<UIViewController*>*)viewControllers{
-    NSLog(@"self.view.frame scrollView1 %@", NSStringFromCGRect( self.view.frame));
     _scrollView=[[UIScrollView alloc]init];
     _scrollView.backgroundColor=[UIColor blueColor];
     _scrollView.delegate=self;
     _scrollView.pagingEnabled=YES;
     _scrollView.showsVerticalScrollIndicator=NO;
     _scrollView.showsHorizontalScrollIndicator=NO;
-    
     [self.view addSubview:_scrollView];
-    [_scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top);
-        make.left.mas_equalTo(self.view.mas_left);
-        make.bottom.mas_equalTo(self.view.mas_bottom);
-        make.right.mas_equalTo(self.view.mas_right);
-    }];
-    [self.view setNeedsLayout];
-    [self.view layoutIfNeeded];
-        NSLog(@"self.view.frame scrollView2 %@", NSStringFromCGRect( self.scrollView.frame));
-    CGFloat scrollWidth=CGRectGetWidth(self.scrollView.frame);
     
+    __block   UIView *lastView= nil;
     [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self addChildViewController:obj];
         [_scrollView addSubview:obj.view];
         [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view.mas_top);
-            make.left.mas_equalTo(self.scrollView.left).offset(idx*scrollWidth);
-            make.bottom.mas_equalTo(self.view.mas_bottom);
-            make.right.mas_equalTo(self.view.mas_right);
+            make.top.mas_equalTo(self.scrollView.mas_top);
+            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
+            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
+            make.width.mas_equalTo(self.scrollView.mas_width);
+            make.height.mas_equalTo(self.scrollView.mas_height);
         }];
+        lastView= obj.view;
     }];
-    
-    _scrollView.contentSize=CGSizeMake(scrollWidth*viewControllers.count,0);;
+    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+        // 让scrollview的contentSize随着内容的增多而变化
+             make.leading.mas_equalTo(self.scrollView.mas_leading);
+        make.trailing.mas_equalTo(lastView.mas_trailing);
+    }];
 }
+
+- (UIColor *)randomColor {
+    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+}
+
+- (NSString *)randomText {
+    CGFloat length = arc4random() % 150 + 5;
+    
+    NSMutableString *str = [[NSMutableString alloc] init];
+    for (NSUInteger i = 0; i < length; ++i) {
+        [str appendString:@"测试数据很长，"];
+    }
+    
+    return str;
+}
+
 @end

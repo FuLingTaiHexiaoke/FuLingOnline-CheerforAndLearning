@@ -40,4 +40,16 @@
     float val;
     return[scan scanFloat:&val] && [scan isAtEnd];
 }
+
++ (NSString *)randomText {
+    CGFloat length = arc4random() % 150 + 5;
+    
+    NSMutableString *str = [[NSMutableString alloc] init];
+    for (NSUInteger i = 0; i < length; ++i) {
+        [str appendString:@" 测试数据，"];
+    }
+    
+    return str;
+}
+
 @end

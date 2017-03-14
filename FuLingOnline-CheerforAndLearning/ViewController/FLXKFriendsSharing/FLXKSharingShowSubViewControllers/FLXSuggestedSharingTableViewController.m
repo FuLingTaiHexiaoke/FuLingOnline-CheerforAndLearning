@@ -83,6 +83,7 @@
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reID_cell_SuggestedSharing" ];
     }
     // Configure the cell...
+    cell.backgroundColor=[UIColor yellowColor];
     cell.textLabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
 
     return cell;
