@@ -145,9 +145,9 @@
         <!--Item-->
         <scene sceneID="2FK-kj-Zvb">
             <objects>
-                <navigationController id="up3-kB-Vwn" sceneMemberID="viewController">
+                <navigationController id="up3-kB-Vwn" customClass="FLXKTabBarBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="C8y-u9-aj1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpe-bq-xZ9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-bq-xZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -399,7 +399,7 @@
         <!--News Publish Controller-->
         <scene sceneID="U73-DS-FUT">
             <objects>
-                <viewController storyboardIdentifier="stid_FLXKNewsPublishController" hidesBottomBarWhenPushed="YES" id="rAo-Cr-03N" customClass="FLXKNewsPublishController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stid_FLXKNewsPublishController" id="rAo-Cr-03N" customClass="FLXKNewsPublishController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hFw-zG-YDv"/>
                         <viewControllerLayoutGuide type="bottom" id="2eO-vq-5wd"/>

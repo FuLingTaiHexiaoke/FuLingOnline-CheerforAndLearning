@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden=NO;
+//    self.navigationController.navigationBarHidden=NO;
     
     [self registerGestureForResignViewEditing];
     
@@ -79,7 +79,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBarTintColor:nil];
+//    [self.navigationController.navigationBar setBarTintColor:nil];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{

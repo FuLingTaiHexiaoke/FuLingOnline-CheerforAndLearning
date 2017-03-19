@@ -58,7 +58,7 @@
 -(void)jumpToVC:(NSString *)VCName withQueryDic:(NSDictionary*)queries
 {
     //get the Desired ViewController
-    id DesiredVC=  [self getDesiredVCWithName:VCName Queries:queries];
+    UIViewController* DesiredVC=  [self getDesiredVCWithName:VCName Queries:queries];
     if (DesiredVC) {
         //set ViewController properties
         [queries enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
@@ -77,7 +77,7 @@
         NSString* containerVCName=queries[@"containerVCName"];
         UIViewController *currentVC = [self getFinalVCFromCurrentVC: [self getRootVC ] withFinalVCContainerName:containerVCName];
         if (currentVC.navigationController) {
-//            currentVC.hidesBottomBarWhenPushed = YES;
+            DesiredVC.hidesBottomBarWhenPushed = YES;
             [currentVC.navigationController pushViewController:DesiredVC animated:YES];
         }else{
             [currentVC presentViewController:DesiredVC animated:YES completion:nil];
@@ -165,13 +165,13 @@
         else{
             
             __block  NSUInteger tabbarSelectedIndex=tabbar.selectedIndex;
-            NSLog(@"tabbar.selectedIndex 1 %lu", (unsigned long)tabbar.selectedIndex);
+//            NSLog(@"tabbar.selectedIndex 1 %lu", (unsigned long)tabbar.selectedIndex);
             if (tabbar.childViewControllers) {
                 
-                [tabbar.childViewControllers  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    NSLog(@"tabbar.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
-                }];
-                
+//                [tabbar.childViewControllers  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//                    NSLog(@"tabbar.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
+//                }];
+
                 
                 [tabbar.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     
@@ -212,7 +212,8 @@
     }else if ([nowCurrentVC isKindOfClass:[UINavigationController class]]){
         UIViewController * nav = (UIViewController *)nowCurrentVC;
         finalCurrentVC = nav.childViewControllers.lastObject;
-       finalCurrentVC= [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
+//       finalCurrentVC= [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
+//           [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
     }else{
         finalCurrentVC = nowCurrentVC;
     }

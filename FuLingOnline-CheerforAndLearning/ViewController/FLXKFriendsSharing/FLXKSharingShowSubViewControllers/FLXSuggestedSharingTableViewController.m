@@ -102,6 +102,9 @@
 //    return 44.0;
 //}
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Router(Router_Launch_NotificationCenter)
+}
 
 #pragma mark -
 #pragma mark - Public Methods

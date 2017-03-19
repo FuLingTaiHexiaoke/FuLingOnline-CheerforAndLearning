@@ -25,7 +25,7 @@ static FLXKStyleManager* _styleManager = nil;
     
 #pragma mark - UINavigationBar
     
-    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
+//    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
 //    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
     [[UINavigationBar appearance] setTranslucent:NO];
     
@@ -38,6 +38,8 @@ static FLXKStyleManager* _styleManager = nil;
     
 #pragma mark - UITabBar
     [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
+    [[UITabBar appearance] setTintColor:[UIColor customRed]];
+//    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
     //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];
     //    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tabbar-shadow"]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor customGray] }
@@ -45,7 +47,6 @@ static FLXKStyleManager* _styleManager = nil;
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor customRed] }
                                              forState:UIControlStateSelected];
     
-    [[UITabBar appearance] setTintColor:[UIColor customRed]];
     [[UIBarButtonItem appearanceWhenContainedIn:[UIToolbar class], nil] setTintColor:[UIColor blueTintColor]];
     
 #pragma mark - UISwitch

@@ -522,6 +522,7 @@
 		B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D854C31DAC8BE2001AD79C /* LaunchScreen.storyboard */; };
 		B9D854D01DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854CF1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningTests.m */; };
 		B9D854DB1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */; };
+		B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DA13F11E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m */; };
 		B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF70741DAF76E7004C23E6 /* FLXKHttpRequest.m */; };
 		B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DF70771DAF76E7004C23E6 /* FLXKSocketHelper.m */; };
 /* End PBXBuildFile section */
@@ -1245,6 +1246,8 @@
 		B9D854D61DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FuLingOnline-CheerforAndLearningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D854DA1DAC8BE2001AD79C /* FuLingOnline_CheerforAndLearningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuLingOnline_CheerforAndLearningUITests.m; sourceTree = "<group>"; };
 		B9D854DC1DAC8BE2001AD79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9DA13F01E7D73A30020A52A /* FLXKTabBarBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBarBaseNavigationController.h; sourceTree = "<group>"; };
+		B9DA13F11E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBarBaseNavigationController.m; sourceTree = "<group>"; };
 		B9DF70731DAF76E7004C23E6 /* FLXKHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHttpRequest.h; sourceTree = "<group>"; };
 		B9DF70741DAF76E7004C23E6 /* FLXKHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHttpRequest.m; sourceTree = "<group>"; };
 		B9DF70761DAF76E7004C23E6 /* FLXKSocketHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSocketHelper.h; sourceTree = "<group>"; };
@@ -1678,6 +1681,8 @@
 			children = (
 				B93FF8891E01285800070BD4 /* FLXKViewControllerBase.h */,
 				B93FF88A1E01285800070BD4 /* FLXKViewControllerBase.m */,
+				B9DA13F01E7D73A30020A52A /* FLXKTabBarBaseNavigationController.h */,
+				B9DA13F11E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m */,
 			);
 			path = FLXKViewControllerBase;
 			sourceTree = "<group>";
@@ -3574,6 +3579,7 @@
 				B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */,
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
+				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,

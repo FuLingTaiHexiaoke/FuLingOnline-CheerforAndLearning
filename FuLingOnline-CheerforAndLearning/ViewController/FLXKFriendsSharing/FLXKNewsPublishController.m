@@ -79,7 +79,14 @@
     
     //set up subviews
     [self   initSubViews];
-    
+
+
+    //set nav bar
+    UINavigationBar * bar=[UINavigationBar new];
+    bar.barTintColor=[UIColor redColor];
+    self.navigationController.navigationBar=bar;
+
+
     //    [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
     //        make.size.mas_equalTo(self.publishToolBarPositionView);
     //        make.bottom.equalTo(self.view.mas_bottom);
@@ -220,6 +227,8 @@
     _selectedPhotos=[NSMutableArray arrayWithCapacity:9];
 }
 -(void)initSubViews{
+
+
     _publishScrollViewContainer.delegate=self;
     _publishTextView.delegate=self;
 }
