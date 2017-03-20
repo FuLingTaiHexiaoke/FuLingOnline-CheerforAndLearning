@@ -82,6 +82,7 @@
 		B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */ = {isa = PBXBuildFile; fileRef = B94C60271DF93D25005739A6 /* https_fulingonline.cer */; };
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
+		B955A71E1E7A3080008E3801 /* ToolKittyCodeBack.m in Sources */ = {isa = PBXBuildFile; fileRef = B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */; };
 		B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */; };
 		B95A32551E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A32491E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib */; };
 		B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A324B1E31B95600E71D9D /* FLXKEmotionBoard.m */; };
@@ -441,6 +442,7 @@
 		B97CC08D1E724A89000D548B /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B97CC0891E724A89000D548B /* image01.jpg */; };
 		B97CC08E1E724A89000D548B /* flv视频测试用例1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */; };
 		B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */; };
+		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
 		B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */; };
 		B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */; };
@@ -723,6 +725,8 @@
 		B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLXKLaunchViewController.storyboard; sourceTree = "<group>"; };
 		B94E83DE1DCC92DD00D2823B /* BaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
+		B955A71C1E7A3080008E3801 /* ToolKittyCodeBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKittyCodeBack.h; sourceTree = "<group>"; };
+		B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKittyCodeBack.m; sourceTree = "<group>"; };
 		B95A32411E31AF9D00E71D9D /* FLXKEmotionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionConfig.h; sourceTree = "<group>"; };
 		B95A32471E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionViewNomalCell.h; sourceTree = "<group>"; };
 		B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionViewNomalCell.m; sourceTree = "<group>"; };
@@ -1107,6 +1111,7 @@
 		B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "flv视频测试用例1.mp4"; sourceTree = "<group>"; };
 		B97CC0901E7287AD000D548B /* FLXKAPPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAPPHelper.h; sourceTree = "<group>"; };
 		B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAPPHelper.m; sourceTree = "<group>"; };
+		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
 		B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsSharing.storyboard; sourceTree = "<group>"; };
@@ -1342,6 +1347,8 @@
 		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
 			isa = PBXGroup;
 			children = (
+				B955A71C1E7A3080008E3801 /* ToolKittyCodeBack.h */,
+				B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */,
 				B9C6AADF1E6547500003C50A /* Common Utilities */,
 				B97261841E2DEC76008B6356 /* FLXKFMDB */,
 				B9DF70711DAF76E7004C23E6 /* FLXKNetworkHelper */,
@@ -1375,6 +1382,7 @@
 				B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */,
 				B97B38DE1DD029D400D8F004 /* 重点难点.rtf */,
 				B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */,
+				B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -3313,6 +3321,7 @@
 				B97506B21E4C58F600A577E7 /* smiley_24.png in Resources */,
 				B97506A31E4C58F600A577E7 /* smiley_104.png in Resources */,
 				B97507241E4C58F600A577E7 /* 001@2x.png in Resources */,
+				B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */,
 				B97507871E4C58F700A577E7 /* 051.png in Resources */,
 				B975069F1E4C58F600A577E7 /* smiley_100.png in Resources */,
 				B975079B1E4C58F700A577E7 /* 061.png in Resources */,
@@ -3680,6 +3689,7 @@
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
 				B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */,
 				B930986E1E568C0600306F39 /* NSString+Extensions.m in Sources */,
+				B955A71E1E7A3080008E3801 /* ToolKittyCodeBack.m in Sources */,
 				B930986F1E568C0600306F39 /* UIAlertController+Extensions.m in Sources */,
 				B97261A81E2DEC76008B6356 /* FMDatabaseAdditions.m in Sources */,
 				B93FF88B1E01285800070BD4 /* FLXKViewControllerBase.m in Sources */,
