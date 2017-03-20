@@ -81,10 +81,7 @@
     [self   initSubViews];
 
 
-    //set nav bar
-    UINavigationBar * bar=[UINavigationBar new];
-    bar.barTintColor=[UIColor redColor];
-    self.navigationController.navigationBar=bar;
+
 
 
     //    [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -106,11 +103,12 @@
     [self.publishTextView.textStorage removeAttribute:NSFontAttributeName range:wholeRange];
     
     [self.publishTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
+
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
 }
 
