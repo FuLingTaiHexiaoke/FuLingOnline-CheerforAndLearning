@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>LTNavigationBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>03B8E6B29778F7C29AB0705EF7D63B95</key>
+		<key>06C3CA73931857B25FF8BE3A4D27702B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>186207362447AC4F3F23E1B9D53C89BC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>35FF678ECC2872E886BA1B77A810A9A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D78A405E5EFB7AAF2C5A99F32ADD323</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>81A311CB0A706632BB274E94C0FC99D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A818C884836C138308E3A2D9037F045</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A8584EF007DAB8F0197F5B407AFACEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -103,6 +108,11 @@
 			<true/>
 		</dict>
 		<key>AA55E2D129D695FAFE216D8B7F1EC50F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF31D34A412492824F3E7BE526FB1104</key>
 		<dict>
 			<key>primary</key>
 			<true/>

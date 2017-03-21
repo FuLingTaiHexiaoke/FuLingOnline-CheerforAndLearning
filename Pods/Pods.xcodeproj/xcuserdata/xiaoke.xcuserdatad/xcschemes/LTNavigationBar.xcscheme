@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9B8E9E6C451D665CB9B9029D'
-               BlueprintName = 'Pods-FuLingOnline-CheerforAndLearning'
+               BlueprintIdentifier = 'C384473F06DAAC0224CDC369'
+               BlueprintName = 'LTNavigationBar'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-FuLingOnline-CheerforAndLearning.a'>
+               BuildableName = 'libLTNavigationBar.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

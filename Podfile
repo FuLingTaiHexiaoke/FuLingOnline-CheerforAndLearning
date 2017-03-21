@@ -13,6 +13,7 @@ pod 'BlocksKit/UIKit', '~> 2.2.0'
 pod 'KVOController'
 pod 'TZImagePickerController'
 pod 'MJExtension'
+pod 'LTNavigationBar'
 #pod 'SwipeBack', '~> 1.1'
 ## Diagnostics
 #百度
