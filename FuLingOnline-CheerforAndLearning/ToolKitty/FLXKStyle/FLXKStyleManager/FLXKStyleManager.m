@@ -37,7 +37,7 @@ static FLXKStyleManager* _styleManager = nil;
 
     
 #pragma mark - UITabBar
-    [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
+    [[UITabBar appearance] setTranslucent:NO];//设置为YES，就有模糊效果，NO就没有
     [[UITabBar appearance] setTintColor:[UIColor customRed]];
 //    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
     //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];

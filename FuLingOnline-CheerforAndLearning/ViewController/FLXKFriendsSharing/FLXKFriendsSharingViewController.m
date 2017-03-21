@@ -12,6 +12,8 @@
 #import "UIViewController+Extensions.h"
 #import "FLXKEmotionBoard.h"
 #import "Masonry.h"
+#import "UINavigationBar+Awesome.h"
+
 
 //child viewController
 #import "FLXKNavigationTitleViewController.h"
@@ -68,8 +70,12 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
+
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
+
+//navigation bar
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -79,13 +85,11 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-//    [self.navigationController.navigationBar setBarTintColor:nil];
+
+    //navigation bar
+      [self.navigationController.navigationBar lt_reset];
 }
 
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    //     [[UINavigationBar appearance] setBarTintColor:nil];
-}
 
 -(void)dealloc{
     NSLog(@"%@ 销毁",NSStringFromClass(self.class));

@@ -25,6 +25,7 @@
 #import "FLXKHttpRequestModelHelper.h"
 #import "Masonry.h"
 #import "NSAttributedString+EmotionExtension.h"
+#import "UINavigationBar+Awesome.h"
 
 
 
@@ -107,17 +108,23 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor clearColor]];
 
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
+
+    //navigation bar
+//    [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
+        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor whiteColor]];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 }
 
--(void)viewDidLayoutSubviews{
-    
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+
+    //navigation bar
+    [self.navigationController.navigationBar lt_reset];
 }
 
 -(void)dealloc{
