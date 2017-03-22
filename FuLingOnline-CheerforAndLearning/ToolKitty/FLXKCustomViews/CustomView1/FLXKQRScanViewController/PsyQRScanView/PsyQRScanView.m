@@ -36,24 +36,151 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
     if (self) {
-        [self setupScanningQRCode];
-        [self setCameraPreviewLayerOriention];
-        //view Orientation change
-//        [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                 selector:@selector(statusBarOrientationChange:)
-//                                                     name:UIApplicationDidChangeStatusBarOrientationNotification
-//                                                   object:nil];
+        [self checkCaptureAuthorisation];
     }
     return self;
 }
 
 
+-(void)dealloc{
+    [self clearQRScanning];
+    NSLog(@"%@ 销毁",self);
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
+- (void)checkCaptureAuthorisation
+{
+    NSString *mediaType = AVMediaTypeVideo;
+    
+    // verifying authorization
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    if (authStatus == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+            if (granted) { // ok
+                [self didChangeAccessCameraState:YES];
+            }
+            else { // denied
+                [self didChangeAccessCameraState:NO];
+            }
+        }];
+    }
+    else if (authStatus == AVAuthorizationStatusAuthorized) {
+        [self didChangeAccessCameraState:YES];
+    }
+    else { // denied or restricted
+        [self didChangeAccessCameraState:NO];
+    }
+}
 
 
-//-(void)dealloc{
-//    
-//    [[NSNotificationCenter defaultCenter]removeObserver:self];
-//}
+- (void)didChangeAccessCameraState:(BOOL)isGranted
+{
+    if (isGranted) { // just granted
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(statusBarOrientationChange:)
+                                                     name:UIApplicationDidChangeStatusBarOrientationNotification
+                                                   object:nil];
+        [self setupScanningQRCode];
+        [self addCapturePreviewSubLayer];
+        [self startQRScanning];
+    }
+    else { // just deny, show alert
+        [self alertCameraAuth];
+    }
+}
+
+- (void)startQRScanning
+{
+    if (_session && !_session.isRunning) {
+        // start the session running to start the flow of data
+        //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        ////            [self setCameraPreviewLayerOriention];
+        //            [self.session startRunning];
+        //        });
+        [self setCameraPreviewLayerOriention];
+        [self.session startRunning];
+        
+        if ([_session.outputs count] > 0) {
+            AVCaptureMetadataOutput* output = (AVCaptureMetadataOutput*)[_session.outputs objectAtIndex:0];
+            CGRect tempRect = [_previewLayer metadataOutputRectOfInterestForRect:_previewLayer.bounds];
+            NSLog(@"NSStringFromCGRect(output.rectOfInterest) %@ tempRect %@",NSStringFromCGRect(_previewLayer.bounds), NSStringFromCGRect(tempRect) );
+            output.rectOfInterest=tempRect;
+        }
+        
+    }
+    
+}
+
+- (void)stopQRScanning
+{
+    if (_session && _session.isRunning) {
+        //        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //            [self.session stopRunning];
+        //        });
+        [self.session stopRunning];
+    }
+}
+
+- (void)clearQRScanning
+{
+    // clear capture
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //
+    //        [_session stopRunning];
+    //
+    //        if ([_session.inputs count] > 0) {
+    //            AVCaptureInput* input = [_session.inputs objectAtIndex:0];
+    //            [_session removeInput:input];
+    //        }
+    //        if ([_session.outputs count] > 0) {
+    //            AVCaptureVideoDataOutput* output = (AVCaptureVideoDataOutput*)[_session.outputs objectAtIndex:0];
+    //            [_session removeOutput:output];
+    //        }
+    //
+    //        [_previewLayer removeFromSuperlayer];
+    //
+    //        _previewLayer = nil;
+    //        _session = nil;
+    //    });
+    
+    [_session stopRunning];
+    
+    if ([_session.inputs count] > 0) {
+        AVCaptureInput* input = [_session.inputs objectAtIndex:0];
+        [_session removeInput:input];
+    }
+    if ([_session.outputs count] > 0) {
+        AVCaptureVideoDataOutput* output = (AVCaptureVideoDataOutput*)[_session.outputs objectAtIndex:0];
+        [_session removeOutput:output];
+    }
+    
+    [_previewLayer removeFromSuperlayer];
+    
+    _previewLayer = nil;
+    _session = nil;
+}
+
+- (void)restarAVCaptureSessionRunning{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.psyQRScanViewRestarScanningBlcok) {
+            self.psyQRScanViewRestarScanningBlcok();
+        }
+        [self startQRScanning];
+    });
+}
+
+
+// helper
+- (void)addCapturePreviewSubLayer
+{
+    // add video preview layer
+    _previewLayer.frame = self.layer.bounds;
+    //    _previewLayer.frame =   CGRectMake(100, 200,200, 200);
+    // 8、将图层插入当前视图
+    [self.layer insertSublayer:_previewLayer atIndex:0];
+}
+
+
 
 #pragma mark - - - 二维码扫描
 - (void)setupScanningQRCode {
@@ -67,13 +194,17 @@
     AVCaptureMetadataOutput *output = [[AVCaptureMetadataOutput alloc] init];
     
     // 4、设置代理 在主线程里刷新
-    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    // configure output
+    // create a new serial dispatch queue.
+    dispatch_queue_t dispatchQueue;
+    dispatchQueue = dispatch_queue_create("captureOutputQueue", NULL);
+    [output setMetadataObjectsDelegate:self queue:dispatchQueue];
+    //    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
     // 设置扫描范围(每一个取值0～1，以屏幕右上角为坐标原点)
     // 注：微信二维码的扫描范围是整个屏幕，这里并没有做处理（可不用设置）
     
-    
-    output.rectOfInterest = CGRectMake(0.1, 0.1, 0.8,0.8);
+    //    output.rectOfInterest = CGRectMake(0.1, 0.1, 0.8,0.8);
     
     // 5、初始化链接对象（会话对象）
     self.session = [[AVCaptureSession alloc] init];
@@ -81,85 +212,81 @@
     [_session setSessionPreset:AVCaptureSessionPresetHigh];
     
     // 5.1 添加会话输入
-    [_session addInput:input];
+    if ([_session canAddInput:input]) {
+        [_session addInput:input];
+    }
+    else{
+        [self setupScanningQRCode];
+        return;
+    }
     
     // 5.2 添加会话输出
-    [_session addOutput:output];
+    if ([_session canAddOutput:output]) {
+        [_session addOutput:output];
+        
+    }
+    else{
+        [self setupScanningQRCode];
+        return;
+    }
     
     // 6、设置输出数据类型，需要将元数据输出添加到会话后，才能指定元数据类型，否则会报错
     // 设置扫码支持的编码格式(如下设置条形码和二维码兼容)
     output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,  AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
     
     // 7、实例化预览图层, 传递_session是为了告诉图层将来显示什么内容
-    self.previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+    _previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _previewLayer.frame = self.layer.bounds;
-    //    _previewLayer.frame =   CGRectMake(100, 200,200, 200);
-    // 8、将图层插入当前视图
-    [self.layer insertSublayer:_previewLayer atIndex:0];
+    //    _previewLayer.frame = self.layer.bounds;
     
     // 9、启动会话
-    [_session startRunning];
+    //    [_session startRunning];
 }
 
+#pragma mark - MetadataObjectsDelegate
+
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
-    // 会频繁的扫描，调用代理方法
-    
-    // 0、扫描成功之后的提示音
-    [self playSoundEffect:@"sound.caf"];
-    
-    // 1、如果扫描完成，停止会话
-    [self.session stopRunning];
-    
-    [self performSelector:@selector(restarAVCaptureSessionRunning) withObject:self afterDelay:5.0];
-    // 2、删除预览图层
-//    [self.previewLayer removeFromSuperlayer];
-    
-    // 3、设置界面显示扫描结果
     if (metadataObjects.count > 0) {
+        //        NSLog(@"loginCount: netString:2");
         AVMetadataMachineReadableCodeObject *obj = metadataObjects[0];
-        
-//        NSLog(@"metadataObjects = %@", metadataObjects);
-        
-//        if ([obj.stringValue hasPrefix:@"http"]) {
-//
-//            NSLog(@"stringValue = = %@", obj.stringValue);
-//
-//            
-//        } else { // 扫描结果为条形码
-//
-//            NSLog(@"stringValue = = %@", obj.stringValue);
-//
-//        }
-        
-        if (self.psyQRScanViewDidFinishWithResult) {
-            self.psyQRScanViewDidFinishWithResult(obj.stringValue);
+        NSString* resultString=obj.stringValue;
+        if ([resultString componentsSeparatedByString:@"&"].count==4) {
+            
+            // 0、扫描成功之后的提示音
+            [self playSoundEffect:@"sound.caf"];
+            
+            // 1、如果扫描完成，停止会话
+            //            [self.session stopRunning];
+            [self stopQRScanning];
+            
+            [self performSelector:@selector(restarAVCaptureSessionRunning) withObject:self afterDelay:10.0];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (self.psyQRScanViewDidFinishWithResult) {
+                    self.psyQRScanViewDidFinishWithResult(obj.stringValue);
+                }});
         }
-        
     }
 }
 
-- (void)restarAVCaptureSessionRunning{
-    [_session startRunning];
+// helper
+- (void)alertCameraAuth
+{
+    NSString *title = @"登录提示";
+    NSString *message = @"相机功能未被授权，为使用扫码登录功能，请在“设置-隐私-相机”选项中，允许应用访问你的相机。然后重启程序。";
+    NSString *cancelTitle = nil;
+    NSString *otherTitle = @"好";
+    // alert view
+    UIAlertView *tipAlert = [[UIAlertView alloc] initWithTitle:title
+                                                       message:message
+                                                      delegate:nil
+                                             cancelButtonTitle:cancelTitle
+                                             otherButtonTitles:otherTitle, nil];
+    [tipAlert show];
 }
 
 
 #pragma mark - - - 扫描提示声
-/**
- *  播放完成回调函数
- *
- *  @param soundID    系统声音ID
- *  @param clientData 回调时传递的数据
- */
-void soundDidCompleteCallback(SystemSoundID soundID,void * clientData){
-    NSLog(@"播放完成...");
-}
 
-/**
- *  播放音效文件
- *
- *  @param name 音频文件名称
- */
 - (void)playSoundEffect:(NSString *)name{
     NSString *audioFile = [[NSBundle mainBundle] pathForResource:name ofType:nil];
     NSURL *fileUrl = [NSURL fileURLWithPath:audioFile];
@@ -178,11 +305,22 @@ void soundDidCompleteCallback(SystemSoundID soundID,void * clientData){
     AudioServicesPlaySystemSound(soundID); // 播放音效
 }
 
+
+void soundDidCompleteCallback(SystemSoundID soundID,void * clientData){
+    NSLog(@"播放完成...");
+}
+
+#pragma mark - PreviewLayerOriention Change
+
+- (void)statusBarOrientationChange:(NSNotification *)notification
+{
+    [self setCameraPreviewLayerOriention];
+}
+
 -(void)setCameraPreviewLayerOriention {
     UIInterfaceOrientation newStatusBarOrientation=[[UIApplication sharedApplication] statusBarOrientation];
     if (newStatusBarOrientation!=UIInterfaceOrientationUnknown) {
         if (newStatusBarOrientation==UIInterfaceOrientationLandscapeLeft) {
-            
             self.previewLayer.connection.videoOrientation=AVCaptureVideoOrientationLandscapeLeft  ;
         }
         else if (newStatusBarOrientation==UIInterfaceOrientationLandscapeRight) {

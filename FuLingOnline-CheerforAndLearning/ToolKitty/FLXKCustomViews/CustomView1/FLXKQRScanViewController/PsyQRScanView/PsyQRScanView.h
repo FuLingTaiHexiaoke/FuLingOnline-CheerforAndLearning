@@ -9,9 +9,19 @@
 #import <UIKit/UIKit.h>
 
 typedef void (^PsyQRScanViewDidFinishWithResult) (NSString* scanResultString);
+typedef void (^PsyQRScanViewRestarScanningBlcok) ();
 
 @interface PsyQRScanView : UIView
 
+- (void)startQRScanning;
+
+- (void)stopQRScanning;
+
+- (void)clearQRScanning;
+
 @property(nonatomic,strong)PsyQRScanViewDidFinishWithResult  psyQRScanViewDidFinishWithResult;
+
+@property(nonatomic,strong)PsyQRScanViewRestarScanningBlcok  psyQRScanViewRestarScanningBlcok;
+
 -(void)setCameraPreviewLayerOriention;
 @end

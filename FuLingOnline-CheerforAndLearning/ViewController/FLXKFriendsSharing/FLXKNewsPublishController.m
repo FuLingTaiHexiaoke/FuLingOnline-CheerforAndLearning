@@ -113,7 +113,7 @@
 
     //navigation bar
 //    [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
-        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor whiteColor]];
+//        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor whiteColor]];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
