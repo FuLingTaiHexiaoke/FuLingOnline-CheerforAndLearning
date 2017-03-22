@@ -95,6 +95,15 @@
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
+		B9614A451E82CC22008B7531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A441E82CC22008B7531 /* main.m */; };
+		B9614A481E82CC22008B7531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A471E82CC22008B7531 /* AppDelegate.m */; };
+		B9614A4B1E82CC22008B7531 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A4A1E82CC22008B7531 /* FirstViewController.m */; };
+		B9614A4E1E82CC22008B7531 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A4D1E82CC22008B7531 /* SecondViewController.m */; };
+		B9614A511E82CC22008B7531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9614A4F1E82CC22008B7531 /* Main.storyboard */; };
+		B9614A531E82CC23008B7531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9614A521E82CC23008B7531 /* Assets.xcassets */; };
+		B9614A561E82CC23008B7531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9614A541E82CC23008B7531 /* LaunchScreen.storyboard */; };
+		B9614A611E82CC24008B7531 /* FuLingOnlineIdeaTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A601E82CC24008B7531 /* FuLingOnlineIdeaTestTests.m */; };
+		B9614A6C1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A6B1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.m */; };
 		B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */; };
 		B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B96D30321E716A62003BDFD0 /* emotionDB.xlsx */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
@@ -558,6 +567,20 @@
 			remoteGlobalIDString = B90CD9D11E76477600278EDB;
 			remoteInfo = NotificationContentExtensionContentFeedback;
 		};
+		B9614A5D1E82CC23008B7531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9D854AA1DAC8BE2001AD79C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9614A401E82CC21008B7531;
+			remoteInfo = FuLingOnlineIdeaTest;
+		};
+		B9614A681E82CC24008B7531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9D854AA1DAC8BE2001AD79C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9614A401E82CC21008B7531;
+			remoteInfo = FuLingOnlineIdeaTest;
+		};
 		B9D854CC1DAC8BE2001AD79C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B9D854AA1DAC8BE2001AD79C /* Project object */;
@@ -748,6 +771,24 @@
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
+		B9614A411E82CC21008B7531 /* FuLingOnlineIdeaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuLingOnlineIdeaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9614A441E82CC22008B7531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B9614A461E82CC22008B7531 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B9614A471E82CC22008B7531 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B9614A491E82CC22008B7531 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		B9614A4A1E82CC22008B7531 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B9614A4C1E82CC22008B7531 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		B9614A4D1E82CC22008B7531 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		B9614A501E82CC22008B7531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B9614A521E82CC23008B7531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B9614A551E82CC23008B7531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B9614A571E82CC23008B7531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9614A5C1E82CC23008B7531 /* FuLingOnlineIdeaTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuLingOnlineIdeaTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9614A601E82CC24008B7531 /* FuLingOnlineIdeaTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuLingOnlineIdeaTestTests.m; sourceTree = "<group>"; };
+		B9614A621E82CC24008B7531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9614A671E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuLingOnlineIdeaTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9614A6B1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FuLingOnlineIdeaTestUITests.m; sourceTree = "<group>"; };
+		B9614A6D1E82CC24008B7531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B96D302D1E71609E003BDFD0 /* FLXKAppNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAppNotification.h; sourceTree = "<group>"; };
 		B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FuLingOnline-CheerforAndLearning.entitlements"; sourceTree = "<group>"; };
@@ -1296,6 +1337,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9614A3E1E82CC21008B7531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A591E82CC23008B7531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A641E82CC24008B7531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9D854AF1DAC8BE2001AD79C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1779,6 +1841,50 @@
 				B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		B9614A421E82CC22008B7531 /* FuLingOnlineIdeaTest */ = {
+			isa = PBXGroup;
+			children = (
+				B9614A461E82CC22008B7531 /* AppDelegate.h */,
+				B9614A471E82CC22008B7531 /* AppDelegate.m */,
+				B9614A491E82CC22008B7531 /* FirstViewController.h */,
+				B9614A4A1E82CC22008B7531 /* FirstViewController.m */,
+				B9614A4C1E82CC22008B7531 /* SecondViewController.h */,
+				B9614A4D1E82CC22008B7531 /* SecondViewController.m */,
+				B9614A4F1E82CC22008B7531 /* Main.storyboard */,
+				B9614A521E82CC23008B7531 /* Assets.xcassets */,
+				B9614A541E82CC23008B7531 /* LaunchScreen.storyboard */,
+				B9614A571E82CC23008B7531 /* Info.plist */,
+				B9614A431E82CC22008B7531 /* Supporting Files */,
+			);
+			path = FuLingOnlineIdeaTest;
+			sourceTree = "<group>";
+		};
+		B9614A431E82CC22008B7531 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9614A441E82CC22008B7531 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9614A5F1E82CC24008B7531 /* FuLingOnlineIdeaTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9614A601E82CC24008B7531 /* FuLingOnlineIdeaTestTests.m */,
+				B9614A621E82CC24008B7531 /* Info.plist */,
+			);
+			path = FuLingOnlineIdeaTestTests;
+			sourceTree = "<group>";
+		};
+		B9614A6A1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B9614A6B1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.m */,
+				B9614A6D1E82CC24008B7531 /* Info.plist */,
+			);
+			path = FuLingOnlineIdeaTestUITests;
 			sourceTree = "<group>";
 		};
 		B966A9B91E0D0F3800222095 /* FLXKEmotionBoard */ = {
@@ -2722,6 +2828,9 @@
 				B90CD9AB1E76475200278EDB /* NotificationContentExtensionDefault */,
 				B90CD9C01E76476600278EDB /* NotificationContentExtensionDefaultHidden */,
 				B90CD9D51E76477600278EDB /* NotificationContentExtensionContentFeedback */,
+				B9614A421E82CC22008B7531 /* FuLingOnlineIdeaTest */,
+				B9614A5F1E82CC24008B7531 /* FuLingOnlineIdeaTestTests */,
+				B9614A6A1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests */,
 				B9D854B31DAC8BE2001AD79C /* Products */,
 				41F46BC93DB4219428C97CC3 /* Pods */,
 				73427F28B1AE73D37DB133B0 /* Frameworks */,
@@ -2738,6 +2847,9 @@
 				B90CD9A61E76475200278EDB /* NotificationContentExtensionDefault.appex */,
 				B90CD9BD1E76476600278EDB /* NotificationContentExtensionDefaultHidden.appex */,
 				B90CD9D21E76477600278EDB /* NotificationContentExtensionContentFeedback.appex */,
+				B9614A411E82CC21008B7531 /* FuLingOnlineIdeaTest.app */,
+				B9614A5C1E82CC23008B7531 /* FuLingOnlineIdeaTestTests.xctest */,
+				B9614A671E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2899,6 +3011,59 @@
 			productReference = B90CD9D21E76477600278EDB /* NotificationContentExtensionContentFeedback.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		B9614A401E82CC21008B7531 /* FuLingOnlineIdeaTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9614A741E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTest" */;
+			buildPhases = (
+				B9614A3D1E82CC21008B7531 /* Sources */,
+				B9614A3E1E82CC21008B7531 /* Frameworks */,
+				B9614A3F1E82CC21008B7531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FuLingOnlineIdeaTest;
+			productName = FuLingOnlineIdeaTest;
+			productReference = B9614A411E82CC21008B7531 /* FuLingOnlineIdeaTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B9614A5B1E82CC23008B7531 /* FuLingOnlineIdeaTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9614A751E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestTests" */;
+			buildPhases = (
+				B9614A581E82CC23008B7531 /* Sources */,
+				B9614A591E82CC23008B7531 /* Frameworks */,
+				B9614A5A1E82CC23008B7531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9614A5E1E82CC23008B7531 /* PBXTargetDependency */,
+			);
+			name = FuLingOnlineIdeaTestTests;
+			productName = FuLingOnlineIdeaTestTests;
+			productReference = B9614A5C1E82CC23008B7531 /* FuLingOnlineIdeaTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B9614A661E82CC24008B7531 /* FuLingOnlineIdeaTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9614A761E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestUITests" */;
+			buildPhases = (
+				B9614A631E82CC24008B7531 /* Sources */,
+				B9614A641E82CC24008B7531 /* Frameworks */,
+				B9614A651E82CC24008B7531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9614A691E82CC24008B7531 /* PBXTargetDependency */,
+			);
+			name = FuLingOnlineIdeaTestUITests;
+			productName = FuLingOnlineIdeaTestUITests;
+			productReference = B9614A671E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9D854DF1DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearning" */;
@@ -2990,6 +3155,23 @@
 						DevelopmentTeam = TQ772LEHW3;
 						ProvisioningStyle = Automatic;
 					};
+					B9614A401E82CC21008B7531 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQ772LEHW3;
+						ProvisioningStyle = Automatic;
+					};
+					B9614A5B1E82CC23008B7531 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQ772LEHW3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9614A401E82CC21008B7531;
+					};
+					B9614A661E82CC24008B7531 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = TQ772LEHW3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B9614A401E82CC21008B7531;
+					};
 					B9D854B11DAC8BE2001AD79C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TQ772LEHW3;
@@ -3066,6 +3248,9 @@
 				B90CD9A51E76475200278EDB /* NotificationContentExtensionDefault */,
 				B90CD9BC1E76476600278EDB /* NotificationContentExtensionDefaultHidden */,
 				B90CD9D11E76477600278EDB /* NotificationContentExtensionContentFeedback */,
+				B9614A401E82CC21008B7531 /* FuLingOnlineIdeaTest */,
+				B9614A5B1E82CC23008B7531 /* FuLingOnlineIdeaTestTests */,
+				B9614A661E82CC24008B7531 /* FuLingOnlineIdeaTestUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -3099,6 +3284,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B90CD9DB1E76477600278EDB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A3F1E82CC21008B7531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9614A561E82CC23008B7531 /* LaunchScreen.storyboard in Resources */,
+				B9614A531E82CC23008B7531 /* Assets.xcassets in Resources */,
+				B9614A511E82CC22008B7531 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A5A1E82CC23008B7531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A651E82CC24008B7531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3581,6 +3790,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9614A3D1E82CC21008B7531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9614A4E1E82CC22008B7531 /* SecondViewController.m in Sources */,
+				B9614A481E82CC22008B7531 /* AppDelegate.m in Sources */,
+				B9614A4B1E82CC22008B7531 /* FirstViewController.m in Sources */,
+				B9614A451E82CC22008B7531 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A581E82CC23008B7531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9614A611E82CC24008B7531 /* FuLingOnlineIdeaTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9614A631E82CC24008B7531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9614A6C1E82CC24008B7531 /* FuLingOnlineIdeaTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B9D854AE1DAC8BE2001AD79C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3750,6 +3986,16 @@
 			target = B90CD9D11E76477600278EDB /* NotificationContentExtensionContentFeedback */;
 			targetProxy = B90CD9DD1E76477600278EDB /* PBXContainerItemProxy */;
 		};
+		B9614A5E1E82CC23008B7531 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9614A401E82CC21008B7531 /* FuLingOnlineIdeaTest */;
+			targetProxy = B9614A5D1E82CC23008B7531 /* PBXContainerItemProxy */;
+		};
+		B9614A691E82CC24008B7531 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9614A401E82CC21008B7531 /* FuLingOnlineIdeaTest */;
+			targetProxy = B9614A681E82CC24008B7531 /* PBXContainerItemProxy */;
+		};
 		B9D854CD1DAC8BE2001AD79C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B9D854B11DAC8BE2001AD79C /* FuLingOnline-CheerforAndLearning */;
@@ -3785,6 +4031,22 @@
 				B90CD9DA1E76477600278EDB /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		B9614A4F1E82CC22008B7531 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9614A501E82CC22008B7531 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B9614A541E82CC23008B7531 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B9614A551E82CC23008B7531 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		B9D854BE1DAC8BE2001AD79C /* Main.storyboard */ = {
@@ -3955,6 +4217,106 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B9614A6E1E82CC24008B7531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B9614A6F1E82CC24008B7531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B9614A701E82CC24008B7531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuLingOnlineIdeaTest.app/FuLingOnlineIdeaTest";
+			};
+			name = Debug;
+		};
+		B9614A711E82CC24008B7531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FuLingOnlineIdeaTest.app/FuLingOnlineIdeaTest";
+			};
+			name = Release;
+		};
+		B9614A721E82CC24008B7531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTestUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3aa24787-0f32-42cd-85c8-62a77ed7927c";
+				TEST_TARGET_NAME = FuLingOnlineIdeaTest;
+			};
+			name = Debug;
+		};
+		B9614A731E82CC24008B7531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = TQ772LEHW3;
+				INFOPLIST_FILE = FuLingOnlineIdeaTestUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3aa24787-0f32-42cd-85c8-62a77ed7927c";
+				TEST_TARGET_NAME = FuLingOnlineIdeaTest;
 			};
 			name = Release;
 		};
@@ -4177,6 +4539,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B9614A741E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9614A6E1E82CC24008B7531 /* Debug */,
+				B9614A6F1E82CC24008B7531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9614A751E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9614A701E82CC24008B7531 /* Debug */,
+				B9614A711E82CC24008B7531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9614A761E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9614A721E82CC24008B7531 /* Debug */,
+				B9614A731E82CC24008B7531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		B9D854AD1DAC8BE2001AD79C /* Build configuration list for PBXProject "FuLingOnline-CheerforAndLearning" */ = {
 			isa = XCConfigurationList;

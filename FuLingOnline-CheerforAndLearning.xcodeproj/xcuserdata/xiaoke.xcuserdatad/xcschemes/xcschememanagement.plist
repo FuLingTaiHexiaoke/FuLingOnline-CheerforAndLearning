@@ -9,25 +9,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>FuLingOnlineIdeaTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>NotificationContentExtensionContentFeedback.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>4</integer>
 		</dict>
 		<key>NotificationContentExtensionDefault.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>12</integer>
+			<integer>2</integer>
 		</dict>
 		<key>NotificationContentExtensionDefaultHidden.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>13</integer>
+			<integer>3</integer>
 		</dict>
 		<key>NotificationServiceExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>11</integer>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -48,6 +53,21 @@
 			<true/>
 		</dict>
 		<key>B90CD9D11E76477600278EDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9614A401E82CC21008B7531</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9614A5B1E82CC23008B7531</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B9614A661E82CC24008B7531</key>
 		<dict>
 			<key>primary</key>
 			<true/>
