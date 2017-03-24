@@ -25,22 +25,42 @@ static FLXKStyleManager* _styleManager = nil;
     
 #pragma mark - UINavigationBar
     
-//    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
-//    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
-        [[UINavigationBar appearance] setBarTintColor:RGBA(255, 255, 255, 1.0)];
+    //    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
+    //    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
+    [[UINavigationBar appearance] setBarTintColor:RGBA(255, 255, 255, 1.0)];
     [[UINavigationBar appearance] setTranslucent:YES];
     
-//    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"btn_navigation_back"]];
-//    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"btn_navigation_back"]];
-//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
-//    [[UIBarButtonItem appearance] setBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
-
+    //    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"btn_navigation_back"]];
+    //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"btn_navigation_back"]];
+    //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+    //    [[UIBarButtonItem appearance] setBackButtonBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+    //    [[UIBarButtonItem appearance] setBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+    
+    
+    /*
+    //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+    */
+    
+    /*
+     //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
+     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+     
+     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+     [self.navigationController.navigationBar setShadowImage:nil];
+     */
+    
+    
     
 #pragma mark - UITabBar
     [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
     [[UITabBar appearance] setTintColor:[UIColor customRed]];
-//    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
+    //    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
     //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];
     //    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"tabbar-shadow"]];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor customGray] }

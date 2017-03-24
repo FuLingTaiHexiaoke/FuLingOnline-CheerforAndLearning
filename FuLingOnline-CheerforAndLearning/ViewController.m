@@ -30,7 +30,6 @@
 }
 
 
-
 //utilites
 
 
@@ -38,6 +37,15 @@
 
 
 //subviews
+
+
+//IBOutlet
+
+//IBAction
+
+#if DEBUG
+
+#endif
 
 #pragma mark -
 #pragma mark - ViewController LifeCircle
@@ -58,4 +66,11 @@
 
 #pragma mark -
 #pragma mark - Private Methods
+
+//#define NSAssert1(condition, desc, arg1) NSAssert((condition), (desc), (arg1))
+//#define NSAssert2(condition, desc, arg1, arg2) NSAssert((condition), (desc), (arg1), (arg2))
+//#define NSAssert3(condition, desc, arg1, arg2, arg3) NSAssert((condition), (desc), (arg1), (arg2), (arg3))
+//#define NSAssert4(condition, desc, arg1, arg2, arg3, arg4) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4))
+//#define NSAssert5(condition, desc, arg1, arg2, arg3, arg4, arg5) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4), (arg5))
+//#define NSParameterAssert(condition) NSAssert((condition), @"Invalid parameter not satisfying: %@", @#condition)
 @end

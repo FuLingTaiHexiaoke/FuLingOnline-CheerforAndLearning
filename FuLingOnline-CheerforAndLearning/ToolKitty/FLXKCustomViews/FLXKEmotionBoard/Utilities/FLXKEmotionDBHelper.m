@@ -29,21 +29,22 @@ static FLXKEmotionDBHelper *_instance = nil;
 
 + (NSString *)dbPathWithDirectoryName:(NSString *)directoryName
 {
-    
-    
-    NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    //get documentDirectory
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSFileManager *filemanage = [NSFileManager defaultManager];
     if (directoryName == nil || directoryName.length == 0) {
-        docsdir = [docsdir stringByAppendingPathComponent:@"FLXKEmotionDB"];
+        documentDirectory = [documentDirectory stringByAppendingPathComponent:@"FLXKEmotionDB"];
     } else {
-        docsdir = [docsdir stringByAppendingPathComponent:directoryName];
+        documentDirectory = [documentDirectory stringByAppendingPathComponent:directoryName];
     }
+    
+    //set dbPath
     BOOL isDir;
-    BOOL exit =[filemanage fileExistsAtPath:docsdir isDirectory:&isDir];
+    BOOL exit =[filemanage fileExistsAtPath:documentDirectory isDirectory:&isDir];
     if (!exit || !isDir) {
-        [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
+        [filemanage createDirectoryAtPath:documentDirectory withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"FLXKEmotionDB.sqlite"];
+    NSString *dbpath = [documentDirectory stringByAppendingPathComponent:@"FLXKEmotionDB.sqlite"];
 //    NSLog(@"FLXKEmotionDB Directory:\n%@",dbpath);
     
     //check if already sqlite exist

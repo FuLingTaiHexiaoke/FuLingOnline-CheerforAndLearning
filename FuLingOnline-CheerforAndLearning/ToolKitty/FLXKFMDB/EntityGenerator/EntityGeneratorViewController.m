@@ -27,8 +27,19 @@
 
 #import "TestEntity.h"
 
+//#import "EntityGeneratorViewController.h"
 
+//if (DEBUG) {
+//    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
+//    [btn addTarget:self action:@selector(showEntityGenerator) forControlEvents:UIControlEventTouchUpInside];
+//    btn.backgroundColor=[UIColor yellowColor];
+//    [self.view addSubview:btn];
+//}
 
+//-(void)showEntityGenerator{
+//    EntityGeneratorViewController* entityGeneratorViewController=[[EntityGeneratorViewController alloc]initWithNibName:@"EntityGeneratorViewController" bundle:nil];
+//    [self presentViewController:entityGeneratorViewController animated:YES completion:nil];
+//}
 
 @interface EntityGeneratorViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *className;

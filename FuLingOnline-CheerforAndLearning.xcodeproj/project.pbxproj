@@ -109,6 +109,9 @@
 		B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619C1E2DEC76008B6356 /* FMDatabaseQueue.m */; };
 		B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B972619F1E2DEC76008B6356 /* FMResultSet.m */; };
 		B97261AD1E2DED0E008B6356 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */; };
+		B9730FA11E84AF9000967ADD /* FLXKPathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B9730FA01E84AF9000967ADD /* FLXKPathHelper.m */; };
+		B9730FF11E84C9AA00967ADD /* FLXKMoviePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9730FEE1E84C9AA00967ADD /* FLXKMoviePlayerView.m */; };
+		B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9730FF01E84C9AA00967ADD /* FLXKMoviePlayerViewController.m */; };
 		B97506991E4C58F600A577E7 /* BasicEmotion.png in Resources */ = {isa = PBXBuildFile; fileRef = B97505531E4C58F600A577E7 /* BasicEmotion.png */; };
 		B975069A1E4C58F600A577E7 /* del_emoji_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = B97505541E4C58F600A577E7 /* del_emoji_normal.png */; };
 		B975069B1E4C58F600A577E7 /* del_emoji_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97505551E4C58F600A577E7 /* del_emoji_normal@2x.png */; };
@@ -774,6 +777,12 @@
 		B972619E1E2DEC76008B6356 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		B972619F1E2DEC76008B6356 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		B9730F9F1E84AF9000967ADD /* FLXKPathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPathHelper.h; sourceTree = "<group>"; };
+		B9730FA01E84AF9000967ADD /* FLXKPathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPathHelper.m; sourceTree = "<group>"; };
+		B9730FED1E84C9AA00967ADD /* FLXKMoviePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMoviePlayerView.h; sourceTree = "<group>"; };
+		B9730FEE1E84C9AA00967ADD /* FLXKMoviePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMoviePlayerView.m; sourceTree = "<group>"; };
+		B9730FEF1E84C9AA00967ADD /* FLXKMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMoviePlayerViewController.h; sourceTree = "<group>"; };
+		B9730FF01E84C9AA00967ADD /* FLXKMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMoviePlayerViewController.m; sourceTree = "<group>"; };
 		B97505531E4C58F600A577E7 /* BasicEmotion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BasicEmotion.png; sourceTree = "<group>"; };
 		B97505541E4C58F600A577E7 /* del_emoji_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = del_emoji_normal.png; sourceTree = "<group>"; };
 		B97505551E4C58F600A577E7 /* del_emoji_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_emoji_normal@2x.png"; sourceTree = "<group>"; };
@@ -1862,6 +1871,26 @@
 			path = fmdb;
 			sourceTree = "<group>";
 		};
+		B9730F9E1E84AF7B00967ADD /* FLXKPathHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B9730F9F1E84AF9000967ADD /* FLXKPathHelper.h */,
+				B9730FA01E84AF9000967ADD /* FLXKPathHelper.m */,
+			);
+			path = FLXKPathHelper;
+			sourceTree = "<group>";
+		};
+		B9730FEC1E84C9AA00967ADD /* FLXKMoviePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B9730FED1E84C9AA00967ADD /* FLXKMoviePlayerView.h */,
+				B9730FEE1E84C9AA00967ADD /* FLXKMoviePlayerView.m */,
+				B9730FEF1E84C9AA00967ADD /* FLXKMoviePlayerViewController.h */,
+				B9730FF01E84C9AA00967ADD /* FLXKMoviePlayerViewController.m */,
+			);
+			path = FLXKMoviePlayer;
+			sourceTree = "<group>";
+		};
 		B97505521E4C58F600A577E7 /* EmotionGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -2379,6 +2408,8 @@
 		B9C6AADF1E6547500003C50A /* Common Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B9730FEC1E84C9AA00967ADD /* FLXKMoviePlayer */,
+				B9730F9E1E84AF7B00967ADD /* FLXKPathHelper */,
 				B90CD9531E763FB400278EDB /* FLXKAPPRouter */,
 				B97CC08F1E728792000D548B /* FLXKAPPHelper */,
 				B9C6AAE81E6547690003C50A /* FLXKCheckAppVersion */,
@@ -3620,6 +3651,7 @@
 				B9C6AC981E6548550003C50A /* FLXKCollapsableTableModel.m in Sources */,
 				B9C6AAEB1E6547690003C50A /* FLXKCheckAppVersion.m in Sources */,
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
+				B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
@@ -3658,6 +3690,7 @@
 				B9C6AC901E6548550003C50A /* UITableView+rrn_extensions.m in Sources */,
 				B9C6AC941E6548550003C50A /* StarsSectionHeaderView.m in Sources */,
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
+				B9730FA11E84AF9000967ADD /* FLXKPathHelper.m in Sources */,
 				B90CD97D1E763FFD00278EDB /* ActionNoOperationViewController.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
@@ -3687,6 +3720,7 @@
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9C6AC961E6548550003C50A /* UILabel+flash.m in Sources */,
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
+				B9730FF11E84C9AA00967ADD /* FLXKMoviePlayerView.m in Sources */,
 				B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */,
 				B930986E1E568C0600306F39 /* NSString+Extensions.m in Sources */,
 				B955A71E1E7A3080008E3801 /* ToolKittyCodeBack.m in Sources */,
