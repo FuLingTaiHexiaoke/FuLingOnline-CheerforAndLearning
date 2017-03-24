@@ -29,9 +29,9 @@
     [super viewWillAppear:animated];
     
     //setup navigationController
-    self.navigationController.navigationBarHidden=YES;
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;      // 手势有效设置为YES  无效为NO
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;    // 手势的代理设置为self
+//    self.navigationController.navigationBarHidden=YES;
+//    self.navigationController.interactivePopGestureRecognizer.enabled = YES;      // 手势有效设置为YES  无效为NO
+//    self.navigationController.interactivePopGestureRecognizer.delegate = self;    // 手势的代理设置为self
 }
 
 -(void)viewDidAppear:(BOOL)animated{
