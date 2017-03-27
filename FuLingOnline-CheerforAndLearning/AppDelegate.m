@@ -158,8 +158,8 @@
 //}
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
 //        NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
-        NSLog(@"URL scheme:%@", [url scheme]);
-        NSLog(@"URL query: %@", [url query]);
+//        NSLog(@"URL scheme:%@", [url scheme]);
+//        NSLog(@"URL query: %@", [url query]);
     
         return YES;
 }

@@ -180,7 +180,7 @@
                         UINavigationController*  navigationObj= (UINavigationController*)obj;
                         
                         [navigationObj.childViewControllers  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                            NSLog(@"navigationObj.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
+//                            NSLog(@"navigationObj.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
                         }];
                         
                         [navigationObj.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull innerObj, NSUInteger innerIdx, BOOL * _Nonnull innerStop) {

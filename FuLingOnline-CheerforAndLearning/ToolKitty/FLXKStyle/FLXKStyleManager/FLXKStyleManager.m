@@ -25,10 +25,15 @@ static FLXKStyleManager* _styleManager = nil;
     
 #pragma mark - UINavigationBar
     
-    //    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
-    //    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
-    [[UINavigationBar appearance] setBarTintColor:RGBA(255, 255, 255, 1.0)];
-    [[UINavigationBar appearance] setTranslucent:YES];
+    //灰色背景
+    //    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
+    //    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
+    
+    //橙色背景
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setTranslucent:NO];
     
     //    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"btn_navigation_back"]];
     //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"btn_navigation_back"]];
@@ -38,13 +43,13 @@ static FLXKStyleManager* _styleManager = nil;
     
     
     /*
-    //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:nil];
-    */
+     //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
+     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+     
+     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+     [self.navigationController.navigationBar setShadowImage:nil];
+     */
     
     /*
      //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
@@ -59,7 +64,7 @@ static FLXKStyleManager* _styleManager = nil;
     
 #pragma mark - UITabBar
     [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
-    [[UITabBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UITabBar appearance] setBarStyle:UIBarStyleDefault];
     [[UITabBar appearance] setTintColor:[UIColor customRed]];
     //    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
     //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];

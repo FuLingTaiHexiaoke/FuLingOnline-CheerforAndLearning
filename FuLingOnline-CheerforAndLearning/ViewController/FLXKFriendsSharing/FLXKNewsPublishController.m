@@ -94,6 +94,16 @@
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
     }
+    
+    //navigation bar
+    //    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
+    //    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
+    
+    //    [self.navigationController.navigationBar lt_reset];
+//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:RGBA(248, 249, 250, 1.0)];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
 }
 
 - (void)resetTextStyle {
@@ -111,9 +121,15 @@
 
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
 
-    //navigation bar
-//    [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
-//        [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor whiteColor]];
+//    //navigation bar
+////    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
+////    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
+//    
+////    [self.navigationController.navigationBar lt_reset];
+//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:RGBA(248, 249, 250, 1.0)];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -124,7 +140,8 @@
     [super viewWillDisappear:animated];
 
     //navigation bar
-    [self.navigationController.navigationBar lt_reset];
+//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
+//    [self.navigationController.navigationBar lt_reset];
 }
 
 -(void)dealloc{
@@ -195,9 +212,9 @@
     model.video_url=self.publishLocationButton.titleLabel.text;
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        NSLog(@"success");
+//        NSLog(@"success");
     } failureCallback:^(NSError *err) {
-        NSLog(@"failure");
+//        NSLog(@"failure");
     }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
     
 }

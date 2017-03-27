@@ -38,15 +38,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-//    //      //add navigation title view
-//    [self setupNavigationTitleSegmentsView];
-//    //setup a scrollview container
-//    //add children to scrollview container
-//    [self setupScrollViewWithVCs:self.viewControllers];
-       NSLog(@" self.view.frame  %@", NSStringFromCGRect(  self.view.frame));
-    [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@" obj.view.frame  %@", NSStringFromCGRect(  obj.view.frame));
-    }];
+
 }
 
 #pragma mark -

@@ -11,10 +11,21 @@
 #ifndef config_h
 #define config_h
 
+//================================================== GLOBAL APPEARANCE COLOR======================================================
+#pragma mark -
+#pragma mark - GLOBAL APPEARANCE COLOR
+
+#define NAVIGATION_BAR_BARTINTCOLOR [UIColor orangeColor]
+#define NAVIGATION_BAR_TINTCOLOR [UIColor whiteColor]
+
+#define NAVIGATION_BAR_DETAIL_BARTINTCOLOR RGBA(248, 249, 250, 1.0)
+#define NAVIGATION_BAR_DETAIL_TINTCOLOR RGBA(91, 92, 94, 1.0)
+
+//================================================== [NSUserDefaults standardUserDefaults]======================================================
+
 #pragma mark -
 #pragma mark - NSUserDefaults
 
-//================================================== [NSUserDefaults standardUserDefaults]======================================================
 #define login_user_name  @"login_user_name"
 #define login_user_password  @"login_user_password"
 #define login_user_remember  @"login_user_remember"

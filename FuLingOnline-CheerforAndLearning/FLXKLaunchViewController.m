@@ -193,12 +193,10 @@
     [self.view addSubview:btn];
     
     [[CAShapeLayer layer]createClockTickCircleAminationLayerWithFrame:btn.bounds inView:btn duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"TickCircle_Duration", 5.0) animationDidStopBlock:^{
-        NSLog(@"animation did stop!");
     }];
     
     @weakify(self)
     [[CAShapeLayer layer]createFuLingMemoryAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:FBTweakValue(@"Animation", @"LaunchViewController",  @"FuLingMemory_Duration", 10.0) animationDidStopBlock:^{
-        NSLog(@"animation did stop!");
         @strongify(self)
         //长江
         [[CAEmitterLayer layer]  createFlowingWater_CircleAminationLayerWithFrame:CGRectMake(0, 0, self.view.width, _companyLogoView.height) inView:_companyLogoView duration:20.0 isYangtze:YES  animationDidStopBlock:^{

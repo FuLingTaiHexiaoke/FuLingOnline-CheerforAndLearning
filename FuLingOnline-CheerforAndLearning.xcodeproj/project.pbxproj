@@ -4261,12 +4261,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TQ772LEHW3;
 				INFOPLIST_FILE = FuLingOnlineIdeaTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -4277,12 +4279,14 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = TQ772LEHW3;
 				INFOPLIST_FILE = FuLingOnlineIdeaTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.psylife.FuLingOnlineIdeaTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -4581,6 +4585,7 @@
 				B9614A6F1E82CC24008B7531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9614A751E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestTests" */ = {
 			isa = XCConfigurationList;
@@ -4589,6 +4594,7 @@
 				B9614A711E82CC24008B7531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9614A761E82CC24008B7531 /* Build configuration list for PBXNativeTarget "FuLingOnlineIdeaTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -4597,6 +4603,7 @@
 				B9614A731E82CC24008B7531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9D854AD1DAC8BE2001AD79C /* Build configuration list for PBXProject "FuLingOnline-CheerforAndLearning" */ = {
 			isa = XCConfigurationList;

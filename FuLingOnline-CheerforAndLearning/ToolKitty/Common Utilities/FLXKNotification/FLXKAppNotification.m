@@ -45,13 +45,13 @@
             if (granted) {
                 // 点击允许
                 [application registerForRemoteNotifications];
-                NSLog(@"注册成功");
+//                NSLog(@"注册成功");
                 [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-                    NSLog(@"%@", settings);
+//                    NSLog(@"%@", settings);
                 }];
             } else {
                 // 点击不允许
-                NSLog(@"注册失败");
+//                NSLog(@"注册失败");
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[[UIAlertView alloc] initWithTitle:@"提示" message:@"应用未允许推送通知，请去-> [设置 - 团.在一起 - 通知 - ] 打开允许推送通知" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
                 });
@@ -149,7 +149,7 @@
 +(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
     NSDictionary * userInfo = response.notification.request.content.userInfo;
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
+//        NSLog(@"iOS10 前台收到远程通知:%@", userInfo);
         NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
         id message_json = [apsInfo objectForKey:@"message_json"];
         if (![NSJSONSerialization isValidJSONObject:message_json]) {
@@ -228,7 +228,7 @@
 
 + (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     NSString *str = [NSString stringWithFormat: @"Error: %@", error];
-    NSLog(@"获取令牌失败:  %@",str);
+//    NSLog(@"获取令牌失败:  %@",str);
     //如果device token获取失败则需要重新获取一次
     [FLXKAppNotification registerRemoteNotification:[UIApplication sharedApplication]];
 }
@@ -295,7 +295,7 @@
  */
 +(void)registerLocalNotification:(NSInteger)alertTime {
     //http://blog.csdn.net/wzq9706/article/details/39002491 包含对重复时间的和注意点的解释
-    NSLog(@"发送通知");
+//    NSLog(@"发送通知");
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     // 设置触发通知的时间
     NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
@@ -335,11 +335,11 @@
 #pragma mark - LocalNotification CallBack
 
 +(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    NSLog(@"notification:%@",notification);
+//    NSLog(@"notification:%@",notification);
     NSString *notMess = [notification.userInfo objectForKey:@"key"];
     UIAlertController* alertController=[UIAlertController alertControllerWithTitle:@"正在查看本地通知" message:notMess preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction*  alertAction=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"%@",notMess);
+//        NSLog(@"%@",notMess);
     }];
     [alertController addAction:alertAction];
     NSInteger badge = [UIApplication sharedApplication].applicationIconBadgeNumber;
@@ -459,7 +459,7 @@
      
      UNNotificationAttachment *attachment = [UNNotificationAttachment attachmentWithIdentifier:@"imageAttachment" URL:[NSURL fileURLWithPath:path] options:nil error:&error];
      if (error) {
-     NSLog(@"attachment error %@", error);
+//     NSLog(@"attachment error %@", error);
      }
     if (attachment) {
              content.attachments = @[attachment];

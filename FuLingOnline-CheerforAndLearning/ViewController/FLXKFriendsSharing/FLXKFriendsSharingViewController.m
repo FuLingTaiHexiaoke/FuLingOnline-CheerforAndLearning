@@ -38,7 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.navigationBarHidden=NO;
+    //    self.navigationController.navigationBarHidden=NO;
     
     [self registerGestureForResignViewEditing];
     
@@ -66,28 +66,39 @@
         [self.view addSubview:btn1];
     }
     
+    
+//    //navigation bar
+//    
+//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
+    
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
-
-//navigation bar
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
-
+    
+//    //navigation bar
+//    
+//    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+//    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor orangeColor]];
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"self.view.frame viewDidAppear %@", NSStringFromCGRect( self.view.frame));
     [super viewDidAppear:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-
+    
     //navigation bar
-      [self.navigationController.navigationBar lt_reset];
+    //            [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
+//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
+//    [self.navigationController.navigationBar lt_reset];
 }
 
 
