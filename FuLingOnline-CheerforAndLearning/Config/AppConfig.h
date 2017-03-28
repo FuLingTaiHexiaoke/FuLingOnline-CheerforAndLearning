@@ -15,11 +15,11 @@
 #pragma mark -
 #pragma mark - GLOBAL APPEARANCE COLOR
 
-#define NAVIGATION_BAR_BARTINTCOLOR [UIColor orangeColor]
-#define NAVIGATION_BAR_TINTCOLOR [UIColor whiteColor]
+#define NAVIGATION_BAR_TOP_BARTINTCOLOR [UIColor orangeColor]
+#define NAVIGATION_BAR_TOP_TINTCOLOR [UIColor whiteColor]
 
-#define NAVIGATION_BAR_DETAIL_BARTINTCOLOR RGBA(248, 249, 250, 1.0)
-#define NAVIGATION_BAR_DETAIL_TINTCOLOR RGBA(91, 92, 94, 1.0)
+#define NAVIGATION_BAR_DEFAULT_BARTINTCOLOR RGBA(248, 249, 250, 1.0)
+#define NAVIGATION_BAR_DEFAULT_TINTCOLOR RGBA(91, 92, 94, 1.0)
 
 //================================================== [NSUserDefaults standardUserDefaults]======================================================
 

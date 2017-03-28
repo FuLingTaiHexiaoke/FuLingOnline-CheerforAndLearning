@@ -8,88 +8,71 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>BlocksKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
 		</dict>
 		<key>KVOController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>7</integer>
-		</dict>
-		<key>LTNavigationBar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-			<key>orderHint</key>
-			<integer>9</integer>
 		</dict>
 		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>11</integer>
 		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>10</integer>
 		</dict>
 		<key>Pods-FuLingOnline-CheerforAndLearning.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>12</integer>
+		</dict>
+		<key>RTRootNavigationController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>13</integer>
 		</dict>
 		<key>TZImagePickerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>15</integer>
 		</dict>
 		<key>Tweaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>14</integer>
 		</dict>
 		<key>libextobjc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06C3CA73931857B25FF8BE3A4D27702B</key>
+		<key>0EE5634CAD0D778C76414552FE5B44AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0EE5634CAD0D778C76414552FE5B44AB</key>
+		<key>2B8A0B6F3B96B7C32449C92615713D41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>344D7C001C43227D638F76CA4753C0BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -99,27 +82,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>55C01682F71C03652C602F4C99FDF4A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>65639E9D7248E5D77C8090272CA2F3AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>65E86FC8F874CD855F1291330BDE16D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81A311CB0A706632BB274E94C0FC99D2</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8A818C884836C138308E3A2D9037F045</key>
+		<key>6A1C317994BACCD177212C292AF7DD93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A8584EF007DAB8F0197F5B407AFACEE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -130,11 +113,6 @@
 			<true/>
 		</dict>
 		<key>AA55E2D129D695FAFE216D8B7F1EC50F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BF31D34A412492824F3E7BE526FB1104</key>
 		<dict>
 			<key>primary</key>
 			<true/>

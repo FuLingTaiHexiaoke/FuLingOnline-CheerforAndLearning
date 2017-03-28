@@ -32,8 +32,6 @@
     [self createHeaderView];
     
     if (DEBUG) {
-        
-        
         UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
         [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
         btn1.backgroundColor=[UIColor grayColor];

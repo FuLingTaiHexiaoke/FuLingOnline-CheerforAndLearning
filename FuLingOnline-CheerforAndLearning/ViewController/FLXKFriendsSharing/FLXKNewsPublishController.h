@@ -6,8 +6,8 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FLXKBaseViewController.h"
 
-@interface FLXKNewsPublishController : UIViewController
+@interface FLXKNewsPublishController : FLXKBaseViewController
 
 @end

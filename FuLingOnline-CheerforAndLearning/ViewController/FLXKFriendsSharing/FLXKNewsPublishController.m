@@ -25,7 +25,7 @@
 #import "FLXKHttpRequestModelHelper.h"
 #import "Masonry.h"
 #import "NSAttributedString+EmotionExtension.h"
-#import "UINavigationBar+Awesome.h"
+//#import "UINavigationBar+Awesome.h"
 
 
 
@@ -81,28 +81,10 @@
     //set up subviews
     [self   initSubViews];
 
-
-
-
-
-    //    [self.publishToolBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-    //        make.size.mas_equalTo(self.publishToolBarPositionView);
-    //        make.bottom.equalTo(self.view.mas_bottom);
-    //    }];
-    
     if (UserDefaultsObjForKey( @"plainString")) {
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
     }
-    
-    //navigation bar
-    //    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
-    //    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
-    
-    //    [self.navigationController.navigationBar lt_reset];
-//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
-//    [self.navigationController.navigationBar lt_setBackgroundColor:RGBA(248, 249, 250, 1.0)];
-//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 
 }
 
@@ -122,26 +104,8 @@
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
 
 //    //navigation bar
-////    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
-////    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
-//    
-////    [self.navigationController.navigationBar lt_reset];
 //    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
-//    [self.navigationController.navigationBar lt_setBackgroundColor:RGBA(248, 249, 250, 1.0)];
-//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-
-}
-
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-
-    //navigation bar
-//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
-//    [self.navigationController.navigationBar lt_reset];
+//    [self.navigationController.navigationBar setBarTintColor:RGBA(248, 249, 250, 1.0)];
 }
 
 -(void)dealloc{

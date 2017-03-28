@@ -1,32 +1,41 @@
 target ‘FuLingOnline-CheerforAndLearning’ do
-    ##     网络请求
-    ##     PsyHttpHelper
-    pod 'AFNetworking', '~> 3.1.0'
-    pod 'SDWebImage'
-##    布局
-pod 'Masonry','~>1.0.2'
+    
+##     网络请求
+pod 'AFNetworking', '~> 3.1.0'
+pod 'SDWebImage'
+#pod 'CocoaAsyncSocket'
+#pod 'MJRefresh'
 
-## Utilities
+
+##      Utilities
 pod 'libextobjc/EXTScope','~>0.4.1'
 pod 'BlocksKit/Core', '~> 2.2.0'
 pod 'BlocksKit/UIKit', '~> 2.2.0'
 pod 'KVOController'
-pod 'TZImagePickerController'
 pod 'MJExtension'
-pod 'LTNavigationBar'
+pod 'Tweaks'
+pod 'Masonry','~>1.0.2'
+#pod 'Reveal-SDK'
+
+##      UI BULDER
+pod 'RTRootNavigationController'
+#pod 'LTNavigationBar'
+pod 'TZImagePickerController'
+#pod 'vfrReader', '~> 2.8.6'
+#pod 'FDFullscreenPopGesture', '1.1'
 #pod 'SwipeBack', '~> 1.1'
-## Diagnostics
+
+
+##      custom views
+# pod 'HPGrowingTextView'
+
+
+##      Diagnostics
 #百度
 pod 'BaiduMobStat'
 #腾讯
 pod 'Bugly'
-pod 'Tweaks'
 
-## Autolayout
-#pod 'Masonry'
-
-##custom views
-# pod 'HPGrowingTextView'
 end
 
 

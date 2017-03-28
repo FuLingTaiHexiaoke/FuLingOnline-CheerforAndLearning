@@ -26,12 +26,12 @@ static FLXKStyleManager* _styleManager = nil;
 #pragma mark - UINavigationBar
     
     //灰色背景
-    //    [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
-    //    [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
+        [[UINavigationBar appearance] setTintColor:RGBA(91, 92, 94, 1.0)];
+        [[UINavigationBar appearance] setBarTintColor:RGBA(248, 249, 250, 1.0)];
     
     //橙色背景
-    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     [[UINavigationBar appearance] setTranslucent:NO];
     
@@ -41,7 +41,7 @@ static FLXKStyleManager* _styleManager = nil;
     //    [[UIBarButtonItem appearance] setBackButtonBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
     //    [[UIBarButtonItem appearance] setBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
     
-    
+
     /*
      //在Translucent:YES为透明的情况下，两行代码使navigationBar完全透明。Translucent:NO时，黑色背景
      [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];

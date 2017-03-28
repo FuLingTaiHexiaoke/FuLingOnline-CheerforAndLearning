@@ -9,7 +9,7 @@
 #import "FLXKViewControllerBase.h"
 
 
-@interface FLXKViewControllerBase()
+@interface FLXKBaseViewController()
 
 @end
 @implementation FLXKViewControllerBase
@@ -39,6 +39,13 @@
 }
 
 
-
-
+#pragma mark - NAVIGATION SETTING
+-(void)setupOwnNavigationAppearance{
+//    self.title = @"Test VC";
+//    self.view.backgroundColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.barTintColor =NAVIGATION_BAR_TOP_BARTINTCOLOR;
+//    self.navigationController.navigationBar.tintColor =NAVIGATION_BAR_TOP_TINTCOLOR;
+//    self.navigationController.navigationBar.translucent = YES;
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+}
 @end

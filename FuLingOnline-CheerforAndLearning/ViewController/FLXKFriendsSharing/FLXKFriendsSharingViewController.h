@@ -6,8 +6,8 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FLXKBaseViewController.h"
 
-@interface FLXKFriendsSharingViewController : UIViewController
+@interface FLXKFriendsSharingViewController : FLXKBaseViewController
 
 @end

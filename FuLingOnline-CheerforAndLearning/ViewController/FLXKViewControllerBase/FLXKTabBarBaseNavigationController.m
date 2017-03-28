@@ -8,7 +8,7 @@
 
 #import "FLXKTabBarBaseNavigationController.h"
 
-#import "UINavigationBar+Awesome.h"
+//#import "UINavigationBar+Awesome.h"
 
 @interface FLXKTabBarBaseNavigationController ()<UINavigationControllerDelegate>
 

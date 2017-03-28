@@ -1,7 +1,7 @@
 {\rtf1\ansi\ansicpg936\cocoartf1404\cocoasubrtf470
 {\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 PingFangSC-Regular;}
 {\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red46\green13\blue110;\red92\green38\blue153;
-\red196\green26\blue22;\red63\green110\blue116;\red38\green71\blue75;\red0\green116\blue0;\red100\green56\blue32;
+\red196\green26\blue22;\red100\green56\blue32;\red63\green110\blue116;\red38\green71\blue75;\red0\green116\blue0;
 }
 \margl1440\margr1440\vieww37900\viewh18760\viewkind0
 \deftab593
@@ -14,33 +14,38 @@
     \cf2 return\cf0  \cf2 self\cf0 ;\
 \}\
 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+\cf6 #pragma mark -\cf0 \
+\
 UIRefreshControl\
 \
 \
+\cf6 #pragma mark -\cf0 \
 - (\cf2 id\cf0 )initWithStyle:(\cf4 UITableViewStyle\cf0 )style\
 \{\
     \cf2 self\cf0  = [\cf2 super\cf0  \cf3 initWithStyle\cf0 :style];\
     \cf2 if\cf0  (\cf2 self\cf0 ) \{\
-        \cf2 self\cf0 .\cf6 model\cf0  = [[\cf6 RJModel\cf0  \cf3 alloc\cf0 ] \cf3 init\cf0 ];\
-        [\cf2 self\cf0 .\cf6 model\cf0  \cf7 populateDataSource\cf0 ];\
-        \cf2 self\cf0 .\cf6 offscreenCells\cf0  = [\cf4 NSMutableDictionary\cf0  \cf3 dictionary\cf0 ];\
+        \cf2 self\cf0 .\cf7 model\cf0  = [[\cf7 RJModel\cf0  \cf3 alloc\cf0 ] \cf3 init\cf0 ];\
+        [\cf2 self\cf0 .\cf7 model\cf0  \cf8 populateDataSource\cf0 ];\
+        \cf2 self\cf0 .\cf7 offscreenCells\cf0  = [\cf4 NSMutableDictionary\cf0  \cf3 dictionary\cf0 ];\
     \}\
     \cf2 return\cf0  \cf2 self\cf0 ;\
 \}\
 \
-  \cf2 self\cf0 .\cf6 titleLabel\cf0 .\cf4 font\cf0  = [\cf4 UIFont\cf0  \cf3 preferredFontForTextStyle\cf0 :\cf4 UIFontTextStyleHeadline\cf0 ];\
+  \cf2 self\cf0 .\cf7 titleLabel\cf0 .\cf4 font\cf0  = [\cf4 UIFont\cf0  \cf3 preferredFontForTextStyle\cf0 :\cf4 UIFontTextStyleHeadline\cf0 ];\
 \
-    \cf8 // WARNING: Don't call the table view's dequeueReusableCellWithIdentifier: method here because this will result\cf0 \
-    \cf8 // in a memory leak as the cell is created but never returned from the tableView:cellForRowAtIndexPath: method!\
+    \cf9 // WARNING: Don't call the table view's dequeueReusableCellWithIdentifier: method here because this will result\cf0 \
+    \cf9 // in a memory leak as the cell is created but never returned from the tableView:cellForRowAtIndexPath: method!\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0     \cf2 if\cf0  (!templateCell) \{\
         templateCell = [\cf2 self\cf0  \cf3 dequeueReusableCellWithIdentifier\cf0 :identifier];\
 \
     \cf2 if\cf0  (!cell) \{\
-        cell = [[\cf6 RJTableViewCell\cf0  \cf3 alloc\cf0 ] \cf3 init\cf0 ];\
-        [\cf2 self\cf0 .\cf6 offscreenCells\cf0  \cf3 setObject\cf0 :cell \cf3 forKey\cf0 :reuseIdentifier];\
+        cell = [[\cf7 RJTableViewCell\cf0  \cf3 alloc\cf0 ] \cf3 init\cf0 ];\
+        [\cf2 self\cf0 .\cf7 offscreenCells\cf0  \cf3 setObject\cf0 :cell \cf3 forKey\cf0 :reuseIdentifier];\
     \}\
 \
-\cf8     // If you are just returning a constant value from this method, you should instead just set the table view's\
+\cf9     // If you are just returning a constant value from this method, you should instead just set the table view's\
     // estimatedRowHeight property (in viewDidLoad or similar), which is even faster as the table view won't\
     // have to call this method for every row in the table view.\
     //\
@@ -48,13 +53,18 @@ UIRefreshControl\
     // "jumping" as you scroll the table view when using a constant estimatedRowHeight. If you do implement this method,\
     // be sure to do as little work as possible to get a reasonably-accurate estimate.\
  \
-\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+\cf6 #pragma mark -\cf9 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
-\f1 \'c6\'df\'b1\'a6\'c0\'d6\'d3\'c6\'d3\'c6\'c9\'a8\'c2\'eb\'bb\'b9\'b2\'bb\'d6\'aa\'b5\'c0\'be\'df\'cc\'e5\'d4\'ad\'d2\'f22017-3-22\
+\f1 \cf9 \'c6\'df\'b1\'a6\'c0\'d6\'d3\'c6\'d3\'c6\'c9\'a8\'c2\'eb\'bb\'b9\'b2\'bb\'d6\'aa\'b5\'c0\'be\'df\'cc\'e5\'d4\'ad\'d2\'f22017-3-22\
 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
-\f0 \cf9 #import \cf5 <AVKit/AVKit.h>\cf9 \
+\f0 \cf6 #pragma mark -
+\f1 \cf9 \
+
+\f0 \cf6 #import \cf5 <AVKit/AVKit.h>\cf6 \
 #import \cf5 <AVFoundation/AVFoundation.h>
-\f1 \cf8 \
+\f1 \cf9 \
 }

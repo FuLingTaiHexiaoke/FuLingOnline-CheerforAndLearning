@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLXKViewControllerBase : UIViewController
+@interface FLXKBaseViewController : UIViewController
 
 @end

@@ -39,7 +39,12 @@
 //subviews
 
 
+
+//UI State Record Properties
+
+
 //IBOutlet
+
 
 //IBAction
 
