@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FLXKOneSharingPictureLayoutView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TAB-Mb-ngd">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TAB-Mb-ngd" secondAttribute="trailing" id="IDl-SC-Cri"/>
+                <constraint firstAttribute="bottom" secondItem="TAB-Mb-ngd" secondAttribute="bottom" id="WEF-yd-OJt"/>
+                <constraint firstItem="TAB-Mb-ngd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i6g-Ls-CGv"/>
+                <constraint firstItem="TAB-Mb-ngd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mZy-EG-5O6"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="SharingImageViews" destination="TAB-Mb-ngd" id="etG-Ou-tZQ"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-162.5"/>
+        </view>
+    </objects>
+</document>

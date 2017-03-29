@@ -9,15 +9,16 @@
 
 #import "___FILEBASENAME___.h"
 //utilites
-//child viewController
+//models
 //subviews
+//child viewController
 @interface ___FILEBASENAMEASIDENTIFIER___ ()
 //IBOutlet
 //IBAction
-//child viewController
-//subviews
 //models
 //UI state record properties
+//subviews
+//child viewController
 @end
 
 @implementation ___FILEBASENAMEASIDENTIFIER___

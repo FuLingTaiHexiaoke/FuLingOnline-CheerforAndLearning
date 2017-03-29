@@ -16,6 +16,7 @@ pod 'MJExtension'
 pod 'Tweaks'
 pod 'Masonry','~>1.0.2'
 #pod 'Reveal-SDK'
+pod 'UITableView+FDTemplateLayoutCell'
 
 ##      UI BULDER
 pod 'RTRootNavigationController'

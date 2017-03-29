@@ -6,13 +6,13 @@
 //  Copyright © 2016年 com.FuLing. All rights reserved.
 //
 
-#import "FLXKViewControllerBase.h"
+#import "FLXKBaseViewController.h"
 
 
 @interface FLXKBaseViewController()
 
 @end
-@implementation FLXKViewControllerBase
+@implementation FLXKBaseViewController
 
 #pragma mark - ViewController LifeCircle
 

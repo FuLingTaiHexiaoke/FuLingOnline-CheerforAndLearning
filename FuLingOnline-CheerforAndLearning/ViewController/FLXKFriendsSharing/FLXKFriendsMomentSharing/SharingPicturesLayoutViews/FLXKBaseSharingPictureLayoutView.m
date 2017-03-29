@@ -1,0 +1,48 @@
+//
+//  FLXKBaseSharingPictureLayoutView.m
+//  FuLingOnline-CheerforAndLearning
+//
+//  Created by 肖科 on 17/3/29.
+//  Copyright © 2017年 com.FuLing. All rights reserved.
+//
+
+#import "FLXKBaseSharingPictureLayoutView.h"
+//child views
+#import "FLXKOneSharingPictureLayoutView.h"
+
+@implementation FLXKBaseSharingPictureLayoutView
+
+
++(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<NSString*>*)imageArray{
+    FLXKBaseSharingPictureLayoutView* pictureLayoutView;
+    NSInteger imageCount=imageArray.count;
+    switch (imageCount) {
+        case 0:
+            pictureLayoutView=nil;
+            break;
+        case 1:
+            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
+            break;
+        default:
+            pictureLayoutView=nil;
+            break;
+    }
+    
+    [pictureLayoutView setImageArray:imageArray];
+    
+    return pictureLayoutView;
+}
+
+-(void)setImageArray:(NSArray<NSString *> *)imageArray{
+    
+}
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+@end

@@ -558,7 +558,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="y5e-Xv-k6u"/>
                                             <barButtonItem style="plain" id="K33-QJ-cUM">
                                                 <view key="customView" contentMode="scaleToFill" id="NKG-Vt-3o9">
-                                                    <rect key="frame" x="26" y="5.5" width="139" height="33"/>
+                                                    <rect key="frame" x="26" y="6" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O44-FK-2xd">
@@ -590,7 +590,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="W4f-6n-UQ6"/>
                                             <barButtonItem style="plain" id="CFE-aF-58K">
                                                 <view key="customView" contentMode="scaleToFill" id="8sr-XD-8yF">
-                                                    <rect key="frame" x="210" y="5.5" width="139" height="33"/>
+                                                    <rect key="frame" x="210" y="6" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-sz-HcQ">
@@ -684,7 +684,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOJ-hi-nVK" id="pmV-aY-18A">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

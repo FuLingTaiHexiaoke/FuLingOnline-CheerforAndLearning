@@ -54,6 +54,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>libextobjc.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,27 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B8A0B6F3B96B7C32449C92615713D41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>344D7C001C43227D638F76CA4753C0BD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>55C01682F71C03652C602F4C99FDF4A1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>65639E9D7248E5D77C8090272CA2F3AE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6A1C317994BACCD177212C292AF7DD93</key>
+		<key>89CF30EAB054AA3E3C38D938C04013DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -113,6 +98,31 @@
 			<true/>
 		</dict>
 		<key>AA55E2D129D695FAFE216D8B7F1EC50F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AFF25300ECAB84009C59610A4F4168EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B52ECC2C1A4E5428ADE7286C7088691F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DCD6FB2A9D167A994CC3769F1A0B9356</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1AAE5F6DDA85A7EDC9E672477F3F2C6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ED5A086C60EA555BB3D0CC519983E197</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -5,17 +5,24 @@
 //  Created by xiaoke on 17/3/5.
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
+#pragma mark - Declarations and macros
+//Resue identifier
+#define FLXKSuggestHeaderView1 @"Reuse_FLXKSuggestHeaderView"
+#define Reuse_FLXKSharingFuLingOnlineStyleCell @"Reuse_FLXKSharingFuLingOnlineStyleCell"
 
 #import "FLXSuggestedSharingTableViewController.h"
 
 //utilites
-
+#import "UITableView+FDTemplateLayoutCell.h"
 
 //child viewController
 
 
 //subviews
 #import "FLXKSuggestHeaderView.h"
+
+#import "FLXKSharingBaseCell.h"
+#import "FLXKSharingFuLingOnlineStyleCell.h"
 
 @interface FLXSuggestedSharingTableViewController ()
 
@@ -28,15 +35,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     //setup ui
     [self UIConfigAndAdd];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.tableView reloadData];
 }
 
 #pragma mark -
@@ -59,7 +70,7 @@
 }
 
 - (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section{
-    UITableViewHeaderFooterView * headerView=[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ReID_HeaderFooterView_FLXKSuggestHeaderView"];
+    UITableViewHeaderFooterView * headerView=[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
     return headerView;
 }
 
@@ -68,9 +79,9 @@
 }
 
 -(UIView* )tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UITableViewHeaderFooterView * headerView=[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ReID_HeaderFooterView_FLXKSuggestHeaderView"];
+    UITableViewHeaderFooterView * headerView=[tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
     return headerView;
-
+    
 }
 
 -(UIView* )tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -78,21 +89,44 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reID_cell_SuggestedSharing" ];
-    if (!cell) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reID_cell_SuggestedSharing" ];
-    }
+    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell ];
+    //    if (!cell) {
+    //        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    //    }
+    
     // Configure the cell...
-    cell.backgroundColor=[UIColor yellowColor];
-    cell.textLabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
-
+    //    cell.backgroundColor=[UIColor yellowColor];
+    //    cell.textLabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    
+    
+    
+//    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
+    
     return cell;
 }
 
-#pragma mark - UITableViewDelegate
+- (void)configureCell:(FLXKSharingFuLingOnlineStyleCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
+    if (indexPath.row % 2 == 0) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
+}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-  return 44.0;
+#pragma mark - UITableViewDelegate
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 44.0;
+//}
+
+//
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+            return [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingFuLingOnlineStyleCell *cell) {
+                [self configureCell:cell atIndexPath:indexPath];
+            }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -113,9 +147,23 @@
 #pragma mark - Private Methods
 
 -(void)UIConfigAndAdd{
-    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"ReID_HeaderFooterView_FLXKSuggestHeaderView"];
-
+    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:FLXKSuggestHeaderView1];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    
+    self.tableView.estimatedRowHeight=44;
 }
-
+-(FLXKSharingCellModel*)setupFLXKSharingCellModel{
+    FLXKSharingCellModel* model=[FLXKSharingCellModel new];
+    model.avatarImageUrl=@"Spark";
+    model.nickName=@"Spark";
+    model.timestamp=@"Spark";
+    model.mainSharingContent=@"Spark";
+    model.sharingImages=@"Spark";
+    model.locationRecord=@"Spark";
+    model.likeTheSharingRecords=@"Spark";
+    model.sharingComments=@"Spark";
+    return model;
+}
 
 @end
