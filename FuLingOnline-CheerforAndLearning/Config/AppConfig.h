@@ -49,6 +49,17 @@
 #pragma mark -
 #pragma mark - APP ViewController Router
 
+
+#define VC_VIEWCONTROLLER @"VC"
+
+#define VC_STORYBOARD @"SB"
+
+#define NORMAL_ICON @"ICONOR"
+
+#define  SELECTED_ICON @"ICONSE"
+
+#define TITLE @"TITLE"
+
 //xibType
 //0:no xib
 //1:single xib

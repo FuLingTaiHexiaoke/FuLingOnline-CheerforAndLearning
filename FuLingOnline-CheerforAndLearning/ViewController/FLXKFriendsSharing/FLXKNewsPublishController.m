@@ -103,10 +103,8 @@
 
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
 
-//    //navigation bar
-//    [self.navigationController.navigationBar setTintColor:RGBA(91, 92, 94, 1.0)];
-//    [self.navigationController.navigationBar setBarTintColor:RGBA(248, 249, 250, 1.0)];
 }
+
 
 -(void)dealloc{
       NSLog(@"%@ 销毁",NSStringFromClass(self.class));

@@ -35,6 +35,11 @@ static FLXKStyleManager* _styleManager = nil;
     
     [[UINavigationBar appearance] setTranslucent:NO];
     
+    //    [[UINavigationBar appearance] setTintColor:RGBA(255, 255, 255, 1.0)];
+    //    [[UINavigationBar appearance] setBarTintColor:RGBA(244, 126, 37, 1.0)];
+//    [[UINavigationBar appearance] setBarTintColor:RGBA(255, 255, 255, 1.0)];
+//    [[UINavigationBar appearance] setTranslucent:YES];
+
     //    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"btn_navigation_back"]];
     //    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"btn_navigation_back"]];
     //    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
@@ -63,8 +68,11 @@ static FLXKStyleManager* _styleManager = nil;
     
     
 #pragma mark - UITabBar
+
     [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
     [[UITabBar appearance] setBarStyle:UIBarStyleDefault];
+//    [[UITabBar appearance] setTranslucent:YES];//设置为YES，就有模糊效果，NO就没有
+//    [[UITabBar appearance] setBarStyle:UIBarStyleDefault];
     [[UITabBar appearance] setTintColor:[UIColor customRed]];
     //    [[UITabBar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:0.2]];
     //    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"]];

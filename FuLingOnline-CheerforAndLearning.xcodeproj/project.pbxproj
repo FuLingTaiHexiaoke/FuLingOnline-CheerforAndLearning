@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */; };
+		B90A7B0B1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.m in Sources */ = {isa = PBXBuildFile; fileRef = B90A7B091E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.m */; };
+		B90A7B0C1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.xib in Resources */ = {isa = PBXBuildFile; fileRef = B90A7B0A1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.xib */; };
 		B90CD9581E763FD400278EDB /* FLXKAPPRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9561E763FD400278EDB /* FLXKAPPRouter.m */; };
 		B90CD97B1E763FFD00278EDB /* AccessoryImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD95C1E763FFD00278EDB /* AccessoryImageViewController.m */; };
 		B90CD97C1E763FFD00278EDB /* AccessoryVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD95E1E763FFD00278EDB /* AccessoryVideoViewController.m */; };
@@ -630,6 +632,9 @@
 		52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FuLingOnline-CheerforAndLearning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5B72A2F25635274EB9364D /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; sourceTree = "<group>"; };
 		B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Bridging-Header.h"; sourceTree = "<group>"; };
+		B90A7B081E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCelltest.h; sourceTree = "<group>"; };
+		B90A7B091E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCelltest.m; sourceTree = "<group>"; };
+		B90A7B0A1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCelltest.xib; sourceTree = "<group>"; };
 		B90CD9551E763FD400278EDB /* FLXKAPPRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAPPRouter.h; sourceTree = "<group>"; };
 		B90CD9561E763FD400278EDB /* FLXKAPPRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAPPRouter.m; sourceTree = "<group>"; };
 		B90CD9571E763FD400278EDB /* RouterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouterConfig.h; sourceTree = "<group>"; };
@@ -1692,6 +1697,9 @@
 				B92494901E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.h */,
 				B92494911E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m */,
 				B92494921E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib */,
+				B90A7B081E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.h */,
+				B90A7B091E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.m */,
+				B90A7B0A1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.xib */,
 			);
 			path = SharingCells;
 			sourceTree = "<group>";
@@ -3518,6 +3526,7 @@
 				B97507391E4C58F600A577E7 /* 012.png in Resources */,
 				B9C6AD421E6548550003C50A /* star_yellow3.png in Resources */,
 				B97506BD1E4C58F600A577E7 /* smiley_34.png in Resources */,
+				B90A7B0C1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.xib in Resources */,
 				B97507A91E4C58F700A577E7 /* 068.png in Resources */,
 				B97506F21E4C58F600A577E7 /* smiley_82.png in Resources */,
 				B9C6AC9B1E6548550003C50A /* FLXKSectionHeaderView.xib in Resources */,
@@ -3946,6 +3955,7 @@
 				B9C6ACA01E6548550003C50A /* ScanSuccessJumpVC.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
+				B90A7B0B1E8BF0BD006F398E /* FLXKSharingFuLingOnlineStyleCelltest.m in Sources */,
 				B9C6ACA71E6548550003C50A /* SGScanningQRCodeView.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
 				B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */,
