@@ -100,22 +100,22 @@
     //    cell.backgroundColor=[UIColor yellowColor];
     //    cell.textLabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
     
-    
+//       [self configureCell:cell atIndexPath:indexPath];
     
     [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
     
     return cell;
 }
 //
-//- (void)configureCell:(FLXKSharingFuLingOnlineStyleCelltest *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
-//    if (indexPath.row % 2 == 0) {
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-//    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
-//}
+- (void)configureCell:(FLXKSharingBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
+    if (indexPath.row % 2 == 0) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
+}
 
 #pragma mark - UITableViewDelegate
 //
@@ -126,7 +126,7 @@
 //
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //
-//            return [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingFuLingOnlineStyleCelltest *cell) {
+//            return [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
 //                [self configureCell:cell atIndexPath:indexPath];
 //            }];
 //}
@@ -151,16 +151,16 @@
 -(void)UIConfigAndAdd{
     [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:FLXKSuggestHeaderView1];
     
-//    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-
+    //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCelltest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-
+    
     self.tableView.estimatedRowHeight=44;
 }
 -(FLXKSharingCellModel*)setupFLXKSharingCellModel{
     FLXKSharingCellModel* model=[FLXKSharingCellModel new];
-//    model.avatarImageUrl=@"IMG_0488";
-     model.avatarImageUrl=@"Spark";
+    //    model.avatarImageUrl=@"IMG_0488";
+    model.avatarImageUrl=@"Spark";
     model.nickName=@"Spark";
     model.timestamp=@"Spark";
     model.mainSharingContent=@"Spark";

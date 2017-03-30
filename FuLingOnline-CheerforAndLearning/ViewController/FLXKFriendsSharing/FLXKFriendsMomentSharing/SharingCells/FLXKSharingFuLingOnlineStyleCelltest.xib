@@ -58,7 +58,7 @@
                         <color key="backgroundColor" red="1" green="0.78090595640000005" blue="0.1760718637" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="Button"/>
                     </button>
-                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="222.5" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-BD-wEb" customClass="FLXKBaseSharingPictureLayoutView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihe-BD-wEb" customClass="FLXKBaseSharingPictureLayoutView">
                         <rect key="frame" x="54" y="134" width="240" height="222.5"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
@@ -66,18 +66,18 @@
                 <constraints>
                     <constraint firstItem="UBN-H8-40Q" firstAttribute="leading" secondItem="8F9-N9-qOm" secondAttribute="trailing" id="0cz-4F-85K"/>
                     <constraint firstItem="8F9-N9-qOm" firstAttribute="top" secondItem="UBN-H8-40Q" secondAttribute="top" id="35v-HH-qKy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ihe-BD-wEb" secondAttribute="bottom" constant="7.5" id="BFB-Uw-hnH"/>
                     <constraint firstItem="x1y-PX-U9H" firstAttribute="top" secondItem="Fx9-gm-uhp" secondAttribute="bottom" constant="8" id="HYw-zO-eE9"/>
-                    <constraint firstItem="ihe-BD-wEb" firstAttribute="top" secondItem="Lza-gT-Yqo" secondAttribute="bottom" constant="8" id="KLH-51-meF"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ihe-BD-wEb" secondAttribute="bottom" constant="8.5" id="KyS-1f-uNp"/>
                     <constraint firstItem="Fx9-gm-uhp" firstAttribute="baseline" secondItem="8F9-N9-qOm" secondAttribute="baseline" id="LGA-5L-gsq"/>
                     <constraint firstItem="Fx9-gm-uhp" firstAttribute="leading" secondItem="UBN-H8-40Q" secondAttribute="leading" id="MoC-Zx-Vc3"/>
                     <constraint firstItem="Lza-gT-Yqo" firstAttribute="top" secondItem="x1y-PX-U9H" secondAttribute="bottom" constant="8" id="Vah-OJ-yLO"/>
                     <constraint firstItem="8F9-N9-qOm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Vgu-n4-hhu"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ihe-BD-wEb" secondAttribute="trailing" constant="34" id="WXx-dW-99N"/>
                     <constraint firstItem="Lza-gT-Yqo" firstAttribute="leading" secondItem="UBN-H8-40Q" secondAttribute="leading" id="bMU-af-F6i"/>
+                    <constraint firstItem="ihe-BD-wEb" firstAttribute="top" secondItem="Lza-gT-Yqo" secondAttribute="bottom" constant="8" id="cmh-ed-eLT"/>
                     <constraint firstItem="x1y-PX-U9H" firstAttribute="leading" secondItem="UBN-H8-40Q" secondAttribute="leading" id="l5G-Lf-9yV"/>
+                    <constraint firstItem="ihe-BD-wEb" firstAttribute="leading" secondItem="UBN-H8-40Q" secondAttribute="leading" id="otX-9l-lGR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ihe-BD-wEb" secondAttribute="trailing" constant="34" id="sQP-mn-qEV"/>
                     <constraint firstItem="8F9-N9-qOm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="svs-Vq-aQ9"/>
-                    <constraint firstItem="ihe-BD-wEb" firstAttribute="leading" secondItem="UBN-H8-40Q" secondAttribute="leading" id="u5u-S3-EEn"/>
                     <constraint firstItem="Fx9-gm-uhp" firstAttribute="leading" secondItem="8F9-N9-qOm" secondAttribute="trailing" id="xHf-Bw-g1o"/>
                 </constraints>
             </tableViewCellContentView>
