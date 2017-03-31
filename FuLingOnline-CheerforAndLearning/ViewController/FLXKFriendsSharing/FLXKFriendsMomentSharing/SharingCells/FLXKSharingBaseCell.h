@@ -15,6 +15,7 @@
 //#import "FLXKSharingFuLingOnlineStyleCell.h"
 //models
 #import "FLXKSharingCellModel.h"
+#import "SharingCommentCellModel.h"
 
 @interface FLXKSharingBaseCell : UITableViewCell
 //IBOutlet

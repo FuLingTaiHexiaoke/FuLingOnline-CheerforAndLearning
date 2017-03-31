@@ -28,23 +28,71 @@ static FLXKDBHelper *_instance = nil;
     return _instance;
 }
 
+//+ (NSString *)dbPathWithDirectoryName:(NSString *)directoryName
+//{
+//    NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSFileManager *filemanage = [NSFileManager defaultManager];
+//    if (directoryName == nil || directoryName.length == 0) {
+//        docsdir = [docsdir stringByAppendingPathComponent:@"FLXKDB"];
+//    } else {
+//        docsdir = [docsdir stringByAppendingPathComponent:directoryName];
+//    }
+//    BOOL isDir;
+//    BOOL exit =[filemanage fileExistsAtPath:docsdir isDirectory:&isDir];
+//    if (!exit || !isDir) {
+//        [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
+//    }
+//    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"FLXKDB.sqlite"];
+//    NSLog(@"FLXKDB Directory:\n%@",dbpath);
+//    return dbpath;
+//}
+
 + (NSString *)dbPathWithDirectoryName:(NSString *)directoryName
 {
-    NSString *docsdir = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    //get documentDirectory
+    NSString *documentDirectory = [NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSFileManager *filemanage = [NSFileManager defaultManager];
     if (directoryName == nil || directoryName.length == 0) {
-        docsdir = [docsdir stringByAppendingPathComponent:@"FLXKDB"];
+        documentDirectory = [documentDirectory stringByAppendingPathComponent:@"FLXKDB"];
     } else {
-        docsdir = [docsdir stringByAppendingPathComponent:directoryName];
+        documentDirectory = [documentDirectory stringByAppendingPathComponent:directoryName];
     }
+    
+    //check documentDirectory exist
     BOOL isDir;
-    BOOL exit =[filemanage fileExistsAtPath:docsdir isDirectory:&isDir];
+    BOOL exit =[filemanage fileExistsAtPath:documentDirectory isDirectory:&isDir];
     if (!exit || !isDir) {
-        [filemanage createDirectoryAtPath:docsdir withIntermediateDirectories:YES attributes:nil error:nil];
+        [filemanage createDirectoryAtPath:documentDirectory withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSString *dbpath = [docsdir stringByAppendingPathComponent:@"FLXKDB.sqlite"];
-    NSLog(@"FLXKDB Directory:\n%@",dbpath);
-    return dbpath;
+    
+    //set dbPath
+    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"FLXKDB.sqlite"];
+    
+    //check if already sqlite exist
+    BOOL dbExit =[filemanage fileExistsAtPath:dbPath];
+    if (DEBUG) {
+        if (dbExit) {
+            [filemanage removeItemAtPath:dbPath error:nil];
+            NSString* bundleDBPath=[[NSBundle mainBundle]pathForResource:@"FLXKDB" ofType:@"sqlite"];
+            [filemanage copyItemAtPath:bundleDBPath toPath:dbPath error:nil];
+        }
+        else{
+            NSString* bundleDBPath=[[NSBundle mainBundle]pathForResource:@"FLXKDB" ofType:@"sqlite"];
+            BOOL bundleDBExit =[filemanage fileExistsAtPath:bundleDBPath];
+            if (bundleDBExit) {
+                [filemanage copyItemAtPath:bundleDBPath toPath:dbPath error:nil];
+            }
+        }
+    }
+    else{
+        if (!dbExit) {
+            NSString* bundleDBPath=[[NSBundle mainBundle]pathForResource:@"FLXKDB" ofType:@"sqlite"];
+            [filemanage copyItemAtPath:bundleDBPath toPath:dbPath error:nil];
+        }
+    }
+    NSLog(@"FLXKDB Directory:\n%@",dbPath);
+    return dbPath;
+    
 }
 
 + (NSString *)dbPathInBundleWithDirectoryName:(NSString *)directoryName

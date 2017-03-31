@@ -14,6 +14,7 @@
 
 //utilites
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "UIView+Extension_IdentifierForReusable.h"
 
 //child viewController
 
@@ -23,7 +24,6 @@
 
 #import "FLXKSharingBaseCell.h"
 #import "FLXKSharingFuLingOnlineStyleCell.h"
-#import "FLXKSharingFuLingOnlineStyleCelltest.h"
 
 
 @interface FLXSuggestedSharingTableViewController ()
@@ -151,11 +151,14 @@
 -(void)UIConfigAndAdd{
     [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:FLXKSuggestHeaderView1];
     
-    //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCelltest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCelltest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+//        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellteststep1" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-    self.tableView.estimatedRowHeight=44;
+//            [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellstep2" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    
+    self.tableView.estimatedRowHeight=100;
 }
 -(FLXKSharingCellModel*)setupFLXKSharingCellModel{
     FLXKSharingCellModel* model=[FLXKSharingCellModel new];
