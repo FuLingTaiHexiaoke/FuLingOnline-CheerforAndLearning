@@ -59,6 +59,7 @@
 		B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */; };
 		B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */; };
 		B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */; };
+		B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B92898B51E8EABE2005DF4A8 /* codeback.rtf */; };
 		B92A2FB01E8DF66500E8AA30 /* MZShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */; };
 		B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAD1E8DF66500E8AA30 /* R_ShapedButton.m */; };
 		B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAF1E8DF66500E8AA30 /* UIImage+ColorAtPixel.m */; };
@@ -66,7 +67,7 @@
 		B92A300F1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A300C1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib */; };
 		B92A30101E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A300D1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m */; };
 		B92A30231E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */; };
-		B92A30241E8E4FFF00E8AA30 /* FLXKCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A30221E8E4FFF00E8AA30 /* FLXKCommentCell.xib */; };
+		B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */; };
 		B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */; };
 		B92A302B1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A302A1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m */; };
 		B92A30331E8E608C00E8AA30 /* SharingCommentCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30321E8E608C00E8AA30 /* SharingCommentCellModel.m */; };
@@ -122,6 +123,9 @@
 		B9614A561E82CC23008B7531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9614A541E82CC23008B7531 /* LaunchScreen.storyboard */; };
 		B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */; };
 		B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B96D30321E716A62003BDFD0 /* emotionDB.xlsx */; };
+		B96FFDFF1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */; };
+		B96FFE021E8EB03700ECAC58 /* SharingLikeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B96FFE011E8EB03700ECAC58 /* SharingLikeCellModel.m */; };
+		B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
 		B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B972618D1E2DEC76008B6356 /* TestEntity.m */; };
@@ -728,6 +732,7 @@
 		B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionItem.m; sourceTree = "<group>"; };
 		B924D9191E2F766F00A5D9F6 /* EmotionRecentItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionRecentItems.h; sourceTree = "<group>"; };
 		B924D91A1E2F766F00A5D9F6 /* EmotionRecentItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionRecentItems.m; sourceTree = "<group>"; };
+		B92898B51E8EABE2005DF4A8 /* codeback.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = codeback.rtf; sourceTree = "<group>"; };
 		B92A2FAA1E8DF66500E8AA30 /* MZShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZShapedButton.h; sourceTree = "<group>"; };
 		B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZShapedButton.m; sourceTree = "<group>"; };
 		B92A2FAC1E8DF66500E8AA30 /* R_ShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R_ShapedButton.h; sourceTree = "<group>"; };
@@ -741,7 +746,7 @@
 		B92A300E1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellstep2.h; sourceTree = "<group>"; };
 		B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseCommentCell.h; sourceTree = "<group>"; };
 		B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell.m; sourceTree = "<group>"; };
-		B92A30221E8E4FFF00E8AA30 /* FLXKCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKCommentCell.xib; sourceTree = "<group>"; };
+		B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseCommentCell.xib; sourceTree = "<group>"; };
 		B92A30261E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingCommentTableView.h; sourceTree = "<group>"; };
 		B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingCommentTableView.m; sourceTree = "<group>"; };
 		B92A30291E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension_IdentifierForReusable.h"; sourceTree = "<group>"; };
@@ -843,6 +848,12 @@
 		B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FuLingOnline-CheerforAndLearning.entitlements"; sourceTree = "<group>"; };
 		B96D30321E716A62003BDFD0 /* emotionDB.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = emotionDB.xlsx; sourceTree = "<group>"; };
+		B96FFDFD1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingLikeCollectionViewCell.h; sourceTree = "<group>"; };
+		B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingLikeCollectionViewCell.m; sourceTree = "<group>"; };
+		B96FFE001E8EB03700ECAC58 /* SharingLikeCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingLikeCellModel.h; sourceTree = "<group>"; };
+		B96FFE011E8EB03700ECAC58 /* SharingLikeCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingLikeCellModel.m; sourceTree = "<group>"; };
+		B96FFE041E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingLikeCollectionView.h; sourceTree = "<group>"; };
+		B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingLikeCollectionView.m; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
 		B97261871E2DEC76008B6356 /* EntityGeneratorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityGeneratorViewController.h; sourceTree = "<group>"; };
 		B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityGeneratorViewController.m; sourceTree = "<group>"; };
@@ -1708,6 +1719,7 @@
 		B92494871E8B8BC4006878CC /* FLXKFriendsMomentSharing */ = {
 			isa = PBXGroup;
 			children = (
+				B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */,
 				B92494891E8B8C37006878CC /* SharingCells */,
 				B92A301E1E8E4FFF00E8AA30 /* SharingCommentTableView */,
 				B92494991E8BA365006878CC /* SharingPicturesLayoutViews */,
@@ -1791,6 +1803,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				B96FFE031E8EB0C500ECAC58 /* CollectionView */,
+				B96FFDFB1E8EAF5800ECAC58 /* CollectionViewCell */,
+				B96FFDFC1E8EAF5800ECAC58 /* CollectionViewCellModel */,
+			);
+			path = SharingLikeCollectionViews;
+			sourceTree = "<group>";
+		};
 		B92A2FA91E8DF66500E8AA30 /* MZShapedButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -1819,7 +1841,7 @@
 			children = (
 				B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */,
 				B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */,
-				B92A30221E8E4FFF00E8AA30 /* FLXKCommentCell.xib */,
+				B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */,
 			);
 			path = CommentCell;
 			sourceTree = "<group>";
@@ -2051,6 +2073,33 @@
 				B96D30321E716A62003BDFD0 /* emotionDB.xlsx */,
 			);
 			path = "备份";
+			sourceTree = "<group>";
+		};
+		B96FFDFB1E8EAF5800ECAC58 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B96FFDFD1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.h */,
+				B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B96FFDFC1E8EAF5800ECAC58 /* CollectionViewCellModel */ = {
+			isa = PBXGroup;
+			children = (
+				B96FFE001E8EB03700ECAC58 /* SharingLikeCellModel.h */,
+				B96FFE011E8EB03700ECAC58 /* SharingLikeCellModel.m */,
+			);
+			path = CollectionViewCellModel;
+			sourceTree = "<group>";
+		};
+		B96FFE031E8EB0C500ECAC58 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				B96FFE041E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.h */,
+				B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		B97261841E2DEC76008B6356 /* FLXKFMDB */ = {
@@ -3113,6 +3162,7 @@
 				B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */,
 				B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */,
 				B9FBB0971E8A59DC00CCAEA8 /* TemplateInfo.plist */,
+				B92898B51E8EABE2005DF4A8 /* codeback.rtf */,
 			);
 			path = FLXKBase.xctemplate;
 			sourceTree = "<group>";
@@ -3563,7 +3613,7 @@
 				B97506BB1E4C58F600A577E7 /* smiley_32.png in Resources */,
 				B97506FF1E4C58F600A577E7 /* smiley_94.png in Resources */,
 				B97507A21E4C58F700A577E7 /* 064@2x.png in Resources */,
-				B92A30241E8E4FFF00E8AA30 /* FLXKCommentCell.xib in Resources */,
+				B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */,
 				B97507C71E4C58F700A577E7 /* 083.png in Resources */,
 				B92A300F1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */,
 				B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */,
@@ -3839,6 +3889,7 @@
 				B97507031E4C58F600A577E7 /* smiley_98.png in Resources */,
 				B975074E1E4C58F600A577E7 /* 022@2x.png in Resources */,
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
+				B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */,
 				B97507CD1E4C58F700A577E7 /* _expression_cn.plist in Resources */,
 				B97507011E4C58F600A577E7 /* smiley_96.png in Resources */,
 				B97506991E4C58F600A577E7 /* BasicEmotion.png in Resources */,
@@ -4016,11 +4067,14 @@
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
+				B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
 				B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */,
 				B9C6AC9D1E6548550003C50A /* SectionHeaderViewModel.m in Sources */,
+				B96FFDFF1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m in Sources */,
 				B9C6ACAE1E6548550003C50A /* UIImage+FontAwesome.m in Sources */,
+				B96FFE021E8EB03700ECAC58 /* SharingLikeCellModel.m in Sources */,
 				B930986D1E568C0600306F39 /* NSDate+Extensions.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B924949C1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m in Sources */,

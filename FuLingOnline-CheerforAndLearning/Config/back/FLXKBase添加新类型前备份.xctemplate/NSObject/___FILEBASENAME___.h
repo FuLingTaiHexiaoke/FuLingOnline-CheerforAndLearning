@@ -18,6 +18,5 @@ ___IMPORTHEADER_cocoaSubclass___
 //UI state record properties
 //subviews
 //child viewController
-//public actions
 @end
 

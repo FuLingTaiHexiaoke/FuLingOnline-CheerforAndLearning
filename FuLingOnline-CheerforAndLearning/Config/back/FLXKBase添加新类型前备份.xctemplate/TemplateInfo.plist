@@ -50,10 +50,6 @@
 			<true/>
 			<key>Type</key>
 			<string>class</string>
-			<key>Values</key>
-			<array>
-				<string>UICollectionView</string>
-			</array>
 		</dict>
 	</array>
 	<key>MainTemplateFile</key>

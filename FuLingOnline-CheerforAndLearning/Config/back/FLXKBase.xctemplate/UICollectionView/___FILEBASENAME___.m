@@ -19,6 +19,8 @@
 //UI state record properties
 //subviews
 //child viewController
+
+
 @end
 
 @implementation ___FILEBASENAMEASIDENTIFIER___

@@ -1,18 +1,18 @@
 //
-//  ___FILENAME___
-//  ___PROJECTNAME___
+//  FLXKBaseSharingLikeCollectionViewCell.m
+//  FuLingOnline-CheerforAndLearning
 //
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
+//  Created by xiaoke on 17/3/31.
+//  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 #pragma mark - Declarations and macros
 
-#import "___FILEBASENAME___.h"
+#import "FLXKBaseSharingLikeCollectionViewCell.h"
 //utilites
 //models
 //subviews
 //child viewController
-@interface ___FILEBASENAMEASIDENTIFIER___ ()
+@interface FLXKBaseSharingLikeCollectionViewCell ()
 //IBOutlet
 //IBAction
 //models
@@ -21,7 +21,7 @@
 //child viewController
 @end
 
-@implementation ___FILEBASENAMEASIDENTIFIER___
+@implementation FLXKBaseSharingLikeCollectionViewCell
 
 #pragma mark - ViewController LifeCircle
 

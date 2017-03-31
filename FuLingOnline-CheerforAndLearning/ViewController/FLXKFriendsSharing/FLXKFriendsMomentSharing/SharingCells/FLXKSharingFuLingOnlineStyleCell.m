@@ -77,24 +77,24 @@
     [self.sharingImagesContainerView removeFromSuperview];
     self.sharingImagesContainerView=newView;
 }
-
--(void)setupSharingCommentsTableViewWithCellModels{
-    //get height
-    CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
-    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height);
-    }];
-}
-
--(NSArray*)setupSharingCommentCellModels{
-    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
-    for (int i=0; i<10; i++) {
-        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
-        model.nickName=@"nickName";
-        [models addObject:model];
-    }
-    return       [NSArray arrayWithArray:models];
-}
+//
+//-(void)setupSharingCommentsTableViewWithCellModels{
+//    //get height
+//    CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
+//    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height);
+//    }];
+//}
+//
+//-(NSArray*)setupSharingCommentCellModels{
+//    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
+//    for (int i=0; i<10; i++) {
+//        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
+//        model.nickName=@"nickName";
+//        [models addObject:model];
+//    }
+//    return       [NSArray arrayWithArray:models];
+//}
 #pragma mark - View Event
 #pragma mark - Model Event
 #pragma mark - Private methods

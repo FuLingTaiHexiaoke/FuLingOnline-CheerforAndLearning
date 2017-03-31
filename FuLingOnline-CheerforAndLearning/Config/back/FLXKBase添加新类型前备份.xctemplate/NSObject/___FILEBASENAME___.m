@@ -24,7 +24,9 @@
 @implementation ___FILEBASENAMEASIDENTIFIER___
 
 #pragma mark - ViewController LifeCircle
-
+//
+//open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates
+///Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates
 //- (void)viewDidLoad {
 //    [super viewDidLoad];
 //    // Do view setup here.
@@ -48,8 +50,13 @@
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation
-
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// [segue destinationViewController].
-// }
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 @end
