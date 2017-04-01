@@ -10,12 +10,13 @@
 
 //#import "FLXKBaseSharingPictureLayoutView.h"
 
+#import "FLXKSharingImagesModel.h"
 
 
 @interface FLXKBaseSharingPictureLayoutView : UIView
 
 @property(nonatomic)NSArray<NSString*>* imageArray;
 
-+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<NSString*>*)imageArray;
++(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
 
 @end

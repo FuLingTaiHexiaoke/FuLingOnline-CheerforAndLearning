@@ -8,25 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class FLXKLikeTheSharingRecordModel;
+@class SharingCommentCellModel;
+@class FLXKSharingImagesModel;
+
 @interface FLXKSharingCellModel : NSObject
-//@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-//@property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *mainSharingContentLabel;
-//@property (weak, nonatomic) IBOutlet UIView *sharingImagesContainerView;
-//@property (weak, nonatomic) IBOutlet UIButton *locationRecordButton;
-//@property (weak, nonatomic) IBOutlet UIView *sharingMainOperationsContainerView;
-//@property (weak, nonatomic) IBOutlet UIScrollView *likeTheSharingRecordScrollView;
-//@property (weak, nonatomic) IBOutlet UIView *bottomSeparatorLineView;
-//@property (weak, nonatomic) IBOutlet UITableView *sharingCommentsTableView;
 
 @property(nonatomic)NSString* avatarImageUrl;
 @property(nonatomic)NSString* nickName;
 @property(nonatomic)NSString* timestamp;
 @property(nonatomic)NSString* mainSharingContent;
-@property(nonatomic)NSString* sharingImages;
+@property(nonatomic)NSArray<FLXKSharingImagesModel*>* sharingImages;
 @property(nonatomic)NSString* locationRecord;
-@property(nonatomic)NSString* likeTheSharingRecords;
-@property(nonatomic)NSString* sharingComments;
+@property(nonatomic)NSArray<FLXKLikeTheSharingRecordModel*>* likeTheSharingRecords;
+@property(nonatomic)NSArray<SharingCommentCellModel*>* sharingComments;
 
 @end

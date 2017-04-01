@@ -33,7 +33,7 @@
     return pictureLayoutView;
 }
 
--(void)setImageArray:(NSArray<NSString *> *)imageArray{
+-(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
     
 }
 

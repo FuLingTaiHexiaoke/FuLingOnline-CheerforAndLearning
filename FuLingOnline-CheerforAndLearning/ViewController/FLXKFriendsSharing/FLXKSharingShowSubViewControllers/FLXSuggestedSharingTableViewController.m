@@ -15,6 +15,7 @@
 //utilites
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "UIView+Extension_IdentifierForReusable.h"
+#import "FLXKHttpRequestModelHelper.h"
 
 //child viewController
 
@@ -27,7 +28,13 @@
 
 
 @interface FLXSuggestedSharingTableViewController ()
-
+//IBOutlet
+//IBAction
+//models
+@property (strong, nonatomic)NSArray<FLXKSharingCellModel *> *  models;
+//UI state record properties
+//subviews
+//child viewController
 @end
 
 @implementation FLXSuggestedSharingTableViewController
@@ -39,13 +46,21 @@
     [super viewDidLoad];
     
     //setup ui
-    [self UIConfigAndAdd];
+    [self setupUI];
+    
+    [self setupFLXKSharingCellModel];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if (DEBUG) {
+        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(150, 150, 50, 50)];
+        [btn1 addTarget:self action:@selector(setupFLXKSharingCellModel) forControlEvents:UIControlEventTouchUpInside];
+        btn1.backgroundColor=[UIColor yellowColor];
+        [self.view addSubview:btn1];
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -64,11 +79,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _models.count;
 }
 
 - (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section{
@@ -92,30 +107,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell ];
-    //    if (!cell) {
-    //        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-    //    }
-    
-    // Configure the cell...
-    //    cell.backgroundColor=[UIColor yellowColor];
-    //    cell.textLabel.text=[NSString stringWithFormat:@"%ld",(long)indexPath.row];
-    
-//       [self configureCell:cell atIndexPath:indexPath];
-    
-    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
-    
+    [cell setSharingCellModel:_models[indexPath.row]];
     return cell;
 }
 //
-- (void)configureCell:(FLXKSharingBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
-    if (indexPath.row % 2 == 0) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    [cell setSharingCellModel:[self setupFLXKSharingCellModel]];
-}
+//- (void)configureCell:(FLXKSharingBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+//    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
+//    if (indexPath.row % 2 == 0) {
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+//    [cell setSharingCellModel:_models[indexPath.row]];
+//}
 
 #pragma mark - UITableViewDelegate
 //
@@ -148,7 +152,7 @@
 #pragma mark -
 #pragma mark - Private Methods
 
--(void)UIConfigAndAdd{
+-(void)setupUI{
     [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:FLXKSuggestHeaderView1];
     
         [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
@@ -160,18 +164,26 @@
     
     self.tableView.estimatedRowHeight=100;
 }
--(FLXKSharingCellModel*)setupFLXKSharingCellModel{
-    FLXKSharingCellModel* model=[FLXKSharingCellModel new];
-    //    model.avatarImageUrl=@"IMG_0488";
-    model.avatarImageUrl=@"Spark";
-    model.nickName=@"Spark";
-    model.timestamp=@"Spark";
-    model.mainSharingContent=@"Spark";
-    model.sharingImages=@"Spark";
-    model.locationRecord=@"Spark";
-    model.likeTheSharingRecords=@"Spark";
-    model.sharingComments=@"Spark";
-    return model;
+-(void)setupFLXKSharingCellModel{
+//    FLXKSharingCellModel* model=[FLXKSharingCellModel new];
+//    //    model.avatarImageUrl=@"IMG_0488";
+//    model.avatarImageUrl=@"Spark";
+//    model.nickName=@"Spark";
+//    model.timestamp=@"Spark";
+//    model.mainSharingContent=@"Spark";
+//    model.sharingImages=@"Spark";
+//    model.locationRecord=@"Spark";
+//    model.likeTheSharingRecords=@"Spark";
+//    model.sharingComments=@"Spark";
+//    return model;
+    
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        _models=(NSArray<FLXKSharingCellModel *> *)obj;
+        [self.tableView reloadData];
+    } failureCallback:^(NSError *err) {
+        NSAssert(!err, err.description);
+    }] getFriendSharingModel];
+    
 }
 
 @end

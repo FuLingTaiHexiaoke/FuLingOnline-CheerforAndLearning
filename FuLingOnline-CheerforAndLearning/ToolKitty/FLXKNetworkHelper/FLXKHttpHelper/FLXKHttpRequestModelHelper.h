@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+//models
+#import "FLXKModelsBrigde.h"
 
-//model//新闻、状态发布
-#import "FLXKPublishNewsModel.h"
+////model//新闻、状态发布
+//#import "FLXKPublishNewsModel.h"
 
 typedef void (^successCallback)(id  obj);
 typedef void (^failureCallback)(NSError *err);
@@ -26,4 +28,7 @@ typedef void (^taskProgress)(NSProgress * progress);
 
 //新闻、状态发布
 -(void)publishEditedNewsWithModel:(FLXKPublishNewsModel*)model pictures:(NSArray<UIImage*>*)pictures;
+
+//获取朋友圈cell model
+-(void)getFriendSharingModel;
 @end

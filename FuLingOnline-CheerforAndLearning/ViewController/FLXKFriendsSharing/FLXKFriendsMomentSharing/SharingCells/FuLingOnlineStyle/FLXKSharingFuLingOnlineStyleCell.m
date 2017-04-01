@@ -19,7 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
-@property (weak, nonatomic) IBOutlet UILabel *mainSharingContentLabel;
+@property (weak, nonatomic) IBOutlet UITextView *mainSharingContentLabel;
+@property (weak, nonatomic) IBOutlet UIButton *sharingContentShowAllButton;
 @property (strong, nonatomic) IBOutlet FLXKBaseSharingPictureLayoutView *sharingImagesContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *locationRecordButton;
 @property (weak, nonatomic) IBOutlet UIView *sharingMainOperationsContainerView;
@@ -56,18 +57,18 @@
 -(void)setSharingCellModel:(FLXKSharingCellModel *)model{
     [super setSharingCellModel:model];
     self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
-    self.nickNameLabel.text=model.avatarImageUrl;
-    self.timestampLabel.text=model.avatarImageUrl;
-    self.mainSharingContentLabel.text=model.avatarImageUrl;
-    [self setupNewSharingImagesContainerViewWithImageArray:@[@"Spark"]];
+    self.nickNameLabel.text=model.nickName;
+    self.timestampLabel.text=model.timestamp;
+    self.mainSharingContentLabel.text=model.mainSharingContent;
+    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
     [self setupSharingCommentsTableViewWithCellModels];
     //    [self.sharingCommentsTableView setCellModels:@[@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark"]];
 }
 
--(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<NSString*>*)imageArray{
+-(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
     
-    FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:@[@"Spark"]];
+    FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:imageArray];
     [self.contentView addSubview:newView];
     [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom).offset(8);
@@ -77,24 +78,24 @@
     [self.sharingImagesContainerView removeFromSuperview];
     self.sharingImagesContainerView=newView;
 }
-//
-//-(void)setupSharingCommentsTableViewWithCellModels{
-//    //get height
-//    CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
-//    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.height.mas_equalTo(height);
-//    }];
-//}
-//
-//-(NSArray*)setupSharingCommentCellModels{
-//    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
-//    for (int i=0; i<10; i++) {
-//        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
-//        model.nickName=@"nickName";
-//        [models addObject:model];
-//    }
-//    return       [NSArray arrayWithArray:models];
-//}
+
+-(void)setupSharingCommentsTableViewWithCellModels{
+    //get height
+    CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
+    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+}
+
+-(NSArray*)setupSharingCommentCellModels{
+    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
+    for (int i=0; i<10; i++) {
+        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
+        model.nickName=@"nickName";
+        [models addObject:model];
+    }
+    return       [NSArray arrayWithArray:models];
+}
 #pragma mark - View Event
 #pragma mark - Model Event
 #pragma mark - Private methods

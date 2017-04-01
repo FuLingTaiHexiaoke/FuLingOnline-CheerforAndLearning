@@ -17,7 +17,7 @@
 @property(nonatomic,assign)NSInteger id;//source_id
 @property(nonatomic,assign)NSInteger type_id;//Home explore community
 @property(nonatomic,strong)NSString* type_name;
-@property(nonatomic,assign)NSInteger sub_type_id;//cell header
+@property(nonatomic,assign)NSInteger sub_type_id;//user_id
 @property(nonatomic,strong)NSString* sub_type_name;
 
 
@@ -47,7 +47,7 @@
 @property (nonatomic) NSString *doc_id;
 @property (nonatomic) NSString *is_topic;
 @property (nonatomic) NSString *doc_content;
-@property (nonatomic) NSString *doc_url;
+@property (nonatomic) NSString *doc_url;//user_location
 @property (nonatomic,assign)NSInteger has_image;
 @property (nonatomic,assign)NSInteger has_head;
 @property (nonatomic,assign)NSInteger has_video;

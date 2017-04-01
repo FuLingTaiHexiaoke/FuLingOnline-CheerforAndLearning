@@ -7,6 +7,7 @@
 //
 
 #import "FLXKOneSharingPictureLayoutView.h"
+#import "UIImageView+WebCache.h"
 
 @interface FLXKOneSharingPictureLayoutView ()
 //IBOutlet
@@ -28,9 +29,10 @@
     return self;
 }
 
--(void)setImageArray:(NSArray<NSString *> *)imageArray{
-    [imageArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        _SharingImageViews[idx].image=[UIImage imageNamed:obj];
+-(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
+    [imageArray enumerateObjectsUsingBlock:^(FLXKSharingImagesModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        _SharingImageViews[idx].image=[UIImage imageNamed:obj];
+        [( (UIImageView*)(_SharingImageViews[idx])) sd_setImageWithURL:NSURL_BaseURL(obj.actualPictureUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     }];
 }
 

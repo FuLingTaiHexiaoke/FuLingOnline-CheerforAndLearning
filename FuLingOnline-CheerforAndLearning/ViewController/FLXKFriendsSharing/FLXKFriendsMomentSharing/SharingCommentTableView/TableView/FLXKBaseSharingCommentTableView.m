@@ -76,7 +76,7 @@
 #pragma mark - Private methods
 -(void)setupInitUI{
     
-    [self registerNib:[UINib nibWithNibName:@"FLXKCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
+    [self registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
     
     self.estimatedRowHeight=100;
 }

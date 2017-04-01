@@ -49,8 +49,6 @@
 		B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B924948C1E8B8C7C006878CC /* FLXKSharingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */; };
-		B92494931E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92494911E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m */; };
-		B92494941E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92494921E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib */; };
 		B92494981E8BA103006878CC /* FLXKSharingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92494971E8BA103006878CC /* FLXKSharingCellModel.m */; };
 		B924949C1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924949B1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m */; };
 		B924949F1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924949E1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m */; };
@@ -64,8 +62,6 @@
 		B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAD1E8DF66500E8AA30 /* R_ShapedButton.m */; };
 		B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAF1E8DF66500E8AA30 /* UIImage+ColorAtPixel.m */; };
 		B92A300B1E8E1FC000E8AA30 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A300A1E8E1FC000E8AA30 /* UIImage+Extension.m */; };
-		B92A300F1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A300C1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib */; };
-		B92A30101E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A300D1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m */; };
 		B92A30231E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */; };
 		B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */; };
 		B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */; };
@@ -475,6 +471,14 @@
 		B97CC08E1E724A89000D548B /* flv视频测试用例1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B97CC08A1E724A89000D548B /* flv视频测试用例1.mp4 */; };
 		B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
+		B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */; };
+		B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */; };
+		B99CAA1E1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */; };
+		B99CAA1F1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */; };
+		B99CAA201E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */; };
+		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
+		B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */; };
+		B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
 		B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */; };
 		B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */; };
@@ -714,9 +718,6 @@
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
 		B924948A1E8B8C7C006878CC /* FLXKSharingBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingBaseCell.h; sourceTree = "<group>"; };
 		B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingBaseCell.m; sourceTree = "<group>"; };
-		B92494901E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell.h; sourceTree = "<group>"; };
-		B92494911E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell.m; sourceTree = "<group>"; };
-		B92494921E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell.xib; sourceTree = "<group>"; };
 		B92494961E8BA103006878CC /* FLXKSharingCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingCellModel.h; sourceTree = "<group>"; };
 		B92494971E8BA103006878CC /* FLXKSharingCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingCellModel.m; sourceTree = "<group>"; };
 		B924949A1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
@@ -741,9 +742,6 @@
 		B92A2FAF1E8DF66500E8AA30 /* UIImage+ColorAtPixel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorAtPixel.m"; sourceTree = "<group>"; };
 		B92A30091E8E1FC000E8AA30 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		B92A300A1E8E1FC000E8AA30 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
-		B92A300C1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCellstep2.xib; sourceTree = "<group>"; };
-		B92A300D1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellstep2.m; sourceTree = "<group>"; };
-		B92A300E1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellstep2.h; sourceTree = "<group>"; };
 		B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseCommentCell.h; sourceTree = "<group>"; };
 		B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell.m; sourceTree = "<group>"; };
 		B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseCommentCell.xib; sourceTree = "<group>"; };
@@ -1220,6 +1218,19 @@
 		B97CC0901E7287AD000D548B /* FLXKAPPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAPPHelper.h; sourceTree = "<group>"; };
 		B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAPPHelper.m; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
+		B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell.h; sourceTree = "<group>"; };
+		B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell.m; sourceTree = "<group>"; };
+		B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell.xib; sourceTree = "<group>"; };
+		B99CAA181E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellstep2.h; sourceTree = "<group>"; };
+		B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellstep2.m; sourceTree = "<group>"; };
+		B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCellstep2.xib; sourceTree = "<group>"; };
+		B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FLXKSharingFuLingOnlineStyleCell副本.xib"; sourceTree = "<group>"; };
+		B99CAA211E8F83BB0032D8CB /* FLXKModelsBrigde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKModelsBrigde.h; sourceTree = "<group>"; };
+		B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKModelsBrigde.m; sourceTree = "<group>"; };
+		B99CAA241E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLikeTheSharingRecordModel.h; sourceTree = "<group>"; };
+		B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLikeTheSharingRecordModel.m; sourceTree = "<group>"; };
+		B99CAA271E8FADAC0032D8CB /* FLXKSharingImagesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingImagesModel.h; sourceTree = "<group>"; };
+		B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingImagesModel.m; sourceTree = "<group>"; };
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
 		B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsSharing.storyboard; sourceTree = "<group>"; };
@@ -1719,8 +1730,8 @@
 		B92494871E8B8BC4006878CC /* FLXKFriendsMomentSharing */ = {
 			isa = PBXGroup;
 			children = (
-				B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */,
 				B92494891E8B8C37006878CC /* SharingCells */,
+				B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */,
 				B92A301E1E8E4FFF00E8AA30 /* SharingCommentTableView */,
 				B92494991E8BA365006878CC /* SharingPicturesLayoutViews */,
 				B92494951E8BA0CA006878CC /* SharingCellModel */,
@@ -1731,14 +1742,9 @@
 		B92494891E8B8C37006878CC /* SharingCells */ = {
 			isa = PBXGroup;
 			children = (
+				B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */,
 				B924948A1E8B8C7C006878CC /* FLXKSharingBaseCell.h */,
 				B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */,
-				B92494901E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.h */,
-				B92494911E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m */,
-				B92494921E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib */,
-				B92A300E1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.h */,
-				B92A300D1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m */,
-				B92A300C1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib */,
 			);
 			path = SharingCells;
 			sourceTree = "<group>";
@@ -1748,6 +1754,10 @@
 			children = (
 				B92494961E8BA103006878CC /* FLXKSharingCellModel.h */,
 				B92494971E8BA103006878CC /* FLXKSharingCellModel.m */,
+				B99CAA241E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.h */,
+				B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */,
+				B99CAA271E8FADAC0032D8CB /* FLXKSharingImagesModel.h */,
+				B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */,
 			);
 			path = SharingCellModel;
 			sourceTree = "<group>";
@@ -2568,6 +2578,8 @@
 		B97B38D81DD014F300D8F004 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B99CAA211E8F83BB0032D8CB /* FLXKModelsBrigde.h */,
+				B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */,
 				B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */,
 				B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */,
 				B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */,
@@ -2623,6 +2635,20 @@
 				B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */,
 			);
 			path = FLXKAPPHelper;
+			sourceTree = "<group>";
+		};
+		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
+			isa = PBXGroup;
+			children = (
+				B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */,
+				B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */,
+				B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */,
+				B99CAA181E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.h */,
+				B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */,
+				B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */,
+				B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */,
+			);
+			path = FuLingOnlineStyle;
 			sourceTree = "<group>";
 		};
 		B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */ = {
@@ -3614,8 +3640,8 @@
 				B97506FF1E4C58F600A577E7 /* smiley_94.png in Resources */,
 				B97507A21E4C58F700A577E7 /* 064@2x.png in Resources */,
 				B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */,
+				B99CAA1F1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */,
 				B97507C71E4C58F700A577E7 /* 083.png in Resources */,
-				B92A300F1E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */,
 				B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */,
 				B97506EF1E4C58F600A577E7 /* smiley_8.png in Resources */,
 				B97506DA1E4C58F600A577E7 /* smiley_60.png in Resources */,
@@ -3638,7 +3664,6 @@
 				B97506CF1E4C58F600A577E7 /* smiley_50.png in Resources */,
 				B97CC0801E7249B9000D548B /* FuLingOnline_aps_development.cer in Resources */,
 				B97506BF1E4C58F600A577E7 /* smiley_36.png in Resources */,
-				B92494941E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */,
 				B97507C51E4C58F700A577E7 /* 082.png in Resources */,
 				B97506FB1E4C58F600A577E7 /* smiley_90.png in Resources */,
 				B97506AE1E4C58F600A577E7 /* smiley_20.png in Resources */,
@@ -3660,6 +3685,7 @@
 				B97507851E4C58F700A577E7 /* 050.png in Resources */,
 				B97507391E4C58F600A577E7 /* 012.png in Resources */,
 				B9C6AD421E6548550003C50A /* star_yellow3.png in Resources */,
+				B99CAA201E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib in Resources */,
 				B97506BD1E4C58F600A577E7 /* smiley_34.png in Resources */,
 				B97507A91E4C58F700A577E7 /* 068.png in Resources */,
 				B97506F21E4C58F600A577E7 /* smiley_82.png in Resources */,
@@ -3890,6 +3916,7 @@
 				B975074E1E4C58F600A577E7 /* 022@2x.png in Resources */,
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
 				B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */,
+				B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */,
 				B97507CD1E4C58F700A577E7 /* _expression_cn.plist in Resources */,
 				B97507011E4C58F600A577E7 /* smiley_96.png in Resources */,
 				B97506991E4C58F600A577E7 /* BasicEmotion.png in Resources */,
@@ -4082,7 +4109,6 @@
 				B9C6ACA91E6548550003C50A /* NSString+FontAwesome.m in Sources */,
 				B9C6AC8F1E6548550003C50A /* RRNTableViewHeaderFooterView.m in Sources */,
 				B924949F1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m in Sources */,
-				B92494931E8B8F62006878CC /* FLXKSharingFuLingOnlineStyleCell.m in Sources */,
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
@@ -4107,7 +4133,6 @@
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
-				B92A30101E8E30E000E8AA30 /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */,
 				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
@@ -4116,6 +4141,7 @@
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
 				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B90CD9821E763FFD00278EDB /* LaunchScreenViewController.m in Sources */,
+				B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */,
 				B90CD9881E763FFD00278EDB /* NotificationExamplesTableViewController.m in Sources */,
 				B90CD9851E763FFD00278EDB /* SimpleLocalViewController.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
@@ -4123,6 +4149,7 @@
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
 				B9C6ACA81E6548550003C50A /* FAImageView.m in Sources */,
 				B9CDF0201E4F36690007F638 /* GooeyCircle.m in Sources */,
+				B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */,
 				B90CD9EC1E764C2C00278EDB /* DCURLNavgation.m in Sources */,
 				B9C9153E1E31E28B0060051E /* UIImage+EmotionExtension.m in Sources */,
 				B90CD9581E763FD400278EDB /* FLXKAPPRouter.m in Sources */,
@@ -4176,7 +4203,9 @@
 				B9C6AD461E65493F0003C50A /* AudioServices+Extensions.m in Sources */,
 				B92F57691E5547C40010A84A /* FLXKNewsPublishController.m in Sources */,
 				B9C6AC921E6548550003C50A /* ArrowSectionHeaderView.m in Sources */,
+				B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
+				B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9C6AC961E6548550003C50A /* UILabel+flash.m in Sources */,
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
@@ -4196,6 +4225,7 @@
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */,
+				B99CAA1E1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B90CD9801E763FFD00278EDB /* ContentFeedbackViewController.m in Sources */,
 				B90CD9861E763FFD00278EDB /* SoundAndBadgeViewController.m in Sources */,

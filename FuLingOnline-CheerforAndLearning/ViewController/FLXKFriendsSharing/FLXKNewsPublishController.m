@@ -80,12 +80,12 @@
     
     //set up subviews
     [self   initSubViews];
-
+    
     if (UserDefaultsObjForKey( @"plainString")) {
         self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
         [self resetTextStyle];
     }
-
+    
 }
 
 - (void)resetTextStyle {
@@ -100,14 +100,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-
+    
     self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
-
+    
 }
 
 
 -(void)dealloc{
-      NSLog(@"%@ 销毁",NSStringFromClass(self.class));
+    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
 
@@ -169,14 +169,16 @@
     FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
     model.type_id=001;
     model.type_name=@"个人状态发布";
-    model.doc_content=newsToPublish;
+    model.title=@"个人状态发布";
     model.editor=@"xiaoke";
-    model.video_url=self.publishLocationButton.titleLabel.text;
+    model.doc_content=newsToPublish;
+    model.doc_url=self.publishLocationButton.titleLabel.text;//user_location
+    model.sub_type_id=001;//user_id
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-//        NSLog(@"success");
+        //        NSLog(@"success");
     } failureCallback:^(NSError *err) {
-//        NSLog(@"failure");
+        //        NSLog(@"failure");
     }] publishEditedNewsWithModel:model pictures:_selectedPhotos];
     
 }
@@ -196,9 +198,9 @@
 #pragma mark -UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //    if (_publishScrollViewContainer==scrollView) {
-    //            [self.view endEditing:YES];
-    //    }
+        if (_publishScrollViewContainer==scrollView) {
+                [self.view endEditing:YES];
+        }
 }
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     if (_publishScrollViewContainer==scrollView) {
@@ -211,8 +213,6 @@
     _selectedPhotos=[NSMutableArray arrayWithCapacity:9];
 }
 -(void)initSubViews{
-
-
     _publishScrollViewContainer.delegate=self;
     _publishTextView.delegate=self;
 }
@@ -268,8 +268,10 @@
         self.publishLocationButton.enabled=YES;
         self.clearCurrentLocationButton.hidden=NO;
         NSDictionary  *addressDictionary=placemarks[0].addressDictionary;
-        [self.publishLocationButton setTitle:[NSString stringWithFormat:@"%@·%@%@        ",addressDictionary[@"City"],addressDictionary[@"SubLocality"],addressDictionary[@"Name"]] forState:UIControlStateNormal];
-        [self.publishLocationButton sizeToFit];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.publishLocationButton setTitle:[NSString stringWithFormat:@"%@·%@%@        ",addressDictionary[@"City"],addressDictionary[@"SubLocality"],addressDictionary[@"Name"]] forState:UIControlStateNormal];
+            [self.publishLocationButton sizeToFit];
+        });
     }];
 }
 
