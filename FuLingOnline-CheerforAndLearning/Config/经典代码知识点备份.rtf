@@ -2,7 +2,7 @@
 {\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset134 PingFangSC-Regular;}
 {\colortbl;\red255\green255\blue255;\red170\green13\blue145;\red46\green13\blue110;\red92\green38\blue153;
 \red196\green26\blue22;\red100\green56\blue32;\red63\green110\blue116;\red38\green71\blue75;\red0\green116\blue0;
-}
+\red28\green0\blue207;}
 \margl1440\margr1440\vieww37900\viewh18760\viewkind0
 \deftab593
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
@@ -45,6 +45,7 @@ UIRefreshControl\
         [\cf2 self\cf0 .\cf7 offscreenCells\cf0  \cf3 setObject\cf0 :cell \cf3 forKey\cf0 :reuseIdentifier];\
     \}\
 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf9     // If you are just returning a constant value from this method, you should instead just set the table view's\
     // estimatedRowHeight property (in viewDidLoad or similar), which is even faster as the table view won't\
     // have to call this method for every row in the table view.\
@@ -53,7 +54,6 @@ UIRefreshControl\
     // "jumping" as you scroll the table view when using a constant estimatedRowHeight. If you do implement this method,\
     // be sure to do as little work as possible to get a reasonably-accurate estimate.\
  \
-\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf6 #pragma mark -\cf9 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
@@ -67,4 +67,20 @@ UIRefreshControl\
 \f0 \cf6 #import \cf5 <AVKit/AVKit.h>\cf6 \
 #import \cf5 <AVFoundation/AVFoundation.h>
 \f1 \cf9 \
-}
+\
+
+\f0 \cf6 #pragma mark -
+\f1 \cf9 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0 \cf0 - (\cf2 void\cf0 )fontSizeToFit:(\cf4 UITextView\cf0  *)textView \{\
+    \cf4 CGFloat\cf0  width=  textView.\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 width\cf0 ;\
+    \cf4 CGFloat\cf0  height=  textView.\cf4 frame\cf0 .\cf4 size\cf0 .\cf4 height\cf0 ;\
+    \cf4 CGFloat\cf0  fontSize = \cf10 1.0\cf0 ;\
+    \cf4 CGSize\cf0  currentTextSize=[textView.\cf4 text\cf0  \cf3 sizeWithAttributes\cf0 :\cf10 @\{\cf4 NSFontAttributeName\cf0 :[\cf4 UIFont\cf0  \cf3 systemFontOfSize\cf0 :fontSize]\cf10 \}\cf0 ];\
+    \cf2 while\cf0  ((currentTextSize.\cf4 height\cf0 )*\cf3 ceil\cf0 ((currentTextSize.\cf4 width\cf0 /width))<=(height-fontSize)) \{\
+        fontSize++;\
+        currentTextSize=[textView.\cf4 text\cf0  \cf3 sizeWithAttributes\cf0 :\cf10 @\{\cf4 NSFontAttributeName\cf0 :[\cf4 UIFont\cf0  \cf3 systemFontOfSize\cf0 :fontSize]\cf10 \}\cf0 ];\
+    \}\
+    [textView \cf3 setFont\cf0 :[textView.\cf4 font\cf0  \cf3 fontWithSize\cf0 :fontSize]];\
+\}}
