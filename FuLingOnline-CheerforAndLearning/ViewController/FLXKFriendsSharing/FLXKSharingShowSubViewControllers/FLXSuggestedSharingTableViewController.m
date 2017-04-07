@@ -165,17 +165,6 @@
     self.tableView.estimatedRowHeight=100;
 }
 -(void)setupFLXKSharingCellModel{
-//    FLXKSharingCellModel* model=[FLXKSharingCellModel new];
-//    //    model.avatarImageUrl=@"IMG_0488";
-//    model.avatarImageUrl=@"Spark";
-//    model.nickName=@"Spark";
-//    model.timestamp=@"Spark";
-//    model.mainSharingContent=@"Spark";
-//    model.sharingImages=@"Spark";
-//    model.locationRecord=@"Spark";
-//    model.likeTheSharingRecords=@"Spark";
-//    model.sharingComments=@"Spark";
-//    return model;
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         _models=(NSArray<FLXKSharingCellModel *> *)obj;

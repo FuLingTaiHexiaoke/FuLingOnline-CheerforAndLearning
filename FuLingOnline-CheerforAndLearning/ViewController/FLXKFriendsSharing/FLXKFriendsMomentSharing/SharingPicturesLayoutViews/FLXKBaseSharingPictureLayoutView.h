@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "FLXKBaseSharingPictureLayoutView.h"
+//utilites
+#import "Masonry.h"
+#import "UIImageView+WebCache.h"
 
 #import "FLXKSharingImagesModel.h"
 
 
 @interface FLXKBaseSharingPictureLayoutView : UIView
 
-@property(nonatomic)NSArray<NSString*>* imageArray;
+@property(nonatomic)NSArray<FLXKSharingImagesModel*>* imageArray;
 
 +(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
 

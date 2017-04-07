@@ -18,4 +18,9 @@
 @property(nonatomic)NSString* thumbnailPictureUrl;
 @property(nonatomic)NSString* pictureName;
 @property(nonatomic)NSString* uid;
+@property(nonatomic)NSInteger originImageWidth;
+@property(nonatomic)NSInteger originImageHeight;
+@property(nonatomic)NSInteger thumberImageWidth;
+@property(nonatomic)NSInteger thumberImageHeight;
+
 @end

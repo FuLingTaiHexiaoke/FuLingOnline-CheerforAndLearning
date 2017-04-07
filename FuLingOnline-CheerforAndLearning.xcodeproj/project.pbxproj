@@ -110,6 +110,10 @@
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
+		B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */; };
+		B95D18E31E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */; };
+		B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */; };
+		B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */; };
 		B9614A451E82CC22008B7531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A441E82CC22008B7531 /* main.m */; };
 		B9614A481E82CC22008B7531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A471E82CC22008B7531 /* AppDelegate.m */; };
 		B9614A4B1E82CC22008B7531 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A4A1E82CC22008B7531 /* FirstViewController.m */; };
@@ -828,6 +832,12 @@
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
+		B95D18DF1E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTwoSharingPictureLayoutView.h; sourceTree = "<group>"; };
+		B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTwoSharingPictureLayoutView.m; sourceTree = "<group>"; };
+		B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKTwoSharingPictureLayoutView.xib; sourceTree = "<group>"; };
+		B95D18E91E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseImageLayoutCollectcionViewCell.h; sourceTree = "<group>"; };
+		B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseImageLayoutCollectcionViewCell.m; sourceTree = "<group>"; };
+		B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseImageLayoutCollectcionViewCell.xib; sourceTree = "<group>"; };
 		B9614A411E82CC21008B7531 /* FuLingOnlineIdeaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuLingOnlineIdeaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9614A441E82CC22008B7531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9614A461E82CC22008B7531 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1765,11 +1775,15 @@
 		B92494991E8BA365006878CC /* SharingPicturesLayoutViews */ = {
 			isa = PBXGroup;
 			children = (
+				B95D18E81E977EE800585895 /* ImageLayoutCollectcionViewCells */,
 				B924949A1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.h */,
 				B924949B1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m */,
 				B924949D1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.h */,
 				B924949E1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m */,
 				B92494A01E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib */,
+				B95D18DF1E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.h */,
+				B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */,
+				B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */,
 			);
 			path = SharingPicturesLayoutViews;
 			sourceTree = "<group>";
@@ -2036,6 +2050,16 @@
 				B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */,
 			);
 			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		B95D18E81E977EE800585895 /* ImageLayoutCollectcionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B95D18E91E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.h */,
+				B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */,
+				B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */,
+			);
+			path = ImageLayoutCollectcionViewCells;
 			sourceTree = "<group>";
 		};
 		B9614A421E82CC22008B7531 /* FuLingOnlineIdeaTest */ = {
@@ -3601,6 +3625,7 @@
 				B97507961E4C58F700A577E7 /* 058@2x.png in Resources */,
 				B97507AE1E4C58F700A577E7 /* 070@2x.png in Resources */,
 				B975077B1E4C58F700A577E7 /* 045.png in Resources */,
+				B95D18E31E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib in Resources */,
 				B97507861E4C58F700A577E7 /* 050@2x.png in Resources */,
 				B97507A81E4C58F700A577E7 /* 067@2x.png in Resources */,
 				B97506F91E4C58F600A577E7 /* smiley_89.png in Resources */,
@@ -3912,6 +3937,7 @@
 				B97507401E4C58F600A577E7 /* 015@2x.png in Resources */,
 				B97506B51E4C58F600A577E7 /* smiley_27.png in Resources */,
 				B97506DF1E4C58F600A577E7 /* smiley_65.png in Resources */,
+				B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */,
 				B97507031E4C58F600A577E7 /* smiley_98.png in Resources */,
 				B975074E1E4C58F600A577E7 /* 022@2x.png in Resources */,
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
@@ -4122,6 +4148,7 @@
 				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
 				B9C6ACA71E6548550003C50A /* SGScanningQRCodeView.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
+				B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */,
 				B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */,
 				B9C6AC911E6548550003C50A /* FLXKCollapsableTableViewController1.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
@@ -4130,6 +4157,7 @@
 				B9C6AAEB1E6547690003C50A /* FLXKCheckAppVersion.m in Sources */,
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */,
+				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,

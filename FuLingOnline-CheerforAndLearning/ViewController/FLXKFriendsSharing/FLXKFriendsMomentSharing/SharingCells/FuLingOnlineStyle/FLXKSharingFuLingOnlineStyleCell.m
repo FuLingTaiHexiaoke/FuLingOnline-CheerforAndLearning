@@ -60,7 +60,8 @@
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     self.mainSharingContentLabel.text=model.mainSharingContent;
-    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
+//    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
+       [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
     [self setupSharingCommentsTableViewWithCellModels];
     //    [self.sharingCommentsTableView setCellModels:@[@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark"]];
@@ -70,6 +71,7 @@
     
     FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:imageArray];
     [self.contentView addSubview:newView];
+
     [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);

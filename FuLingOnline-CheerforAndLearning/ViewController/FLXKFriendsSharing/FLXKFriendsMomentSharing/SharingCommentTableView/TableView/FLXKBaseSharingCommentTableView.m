@@ -31,7 +31,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    [self setupInitUI];
+    [self setupUI];
     self.delegate=self;
     self.dataSource=self;
     
@@ -74,7 +74,7 @@
 #pragma mark - View Event
 #pragma mark - Model Event
 #pragma mark - Private methods
--(void)setupInitUI{
+-(void)setupUI{
     
     [self registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
     

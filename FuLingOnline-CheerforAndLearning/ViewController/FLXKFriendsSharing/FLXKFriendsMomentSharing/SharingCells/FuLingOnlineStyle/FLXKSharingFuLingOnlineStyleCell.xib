@@ -53,9 +53,9 @@
                         <color key="backgroundColor" red="0.2274509804" green="0.67450980390000004" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lza-gT-Yqo">
-                        <rect key="frame" x="54" y="204" width="46" height="30"/>
+                        <rect key="frame" x="54" y="204" width="161" height="30"/>
                         <color key="backgroundColor" red="1" green="0.78090595640000005" blue="0.1760718637" alpha="1" colorSpace="calibratedRGB"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Location Record Button"/>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyZ-3A-KRl">
                         <rect key="frame" x="54" y="242" width="261" height="30"/>

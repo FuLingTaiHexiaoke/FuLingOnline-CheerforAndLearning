@@ -32,6 +32,11 @@
 -(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
     [imageArray enumerateObjectsUsingBlock:^(FLXKSharingImagesModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [( (UIImageView*)(_SharingImageViews[idx])) sd_setImageWithURL:NSURL_BaseURL(obj.thumbnailPictureUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
+        
+        [( (UIImageView*)(_SharingImageViews[idx]))  mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(obj.thumberImageWidth);
+            make.height.mas_equalTo(obj.thumberImageHeight);
+        }];
     }];
 }
 

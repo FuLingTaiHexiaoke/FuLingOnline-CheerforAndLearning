@@ -9,22 +9,23 @@
 #import "FLXKBaseSharingPictureLayoutView.h"
 //child views
 #import "FLXKOneSharingPictureLayoutView.h"
+#import "FLXKTwoSharingPictureLayoutView.h"
 
 @implementation FLXKBaseSharingPictureLayoutView
 
 
-+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<NSString*>*)imageArray{
++(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
     FLXKBaseSharingPictureLayoutView* pictureLayoutView;
     NSInteger imageCount=imageArray.count;
     switch (imageCount) {
         case 0:
             pictureLayoutView=nil;
             break;
-        case 1:
-            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
-            break;
+//        case 1:
+//            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
+//            break;
         default:
-            pictureLayoutView=nil;
+            pictureLayoutView=[[FLXKTwoSharingPictureLayoutView alloc]init];
             break;
     }
     

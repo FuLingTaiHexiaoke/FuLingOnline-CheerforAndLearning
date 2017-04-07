@@ -9,9 +9,9 @@
 
 #import "___FILEBASENAME___.h"
 //utilites
+//child viewController
 //models
 //subviews
-//child viewController
 @interface ___FILEBASENAMEASIDENTIFIER___ ()
 //IBOutlet
 //IBAction
