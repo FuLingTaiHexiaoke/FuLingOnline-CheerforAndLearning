@@ -6,8 +6,9 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 #pragma mark - Declarations and macros
-#define default_width (80+10)
-#define default_height (80+10)
+#define default_space (5)
+#define default_width (80+default_space)
+#define default_height (80+default_space)
 
 #define Reuse_FLXKBaseImageLayoutCollectcionViewCell @"FLXKBaseImageLayoutCollectcionViewCell"
 
@@ -59,7 +60,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSLog(@"%lu", (unsigned long)self.collectionViewDataSource.count)
+    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
     return self.collectionViewDataSource.count;
 }
 
@@ -87,8 +88,8 @@
             break;
         }
         default:
-            width=default_width-10;
-            height=default_height-10;
+            width=default_width-default_space;
+            height=default_height-default_space;
             break;
     }
     return   CGSizeMake(width, height) ;
@@ -125,11 +126,11 @@
         case 2:
         case 3:
             width=default_width*count;
-            height=default_height*ceil(count%3);
+            height=default_height*ceil(count/3.0);
             break;
         case 4:
             width=default_width*2;
-            height=default_height*ceil(count/3);
+            height=default_height*ceil(count/3.0);
             break;
         case 5:
         case 6:
@@ -137,14 +138,17 @@
         case 8:
         case 9:
             width=default_width*3;
-            height=default_height*ceil(count/3);
+            height=default_height*ceil(count/3.0);
             break;
         default:
             width=default_width;
             height=default_height;
             break;
     }
-    
+    if(count>1){
+        width-=default_space;
+        height-=default_space;
+    }
     //set frame
     [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width);
@@ -162,7 +166,11 @@
     [self.collectionView registerNib:[UINib nibWithNibName:Reuse_FLXKBaseImageLayoutCollectcionViewCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Reuse_FLXKBaseImageLayoutCollectcionViewCell];
     self.collectionView.delegate=self;
     self.collectionView.dataSource=self;
-    self.collectionView.backgroundColor=[UIColor blueColor];
+    self.collectionView.backgroundColor=[UIColor whiteColor];
+  UICollectionViewFlowLayout* collectionViewLayout=  (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
+    collectionViewLayout.minimumLineSpacing=default_space;
+    collectionViewLayout.minimumInteritemSpacing=default_space;
+
 }
 
 

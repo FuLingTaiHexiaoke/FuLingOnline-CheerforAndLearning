@@ -45,8 +45,7 @@
             model.mainSharingContent=obj.doc_content?obj.doc_content: @"Spark";
             model.sharingImages=obj.image_urls? [self getArrayFromString: obj.image_urls]: @[ @"Spark"];
             model.locationRecord=obj.video_url?obj.video_url: @"Spark";//reset model
-            //            model.likeTheSharingRecords=obj.thumbsupCount?@"Spark": @"Spark";
-            //            model.sharingComments=obj.thumbsupCount?@"Spark": @"Spark";
+
             [models addObject:model];
         }];
         self.successCallback(models);

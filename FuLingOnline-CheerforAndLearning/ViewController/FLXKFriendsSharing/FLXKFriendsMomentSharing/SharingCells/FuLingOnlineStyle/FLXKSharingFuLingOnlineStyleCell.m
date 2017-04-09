@@ -60,11 +60,15 @@
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     self.mainSharingContentLabel.text=model.mainSharingContent;
+
+    [self setupMainSharingContentLabel];
+
+
 //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
        [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
     [self setupSharingCommentsTableViewWithCellModels];
-    //    [self.sharingCommentsTableView setCellModels:@[@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark",@"Spark"]];
+
 }
 
 -(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
@@ -73,7 +77,7 @@
     [self.contentView addSubview:newView];
 
     [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom).offset(8);
+        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);
         make.left.mas_equalTo(self.nickNameLabel.mas_left);
     }];
@@ -86,6 +90,13 @@
     CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
     [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height);
+    }];
+}
+
+-(void)setupMainSharingContentLabel{
+CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSharingContentLabel.frame.size.width, INT_MAX)];
+    [self.mainSharingContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(size.height);
     }];
 }
 

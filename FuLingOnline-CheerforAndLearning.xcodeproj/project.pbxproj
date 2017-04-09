@@ -491,6 +491,7 @@
 		B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */; };
 		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
 		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
+		B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */; };
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
 		B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */; };
 		B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */; };
@@ -1255,6 +1256,8 @@
 		B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestFooterView.h; sourceTree = "<group>"; };
 		B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestFooterView.m; sourceTree = "<group>"; };
 		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
+		B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingOperationContainerView.h; sourceTree = "<group>"; };
+		B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingOperationContainerView.m; sourceTree = "<group>"; };
 		B9C6AAD51E651B4A0003C50A /* FLXKNavigationTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleViewController.h; sourceTree = "<group>"; };
 		B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNavigationTitleViewController.m; sourceTree = "<group>"; };
 		B9C6AAD81E651C490003C50A /* FLXKNavigationTitleSegmentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleSegmentsView.h; sourceTree = "<group>"; };
@@ -1741,6 +1744,7 @@
 			isa = PBXGroup;
 			children = (
 				B92494891E8B8C37006878CC /* SharingCells */,
+				B9B6BD661E99E7EF00EEFCEC /* SharingOperationContainerViews */,
 				B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */,
 				B92A301E1E8E4FFF00E8AA30 /* SharingCommentTableView */,
 				B92494991E8BA365006878CC /* SharingPicturesLayoutViews */,
@@ -2707,6 +2711,23 @@
 				B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */,
 			);
 			path = HearderFooterViews;
+			sourceTree = "<group>";
+		};
+		B9B6BD661E99E7EF00EEFCEC /* SharingOperationContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */,
+				B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */,
+				B9B6BD691E99E7EF00EEFCEC /* FuLingStyleContainerViews */,
+			);
+			path = SharingOperationContainerViews;
+			sourceTree = "<group>";
+		};
+		B9B6BD691E99E7EF00EEFCEC /* FuLingStyleContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FuLingStyleContainerViews;
 			sourceTree = "<group>";
 		};
 		B9C6AAD21E651B040003C50A /* FLXKNavigationTitleView */ = {
@@ -4139,6 +4160,7 @@
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
 				B93098721E568C0600306F39 /* UIViewController+Extensions.m in Sources */,
+				B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */,
 				B9C6ACA61E6548550003C50A /* SGQRCodeTool.m in Sources */,
 				B9CDF0211E4F36690007F638 /* Indicator.m in Sources */,
 				B90CD97F1E763FFD00278EDB /* ActionOperationViewController.m in Sources */,
