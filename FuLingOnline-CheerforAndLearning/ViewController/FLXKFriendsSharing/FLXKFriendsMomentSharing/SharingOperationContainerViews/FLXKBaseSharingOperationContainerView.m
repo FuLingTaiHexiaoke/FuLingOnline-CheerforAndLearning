@@ -14,29 +14,29 @@
 @implementation FLXKBaseSharingOperationContainerView
 
 
-+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
-    FLXKBaseSharingPictureLayoutView* pictureLayoutView;
-    NSInteger imageCount=imageArray.count;
-    switch (imageCount) {
-        case 0:
-            pictureLayoutView=nil;
-            break;
-//        case 1:
-//            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
+//+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
+//    FLXKBaseSharingPictureLayoutView* pictureLayoutView;
+//    NSInteger imageCount=imageArray.count;
+//    switch (imageCount) {
+//        case 0:
+//            pictureLayoutView=nil;
 //            break;
-        default:
-            pictureLayoutView=[[FLXKTwoSharingPictureLayoutView alloc]init];
-            break;
-    }
-    
-    [pictureLayoutView setImageArray:imageArray];
-    
-    return pictureLayoutView;
-}
-
--(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
-    
-}
+////        case 1:
+////            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
+////            break;
+//        default:
+//            pictureLayoutView=[[FLXKTwoSharingPictureLayoutView alloc]init];
+//            break;
+//    }
+//    
+//    [pictureLayoutView setImageArray:imageArray];
+//    
+//    return pictureLayoutView;
+//}
+//
+//-(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
+//    
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

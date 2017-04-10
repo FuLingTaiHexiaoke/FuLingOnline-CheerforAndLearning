@@ -19,6 +19,6 @@
 
 @property(nonatomic)NSArray<FLXKSharingImagesModel*>* imageArray;
 
-+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
+//+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
 
 @end
