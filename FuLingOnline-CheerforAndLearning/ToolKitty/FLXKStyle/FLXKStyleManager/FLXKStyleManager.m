@@ -19,9 +19,9 @@ static FLXKStyleManager* _styleManager = nil;
 - (void)applyStyleToWindow:(UIWindow*)window {
     window.backgroundColor = [UIColor whiteColor];
 #pragma mark - UIButton
-    [[UIButton appearance] setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
-    [[UIButton appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"] forState:UIControlStateNormal];
-    [[UIButton appearance] setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+//    [[UIButton appearance] setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
+//    [[UIButton appearance] setBackgroundImage:[UIImage imageNamed:@"clear.png"] forState:UIControlStateNormal];
+//    [[UIButton appearance] setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
     
 #pragma mark - UINavigationBar
     

@@ -21,6 +21,10 @@
 
 #import "FLXKSharingImagesModel.h"//分享的图片
 
+
+//用户管理
+#import "UserModel.h"
+
 @interface FLXKModelsBrigde : NSObject
 
 @end

@@ -71,6 +71,9 @@
         
     }
     
+    //get user
+    [FLXKSharedAppSingleton getSharedAPPUser];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{

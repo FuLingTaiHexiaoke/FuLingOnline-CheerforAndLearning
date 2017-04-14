@@ -7,11 +7,12 @@
 //
 
 #import "FLXKSharingFuLingOnlineStyleCell.h"
+
 //utilites
 #import "Masonry.h"
 //child viewController
 //subviews
-#import "FLXKBaseSharingCommentTableView.h"
+#import "FLXKHeaderImageSharingLikeCollectionView.h"
 
 
 @interface FLXKSharingFuLingOnlineStyleCell ()
@@ -24,12 +25,24 @@
 @property (strong, nonatomic) IBOutlet FLXKBaseSharingPictureLayoutView *sharingImagesContainerView;
 @property (weak, nonatomic) IBOutlet UIButton *locationRecordButton;
 @property (weak, nonatomic) IBOutlet UIView *sharingMainOperationsContainerView;
-@property (weak, nonatomic) IBOutlet UIScrollView *likeTheSharingRecordScrollView;
+
+
+
+
+@property (weak, nonatomic) IBOutlet FLXKHeaderImageSharingLikeCollectionView *likeTheSharingRecordScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSeparatorLineView;
 @property (weak, nonatomic) IBOutlet FLXKBaseSharingCommentTableView *sharingCommentsTableView;
 
 
 //IBAction
+
+//点赞
+- (IBAction)sharingThumbup:(id)sender;
+
+//评论
+
+//分享
+
 //child viewController
 //subviews
 //models
@@ -41,7 +54,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.avatarImageView.layer.cornerRadius= self.avatarImageView.bounds.size.width/2;
+    self.avatarImageView.layer.masksToBounds=YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -56,26 +70,27 @@
 
 -(void)setSharingCellModel:(FLXKSharingCellModel *)model{
     [super setSharingCellModel:model];
-    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
+    //    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
+    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     self.mainSharingContentLabel.text=model.mainSharingContent;
-
+    [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
     [self setupMainSharingContentLabel];
-
-
-//    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
-       [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
+    
+    
+    //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
+    [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
     [self setupSharingCommentsTableViewWithCellModels];
-
+    
 }
 
 -(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
     
     FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:imageArray];
     [self.contentView addSubview:newView];
-
+    
     [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);
@@ -94,7 +109,7 @@
 }
 
 -(void)setupMainSharingContentLabel{
-CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSharingContentLabel.frame.size.width, INT_MAX)];
+    CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSharingContentLabel.frame.size.width, INT_MAX)];
     [self.mainSharingContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(size.height);
     }];
@@ -102,7 +117,7 @@ CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSha
 
 -(NSArray*)setupSharingCommentCellModels{
     NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
-    for (int i=0; i<10; i++) {
+    for (int i=0; i<3; i++) {
         SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
         model.nickName=@"nickName";
         [models addObject:model];
@@ -110,10 +125,14 @@ CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSha
     return       [NSArray arrayWithArray:models];
 }
 #pragma mark - View Event
+- (IBAction)sharingThumbup:(id)sender {
+    [super addFriendsharingThumbup];
+}
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation
+
 @end

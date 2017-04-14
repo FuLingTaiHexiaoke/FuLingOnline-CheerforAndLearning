@@ -170,10 +170,11 @@
     model.type_id=001;
     model.type_name=@"个人状态发布";
     model.title=@"个人状态发布";
-    model.editor=@"xiaoke";
+    model.editor=[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name;
+    model.head_url=[FLXKSharedAppSingleton sharedSingleton].sharedUser.thumb_avatar_picture;
     model.doc_content=newsToPublish;
     model.doc_url=self.publishLocationButton.titleLabel.text;//user_location
-    model.sub_type_id=001;//user_id
+    model.sub_type_id=[FLXKSharedAppSingleton sharedSingleton].sharedUser.userID;//user_id
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         //        NSLog(@"success");

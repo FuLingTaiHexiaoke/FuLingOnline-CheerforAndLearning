@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE  // 动态刷新
+//IB_DESIGNABLE  // 动态刷新
 
 @interface FLXKTabBar : UITabBar
 
 // 加上IBInspectable就可以可视化显示相关的属性哦
 /** 可视化tabBar点击时颜色 */
-@property (nonatomic, strong)IBInspectable UIColor *TabBartintColor;
+//@property (nonatomic, strong)IBInspectable UIColor *TabBartintColor;
 @end

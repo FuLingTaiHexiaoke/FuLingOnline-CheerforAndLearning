@@ -32,6 +32,28 @@
     }];
 }
 
+//添加用户
+-(void)addUserModel:(UserModel*)model pictures:(NSArray<UIImage*>*)pictures{
+    NSDictionary *modelDict= model.mj_keyValues;
+    [FLXKHttpRequest upload:Url_AddUser parameters:modelDict images:pictures success:^(NSURLSessionDataTask *task, id responseObject) {
+        self.successCallback(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        self.failureCallback(error);
+    }];
+}
+
+//获取用户
+-(void)getUserModel{
+    [FLXKHttpRequest  get:[NSString stringWithFormat:@"%@%@",Url_GetUser,UserDefaultsObjForKey(@"login_user_name")] success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSArray<FLXKPublishNewsModel*>   *models = [UserModel mj_objectArrayWithKeyValuesArray:responseObject];
+        if (models.count>0) {
+            self.successCallback(models[0]);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        self.failureCallback(error);
+    }];
+}
+
 //获取朋友圈cell model
 -(void)getFriendSharingModel{
     [FLXKHttpRequest  get:Url_GetFriendSharingModel success:^(NSURLSessionDataTask *task, id responseObject) {
@@ -39,13 +61,15 @@
         NSMutableArray<FLXKSharingCellModel*>* models=[NSMutableArray array];
         [newsModels enumerateObjectsUsingBlock:^(FLXKPublishNewsModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             FLXKSharingCellModel* model=[FLXKSharingCellModel new];
+            model.newsID=obj.uid;
             model.avatarImageUrl=obj.head_url?obj.head_url: @"Spark";
             model.nickName=obj.editor?obj.editor: @"Spark";
             model.timestamp=obj.ptime?obj.ptime.description: @"Spark";
             model.mainSharingContent=obj.doc_content?obj.doc_content: @"Spark";
-            model.sharingImages=obj.image_urls? [self getArrayFromString: obj.image_urls]: @[ @"Spark"];
-            model.locationRecord=obj.video_url?obj.video_url: @"Spark";//reset model
-
+            model.sharingImages= [FLXKSharingImagesModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.image_urls]];
+            model.locationRecord=obj.doc_url?obj.doc_url: @"Spark";//reset model
+            model.likeTheSharingUserRecords= [UserModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.detail_url]] ;
+            
             [models addObject:model];
         }];
         self.successCallback(models);
@@ -54,18 +78,41 @@
     }];
 }
 
+//点赞
+-(void)addFriendsharingThumbup:(NSDictionary*)parameters{
+    [FLXKHttpRequest post:Url_AddFriendsharingThumbup parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+       NSNumber* state= [responseObject objectForKey:@"state"];
+        if (state.integerValue==0) {
+            
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+}
+
 #pragma mark - models helper
 
--(NSArray<FLXKSharingImagesModel*>*)getArrayFromString:(NSString*)stringArray{
-    NSArray<FLXKSharingImagesModel*>*  models;
++(NSArray*)getArrayFromString:(NSString*)stringArray{
     NSError* err;
-    NSArray* temp_models=   [NSJSONSerialization JSONObjectWithData:[stringArray dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&err];
+    NSArray* array=   [NSJSONSerialization JSONObjectWithData:[stringArray dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&err];
     if (err) {
+        return nil;
     }
-    else{
-        models= [FLXKSharingImagesModel mj_objectArrayWithKeyValuesArray:temp_models];
-    }
-    return models;
+    return array;
 }
+
+//-(NSArray<FLXKSharingImagesModel*>*)getArrayFromString:(NSString*)stringArray{
+//    NSArray<FLXKSharingImagesModel*>*  models;
+//    NSError* err;
+//    NSArray* temp_models=   [NSJSONSerialization JSONObjectWithData:[stringArray dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&err];
+//    if (err) {
+//    }
+//    else{
+//        models= [FLXKSharingImagesModel mj_objectArrayWithKeyValuesArray:temp_models];
+//    }
+//    return models;
+//}
+
+
 
 @end

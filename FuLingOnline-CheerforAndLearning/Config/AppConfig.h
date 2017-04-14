@@ -90,6 +90,7 @@
 
 //#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
 
+//朋友圈
 #define Url_GetAdvertisementImageInfo BaseURL(@"launch/getAdvertisementImage")
 
 //https://127.0.0.1:3000/publishNewsController/PublishNewsModel
@@ -97,7 +98,12 @@
 
 #define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
 
+#define Url_AddFriendsharingThumbup BaseURL(@"publishNewsController/PublishNewsModel/addThumberup")//添加点赞
 
+//用户
+#define Url_AddUser BaseURL(@"userController/User")
+
+#define Url_GetUser BaseURL(@"userController/User/")
 
 //==================================================Http Request Part======================================================
 

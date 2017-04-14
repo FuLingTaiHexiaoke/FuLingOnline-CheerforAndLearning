@@ -27,12 +27,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>1</string>
-	<key>NSLocationUsageDescription</key>
-	<string>2</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>3</string>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -67,15 +61,19 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>为保证应用正常运行，请允许访问媒体资源库</string>
 	<key>NSCameraUsageDescription</key>
 	<string>为保证应用正常运行，请允许使用相机功能</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>为保证应用正常运行，请允许访问媒体资源库</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>为保证应用正常运行，请允许访问相册</string>
-	<key>NSLocationUsageDescription - 2</key>
-	<string>为保证应用正常运行，请允许使用定位功能</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>为保证应用正常运行，请允许使用麦克风</string>
+	<key>NSLocationUsageDescription</key>
+	<string>为保证应用正常运行，请允许使用定位功能</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>为保证应用正常运行，请允许使用定位功能</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>为保证应用正常运行，请允许使用定位功能</string>
 </dict>
 </plist>

@@ -13,9 +13,11 @@
 
 
 //Utilities
+
 #import "AppConfig.h"
 #import "UIView+Extensions.h"
 #import "FLXKAPPRouter.h"
+#import "FLXKSharedAppSingleton.h"
 
 
 //#import "WMFLogging.h"

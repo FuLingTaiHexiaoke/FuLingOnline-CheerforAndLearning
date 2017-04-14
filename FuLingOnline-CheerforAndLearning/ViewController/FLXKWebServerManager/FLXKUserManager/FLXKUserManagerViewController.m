@@ -173,7 +173,7 @@
     model.editor=@"xiaoke";
     model.doc_content=newsToPublish;
     model.doc_url=self.publishLocationButton.titleLabel.text;//user_location
-    model.sub_type_id=001;//user_id
+//    model.sub_type_id=001;//user_id
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         //        NSLog(@"success");

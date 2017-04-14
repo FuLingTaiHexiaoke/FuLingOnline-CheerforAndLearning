@@ -7,7 +7,7 @@
 //
 
 #import "FLXKTabBar.h"
-IB_DESIGNABLE  // 动态刷新
+//IB_DESIGNABLE  // 动态刷新
 @implementation FLXKTabBar
 
 /**

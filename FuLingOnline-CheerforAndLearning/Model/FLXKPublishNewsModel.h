@@ -14,10 +14,10 @@
 /**
  *  基本信息区分
  */
-@property(nonatomic,assign)NSInteger id;//source_id
+@property(nonatomic,assign)NSString*  uid;//source_id
 @property(nonatomic,assign)NSInteger type_id;//Home explore community
 @property(nonatomic,strong)NSString* type_name;
-@property(nonatomic,assign)NSInteger sub_type_id;//user_id
+@property(nonatomic,assign)NSString* sub_type_id;//user_id
 @property(nonatomic,strong)NSString* sub_type_name;
 
 
@@ -37,7 +37,7 @@
  *  具体描述
  */
 @property (nonatomic) NSString *subtitle;
-@property (nonatomic) NSString *detail_url;
+@property (nonatomic) NSString *detail_url;//thumberup_users
 
 
 
@@ -67,7 +67,7 @@
  *  图片链接
  */
 @property (nonatomic) NSString *image_url;
-@property (nonatomic) NSString *head_url;
+@property (nonatomic) NSString *head_url;//user_head_path
 //@property (nonatomic) NSArray<NSString *>* image_urls;
 @property (nonatomic)NSString * image_urls;
 @property (nonatomic,assign)NSInteger order;
@@ -82,7 +82,7 @@
 /**
  *  作者
  */
-@property (nonatomic,strong)NSString *editor;
+@property (nonatomic,strong)NSString *editor;//publish_user_login_name
 
 
 /**

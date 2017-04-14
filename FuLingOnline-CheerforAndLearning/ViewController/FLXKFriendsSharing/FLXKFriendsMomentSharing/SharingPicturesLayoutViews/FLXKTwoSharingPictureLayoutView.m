@@ -60,7 +60,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
+//    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
     return self.collectionViewDataSource.count;
 }
 

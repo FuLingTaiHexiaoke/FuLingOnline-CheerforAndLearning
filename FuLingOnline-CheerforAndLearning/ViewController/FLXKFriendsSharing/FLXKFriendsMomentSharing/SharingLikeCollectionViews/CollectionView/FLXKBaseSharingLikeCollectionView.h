@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "UserModel.h"
 //utilites
+#import "UIImageView+WebCache.h"
 //models
 //subviews
 //child viewController
@@ -15,6 +17,7 @@
 //IBOutlet
 //IBAction
 //models
+@property(nonatomic)NSArray<UserModel*>* likeTheSharingUserRecords;
 //UI state record properties
 //subviews
 //child viewController

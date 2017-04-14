@@ -170,7 +170,7 @@
         _models=(NSArray<FLXKSharingCellModel *> *)obj;
         [self.tableView reloadData];
     } failureCallback:^(NSError *err) {
-        NSAssert(!err, err.description);
+//        NSAssert(!err, err.description);
     }] getFriendSharingModel];
     
 }

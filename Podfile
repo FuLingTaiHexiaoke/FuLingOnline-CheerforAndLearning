@@ -1,5 +1,6 @@
+ #'use_frameworks!'
 target ‘FuLingOnline-CheerforAndLearning’ do
-    
+# use_frameworks!
 ##     网络请求
 pod 'AFNetworking', '~> 3.1.0'
 pod 'SDWebImage'

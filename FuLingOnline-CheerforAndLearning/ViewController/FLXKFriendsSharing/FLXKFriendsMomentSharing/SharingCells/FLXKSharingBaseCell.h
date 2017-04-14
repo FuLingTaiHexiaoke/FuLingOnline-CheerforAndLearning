@@ -11,6 +11,8 @@
 //child viewController
 //subviews
 #import "FLXKBaseSharingPictureLayoutView.h"
+#import "FLXKBaseSharingCommentTableView.h"
+//#import "FLXKBaseSharingLikeCollectionView.h"
 //subclass
 //#import "FLXKSharingFuLingOnlineStyleCell.h"
 //models
@@ -28,6 +30,8 @@
 //删除分享
 
 //点赞
+-(void)addFriendsharingThumbup;
+
 //评论
 //分享
 

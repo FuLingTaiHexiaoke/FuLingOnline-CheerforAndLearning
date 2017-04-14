@@ -45,6 +45,9 @@
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter
+-(void)setLikeTheSharingUserRecords:(NSArray<UserModel *> *)users{
+    
+}
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation

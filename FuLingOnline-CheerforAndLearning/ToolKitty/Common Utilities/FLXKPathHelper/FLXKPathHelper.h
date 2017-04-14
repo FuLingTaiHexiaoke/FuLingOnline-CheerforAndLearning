@@ -24,4 +24,10 @@
 
 +(NSString *)pathForResource:( NSString *)name ofType:( NSString *)ext;
 
+//to check the path whether exist,if not create one
++(NSString*)checkOrCreatePath:(NSString*)filePath;
+
+//to check the directory whether exist,if not create one
++(NSString*)checkOrCreateDirectory:(NSString*)directoryPath;
+
 @end

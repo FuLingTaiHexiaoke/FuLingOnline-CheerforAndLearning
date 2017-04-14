@@ -9,6 +9,7 @@
 
 #import "FLXKSharingBaseCell.h"
 //utilites
+#import "FLXKHttpRequestModelHelper.h"
 //child viewController
 //subviews
 //models
@@ -63,8 +64,17 @@
 //评论列表
 
 
-
 #pragma mark - View Event
+//点赞
+-(void)addFriendsharingThumbup{
+   
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+  
+    } failureCallback:^(NSError *err) {
+        //        NSAssert(!err, err.description);
+    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_sharingCellModel.newsID}];
+}
+
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter
