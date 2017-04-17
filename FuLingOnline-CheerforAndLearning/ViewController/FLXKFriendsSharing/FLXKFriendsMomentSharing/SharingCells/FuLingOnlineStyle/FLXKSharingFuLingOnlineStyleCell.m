@@ -28,7 +28,6 @@
 
 
 
-
 @property (weak, nonatomic) IBOutlet FLXKHeaderImageSharingLikeCollectionView *likeTheSharingRecordScrollView;
 @property (weak, nonatomic) IBOutlet UIView *bottomSeparatorLineView;
 @property (weak, nonatomic) IBOutlet FLXKBaseSharingCommentTableView *sharingCommentsTableView;
@@ -125,9 +124,41 @@
     return       [NSArray arrayWithArray:models];
 }
 #pragma mark - View Event
-- (IBAction)sharingThumbup:(id)sender {
-    [super addFriendsharingThumbup];
-}
+//- (IBAction)sharingThumbup:(UIButton*)sender {
+//    
+//    
+//    [UIView animateWithDuration:1.0 animations:^{
+//        NSLog(@"CGAffineTransformIsIdentity %@",[NSNumber numberWithBool:CGAffineTransformIsIdentity(sender.imageView.layer.affineTransform)] );
+//        NSLog(@"NSStringFromCGAffineTransform1 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//        sender.imageView.transform=CGAffineTransformScale(sender.imageView.layer.affineTransform, 4, 4);
+//        sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
+//        //          NSLog(@"NSStringFromCGAffineTransform2 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//    } completion:^(BOOL finished) {
+//        //        if (finished) {
+//        //            NSLog(@"NSStringFromCGAffineTransform3 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//        //            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
+//        //            NSLog(@"NSStringFromCGAffineTransform4 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//        //        }
+//        
+//        
+//        [UIView animateWithDuration:1.0 animations:^{
+//            NSLog(@"CGAffineTransformIsIdentity %@",[NSNumber numberWithBool:CGAffineTransformIsIdentity(sender.imageView.layer.affineTransform)] );
+//            NSLog(@"NSStringFromCGAffineTransform1 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+////            sender.imageView.transform=CGAffineTransformScale(sender.imageView.layer.affineTransform, 4, 4);
+//            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
+//            //          NSLog(@"NSStringFromCGAffineTransform2 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//        } completion:^(BOOL finished) {
+//            //        if (finished) {
+//            //            NSLog(@"NSStringFromCGAffineTransform3 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//            //            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
+//            //            NSLog(@"NSStringFromCGAffineTransform4 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
+//            //        }
+//            
+//        }];
+//        
+//    }];
+//    //    [super addFriendsharingThumbup];
+//}
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter

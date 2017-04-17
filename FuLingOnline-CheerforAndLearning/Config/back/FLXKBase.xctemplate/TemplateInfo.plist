@@ -52,8 +52,31 @@
 			<string>class</string>
 			<key>Values</key>
 			<array>
+				<string>UIView</string>
 				<string>UICollectionView</string>
 			</array>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>XIB</string>
+			<key>Name</key>
+			<string>Also create XIB file for user interface</string>
+			<key>Description</key>
+			<string>Whether to create a XIB file with the same name</string>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>cocoaSubclass</key>
+				<array>
+					<string>UIViewController</string>
+					<string>UIView</string>
+				</array>
+			</dict>
+			<key>Default</key>
+			<string>true</string>
+			<key>NotPersisted</key>
+			<true/>
 		</dict>
 	</array>
 	<key>MainTemplateFile</key>

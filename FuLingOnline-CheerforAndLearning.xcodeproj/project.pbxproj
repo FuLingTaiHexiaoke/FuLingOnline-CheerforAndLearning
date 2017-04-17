@@ -471,6 +471,8 @@
 		B97507D61E4C58F700A577E7 /* del_emoji_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */; };
 		B97507D71E4C58F700A577E7 /* inactive_page_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506971E4C58F600A577E7 /* inactive_page_image.png */; };
 		B97507D81E4C58F700A577E7 /* inactive_page_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506981E4C58F600A577E7 /* inactive_page_image@2x.png */; };
+		B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */; };
+		B97582A61EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */; };
 		B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
@@ -1248,6 +1250,9 @@
 		B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_emoji_select@2x.png"; sourceTree = "<group>"; };
 		B97506971E4C58F600A577E7 /* inactive_page_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_page_image.png; sourceTree = "<group>"; };
 		B97506981E4C58F600A577E7 /* inactive_page_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_page_image@2x.png"; sourceTree = "<group>"; };
+		B97582A21EA491390089BE42 /* FuLingStyleMainOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuLingStyleMainOperationContainerView.h; sourceTree = "<group>"; };
+		B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuLingStyleMainOperationContainerView.m; sourceTree = "<group>"; };
+		B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuLingStyleMainOperationContainerView.xib; sourceTree = "<group>"; };
 		B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FLXKEmotionDB.sqlite; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
@@ -2679,6 +2684,16 @@
 			path = faceBoard;
 			sourceTree = "<group>";
 		};
+		B975827E1EA486AB0089BE42 /* FuLingStyleOperationContainerViews */ = {
+			isa = PBXGroup;
+			children = (
+				B97582A21EA491390089BE42 /* FuLingStyleMainOperationContainerView.h */,
+				B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */,
+				B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */,
+			);
+			path = FuLingStyleOperationContainerViews;
+			sourceTree = "<group>";
+		};
 		B97A545D1E07EE6B0086D0F5 /* FLXKCustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -2806,16 +2821,9 @@
 			children = (
 				B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */,
 				B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */,
-				B9B6BD691E99E7EF00EEFCEC /* FuLingStyleContainerViews */,
+				B975827E1EA486AB0089BE42 /* FuLingStyleOperationContainerViews */,
 			);
 			path = SharingOperationContainerViews;
-			sourceTree = "<group>";
-		};
-		B9B6BD691E99E7EF00EEFCEC /* FuLingStyleContainerViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FuLingStyleContainerViews;
 			sourceTree = "<group>";
 		};
 		B9C263811E9B3153003D7B51 /* FLXKWebServerManager */ = {
@@ -3962,6 +3970,7 @@
 				B975071B1E4C58F600A577E7 /* gif400_2.gif in Resources */,
 				B975076B1E4C58F700A577E7 /* 037.png in Resources */,
 				B975078A1E4C58F700A577E7 /* 052@2x.png in Resources */,
+				B97582A61EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib in Resources */,
 				B975076F1E4C58F700A577E7 /* 039.png in Resources */,
 				B97507681E4C58F700A577E7 /* 035@2x.png in Resources */,
 				B975072F1E4C58F600A577E7 /* 007.png in Resources */,
@@ -4382,6 +4391,7 @@
 				B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */,
 				B9730FA11E84AF9000967ADD /* FLXKPathHelper.m in Sources */,
 				B90CD97D1E763FFD00278EDB /* ActionNoOperationViewController.m in Sources */,
+				B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
 				B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */,

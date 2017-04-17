@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="475"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="476"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8F9-N9-qOm">
@@ -141,10 +141,10 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-QR-JI9" customClass="FLXKHeaderImageSharingLikeCollectionView">
-                        <rect key="frame" x="54" y="272" width="258" height="40"/>
+                        <rect key="frame" x="54" y="272" width="258" height="24"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="ReF-76-Dx2"/>
+                            <constraint firstAttribute="height" constant="24" id="ReF-76-Dx2"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g5t-xs-kJ9">
                             <size key="itemSize" width="50" height="50"/>
@@ -177,7 +177,7 @@
                     <constraint firstItem="MyZ-3A-KRl" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="gs2-yt-SGT"/>
                     <constraint firstItem="U24-QG-khu" firstAttribute="top" secondItem="jFl-rv-t4w" secondAttribute="bottom" constant="8" id="jIV-PN-xYj"/>
                     <constraint firstItem="PKM-DL-fDR" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="lR5-QL-S20"/>
-                    <constraint firstItem="6m6-dY-KT0" firstAttribute="top" secondItem="hPA-QR-JI9" secondAttribute="bottom" id="s4l-5d-CfJ"/>
+                    <constraint firstItem="6m6-dY-KT0" firstAttribute="top" secondItem="hPA-QR-JI9" secondAttribute="bottom" constant="16" id="s4l-5d-CfJ"/>
                     <constraint firstItem="Lza-gT-Yqo" firstAttribute="top" secondItem="U24-QG-khu" secondAttribute="bottom" id="sN2-oc-L6c"/>
                     <constraint firstItem="8F9-N9-qOm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="svs-Vq-aQ9"/>
                     <constraint firstItem="MyZ-3A-KRl" firstAttribute="top" secondItem="Lza-gT-Yqo" secondAttribute="bottom" constant="8" id="x1N-jS-ibg"/>
