@@ -6,12 +6,12 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FLXKBaseSharingOperationContainerView.h"
 //utilites
 //models
 //subviews
 //child viewController
-@interface FuLingStyleMainOperationContainerView : UIView
+@interface FuLingStyleMainOperationContainerView : FLXKBaseSharingOperationContainerView
 //IBOutlet
 //IBAction
 //models

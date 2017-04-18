@@ -41,13 +41,6 @@
 
 #pragma mark - ViewController LifeCircle
 
-- (instancetype)init {
-    if ([super init]) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"FLXKTwoSharingPictureLayoutView" owner:nil options:nil].lastObject;
-    }
-    return self;
-}
-
 -(void)awakeFromNib{
     [super awakeFromNib];
     [self setupUI];

@@ -67,16 +67,40 @@
 #pragma mark - View Event
 //点赞
 -(void)addFriendsharingThumbup{
-   
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-  
+            if (self.sharingCellModel.isThumberuped) {
+                __block  NSInteger index;
+                [self.sharingCellModel.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if ([obj.login_name isEqualToString:[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name ]) {
+                        index=idx;
+                        *stop=YES;
+                    }
+                }];
+                [self.sharingCellModel.likeTheSharingUserRecords removeObjectAtIndex:index];
+            }
+            else{
+                [self.sharingCellModel.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
+            }
+            self.sharingCellModel.isThumberuped=!self.sharingCellModel.isThumberuped;
+            [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
-    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_sharingCellModel.newsID}];
+    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_sharingCellModel.newsID,@"isThumberuped":[NSNumber numberWithInteger:_sharingCellModel.isThumberuped]}];
 }
 
 #pragma mark - Model Event
 #pragma mark - Private methods
+
+
+
+- (UITableView *)tableView
+{
+    UIView *tableView = self.superview;
+    while (![tableView isKindOfClass:[UITableView class]] && tableView) {
+        tableView = tableView.superview;
+    }
+    return (UITableView *)tableView;
+}
 #pragma mark - getter/setter
 #pragma mark - Overriden methods
 

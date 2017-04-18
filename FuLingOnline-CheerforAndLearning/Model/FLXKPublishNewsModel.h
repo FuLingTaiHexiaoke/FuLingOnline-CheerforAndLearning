@@ -15,7 +15,7 @@
  *  基本信息区分
  */
 @property(nonatomic,assign)NSString*  uid;//source_id
-@property(nonatomic,assign)NSInteger type_id;//Home explore community
+@property(nonatomic,assign)NSInteger isThumberuped;//isThumberuped
 @property(nonatomic,strong)NSString* type_name;
 @property(nonatomic,assign)NSString* sub_type_id;//user_id
 @property(nonatomic,strong)NSString* sub_type_name;

@@ -19,6 +19,7 @@
 #import "FLXKSharingCellModel.h"
 #import "SharingCommentCellModel.h"
 
+
 @interface FLXKSharingBaseCell : UITableViewCell
 //IBOutlet
 //IBAction
@@ -39,7 +40,10 @@
 //child viewController
 //subviews
 //models
+//-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath;
+
 @property (strong, nonatomic)FLXKSharingCellModel* sharingCellModel;
+@property (strong, nonatomic)NSIndexPath * indexPath;
 //UI state record properties
 @end
 

@@ -13,6 +13,8 @@
 //child viewController
 //subviews
 #import "FLXKHeaderImageSharingLikeCollectionView.h"
+#import "FuLingStyleMainOperationContainerView.h"
+
 
 
 @interface FLXKSharingFuLingOnlineStyleCell ()
@@ -26,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *locationRecordButton;
 @property (weak, nonatomic) IBOutlet UIView *sharingMainOperationsContainerView;
 
+@property (weak, nonatomic) IBOutlet UIButton *thumberUpButton;
 
 
 @property (weak, nonatomic) IBOutlet FLXKHeaderImageSharingLikeCollectionView *likeTheSharingRecordScrollView;
@@ -36,7 +39,7 @@
 //IBAction
 
 //点赞
-- (IBAction)sharingThumbup:(id)sender;
+//- (IBAction)sharingThumbup:(id)sender;
 
 //评论
 
@@ -65,51 +68,38 @@
 
 #pragma mark - Delegate
 #pragma mark - Public methods
-
-
--(void)setSharingCellModel:(FLXKSharingCellModel *)model{
-    [super setSharingCellModel:model];
-    //    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
-    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
-    self.nickNameLabel.text=model.nickName;
-    self.timestampLabel.text=model.timestamp;
-    self.mainSharingContentLabel.text=model.mainSharingContent;
-    [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
-    [self setupMainSharingContentLabel];
-    
-    
-    //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
-    [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
-    [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
-    [self setupSharingCommentsTableViewWithCellModels];
-    
+-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath{
+    //    self.sharingCellModel=model;
+    //    [self.sharingMainOperationsContainerView setModel:model WithIndexPath:indexPath];
 }
+
 
 -(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
     
     FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:imageArray];
     [self.contentView addSubview:newView];
-    
+        [self.sharingImagesContainerView removeFromSuperview];
+        self.sharingImagesContainerView=newView;
     [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);
         make.left.mas_equalTo(self.nickNameLabel.mas_left);
     }];
-    [self.sharingImagesContainerView removeFromSuperview];
-    self.sharingImagesContainerView=newView;
+//    [self.sharingImagesContainerView removeFromSuperview];
+//    self.sharingImagesContainerView=newView;
 }
 
 -(void)setupSharingCommentsTableViewWithCellModels{
     //get height
     CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
-    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height);
     }];
 }
 
 -(void)setupMainSharingContentLabel{
     CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(self.mainSharingContentLabel.frame.size.width, INT_MAX)];
-    [self.mainSharingContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(size.height);
     }];
 }
@@ -124,44 +114,54 @@
     return       [NSArray arrayWithArray:models];
 }
 #pragma mark - View Event
-//- (IBAction)sharingThumbup:(UIButton*)sender {
-//    
-//    
-//    [UIView animateWithDuration:1.0 animations:^{
-//        NSLog(@"CGAffineTransformIsIdentity %@",[NSNumber numberWithBool:CGAffineTransformIsIdentity(sender.imageView.layer.affineTransform)] );
-//        NSLog(@"NSStringFromCGAffineTransform1 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//        sender.imageView.transform=CGAffineTransformScale(sender.imageView.layer.affineTransform, 4, 4);
-//        sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-//        //          NSLog(@"NSStringFromCGAffineTransform2 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//    } completion:^(BOOL finished) {
-//        //        if (finished) {
-//        //            NSLog(@"NSStringFromCGAffineTransform3 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//        //            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-//        //            NSLog(@"NSStringFromCGAffineTransform4 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//        //        }
-//        
-//        
-//        [UIView animateWithDuration:1.0 animations:^{
-//            NSLog(@"CGAffineTransformIsIdentity %@",[NSNumber numberWithBool:CGAffineTransformIsIdentity(sender.imageView.layer.affineTransform)] );
-//            NSLog(@"NSStringFromCGAffineTransform1 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-////            sender.imageView.transform=CGAffineTransformScale(sender.imageView.layer.affineTransform, 4, 4);
-//            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-//            //          NSLog(@"NSStringFromCGAffineTransform2 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//        } completion:^(BOOL finished) {
-//            //        if (finished) {
-//            //            NSLog(@"NSStringFromCGAffineTransform3 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//            //            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-//            //            NSLog(@"NSStringFromCGAffineTransform4 %@",NSStringFromCGAffineTransform(sender.imageView.layer.affineTransform));
-//            //        }
-//            
-//        }];
-//        
-//    }];
-//    //    [super addFriendsharingThumbup];
-//}
+- (IBAction)sharingThumbup:(UIButton*)sender {
+    if (self.sharingCellModel.isThumberuped==1) {
+        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+    }
+    else{
+        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+    }
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        sender.imageView.transform=CGAffineTransformScale(CGAffineTransformIdentity, 4, 4);
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 animations:^{
+            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+        }];
+    }];
+   [super addFriendsharingThumbup];
+}
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter
+
+-(void)setSharingCellModel:(FLXKSharingCellModel *)model{
+    [super setSharingCellModel:model];
+    //    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
+    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
+    self.nickNameLabel.text=model.nickName;
+    self.timestampLabel.text=model.timestamp;
+    self.mainSharingContentLabel.text=model.mainSharingContent;
+        [self setupMainSharingContentLabel];
+    //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
+    [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
+    
+    [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
+
+    [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
+    [self setupSharingCommentsTableViewWithCellModels];
+    
+    if (model.isThumberuped==1) {
+        [self.thumberUpButton setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+    }
+    else{
+        [self.thumberUpButton setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+        
+    }
+
+    
+}
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation

@@ -167,7 +167,7 @@
     NSString * newsToPublish=[self.publishTextView.attributedText getPlainStringtest];
     
     FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
-    model.type_id=001;
+//    model.type_id=001;
     model.type_name=@"个人状态发布";
     model.title=@"个人状态发布";
     model.editor=[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name;

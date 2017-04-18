@@ -8,35 +8,26 @@
 
 #import "FLXKBaseSharingOperationContainerView.h"
 //child views
-#import "FLXKOneSharingPictureLayoutView.h"
-#import "FLXKTwoSharingPictureLayoutView.h"
+
+//utilities
+#import "FLXKHttpRequestModelHelper.h"
 
 @implementation FLXKBaseSharingOperationContainerView
 
-//FuLingStyleMainOperationContainerView
-//+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
-//    FLXKBaseSharingPictureLayoutView* pictureLayoutView;
-//    NSInteger imageCount=imageArray.count;
-//    switch (imageCount) {
-//        case 0:
-//            pictureLayoutView=nil;
-//            break;
-////        case 1:
-////            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
-////            break;
-//        default:
-//            pictureLayoutView=[[FLXKTwoSharingPictureLayoutView alloc]init];
-//            break;
-//    }
-//    
-//    [pictureLayoutView setImageArray:imageArray];
-//    
-//    return pictureLayoutView;
-//}
-//
-//-(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
-//    
-//}
+-(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath{
+    self.model=model;
+    self.indexPath=indexPath;
+}
+
+//点赞
+-(void)addFriendsharingThumbup{
+    
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        
+    } failureCallback:^(NSError *err) {
+        //        NSAssert(!err, err.description);
+    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_model.newsID}];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

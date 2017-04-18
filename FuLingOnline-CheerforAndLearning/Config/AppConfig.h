@@ -96,7 +96,9 @@
 //https://127.0.0.1:3000/publishNewsController/PublishNewsModel
 #define Url_UploadPublishNews BaseURL(@"publishNewsController/PublishNewsModel")
 
-#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
+//#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
+#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/getNewsModel")
+
 
 #define Url_AddFriendsharingThumbup BaseURL(@"publishNewsController/PublishNewsModel/addThumberup")//添加点赞
 

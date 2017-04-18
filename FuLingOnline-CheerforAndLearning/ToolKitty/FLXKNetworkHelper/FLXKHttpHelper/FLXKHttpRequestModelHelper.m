@@ -54,14 +54,41 @@
     }];
 }
 
+////获取朋友圈cell model
+//-(void)getFriendSharingModel{
+//    [FLXKHttpRequest  post:Url_GetFriendSharingModel parameters:<#(NSDictionary *)#> success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSArray<FLXKPublishNewsModel*> *newsModels = [FLXKPublishNewsModel mj_objectArrayWithKeyValuesArray:responseObject];
+//        NSMutableArray<FLXKSharingCellModel*>* models=[NSMutableArray array];
+//        [newsModels enumerateObjectsUsingBlock:^(FLXKPublishNewsModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            FLXKSharingCellModel* model=[FLXKSharingCellModel new];
+//            model.newsID=obj.uid;
+//            model.isThumberuped=obj.isThumberuped;
+//            model.avatarImageUrl=obj.head_url?obj.head_url: @"Spark";
+//            model.nickName=obj.editor?obj.editor: @"Spark";
+//            model.timestamp=obj.ptime?obj.ptime.description: @"Spark";
+//            model.mainSharingContent=obj.doc_content?obj.doc_content: @"Spark";
+//            model.sharingImages= [FLXKSharingImagesModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.image_urls]];
+//            model.locationRecord=obj.doc_url?obj.doc_url: @"Spark";//reset model
+//            model.likeTheSharingUserRecords= [UserModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.detail_url]] ;
+//            
+//            [models addObject:model];
+//        }];
+//        self.successCallback(models);
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        self.failureCallback(error);
+//    }];
+//}
+
+//2017-4-17
 //获取朋友圈cell model
--(void)getFriendSharingModel{
-    [FLXKHttpRequest  get:Url_GetFriendSharingModel success:^(NSURLSessionDataTask *task, id responseObject) {
+-(void)getFriendSharingModelWithCondition:(NSDictionary*)parameters{
+    [FLXKHttpRequest  post:Url_GetFriendSharingModel parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         NSArray<FLXKPublishNewsModel*> *newsModels = [FLXKPublishNewsModel mj_objectArrayWithKeyValuesArray:responseObject];
         NSMutableArray<FLXKSharingCellModel*>* models=[NSMutableArray array];
         [newsModels enumerateObjectsUsingBlock:^(FLXKPublishNewsModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             FLXKSharingCellModel* model=[FLXKSharingCellModel new];
             model.newsID=obj.uid;
+            model.isThumberuped=obj.isThumberuped;
             model.avatarImageUrl=obj.head_url?obj.head_url: @"Spark";
             model.nickName=obj.editor?obj.editor: @"Spark";
             model.timestamp=obj.ptime?obj.ptime.description: @"Spark";
@@ -83,10 +110,10 @@
     [FLXKHttpRequest post:Url_AddFriendsharingThumbup parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
        NSNumber* state= [responseObject objectForKey:@"state"];
         if (state.integerValue==0) {
-            
+            self.successCallback(nil);
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
+         self.failureCallback(error);
     }];
 }
 

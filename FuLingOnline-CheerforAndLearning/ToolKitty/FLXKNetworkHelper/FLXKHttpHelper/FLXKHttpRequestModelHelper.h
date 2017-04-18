@@ -36,7 +36,11 @@ typedef void (^taskProgress)(NSProgress * progress);
 
 
 //获取朋友圈cell model
--(void)getFriendSharingModel;
+//-(void)getFriendSharingModel;
+
+//2017-4-17
+//获取朋友圈cell model
+-(void)getFriendSharingModelWithCondition:(NSDictionary*)parameters;
 
 //点赞
 -(void)addFriendsharingThumbup:(NSDictionary*)parameters;

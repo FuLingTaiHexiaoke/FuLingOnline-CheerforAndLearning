@@ -9,16 +9,21 @@
 #import <UIKit/UIKit.h>
 
 //utilites
-#import "Masonry.h"
-#import "UIImageView+WebCache.h"
 
-#import "FLXKSharingImagesModel.h"
+#import "FLXKSharingCellModel.h"
+
+
 
 
 @interface FLXKBaseSharingOperationContainerView : UIView
 
-@property(nonatomic)NSArray<FLXKSharingImagesModel*>* imageArray;
+@property (strong, nonatomic)FLXKSharingCellModel* model;
 
-//+(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
+@property (strong, nonatomic)NSIndexPath* indexPath;
+
+-(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath;
+
+//点赞
+-(void)addFriendsharingThumbup;
 
 @end

@@ -107,7 +107,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell ];
+//    [cell setSharingCellModel:_models[indexPath.row] WithIndexPath:indexPath ];
+    NSLog(@"indexPath.row %ld", (long)indexPath.row);
     [cell setSharingCellModel:_models[indexPath.row]];
+    [cell setIndexPath:indexPath];
     return cell;
 }
 //
@@ -171,7 +174,7 @@
         [self.tableView reloadData];
     } failureCallback:^(NSError *err) {
 //        NSAssert(!err, err.description);
-    }] getFriendSharingModel];
+    }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name}];
     
 }
 
