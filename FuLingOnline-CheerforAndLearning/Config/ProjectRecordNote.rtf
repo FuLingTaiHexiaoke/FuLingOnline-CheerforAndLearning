@@ -3,9 +3,8 @@
 \f3\fmodern\fcharset0 CourierNewPSMT;\f4\fnil\fcharset0 Verdana;\f5\fnil\fcharset134 .PingFangSC-Medium;
 \f6\fnil\fcharset0 HelveticaNeue;\f7\fnil\fcharset134 .PingFangSC-Regular;\f8\fnil\fcharset0 Menlo-Bold;
 }
-{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red0\green0\blue255;\red0\green0\blue0;
-\red242\green242\blue242;\red144\green1\blue18;\red242\green242\blue242;\red188\green235\blue193;\red35\green35\blue35;
-\red14\green14\blue14;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red0\green0\blue255;\red242\green242\blue242;
+\red144\green1\blue18;\red188\green235\blue193;\red35\green35\blue35;\red14\green14\blue14;}
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
@@ -47,30 +46,30 @@ ifconfig | grep "inet " | grep -v 127.0.0.1 \
 \pard\pardeftab720\sl420\partightenfactor0
 
 \f3\fs24 \cf3 \expnd0\expndtw0\kerning0
-\CocoaLigature1 \outl0\strokewidth0 \strokec3 sudo npm\cf4 \cb5 \strokec4  install -g pm2
-\f1\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 \
+\CocoaLigature1 sudo npm\cf0 \cb4  install -g pm2
+\f1\fs22 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 \cf0 pm2 delete all --watch
-\f3\fs24 \cf6 \expnd0\expndtw0\kerning0
+\f3\fs24 \cf5 \expnd0\expndtw0\kerning0
 \CocoaLigature1 \
 \pard\pardeftab720\sl420\partightenfactor0
-\cf6 pm2 list
+\cf5 pm2 list
 \f1\fs22 \cf0 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 \cf0 npm start\
 pm2 start processes.json\
 \pard\pardeftab720\sl420\partightenfactor0
 
-\f3\fs24 \cf6 \expnd0\expndtw0\kerning0
-\CocoaLigature1 pm2\cf0 \cb7  logs\
+\f3\fs24 \cf5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 pm2\cf0 \cb4  logs\cb4 \
 \pard\pardeftab720\sl320\partightenfactor0
 
-\f4\fs26 \cf0 \cb8 pm2 flush\
+\f4\fs26 \cf0 \cb6 pm2 flush\
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 
 \f1\fs22 \cf0 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 npm install gm --save
-\f4\fs26 \cb8 \expnd0\expndtw0\kerning0
+\f4\fs26 \cb6 \expnd0\expndtw0\kerning0
 \CocoaLigature1 \
 \pard\pardeftab720\sl320\partightenfactor0
 \cf0 \
@@ -79,17 +78,18 @@ TEST:\
 {\field{\*\fldinst{HYPERLINK "https://192.168.2.111:3000/launch/getAdvertisementImage"}}{\fldrslt \cf0 https://192.168.2.111:3000/launch/getAdvertisementImage}}\
 \pard\pardeftab720\sl320\partightenfactor0
 {\field{\*\fldinst{HYPERLINK "https://192.168.2.111:3000/publishNewsController/PublishNewsModel/1"}}{\fldrslt \cf0 https://192.168.2.111:3000/publishNewsController/PublishNewsModel/1}}\
+\pard\pardeftab720\sl320\partightenfactor0
 
-\f2\fs24 \cb1 \kerning1\expnd0\expndtw0 \
+\f2\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
 \pard\pardeftab720\sl860\partightenfactor0
 
-\f5\fs48 \cf9 \expnd0\expndtw0\kerning0
+\f5\fs48 \cf7 \expnd0\expndtw0\kerning0
 \'c6\'f4\'b6\'af
 \f6\b MongoDB
 \f2\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \
 \pard\pardeftab720\sl360\partightenfactor0
 
-\f6\fs30 \cf9 \cb7 \expnd0\expndtw0\kerning0
+\f6\fs30 \cf7 \cb4 \expnd0\expndtw0\kerning0
 mongod --config 
 \f7 /
 \f6 usr
@@ -109,7 +109,7 @@ mongod --config
 mac \
 \pard\pardeftab720\sl320\partightenfactor0
 
-\f0\b0\fs28 \cf10 \expnd0\expndtw0\kerning0
+\f0\b0\fs28 \cf8 \expnd0\expndtw0\kerning0
 \CocoaLigature1 history -c\
 \
 \

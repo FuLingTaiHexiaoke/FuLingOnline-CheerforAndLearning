@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="peF-KQ-rTg">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="219" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="peF-KQ-rTg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="219"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="g49-jC-lzR">
@@ -28,10 +28,8 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="peF-KQ-rTg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1zj-Q9-O5u"/>
-                <constraint firstAttribute="trailing" secondItem="peF-KQ-rTg" secondAttribute="trailing" id="GGn-vD-aPk"/>
-                <constraint firstAttribute="bottom" secondItem="peF-KQ-rTg" secondAttribute="bottom" id="Ihk-oh-MwQ"/>
-                <constraint firstItem="peF-KQ-rTg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sYX-mw-b6l"/>
+                <constraint firstItem="peF-KQ-rTg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZiG-8Q-0bp"/>
+                <constraint firstItem="peF-KQ-rTg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="h1X-kN-cRx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

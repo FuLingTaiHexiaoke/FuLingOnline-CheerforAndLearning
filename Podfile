@@ -16,8 +16,8 @@ pod 'KVOController'
 pod 'MJExtension'
 pod 'Tweaks'
 pod 'Masonry','~>1.0.2'
-#pod 'Reveal-SDK'
 pod 'UITableView+FDTemplateLayoutCell'
+pod 'Reveal-SDK',:configurations => ['Debug']
 
 ##      UI BULDER
 pod 'RTRootNavigationController'

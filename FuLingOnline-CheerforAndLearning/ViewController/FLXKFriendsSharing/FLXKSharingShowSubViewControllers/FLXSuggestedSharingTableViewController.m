@@ -170,8 +170,10 @@
 -(void)setupFLXKSharingCellModel{
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        _models=(NSArray<FLXKSharingCellModel *> *)obj;
-        [self.tableView reloadData];
+        if (obj) {
+            _models=(NSArray<FLXKSharingCellModel *> *)obj;
+            [self.tableView reloadData];
+        }
     } failureCallback:^(NSError *err) {
 //        NSAssert(!err, err.description);
     }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name}];

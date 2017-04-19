@@ -80,13 +80,12 @@
     [self.contentView addSubview:newView];
         [self.sharingImagesContainerView removeFromSuperview];
         self.sharingImagesContainerView=newView;
-    [newView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [newView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);
         make.left.mas_equalTo(self.nickNameLabel.mas_left);
     }];
-//    [self.sharingImagesContainerView removeFromSuperview];
-//    self.sharingImagesContainerView=newView;
+
 }
 
 -(void)setupSharingCommentsTableViewWithCellModels{

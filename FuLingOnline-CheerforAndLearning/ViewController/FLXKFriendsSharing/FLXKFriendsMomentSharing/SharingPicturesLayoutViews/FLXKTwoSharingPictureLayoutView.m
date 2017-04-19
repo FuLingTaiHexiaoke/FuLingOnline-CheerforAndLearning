@@ -154,6 +154,11 @@
     [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width);
         make.height.mas_equalTo(height);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.left.mas_equalTo(self.mas_left);
+    }];
+    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
     }];
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
