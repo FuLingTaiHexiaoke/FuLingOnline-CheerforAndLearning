@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FLXKMessageToolBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-En-Am3">
+                    <rect key="frame" x="329" y="37" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPr-Kl-1Jv">
+                    <rect key="frame" x="282" y="37" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-je-xeM" customClass="HPGrowingTextView">
+                    <rect key="frame" x="54" y="0.0" width="220" height="67"/>
+                    <color key="backgroundColor" red="1" green="0.78090595640000005" blue="0.1760718637" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cd-4y-7PP">
+                    <rect key="frame" x="0.0" y="37" width="46" height="30"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.47669123569999999" green="0.1348858406" blue="0.62316524620000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="DgG-En-Am3" firstAttribute="baseline" secondItem="1Cd-4y-7PP" secondAttribute="baseline" id="2aO-kV-cCc"/>
+                <constraint firstItem="NPr-Kl-1Jv" firstAttribute="baseline" secondItem="1Cd-4y-7PP" secondAttribute="baseline" id="RPN-N0-z9Z"/>
+                <constraint firstAttribute="bottom" secondItem="gyY-je-xeM" secondAttribute="bottom" id="aDq-xw-1rw"/>
+                <constraint firstAttribute="trailing" secondItem="DgG-En-Am3" secondAttribute="trailing" id="b1T-al-2pd"/>
+                <constraint firstItem="DgG-En-Am3" firstAttribute="baseline" secondItem="1Cd-4y-7PP" secondAttribute="baseline" id="cUR-3U-Ixg"/>
+                <constraint firstItem="NPr-Kl-1Jv" firstAttribute="leading" secondItem="gyY-je-xeM" secondAttribute="trailing" constant="8" id="gZL-UB-TEg"/>
+                <constraint firstItem="gyY-je-xeM" firstAttribute="leading" secondItem="1Cd-4y-7PP" secondAttribute="trailing" constant="8" id="ghZ-q4-9QV"/>
+                <constraint firstItem="gyY-je-xeM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oS6-Tv-f7D"/>
+                <constraint firstItem="1Cd-4y-7PP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="p4c-c8-BeN"/>
+                <constraint firstAttribute="bottom" secondItem="1Cd-4y-7PP" secondAttribute="bottom" id="rM1-Hv-8yS"/>
+                <constraint firstItem="DgG-En-Am3" firstAttribute="leading" secondItem="NPr-Kl-1Jv" secondAttribute="trailing" constant="1" id="we8-fx-bhA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="growingTextView" destination="gyY-je-xeM" id="FzE-gE-eJz"/>
+            </connections>
+            <point key="canvasLocation" x="-65.5" y="-236.5"/>
+        </view>
+    </objects>
+</document>

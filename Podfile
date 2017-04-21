@@ -18,7 +18,8 @@ pod 'Tweaks'
 pod 'Masonry','~>1.0.2'
 pod 'UITableView+FDTemplateLayoutCell'
 pod 'Reveal-SDK',:configurations => ['Debug']
-
+#pod 'JHChainableAnimations', '~> 2.0'
+pod 'JHChainableAnimations'
 ##      UI BULDER
 pod 'RTRootNavigationController'
 #pod 'LTNavigationBar'

@@ -33,9 +33,13 @@ typedef NS_OPTIONS(NSUInteger, EmotionGroupShowingOption) {
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
 
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar;
+
 //+(instancetype)sharedEmotionBoardWithReload:(BOOL)reloadViews editingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView;
+
+
 
 -(void)removeNotifications;
 

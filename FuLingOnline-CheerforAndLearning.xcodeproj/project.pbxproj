@@ -47,6 +47,8 @@
 		B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9E81E764C2C00278EDB /* DCURLRouter.m */; };
 		B90CD9EE1E764C2C00278EDB /* DCURLRouter.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90CD9E91E764C2C00278EDB /* DCURLRouter.plist */; };
 		B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */; };
+		B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */; };
+		B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B924948C1E8B8C7C006878CC /* FLXKSharingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */; };
 		B92494981E8BA103006878CC /* FLXKSharingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92494971E8BA103006878CC /* FLXKSharingCellModel.m */; };
@@ -474,6 +476,14 @@
 		B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */; };
 		B97582A61EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */; };
 		B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */; };
+		B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */; };
+		B9780F9B1EA99B9B003AF40A /* FLXKMessageToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */; };
+		B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */; };
+		B9780FA21EA9DC52003AF40A /* FLXKMessageToolBartest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */; };
+		B9780FA31EA9DC52003AF40A /* FLXKMessageToolBartest.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */; };
+		B9780FA71EA9E06C003AF40A /* FLXKMessageToolBartest1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */; };
+		B9780FA81EA9E06C003AF40A /* FLXKMessageToolBartest1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */; };
+		B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
 		B97B38E01DD029D400D8F004 /* 整体逻辑思路.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */; };
@@ -489,11 +499,11 @@
 		B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */; };
 		B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
+		B99B4B801EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4B7D1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.m */; };
+		B99B4B811EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99B4B7E1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.xib */; };
+		B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */; };
 		B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */; };
 		B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */; };
-		B99CAA1E1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */; };
-		B99CAA1F1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */; };
-		B99CAA201E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */; };
 		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
 		B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */; };
 		B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */; };
@@ -741,6 +751,10 @@
 		B90CD9E91E764C2C00278EDB /* DCURLRouter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DCURLRouter.plist; sourceTree = "<group>"; };
 		B90CD9EA1E764C2C00278EDB /* UIViewController+DCURLRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCURLRouter.h"; sourceTree = "<group>"; };
 		B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCURLRouter.m"; sourceTree = "<group>"; };
+		B91C05451EA8B4C100E1CE1E /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
+		B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
+		B91C05471EA8B4C100E1CE1E /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
+		B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
@@ -1254,6 +1268,18 @@
 		B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuLingStyleMainOperationContainerView.m; sourceTree = "<group>"; };
 		B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuLingStyleMainOperationContainerView.xib; sourceTree = "<group>"; };
 		B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FLXKEmotionDB.sqlite; sourceTree = "<group>"; };
+		B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBar.m; sourceTree = "<group>"; };
+		B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBar.xib; sourceTree = "<group>"; };
+		B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBar.h; sourceTree = "<group>"; };
+		B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMessageInputView.m; sourceTree = "<group>"; };
+		B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMessageInputView.h; sourceTree = "<group>"; };
+		B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBartest.m; sourceTree = "<group>"; };
+		B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBartest.xib; sourceTree = "<group>"; };
+		B9780FA11EA9DC52003AF40A /* FLXKMessageToolBartest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBartest.h; sourceTree = "<group>"; };
+		B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBartest1.m; sourceTree = "<group>"; };
+		B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBartest1.xib; sourceTree = "<group>"; };
+		B9780FA61EA9E06C003AF40A /* FLXKMessageToolBartest1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBartest1.h; sourceTree = "<group>"; };
+		B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FLXKEmotionBoard.xcassets; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
 		B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "临时草稿.rtf"; sourceTree = "<group>"; };
@@ -1275,13 +1301,14 @@
 		B97F4C4B1EA0714D0033CA71 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
+		B99B4B7D1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellautolayouttest.m; sourceTree = "<group>"; };
+		B99B4B7E1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCellautolayouttest.xib; sourceTree = "<group>"; };
+		B99B4B7F1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellautolayouttest.h; sourceTree = "<group>"; };
+		B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAnimationHelper.h; sourceTree = "<group>"; };
+		B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAnimationHelper.m; sourceTree = "<group>"; };
 		B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell.h; sourceTree = "<group>"; };
 		B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell.m; sourceTree = "<group>"; };
 		B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell.xib; sourceTree = "<group>"; };
-		B99CAA181E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellstep2.h; sourceTree = "<group>"; };
-		B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellstep2.m; sourceTree = "<group>"; };
-		B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCellstep2.xib; sourceTree = "<group>"; };
-		B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "FLXKSharingFuLingOnlineStyleCell副本.xib"; sourceTree = "<group>"; };
 		B99CAA211E8F83BB0032D8CB /* FLXKModelsBrigde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKModelsBrigde.h; sourceTree = "<group>"; };
 		B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKModelsBrigde.m; sourceTree = "<group>"; };
 		B99CAA241E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLikeTheSharingRecordModel.h; sourceTree = "<group>"; };
@@ -1794,6 +1821,17 @@
 			path = DCURLRouter;
 			sourceTree = "<group>";
 		};
+		B91C05441EA8B4C100E1CE1E /* HPGrowingTextView */ = {
+			isa = PBXGroup;
+			children = (
+				B91C05451EA8B4C100E1CE1E /* HPGrowingTextView.h */,
+				B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */,
+				B91C05471EA8B4C100E1CE1E /* HPTextViewInternal.h */,
+				B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */,
+			);
+			path = HPGrowingTextView;
+			sourceTree = "<group>";
+		};
 		B923B4DA1DDB148900410CFC /* back */ = {
 			isa = PBXGroup;
 			children = (
@@ -1859,6 +1897,7 @@
 		B924D8D51E2F648A00A5D9F6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B91C05441EA8B4C100E1CE1E /* HPGrowingTextView */,
 				B9CDF0121E4F36690007F638 /* KYAnimatedPageControl */,
 				B92F57001E499888001D8C2A /* EmotionTextAttachment.h */,
 				B92F57011E499888001D8C2A /* EmotionTextAttachment.m */,
@@ -1979,6 +2018,8 @@
 			children = (
 				B92B55B31DD9679E009A373A /* CALayer+FLXKAddition.h */,
 				B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */,
+				B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */,
+				B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */,
 			);
 			path = FLXKAnimationHelper;
 			sourceTree = "<group>";
@@ -2041,6 +2082,7 @@
 				B97505521E4C58F600A577E7 /* EmotionGroup */,
 				B97505561E4C58F600A577E7 /* EmotionItems */,
 				B97505E01E4C58F600A577E7 /* image */,
+				B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */,
 			);
 			path = Resouce;
 			sourceTree = "<group>";
@@ -2115,6 +2157,17 @@
 				B95A32511E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m */,
 				B95A32521E31B95600E71D9D /* FLXKEmotionShowingScrollView.h */,
 				B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */,
+				B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */,
+				B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */,
+				B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */,
+				B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */,
+				B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */,
+				B9780FA11EA9DC52003AF40A /* FLXKMessageToolBartest.h */,
+				B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */,
+				B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */,
+				B9780FA61EA9E06C003AF40A /* FLXKMessageToolBartest1.h */,
+				B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */,
+				B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2774,10 +2827,9 @@
 				B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */,
 				B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */,
 				B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */,
-				B99CAA181E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.h */,
-				B99CAA191E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m */,
-				B99CAA1A1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib */,
-				B99CAA1B1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib */,
+				B99B4B7D1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.m */,
+				B99B4B7E1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.xib */,
+				B99B4B7F1EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.h */,
 			);
 			path = FuLingOnlineStyle;
 			sourceTree = "<group>";
@@ -3835,7 +3887,6 @@
 				B97506FF1E4C58F600A577E7 /* smiley_94.png in Resources */,
 				B97507A21E4C58F700A577E7 /* 064@2x.png in Resources */,
 				B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */,
-				B99CAA1F1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.xib in Resources */,
 				B97507C71E4C58F700A577E7 /* 083.png in Resources */,
 				B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */,
 				B97506EF1E4C58F600A577E7 /* smiley_8.png in Resources */,
@@ -3846,6 +3897,7 @@
 				B97506B11E4C58F600A577E7 /* smiley_23.png in Resources */,
 				B9252A7D1E9DD16700E2DC65 /* PersonCenterCell.xib in Resources */,
 				B97CC08B1E724A89000D548B /* icon_certification_status1@2x.png in Resources */,
+				B9780FA81EA9E06C003AF40A /* FLXKMessageToolBartest1.xib in Resources */,
 				B9C6AD3F1E6548550003C50A /* star_gray3.png in Resources */,
 				B97507331E4C58F600A577E7 /* 009.png in Resources */,
 				B9C6ACAB1E6548550003C50A /* FontAwesome.ttf in Resources */,
@@ -3856,6 +3908,7 @@
 				B97507321E4C58F600A577E7 /* 008@2x.png in Resources */,
 				B97507121E4C58F600A577E7 /* gif300_5.gif in Resources */,
 				B97506AA1E4C58F600A577E7 /* smiley_17.png in Resources */,
+				B9780FA31EA9DC52003AF40A /* FLXKMessageToolBartest.xib in Resources */,
 				B975072B1E4C58F600A577E7 /* 005.png in Resources */,
 				B97506CF1E4C58F600A577E7 /* smiley_50.png in Resources */,
 				B97CC0801E7249B9000D548B /* FuLingOnline_aps_development.cer in Resources */,
@@ -3877,11 +3930,11 @@
 				B97507281E4C58F600A577E7 /* 003@2x.png in Resources */,
 				B975074A1E4C58F600A577E7 /* 020@2x.png in Resources */,
 				B97506C01E4C58F600A577E7 /* smiley_37.png in Resources */,
+				B9780F9B1EA99B9B003AF40A /* FLXKMessageToolBar.xib in Resources */,
 				B97506A71E4C58F600A577E7 /* smiley_14.png in Resources */,
 				B97507851E4C58F700A577E7 /* 050.png in Resources */,
 				B97507391E4C58F600A577E7 /* 012.png in Resources */,
 				B9C6AD421E6548550003C50A /* star_yellow3.png in Resources */,
-				B99CAA201E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell副本.xib in Resources */,
 				B9252A7A1E9DD16700E2DC65 /* PersonCenterHeaderCell.xib in Resources */,
 				B97506BD1E4C58F600A577E7 /* smiley_34.png in Resources */,
 				B97507A91E4C58F700A577E7 /* 068.png in Resources */,
@@ -4001,6 +4054,7 @@
 				B97507241E4C58F600A577E7 /* 001@2x.png in Resources */,
 				B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */,
 				B97507871E4C58F700A577E7 /* 051.png in Resources */,
+				B99B4B811EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.xib in Resources */,
 				B975069F1E4C58F600A577E7 /* smiley_100.png in Resources */,
 				B975079B1E4C58F700A577E7 /* 061.png in Resources */,
 				B9D6399C1E6D36B4004122B9 /* 知识点记录.rtf in Resources */,
@@ -4120,6 +4174,7 @@
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
 				B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */,
 				B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */,
+				B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */,
 				B97507CD1E4C58F700A577E7 /* _expression_cn.plist in Resources */,
 				B97507011E4C58F600A577E7 /* smiley_96.png in Resources */,
 				B97506991E4C58F600A577E7 /* BasicEmotion.png in Resources */,
@@ -4296,9 +4351,11 @@
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
+				B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */,
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
 				B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
+				B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
 				B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */,
 				B9C6AC9D1E6548550003C50A /* SectionHeaderViewModel.m in Sources */,
@@ -4314,6 +4371,7 @@
 				B9C6AC8F1E6548550003C50A /* RRNTableViewHeaderFooterView.m in Sources */,
 				B924949F1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m in Sources */,
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
+				B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
 				B93098721E568C0600306F39 /* UIViewController+Extensions.m in Sources */,
@@ -4341,6 +4399,7 @@
 				B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */,
 				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
+				B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */,
 				B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */,
@@ -4355,6 +4414,7 @@
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
 				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B90CD9821E763FFD00278EDB /* LaunchScreenViewController.m in Sources */,
+				B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */,
 				B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */,
 				B90CD9881E763FFD00278EDB /* NotificationExamplesTableViewController.m in Sources */,
 				B90CD9851E763FFD00278EDB /* SimpleLocalViewController.m in Sources */,
@@ -4372,6 +4432,7 @@
 				B9C6ACAA1E6548550003C50A /* README.md in Sources */,
 				B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */,
 				B9CDF0221E4F36690007F638 /* KYAnimatedPageControl.m in Sources */,
+				B9780FA71EA9E06C003AF40A /* FLXKMessageToolBartest1.m in Sources */,
 				B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
 				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
@@ -4392,6 +4453,7 @@
 				B9730FA11E84AF9000967ADD /* FLXKPathHelper.m in Sources */,
 				B90CD97D1E763FFD00278EDB /* ActionNoOperationViewController.m in Sources */,
 				B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */,
+				B99B4B801EA7166600C58A8C /* FLXKSharingFuLingOnlineStyleCellautolayouttest.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
 				B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */,
@@ -4446,12 +4508,12 @@
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */,
-				B99CAA1E1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCellstep2.m in Sources */,
 				B95A325F1E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.m in Sources */,
 				B90CD9801E763FFD00278EDB /* ContentFeedbackViewController.m in Sources */,
 				B90CD9861E763FFD00278EDB /* SoundAndBadgeViewController.m in Sources */,
 				B9C6ACB01E6548550003C50A /* JRSegmentControl.m in Sources */,
 				B90CD9841E763FFD00278EDB /* RemoveDefaultContentViewController.m in Sources */,
+				B9780FA21EA9DC52003AF40A /* FLXKMessageToolBartest.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,
 				B9252A8A1E9E2E3200E2DC65 /* EditPersonInfoViewController.m in Sources */,
 				B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */,

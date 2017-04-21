@@ -10,6 +10,10 @@
 #define FLXKSuggestHeaderView1 @"Reuse_FLXKSuggestHeaderView"
 #define Reuse_FLXKSharingFuLingOnlineStyleCell @"Reuse_FLXKSharingFuLingOnlineStyleCell"
 
+#define Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest @"Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest"
+#define DDINPUT_MIN_HEIGHT          44.0f
+
+
 #import "FLXSuggestedSharingTableViewController.h"
 
 //utilites
@@ -22,9 +26,13 @@
 
 //subviews
 #import "FLXKSuggestHeaderView.h"
-
+#import "FLXKMessageToolBar.h"
+#import "FLXKMessageToolBartest.h"
+#import "FLXKMessageToolBartest1.h"
+#import "JSMessageInputView.h"
 #import "FLXKSharingBaseCell.h"
 #import "FLXKSharingFuLingOnlineStyleCell.h"
+#import "FLXKSharingFuLingOnlineStyleCellautolayouttest.h"
 
 
 @interface FLXSuggestedSharingTableViewController ()
@@ -32,8 +40,10 @@
 //IBAction
 //models
 @property (strong, nonatomic)NSArray<FLXKSharingCellModel *> *  models;
+@property(nonatomic,strong)JSMessageInputView *chatInputView;
 //UI state record properties
 //subviews
+@property(nonatomic,strong)   FLXKMessageToolBar* test;
 //child viewController
 @end
 
@@ -107,8 +117,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell ];
-//    [cell setSharingCellModel:_models[indexPath.row] WithIndexPath:indexPath ];
-    NSLog(@"indexPath.row %ld", (long)indexPath.row);
+    //    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];
+    //    [cell setSharingCellModel:_models[indexPath.row] WithIndexPath:indexPath ];
+    //    NSLog(@"indexPath.row %ld", (long)indexPath.row);
     [cell setSharingCellModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     return cell;
@@ -158,15 +169,72 @@
 -(void)setupUI{
     [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSuggestHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:FLXKSuggestHeaderView1];
     
-        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-//    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCelltest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-//        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellteststep1" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellautolayouttest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];
+    //        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellteststep1" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-//            [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellstep2" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    //            [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellstep2" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     self.tableView.estimatedRowHeight=100;
+    
+//    CGRect inputFrame = CGRectMake(0, CONTENT_HEIGHT - DDINPUT_MIN_HEIGHT + NAVBAR_HEIGHT,FULL_WIDTH,DDINPUT_MIN_HEIGHT);
+//    CGRect inputFrame =CGRectMake(0, 200, self.view.frame.size.width, 50);
+//    self.chatInputView = [[JSMessageInputView alloc] initWithFrame:inputFrame delegate:nil];
+//    [self.chatInputView setBackgroundColor:RGBA(249, 249, 249, 0.9)];
+//    [self.view addSubview:self.chatInputView];
+//   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+    
+    //autolayout
+//    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+_test=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+    //frame
+//       FLXKMessageToolBartest1* test= [[FLXKMessageToolBartest1 alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+    NSLog(@"messageToolBar fram2 %@", NSStringFromCGRect(_test.frame));
+
+    _test.tag=1000;
+//    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
+//
+    [self.tableView addSubview:_test];
+    
+    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
+    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
+         btn1.backgroundColor=[UIColor redColor];
+
+    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(40);
+               make.width.mas_equalTo(self.view.mas_width);
+//        make.left.mas_equalTo(self.tableView.mas_left);
+//        make.right.mas_equalTo(self.tableView.mas_right);
+        make.top.mas_equalTo(self.tableView.top).offset(200);
+    }];
+    _test.backgroundColor=[UIColor yellowColor];
+    
+    
 }
+
+-(void)messageToolBarBecomeFirstResponder{
+    [_test messageToolBarBecomeFirstResponder];
+}
+
+
+-(void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.tag==1000) {
+            CGRect r =obj.frame;
+   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
+        }
+    }];
+    
+
+    
+}
+
+
 -(void)setupFLXKSharingCellModel{
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
@@ -175,8 +243,8 @@
             [self.tableView reloadData];
         }
     } failureCallback:^(NSError *err) {
-//        NSAssert(!err, err.description);
-    }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name}];
+        //        NSAssert(!err, err.description);
+    }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test"}];
     
 }
 

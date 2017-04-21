@@ -81,10 +81,10 @@
     //set up subviews
     [self   initSubViews];
     
-    if (UserDefaultsObjForKey( @"plainString")) {
-        self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
-        [self resetTextStyle];
-    }
+//    if (UserDefaultsObjForKey( @"plainString")) {
+//        self.publishTextView.attributedText=[NSAttributedString attributedStringWithPlainString:UserDefaultsObjForKey( @"plainString")];
+//        [self resetTextStyle];
+//    }
     
 }
 

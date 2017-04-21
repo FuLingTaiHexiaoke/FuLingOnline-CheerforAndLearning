@@ -8,7 +8,9 @@
 
 
 
-
+//修改时间:2017-4-21
+//修改人:肖科
+//修改原因:for autolayout use to reset the minHeight
 
 #import "ViewController.h"
 

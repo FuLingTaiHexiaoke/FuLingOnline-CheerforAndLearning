@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JHChainableAnimations.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>KVOController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,7 +72,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A7BDE861C1F0784AF19B8DD1F31BAD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0BBFEA7A42928747ABE40E55669C4639</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0EE5634CAD0D778C76414552FE5B44AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>122CFFB78B53E069329A0E67671738C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89CF30EAB054AA3E3C38D938C04013DF</key>
+		<key>8E7263CFDFD77CE3142EEE33D0CC7989</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,27 +122,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFF25300ECAB84009C59610A4F4168EC</key>
+		<key>BD9EB490DAE388FA7DF37DC27056DDE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B52ECC2C1A4E5428ADE7286C7088691F</key>
+		<key>E3AB1EF3560AC645844A1A8AD84F8BD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCD6FB2A9D167A994CC3769F1A0B9356</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E1AAE5F6DDA85A7EDC9E672477F3F2C6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED5A086C60EA555BB3D0CC519983E197</key>
+		<key>F27C9AB311EE00D38DCF3118AFEBA695</key>
 		<dict>
 			<key>primary</key>
 			<true/>

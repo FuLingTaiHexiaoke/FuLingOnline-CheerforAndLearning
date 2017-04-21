@@ -10,6 +10,7 @@
 
 //utilites
 #import "Masonry.h"
+//#import "JHChainableAnimations.h"
 //child viewController
 //subviews
 #import "FLXKHeaderImageSharingLikeCollectionView.h"
@@ -78,14 +79,14 @@
     
     FLXKBaseSharingPictureLayoutView*  newView=[FLXKBaseSharingPictureLayoutView setupSharingPictureLayoutViewWithImageArray:imageArray];
     [self.contentView addSubview:newView];
-        [self.sharingImagesContainerView removeFromSuperview];
-        self.sharingImagesContainerView=newView;
+    [self.sharingImagesContainerView removeFromSuperview];
+    self.sharingImagesContainerView=newView;
     [newView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(8);
         make.bottom.mas_equalTo(self.locationRecordButton.mas_top).offset(-8);
         make.left.mas_equalTo(self.nickNameLabel.mas_left);
     }];
-
+    
 }
 
 -(void)setupSharingCommentsTableViewWithCellModels{
@@ -120,16 +121,30 @@
     else{
         [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
     }
+//    [UIView animateWithDuration:1.0 animations:^{
+////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
+//        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
+//    } completion:^(BOOL finished) {
+//        sender.imageView.transform=CGAffineTransformIdentity;
+//    }];
     
-    [UIView animateWithDuration:1.0 animations:^{
-        sender.imageView.transform=CGAffineTransformScale(CGAffineTransformIdentity, 4, 4);
+    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1.0 animations:^{
-            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-        }];
+          sender.imageView.transform=CGAffineTransformIdentity;
     }];
-   [super addFriendsharingThumbup];
+
+//    CABasicAnimation *theAnimation;
+//    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+//    theAnimation.duration=2;
+//    theAnimation.fillMode = kCAFillModeForwards;
+//    theAnimation.removedOnCompletion = NO;
+//    theAnimation.fromValue = [NSNumber numberWithFloat:1];
+//    theAnimation.toValue = [NSNumber numberWithFloat:4.0];
+//    [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
+    
+    
+    [super addFriendsharingThumbup];
 }
 #pragma mark - Model Event
 #pragma mark - Private methods
@@ -142,12 +157,12 @@
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     self.mainSharingContentLabel.text=model.mainSharingContent;
-        [self setupMainSharingContentLabel];
+//    [self setupMainSharingContentLabel];
     //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
     [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
     
     [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
-
+    
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
     [self setupSharingCommentsTableViewWithCellModels];
     
@@ -158,7 +173,7 @@
         [self.thumberUpButton setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
         
     }
-
+    
     
 }
 #pragma mark - Overriden methods

@@ -47,18 +47,18 @@
     
     [self setupNavigationTitleViewController];
     
-    if (DEBUG) {
-        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
-        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
-        btn1.backgroundColor=[UIColor grayColor];
-        [self.view addSubview:btn1];
-    }
+//    if (DEBUG) {
+//        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+//        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+//        btn1.backgroundColor=[UIColor grayColor];
+//        [self.view addSubview:btn1];
+//    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
+//    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
 
 }
 
@@ -91,7 +91,7 @@
 
 -(void)setupNavigationTitleViewController{
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
-    for (int i=0; i<3; i++) {
+    for (int i=0; i<1; i++) {
         FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
         [viewControllers addObject:vc];
     }

@@ -9,6 +9,6 @@
 #import "FLXKSharingBaseCell.h"
 
 //@interface FLXKSharingFuLingOnlineStyleCell : FLXKSharingBaseCell
-@interface FLXKSharingFuLingOnlineStyleCellstep2 : FLXKSharingBaseCell
+@interface FLXKSharingFuLingOnlineStyleCellautolayouttest : FLXKSharingBaseCell
 
 @end

@@ -28,9 +28,9 @@
                           base += ((EmotionTextAttachment *) value).emotionName.length - 1;
                       }
                   }];
-    UserDefaultsRemoveObjForKey(@"plainString");
-    UserDefaultsSetObjForKey(plainString, @"plainString");
-    NSLog(@"plainString:%@", plainString);
+//    UserDefaultsRemoveObjForKey(@"plainString");
+//    UserDefaultsSetObjForKey(plainString, @"plainString");
+//    NSLog(@"plainString:%@", plainString);
     return plainString;
     
     

@@ -61,6 +61,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 @property(nonatomic,weak)UIBarButtonItem* emotionSwithBarButtonItem;
 @property(nonatomic,weak)UIView *emotionSwithButtonContainer;
 @property(nonatomic,weak)UIView *emotionEditingVCView;
+@property(nonatomic,assign)BOOL shouldHideToolBar;
 //预留工具箱、语音记录按钮属性
 @property(nonatomic,weak)UIButton* toolkitButton;
 @property(nonatomic,weak)UIButton* voiceRecordButton;
@@ -73,7 +74,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 #pragma mark - Public Methods
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption {
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption  {
     //add emotionGroupOptions
     [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
     
@@ -100,6 +101,36 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
     return sharedEmotionBoard;
 }
+
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar {
+    //add emotionGroupOptions
+    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+    
+    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
+    sharedEmotionBoard.editingTextView=editingTextView;
+    sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
+    sharedEmotionBoard.emotionSwithButton=swithButton;
+    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
+    sharedEmotionBoard.shouldHideToolBar=shouldHideToolBar;
+    //add action
+    [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
+    sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
+    
+    //    //add emotionGroupOptions
+    //    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+    
+    NSNumber*  lastOptions=( NSNumber* ) FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey);
+    if (lastOptions.integerValue!=emotionGroupShowingOption) {
+        [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
+        [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
+        //        [self reloadPages];
+    }
+    FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
+    FLXKUserDefaultsSynchronize
+    
+    return sharedEmotionBoard;
+}
+
 
 -(void)reloadPages{
     [[FLXKEmotionBoard sharedEmotionBoard].emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
@@ -540,11 +571,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
             if (obj.firstAttribute==NSLayoutAttributeHeight) {
                 [self.emotionSwithButtonContainer removeConstraint:obj];
             }
-            
         }];
         
         //高度约束
-        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
+//        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
+                containerHeight=self.emotionSwithButtonContainer.frame.size.height;
         NSLayoutConstraint *heightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:kNilOptions multiplier:1.0 constant:containerHeight];
         [self.emotionSwithButtonContainer addConstraint:heightCos];
         
@@ -552,17 +583,29 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         NSLayoutConstraint *leftCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
         [self.emotionEditingVCView addConstraint:leftCos];
         
-        //底部约束
-        NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-heightToChange];
-        [self.emotionEditingVCView addConstraint:bottomCos];
+        if (self.shouldHideToolBar) {
+            //顶部约束
+          heightToChange= heightToChange>200?heightToChange:containerHeight;
+            NSLayoutConstraint *topCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeTop multiplier:1.0 constant:self.emotionEditingVCView.frame.size.height-heightToChange-containerHeight];
+            [self.emotionEditingVCView addConstraint:topCos];
+        }
+        else{
+            //底部约束
+            NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-heightToChange];
+            [self.emotionEditingVCView addConstraint:bottomCos];
+        }
         
         //右边约束
         NSLayoutConstraint *rightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
         [self.emotionEditingVCView addConstraint:rightCos];
         
-        //        NSLog(@"frame %@",NSStringFromCGRect(self.emotionSwithButtonContainer.frame) );
-        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-            [self.emotionEditingVCView layoutIfNeeded];
+        //宽度约束
+        NSLayoutConstraint *widthCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
+        [self.emotionEditingVCView addConstraint:widthCos];
+        
+       [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+//            [self.emotionEditingVCView layoutIfNeeded];
+            [self.emotionSwithButtonContainer layoutIfNeeded];
         } completion:^(BOOL finished) {
         }];
     }

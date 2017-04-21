@@ -76,6 +76,7 @@
                         *stop=YES;
                     }
                 }];
+                
                 [self.sharingCellModel.likeTheSharingUserRecords removeObjectAtIndex:index];
             }
             else{
