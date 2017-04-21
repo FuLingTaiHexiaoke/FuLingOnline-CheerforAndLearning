@@ -158,12 +158,27 @@
     
     CGFloat   newHeight=r.size.height;
     CGFloat  newOrigin=r.origin.y;
+    
+
+    
     [self layoutIfNeeded];
+    
     [UIView animateWithDuration:0.1 animations:^{
+//        [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if (obj.firstItem==self) {
+//                [self.superview removeConstraint:obj];
+//            }
+//        }];
+//        [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            if (obj.firstAttribute==NSLayoutAttributeHeight) {
+//                [self removeConstraint:obj];
+//            }
+//        }];
         //        NSLog(@"Delegate growingTextView %@", NSStringFromCGRect(r));
         [self mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(newHeight);
             make.top.mas_equalTo(self.superview).offset(newOrigin);
+            make.width.mas_equalTo(self.superview.mas_width);
         }];
         [self layoutIfNeeded];
     }];
