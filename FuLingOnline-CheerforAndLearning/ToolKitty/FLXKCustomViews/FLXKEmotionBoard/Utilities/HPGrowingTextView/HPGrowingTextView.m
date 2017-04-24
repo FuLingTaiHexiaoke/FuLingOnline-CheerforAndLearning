@@ -161,24 +161,58 @@
     return contentInset;
 }
 
+//-(void)setMaxNumberOfLines:(int)n
+//{
+//    if(n == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
+//
+//    // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
+////    NSString *saveText = internalTextView.text, *newText = @"-";
+//
+//        NSAttributedString *saveText = internalTextView.attributedText, *newText = @"-";
+//
+//    internalTextView.delegate = nil;
+//    internalTextView.hidden = YES;
+//
+//    for (int i = 1; i < n; ++i)
+//        newText = [newText stringByAppendingString:@"\n|W|"];
+//
+//    internalTextView.text = newText;
+//
+//    maxHeight = [self measureHeight];
+//
+//    internalTextView.text = saveText;
+//    internalTextView.hidden = NO;
+//    internalTextView.delegate = self;
+//
+//
+//    [self sizeToFit];
+//
+//    maxNumberOfLines = n;
+//}
+
+
 -(void)setMaxNumberOfLines:(int)n
 {
     if(n == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
     
     // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
-    NSString *saveText = internalTextView.text, *newText = @"-";
+    //    NSString *saveText = internalTextView.text, *newText = @"-";
+    
+    NSAttributedString *saveText = internalTextView.attributedText;
+    NSMutableAttributedString *newText =[[NSMutableAttributedString alloc]initWithString:@"-" ];
     
     internalTextView.delegate = nil;
     internalTextView.hidden = YES;
     
-    for (int i = 1; i < n; ++i)
-        newText = [newText stringByAppendingString:@"\n|W|"];
+    for (int i = 1; i < n; ++i){
+        [newText  appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"\n|W|"]];
+    }
     
-    internalTextView.text = newText;
+    internalTextView.attributedText = newText;
     
     maxHeight = [self measureHeight];
     
-    internalTextView.text = saveText;
+    internalTextView.attributedText = saveText;
     internalTextView.hidden = NO;
     internalTextView.delegate = self;
     
@@ -187,6 +221,7 @@
     
     maxNumberOfLines = n;
 }
+
 
 -(int)maxNumberOfLines
 {
@@ -199,36 +234,66 @@
     maxNumberOfLines = 0;
 }
 
+//-(void)setMinNumberOfLines:(int)m
+//{
+//    if(m == 0 && minHeight > 0) return; // the user specified a minHeight themselves.
+//    
+//    // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
+//    NSString *saveText = internalTextView.text, *newText = @"-";
+//    
+//    internalTextView.delegate = nil;
+//    internalTextView.hidden = YES;
+//    
+//    for (int i = 1; i < m; ++i)
+//        newText = [newText stringByAppendingString:@"\n|W|"];
+//    
+//    internalTextView.text = newText;
+//    
+//    minHeight = [self measureHeight];
+//    
+//    internalTextView.text = saveText;
+//    internalTextView.hidden = NO;
+//    internalTextView.delegate = self;
+//    
+//    //修改时间:2017-4-21
+//    //修改人:肖科
+//    //修改原因: reset the self.frame.height ,because sizeToFit will change autolayout
+//    [self sizeToFit];
+//    [self layoutIfNeeded];
+//    minNumberOfLines = m;
+//}
+
 -(void)setMinNumberOfLines:(int)m
 {
-    if(m == 0 && minHeight > 0) return; // the user specified a minHeight themselves.
+    if(m == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
     
     // Use internalTextView for height calculations, thanks to Gwynne <http://blog.darkrainfall.org/>
-    NSString *saveText = internalTextView.text, *newText = @"-";
+    //    NSString *saveText = internalTextView.text, *newText = @"-";
+    
+    NSAttributedString *saveText = internalTextView.attributedText;
+    NSMutableAttributedString *newText =[[NSMutableAttributedString alloc]initWithString:@"-" ];
     
     internalTextView.delegate = nil;
     internalTextView.hidden = YES;
     
-    for (int i = 1; i < m; ++i)
-        newText = [newText stringByAppendingString:@"\n|W|"];
+    for (int i = 1; i < m; ++i){
+        [newText  appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"\n|W|"]];
+    }
     
-    internalTextView.text = newText;
+    internalTextView.attributedText = newText;
     
     minHeight = [self measureHeight];
     
-    internalTextView.text = saveText;
+    internalTextView.attributedText = saveText;
     internalTextView.hidden = NO;
     internalTextView.delegate = self;
     
-    //            NSLog(@"self.frame1 %@", NSStringFromCGRect(self.frame));
-    //修改时间:2017-4-21
-    //修改人:肖科
-    //修改原因: reset the self.frame.height ,because sizeToFit will change autolayout
+    
     [self sizeToFit];
-    [self layoutIfNeeded];
-    //            NSLog(@"self.frame2 %@", NSStringFromCGRect(self.frame));
-    minNumberOfLines = m;
+    
+    maxNumberOfLines = m;
 }
+
 
 -(int)minNumberOfLines
 {
@@ -264,9 +329,10 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    if (textView.markedTextRange == nil) {
-        [self refreshHeight];
-    }
+    //    if (textView.markedTextRange == nil) {
+    //        [self refreshHeight];
+    //    }
+    [self refreshHeight];
 }
 
 - (void)refreshHeight
@@ -386,14 +452,20 @@
         [delegate growingTextView:self willChangeHeight:newSizeH];
     }
     
-    CGRect internalTextViewFrame = self.frame;
-    internalTextViewFrame.size.height = newSizeH; // + padding
-    self.frame = internalTextViewFrame;
+    //修改时间:2017-4-24
+    //修改人:肖科
+    //修改内容:--注销下面的布局代码。
+    //修改原因: reset the self.frame.height by autolayout outside,not it self
     
-    internalTextViewFrame.origin.y = contentInset.top - contentInset.bottom;
-    internalTextViewFrame.origin.x = contentInset.left;
-    //        NSLog(@"internalTextViewFrame resizeTextView %@", NSStringFromCGRect(internalTextViewFrame));
-    if(!CGRectEqualToRect(internalTextView.frame, internalTextViewFrame)) internalTextView.frame = internalTextViewFrame;
+    //    CGRect internalTextViewFrame = self.frame;
+    //    internalTextViewFrame.size.height = newSizeH; // + padding
+    //    self.frame = internalTextViewFrame;
+    //
+    //    internalTextViewFrame.origin.y = contentInset.top - contentInset.bottom;
+    //    internalTextViewFrame.origin.x = contentInset.left;
+    //    //        NSLog(@"internalTextViewFrame resizeTextView %@", NSStringFromCGRect(internalTextViewFrame));
+    //    if(!CGRectEqualToRect(internalTextView.frame, internalTextViewFrame)) internalTextView.frame = internalTextViewFrame;
+    //修改内容:注销下面的布局代码--。
 }
 
 - (void)growDidStop

@@ -80,6 +80,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
+    sharedEmotionBoard.editingTextView.textContentType=
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
     sharedEmotionBoard.emotionSwithButton=swithButton;
     sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
@@ -94,7 +95,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     if (lastOptions.integerValue!=emotionGroupShowingOption) {
         [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
         [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
-//        [self reloadPages];
+        //        [self reloadPages];
     }
     FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
     FLXKUserDefaultsSynchronize
@@ -213,19 +214,17 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 }
 
 -(void)willMoveToSuperview:(UIView *)newSuperview{
-//    BOOL isHeightChanged=self.lastEmotionViewHeight==self.frame.size.height?NO:YES;
-//    if (newSuperview && isHeightChanged) {
-//        self.lastEmotionViewHeight=self.frame.size.height;
-//        [self reloadPages];
-//        self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
-//          NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
-//    }
+    //    BOOL isHeightChanged=self.lastEmotionViewHeight==self.frame.size.height?NO:YES;
+    //    if (newSuperview && isHeightChanged) {
+    //        self.lastEmotionViewHeight=self.frame.size.height;
+    //        [self reloadPages];
+    //        self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
+    //          NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+    //    }
 }
 
 -(void)keyboardWillShowNotification:(NSNotification*)notification{
     if (self.editingTextView.inputView) {
-
-        
         [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:0];
     }
 }
@@ -237,7 +236,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         self.lastEmotionViewHeight=self.frame.size.height;
         [self reloadPages];
         self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
-//        NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+        //        NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     }
 }
 
@@ -354,14 +353,17 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     //Set emoji size
     emotionTextAttachment.emotionSize =  CGSizeMake(20, 20);
     
-    //Insert emoji image
+    //Insert emotion image
     [self.editingTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:emotionTextAttachment]
                                                      atIndex:self.editingTextView.selectedRange.location];
     //Move selection location
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
     
     //Reset text style
-    [self resetTextStyle];
+//    [self resetTextStyle];
+    
+    //notify to change the height and so on.
+    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
 }
 
 - (void)insertEmoji:(NSString*)EmojiName{
@@ -372,7 +374,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 2, self.editingTextView.selectedRange.length);
     
     //Reset text style
-    [self resetTextStyle];
+//    [self resetTextStyle];
+    
+    //notify to change the height and so on.
+    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
 }
 
 - (void)resetTextStyle {
@@ -402,7 +407,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 -(void)deleteElementInTextView{
     NSRange range = self.editingTextView.selectedRange;
-//    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
+    //    NSLog(@"%zd-表情删除-%zd",range.length,range.location);
     if (self.editingTextView.text.length > 0) {
         NSUInteger location  = self.editingTextView.selectedRange.location;
         NSString *head = [self.editingTextView.text substringToIndex:location];
@@ -428,6 +433,9 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         else{
             self.editingTextView.text =@"";
         }
+        
+        //notify to change the height and so on.
+        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
     }
 }
 
@@ -449,7 +457,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 -(void)setupUIPageControl{
     self.pageControl = [[KYAnimatedPageControl alloc]
                         initWithFrame:CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height)];
-//     NSLog(@"pageControl.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
+    //     NSLog(@"pageControl.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
     self.pageControl.pageCount = 8;
     self.pageControl.unSelectedColor = [UIColor colorWithWhite:0.9 alpha:1];
     self.pageControl.selectedColor = [UIColor colorWithWhite:0.6 alpha:1];
@@ -460,7 +468,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.pageControl.swipeEnable = YES;
     [self.pageControlPlaceholder addSubview:self.pageControl];
     self.pageControl.didSelectIndexBlock = ^(NSInteger index) {
-//        NSLog(@"Did Selected index : %ld", (long)index);
+        //        NSLog(@"Did Selected index : %ld", (long)index);
     };
 }
 
@@ -508,13 +516,13 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     float  keyboadStartingHeight =Screen_Height - keyboardStartingFrame.origin.y;
     float  keyboadEndingHeight = Screen_Height- keyboardEndingFrame.origin.y;
     
-//    NSLog(@"keyboardStartingFrame %@",NSStringFromCGRect(keyboardStartingFrame) );
-//    NSLog(@"keyboardEndingFrame %@",NSStringFromCGRect(keyboardEndingFrame) );
-//    NSLog(@"self.frame:%@",NSStringFromCGRect(self.frame) );
-//        NSLog(@"self.emotionContainerScrollViewframe:%@",NSStringFromCGRect(self.emotionContainerScrollView.frame) );
-//    NSLog(@"keyboadStartingHeight: %f",keyboadStartingHeight);
-//    NSLog(@"keyboadEndingHeight: %f",keyboadEndingHeight);
-//    NSLog(@"_emotionContainerScrollViewHeight: %f",_emotionContainerScrollViewHeight.constant);
+    //    NSLog(@"keyboardStartingFrame %@",NSStringFromCGRect(keyboardStartingFrame) );
+    //    NSLog(@"keyboardEndingFrame %@",NSStringFromCGRect(keyboardEndingFrame) );
+    //    NSLog(@"self.frame:%@",NSStringFromCGRect(self.frame) );
+    //        NSLog(@"self.emotionContainerScrollViewframe:%@",NSStringFromCGRect(self.emotionContainerScrollView.frame) );
+    //    NSLog(@"keyboadStartingHeight: %f",keyboadStartingHeight);
+    //    NSLog(@"keyboadEndingHeight: %f",keyboadEndingHeight);
+    //    NSLog(@"_emotionContainerScrollViewHeight: %f",_emotionContainerScrollViewHeight.constant);
     
     
     //I do not why this happened,if you know tell me.
@@ -558,6 +566,26 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         }];
     }
     else{
+        //        Masonry约束是无法更新 NSLayoutConstraint 约束。因为Masonry在更新约束的时候会去遍历查找view上面的约束集，先判断view上的约束的类是否为 MASLayoutConstraint的类，如果是才会进行更新。所以，如果你是用XIB、StoryBoard拉线添加的约束或者是通过代码方式使用NSLayoutConstraint类添加的约束都无法在代码里用Masonry的 mas_updateConstraints 方法进行约束更新
+        
+        //         __block CGFloat containerHeight=0;
+        //        //高度约束
+        //        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
+        //
+        //        if (self.shouldHideToolBar) {
+        //            heightToChange= heightToChange>200?heightToChange:-100;
+        //        }
+        //
+        //        [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        //            [self.emotionSwithButtonContainer mas_updateConstraints:^(MASConstraintMaker *make) {
+        //                make.height.mas_equalTo(containerHeight);
+        //                make.bottom.mas_equalTo(((UIViewController*)(self.emotionEditingVCView.nextResponder)).mas_bottomLayoutGuideTop).offset(-heightToChange);
+        //            }];
+        //            [self.emotionEditingVCView layoutIfNeeded];
+        //        } completion:^(BOOL finished) {
+        //
+        //        }];
+        
         //删除以前添加的约束
         [self.emotionEditingVCView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if (obj.firstItem==self.emotionSwithButtonContainer ) {
@@ -567,15 +595,16 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         
         __block CGFloat containerHeight=0;
         [self.emotionSwithButtonContainer.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            //            containerHeight=obj.constant==0?self.emotionSwithButtonContainer.frame.size.height:obj.constant;
             if (obj.firstAttribute==NSLayoutAttributeHeight) {
+                containerHeight=obj.constant==0?self.emotionSwithButtonContainer.frame.size.height:obj.constant;
                 [self.emotionSwithButtonContainer removeConstraint:obj];
             }
         }];
         
+        
         //高度约束
-//        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
-                containerHeight=self.emotionSwithButtonContainer.frame.size.height;
+        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
+        //        containerHeight=self.emotionSwithButtonContainer.frame.size.height;
         NSLayoutConstraint *heightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:kNilOptions multiplier:1.0 constant:containerHeight];
         [self.emotionSwithButtonContainer addConstraint:heightCos];
         
@@ -584,16 +613,14 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         [self.emotionEditingVCView addConstraint:leftCos];
         
         if (self.shouldHideToolBar) {
-            //顶部约束
-          heightToChange= heightToChange>200?heightToChange:containerHeight;
-            NSLayoutConstraint *topCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeTop multiplier:1.0 constant:self.emotionEditingVCView.frame.size.height-heightToChange-containerHeight];
-            [self.emotionEditingVCView addConstraint:topCos];
+            heightToChange= heightToChange>200?heightToChange:-200;
         }
         else{
-            //底部约束
-            NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:-heightToChange];
-            [self.emotionEditingVCView addConstraint:bottomCos];
+            heightToChange= heightToChange>200?heightToChange:0;
         }
+        //底部约束
+        NSLayoutConstraint *bottomCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:((UIViewController*)(self.emotionEditingVCView.nextResponder)).bottomLayoutGuide attribute:NSLayoutAttributeTop multiplier:1.0 constant:-heightToChange];
+        [self.emotionEditingVCView addConstraint:bottomCos];
         
         //右边约束
         NSLayoutConstraint *rightCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
@@ -603,24 +630,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         NSLayoutConstraint *widthCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
         [self.emotionEditingVCView addConstraint:widthCos];
         
-       [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
-//            [self.emotionEditingVCView layoutIfNeeded];
-            [self.emotionSwithButtonContainer layoutIfNeeded];
+        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+            [self.emotionEditingVCView layoutIfNeeded];
         } completion:^(BOOL finished) {
         }];
     }
     
-//    CGFloat tempEmotionContainerScrollViewHeight= keyboadEndingHeight-35-20;
-//    if (self.editingTextView.inputView&&_emotionContainerScrollViewHeight.constant!=tempEmotionContainerScrollViewHeight) {
-//        _emotionContainerScrollViewHeight.constant=tempEmotionContainerScrollViewHeight;
-//        [self layoutIfNeeded];
-//    [self reloadPages];
-//    [self setupUIPageControl];
-//    }
-    
-    //    NSLog(@"frame %@",NSStringFromCGRect(self.emotionSwithButtonContainer.frame) );
-    //    NSLog(@"%@",self.emotionSwithButtonContainer.constraints);
-    //    NSLog(@"emotionEditingVCView %@",self.emotionEditingVCView.constraints);
 }
 
 @end

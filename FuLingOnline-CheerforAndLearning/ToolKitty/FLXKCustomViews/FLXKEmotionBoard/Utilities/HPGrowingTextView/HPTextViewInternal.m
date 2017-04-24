@@ -41,6 +41,16 @@
     [self setScrollEnabled:originalValue];
 }
 
+-(void)setAttributedText:(NSAttributedString *)attributedText{
+    BOOL originalValue = self.scrollEnabled;
+    //If one of GrowingTextView's superviews is a scrollView, and self.scrollEnabled == NO,
+    //setting the text programatically will cause UIKit to search upwards until it finds a scrollView with scrollEnabled==yes
+    //then scroll it erratically. Setting scrollEnabled temporarily to YES prevents this.
+    [self setScrollEnabled:YES];
+    [super setAttributedText:attributedText];
+    [self setScrollEnabled:originalValue];
+}
+
 - (void)setScrollable:(BOOL)isScrollable
 {
     [super setScrollEnabled:isScrollable];

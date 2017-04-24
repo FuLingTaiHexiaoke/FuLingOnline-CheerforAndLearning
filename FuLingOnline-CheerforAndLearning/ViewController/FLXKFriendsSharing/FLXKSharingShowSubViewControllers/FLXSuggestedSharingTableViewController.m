@@ -73,6 +73,34 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [_test removeFromSuperview];
+    _test=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+    @weakify(self)
+    _test.growingTextViewChangeHeight=^(CGFloat height){
+        @strongify(self)
+        [self growingTextViewChangeHeight:height];
+    };
+    //frame
+    //       FLXKMessageToolBartest1* test= [[FLXKMessageToolBartest1 alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+    NSLog(@"messageToolBar fram2 %@", NSStringFromCGRect(_test.frame));
+    
+    _test.tag=1000;
+    //    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
+    //
+    [self.tableView addSubview:_test];
+    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(48);
+        make.width.mas_equalTo(self.view.mas_width);
+        //        make.left.mas_equalTo(self.tableView.mas_left);
+        //        make.right.mas_equalTo(self.tableView.mas_right);
+        make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).offset(100);
+    }];
+    
+    _test.backgroundColor=[UIColor yellowColor];
+
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
@@ -187,48 +215,83 @@
     
     //autolayout
 //    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
-_test=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-    //frame
-//       FLXKMessageToolBartest1* test= [[FLXKMessageToolBartest1 alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
-    NSLog(@"messageToolBar fram2 %@", NSStringFromCGRect(_test.frame));
-
-    _test.tag=1000;
-//    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
-//
-    [self.tableView addSubview:_test];
     
-    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
-    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
+        UIButton* btn1=[[UIButton alloc]init];
+    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn1];
          btn1.backgroundColor=[UIColor redColor];
 
-    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(40);
-               make.width.mas_equalTo(self.view.mas_width);
-//        make.left.mas_equalTo(self.tableView.mas_left);
-//        make.right.mas_equalTo(self.tableView.mas_right);
-        make.top.mas_equalTo(self.tableView.top).offset(200);
-    }];
-    _test.backgroundColor=[UIColor yellowColor];
+    
+        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(40);
+                   make.width.mas_equalTo(self.view.mas_width);
+    //        make.left.mas_equalTo(self.tableView.mas_left);
+    //        make.right.mas_equalTo(self.tableView.mas_right);
+                make.bottom.mas_equalTo(self.view.superview.bottom).offset(100);
+        }];
+    
+//    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(40);
+//               make.width.mas_equalTo(self.view.mas_width);
+////        make.left.mas_equalTo(self.tableView.mas_left);
+////        make.right.mas_equalTo(self.tableView.mas_right);
+//        make.top.mas_equalTo(self.tableView.top).offset(200);
+//    }];
+    
+
     
     
 }
 
--(void)messageToolBarBecomeFirstResponder{
+-(void)messageToolBarBecomeFirstResponder:(UIButton*)sender{
     [_test messageToolBarBecomeFirstResponder];
+//    CGFloat height=  sender.tag==0?80:40;
+    
+//    [sender mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height);
+//    }];
+//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        
+//        [_test mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(height);
+//        }];
+//        
+//        [self.view layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+//
+//    
+//    sender.tag=sender.tag==0?1:0;
 }
+
+- (void)growingTextViewChangeHeight:(float)height
+{
+    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+        [_test mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(height);
+        }];
+        
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
 
 
 -(void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
     
-    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.tag==1000) {
-            CGRect r =obj.frame;
-   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
-        }
-    }];
+//    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if (obj.tag==1000) {
+//            CGRect r =obj.frame;
+//   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
+//        }
+//    }];
     
 
     

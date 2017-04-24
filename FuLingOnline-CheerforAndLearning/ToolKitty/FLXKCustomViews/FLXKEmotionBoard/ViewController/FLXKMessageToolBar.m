@@ -149,48 +149,57 @@
 #pragma mark - Delegate
 - (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height
 {
+    //get changed height
     float diff = (growingTextView.frame.size.height - height);
     
     CGRect r = self.frame;
     r.size.height -= diff;
     r.origin.y += diff;
-    //    self.frame = r;
-    
-    CGFloat   newHeight=r.size.height;
-    CGFloat  newOrigin=r.origin.y;
-    
 
+    CGFloat   newHeight=r.size.height;
+
+    //change by outside
+//    self.growingTextViewChangeHeight(newHeight);
     
-    [self layoutIfNeeded];
-    
-    [UIView animateWithDuration:0.1 animations:^{
-//        [self.superview.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            if (obj.firstItem==self) {
-//                [self.superview removeConstraint:obj];
-//            }
-//        }];
-//        [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            if (obj.firstAttribute==NSLayoutAttributeHeight) {
-//                [self removeConstraint:obj];
-//            }
-//        }];
-        //        NSLog(@"Delegate growingTextView %@", NSStringFromCGRect(r));
-        [self mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(newHeight);
-            make.top.mas_equalTo(self.superview).offset(newOrigin);
-            make.width.mas_equalTo(self.superview.mas_width);
-        }];
-        [self layoutIfNeeded];
-    }];
-    
+    //change by self
+    [self growingTextViewChangeHeight:newHeight];
 }
+
 #pragma mark - Public methods
 -(void)messageToolBarBecomeFirstResponder{
     [self.growingTextView.internalTextView becomeFirstResponder];
 }
+
+-(void)messageToolBarResignFirstResponder{
+    [self.growingTextView.internalTextView resignFirstResponder];
+}
 #pragma mark - View Event
 #pragma mark - Model Event
 #pragma mark - Private methods
+
+- (void)growingTextViewChangeHeight:(float)height
+{
+    //below is just for Masonry
+//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(height);
+//        }];
+//        [self.superview layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//        
+//    }];
+    
+    //below is for system autolayout,because Masonry can`t update system autolayout
+    [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstAttribute==NSLayoutAttributeHeight) {
+            //                    [self removeConstraint:obj];
+            obj.constant=height;
+        }
+    }];
+    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.superview layoutIfNeeded];
+    } completion:nil];
+}
 
 -(void)setShowingOption:(MessageToolBarShowingOption)messageToolBarShowingOption{
     if (messageToolBarShowingOption&MessageToolBarShowingOption_NONE_BUTTON) {

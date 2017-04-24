@@ -139,7 +139,7 @@
     CGFloat originX = (currentRangeOffset / currentRangeContentLength) *
     (self.frame.size.width-self.indicatorSize);
 
-    NSLog(@"originX:%f",originX);
+//    NSLog(@"originX:%f",originX);
     self.currentRect = CGRectMake(originX, self.frame.size.height / 2 - self.indicatorSize / 2,self.indicatorSize, self.indicatorSize);
     NSLog(@"frame %@", NSStringFromCGRect(self.frame ));
 

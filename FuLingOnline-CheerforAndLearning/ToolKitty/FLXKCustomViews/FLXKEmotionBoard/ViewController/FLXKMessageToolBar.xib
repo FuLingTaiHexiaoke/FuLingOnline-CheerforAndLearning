@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7VG-r4-gPS" customClass="HPGrowingTextView">
-                    <rect key="frame" x="4" y="2" width="331" height="63"/>
+                    <rect key="frame" x="4" y="7" width="331" height="53"/>
                     <color key="backgroundColor" red="1" green="0.78090595640000005" blue="0.1760718637" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajE-ad-4Uu">
@@ -26,10 +26,10 @@
             </subviews>
             <color key="backgroundColor" red="0.47669123569999999" green="0.1348858406" blue="0.62316524620000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="7VG-r4-gPS" firstAttribute="top" secondItem="l5R-3m-C7M" secondAttribute="top" constant="2" id="9kh-wf-Lcl"/>
+                <constraint firstItem="7VG-r4-gPS" firstAttribute="top" secondItem="l5R-3m-C7M" secondAttribute="top" constant="7" id="9kh-wf-Lcl"/>
                 <constraint firstItem="7VG-r4-gPS" firstAttribute="leading" secondItem="l5R-3m-C7M" secondAttribute="leading" constant="4" id="KVM-Bk-2pw"/>
                 <constraint firstAttribute="trailing" secondItem="ajE-ad-4Uu" secondAttribute="trailing" constant="4" id="U3c-Om-pLY"/>
-                <constraint firstAttribute="bottom" secondItem="7VG-r4-gPS" secondAttribute="bottom" constant="2" id="d5S-aC-rMV"/>
+                <constraint firstAttribute="bottom" secondItem="7VG-r4-gPS" secondAttribute="bottom" constant="7" id="d5S-aC-rMV"/>
                 <constraint firstItem="7VG-r4-gPS" firstAttribute="centerY" secondItem="l5R-3m-C7M" secondAttribute="centerY" id="iOK-wi-ouD"/>
                 <constraint firstItem="ajE-ad-4Uu" firstAttribute="leading" secondItem="7VG-r4-gPS" secondAttribute="trailing" constant="8" id="wsY-6W-unn"/>
                 <constraint firstAttribute="bottom" secondItem="ajE-ad-4Uu" secondAttribute="bottom" constant="12" id="xvI-BQ-lEU"/>

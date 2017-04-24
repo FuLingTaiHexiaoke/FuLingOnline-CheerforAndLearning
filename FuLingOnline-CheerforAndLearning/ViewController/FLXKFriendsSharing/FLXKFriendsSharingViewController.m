@@ -106,6 +106,10 @@
         make.bottom.mas_equalTo(self.view.mas_bottom);
         make.right.mas_equalTo(self.view.mas_right);
     }];
+    
+    
+//            FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)showTabBar{

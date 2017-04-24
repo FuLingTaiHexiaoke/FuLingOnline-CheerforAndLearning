@@ -28,14 +28,15 @@ typedef NS_OPTIONS(NSUInteger, MessageToolBarShowingOption) {
 //child viewController
 @interface FLXKMessageToolBar : UIView
 //public actions
-- (instancetype)initWithCustomFrame:(CGRect)frame;
-+(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption;
+//+(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption;
 +(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder containerView:(UIView*)containerView showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption;
 -(void)messageToolBarBecomeFirstResponder;
+-(void)messageToolBarResignFirstResponder;
 //IBOutlet
 //IBAction
 //models
 //UI state record properties
+@property(nonatomic,strong)void(^growingTextViewChangeHeight)(CGFloat height);
 //subviews
 //child viewController
 
