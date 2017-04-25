@@ -31,15 +31,23 @@
 //删除分享
 
 //点赞
+- (void)addThumbup:(UIButton*)sender;
 -(void)addFriendsharingThumbup;
 
+
 //评论
+//触发评论
+@property (strong, nonatomic)void(^addCommentBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
+
+- (void)addComment;
+-(void)addFriendsharingComment:(NSDictionary*)parameters;
 //分享
 
 
 //child viewController
 //subviews
 //models
+@property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
 //-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath;
 
 @property (strong, nonatomic)FLXKSharingCellModel* sharingCellModel;

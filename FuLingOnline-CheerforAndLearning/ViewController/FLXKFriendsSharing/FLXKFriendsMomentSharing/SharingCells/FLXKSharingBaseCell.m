@@ -54,6 +54,74 @@
 -(void)setSharingCellModel:(FLXKSharingCellModel *)sharingCellModel{
     _sharingCellModel=sharingCellModel;
 }
+
+
+- (void)addThumbup:(UIButton*)sender {
+    if (self.sharingCellModel.isThumberuped==1) {
+        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+    }
+    else{
+        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+    }
+    //    [UIView animateWithDuration:1.0 animations:^{
+    ////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
+    //        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
+    //    } completion:^(BOOL finished) {
+    //        sender.imageView.transform=CGAffineTransformIdentity;
+    //    }];
+    
+    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
+    } completion:^(BOOL finished) {
+        sender.imageView.transform=CGAffineTransformIdentity;
+    }];
+    
+    //    CABasicAnimation *theAnimation;
+    //    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    //    theAnimation.duration=2;
+    //    theAnimation.fillMode = kCAFillModeForwards;
+    //    theAnimation.removedOnCompletion = NO;
+    //    theAnimation.fromValue = [NSNumber numberWithFloat:1];
+    //    theAnimation.toValue = [NSNumber numberWithFloat:4.0];
+    //    [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
+    
+    
+    [self addFriendsharingThumbup];
+}
+
+- (void)addComment{
+    SharingCommentCellModel* model=[SharingCommentCellModel new];
+    model.newsID=self.sharingCellModel.newsID;
+    self.currentCommentCellModel=model;
+    
+    if ( self.addCommentBlock) {
+        self.addCommentBlock(@"评论",self);
+    }
+}
+
+//评论
+-(void)addFriendsharingComment:(NSDictionary*)parameters{
+    SharingCommentCellModel* model=[SharingCommentCellModel new];
+    model.fromUserID= [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test";
+    model.fromUserName=[FLXKSharedAppSingleton sharedSingleton].sharedUser.name?:@"test";
+    if (self.currentCommentCellModel.fromUserID) {
+        model.toUserID=self.currentCommentCellModel.fromUserID;
+        model.toUserName=self.currentCommentCellModel.toUserName;
+        model.isReply=1;
+    }
+    model.content=[parameters objectForKey:@"content"];
+    model.newsID=self.currentCommentCellModel.newsID;
+    
+    parameters=[model modelToDic];
+    
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        [self.sharingCellModel.sharingComments addObject:model];
+        [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    } failureCallback:^(NSError *err) {
+        //        NSAssert(!err, err.description);
+    }]addFriendsharingComment:parameters];
+}
+
 //头像
 //名称
 //分享的文本内容
@@ -89,6 +157,7 @@
     }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_sharingCellModel.newsID,@"isThumberuped":[NSNumber numberWithInteger:_sharingCellModel.isThumberuped]}];
 }
 
+
 #pragma mark - Model Event
 #pragma mark - Private methods
 
@@ -103,6 +172,19 @@
     return (UITableView *)tableView;
 }
 #pragma mark - getter/setter
+
+//-(void)setupSharingCommentsTableViewWithCellModels{
+//    __weak __typeof(self) weakSelf=self;
+//    self.sharingCommentsTableView.addCommentBlock=^(SharingCommentCellModel* model){
+//        weakSelf.currentCommentCellModel=model;
+//        if ( weakSelf.addCommentBlock) {
+//            weakSelf.addCommentBlock();
+//        }
+//    };
+//}
+
+
+
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation

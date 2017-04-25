@@ -88,7 +88,7 @@
                 <navigationController id="wY1-Lk-oJv" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="p76-AI-r52"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iqV-zu-kup">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqV-zu-kup">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -125,7 +125,7 @@
                 <navigationController id="up3-kB-Vwn" customClass="RTRootNavigationController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="C8y-u9-aj1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpe-bq-xZ9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-bq-xZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -330,7 +330,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JrZ-yG-evB">
                                         <rect key="frame" x="8" y="0.0" width="359" height="162"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.79607843140000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享你的心情..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ie-e8-OEw">
@@ -460,7 +460,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="y5e-Xv-k6u"/>
                                             <barButtonItem style="plain" id="K33-QJ-cUM">
                                                 <view key="customView" contentMode="scaleToFill" id="NKG-Vt-3o9">
-                                                    <rect key="frame" x="26" y="6" width="139" height="33"/>
+                                                    <rect key="frame" x="26" y="5.5" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O44-FK-2xd">
@@ -492,7 +492,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="W4f-6n-UQ6"/>
                                             <barButtonItem style="plain" id="CFE-aF-58K">
                                                 <view key="customView" contentMode="scaleToFill" id="8sr-XD-8yF">
-                                                    <rect key="frame" x="210" y="6" width="139" height="33"/>
+                                                    <rect key="frame" x="210" y="5.5" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygP-sz-HcQ">
@@ -722,7 +722,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="U7j-mw-3hg"/>
                                             <barButtonItem style="plain" id="Mo6-rP-7Hd">
                                                 <view key="customView" contentMode="scaleToFill" id="324-ql-brk">
-                                                    <rect key="frame" x="26" y="6" width="139" height="33"/>
+                                                    <rect key="frame" x="26" y="5.5" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-al-3ro">
@@ -754,7 +754,7 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="1tq-KO-1JR"/>
                                             <barButtonItem style="plain" id="0kK-Rn-m7p">
                                                 <view key="customView" contentMode="scaleToFill" id="0BC-Aj-TaP">
-                                                    <rect key="frame" x="210" y="6" width="139" height="33"/>
+                                                    <rect key="frame" x="210" y="5.5" width="139" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Y-sN-FgZ">
@@ -849,7 +849,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="quP-WE-E65" id="4BC-e5-pnl">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -878,7 +878,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J0x-pq-tUL" id="kkV-Ax-yEY">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JFh-uk-Oey">
@@ -933,7 +933,7 @@
             <objects>
                 <navigationController id="5A5-qt-tey" customClass="RTRootNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" image="tabbar-explore" id="yhx-p9-zrK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4pH-Yf-qG2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4pH-Yf-qG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -958,7 +958,7 @@
                                 <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ls-gy-x6u" id="Tla-Sz-ii2">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5mS-o1-rUc">

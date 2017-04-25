@@ -14,6 +14,11 @@
 //修改原因: reset the self.frame.height by autolayout outside,not it self
 //修改内容:注销下面的布局代码--。
 
+//修改人:肖科    修改时间:2017-4-25  修改原因:placeholder重绘差这个条件
+//修改内容:--修改如下。
+
+//修改内容:修改如下--。
+
 #import "ViewController.h"
 
 @interface ViewController ()

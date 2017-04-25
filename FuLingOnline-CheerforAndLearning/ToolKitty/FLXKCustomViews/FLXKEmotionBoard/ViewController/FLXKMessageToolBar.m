@@ -10,6 +10,7 @@
 #import "FLXKMessageToolBar.h"
 //utilites
 #import "Masonry.h"
+#import "NSAttributedString+EmotionExtension.h"
 //child viewController
 //models
 //subviews
@@ -78,8 +79,8 @@
         textView.minNumberOfLines = 1;
         textView.maxNumberOfLines = 6;
         // you can also set the maximum height in points with maxHeight
-        textView.returnKeyType = UIReturnKeyGo; //just as an example
-        textView.font = [UIFont systemFontOfSize:15.0f];
+        textView.returnKeyType = UIReturnKeySend; //just as an example
+        textView.font = [UIFont systemFontOfSize:FBTweakValue(@"FLXKMessageToolBar", @"sharedInstance",  @"font", 15.0)];
         textView.delegate = sharedInstance;
         textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
         textView.backgroundColor = [UIColor whiteColor];
@@ -107,7 +108,7 @@
         textView.minNumberOfLines = 1;
         textView.maxNumberOfLines = 6;
         // you can also set the maximum height in points with maxHeight
-        textView.returnKeyType = UIReturnKeyGo; //just as an example
+        textView.returnKeyType = UIReturnKeySend; //just as an example
         textView.font = [UIFont systemFontOfSize:15.0f];
         textView.delegate = sharedInstance;
         textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
@@ -146,7 +147,7 @@
 //}
 //
 
-#pragma mark - Delegate
+#pragma mark - HPGrowingTextView Delegate
 - (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height
 {
     //get changed height
@@ -155,22 +156,34 @@
     CGRect r = self.frame;
     r.size.height -= diff;
     r.origin.y += diff;
-
+    
     CGFloat   newHeight=r.size.height;
-
+    
     //change by outside
-//    self.growingTextViewChangeHeight(newHeight);
+    //    self.growingTextViewChangeHeight(newHeight);
     
     //change by self
     [self growingTextViewChangeHeight:newHeight];
 }
 
-#pragma mark - Public methods
--(void)messageToolBarBecomeFirstResponder{
-    [self.growingTextView.internalTextView becomeFirstResponder];
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView{
+    NSString * message= [growingTextView.internalTextView.attributedText getPlainString];
+    if (self.sendMessageBlock) {
+        self.sendMessageBlock(message);
+    }
+    return YES;
 }
 
--(void)messageToolBarResignFirstResponder{
+#pragma mark - Public methods
+-(void)showToolBarWithPlaceholder:(NSString*)placeholder{
+//    self.growingTextView.internalTextView.text=nil;
+    self.growingTextView.placeholder =placeholder;
+    [self.growingTextView.internalTextView becomeFirstResponder];
+    
+}
+
+-(void)hideToolBar{
+    self.growingTextView.internalTextView.text=nil;
     [self.growingTextView.internalTextView resignFirstResponder];
 }
 #pragma mark - View Event
@@ -180,14 +193,14 @@
 - (void)growingTextViewChangeHeight:(float)height
 {
     //below is just for Masonry
-//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        [self mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(height);
-//        }];
-//        [self.superview layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//        
-//    }];
+    //    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    //        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+    //            make.height.mas_equalTo(height);
+    //        }];
+    //        [self.superview layoutIfNeeded];
+    //    } completion:^(BOOL finished) {
+    //
+    //    }];
     
     //below is for system autolayout,because Masonry can`t update system autolayout
     [self.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

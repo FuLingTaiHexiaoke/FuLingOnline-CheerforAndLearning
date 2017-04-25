@@ -15,6 +15,7 @@
 @interface FLXKSharingCellModel : NSObject
 
 @property(nonatomic)NSString* newsID;
+@property(nonatomic)NSString* fromUserID;
 @property(nonatomic)NSInteger isThumberuped;
 @property(nonatomic)NSString* avatarImageUrl;
 @property(nonatomic)NSString* nickName;
@@ -23,6 +24,6 @@
 @property(nonatomic)NSArray<FLXKSharingImagesModel*>* sharingImages;
 @property(nonatomic)NSString* locationRecord;
 @property(nonatomic)NSMutableArray<UserModel*>* likeTheSharingUserRecords;
-@property(nonatomic)NSArray<SharingCommentCellModel*>* sharingComments;
+@property(nonatomic)NSMutableArray<SharingCommentCellModel*>* sharingComments;
 
 @end

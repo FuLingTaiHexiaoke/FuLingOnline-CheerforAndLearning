@@ -107,7 +107,7 @@
     NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
     for (int i=0; i<3; i++) {
         SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
-        model.nickName=@"nickName";
+        model.fromUserName=@"nickName";
         [models addObject:model];
     }
     return       [NSArray arrayWithArray:models];

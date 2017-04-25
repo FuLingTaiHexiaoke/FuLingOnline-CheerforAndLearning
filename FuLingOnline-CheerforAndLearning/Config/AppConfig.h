@@ -99,8 +99,11 @@
 //#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
 #define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/getNewsModel")
 
-
+//点赞
 #define Url_AddFriendsharingThumbup BaseURL(@"publishNewsController/PublishNewsModel/addThumberup")//添加点赞
+
+//评论
+#define Url_AddFriendsharingComment BaseURL(@"publishNewsController/PublishNewsModel/addComment")
 
 //用户
 #define Url_AddUser BaseURL(@"userController/User")

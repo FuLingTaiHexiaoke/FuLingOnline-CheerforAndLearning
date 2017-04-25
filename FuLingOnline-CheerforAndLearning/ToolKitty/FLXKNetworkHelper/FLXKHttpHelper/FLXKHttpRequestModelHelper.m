@@ -96,7 +96,7 @@
             model.sharingImages= [FLXKSharingImagesModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.image_urls]];
             model.locationRecord=obj.doc_url?obj.doc_url: @"Spark";//reset model
             model.likeTheSharingUserRecords= [UserModel mj_objectArrayWithKeyValuesArray: [FLXKHttpRequestModelHelper getArrayFromString:obj.detail_url]] ;
-            
+            model.sharingComments=[SharingCommentCellModel mj_objectArrayWithKeyValuesArray:obj.subtitle];
             [models addObject:model];
         }];
         self.successCallback(models);
@@ -114,6 +114,18 @@
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
          self.failureCallback(error);
+    }];
+}
+
+//评论
+-(void)addFriendsharingComment:(NSDictionary*)parameters{
+    [FLXKHttpRequest post:Url_AddFriendsharingComment parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSNumber* state= [responseObject objectForKey:@"state"];
+        if (state.integerValue==0) {
+            self.successCallback(nil);
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        self.failureCallback(error);
     }];
 }
 

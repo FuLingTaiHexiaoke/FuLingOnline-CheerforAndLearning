@@ -78,7 +78,6 @@
 		B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */; };
 		B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */; };
 		B92A302B1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A302A1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m */; };
-		B92A30331E8E608C00E8AA30 /* SharingCommentCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30321E8E608C00E8AA30 /* SharingCommentCellModel.m */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
 		B92F57041E499888001D8C2A /* EmotionTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57011E499888001D8C2A /* EmotionTextAttachment.m */; };
 		B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B92F57031E499888001D8C2A /* NSAttributedString+EmotionExtension.m */; };
@@ -110,6 +109,9 @@
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
 		B955A71E1E7A3080008E3801 /* ToolKittyCodeBack.m in Sources */ = {isa = PBXBuildFile; fileRef = B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */; };
+		B95987991EAEEBB100A12E7F /* SharingCommentCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B95987981EAEEBB100A12E7F /* SharingCommentCellModel.m */; };
+		B959879F1EAF2A2300A12E7F /* NSObject+ModelConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B959879E1EAF2A2300A12E7F /* NSObject+ModelConverter.m */; };
+		B95987A21EAF2B8100A12E7F /* NSObject+ModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B95987A11EAF2B8100A12E7F /* NSObject+ModelHelper.m */; };
 		B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */; };
 		B95A32551E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A32491E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.xib */; };
 		B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A324B1E31B95600E71D9D /* FLXKEmotionBoard.m */; };
@@ -807,8 +809,6 @@
 		B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingCommentTableView.m; sourceTree = "<group>"; };
 		B92A30291E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension_IdentifierForReusable.h"; sourceTree = "<group>"; };
 		B92A302A1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension_IdentifierForReusable.m"; sourceTree = "<group>"; };
-		B92A30311E8E608C00E8AA30 /* SharingCommentCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingCommentCellModel.h; sourceTree = "<group>"; };
-		B92A30321E8E608C00E8AA30 /* SharingCommentCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingCommentCellModel.m; sourceTree = "<group>"; };
 		B92B55B31DD9679E009A373A /* CALayer+FLXKAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+FLXKAddition.h"; sourceTree = "<group>"; };
 		B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+FLXKAddition.m"; sourceTree = "<group>"; };
 		B92F57001E499888001D8C2A /* EmotionTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionTextAttachment.h; sourceTree = "<group>"; };
@@ -865,6 +865,12 @@
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
 		B955A71C1E7A3080008E3801 /* ToolKittyCodeBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolKittyCodeBack.h; sourceTree = "<group>"; };
 		B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolKittyCodeBack.m; sourceTree = "<group>"; };
+		B95987971EAEEBB100A12E7F /* SharingCommentCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharingCommentCellModel.h; sourceTree = "<group>"; };
+		B95987981EAEEBB100A12E7F /* SharingCommentCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharingCommentCellModel.m; sourceTree = "<group>"; };
+		B959879D1EAF2A2300A12E7F /* NSObject+ModelConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ModelConverter.h"; sourceTree = "<group>"; };
+		B959879E1EAF2A2300A12E7F /* NSObject+ModelConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ModelConverter.m"; sourceTree = "<group>"; };
+		B95987A01EAF2B8100A12E7F /* NSObject+ModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ModelHelper.h"; sourceTree = "<group>"; };
+		B95987A11EAF2B8100A12E7F /* NSObject+ModelHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ModelHelper.m"; sourceTree = "<group>"; };
 		B95A32411E31AF9D00E71D9D /* FLXKEmotionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionConfig.h; sourceTree = "<group>"; };
 		B95A32471E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionCollectionViewNomalCell.h; sourceTree = "<group>"; };
 		B95A32481E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionCollectionViewNomalCell.m; sourceTree = "<group>"; };
@@ -1868,12 +1874,16 @@
 		B92494951E8BA0CA006878CC /* SharingCellModel */ = {
 			isa = PBXGroup;
 			children = (
+				B95987971EAEEBB100A12E7F /* SharingCommentCellModel.h */,
+				B95987981EAEEBB100A12E7F /* SharingCommentCellModel.m */,
 				B92494961E8BA103006878CC /* FLXKSharingCellModel.h */,
 				B92494971E8BA103006878CC /* FLXKSharingCellModel.m */,
 				B99CAA241E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.h */,
 				B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */,
 				B99CAA271E8FADAC0032D8CB /* FLXKSharingImagesModel.h */,
 				B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */,
+				B959879D1EAF2A2300A12E7F /* NSObject+ModelConverter.h */,
+				B959879E1EAF2A2300A12E7F /* NSObject+ModelConverter.m */,
 			);
 			path = SharingCellModel;
 			sourceTree = "<group>";
@@ -2007,8 +2017,6 @@
 		B92A30301E8E608C00E8AA30 /* SharingCommentCellModel */ = {
 			isa = PBXGroup;
 			children = (
-				B92A30311E8E608C00E8AA30 /* SharingCommentCellModel.h */,
-				B92A30321E8E608C00E8AA30 /* SharingCommentCellModel.m */,
 			);
 			path = SharingCommentCellModel;
 			sourceTree = "<group>";
@@ -2072,6 +2080,8 @@
 				B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */,
 				B97F4C4B1EA0714D0033CA71 /* NSDictionary+Extension.h */,
 				B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */,
+				B95987A01EAF2B8100A12E7F /* NSObject+ModelHelper.h */,
+				B95987A11EAF2B8100A12E7F /* NSObject+ModelHelper.m */,
 			);
 			path = "FLXK+Extensions";
 			sourceTree = "<group>";
@@ -4389,6 +4399,7 @@
 				B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */,
 				B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */,
 				B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */,
+				B959879F1EAF2A2300A12E7F /* NSObject+ModelConverter.m in Sources */,
 				B9C6AC911E6548550003C50A /* FLXKCollapsableTableViewController1.m in Sources */,
 				B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */,
 				B9D854BD1DAC8BE2001AD79C /* ViewController.m in Sources */,
@@ -4400,6 +4411,7 @@
 				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */,
+				B95987991EAEEBB100A12E7F /* SharingCommentCellModel.m in Sources */,
 				B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */,
@@ -4407,10 +4419,10 @@
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
 				B9E17E291EA0C48E0027043A /* PsyZipArchive.m in Sources */,
 				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
+				B95987A21EAF2B8100A12E7F /* NSObject+ModelHelper.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
 				B97CC0861E724A3A000D548B /* UISGAlertView.m in Sources */,
-				B92A30331E8E608C00E8AA30 /* SharingCommentCellModel.m in Sources */,
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
 				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B90CD9821E763FFD00278EDB /* LaunchScreenViewController.m in Sources */,

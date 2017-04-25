@@ -34,6 +34,8 @@
     [self setupUI];
     self.delegate=self;
     self.dataSource=self;
+    self.scrollEnabled=NO;
+    self.separatorStyle=UITableViewCellSeparatorStyleNone;
     
 }
 
@@ -57,6 +59,12 @@
      [cell setModel:_models[indexPath.row]];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//  SharingCommentCellModel* model= _models[indexPath.row];
+    
+}
+
 #pragma mark - Public methods
 
 //-(void)setModels:(NSArray<NSString *> *)models{
@@ -64,9 +72,8 @@
 //    [self reloadData];
 //}
 -(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models{
-    _models=models;
+    self.models=models;
     CGFloat height= [self getTableHeight];//执行顺序有待测试
-    [self reloadData];
     return height;
 }
 
@@ -78,7 +85,7 @@
     
     [self registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
     
-    self.estimatedRowHeight=100;
+    self.estimatedRowHeight=40;
 }
 
 -(CGFloat)getTableHeight{
@@ -107,6 +114,10 @@
 }
 
 #pragma mark - getter/setter
+-(void)setModels:(NSArray<SharingCommentCellModel *> *)models{
+    _models=models;
+    [self reloadData];
+}
 #pragma mark - Overriden methods
 #pragma mark - Navigation
 /*

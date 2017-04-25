@@ -141,9 +141,9 @@
 
 //    NSLog(@"originX:%f",originX);
     self.currentRect = CGRectMake(originX, self.frame.size.height / 2 - self.indicatorSize / 2,self.indicatorSize, self.indicatorSize);
-    NSLog(@"frame %@", NSStringFromCGRect(self.frame ));
+//    NSLog(@"frame %@", NSStringFromCGRect(self.frame ));
 
-    NSLog(@"currentRect %@", NSStringFromCGRect(self.currentRect ));
+//    NSLog(@"currentRect %@", NSStringFromCGRect(self.currentRect ));
 
     if (currentRangeOffset< 0 ||originX<0  || currentRangeOffset>(currentRangeContentLength)) {
         return;

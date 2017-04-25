@@ -11,6 +11,6 @@
 #import "UIView+Extension_IdentifierForReusable.h"
 
 @interface FLXKBaseCommentCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *testlabel;
+@property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (strong, nonatomic)  SharingCommentCellModel  *model;
 @end

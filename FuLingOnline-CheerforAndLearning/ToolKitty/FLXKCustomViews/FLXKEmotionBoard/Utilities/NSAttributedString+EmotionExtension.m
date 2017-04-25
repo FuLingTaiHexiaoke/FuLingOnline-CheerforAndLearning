@@ -3,7 +3,7 @@
 // Copyright (c) 2015 tutuge. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
 #import "NSAttributedString+EmotionExtension.h"
 
 //utilites
@@ -15,7 +15,7 @@
 
 @implementation NSAttributedString (EmotionExtension)
 
-- (NSString *)getPlainStringtest {
+- (NSString *)getPlainString{
     NSMutableString *plainString = [NSMutableString stringWithString:self.string];
     __block NSUInteger base = 0;
     

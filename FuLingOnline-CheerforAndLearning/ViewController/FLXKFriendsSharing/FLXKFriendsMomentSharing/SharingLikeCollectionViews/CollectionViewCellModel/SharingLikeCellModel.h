@@ -17,6 +17,5 @@
 @property(nonatomic)NSString* sharingImages;
 @property(nonatomic)NSString* locationRecord;
 @property(nonatomic)NSString* likeTheSharingRecords;
-@property(nonatomic)NSString* sharingComments;
 
 @end

@@ -36,7 +36,7 @@
 /**
  *  具体描述
  */
-@property (nonatomic) NSString *subtitle;
+@property (nonatomic) NSString *subtitle;//comments
 @property (nonatomic) NSString *detail_url;//thumberup_users
 
 

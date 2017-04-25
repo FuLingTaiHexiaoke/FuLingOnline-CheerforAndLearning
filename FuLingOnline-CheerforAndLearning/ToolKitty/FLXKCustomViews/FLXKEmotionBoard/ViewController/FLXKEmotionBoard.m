@@ -449,7 +449,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 }
 
 +(NSString*)getPlainTextString{
-    return    [[FLXKEmotionBoard sharedEmotionBoard].editingTextView.attributedText getPlainStringtest];
+    return    [[FLXKEmotionBoard sharedEmotionBoard].editingTextView.attributedText getPlainString];
 }
 
 

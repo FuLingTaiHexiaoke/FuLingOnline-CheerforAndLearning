@@ -21,6 +21,7 @@
 
 //subviews
 #import "FLXKNavigationTitleSegmentsView.h"
+#import "FLXKMessageToolBar.h"
 
 
 
@@ -32,6 +33,7 @@
 //subviews
 @property (strong, nonatomic) UIView* emotionKeyBoard;
 @property (strong, nonatomic) FLXKNavigationTitleViewController* childVC;
+@property(nonatomic,strong)   FLXKMessageToolBar* messageToolBar;
 @end
 
 @implementation FLXKFriendsSharingViewController
@@ -43,23 +45,23 @@
     
     [self setupOwnNavigationAppearance];
     
-    [self registerGestureForResignViewEditing];
+//    [self registerGestureForResignViewEditing];
     
     [self setupNavigationTitleViewController];
     
-//    if (DEBUG) {
-//        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
-//        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
-//        btn1.backgroundColor=[UIColor grayColor];
-//        [self.view addSubview:btn1];
-//    }
+    //    if (DEBUG) {
+    //        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+    //        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+    //        btn1.backgroundColor=[UIColor grayColor];
+    //        [self.view addSubview:btn1];
+    //    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-//    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
-
+    //    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
+    
 }
 
 
@@ -108,13 +110,65 @@
     }];
     
     
-//            FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
+    //            FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+    //    [self.navigationController pushViewController:vc animated:YES];
 }
+
+
+//-(void)setupMessageToolBar{
+//    if (_messageToolBar) {
+//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+//    }
+//    else{
+//        [_messageToolBar removeFromSuperview];
+//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+//        _messageToolBar.backgroundColor=[UIColor yellowColor];
+//        [self.tableView addSubview:_messageToolBar];
+//        @weakify(self)
+//
+//        _messageToolBar.sendMessageBlock=^(NSString* message){
+//            @strongify(self)
+//            [self sendComment:message];
+//        };
+//
+//        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
+//            @strongify(self)
+//            [self growingTextViewChangeHeight:height];
+//        };
+//
+//        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(48);
+//            make.width.mas_equalTo(self.view.mas_width);
+//            make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).offset(100);
+//        }];
+//    }
+//}
+//
+//-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
+//    [_messageToolBar showToolBarWithPlaceholder:placeholder];
+//}
+//
+//- (void)growingTextViewChangeHeight:(float)height
+//{
+//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//
+//        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(height);
+//        }];
+//
+//        [self.view layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//
+//    }];
+//}
 
 -(void)showTabBar{
     Router(Router_TabBar_FriendsSharing_NewsPublish)
 }
+
+//-(void)sendComment:(NSString *)message{
+//    [self.currentOperationCell addFriendsharingComment:@{@"content":message}];
+//}
 
 #pragma mark - getter/setter
 #pragma mark - Overriden methods

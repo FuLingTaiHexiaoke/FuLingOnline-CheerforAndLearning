@@ -161,6 +161,7 @@
     return contentInset;
 }
 
+//修改内容:注销上面的代码，重新改写--。
 //-(void)setMaxNumberOfLines:(int)n
 //{
 //    if(n == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
@@ -190,7 +191,10 @@
 //    maxNumberOfLines = n;
 //}
 
-
+//修改时间:2017-4-24
+//修改人:肖科
+//修改内容:--注销上面的代码，重新改写。
+//修改原因: 不支持NSAttributedString
 -(void)setMaxNumberOfLines:(int)n
 {
     if(n == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
@@ -234,6 +238,8 @@
     maxNumberOfLines = 0;
 }
 
+
+//修改内容:注销上面的代码，重新改写--。
 //-(void)setMinNumberOfLines:(int)m
 //{
 //    if(m == 0 && minHeight > 0) return; // the user specified a minHeight themselves.
@@ -263,6 +269,10 @@
 //    minNumberOfLines = m;
 //}
 
+//修改时间:2017-4-24
+//修改人:肖科
+//修改内容:--注销上面的代码，重新改写。
+//修改原因: 不支持NSAttributedString
 -(void)setMinNumberOfLines:(int)m
 {
     if(m == 0 && maxHeight > 0) return; // the user specified a maxHeight themselves.
@@ -314,7 +324,14 @@
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [internalTextView setPlaceholder:placeholder];
+    
+    //修改人:肖科    修改时间:2017-4-25  修改原因:placeholder重绘差这个条件
+    //修改内容:--修改如下。
+    internalTextView.displayPlaceHolder=YES;
+    //修改内容:修改如下--。
+    
     [internalTextView setNeedsDisplay];
+
 }
 
 - (UIColor *)placeholderColor

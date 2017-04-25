@@ -44,4 +44,7 @@ typedef void (^taskProgress)(NSProgress * progress);
 
 //点赞
 -(void)addFriendsharingThumbup:(NSDictionary*)parameters;
+
+//评论
+-(void)addFriendsharingComment:(NSDictionary*)parameters;
 @end

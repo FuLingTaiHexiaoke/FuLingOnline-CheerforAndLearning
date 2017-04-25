@@ -6,6 +6,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSAttributedString (EmotionExtension)
-- (NSString *)getPlainStringtest;
+- (NSString *)getPlainString;
 +(instancetype)attributedStringWithPlainString:(NSString *)plainString;
 @end

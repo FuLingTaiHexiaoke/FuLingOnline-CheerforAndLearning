@@ -42,8 +42,10 @@
 @property (strong, nonatomic)NSArray<FLXKSharingCellModel *> *  models;
 @property(nonatomic,strong)JSMessageInputView *chatInputView;
 //UI state record properties
+//@property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
+@property(nonatomic,strong)FLXKSharingBaseCell* currentOperationCell;
 //subviews
-@property(nonatomic,strong)   FLXKMessageToolBar* test;
+@property(nonatomic,strong)   FLXKMessageToolBar* messageToolBar;
 //child viewController
 @end
 
@@ -74,31 +76,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [_test removeFromSuperview];
-    _test=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-    @weakify(self)
-    _test.growingTextViewChangeHeight=^(CGFloat height){
-        @strongify(self)
-        [self growingTextViewChangeHeight:height];
-    };
-    //frame
-    //       FLXKMessageToolBartest1* test= [[FLXKMessageToolBartest1 alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
-    NSLog(@"messageToolBar fram2 %@", NSStringFromCGRect(_test.frame));
-    
-    _test.tag=1000;
-    //    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
-    //
-    [self.tableView addSubview:_test];
-    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(48);
-        make.width.mas_equalTo(self.view.mas_width);
-        //        make.left.mas_equalTo(self.tableView.mas_left);
-        //        make.right.mas_equalTo(self.tableView.mas_right);
-        make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).offset(100);
-    }];
-    
-    _test.backgroundColor=[UIColor yellowColor];
-
+    [self setupMessageToolBar];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -150,6 +128,11 @@
     //    NSLog(@"indexPath.row %ld", (long)indexPath.row);
     [cell setSharingCellModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
+    __weak __typeof(self) weakSelf=self;
+    cell.addCommentBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
+        [weakSelf showToolBarWithPlaceholder:placeholder];
+        weakSelf.currentOperationCell=currentCell;
+    };
     return cell;
 }
 //
@@ -188,6 +171,12 @@
     Router(Router_Launch_NotificationCenter)
 }
 
+#pragma mark - Scroll Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.messageToolBar hideToolBar];
+}
+
+
 #pragma mark -
 #pragma mark - Public Methods
 
@@ -206,100 +195,95 @@
     
     self.tableView.estimatedRowHeight=100;
     
-//    CGRect inputFrame = CGRectMake(0, CONTENT_HEIGHT - DDINPUT_MIN_HEIGHT + NAVBAR_HEIGHT,FULL_WIDTH,DDINPUT_MIN_HEIGHT);
-//    CGRect inputFrame =CGRectMake(0, 200, self.view.frame.size.width, 50);
-//    self.chatInputView = [[JSMessageInputView alloc] initWithFrame:inputFrame delegate:nil];
-//    [self.chatInputView setBackgroundColor:RGBA(249, 249, 249, 0.9)];
-//    [self.view addSubview:self.chatInputView];
-//   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+    
+    //   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     
     //autolayout
-//    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
+    //    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     
-//    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
-        UIButton* btn1=[[UIButton alloc]init];
-    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
-         btn1.backgroundColor=[UIColor redColor];
-
-    
-        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(40);
-                   make.width.mas_equalTo(self.view.mas_width);
-    //        make.left.mas_equalTo(self.tableView.mas_left);
-    //        make.right.mas_equalTo(self.tableView.mas_right);
-                make.bottom.mas_equalTo(self.view.superview.bottom).offset(100);
-        }];
-    
-//    [_test mas_makeConstraints:^(MASConstraintMaker *make) {
+    //    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
+//    UIButton* btn1=[[UIButton alloc]init];
+//    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:btn1];
+//    btn1.backgroundColor=[UIColor redColor];
+//    
+//    
+//    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.height.mas_equalTo(40);
-//               make.width.mas_equalTo(self.view.mas_width);
-////        make.left.mas_equalTo(self.tableView.mas_left);
-////        make.right.mas_equalTo(self.tableView.mas_right);
-//        make.top.mas_equalTo(self.tableView.top).offset(200);
+//        make.width.mas_equalTo(self.view.mas_width);
+//        //        make.left.mas_equalTo(self.tableView.mas_left);
+//        //        make.right.mas_equalTo(self.tableView.mas_right);
+//        make.bottom.mas_equalTo(self.view.superview.bottom).offset(100);
 //    }];
-    
-
-    
     
 }
 
--(void)messageToolBarBecomeFirstResponder:(UIButton*)sender{
-    [_test messageToolBarBecomeFirstResponder];
-//    CGFloat height=  sender.tag==0?80:40;
+-(void)setupMessageToolBar{
+    if (_messageToolBar) {
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+    }
+    else{
+        [_messageToolBar removeFromSuperview];
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+        _messageToolBar.backgroundColor=[UIColor yellowColor];
+        [self.view.superview.superview  addSubview:_messageToolBar];
+        @weakify(self)
+        
+        _messageToolBar.sendMessageBlock=^(NSString* message){
+            @strongify(self)
+            [self sendComment:message];
+        };
+        
+        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
+            @strongify(self)
+            [self growingTextViewChangeHeight:height];
+        };
+        
+        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(48);
+            make.width.mas_equalTo(self.view.superview.superview.mas_width);
+            make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
+        }];
+    }
+}
+
+-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
     
-//    [sender mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.height.mas_equalTo(height);
-//    }];
-//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        
-//        [_test mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(height);
-//        }];
-//        
-//        [self.view layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//        
-//    }];
-//
-//    
-//    sender.tag=sender.tag==0?1:0;
+    [_messageToolBar showToolBarWithPlaceholder:placeholder];
 }
 
 - (void)growingTextViewChangeHeight:(float)height
 {
     [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        
-        [_test mas_updateConstraints:^(MASConstraintMaker *make) {
+        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(height);
         }];
-        
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         
     }];
 }
 
-
-
--(void)viewWillLayoutSubviews
-{
-    [super viewWillLayoutSubviews];
-    
-//    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if (obj.tag==1000) {
-//            CGRect r =obj.frame;
-//   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
-//        }
-//    }];
-    
-
-    
-}
+//
+//
+//-(void)viewWillLayoutSubviews
+//{
+//    [super viewWillLayoutSubviews];
+//
+//    //    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//    //        if (obj.tag==1000) {
+//    //            CGRect r =obj.frame;
+//    //   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
+//    //        }
+//    //    }];
+//
+//
+//
+//}
 
 
 -(void)setupFLXKSharingCellModel{
-    
+
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         if (obj) {
             _models=(NSArray<FLXKSharingCellModel *> *)obj;
@@ -310,5 +294,13 @@
     }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test"}];
     
 }
+
+
+-(void)sendComment:(NSString *)message{
+    
+    [self.currentOperationCell addFriendsharingComment:@{@"content":message}];
+    self.currentOperationCell=nil;
+}
+
 
 @end

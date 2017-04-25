@@ -164,7 +164,7 @@
 - (IBAction)publishEditedNews:(UIBarButtonItem *)sender {
     
     //    [FLXKEmotionBoard getPlainTextString];
-    NSString * newsToPublish=[self.publishTextView.attributedText getPlainStringtest];
+    NSString * newsToPublish=[self.publishTextView.attributedText getPlainString];
     
     FLXKPublishNewsModel* model=[[FLXKPublishNewsModel alloc]init];
 //    model.type_id=001;

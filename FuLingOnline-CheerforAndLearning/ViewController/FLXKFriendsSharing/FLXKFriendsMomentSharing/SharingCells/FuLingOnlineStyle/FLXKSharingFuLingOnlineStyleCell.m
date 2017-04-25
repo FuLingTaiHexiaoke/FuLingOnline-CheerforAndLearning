@@ -40,7 +40,7 @@
 //IBAction
 
 //点赞
-//- (IBAction)sharingThumbup:(id)sender;
+//- (IBAction)Addthumbup:(id)sender;
 
 //评论
 
@@ -89,12 +89,20 @@
     
 }
 
--(void)setupSharingCommentsTableViewWithCellModels{
+-(void)setupSharingCommentsTableViewWithCellModels:(NSArray<SharingCommentCellModel*>*)models{
     //get height
-    CGFloat height= [self.sharingCommentsTableView setCellModels:[self setupSharingCommentCellModels]];
+    CGFloat height= [self.sharingCommentsTableView setCellModels:models];
     [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(height);
     }];
+    
+    __weak __typeof(self) weakSelf=self;
+    self.sharingCommentsTableView.addCommentBlock=^(SharingCommentCellModel* model){
+        weakSelf.currentCommentCellModel=model;
+        if ( weakSelf.addCommentBlock) {
+            weakSelf.addCommentBlock(model.toUserName,self);
+        }
+    };
 }
 
 -(void)setupMainSharingContentLabel{
@@ -104,50 +112,33 @@
     }];
 }
 
--(NSArray*)setupSharingCommentCellModels{
-    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
-    for (int i=0; i<3; i++) {
-        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
-        model.nickName=@"nickName";
-        [models addObject:model];
-    }
-    return       [NSArray arrayWithArray:models];
-}
-#pragma mark - View Event
-- (IBAction)sharingThumbup:(UIButton*)sender {
-    if (self.sharingCellModel.isThumberuped==1) {
-        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
-    }
-    else{
-        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
-    }
-//    [UIView animateWithDuration:1.0 animations:^{
-////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
-//        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
-//    } completion:^(BOOL finished) {
-//        sender.imageView.transform=CGAffineTransformIdentity;
-//    }];
-    
-    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
-    } completion:^(BOOL finished) {
-          sender.imageView.transform=CGAffineTransformIdentity;
-    }];
+//-(NSArray*)setupSharingCommentCellModels{
+//    NSMutableArray<SharingCommentCellModel*> * models=[NSMutableArray array];
+//    for (int i=0; i<3; i++) {
+//        SharingCommentCellModel* model=[[SharingCommentCellModel alloc]init];
+//        model.toUserID=@"nickName";
+//        [models addObject:model];
+//    }
+//    return       [NSArray arrayWithArray:models];
+//}
 
-//    CABasicAnimation *theAnimation;
-//    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
-//    theAnimation.duration=2;
-//    theAnimation.fillMode = kCAFillModeForwards;
-//    theAnimation.removedOnCompletion = NO;
-//    theAnimation.fromValue = [NSNumber numberWithFloat:1];
-//    theAnimation.toValue = [NSNumber numberWithFloat:4.0];
-//    [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
-    
-    
-    [super addFriendsharingThumbup];
+////评论
+//-(void)addFriendsharingComment:(NSDictionary*)parameters{
+//    [super addFriendsharingComment:parameters];
+//}
+
+#pragma mark - View Event
+- (IBAction)addThumbup:(UIButton*)sender {
+    [super addThumbup:sender];
 }
+
+- (IBAction)addComment:(UIButton*)sender {
+    [super addComment];
+}
+
 #pragma mark - Model Event
 #pragma mark - Private methods
+
 #pragma mark - getter/setter
 
 -(void)setSharingCellModel:(FLXKSharingCellModel *)model{
@@ -157,14 +148,15 @@
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     self.mainSharingContentLabel.text=model.mainSharingContent;
-//    [self setupMainSharingContentLabel];
+    //    [self setupMainSharingContentLabel];
     //    [self setupNewSharingImagesContainerViewWithImageArray:(model.sharingImages.count>0?@[model.sharingImages[0]]:nil)];
     [self setupNewSharingImagesContainerViewWithImageArray:model.sharingImages];
     
     [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
     
     [self.locationRecordButton setTitle:model.locationRecord forState:UIControlStateNormal];
-    [self setupSharingCommentsTableViewWithCellModels];
+    [self setupSharingCommentsTableViewWithCellModels:model.sharingComments];
+//    [self.sharingCommentsTableView setModels:model.sharingComments];
     
     if (model.isThumberuped==1) {
         [self.thumberUpButton setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
