@@ -16,4 +16,6 @@
 
 + (NSString *)randomText;
 
+//文字固定宽度下，获取动态高度
+-(CGFloat)getBoundingHeightWithWidth:(CGFloat)width font:(UIFont)font;
 @end

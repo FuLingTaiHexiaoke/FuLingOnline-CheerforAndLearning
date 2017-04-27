@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKSharingShowSubViewControllers/FLXSuggestedSharingTableViewController.m"
-            timestampString = "514801022.561696"
+            timestampString = "514978858.864992"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
             landmarkName = "-sendComment:"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,7 +554,7 @@
                   moduleName = "FuLingOnline-CheerforAndLearning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hanjinbo/Documents/xiaoke/%E7%BB%83%E4%B9%A0%E9%A1%B9%E7%9B%AE/FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCells/FLXKSharingBaseCell.m"
-                  timestampString = "514799063.372986"
+                  timestampString = "514980006.123069"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -569,7 +569,7 @@
                   moduleName = "FuLingOnline-CheerforAndLearning"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hanjinbo/Documents/xiaoke/%E7%BB%83%E4%B9%A0%E9%A1%B9%E7%9B%AE/FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCells/FLXKSharingBaseCell.m"
-                  timestampString = "514799063.374313"
+                  timestampString = "514980006.12455"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "117"
@@ -666,7 +666,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
-            timestampString = "514809226.092966"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-getCommentString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-getCommentString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -681,44 +713,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
-            timestampString = "514809226.092966"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-getCommentString:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
-            timestampString = "514809226.092966"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-getCommentString:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/TableView/FLXKBaseSharingCommentTableView.m"
-            timestampString = "514807152.753965"
+            timestampString = "514979925.332122"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-getTableHeight"
             landmarkType = "7">
          </BreakpointContent>
@@ -762,12 +762,204 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
-            timestampString = "514809226.092966"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-textView:shouldInteractWithURL:inRange:interaction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m"
+            timestampString = "514870028.05403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-fd_heightForCellWithIdentifier:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-textView:shouldInteractWithURL:inRange:interaction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-canPerformAction:withSender:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-canPerformAction:withSender:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514978217.017895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "@implementation FLXKBaseCommentCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/Common Utilities/FLXKAPPRouter/FLXKUrlSchemaRouter/FLXKAPPRouter.m"
+            timestampString = "514978178.914823"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "-textView:shouldInteractWithURL:inRange:interaction:"
+            landmarkName = "-jumpToVC:withQueryDic:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsSharingViewController.m"
+            timestampString = "514978454.419864"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/Common Utilities/FLXKAPPRouter/FLXKUrlSchemaRouter/FLXKAPPRouter.m"
+            timestampString = "514978949.401777"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-getDesiredVCWithName:Queries:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/Common Utilities/FLXKAPPRouter/FLXKUrlSchemaRouter/FLXKAPPRouter.m"
+            timestampString = "514978968.492506"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "-getCurrentViewControllerContainer"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/Common Utilities/FLXKAPPRouter/FLXKUrlSchemaRouter/FLXKAPPRouter.m"
+            timestampString = "514978994.303666"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "-jumpToVC:withQueryDic:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCells/FLXKSharingBaseCell.m"
+            timestampString = "514980003.675902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-addFriendsharingComment:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingCommentTableView/CommentCell/FLXKBaseCommentCell.m"
+            timestampString = "514980400.496328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-getCommentString:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

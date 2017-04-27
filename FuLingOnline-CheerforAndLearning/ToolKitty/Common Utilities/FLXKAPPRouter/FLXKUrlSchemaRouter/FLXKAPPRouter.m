@@ -75,15 +75,14 @@
         
         //get current ViewController to show the Desired ViewController
         NSString* containerVCName=queries[@"containerVCName"];
-        UIViewController *currentVC = [self getFinalVCFromCurrentVC: [self getRootVC ] withFinalVCContainerName:containerVCName];
-        if (currentVC.navigationController) {
+        UIViewController *currentPresentingViewController = [self getDesiredPresentingViewController:[self getCurrentViewControllerContainer] withDesiredViewControllerContainerName:containerVCName];
+        if (currentPresentingViewController.navigationController) {
             DesiredVC.hidesBottomBarWhenPushed = YES;
-            [currentVC.navigationController pushViewController:DesiredVC animated:YES];
+            [currentPresentingViewController.navigationController pushViewController:DesiredVC animated:YES];
         }else{
-            [currentVC presentViewController:DesiredVC animated:YES completion:nil];
+            [currentPresentingViewController presentViewController:DesiredVC animated:YES completion:nil];
         }
     }
-    
 }
 
 -(UIViewController*)getDesiredVCWithName:(NSString *)VCName Queries:(NSDictionary*)queries{
@@ -115,10 +114,10 @@
 }
 
 /**
- *  得到当前显示的VC
+ *  得到当前显示的ViewControllerContainer容器，比如UITabBarController，navigationController，或者简单的UIViewController
  *
  */
--(UIViewController *)getRootVC{
+-(UIViewController *)getCurrentViewControllerContainer{
     
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
     //app默认windowLevel是UIWindowLevelNormal，如果不是，找到UIWindowLevelNormal的
@@ -140,10 +139,10 @@
     if (appRootVC.presentedViewController) {
         nextResponder = appRootVC.presentedViewController;
     }else{
-        NSArray* a= [window subviews];
-        [a enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"nextResponder: %lu  : %@",(unsigned long)idx, [obj nextResponder]);
-        }];
+//        NSArray* a= [window subviews];
+//        [a enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//            NSLog(@"nextResponder: %lu  : %@",(unsigned long)idx, [obj nextResponder]);
+//        }];
         
         UIView *frontView = [[window subviews] objectAtIndex:0];
         nextResponder = [frontView nextResponder];
@@ -151,74 +150,65 @@
     return (UIViewController *)nextResponder;
 }
 
-- (UIViewController *)getFinalVCFromCurrentVC:(UIViewController*)nowCurrentVC withFinalVCContainerName:(NSString*)containerVCName{
+- (UIViewController *)getDesiredPresentingViewController:(UIViewController*)currentViewControllerContainer withDesiredViewControllerContainerName:(NSString*)desiredViewControllerContainerName{
     
-    __block UIViewController * finalCurrentVC;
-    if ([nowCurrentVC isKindOfClass:[UITabBarController class]]){
-        UITabBarController * tabbar = (UITabBarController *)nowCurrentVC;
-        
-        if ([containerVCName isEqualToString:@""]) {
+    __block UIViewController * desiredPresentingVC;
+    //currentVCContainer 为 UITabBarController
+    if ([currentViewControllerContainer isKindOfClass:[UITabBarController class]]){
+        UITabBarController * tabbar = (UITabBarController *)currentViewControllerContainer;
+        //当前显示的tabbaritem上直接push
+        if ([desiredViewControllerContainerName isEqualToString:@""]) {
             UINavigationController * nav = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
-            finalCurrentVC=nav.childViewControllers.lastObject;
+            desiredPresentingVC=nav.childViewControllers.lastObject;
         }
-        
+          //先跳转到另外的tabbaritem再上push,containerVCName为目的tabbaritem基类
         else{
-            
             __block  NSUInteger tabbarSelectedIndex=tabbar.selectedIndex;
-//            NSLog(@"tabbar.selectedIndex 1 %lu", (unsigned long)tabbar.selectedIndex);
             if (tabbar.childViewControllers) {
-                
-//                [tabbar.childViewControllers  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                    NSLog(@"tabbar.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
-//                }];
-
-                
                 [tabbar.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    
                     //UINavigationController
                     if ([obj isKindOfClass:UINavigationController.class]) {
-                        UINavigationController*  navigationObj= (UINavigationController*)obj;
-                        
-                        [navigationObj.childViewControllers  enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                            NSLog(@"navigationObj.childViewControllers: %lu  : %@",(unsigned long)idx, obj);
-                        }];
-                        
-                        [navigationObj.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull innerObj, NSUInteger innerIdx, BOOL * _Nonnull innerStop) {
-                            if ([NSStringFromClass(innerObj.class) isEqualToString:containerVCName]) {
-                                finalCurrentVC=innerObj;
+                        UINavigationController*  navigationController= (UINavigationController*)obj;
+                        [navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull innerObj, NSUInteger innerIdx, BOOL * _Nonnull innerStop) {
+                            if ([NSStringFromClass(innerObj.class) isEqualToString:desiredViewControllerContainerName]) {
+                                desiredPresentingVC=innerObj;
                                 tabbarSelectedIndex=idx;
-                                [navigationObj popToViewController:innerObj animated:NO];
+                                [navigationController popToViewController:innerObj animated:NO];
                                 *innerStop=YES;
                                 *stop=YES;
                             }
                         }];
                     }
-                    
                     //Normal UIViewController
-                    else if ([NSStringFromClass(obj.class) isEqualToString:containerVCName]) {
-                        finalCurrentVC=obj;
+                    else if ([NSStringFromClass(obj.class) isEqualToString:desiredViewControllerContainerName]) {
+                        desiredPresentingVC=obj;
                         tabbarSelectedIndex=idx;
                         *stop=YES;
                         
                     }
                 }];
             }
+            //找到了就让tabbar进行跳转
             tabbar.selectedIndex=tabbarSelectedIndex;
         }
         //        UINavigationController * nav = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
         //        result=nav.childViewControllers.lastObject;
         //        [self getFinalCurrentVCFrom:finalCurrentVC withContainerVCName:containerVCName];
         
-    }else if ([nowCurrentVC isKindOfClass:[UINavigationController class]]){
-        UIViewController * nav = (UIViewController *)nowCurrentVC;
-        finalCurrentVC = nav.childViewControllers.lastObject;
+    }
+    //currentVCContainer 为 UINavigationController
+    else if ([currentViewControllerContainer isKindOfClass:[UINavigationController class]]){
+        UINavigationController * nav = (UINavigationController *)currentViewControllerContainer;
+        desiredPresentingVC = nav.childViewControllers.lastObject;
 //       finalCurrentVC= [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
 //           [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
-    }else{
-        finalCurrentVC = nowCurrentVC;
+    }
+     //currentVCContainer 为 UIViewController
+    else{
+        desiredPresentingVC = currentViewControllerContainer;
     }
     
-    return finalCurrentVC;
+    return desiredPresentingVC;
 }
 /**
  *  判断某个类是否有某个参数，防止 setvalue forkey 崩溃

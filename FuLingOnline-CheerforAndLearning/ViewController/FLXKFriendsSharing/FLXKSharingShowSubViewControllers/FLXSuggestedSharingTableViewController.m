@@ -80,7 +80,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 #pragma mark -
@@ -129,7 +129,7 @@
     [cell setSharingCellModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
-    cell.addCommentBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
+    cell.addCommentRequestBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
         [weakSelf showToolBarWithPlaceholder:placeholder];
         weakSelf.currentOperationCell=currentCell;
     };
@@ -168,7 +168,7 @@
 //}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Router(Router_Launch_NotificationCenter)
+//    Router(Router_Launch_NotificationCenter)
 }
 
 #pragma mark - Scroll Delegate
@@ -238,7 +238,6 @@
             @strongify(self)
             [self growingTextViewChangeHeight:height];
         };
-        
         [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(48);
             make.width.mas_equalTo(self.view.superview.superview.mas_width);

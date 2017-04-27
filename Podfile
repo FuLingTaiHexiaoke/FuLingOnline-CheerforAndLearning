@@ -3,6 +3,7 @@ target ‘FuLingOnline-CheerforAndLearning’ do
 # use_frameworks!
 ##     网络请求
 pod 'AFNetworking', '~> 3.1.0'
+#pod 'AFNetworking'
 pod 'SDWebImage'
 #pod 'CocoaAsyncSocket'
 #pod 'MJRefresh'
@@ -27,6 +28,7 @@ pod 'TZImagePickerController'
 #pod 'vfrReader', '~> 2.8.6'
 #pod 'FDFullscreenPopGesture', '1.1'
 #pod 'SwipeBack', '~> 1.1'
+pod 'MLLabel', '~> 1.8'
 
 
 ##      custom views

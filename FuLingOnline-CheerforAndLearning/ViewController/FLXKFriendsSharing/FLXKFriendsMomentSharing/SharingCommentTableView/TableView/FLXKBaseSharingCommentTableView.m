@@ -61,8 +61,22 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   SharingCommentCellModel * model= _models[indexPath.row];
+    model.toUserID=model.fromUserID;
+    model.toUserName=model.fromUserName;
+    if (self.addCommentRequsetBlock) {
+        self.addCommentRequsetBlock(model);
+    }
+
 //  SharingCommentCellModel* model= _models[indexPath.row];
     
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return  [self fd_heightForCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] configuration:^(FLXKBaseCommentCell *cell) {
+        [self configureCell:cell withModel:_models[indexPath.row]];
+    }];
 }
 
 #pragma mark - Public methods

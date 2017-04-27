@@ -10,11 +10,12 @@
 
 @implementation NSString (Extensions)
 
--(CGFloat)getAutoHeightWithWidth:(CGFloat)width{
+//文字固定宽度下，获取动态高度
+-(CGFloat)getBoundingHeightWithWidth:(CGFloat)width font:(UIFont*)font {
     //init attribute
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     [style setLineBreakMode:NSLineBreakByWordWrapping];
-    NSDictionary *attribute = @{ NSFontAttributeName : [UIFont systemFontOfSize:17.0], NSParagraphStyleAttributeName : style };
+    NSDictionary *attribute = @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
     
     //get Rect
     CGSize size=CGSizeMake(width, CGFLOAT_MAX);

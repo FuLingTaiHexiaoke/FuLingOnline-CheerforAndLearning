@@ -33,6 +33,7 @@
 #define isNull(x)             (!x || [x isKindOfClass:[NSNull class]])
 #define toInt(x)              (isNull(x) ? 0 : [x intValue])
 #define isEmptyString(x)      (isNull(x) || [x isEqual:@""] || [x isEqual:@"(null)"])
+#define isNotEmptyString(x)     ( !(isNull(x) || [x isEqual:@""] || [x isEqual:@"(null)"]))
 
 #define sleep(s);             [NSThread sleepForTimeInterval:s];
 #define Syn(x)                @synthesize x = _##x

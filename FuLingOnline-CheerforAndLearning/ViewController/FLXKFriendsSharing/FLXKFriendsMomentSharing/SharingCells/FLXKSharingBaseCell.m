@@ -89,13 +89,13 @@
     [self addFriendsharingThumbup];
 }
 
-- (void)addComment{
+- (void)addCommentRequest{
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.newsID=self.sharingCellModel.newsID;
     self.currentCommentCellModel=model;
     
-    if ( self.addCommentBlock) {
-        self.addCommentBlock(@"评论",self);
+    if ( self.addCommentRequestBlock) {
+        self.addCommentRequestBlock(@"评论",self);
     }
 }
 
@@ -106,7 +106,7 @@
     model.fromUserName=[FLXKSharedAppSingleton sharedSingleton].sharedUser.name?:@"test";
     if (self.currentCommentCellModel.fromUserID) {
         model.toUserID=self.currentCommentCellModel.fromUserID;
-        model.toUserName=self.currentCommentCellModel.toUserName;
+        model.toUserName=self.currentCommentCellModel.fromUserName;
         model.isReply=1;
     }
     model.content=[parameters objectForKey:@"content"];

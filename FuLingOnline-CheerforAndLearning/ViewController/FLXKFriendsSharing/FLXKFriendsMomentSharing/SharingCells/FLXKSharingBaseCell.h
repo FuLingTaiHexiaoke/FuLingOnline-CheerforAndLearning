@@ -6,6 +6,8 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 
+#define content_default_height 40
+
 #import <UIKit/UIKit.h>
 //utilites
 //child viewController
@@ -37,9 +39,9 @@
 
 //评论
 //触发评论
-@property (strong, nonatomic)void(^addCommentBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
+@property (strong, nonatomic)void(^addCommentRequestBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
 
-- (void)addComment;
+- (void)addCommentRequest;
 -(void)addFriendsharingComment:(NSDictionary*)parameters;
 //分享
 

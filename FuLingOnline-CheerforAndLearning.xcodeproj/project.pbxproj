@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */; };
+		AAB530D27B37184B7A39C0B7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */; };
 		B90CD9581E763FD400278EDB /* FLXKAPPRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9561E763FD400278EDB /* FLXKAPPRouter.m */; };
 		B90CD97B1E763FFD00278EDB /* AccessoryImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD95C1E763FFD00278EDB /* AccessoryImageViewController.m */; };
 		B90CD97C1E763FFD00278EDB /* AccessoryVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD95E1E763FFD00278EDB /* AccessoryVideoViewController.m */; };
@@ -518,6 +518,8 @@
 		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
 		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
 		B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */; };
+		B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */; };
+		B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */; };
 		B9C263871E9B3182003D7B51 /* FLXKUserManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C263831E9B3182003D7B51 /* FLXKUserManagerViewController.m */; };
 		B9C263881E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C263861E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.m */; };
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
@@ -685,9 +687,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29C56B35CBB4500AD771DE78 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; sourceTree = "<group>"; };
-		52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FuLingOnline-CheerforAndLearning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F5B72A2F25635274EB9364D /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; sourceTree = "<group>"; };
+		4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FuLingOnline-CheerforAndLearning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83725F77059A9EA689863C90 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		A2775D7B9EDAC79BDC6EF57F /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; sourceTree = "<group>"; };
 		B90025971DAE21F300B34438 /* FuLingOnline-CheerforAndLearning-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Bridging-Header.h"; sourceTree = "<group>"; };
 		B90CD9551E763FD400278EDB /* FLXKAPPRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAPPRouter.h; sourceTree = "<group>"; };
 		B90CD9561E763FD400278EDB /* FLXKAPPRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAPPRouter.m; sourceTree = "<group>"; };
@@ -1337,6 +1339,9 @@
 		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
 		B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingOperationContainerView.h; sourceTree = "<group>"; };
 		B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingOperationContainerView.m; sourceTree = "<group>"; };
+		B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell1.m; sourceTree = "<group>"; };
+		B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseCommentCell1.xib; sourceTree = "<group>"; };
+		B9BEF95C1EB1E56200F042C5 /* FLXKBaseCommentCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseCommentCell1.h; sourceTree = "<group>"; };
 		B9C263831E9B3182003D7B51 /* FLXKUserManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKUserManagerViewController.m; sourceTree = "<group>"; };
 		B9C263841E9B3182003D7B51 /* FLXKUserManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKUserManagerViewController.h; sourceTree = "<group>"; };
 		B9C263851E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKUserManagerCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1553,7 +1558,7 @@
 			files = (
 				B930987D1E56974C00306F39 /* CoreLocation.framework in Frameworks */,
 				B97261AD1E2DED0E008B6356 /* libsqlite3.0.tbd in Frameworks */,
-				483ACC2EC35E7BF36AA3D9D7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */,
+				AAB530D27B37184B7A39C0B7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1574,25 +1579,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		41F46BC93DB4219428C97CC3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				29C56B35CBB4500AD771DE78 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */,
-				5F5B72A2F25635274EB9364D /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		73427F28B1AE73D37DB133B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B930987C1E56974C00306F39 /* CoreLocation.framework */,
 				B97261AC1E2DED0E008B6356 /* libsqlite3.0.tbd */,
-				52C276BA2D1AFFC158619EE2 /* libPods-FuLingOnline-CheerforAndLearning.a */,
 				B90CD9A71E76475200278EDB /* UserNotifications.framework */,
 				B90CD9A91E76475200278EDB /* UserNotificationsUI.framework */,
+				4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B70156DE6D03B041841B0EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83725F77059A9EA689863C90 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */,
+				A2775D7B9EDAC79BDC6EF57F /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
@@ -1998,6 +2003,9 @@
 		B92A301F1E8E4FFF00E8AA30 /* CommentCell */ = {
 			isa = PBXGroup;
 			children = (
+				B9BEF95C1EB1E56200F042C5 /* FLXKBaseCommentCell1.h */,
+				B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */,
+				B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */,
 				B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */,
 				B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */,
 				B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */,
@@ -3311,8 +3319,8 @@
 				B90CD9D51E76477600278EDB /* NotificationContentExtensionContentFeedback */,
 				B9614A421E82CC22008B7531 /* FuLingOnlineIdeaTest */,
 				B9D854B31DAC8BE2001AD79C /* Products */,
-				41F46BC93DB4219428C97CC3 /* Pods */,
 				73427F28B1AE73D37DB133B0 /* Frameworks */,
+				8B70156DE6D03B041841B0EB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3584,13 +3592,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9D854DF1DAC8BE2001AD79C /* Build configuration list for PBXNativeTarget "FuLingOnline-CheerforAndLearning" */;
 			buildPhases = (
-				51D2F220072F338FA406E906 /* Check Pods Manifest.lock */,
+				73DB7546AE86CAC06E7FD8C9 /* [CP] Check Pods Manifest.lock */,
 				B9D854AE1DAC8BE2001AD79C /* Sources */,
 				B9D854AF1DAC8BE2001AD79C /* Frameworks */,
 				B9D854B01DAC8BE2001AD79C /* Resources */,
-				8EA8023138C20737CAEE0A31 /* Embed Pods Frameworks */,
-				C259388CFE11B10373E9554D /* Copy Pods Resources */,
 				B90CD9A11E76468D00278EDB /* Embed App Extensions */,
+				D905C02D18BD57D5F5971554 /* [CP] Embed Pods Frameworks */,
+				09F844C24E954173BB18F99F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3967,6 +3975,7 @@
 				B97507841E4C58F700A577E7 /* 049@2x.png in Resources */,
 				B97506C71E4C58F600A577E7 /* smiley_43.png in Resources */,
 				B97507C01E4C58F700A577E7 /* 079@2x.png in Resources */,
+				B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */,
 				B97507A31E4C58F700A577E7 /* 065.png in Resources */,
 				B97506B31E4C58F600A577E7 /* smiley_25.png in Resources */,
 				B97507561E4C58F600A577E7 /* 026@2x.png in Resources */,
@@ -4247,49 +4256,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51D2F220072F338FA406E906 /* Check Pods Manifest.lock */ = {
+		09F844C24E954173BB18F99F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8EA8023138C20737CAEE0A31 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C259388CFE11B10373E9554D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73DB7546AE86CAC06E7FD8C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D905C02D18BD57D5F5971554 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4411,6 +4420,7 @@
 				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */,
+				B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */,
 				B95987991EAEEBB100A12E7F /* SharingCommentCellModel.m in Sources */,
 				B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
@@ -5001,7 +5011,7 @@
 		};
 		B9D854E01DAC8BE2001AD79C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29C56B35CBB4500AD771DE78 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */;
+			baseConfigurationReference = 83725F77059A9EA689863C90 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -5025,7 +5035,7 @@
 		};
 		B9D854E11DAC8BE2001AD79C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F5B72A2F25635274EB9364D /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */;
+			baseConfigurationReference = A2775D7B9EDAC79BDC6EF57F /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

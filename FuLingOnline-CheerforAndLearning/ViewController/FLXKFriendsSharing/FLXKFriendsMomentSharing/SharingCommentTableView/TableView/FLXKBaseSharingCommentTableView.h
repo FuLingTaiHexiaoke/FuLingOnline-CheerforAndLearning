@@ -16,7 +16,7 @@
 //child viewController
 @interface FLXKBaseSharingCommentTableView : UITableView
 //public method
-@property (strong, nonatomic)void(^addCommentBlock)(SharingCommentCellModel* model);
+@property (strong, nonatomic)void(^addCommentRequsetBlock)(SharingCommentCellModel* model);
 
 //getter/setter
 -(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models;

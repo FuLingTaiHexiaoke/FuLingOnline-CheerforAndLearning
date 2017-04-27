@@ -28,6 +28,7 @@ PODS:
   - libextobjc/RuntimeExtensions (0.4.1)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
+  - MLLabel (1.10.3)
   - Reveal-SDK (2)
   - RTRootNavigationController (0.5.21)
   - SDWebImage (3.8.2):
@@ -38,7 +39,7 @@ PODS:
   - UITableView+FDTemplateLayoutCell (1.4)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.1.0)
+  - AFNetworking
   - BaiduMobStat
   - BlocksKit/Core (~> 2.2.0)
   - BlocksKit/UIKit (~> 2.2.0)
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - libextobjc/EXTScope (~> 0.4.1)
   - Masonry (~> 1.0.2)
   - MJExtension
+  - MLLabel (~> 1.8)
   - Reveal-SDK
   - RTRootNavigationController
   - SDWebImage
@@ -65,6 +67,7 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MLLabel: 3760fb38aeac53b212409b634bc4aa4bf39ab628
   Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
   RTRootNavigationController: 1d4e675d08f4993e78762cbfdf8e3ed468b7cfe9
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
@@ -72,4 +75,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: e13a695a4623a94ac094b43baa28f8046d6a29f9
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 13bff74a1690de35e6202cd2f5867a953e298d58
+
+COCOAPODS: 1.2.1
