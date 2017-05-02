@@ -29,6 +29,7 @@ pod 'TZImagePickerController'
 #pod 'FDFullscreenPopGesture', '1.1'
 #pod 'SwipeBack', '~> 1.1'
 pod 'MLLabel', '~> 1.8'
+#pod 'JMAnimatedImageView'
 
 
 ##      custom views

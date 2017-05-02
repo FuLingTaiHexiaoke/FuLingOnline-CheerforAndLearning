@@ -29,9 +29,9 @@ typedef NS_OPTIONS(NSUInteger, EmotionGroupShowingOption) {
 +(instancetype)sharedEmotionBoard;
 
 //便利方法，同事注册多个控件
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
+//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
+//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
 
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar;
 

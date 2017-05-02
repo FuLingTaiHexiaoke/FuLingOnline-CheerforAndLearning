@@ -8,6 +8,7 @@
 
 #import "NSString+Extensions.h"
 
+
 @implementation NSString (Extensions)
 
 //文字固定宽度下，获取动态高度

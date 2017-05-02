@@ -126,7 +126,7 @@
     //    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];
     //    [cell setSharingCellModel:_models[indexPath.row] WithIndexPath:indexPath ];
     //    NSLog(@"indexPath.row %ld", (long)indexPath.row);
-    [cell setSharingCellModel:_models[indexPath.row]];
+    [cell setModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
     cell.addCommentRequestBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){

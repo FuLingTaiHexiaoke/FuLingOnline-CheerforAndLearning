@@ -98,13 +98,12 @@
     [self.publishTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
     
-    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
+    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image) shouldHideToolBar:NO];
     
 }
-
 
 -(void)dealloc{
     NSLog(@"%@ 销毁",NSStringFromClass(self.class));

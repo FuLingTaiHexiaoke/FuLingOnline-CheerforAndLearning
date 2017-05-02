@@ -68,8 +68,8 @@
 
 #pragma mark - Delegate
 #pragma mark - Public methods
--(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath{
-    //    self.sharingCellModel=model;
+-(void)setmodel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath{
+    //    self.model=model;
     //    [self.sharingMainOperationsContainerView setModel:model WithIndexPath:indexPath];
 }
 
@@ -114,7 +114,7 @@
 }
 #pragma mark - View Event
 - (IBAction)sharingThumbup:(UIButton*)sender {
-    if (self.sharingCellModel.isThumberuped==1) {
+    if (self.model.isThumberuped==1) {
         [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
     }
     else{
@@ -135,8 +135,8 @@
 #pragma mark - Private methods
 #pragma mark - getter/setter
 
--(void)setSharingCellModel:(FLXKSharingCellModel *)model{
-    [super setSharingCellModel:model];
+-(void)setModel:(FLXKSharingCellModel *)model{
+    [super setModel:model];
     //    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
     [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     self.nickNameLabel.text=model.nickName;

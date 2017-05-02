@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 //utilites
+#import "NSAttributedString+EmotionExtension.h"
 //child viewController
 //subviews
 #import "FLXKBaseSharingPictureLayoutView.h"
@@ -52,7 +53,7 @@
 @property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
 //-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath;
 
-@property (strong, nonatomic)FLXKSharingCellModel* sharingCellModel;
+@property (strong, nonatomic)FLXKSharingCellModel* model;
 @property (strong, nonatomic)NSIndexPath * indexPath;
 //UI state record properties
 @end

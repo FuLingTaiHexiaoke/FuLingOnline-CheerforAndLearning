@@ -10,10 +10,11 @@
 #import "FLXKSharingBaseCell.h"
 //utilites
 #import "FLXKHttpRequestModelHelper.h"
+
 //child viewController
 //subviews
 //models
-//#import "FLXKSharingCellModel.h"
+//#import "FLXKmodel.h"
 
 @interface FLXKSharingBaseCell ()
 //IBOutlet
@@ -51,13 +52,14 @@
 #pragma mark - Delegate
 #pragma mark - Public methods
 
--(void)setSharingCellModel:(FLXKSharingCellModel *)sharingCellModel{
-    _sharingCellModel=sharingCellModel;
+
+-(void)setModel:(FLXKSharingCellModel *)model{
+    _model=model;
 }
 
 
 - (void)addThumbup:(UIButton*)sender {
-    if (self.sharingCellModel.isThumberuped==1) {
+    if (self.model.isThumberuped==1) {
         [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
     }
     else{
@@ -91,7 +93,7 @@
 
 - (void)addCommentRequest{
     SharingCommentCellModel* model=[SharingCommentCellModel new];
-    model.newsID=self.sharingCellModel.newsID;
+    model.newsID=self.model.newsID;
     self.currentCommentCellModel=model;
     
     if ( self.addCommentRequestBlock) {
@@ -115,7 +117,7 @@
     parameters=[model modelToDic];
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        [self.sharingCellModel.sharingComments addObject:model];
+        [self.model.sharingComments addObject:model];
         [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
@@ -136,25 +138,25 @@
 //点赞
 -(void)addFriendsharingThumbup{
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-            if (self.sharingCellModel.isThumberuped) {
+            if (self.model.isThumberuped) {
                 __block  NSInteger index;
-                [self.sharingCellModel.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.model.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     if ([obj.login_name isEqualToString:[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name ]) {
                         index=idx;
                         *stop=YES;
                     }
                 }];
                 
-                [self.sharingCellModel.likeTheSharingUserRecords removeObjectAtIndex:index];
+                [self.model.likeTheSharingUserRecords removeObjectAtIndex:index];
             }
             else{
-                [self.sharingCellModel.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
+                [self.model.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
             }
-            self.sharingCellModel.isThumberuped=!self.sharingCellModel.isThumberuped;
+            self.model.isThumberuped=!self.model.isThumberuped;
             [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
-    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_sharingCellModel.newsID,@"isThumberuped":[NSNumber numberWithInteger:_sharingCellModel.isThumberuped]}];
+    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_model.newsID,@"isThumberuped":[NSNumber numberWithInteger:_model.isThumberuped]}];
 }
 
 
