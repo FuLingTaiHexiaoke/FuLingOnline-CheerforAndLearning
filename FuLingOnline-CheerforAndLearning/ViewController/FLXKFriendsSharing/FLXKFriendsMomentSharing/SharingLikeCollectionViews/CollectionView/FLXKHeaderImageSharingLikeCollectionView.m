@@ -41,6 +41,21 @@
 
 #pragma mark - ViewController LifeCircle
 
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//    self=  [super initWithCoder:aDecoder];
+//    if (self) {
+//        [self setupUI];
+//    }
+//    return self;
+//}
+
+- (instancetype)init {
+//    if ([super init]) {
+        self = [[NSBundle mainBundle] loadNibNamed:@"FLXKHeaderImageSharingLikeCollectionView" owner:nil options:nil].lastObject;
+//    }
+    return self;
+}
+
 -(void)awakeFromNib{
     [super awakeFromNib];
     [self setupUI];

@@ -28,6 +28,30 @@
 
 #pragma mark - ViewController LifeCircle
 
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self=  [super initWithCoder:aDecoder];
+    if (self) {
+        [self setupUI];
+        self.delegate=self;
+        self.dataSource=self;
+        self.scrollEnabled=NO;
+        self.separatorStyle=UITableViewCellSeparatorStyleNone;
+    }
+    return self;
+}
+
+- (instancetype)init {
+    if ([super init]) {
+        [self setupUI];
+        self.delegate=self;
+        self.dataSource=self;
+        self.scrollEnabled=NO;
+        self.separatorStyle=UITableViewCellSeparatorStyleNone;
+    }
+    return self;
+}
+
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

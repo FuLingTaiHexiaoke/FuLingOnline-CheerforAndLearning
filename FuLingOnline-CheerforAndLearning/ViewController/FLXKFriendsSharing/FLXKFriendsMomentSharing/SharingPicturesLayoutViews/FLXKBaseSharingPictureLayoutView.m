@@ -19,7 +19,7 @@
     NSInteger imageCount=imageArray.count;
     switch (imageCount) {
         case 0:
-            pictureLayoutView=nil;
+            pictureLayoutView=[[FLXKBaseSharingPictureLayoutView alloc]init];
             break;
 //        case 1:
 //            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];

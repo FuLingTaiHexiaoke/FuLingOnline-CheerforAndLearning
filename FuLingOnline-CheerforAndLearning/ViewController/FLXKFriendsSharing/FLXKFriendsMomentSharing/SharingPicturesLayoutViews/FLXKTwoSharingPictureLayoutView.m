@@ -118,6 +118,11 @@
     CGFloat width;
     NSInteger count= imageArray.count;
     switch (count) {
+        case 0:{
+            width=0;
+            height=0;
+            break;
+        }
         case 1:{
             FLXKSharingImagesModel *  obj = imageArray[0];
             width= obj.thumberImageWidth;
@@ -157,9 +162,10 @@
         make.centerY.mas_equalTo(self.mas_centerY);
         make.left.mas_equalTo(self.mas_left);
     }];
-    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height);
-    }];
+//    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height);
+//    }];
+    self.viewHeight=height;
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
     [self.collectionView reloadData];

@@ -19,6 +19,8 @@
 
 @property(nonatomic)NSArray<FLXKSharingImagesModel*>* imageArray;
 
+@property(nonatomic,assign)CGFloat viewHeight;
+
 +(FLXKBaseSharingPictureLayoutView*)setupSharingPictureLayoutViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray;
 
 @end

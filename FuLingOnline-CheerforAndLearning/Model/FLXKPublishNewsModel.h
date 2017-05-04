@@ -53,14 +53,14 @@
 @property (nonatomic,assign)NSInteger has_video;
 @property (nonatomic) NSString *video_id;
 
-@property (nonatomic,assign)NSInteger *hasAD;
+@property (nonatomic,assign)NSInteger hasAD;
 
-@property (nonatomic,assign)NSInteger *priority;
+@property (nonatomic,assign)NSInteger priority;
 
 /**
  *  图片类型
  */
-@property (nonatomic,assign)NSInteger *image_type;
+@property (nonatomic,assign)NSInteger image_type;
 
 
 /**

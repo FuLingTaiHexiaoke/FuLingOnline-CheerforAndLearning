@@ -99,6 +99,7 @@
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKBaseViewController.m */; };
 		B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B940CE401DE42C65004427F0 /* FLXKTabBarController.m */; };
+		B94132791EBAC613000EC5F3 /* FLXKHeaderImageSharingLikeCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B94132781EBAC613000EC5F3 /* FLXKHeaderImageSharingLikeCollectionView.xib */; };
 		B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7621DE58AFC00598437 /* FLXKStyleManager.m */; };
 		B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B941F7721DE59B2600598437 /* HomeNewsViewController.m */; };
 		B948CBEA1DD5C7A800E6ED93 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B948CBE91DD5C7A800E6ED93 /* Settings.bundle */; };
@@ -852,6 +853,7 @@
 		B93FF88A1E01285800070BD4 /* FLXKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseViewController.m; sourceTree = "<group>"; };
 		B940CE3F1DE42C65004427F0 /* FLXKTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBarController.h; sourceTree = "<group>"; };
 		B940CE401DE42C65004427F0 /* FLXKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBarController.m; sourceTree = "<group>"; };
+		B94132781EBAC613000EC5F3 /* FLXKHeaderImageSharingLikeCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKHeaderImageSharingLikeCollectionView.xib; sourceTree = "<group>"; };
 		B941F7611DE58AFC00598437 /* FLXKStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKStyleManager.h; sourceTree = "<group>"; };
 		B941F7621DE58AFC00598437 /* FLXKStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKStyleManager.m; sourceTree = "<group>"; };
 		B941F7711DE59B2600598437 /* HomeNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNewsViewController.h; sourceTree = "<group>"; };
@@ -2298,6 +2300,7 @@
 				B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */,
 				B9E17E321EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.h */,
 				B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */,
+				B94132781EBAC613000EC5F3 /* FLXKHeaderImageSharingLikeCollectionView.xib */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -3895,6 +3898,7 @@
 				B97507D71E4C58F700A577E7 /* inactive_page_image.png in Resources */,
 				B975075E1E4C58F600A577E7 /* 030@2x.png in Resources */,
 				B97507831E4C58F700A577E7 /* 049.png in Resources */,
+				B94132791EBAC613000EC5F3 /* FLXKHeaderImageSharingLikeCollectionView.xib in Resources */,
 				B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */,
 				B975074C1E4C58F600A577E7 /* 021@2x.png in Resources */,
 				B97506C61E4C58F600A577E7 /* smiley_42.png in Resources */,

@@ -363,7 +363,9 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 //    [self resetTextStyle];
     
     //notify to change the height and so on.
-    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+    if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
+            [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+    }
 }
 
 - (void)insertEmoji:(NSString*)EmojiName{
@@ -377,7 +379,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 //    [self resetTextStyle];
     
     //notify to change the height and so on.
-    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+//    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+    if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
+        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+    }
 }
 
 - (void)resetTextStyle {
@@ -435,7 +440,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         }
         
         //notify to change the height and so on.
-        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+//        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+        if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
+            [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+        }
     }
 }
 

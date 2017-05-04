@@ -56,7 +56,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-Kz-3Jn">
                                         <rect key="frame" x="17" y="4" width="55" height="22"/>
-                                        <state key="normal" title=" 分享" image="9DD8C0A8-C022-4646-BBC3-FB4EF7D42B74">
+                                        <state key="normal" title=" 分享" image="D60DB3F7-D4D9-471A-B3DA-37C2C0F499DA">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -71,7 +71,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5f-dj-Awi">
                                         <rect key="frame" x="26" y="4" width="36" height="22"/>
-                                        <state key="normal" title=" 赞" image="9DD8C0A8-C022-4646-BBC3-FB4EF7D42B74">
+                                        <state key="normal" title=" 赞" image="D60DB3F7-D4D9-471A-B3DA-37C2C0F499DA">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -89,7 +89,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndl-c0-Mqs">
                                         <rect key="frame" x="16" y="4" width="55" height="22"/>
-                                        <state key="normal" title=" 评论" image="06D5FA20-E3B6-4F7F-B038-42A3509D4A94">
+                                        <state key="normal" title=" 评论" image="544AD60A-6B23-4BBA-81E4-584585E30016">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -215,7 +215,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="06D5FA20-E3B6-4F7F-B038-42A3509D4A94" width="13" height="13">
+        <image name="544AD60A-6B23-4BBA-81E4-584585E30016" width="13" height="13">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -277,7 +277,7 @@ AKsArQCyALUAtwC5ALsAvQDCANkA2wDdDCMMKAwzDDwMTwxTDF4MZwxsDHQMdwx8DIsMjwyWDJ4Mqwyw
 DLIMtAy5DMEMxAzJDNEM1AzmDOkM7gAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAzwA
 </mutableData>
         </image>
-        <image name="9DD8C0A8-C022-4646-BBC3-FB4EF7D42B74" width="13" height="13">
+        <image name="D60DB3F7-D4D9-471A-B3DA-37C2C0F499DA" width="13" height="13">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
