@@ -112,8 +112,8 @@
     if (self)
     {
 //        self.translatesAutoresizingMaskIntoConstraints=YES;
-          self.translatesAutoresizingMaskIntoConstraints=NO;
-          self.contentView.translatesAutoresizingMaskIntoConstraints=NO;
+//          self.translatesAutoresizingMaskIntoConstraints=NO;
+//          self.contentView.translatesAutoresizingMaskIntoConstraints=NO;
 //        [self.contentView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
 //        self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;//**这句话很重要
         [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -416,11 +416,11 @@
 #pragma mark - getter/setter
 
 -(void)setModel:(FLXKSharingCellModel *)model{
-//    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if (obj.firstItem==self.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
-//            [self.contentView removeConstraint:obj];
-//        }
-//    }];
+    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstItem==self.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
+            [self.contentView removeConstraint:obj];
+        }
+    }];
     [super setModel:model];
     //    self.avatarImageView.image=[UIImage imageNamed:model.avatarImageUrl];
     //    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
