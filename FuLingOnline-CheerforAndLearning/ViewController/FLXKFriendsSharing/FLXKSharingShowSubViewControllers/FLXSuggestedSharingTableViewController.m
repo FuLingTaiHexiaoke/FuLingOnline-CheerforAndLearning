@@ -33,6 +33,7 @@
 #import "FLXKSharingBaseCell.h"
 #import "FLXKSharingFuLingOnlineStyleCell.h"
 #import "FLXKSharingFuLingOnlineStyleCellautolayouttest.h"
+#import "FLXKSharingFuLingOnlineStyleCellmasonry.h"
 
 
 @interface FLXSuggestedSharingTableViewController ()
@@ -53,6 +54,12 @@
 
 #pragma mark -
 #pragma mark - ViewController LifeCircle
+
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    self.tableView.estimatedRowHeight=100;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,7 +83,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self setupMessageToolBar];
+//    [self setupMessageToolBar];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -102,35 +109,44 @@
     return _models.count;
 }
 
-- (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section{
-    UITableViewHeaderFooterView * headerView=[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
-    return headerView;
-}
-
-- (nullable UITableViewHeaderFooterView *)footerViewForSection:(NSInteger)section{
-    return nil;
-}
-
--(UIView* )tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UITableViewHeaderFooterView * headerView=[tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
-    return headerView;
-    
-}
-
--(UIView* )tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    return nil;
-}
+//- (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section{
+//    UITableViewHeaderFooterView * headerView=[self.tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
+//    return headerView;
+//}
+//
+//- (nullable UITableViewHeaderFooterView *)footerViewForSection:(NSInteger)section{
+//    return nil;
+//}
+//
+//-(UIView* )tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    UITableViewHeaderFooterView * headerView=[tableView dequeueReusableHeaderFooterViewWithIdentifier:FLXKSuggestHeaderView1];
+//    return headerView;
+//    
+//}
+//
+//-(UIView* )tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//    return nil;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell ];
-    //    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];
-    //    [cell setSharingCellModel:_models[indexPath.row] WithIndexPath:indexPath ];
-    //    NSLog(@"indexPath.row %ld", (long)indexPath.row);
+    FLXKSharingFuLingOnlineStyleCellmasonry *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell forIndexPath:indexPath];
+    if (!cell) {
+        cell = [[FLXKSharingFuLingOnlineStyleCellmasonry alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    }
+    else{
+        NSLog(@"cell 重用了");
+        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    }
+    [cell.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.firstItem==cell.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
+            [cell.contentView removeConstraint:obj];
+        }
+    }];
     [cell setModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
     cell.addCommentRequestBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
-        [weakSelf showToolBarWithPlaceholder:placeholder];
+//        [weakSelf showToolBarWithPlaceholder:placeholder];
         weakSelf.currentOperationCell=currentCell;
     };
     return cell;
@@ -147,17 +163,25 @@
 //    return 44.0;
 //}
 
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+// NSLog(@"indexPath.row %lu",(unsigned long)indexPath.row);
+//    
+//  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
+//                [self configureCell:cell atIndexPath:indexPath];
+//            }];
+//    
+//     NSLog(@"indexPath.row %lu %f",(unsigned long)indexPath.row,height);
+//    return height;
+//}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return 100;
+//}
 
-            return [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
-                [self configureCell:cell atIndexPath:indexPath];
-            }];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 44.0;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+//    return 44.0;
+//}
 //- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 //    return 44.0;
 //}
@@ -184,6 +208,7 @@
 //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
         [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+//       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellmasonry") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     
     
@@ -193,74 +218,57 @@
     //            [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellstep2" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     self.tableView.estimatedRowHeight=100;
-    
+      self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     
-    //autolayout
-    //    FLXKMessageToolBar* test= [[FLXKMessageToolBar alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
-    
-    //    UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 50, 50)];
-//    UIButton* btn1=[[UIButton alloc]init];
-//    [btn1 addTarget:self action:@selector(messageToolBarBecomeFirstResponder:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn1];
-//    btn1.backgroundColor=[UIColor redColor];
+
+}
+
+//-(void)setupMessageToolBar{
+//    if (_messageToolBar) {
+//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+//    }
+//    else{
+//        [_messageToolBar removeFromSuperview];
+//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+//        _messageToolBar.backgroundColor=[UIColor yellowColor];
+//        [self.view.superview.superview  addSubview:_messageToolBar];
+//        @weakify(self)
+//        
+//        _messageToolBar.sendMessageBlock=^(NSString* message){
+//            @strongify(self)
+//            [self sendComment:message];
+//        };
+//        
+//        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
+//            @strongify(self)
+//            [self growingTextViewChangeHeight:height];
+//        };
+//        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(48);
+//            make.width.mas_equalTo(self.view.superview.superview.mas_width);
+//            make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
+//        }];
+//    }
+//}
+//
+//-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
 //    
-//    
-//    [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.height.mas_equalTo(40);
-//        make.width.mas_equalTo(self.view.mas_width);
-//        //        make.left.mas_equalTo(self.tableView.mas_left);
-//        //        make.right.mas_equalTo(self.tableView.mas_right);
-//        make.bottom.mas_equalTo(self.view.superview.bottom).offset(100);
+//    [_messageToolBar showToolBarWithPlaceholder:placeholder];
+//}
+//
+//- (void)growingTextViewChangeHeight:(float)height
+//{
+//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(height);
+//        }];
+//        [self.view layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+//        
 //    }];
-    
-}
-
--(void)setupMessageToolBar{
-    if (_messageToolBar) {
-        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-    }
-    else{
-        [_messageToolBar removeFromSuperview];
-        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-        _messageToolBar.backgroundColor=[UIColor yellowColor];
-        [self.view.superview.superview  addSubview:_messageToolBar];
-        @weakify(self)
-        
-        _messageToolBar.sendMessageBlock=^(NSString* message){
-            @strongify(self)
-            [self sendComment:message];
-        };
-        
-        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
-            @strongify(self)
-            [self growingTextViewChangeHeight:height];
-        };
-        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(48);
-            make.width.mas_equalTo(self.view.superview.superview.mas_width);
-            make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
-        }];
-    }
-}
-
--(void)showToolBarWithPlaceholder:(NSString*) placeholder{
-    
-    [_messageToolBar showToolBarWithPlaceholder:placeholder];
-}
-
-- (void)growingTextViewChangeHeight:(float)height
-{
-    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(height);
-        }];
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        
-    }];
-}
+//}
 
 //
 //

@@ -37,9 +37,12 @@ PODS:
   - Tweaks (2.0.0)
   - TZImagePickerController (1.6.4)
   - UITableView+FDTemplateLayoutCell (1.4)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 3.1.0)
   - BaiduMobStat
   - BlocksKit/Core (~> 2.2.0)
   - BlocksKit/UIKit (~> 2.2.0)
@@ -56,6 +59,7 @@ DEPENDENCIES:
   - Tweaks
   - TZImagePickerController
   - UITableView+FDTemplateLayoutCell
+  - YYKit (~> 1.0.9)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -74,7 +78,8 @@ SPEC CHECKSUMS:
   Tweaks: 524fa47636cce3bf3a4d9156e980f10ae9480e81
   TZImagePickerController: e13a695a4623a94ac094b43baa28f8046d6a29f9
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 13bff74a1690de35e6202cd2f5867a953e298d58
+PODFILE CHECKSUM: 03538d1eca5eda8efdc9512c7606609f854f5a6a
 
 COCOAPODS: 1.2.1

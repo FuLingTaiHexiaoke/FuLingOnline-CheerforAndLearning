@@ -30,7 +30,7 @@ pod 'TZImagePickerController'
 #pod 'SwipeBack', '~> 1.1'
 pod 'MLLabel', '~> 1.8'
 #pod 'JMAnimatedImageView'
-
+pod 'YYKit', '~> 1.0.9'
 
 ##      custom views
 # pod 'HPGrowingTextView'

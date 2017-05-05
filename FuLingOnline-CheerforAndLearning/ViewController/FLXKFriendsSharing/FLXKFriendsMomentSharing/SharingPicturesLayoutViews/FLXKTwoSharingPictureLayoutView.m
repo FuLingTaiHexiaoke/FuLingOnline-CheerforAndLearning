@@ -156,13 +156,13 @@
         height-=default_space;
     }
     //set frame
-    [self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width);
         make.height.mas_equalTo(height);
         make.centerY.mas_equalTo(self.mas_centerY);
         make.left.mas_equalTo(self.mas_left);
     }];
-//    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+//    [self mas_updateConstraints:^(MASConstraintMaker *make) {
 //        make.height.mas_equalTo(height);
 //    }];
     self.viewHeight=height;
@@ -183,6 +183,13 @@
     collectionViewLayout.minimumLineSpacing=default_space;
     collectionViewLayout.minimumInteritemSpacing=default_space;
 
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(0);
+        make.height.mas_equalTo(0);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.left.mas_equalTo(self.mas_left);
+    }];
+    
 }
 
 

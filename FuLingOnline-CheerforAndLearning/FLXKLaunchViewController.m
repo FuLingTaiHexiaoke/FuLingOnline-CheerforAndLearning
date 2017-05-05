@@ -27,6 +27,7 @@
 //utilities
 #import "EntityGeneratorViewController.h"
 
+#import "FLXSuggestedSharingTableViewController.h"
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
@@ -276,8 +277,12 @@
 }
 
 - (void)loadMainVC {
-        UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-        [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
+    FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+//    [viewControllers addObject:vc];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+//        UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+//        [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
 //    Router(Router_FLXKTabBarController)
 }
 

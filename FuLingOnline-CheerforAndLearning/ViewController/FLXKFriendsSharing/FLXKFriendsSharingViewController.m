@@ -12,6 +12,7 @@
 #import "UIViewController+Extensions.h"
 #import "FLXKEmotionBoard.h"
 #import "Masonry.h"
+
 //#import "UINavigationBar+Awesome.h"
 
 
@@ -89,6 +90,9 @@
     self.navigationController.navigationBar.tintColor =NAVIGATION_BAR_TOP_TINTCOLOR;
     self.navigationController.navigationBar.translucent = YES;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
+
 }
 
 -(void)setupNavigationTitleViewController{
