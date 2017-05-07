@@ -48,6 +48,8 @@
 //@property (weak, nonatomic) IBOutlet UILabel *publishEmotionChooseLabel;
 //status change
 //@property (assign, nonatomic)NSInteger isChangeInputView;
+@property (weak, nonatomic) IBOutlet UITextField *loginNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *websiteTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *genderTextField;
@@ -55,6 +57,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *locationTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
 
 
@@ -175,10 +178,10 @@
     
     UserModel* model=[[UserModel alloc]init];
     //    model.userID=001;
-    model.login_name=self.websiteTextField.text;
+    model.login_name=self.loginNameTextField.text;
     model.password=self.passwordTextField.text;
     model.name=self.nameTextField.text;
-    model.phone_number=self.passwordTextField.text;
+    model.phone_number=self.phoneNumberTextField.text;
     model.gender=self.genderTextField.text;
     model.birthday=self.birthdayTextField.text;
     model.self_detail=self.publishTextView.text;

@@ -1,10 +1,11 @@
 //
-//  FLXKTwoSharingPictureLayoutView.m
+//  FLXKCollectionViewController.m
 //  FuLingOnline-CheerforAndLearning
 //
-//  Created by 肖科 on 17/4/7.
+//  Created by xiaoke on 17/5/6.
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
+
 #pragma mark - Declarations and macros
 #define default_space (5)
 #define default_width (80+default_space)
@@ -12,21 +13,15 @@
 
 #define Reuse_FLXKBaseImageLayoutCollectcionViewCell @"FLXKBaseImageLayoutCollectcionViewCell"
 
-#import "FLXKTwoSharingPictureLayoutView.h"
-//utilites
-//child viewController
-//subviews
-//cells
+#import "FLXKCollectionViewController.h"
+
 #import "FLXKBaseImageLayoutCollectcionViewCell.h"
 
-//models
-//#import "b_group.h"
-//#import "b_items.h"
-//#import "b_sub_items.h
 
-@interface FLXKTwoSharingPictureLayoutView ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+
+@interface FLXKCollectionViewController ()
 //IBOutlet
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+//@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 //IBAction
 //DataSource
 @property (strong, nonatomic) NSMutableArray<FLXKSharingImagesModel*> * collectionViewDataSource;
@@ -38,7 +33,7 @@
 
 @end
 
-@implementation FLXKTwoSharingPictureLayoutView
+@implementation FLXKCollectionViewController
 
 #pragma mark - ViewController LifeCircle
 
@@ -60,7 +55,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
+    //    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
     return self.collectionViewDataSource.count;
 }
 
@@ -108,7 +103,7 @@
     //    else{
     //
     //    }
-    
+
 }
 #pragma mark - Public methods
 
@@ -159,13 +154,13 @@
     [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(width);
         make.height.mas_equalTo(height);
-        make.centerY.mas_equalTo(self.mas_centerY);
-        make.left.mas_equalTo(self.mas_left);
+//        make.centerY.mas_equalTo(self.collectionView.mas_centerY);
+//        make.left.mas_equalTo(self.mas_left);
     }];
-//    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        make.height.mas_equalTo(height);
-//    }];
-    self.viewHeight=height;
+    //    [self mas_updateConstraints:^(MASConstraintMaker *make) {
+    //        make.height.mas_equalTo(height);
+    //    }];
+//    self.viewHeight=height;
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
     [self.collectionView reloadData];
@@ -179,26 +174,18 @@
     self.collectionView.delegate=self;
     self.collectionView.dataSource=self;
     self.collectionView.backgroundColor=[UIColor whiteColor];
-  UICollectionViewFlowLayout* collectionViewLayout=  (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
+    UICollectionViewFlowLayout* collectionViewLayout=  (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     collectionViewLayout.minimumLineSpacing=default_space;
     collectionViewLayout.minimumInteritemSpacing=default_space;
 
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(0);
-        make.height.mas_equalTo(0);
-        make.centerY.mas_equalTo(self.mas_centerY);
-        make.left.mas_equalTo(self.mas_left);
-    }];
-
+//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo(0);
+//        make.height.mas_equalTo(0);
+//        make.centerY.mas_equalTo(self.mas_centerY);
+//        make.left.mas_equalTo(self.mas_left);
+//    }];
+    
 }
 
 
-#pragma mark - getter/setter
-#pragma mark - Overriden methods
-
-#pragma mark - Navigation
-
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// [segue destinationViewController].
-// }
 @end

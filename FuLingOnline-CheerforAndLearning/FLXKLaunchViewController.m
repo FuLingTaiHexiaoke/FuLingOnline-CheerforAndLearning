@@ -29,6 +29,8 @@
 
 #import "FLXSuggestedSharingTableViewController.h"
 
+#import "FLXKtestTableViewController.h"
+
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
     
@@ -277,13 +279,27 @@
 }
 
 - (void)loadMainVC {
-    FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
-//    [viewControllers addObject:vc];
-    [self presentViewController:vc animated:YES completion:nil];
-    
-//        UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-//        [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
-//    Router(Router_FLXKTabBarController)
+
+
+    if (FBTweakValue(@"FLXKLaunchViewController", @"loadMainVC",  @"goNormal",0.0)>0) {
+            FLXKtestTableViewController* vc=(FLXKtestTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"FLXKtestTableViewController"];
+            //    [viewControllers addObject:vc];
+            [self presentViewController:vc animated:YES completion:nil];
+
+        //    FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+        ////    [viewControllers addObject:vc];
+        //    [self presentViewController:vc animated:YES completion:nil];
+
+    }
+    else{
+        UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+        [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
+        Router(Router_FLXKTabBarController)
+    }
+
+
+
+
 }
 
 

@@ -98,11 +98,11 @@
 #pragma mark - getter/setter
 
 -(void)setModel:(FLXKSharingCellModel *)model{
-    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.firstItem==self.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
-            [self.contentView removeConstraint:obj];
-        }
-    }];
+//    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if (obj.firstItem==self.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
+//            [self.contentView removeConstraint:obj];
+//        }
+//    }];
 
     [super setModel:model];
     //
