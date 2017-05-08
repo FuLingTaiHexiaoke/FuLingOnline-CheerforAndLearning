@@ -70,6 +70,8 @@
 		B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A861E9E2BCE00E2DC65 /* UserModel.m */; };
 		B9252A8A1E9E2E3200E2DC65 /* EditPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */; };
 		B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B92898B51E8EABE2005DF4A8 /* codeback.rtf */; };
+		B928AFC41EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */; };
+		B928AFC51EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */; };
 		B92A2FB01E8DF66500E8AA30 /* MZShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */; };
 		B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAD1E8DF66500E8AA30 /* R_ShapedButton.m */; };
 		B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAF1E8DF66500E8AA30 /* UIImage+ColorAtPixel.m */; };
@@ -806,6 +808,9 @@
 		B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonInfoViewController.m; sourceTree = "<group>"; };
 		B9252A891E9E2E3200E2DC65 /* EditPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonInfoViewController.h; sourceTree = "<group>"; };
 		B92898B51E8EABE2005DF4A8 /* codeback.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = codeback.rtf; sourceTree = "<group>"; };
+		B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.m; sourceTree = "<group>"; };
+		B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.xib; sourceTree = "<group>"; };
+		B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.h; sourceTree = "<group>"; };
 		B92A2FAA1E8DF66500E8AA30 /* MZShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZShapedButton.h; sourceTree = "<group>"; };
 		B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZShapedButton.m; sourceTree = "<group>"; };
 		B92A2FAC1E8DF66500E8AA30 /* R_ShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R_ShapedButton.h; sourceTree = "<group>"; };
@@ -2874,6 +2879,9 @@
 		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
 			isa = PBXGroup;
 			children = (
+				B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */,
+				B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */,
+				B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */,
 				B9F225601EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.h */,
 				B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */,
 				B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */,
@@ -3929,6 +3937,7 @@
 				B9B6B4BA1EBD806A00B7C483 /* FLXKtestTableViewController.xib in Resources */,
 				B97507C81E4C58F700A577E7 /* 083@2x.png in Resources */,
 				B97506E01E4C58F600A577E7 /* smiley_66.png in Resources */,
+				B928AFC51EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib in Resources */,
 				B975079F1E4C58F700A577E7 /* 063.png in Resources */,
 				B975079A1E4C58F700A577E7 /* 060@2x.png in Resources */,
 				B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */,
@@ -4412,6 +4421,7 @@
 			files = (
 				B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */,
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
+				B928AFC41EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m in Sources */,
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,

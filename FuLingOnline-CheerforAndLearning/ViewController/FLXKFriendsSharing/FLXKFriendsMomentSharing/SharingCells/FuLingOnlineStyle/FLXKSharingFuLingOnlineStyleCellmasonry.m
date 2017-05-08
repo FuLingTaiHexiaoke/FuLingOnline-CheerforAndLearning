@@ -106,18 +106,18 @@
 
     [super setModel:model];
     //
-    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        //                if ( obj.firstAttribute==NSLayoutAttributeHeight) {
-        //                    NSLog(@"self.contentView %lu , %@",(unsigned long)idx, obj);
-        //                }
-        NSLog(@"self.contentView %lu , %@",(unsigned long)idx, obj);
-    }];
-    [self.sharingImagesContainerView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
-        //            NSLog(@"self.sharingImagesContainerView %lu , %@",(unsigned long)idx, obj);
-        //        }
-        NSLog(@"self.sharingImagesContainerView %lu , %@",(unsigned long)idx, obj);
-    }];
+//    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        //                if ( obj.firstAttribute==NSLayoutAttributeHeight) {
+//        //                    NSLog(@"self.contentView %lu , %@",(unsigned long)idx, obj);
+//        //                }
+//        NSLog(@"self.contentView %lu , %@",(unsigned long)idx, obj);
+//    }];
+//    [self.sharingImagesContainerView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
+//        //            NSLog(@"self.sharingImagesContainerView %lu , %@",(unsigned long)idx, obj);
+//        //        }
+//        NSLog(@"self.sharingImagesContainerView %lu , %@",(unsigned long)idx, obj);
+//    }];
     
     [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     self.nickNameLabel.text=model.nickName;
@@ -179,18 +179,18 @@
         }];
     }
     
-    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"self.contentView---2 %lu , %@",(unsigned long)idx, obj);
-        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
-        //            NSLog(@"self.contentView--2 %lu , %@",(unsigned long)idx, obj);
-        //        }
-    }];
-    [self.sharingImagesContainerView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"self.sharingImagesContainerView---2 %lu , %@",(unsigned long)idx, obj);
-        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
-        //            NSLog(@"self.sharingImagesContainerView--2 %lu , %@",(unsigned long)idx, obj);
-        //        }
-    }];
+//    [self.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"self.contentView---2 %lu , %@",(unsigned long)idx, obj);
+//        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
+//        //            NSLog(@"self.contentView--2 %lu , %@",(unsigned long)idx, obj);
+//        //        }
+//    }];
+//    [self.sharingImagesContainerView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"self.sharingImagesContainerView---2 %lu , %@",(unsigned long)idx, obj);
+//        //        if ( obj.firstAttribute==NSLayoutAttributeHeight) {
+//        //            NSLog(@"self.sharingImagesContainerView--2 %lu , %@",(unsigned long)idx, obj);
+//        //        }
+//    }];
 }
 
 

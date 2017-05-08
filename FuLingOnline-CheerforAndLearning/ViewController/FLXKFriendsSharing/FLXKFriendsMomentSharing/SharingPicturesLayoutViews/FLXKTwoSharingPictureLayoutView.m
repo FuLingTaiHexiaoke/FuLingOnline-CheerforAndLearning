@@ -165,10 +165,12 @@
 //    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
 //        make.height.mas_equalTo(height);
 //    }];
+//         [self layoutIfNeeded];
     self.viewHeight=height;
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
     [self.collectionView reloadData];
+
 }
 #pragma mark - View Event
 #pragma mark - Model Event

@@ -30,8 +30,8 @@ static NSInteger lastViewIndex;
     if (itemIndex==0) {
         lastViewIndex=0;
     }
-    [self.groupEmotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [self.groupEmotionButton setTitle:@"" forState:UIControlStateNormal];
+//    [self.groupEmotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+//    [self.groupEmotionButton setTitle:@"" forState:UIControlStateNormal];
     
     emotionGroup=emotionGroup;
     //set image

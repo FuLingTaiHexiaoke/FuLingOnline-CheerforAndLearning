@@ -180,7 +180,7 @@
             [adImageInfoModel setValuesForKeysWithDictionary:dic];
             @strongify(self);
             self.adImageInfoModel=adImageInfoModel;
-            [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@""] options:SDWebImageAllowInvalidSSLCertificates];
+            [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@"Spark"] options:SDWebImageAllowInvalidSSLCertificates];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         FLXKLog(@"%@",error.description);

@@ -35,6 +35,8 @@
 #import "FLXKSharingFuLingOnlineStyleCellautolayouttest.h"
 #import "FLXKSharingFuLingOnlineStyleCellmasonry.h"
 
+#import "FLXKSharingFuLingOnlineStyleCell_UIStackView.h"
+
 
 @interface FLXSuggestedSharingTableViewController ()
 //IBOutlet
@@ -50,7 +52,15 @@
 //child viewController
 @end
 
-@implementation FLXSuggestedSharingTableViewController
+@implementation FLXSuggestedSharingTableViewController{
+    CADisplayLink *_link;
+    NSUInteger _count;
+    NSTimeInterval _lastTime;
+    UIFont *_font;
+    UIFont *_subFont;
+    
+    NSTimeInterval _llll;
+}
 
 #pragma mark -
 #pragma mark - ViewController LifeCircle
@@ -134,7 +144,7 @@
         cell = [[FLXKSharingFuLingOnlineStyleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     }
     else{
-        NSLog(@"cell 重用了");
+//        NSLog(@"cell 重用了");
 //        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     }
     [cell.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -207,6 +217,11 @@
     
 //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
+    
+//        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell_UIStackView" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+    
+    
+    
         [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
 //       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellmasonry") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
@@ -222,7 +237,8 @@
     
     //   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     
-
+    _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
+    [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 //-(void)setupMessageToolBar{
@@ -308,5 +324,33 @@
     self.currentOperationCell=nil;
 }
 
+
+- (void)tick:(CADisplayLink *)link {
+    if (_lastTime == 0) {
+        _lastTime = link.timestamp;
+        return;
+    }
+    
+    _count++;
+    NSTimeInterval delta = link.timestamp - _lastTime;
+    if (delta < 1) return;
+    _lastTime = link.timestamp;
+    float fps = _count / delta;
+    _count = 0;
+    
+    CGFloat progress = fps / 60.0;
+    //    UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
+    //
+    //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
+    
+    NSString* fps1=  [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
+        NSLog(@"FPS %@", fps1);
+    //    [text yy_setColor:color range:NSMakeRange(0, text.length - 3)];
+    //    [text yy_setColor:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
+    //    text.yy_font = _font;
+    //    [text yy_setFont:_subFont range:NSMakeRange(text.length - 4, 1)];
+    //
+    //    self.attributedText = text;
+}
 
 @end

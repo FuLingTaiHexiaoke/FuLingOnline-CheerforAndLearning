@@ -121,7 +121,7 @@ static int viewTag=0;
     //            make.bottom.mas_equalTo(self.contentView.mas_bottom);
     //        }];
     //    }
-
+// [self.contentView layoutIfNeeded];
 }
 
 
@@ -131,21 +131,21 @@ static int viewTag=0;
 // You cannot calculate the collectionView content size in any other place,
 // because you run into race condition issues.
 // NOTE: Works for iOS 8 or later
-- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority {
-
-    // With autolayout enabled on collection view's cells we need to force a collection view relayout with the shown size (width)
-//    self.imagesView.frame = CGRectMake(0, 0, targetSize.width, MAXFLOAT);
-    CGFloat width=[UIScreen mainScreen].bounds.size.width;
-    CGFloat height=0;
-//    [self.imagesView layoutIfNeeded];
-   height+= self.imagesView.viewHeight;
-//    height+= self.textview.bounds.size.height;
-    // If the cell's size has to be exactly the content
-    // Size of the collection View, just return the
-    // collectionViewLayout's collectionViewContentSize.
-
-    return CGSizeMake(width, height) ;
-}
+//- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority {
+//
+//    // With autolayout enabled on collection view's cells we need to force a collection view relayout with the shown size (width)
+////    self.imagesView.frame = CGRectMake(0, 0, targetSize.width, MAXFLOAT);
+//    CGFloat width=[UIScreen mainScreen].bounds.size.width;
+//    CGFloat height=0;
+////    [self.imagesView layoutIfNeeded];
+//   height+= self.imagesView.viewHeight;
+////    height+= self.textview.bounds.size.height;
+//    // If the cell's size has to be exactly the content
+//    // Size of the collection View, just return the
+//    // collectionViewLayout's collectionViewContentSize.
+//
+//    return CGSizeMake(width, height) ;
+//}
 
 
 -(UITextView*)textview{
