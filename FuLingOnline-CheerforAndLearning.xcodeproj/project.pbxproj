@@ -97,6 +97,9 @@
 		B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B930987A1E568D9A00306F39 /* CLLocationManager+Extensions.m */; };
 		B930987D1E56974C00306F39 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B930987C1E56974C00306F39 /* CoreLocation.framework */; };
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
+		B939D01E1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D01C1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m */; };
+		B939D01F1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B939D01D1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib */; };
+		B939D0221EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKBaseViewController.m */; };
@@ -859,6 +862,11 @@
 		B930987C1E56974C00306F39 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B930C1F81DE548D4004F729B /* FLXKTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTabBar.h; sourceTree = "<group>"; };
 		B930C1F91DE548D4004F729B /* FLXKTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTabBar.m; sourceTree = "<group>"; };
+		B939D01B1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLabelTypeSharingLikeCollectionViewCell.h; sourceTree = "<group>"; };
+		B939D01C1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLabelTypeSharingLikeCollectionViewCell.m; sourceTree = "<group>"; };
+		B939D01D1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKLabelTypeSharingLikeCollectionViewCell.xib; sourceTree = "<group>"; };
+		B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsSharingHttpRequestHelper.m; sourceTree = "<group>"; };
+		B939D0211EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsSharingHttpRequestHelper.h; sourceTree = "<group>"; };
 		B93AF5C11E30AADA00F51E26 /* EmotionGroupDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroupDetailModel.h; sourceTree = "<group>"; };
 		B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionGroupDetailModel.m; sourceTree = "<group>"; };
 		B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHttpRequestModelHelper.h; sourceTree = "<group>"; };
@@ -2079,6 +2087,8 @@
 		B92F57601E5547C40010A84A /* FLXKFriendsSharing */ = {
 			isa = PBXGroup;
 			children = (
+				B939D0211EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.h */,
+				B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */,
 				B92494871E8B8BC4006878CC /* FLXKFriendsMomentSharing */,
 				B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */,
 				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
@@ -2314,6 +2324,9 @@
 				B9E17E2D1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.h */,
 				B9E17E2E1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m */,
 				B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */,
+				B939D01B1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.h */,
+				B939D01C1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m */,
+				B939D01D1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -4029,6 +4042,7 @@
 				B97507C01E4C58F700A577E7 /* 079@2x.png in Resources */,
 				B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */,
 				B97507A31E4C58F700A577E7 /* 065.png in Resources */,
+				B939D01F1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib in Resources */,
 				B97506B31E4C58F600A577E7 /* smiley_25.png in Resources */,
 				B97507561E4C58F600A577E7 /* 026@2x.png in Resources */,
 				B97507C61E4C58F700A577E7 /* 082@2x.png in Resources */,
@@ -4455,6 +4469,7 @@
 				B90CD97F1E763FFD00278EDB /* ActionOperationViewController.m in Sources */,
 				B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */,
 				B9C6ACA01E6548550003C50A /* ScanSuccessJumpVC.m in Sources */,
+				B939D0221EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B9D2CDA11E9F663C003D9FC0 /* FLXKSharedAppSingleton.m in Sources */,
 				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
@@ -4503,6 +4518,7 @@
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
 				B9C6ACA81E6548550003C50A /* FAImageView.m in Sources */,
 				B9CDF0201E4F36690007F638 /* GooeyCircle.m in Sources */,
+				B939D01E1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m in Sources */,
 				B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */,
 				B90CD9EC1E764C2C00278EDB /* DCURLNavgation.m in Sources */,
 				B9C9153E1E31E28B0060051E /* UIImage+EmotionExtension.m in Sources */,

@@ -9,9 +9,10 @@
 #define default_space (5)
 #define default_width (80+default_space)
 #define default_height (80+default_space)
-
+#define ThumbupCount @"ThumbupCount"
 #define Reuse_FLXKHeaderImageSharingLikeCollectionViewCell @"FLXKHeaderImageSharingLikeCollectionViewCell"
 
+#define Reuse_FLXKLabelTypeSharingLikeCollectionViewCell @"FLXKLabelTypeSharingLikeCollectionViewCell"
 
 #import "FLXKHeaderImageSharingLikeCollectionView.h"
 //utilites
@@ -19,6 +20,7 @@
 //subviews
 //cells
 #import "FLXKHeaderImageSharingLikeCollectionViewCell.h"
+#import "FLXKLabelTypeSharingLikeCollectionViewCell.h"
 //models
 //#import "b_group.h"
 //#import "b_items.h"
@@ -50,9 +52,9 @@
 //}
 
 - (instancetype)init {
-//    if ([super init]) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"FLXKHeaderImageSharingLikeCollectionView" owner:nil options:nil].lastObject;
-//    }
+    //    if ([super init]) {
+    self = [[NSBundle mainBundle] loadNibNamed:@"FLXKHeaderImageSharingLikeCollectionView" owner:nil options:nil].lastObject;
+    //    }
     return self;
 }
 
@@ -68,14 +70,24 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     //    NSLog(@"self.collectionView.frame %@", NSStringFromCGRect( self.collectionView.frame))
-    return self.collectionViewDataSource.count;
+//    NSInteger count= self.collectionViewDataSource.count;
+//    return count>0?(count+1):count;
+    
+      return self.collectionViewDataSource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSInteger itemIndex= indexPath.item;
+    if (itemIndex== self.collectionViewDataSource.count-1) {
+        FLXKLabelTypeSharingLikeCollectionViewCell*   cell=( FLXKLabelTypeSharingLikeCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:Reuse_FLXKLabelTypeSharingLikeCollectionViewCell forIndexPath:indexPath];
+        cell.textLabel.text=[NSString stringWithFormat:@"%lu赞",(unsigned long)self.collectionViewDataSource.count-1];
+        return cell;
+    }
     UserModel* item= self.collectionViewDataSource[itemIndex];
     FLXKHeaderImageSharingLikeCollectionViewCell*   cell=( FLXKHeaderImageSharingLikeCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:Reuse_FLXKHeaderImageSharingLikeCollectionViewCell forIndexPath:indexPath];
     [cell.userHeaderImageView sd_setImageWithURL:NSURL_BaseURL(item.thumb_avatar_picture) placeholderImage:[UIImage imageNamed:@"Spark"]];
+    cell.userHeaderImageView.layer.cornerRadius=self.rowHeight/2;
+    cell.userHeaderImageView.layer.masksToBounds=YES;
     cell.userInteractionEnabled=YES;
     return cell;
 }
@@ -84,7 +96,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     //get height
-    CGFloat height=  self.frame.size.height;
+    //    CGFloat height=  self.frame.size.height;
+    CGFloat height=  self.rowHeight;
     return   CGSizeMake(height, height) ;
 }
 
@@ -110,6 +123,10 @@
 
 -(void)setupUI{
     [self registerNib:[UINib nibWithNibName:Reuse_FLXKHeaderImageSharingLikeCollectionViewCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Reuse_FLXKHeaderImageSharingLikeCollectionViewCell];
+    
+    [self registerNib:[UINib nibWithNibName:Reuse_FLXKLabelTypeSharingLikeCollectionViewCell bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:Reuse_FLXKLabelTypeSharingLikeCollectionViewCell];
+    
+    
     self.delegate=self;
     self.dataSource=self;
     self.backgroundColor=[UIColor whiteColor];
@@ -123,6 +140,11 @@
 -(void)setLikeTheSharingUserRecords:(NSArray<UserModel *> *)users{
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:users];
+    if (users.count>0) {
+        UserModel * user=[[UserModel alloc]init];
+//        user.userID=ThumbupCount;
+        [self.collectionViewDataSource addObject:user];
+    }
     [self reloadData];
 }
 #pragma mark - Overriden methods

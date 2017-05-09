@@ -25,7 +25,7 @@
 @property(nonatomic)NSString* locationRecord;
 @property(nonatomic)NSMutableArray<UserModel*>* likeTheSharingUserRecords;
 @property(nonatomic)NSMutableArray<SharingCommentCellModel*>* sharingComments;
-@property (assign, nonatomic)BOOL shouldShowSharingContentShowAllButton;
+//@property (assign, nonatomic)BOOL shouldShowSharingContentShowAllButton;
 
 @property (assign, nonatomic)BOOL isMainSharingContentLabelExpand;
 @end

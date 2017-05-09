@@ -24,6 +24,11 @@
 -(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath;
 
 //点赞
--(void)addFriendsharingThumbup;
+//-(void)addFriendsharingThumbup;
+@property (strong, nonatomic)void(^addThumbupBlock)(UIButton* sender);
+
+//评论
+//触发评论
+@property (strong, nonatomic)void(^addCommentRequestBlock)();
 
 @end

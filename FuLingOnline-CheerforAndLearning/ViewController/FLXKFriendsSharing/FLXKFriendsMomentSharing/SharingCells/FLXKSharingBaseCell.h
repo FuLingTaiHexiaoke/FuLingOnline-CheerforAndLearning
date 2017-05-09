@@ -24,6 +24,7 @@
 
 
 @interface FLXKSharingBaseCell : UITableViewCell
+
 //IBOutlet
 //IBAction
 //头像点击事件
@@ -44,6 +45,7 @@
 
 - (void)addCommentRequest;
 -(void)addFriendsharingComment:(NSDictionary*)parameters;
+- (void)reloadCurrentCell;
 //分享
 
 
@@ -55,6 +57,8 @@
 
 @property (strong, nonatomic)FLXKSharingCellModel* model;
 @property (strong, nonatomic)NSIndexPath * indexPath;
+
+
 //UI state record properties
 @end
 

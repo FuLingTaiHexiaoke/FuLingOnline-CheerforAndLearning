@@ -86,9 +86,10 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-   SharingCommentCellModel * model= _models[indexPath.row];
-    model.toUserID=model.fromUserID;
-    model.toUserName=model.fromUserName;
+    SharingCommentCellModel * currentModel= _models[indexPath.row];
+    SharingCommentCellModel * model=[[SharingCommentCellModel alloc]init];
+    model.toUserID=currentModel.fromUserID;
+    model.toUserName=currentModel.fromUserName;
     if (self.addCommentRequsetBlock) {
         self.addCommentRequsetBlock(model);
     }

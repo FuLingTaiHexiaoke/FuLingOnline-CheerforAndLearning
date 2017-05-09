@@ -14,20 +14,20 @@
 
 @implementation FLXKBaseSharingOperationContainerView
 
--(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath{
-    self.model=model;
-    self.indexPath=indexPath;
-}
+//-(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath{
+//    self.model=model;
+//    self.indexPath=indexPath;
+//}
 
 //点赞
--(void)addFriendsharingThumbup{
-    
-    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        
-    } failureCallback:^(NSError *err) {
-        //        NSAssert(!err, err.description);
-    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_model.newsID}];
-}
+//-(void)addFriendsharingThumbup{
+//    
+//    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+//        
+//    } failureCallback:^(NSError *err) {
+//        //        NSAssert(!err, err.description);
+//    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_model.newsID}];
+//}
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -245,7 +245,6 @@
         }];
     }
     
-    [self.sharingMainOperationsContainerView setModel:model];
     [self.sharingMainOperationsContainerView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.locationRecordButton.mas_bottom).offset(DEFAULT_VIEW_SPACING);
         make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
@@ -289,36 +288,26 @@
         }];
     }
     
-    CGFloat sharingCommentHeight= [self.sharingCommentsTableView setCellModels:model.sharingComments];
-    [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
-        make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-        make.left.mas_equalTo(self.avatarImageView.mas_right);
-        make.height.mas_equalTo(sharingCommentHeight).priorityHigh();
-    }];
-    
-    
-//    if ( model.sharingComments.count>0) {
-//   
-//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(height).priorityHigh();
-//        }];
-//        
-//    }
-//    else{
-//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom);
-//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(0.0).priorityHigh();
-//        }];
-//    }
+    if ( model.sharingComments.count>0) {
+        CGFloat height= [self.sharingCommentsTableView setCellModels:model.sharingComments];
+        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+            make.height.mas_equalTo(height).priorityHigh();
+        }];
+        
+    }
+    else{
+        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom);
+            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+            make.height.mas_equalTo(0.0).priorityHigh();
+        }];
+    }
     
 }
 
@@ -463,11 +452,80 @@
 
 
 #pragma mark - Private methods
-
+//-(void)setupSharingCommentsTableViewWithCellModels:(NSArray<SharingCommentCellModel*>*)models{
+//    //get height
+////    CGFloat height= [self.sharingCommentsTableView setCellModels:models];
+////    [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+////        make.height.mas_equalTo(height);
+////    }];
+//
+//
+//
+//    if ( models.count>0) {
+//        [self.bottomSeparatorLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+//            make.left.mas_equalTo(self.avatarImageView.mas_right);
+//            make.height.mas_equalTo(1.0).priorityHigh();
+//        }];
+//    }
+//    else{
+//        [self.bottomSeparatorLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom);
+//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+//            make.left.mas_equalTo(self.avatarImageView.mas_right);
+//            make.height.mas_equalTo(0.0).priorityHigh();
+//        }];
+//    }
+//
+//    if ( models.count>0) {
+//        __weak __typeof(self) weakSelf=self;
+//        self.sharingCommentsTableView.addCommentRequsetBlock=^(SharingCommentCellModel* model){
+//            weakSelf.currentCommentCellModel=model;
+//            if ( weakSelf.addCommentRequestBlock) {
+//                weakSelf.addCommentRequestBlock([NSString stringWithFormat:@"回复:%@",model.toUserName],weakSelf);
+//            }
+//        };
+//
+//        CGFloat height= [self.sharingCommentsTableView setCellModels:models];
+//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+//            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
+//            make.left.mas_equalTo(self.avatarImageView.mas_right);
+//            make.height.mas_equalTo(height).priorityHigh();
+//        }];
+//
+//    }
+//    else{
+//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom);
+//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+//            make.bottom.mas_equalTo(self.contentView.mas_bottom);
+//            make.left.mas_equalTo(self.avatarImageView.mas_right);
+//            make.height.mas_equalTo(0.0).priorityHigh();
+//        }];
+//    }
+//
+//}
 
 -(void)showAllSharingContentAction:(UIButton*)sender{
+    //    CGFloat width=SCREEN_WIDTH - avatarImageViewHeight;
+    //    CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(width, INT_MAX)];
     self.model.isMainSharingContentLabelExpand=!self.model.isMainSharingContentLabelExpand;
     [super reloadCurrentCell];
+    //    BOOL isExpanded=sender.selected;
+    //    sender.selected=!isExpanded;
+    //    CGFloat height=isExpanded?contentLabelDefaultHeight:size.height;
+    //    [self.mainSharingContentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+    //        make.height.mas_equalTo(height).priorityHigh();
+    //    }];
+    //
+    //    [self.contentView setNeedsLayout];
+    //    [UIView animateWithDuration:0.5 animations:^{
+    //        [self.contentView layoutIfNeeded];
+    //    }];
+    
 }
 -(void)setupUI{
     

@@ -184,6 +184,7 @@
 
 -(void)hideToolBar{
     self.growingTextView.internalTextView.text=nil;
+    self.growingTextView.internalTextView.attributedText=nil;
     [self.growingTextView.internalTextView resignFirstResponder];
 }
 #pragma mark - View Event

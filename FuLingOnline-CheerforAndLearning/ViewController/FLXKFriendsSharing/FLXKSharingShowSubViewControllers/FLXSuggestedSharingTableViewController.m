@@ -97,6 +97,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+        [self setupMessageToolBar];
 //    [self.tableView reloadData];
 }
 
@@ -156,7 +157,7 @@
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
     cell.addCommentRequestBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
-//        [weakSelf showToolBarWithPlaceholder:placeholder];
+        [weakSelf showToolBarWithPlaceholder:placeholder];
         weakSelf.currentOperationCell=currentCell;
     };
     return cell;
@@ -174,16 +175,16 @@
 //}
 
 //
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-// NSLog(@"indexPath.row %lu",(unsigned long)indexPath.row);
-//    
-//  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
-//                [self configureCell:cell atIndexPath:indexPath];
-//            }];
-//    
-//     NSLog(@"indexPath.row %lu %f",(unsigned long)indexPath.row,height);
-//    return height;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ NSLog(@"indexPath.row %lu",(unsigned long)indexPath.row);
+    
+  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
+                [self configureCell:cell atIndexPath:indexPath];
+            }];
+    
+     NSLog(@"indexPath.row %lu %f",(unsigned long)indexPath.row,height);
+    return height;
+}
 
 //-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    return 100;
@@ -221,7 +222,8 @@
 //        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell_UIStackView" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     
-    
+    self.tableView.separatorInset=UIEdgeInsetsMake(2,0,2,0);
+    self.tableView.backgroundColor=[UIColor lightGrayColor];
         [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
 //       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellmasonry") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
@@ -241,50 +243,50 @@
     [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
-//-(void)setupMessageToolBar{
-//    if (_messageToolBar) {
-//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-//    }
-//    else{
-//        [_messageToolBar removeFromSuperview];
-//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-//        _messageToolBar.backgroundColor=[UIColor yellowColor];
-//        [self.view.superview.superview  addSubview:_messageToolBar];
-//        @weakify(self)
-//        
-//        _messageToolBar.sendMessageBlock=^(NSString* message){
-//            @strongify(self)
-//            [self sendComment:message];
-//        };
-//        
-//        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
-//            @strongify(self)
-//            [self growingTextViewChangeHeight:height];
-//        };
-//        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(48);
-//            make.width.mas_equalTo(self.view.superview.superview.mas_width);
-//            make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
-//        }];
-//    }
-//}
+-(void)setupMessageToolBar{
+    if (_messageToolBar) {
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+    }
+    else{
+        [_messageToolBar removeFromSuperview];
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+        _messageToolBar.backgroundColor=[UIColor yellowColor];
+        [self.view.superview.superview  addSubview:_messageToolBar];
+        @weakify(self)
+        
+        _messageToolBar.sendMessageBlock=^(NSString* message){
+            @strongify(self)
+            [self sendComment:message];
+        };
+        
+        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
+            @strongify(self)
+            [self growingTextViewChangeHeight:height];
+        };
+        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(48);
+            make.width.mas_equalTo(self.view.superview.superview.mas_width);
+            make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
+        }];
+    }
+}
 //
-//-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
-//    
-//    [_messageToolBar showToolBarWithPlaceholder:placeholder];
-//}
-//
-//- (void)growingTextViewChangeHeight:(float)height
-//{
-//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(height);
-//        }];
-//        [self.view layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//        
-//    }];
-//}
+-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
+    
+    [_messageToolBar showToolBarWithPlaceholder:placeholder];
+}
+
+- (void)growingTextViewChangeHeight:(float)height
+{
+    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(height);
+        }];
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
 
 //
 //

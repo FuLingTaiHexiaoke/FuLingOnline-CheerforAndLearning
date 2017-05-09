@@ -23,7 +23,9 @@
 //subviews
 //models
 
+
 //UI state record properties
+@property(nonatomic,weak)UITableView* tableView;
 @end
 
 @implementation FLXKSharingBaseCell
@@ -62,6 +64,9 @@
 #pragma mark - Delegate
 #pragma mark - Public methods
 
+- (void)reloadCurrentCell{
+ [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
 
 -(void)setModel:(FLXKSharingCellModel *)model{
     _model=model;
@@ -70,10 +75,10 @@
 
 - (void)addThumbup:(UIButton*)sender {
     if (self.model.isThumberuped==1) {
-        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+            [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
     }
     else{
-        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
     }
     //    [UIView animateWithDuration:1.0 animations:^{
     ////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
@@ -116,9 +121,9 @@
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.fromUserID= [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test";
     model.fromUserName=[FLXKSharedAppSingleton sharedSingleton].sharedUser.name?:@"test";
-    if (self.currentCommentCellModel.fromUserID) {
-        model.toUserID=self.currentCommentCellModel.fromUserID;
-        model.toUserName=self.currentCommentCellModel.fromUserName;
+    if (self.currentCommentCellModel.toUserID) {
+        model.toUserID=self.currentCommentCellModel.toUserID;
+        model.toUserName=self.currentCommentCellModel.toUserName;
         model.isReply=1;
     }
     model.content=[parameters objectForKey:@"content"];

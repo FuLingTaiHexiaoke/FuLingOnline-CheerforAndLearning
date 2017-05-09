@@ -19,6 +19,7 @@
 //models
 @property(nonatomic)NSArray<UserModel*>* likeTheSharingUserRecords;
 //UI state record properties
+@property(nonatomic,assign)CGFloat rowHeight;
 //subviews
 //child viewController
 //public actions

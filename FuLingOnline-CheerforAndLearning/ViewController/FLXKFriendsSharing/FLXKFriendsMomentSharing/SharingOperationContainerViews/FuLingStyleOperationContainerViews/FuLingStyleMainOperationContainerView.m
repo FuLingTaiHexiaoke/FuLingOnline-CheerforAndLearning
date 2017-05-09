@@ -37,12 +37,12 @@
     return self;
 }
 
--(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    if ([super initWithCoder:aDecoder]) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"FuLingStyleMainOperationContainerView" owner:nil options:nil].lastObject;
-    }
-    return self;
-}
+//-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+//    if ([super initWithCoder:aDecoder]) {
+//        self = [[NSBundle mainBundle] loadNibNamed:@"FuLingStyleMainOperationContainerView" owner:nil options:nil].lastObject;
+//    }
+//    return self;
+//}
 
 //-(void)dealloc{
 //    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
@@ -53,23 +53,32 @@
 #pragma mark - Delegate
 #pragma mark - Public methods
 #pragma mark - View Event
-- (IBAction)thumberupThisNewsButtonAction:(UIButton *)sender{
-    [UIView animateWithDuration:1.0 animations:^{
-        sender.imageView.transform=CGAffineTransformScale(sender.imageView.layer.affineTransform, 4, 4);
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1.0 animations:^{
-            sender.imageView.layer.affineTransform=CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-        }];
-    }];
-    [super addFriendsharingThumbup];
+- (IBAction)addThumbupAction:(UIButton *)sender{
+   __block UIButton* button=sender;
+    if (self.addThumbupBlock) {
+        self.addThumbupBlock(button);
+    }
+}
+
+- (IBAction)addCommentRequestAction:(UIButton *)sender{
+    if (self.addCommentRequestBlock) {
+        self.addCommentRequestBlock();
+    }
 }
 
 #pragma mark - Model Event
 #pragma mark - Private methods
 #pragma mark - getter/setter
--(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath{
-    [super setModel:model WithIndexPath:indexPath];
+//-(void)setModel:(FLXKSharingCellModel *)model WithIndexPath:(NSIndexPath*)indexPath{
+//    [super setModel:model WithIndexPath:indexPath];
+//    if (model.isThumberuped==1) {
+//        [self.thumberupThisNewsButton setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+//    }
+//    else{
+//        [self.thumberupThisNewsButton setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+//    }
+//}
+-(void)setModel:(FLXKSharingCellModel *)model{
     if (model.isThumberuped==1) {
         [self.thumberupThisNewsButton setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
     }
@@ -81,9 +90,4 @@
 
 #pragma mark - Navigation
 
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// [segue destinationViewController].
-// }
-- (IBAction)broadcastThisNewsButtonAction:(UIButton *)sender {
-}
 @end
