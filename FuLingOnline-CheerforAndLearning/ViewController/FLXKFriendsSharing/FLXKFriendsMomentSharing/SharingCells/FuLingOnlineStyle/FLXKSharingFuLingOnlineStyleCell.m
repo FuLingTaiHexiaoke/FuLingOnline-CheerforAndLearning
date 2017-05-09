@@ -272,22 +272,15 @@
         }];
     }
     
-    if ( model.sharingComments.count>0) {
-        [self.bottomSeparatorLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-            make.left.mas_equalTo(self.avatarImageView.mas_right);
-            make.height.mas_equalTo(bottomSeparatorLineViewHeight).priorityHigh();
-        }];
-    }
-    else{
-        [self.bottomSeparatorLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-            make.left.mas_equalTo(self.avatarImageView.mas_right);
-            make.height.mas_equalTo(0.0).priorityHigh();
-        }];
-    }
+            [self.bottomSeparatorLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(model.sharingComments.count>0?DEFAULT_VIEW_SPACING:0.0);
+                make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
+                make.left.mas_equalTo(self.avatarImageView.mas_right);
+                make.height.mas_equalTo(model.sharingComments.count>0?bottomSeparatorLineViewHeight:0.0).priorityHigh();
+    
+//                   make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
+            }];
+    
     
     CGFloat sharingCommentHeight= [self.sharingCommentsTableView setCellModels:model.sharingComments];
     [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -298,27 +291,6 @@
         make.height.mas_equalTo(sharingCommentHeight).priorityHigh();
     }];
     
-    
-//    if ( model.sharingComments.count>0) {
-//   
-//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(height).priorityHigh();
-//        }];
-//        
-//    }
-//    else{
-//        [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom);
-//            make.right.mas_equalTo(self.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(0.0).priorityHigh();
-//        }];
-//    }
     
 }
 
@@ -535,15 +507,17 @@
         make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
         make.left.mas_equalTo(self.avatarImageView.mas_right);
         make.height.mas_equalTo(bottomSeparatorLineViewHeight).priorityHigh();
+        
+            make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
     }];
     
-    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-        make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
-        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-        make.left.mas_equalTo(self.avatarImageView.mas_right);
-        make.height.mas_equalTo(0).priorityHigh();
-    }];
+//    [self.sharingCommentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+//        make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
+//        make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
+//        make.left.mas_equalTo(self.avatarImageView.mas_right);
+//        make.height.mas_equalTo(0).priorityHigh();
+//    }];
 }
 
 -(void)setMainSharingContentLabelText:(NSString*)string{
