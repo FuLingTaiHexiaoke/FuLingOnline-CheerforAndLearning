@@ -29,7 +29,6 @@
 
 #import "FLXSuggestedSharingTableViewController.h"
 
-#import "FLXKtestTableViewController.h"
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
 {
@@ -282,9 +281,9 @@
 
 
     if (FBTweakValue(@"FLXKLaunchViewController", @"loadMainVC",  @"goNormal",0.0)>0) {
-            FLXKtestTableViewController* vc=(FLXKtestTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"FLXKtestTableViewController"];
-            //    [viewControllers addObject:vc];
-            [self presentViewController:vc animated:YES completion:nil];
+//            FLXKtestTableViewController* vc=(FLXKtestTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"FLXKtestTableViewController"];
+//            //    [viewControllers addObject:vc];
+//            [self presentViewController:vc animated:YES completion:nil];
 
         //    FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
         ////    [viewControllers addObject:vc];

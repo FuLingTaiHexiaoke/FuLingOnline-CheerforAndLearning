@@ -8,11 +8,6 @@
 
 #import "FLXKBaseCommentCell.h"
 
-#import "NSAttributedString+EmotionExtension.h"
-
-//#import "NSAttributedString+EmotionExtension.h"
-
-#define FONT_COLOR [UIColor colorWithRed:73/255.0 green:119/255.0 blue:154/255.0 alpha:1.0]
 
 @interface FLXKBaseCommentCell()<UITextViewDelegate>
 
@@ -22,8 +17,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-   
-//            self.commentTextView.textColor= [UIColor colorWithRed:(54 / 255.0) green:(71 / 255.0) blue:(121 / 255.0) alpha:0.9];
     // Initialization code
 }
 
@@ -41,50 +34,49 @@
 
 - (void)setModel:(SharingCommentCellModel *)model{
     _model=model;
-    self.commentTextView.attributedText=[self getCommentString:model];
+    self.commentTextView.attributedText=[SharingCommentCellModel getCommentString:model];
     [self.commentTextView setDidClickLinkBlock:^(MLLink *link, NSString *linkText, MLLinkLabel *label) {
         Router(Router_Launch_NotificationCenter)
         NSString *url = [NSString stringWithFormat:@"telprompt://%@",link.linkValue];
         NSLog(@"URL %@", url);
-        //            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }];
 }
 
--(NSAttributedString*)getCommentString:(SharingCommentCellModel *)model{
-    NSMutableAttributedString* content=[[NSMutableAttributedString alloc]initWithString:@""];
-    [content appendAttributedString:[self getURLInteractAttributeString:model.fromUserName]];
-    if (isNotEmptyString(model.toUserName)) {
-        [content appendAttributedString:[[NSAttributedString alloc]initWithString:@"回复"]];
-        [content appendAttributedString:[self getURLInteractAttributeString:model.toUserName]];
-    }
-    [content appendAttributedString:[[NSAttributedString alloc]initWithString:@":"]];
-    [content appendAttributedString:[NSAttributedString attributedStringWithPlainString: model.content]];
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.paragraphSpacing =0;
-    
-    [content addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0],NSParagraphStyleAttributeName:paragraphStyle} range:NSMakeRange(0, content.length)];
-    return content;
-    
-}
+//-(NSAttributedString*)getCommentString:(SharingCommentCellModel *)model{
+//    NSMutableAttributedString* content=[[NSMutableAttributedString alloc]initWithString:@""];
+//    [content appendAttributedString:[self getURLInteractAttributeString:model.fromUserName]];
+//    if (isNotEmptyString(model.toUserName)) {
+//        [content appendAttributedString:[[NSAttributedString alloc]initWithString:@"回复"]];
+//        [content appendAttributedString:[self getURLInteractAttributeString:model.toUserName]];
+//    }
+//    [content appendAttributedString:[[NSAttributedString alloc]initWithString:@":"]];
+//    [content appendAttributedString:[NSAttributedString attributedStringWithPlainString: model.content]];
+//    
+//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+//    paragraphStyle.paragraphSpacing =0;
+//    
+//    [content addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13.0],NSParagraphStyleAttributeName:paragraphStyle} range:NSMakeRange(0, content.length)];
+//    return content;
+//    
+//}
+//
+//// 网址链接
+//-(NSAttributedString* )getURLInteractAttributeString:(NSString*)string{
+//    NSAttributedString* astr=[[NSAttributedString alloc]initWithString:string attributes:@{NSLinkAttributeName:@"www.baidu.com",NSForegroundColorAttributeName:FONT_COLOR}];
+//    return astr;
+//}
 
-// 网址链接
--(NSAttributedString* )getURLInteractAttributeString:(NSString*)string{
-    NSAttributedString* astr=[[NSAttributedString alloc]initWithString:string attributes:@{NSLinkAttributeName:@"www.baidu.com",NSForegroundColorAttributeName:FONT_COLOR}];
-    return astr;
-}
-
-- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
-    __block    NSMutableAttributedString* str=[[NSMutableAttributedString alloc]initWithAttributedString: textView.attributedText];
-    //    [str removeAttribute:NSLinkAttributeName range:characterRange];
-    
-    [str  setAttributes:@{NSBackgroundColorAttributeName:[UIColor whiteColor]} range:characterRange];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [str  setAttributes:@{NSBackgroundColorAttributeName:FONT_COLOR} range:characterRange];
-    });
-    NSLog(@"URL %@", URL);
-    return YES;
-}
+//- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
+//    __block    NSMutableAttributedString* str=[[NSMutableAttributedString alloc]initWithAttributedString: textView.attributedText];
+//    //    [str removeAttribute:NSLinkAttributeName range:characterRange];
+//    
+//    [str  setAttributes:@{NSBackgroundColorAttributeName:[UIColor whiteColor]} range:characterRange];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [str  setAttributes:@{NSBackgroundColorAttributeName:FONT_COLOR} range:characterRange];
+//    });
+//    NSLog(@"URL %@", URL);
+//    return YES;
+//}
 
 //-(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 //{

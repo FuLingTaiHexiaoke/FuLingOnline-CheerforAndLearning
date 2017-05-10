@@ -7,12 +7,17 @@
 //
 
 #pragma mark - Declarations and macros
-
+#define avatarImageViewHeight 46
+#define sharingMainOperationsContainerViewHeight 36
+#define likeTheSharingRecordScrollViewHeight 20
+#define bottomSeparatorLineViewHeight 0.5
+#define DEFAULT_VIEW_SPACING 8
+#define contentLabelFontSize 14
+#define contentLabelDefaultHeight 68
 
 #import "FLXKSharingFuLingOnlineStyleCell.h"
 
 //utilites
-#import "FriendsMomentSharingConfig.h"
 #import "Masonry.h"
 #import "NSString+Extensions.h"
 #import "MLLinkLabel.h"
@@ -81,8 +86,26 @@
     [super awakeFromNib];
 }
 
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
+
 #pragma mark - Delegate
 #pragma mark - Public methods
+-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
+
+-(void)setupNewSharingImagesContainerViewWithImageArray:(NSArray<FLXKSharingImagesModel*>*)imageArray{
+    
+}
+
+-(void)setupLocationRecordButtonWithLocation:(NSString*)location{
+    
+}
 
 
 -(void)setupSharingCommentsTableViewWithCellModels:(NSArray<SharingCommentCellModel*>*)models{
@@ -102,7 +125,19 @@
 }
 
 
+////评论
+//-(void)addFriendsharingComment:(NSDictionary*)parameters{
+//    [super addFriendsharingComment:parameters];
+//}
+
 #pragma mark - View Event
+- (IBAction)addThumbup:(UIButton*)sender {
+    [super addThumbup:sender];
+}
+
+- (IBAction)addCommentRequest:(UIButton*)sender {
+    [super addCommentRequest];
+}
 
 #pragma mark - Model Event
 
@@ -113,6 +148,7 @@
 -(void)setModel:(FLXKSharingCellModel *)model{
     [super setModel:model];
 
+    
     [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
@@ -123,10 +159,20 @@
         
         CGFloat width=[UIScreen mainScreen].bounds.size.width-avatarImageViewHeight;
         CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(width, INT_MAX)];
-        if (size.height>CONTENT_LABEL_DEFAULT_HEIGHT)
+        //        NSString *content = @"欢迎来到北京";
+        //
+        //        CGSize size1 =[content sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+        //
+        //        NSLog(@"--单行%@",NSStringFromCGSize(size1));
+        //
+        
+        //   CGRect rect=   [self.mainSharingContentLabel textRectForBounds:CGRectMake(0, 0, width, INT_MAX) limitedToNumberOfLines:3];
+        //        CGSize size=rect.size;
+        //        if (size.height>FBTweakValue(@"FuLingOnlineStyleCell", @"setupMainSharingContentLabel",  @"size.height", 30.0))
+        if (size.height>contentLabelDefaultHeight)
         {
             self.sharingContentShowAllButton.hidden=NO;
-            CGFloat height=model.isMainSharingContentLabelExpand?size.height:CONTENT_LABEL_DEFAULT_HEIGHT;
+            CGFloat height=model.isMainSharingContentLabelExpand?size.height:contentLabelDefaultHeight;
             
             [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
@@ -216,11 +262,11 @@
 //                           make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
     }];
     
-    [self.sharingCommentsTableView setModels:model.sharingComments];
-//   CGFloat  sharingCommentHeight=  [self.sharingCommentsTableView setCellModels:model.sharingComments];
+    
+   CGFloat  sharingCommentHeight=  [self.sharingCommentsTableView setCellModels:model.sharingComments];
     [self.sharingCommentsTableView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
-        make.height.mas_equalTo(model.sharingComments_Height).priorityHigh();
+        make.height.mas_equalTo(sharingCommentHeight).priorityHigh();
     }];
     
     
@@ -259,7 +305,8 @@
     if (!_mainSharingContentLabel) {
         _mainSharingContentLabel= [[MLLinkLabel alloc]init];
         _mainSharingContentLabel.numberOfLines=0;
-        _mainSharingContentLabel.font = [UIFont systemFontOfSize:CONTENT_LABEL_FONT_SIZE];
+        _mainSharingContentLabel.font = [UIFont systemFontOfSize:14.0];
+        _mainSharingContentLabel.font = [UIFont systemFontOfSize:contentLabelFontSize];
         [self.contentView addSubview:_mainSharingContentLabel];
     }
     return   _mainSharingContentLabel;
@@ -271,10 +318,10 @@
         
         [_sharingContentShowAllButton setTitle:@"全文" forState:UIControlStateNormal];
         [_sharingContentShowAllButton setTitle:@"收起" forState:UIControlStateSelected];
-        [_sharingContentShowAllButton setTitleColor:CONTENT_SHOW_BUTTON_NORMAL_COLOR forState:UIControlStateNormal];
-        [_sharingContentShowAllButton setTitleColor:CONTENT_SHOW_BUTTON_SELECTED_COLOR forState:UIControlStateSelected];
+        [_sharingContentShowAllButton setTitleColor:[UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [_sharingContentShowAllButton setTitleColor:[UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0] forState:UIControlStateSelected];
         
-        _sharingContentShowAllButton.titleLabel.font = [UIFont systemFontOfSize:CONTENT_LABEL_FONT_SIZE];
+        _sharingContentShowAllButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         _sharingContentShowAllButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _sharingContentShowAllButton.selected = NO;
         [_sharingContentShowAllButton addTarget:self action:@selector(showAllSharingContentAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -299,9 +346,9 @@
     if (!_locationRecordButton) {
         _locationRecordButton= [[UIButton alloc]init];
         [self.contentView addSubview:_locationRecordButton];
-        _locationRecordButton.titleLabel.font = [UIFont systemFontOfSize:LOCATION_BUTTON_FONT_SIZE];
+        _locationRecordButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
         _locationRecordButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [_locationRecordButton setTitleColor:LOCATION_BUTTON_NORMAL_COLOR forState:UIControlStateNormal];
+        [_locationRecordButton setTitleColor:[UIColor colorWithRed:92/255.0 green:140/255.0 blue:193/255.0 alpha:1.0] forState:UIControlStateNormal];
         [_locationRecordButton setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
     }
     return   _locationRecordButton;

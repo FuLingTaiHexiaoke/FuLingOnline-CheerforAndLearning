@@ -6,23 +6,22 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 #pragma mark - Declarations and macros
-#define default_space (5)
-#define default_width (80+default_space)
-#define default_height (80+default_space)
+//#define default_space (5)
+//#define default_width (80+default_space)
+//#define default_height (80+default_space)
 
 #define Reuse_FLXKBaseImageLayoutCollectcionViewCell @"FLXKBaseImageLayoutCollectcionViewCell"
 
 #import "FLXKTwoSharingPictureLayoutView.h"
 //utilites
+#import "FriendsMomentSharingConfig.h"
 //child viewController
 //subviews
 //cells
 #import "FLXKBaseImageLayoutCollectcionViewCell.h"
 
 //models
-//#import "b_group.h"
-//#import "b_items.h"
-//#import "b_sub_items.h
+
 
 @interface FLXKTwoSharingPictureLayoutView ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 //IBOutlet
@@ -69,6 +68,7 @@
     FLXKSharingImagesModel* item= self.collectionViewDataSource[itemIndex];
     FLXKBaseImageLayoutCollectcionViewCell*   cell=( FLXKBaseImageLayoutCollectcionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:Reuse_FLXKBaseImageLayoutCollectcionViewCell forIndexPath:indexPath];
     [cell.imageView sd_setImageWithURL:NSURL_BaseURL(item.thumbnailPictureUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
+//       [cell.imageView setImage: [UIImage imageNamed:@"Spark"]];
     cell.userInteractionEnabled=YES;
     return cell;
 }
@@ -88,8 +88,8 @@
             break;
         }
         default:
-            width=default_width-default_space;
-            height=default_height-default_space;
+            width=IMAGES_DEFAULT_WIDTH-IMAGES_DEFAULT_SPACE;
+            height=IMAGES_DEFAULT_HEIGHT-IMAGES_DEFAULT_SPACE;
             break;
     }
     return   CGSizeMake(width, height) ;
@@ -113,60 +113,62 @@
 #pragma mark - Public methods
 
 -(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
-    //get height
-    CGFloat height;
-    CGFloat width;
-    NSInteger count= imageArray.count;
-    switch (count) {
-        case 0:{
-            width=0;
-            height=0;
-            break;
-        }
-        case 1:{
-            FLXKSharingImagesModel *  obj = imageArray[0];
-            width= obj.thumberImageWidth;
-            height= obj.thumberImageHeight;
-            break;
-        }
-        case 2:
-        case 3:
-            width=default_width*count;
-            height=default_height*ceil(count/3.0);
-            break;
-        case 4:
-            width=default_width*2;
-            height=default_height*ceil(count/3.0);
-            break;
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-            width=default_width*3;
-            height=default_height*ceil(count/3.0);
-            break;
-        default:
-            width=default_width;
-            height=default_height;
-            break;
-    }
-    if(count>1){
-        width-=default_space;
-        height-=default_space;
-    }
-    //set frame
-    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(width);
-        make.height.mas_equalTo(height);
-        make.centerY.mas_equalTo(self.mas_centerY);
-        make.left.mas_equalTo(self.mas_left);
-    }];
-//    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+//    //get height
+//    CGFloat height;
+//    CGFloat width;
+//    NSInteger count= imageArray.count;
+//    switch (count) {
+//        case 0:{
+//            width=0;
+//            height=0;
+//            break;
+//        }
+//        case 1:{
+//            FLXKSharingImagesModel *  obj = imageArray[0];
+//            width= obj.thumberImageWidth;
+//            height= obj.thumberImageHeight;
+//            break;
+//        }
+//        case 2:
+//        case 3:
+//            width=default_width*count;
+//            height=default_height*ceil(count/3.0);
+//            break;
+//        case 4:
+//            width=default_width*2;
+//            height=default_height*ceil(count/3.0);
+//            break;
+//        case 5:
+//        case 6:
+//        case 7:
+//        case 8:
+//        case 9:
+//            width=default_width*3;
+//            height=default_height*ceil(count/3.0);
+//            break;
+//        default:
+//            width=default_width;
+//            height=default_height;
+//            break;
+//    }
+//    if(count>1){
+//        width-=default_space;
+//        height-=default_space;
+//    }
+//    //set frame
+//    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.width.mas_equalTo(width);
 //        make.height.mas_equalTo(height);
+//        make.centerY.mas_equalTo(self.mas_centerY);
+//        make.left.mas_equalTo(self.mas_left);
 //    }];
-//         [self layoutIfNeeded];
-    self.viewHeight=height;
+////    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
+////        make.height.mas_equalTo(height);
+////    }];
+////         [self layoutIfNeeded];
+//    self.viewHeight=height;
+    
+    
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
     [self.collectionView reloadData];
@@ -182,8 +184,8 @@
     self.collectionView.dataSource=self;
     self.collectionView.backgroundColor=[UIColor whiteColor];
   UICollectionViewFlowLayout* collectionViewLayout=  (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
-    collectionViewLayout.minimumLineSpacing=default_space;
-    collectionViewLayout.minimumInteritemSpacing=default_space;
+    collectionViewLayout.minimumLineSpacing=IMAGES_DEFAULT_SPACE;
+    collectionViewLayout.minimumInteritemSpacing=IMAGES_DEFAULT_SPACE;
 
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(0);

@@ -98,23 +98,21 @@
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [self fd_heightForCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] configuration:^(FLXKBaseCommentCell *cell) {
-        [self configureCell:cell withModel:_models[indexPath.row]];
-    }];
-}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    return  [self fd_heightForCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] cacheByIndexPath:indexPath configuration:^(FLXKBaseCommentCell *cell) {
+//        [self configureCell:cell withModel:_models[indexPath.row]];
+//    }];
+//}
 
 #pragma mark - Public methods
 
-//-(void)setModels:(NSArray<NSString *> *)models{
-//    _models=models;
-//    [self reloadData];
+
+//-(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models{
+//    self.models=models;
+//    CGFloat height= [self getTableHeight];//执行顺序有待测试
+//    return height;
 //}
--(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models{
-    self.models=models;
-    CGFloat height= [self getTableHeight];//执行顺序有待测试
-    return height;
-}
+
 
 
 #pragma mark - View Event
@@ -130,12 +128,26 @@
 -(CGFloat)getTableHeight{
     __block CGFloat currentHeight=0;
     [_models enumerateObjectsUsingBlock:^(SharingCommentCellModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        currentHeight +=  [self fd_heightForCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] configuration:^(FLXKBaseCommentCell *cell) {
+        NSIndexPath* indexPath=[NSIndexPath indexPathForRow:idx inSection:0];
+        currentHeight +=  [self fd_heightForCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] cacheByIndexPath:indexPath configuration:^(FLXKBaseCommentCell *cell) {
             [self configureCell:cell withModel:obj];
         }];
     }];
     return currentHeight;
 }
+
+//-(CGFloat)getTableHeight{
+//    __block CGFloat currentHeight=0;
+//    
+//    [_models enumerateObjectsUsingBlock:^(SharingCommentCellModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//      
+//                CGSize size =[ obj.content sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+//        currentHeight += (size.height*(size.width/(SCREEN_WIDTH-54)));
+////                NSLog(@"--单行%@",NSStringFromCGSize(size1));
+//        //
+//    }];
+//    return currentHeight;
+//}
 
 //- (void)configureCell:(FLXKBaseCommentCell *)cell atIndexPath:(NSIndexPath *)indexPath {
 //    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"

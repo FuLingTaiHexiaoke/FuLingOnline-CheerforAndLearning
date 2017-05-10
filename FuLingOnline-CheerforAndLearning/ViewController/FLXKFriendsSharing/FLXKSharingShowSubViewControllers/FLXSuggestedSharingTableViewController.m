@@ -32,7 +32,6 @@
 #import "JSMessageInputView.h"
 #import "FLXKSharingBaseCell.h"
 #import "FLXKSharingFuLingOnlineStyleCell.h"
-#import "FLXKSharingFuLingOnlineStyleCellautolayouttest.h"
 #import "FLXKSharingFuLingOnlineStyleCellmasonry.h"
 
 #import "FLXKSharingFuLingOnlineStyleCell_UIStackView.h"
@@ -175,16 +174,18 @@
 //}
 
 //
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-// NSLog(@"indexPath.row %lu",(unsigned long)indexPath.row);
-//    
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 //  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
 //                [self configureCell:cell atIndexPath:indexPath];
 //            }];
-//    
-//     NSLog(@"indexPath.row %lu %f",(unsigned long)indexPath.row,height);
+    
+//    CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell cacheByIndexPath:indexPath configuration:^(id cell) {
+//                   [self configureCell:cell atIndexPath:indexPath];
+//    }];
+    return _models[indexPath.row].cell_Height;
 //    return height;
-//}
+}
 
 //-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    return 100;
@@ -239,8 +240,8 @@
     
     //   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     
-    _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
-    [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//    _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
+//    [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 -(void)setupMessageToolBar{
@@ -327,32 +328,32 @@
 }
 
 
-- (void)tick:(CADisplayLink *)link {
-    if (_lastTime == 0) {
-        _lastTime = link.timestamp;
-        return;
-    }
-    
-    _count++;
-    NSTimeInterval delta = link.timestamp - _lastTime;
-    if (delta < 1) return;
-    _lastTime = link.timestamp;
-    float fps = _count / delta;
-    _count = 0;
-    
-    CGFloat progress = fps / 60.0;
-    //    UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
-    //
-    //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
-    
-    NSString* fps1=  [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
-        NSLog(@"FPS %@", fps1);
-    //    [text yy_setColor:color range:NSMakeRange(0, text.length - 3)];
-    //    [text yy_setColor:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
-    //    text.yy_font = _font;
-    //    [text yy_setFont:_subFont range:NSMakeRange(text.length - 4, 1)];
-    //
-    //    self.attributedText = text;
-}
+//- (void)tick:(CADisplayLink *)link {
+//    if (_lastTime == 0) {
+//        _lastTime = link.timestamp;
+//        return;
+//    }
+//    
+//    _count++;
+//    NSTimeInterval delta = link.timestamp - _lastTime;
+//    if (delta < 1) return;
+//    _lastTime = link.timestamp;
+//    float fps = _count / delta;
+//    _count = 0;
+//    
+//    CGFloat progress = fps / 60.0;
+//    //    UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
+//    //
+//    //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
+//    
+//    NSString* fps1=  [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
+//        NSLog(@"FPS %@", fps1);
+//    //    [text yy_setColor:color range:NSMakeRange(0, text.length - 3)];
+//    //    [text yy_setColor:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
+//    //    text.yy_font = _font;
+//    //    [text yy_setFont:_subFont range:NSMakeRange(text.length - 4, 1)];
+//    //
+//    //    self.attributedText = text;
+//}
 
 @end

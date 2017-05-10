@@ -20,4 +20,5 @@
 @property(nonatomic)NSString* timestamp;
 @property(nonatomic)NSString* newsID;
 
++(NSAttributedString*)getCommentString:(SharingCommentCellModel *)model;
 @end

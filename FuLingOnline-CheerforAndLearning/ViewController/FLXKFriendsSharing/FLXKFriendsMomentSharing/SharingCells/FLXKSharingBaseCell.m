@@ -190,28 +190,9 @@
 }
 #pragma mark - getter/setter
 
-//-(void)setupSharingCommentsTableViewWithCellModels{
-//    __weak __typeof(self) weakSelf=self;
-//    self.sharingCommentsTableView.addCommentBlock=^(SharingCommentCellModel* model){
-//        weakSelf.currentCommentCellModel=model;
-//        if ( weakSelf.addCommentBlock) {
-//            weakSelf.addCommentBlock();
-//        }
-//    };
-//}
-
-
 
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 @end
