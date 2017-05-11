@@ -78,11 +78,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FLXKBaseCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] ];
+    FLXKBaseCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:[FLXKBaseCommentCell identifierForReusable] forIndexPath:indexPath];
 //    [self configureCell:cell atIndexPath:indexPath];
      [cell setModel:_models[indexPath.row]];
     return cell;
 }
+
+
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -107,11 +109,11 @@
 #pragma mark - Public methods
 
 
-//-(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models{
-//    self.models=models;
-//    CGFloat height= [self getTableHeight];//执行顺序有待测试
-//    return height;
-//}
+-(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models{
+    self.models=models;
+    CGFloat height= [self getTableHeight];//执行顺序有待测试
+    return height;
+}
 
 
 
@@ -119,8 +121,11 @@
 #pragma mark - Model Event
 #pragma mark - Private methods
 -(void)setupUI{
+//    
+//    [self registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
     
-    [self registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
+    
+    [self registerClass:NSClassFromString(@"FLXKBaseCommentCell")  forCellReuseIdentifier:[FLXKBaseCommentCell identifierForReusable]];
     
     self.estimatedRowHeight=40;
 }
@@ -166,8 +171,19 @@
 
 #pragma mark - getter/setter
 -(void)setModels:(NSArray<SharingCommentCellModel *> *)models{
-    _models=models;
-    [self reloadData];
+    if (models.count>9) {
+       _models= [models subarrayWithRange:NSMakeRange(0, 8)];
+    }
+    else{
+          _models=models;
+    }
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//       [self reloadData];
+//    });
+//    
+ dispatch_async(dispatch_get_main_queue(), ^{
+         [self reloadData];
+ });
 }
 #pragma mark - Overriden methods
 #pragma mark - Navigation

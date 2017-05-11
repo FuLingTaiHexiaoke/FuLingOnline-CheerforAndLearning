@@ -65,7 +65,9 @@
 #pragma mark - Public methods
 
 - (void)reloadCurrentCell{
+    [self.tableView beginUpdates];
  [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 -(void)setModel:(FLXKSharingCellModel *)model{

@@ -30,8 +30,8 @@
 #define isNotEmptyString(x)     ( !(isNull(x) || [x isEqual:@""] || [x isEqual:@"(null)"]))
 
 //================================================== FLXKSharingFuLingOnlineStyleCell ======================================================
-#define avatarImageViewHeight 46
-#define sharingMainOperationsContainerViewHeight 36
+#define avatarImageViewHeight 40
+#define sharingMainOperationsContainerViewHeight 21
 #define likeTheSharingRecordScrollViewHeight 20
 #define bottomSeparatorLineViewHeight 0.5
 

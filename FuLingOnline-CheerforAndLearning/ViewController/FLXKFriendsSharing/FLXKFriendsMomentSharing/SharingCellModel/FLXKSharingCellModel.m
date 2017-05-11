@@ -20,8 +20,30 @@
 
 @implementation FLXKSharingCellModel
 
+//-(BOOL)isMainSharingContentLabelExpand{
+//    return _isMainSharingContentLabelExpand;
+//}
+//
+//-(void)setIsMainSharingContentLabelExpand:(BOOL)isMainSharingContentLabelExpand{
+//    _isMainSharingContentLabelExpand=isMainSharingContentLabelExpand;
+//}
+
 -(CGFloat)default_mainSharingContent_Height{
     return CONTENT_LABEL_DEFAULT_HEIGHT;
+}
+
+-(CGFloat)mainSharingContent_Height{
+    CGFloat height=0;
+    if (self.isMainSharingContentLabelExpand) {
+        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height):0;
+    }
+    else if (_mainSharingContent_Height>self.default_mainSharingContent_Height){
+        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height):0;
+    }
+    else{
+        height+=_mainSharingContent_Height;
+    }
+    return height;
 }
 
 -(void)setMainSharingContent:(NSString *)mainSharingContent{
@@ -29,14 +51,14 @@
     if (mainSharingContent.length>0) {
         _shouldShowMainSharingContent=YES;
         
-        CGFloat height;
+        CGFloat height=0;
         UILabel* label=[[UILabel alloc]init];
         label.numberOfLines=0;
         label.font = [UIFont systemFontOfSize:CONTENT_LABEL_FONT_SIZE];
         label.attributedText=[NSAttributedString attributedStringWithPlainString:mainSharingContent];
         height = [label sizeThatFits:SIZE_FOR_TEXT_GET_HEIGHT].height;
         _mainSharingContent_Height=height;
-        if (height>_default_mainSharingContent_Height) {
+        if (height>self.default_mainSharingContent_Height) {
             _shouldShowSharingContentShowAllButton=YES;
             _showContentButton_Height = [self getButtonHeightWithTitle:@"展开" font:[UIFont systemFontOfSize:CONTENT_LABEL_FONT_SIZE]];
         }
@@ -52,7 +74,7 @@
         _shouldShowSharingImages=YES;
         
         //get height
-        CGFloat height;
+        CGFloat height=0;
         CGFloat width;
         NSInteger count= sharingImages.count;
         switch (count) {
@@ -115,11 +137,23 @@
 }
 
 -(CGFloat)likeTheSharingUserRecords_Height{
-    return likeTheSharingRecordScrollViewHeight;
+    if (self.likeTheSharingUserRecords.count>0) {
+            return likeTheSharingRecordScrollViewHeight;
+    }
+    else{
+        return 0;
+    }
+
 }
 
 -(CGFloat)bottomSeparatorLineView_Height{
-    return bottomSeparatorLineViewHeight;
+    if (self.sharingComments_Height>0) {
+        _shouldShow_bottomSeparatorLineView=YES;
+            return bottomSeparatorLineViewHeight;
+    }
+    else{
+        return 0;
+    }
 }
 
 -(void)setSharingComments:(NSMutableArray<SharingCommentCellModel *> *)sharingComments{
@@ -134,6 +168,7 @@
         
         [sharingComments enumerateObjectsUsingBlock:^(SharingCommentCellModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             label.attributedText=[SharingCommentCellModel getCommentString:obj];
+            obj.resultContent= label.attributedText;
             height+=  [label sizeThatFits:SIZE_FOR_TEXT_GET_HEIGHT].height;
         }];
         _sharingComments_Height=height;
@@ -143,6 +178,12 @@
 -(CGFloat)headerSection_Height{
     return avatarImageViewHeight;
 }
+
+//-(void)setSharingComments_Height:(CGFloat)sharingComments_Height{
+//    if (<#condition#>) {
+//        <#statements#>
+//    }
+//}
 
 -(CGFloat)cell_Height{
 //    CGFloat height;
@@ -166,17 +207,18 @@
 //    height+=_sharingComments_Height>0?(_sharingComments_Height+DEFAULT_VIEW_SPACING):0;
 //    
 //    return height;
-    CGFloat height;
+    CGFloat height=0.0;
     height+=self.headerSection_Height>0?(self.headerSection_Height+DEFAULT_VIEW_SPACING):0;
-    if (self.isMainSharingContentLabelExpand) {
-        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-    }
-    else if (self.mainSharingContent_Height>_default_mainSharingContent_Height){
-        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-    }
-    else{
-        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-    }
+//    if (self.isMainSharingContentLabelExpand) {
+//        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+//    else if (self.mainSharingContent_Height>_default_mainSharingContent_Height){
+//        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+//    else{
+//        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+    height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
     
     height+=self.showContentButton_Height>0?(self.showContentButton_Height+DEFAULT_VIEW_SPACING):0;
     height+=self.sharingImages_Height>0?(self.sharingImages_Height+DEFAULT_VIEW_SPACING):0;

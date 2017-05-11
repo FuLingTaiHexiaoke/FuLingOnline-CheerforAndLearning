@@ -9,7 +9,7 @@
 #pragma mark - Declarations and macros
 
 
-#import "FLXKSharingFuLingOnlineStyleCell.h"
+#import "FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h"
 
 //utilites
 #import "FriendsMomentSharingConfig.h"
@@ -24,7 +24,10 @@
 #import "FuLingStyleMainOperationContainerView.h"
 #import "FLXKTwoSharingPictureLayoutView.h"
 
-@interface FLXKSharingFuLingOnlineStyleCell ()
+#import "FLXKBaseCommentCell.h"
+
+
+@interface FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic)  UIImageView *avatarImageView;
 @property (strong, nonatomic)  UILabel *nickNameLabel;
@@ -40,6 +43,7 @@
 
 @property (strong, nonatomic)  FLXKHeaderImageSharingLikeCollectionView *likeTheSharingRecordScrollView;
 @property (strong, nonatomic)  UIView *bottomSeparatorLineView;
+//@property (strong, nonatomic)  FLXKBaseSharingCommentTableView *sharingCommentsTableView;
 @property (strong, nonatomic)  FLXKBaseSharingCommentTableView *sharingCommentsTableView;
 
 //IBOutlet Constraints
@@ -50,11 +54,12 @@
 //child viewController
 //subviews
 //models
+@property (strong, nonatomic)NSArray<SharingCommentCellModel *> *  models;
 //UI state record properties
-//@property (assign, nonatomic)BOOL isMainSharingContentLabelExpand;
+@property (assign, nonatomic)BOOL isMainSharingContentLabelExpand;
 @end
 
-@implementation FLXKSharingFuLingOnlineStyleCell
+@implementation FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight
 
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
@@ -84,110 +89,154 @@
 #pragma mark - Delegate
 #pragma mark - Public methods
 
-
--(void)setupSharingCommentsTableViewWithCellModels:(NSArray<SharingCommentCellModel*>*)models{
-    //get height
-    CGFloat height= [self.sharingCommentsTableView setCellModels:models];
-    [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(height);
-    }];
-    
-    __weak __typeof(self) weakSelf=self;
-    self.sharingCommentsTableView.addCommentRequsetBlock=^(SharingCommentCellModel* model){
-        weakSelf.currentCommentCellModel=model;
-        if ( weakSelf.addCommentRequestBlock) {
-            weakSelf.addCommentRequestBlock([NSString stringWithFormat:@"回复:%@",model.toUserName],weakSelf);
-        }
-    };
-}
+//
+//-(void)setupSharingCommentsTableViewWithCellModels:(NSArray<SharingCommentCellModel*>*)models{
+//    //get height
+//    CGFloat height= [self.sharingCommentsTableView setCellModels:models];
+//    [self.sharingCommentsTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(height);
+//    }];
+//    
+//    __weak __typeof(self) weakSelf=self;
+//    self.sharingCommentsTableView.addCommentRequsetBlock=^(SharingCommentCellModel* model){
+//        weakSelf.currentCommentCellModel=model;
+//        if ( weakSelf.addCommentRequestBlock) {
+//            weakSelf.addCommentRequestBlock([NSString stringWithFormat:@"回复:%@",model.toUserName],weakSelf);
+//        }
+//    };
+//}
 
 
 #pragma mark - View Event
 
 #pragma mark - Model Event
 
-//
-//@property(nonatomic,assign)CGFloat headerSection_Height;
-//@property(nonatomic,assign)CGFloat default_mainSharingContent_Height;
-//@property(nonatomic,assign)CGFloat mainSharingContent_Height;
-//@property(nonatomic,assign)CGFloat showContentButton_Height;
-//@property(nonatomic,assign)CGFloat sharingImages_Height;
-//@property(nonatomic,assign)CGFloat sharingImages_Width;
-//@property(nonatomic,assign)CGFloat locationRecord_Height;
-//@property(nonatomic,assign)CGFloat sharingMainOperationsContainerView_Height;
-//@property(nonatomic,assign)CGFloat likeTheSharingUserRecords_Height;
-//@property(nonatomic,assign)CGFloat bottomSeparatorLineView_Height;
-//@property(nonatomic,assign)CGFloat sharingComments_Height;
-//
-//@property(nonatomic,assign)CGFloat cell_Height;
-//
-//
-//@property (assign, nonatomic)BOOL shouldShowMainSharingContent;
-//@property (assign, nonatomic)BOOL shouldShowSharingContentShowAllButton;
-//@property (assign, nonatomic)BOOL shouldShowSharingImages;
-//@property (assign, nonatomic)BOOL shouldShowLocationRecord;
-//@property (assign, nonatomic)BOOL shouldShow_sharingComments;
+
+
 #pragma mark - getter/setter
 
 -(void)setModel:(FLXKSharingCellModel *)model{
     [super setModel:model];
 
+    [self.sharingImagesContainerView setImageArray:model.sharingImages];
+    CGFloat height=  self.sharingImagesContainerView.viewHeight;
+    [self.sharingImagesContainerView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
+        make.height.mas_equalTo(height).priorityHigh();
+    }];
+    
+    
     [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     
     self.mainSharingContentLabel.attributedText=[NSAttributedString attributedStringWithPlainString: self.model.mainSharingContent];
-    [self.mainSharingContentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(model.mainSharingContent.length>0?DEFAULT_VIEW_SPACING:0);
-        make.height.mas_equalTo(model.mainSharingContent_Height);
-    }];
+    if (self.model.mainSharingContent.length>0) {
+        self.sharingContentShowAllButton.selected=model.isMainSharingContentLabelExpand;
+        
+        CGFloat width=[UIScreen mainScreen].bounds.size.width-avatarImageViewHeight;
+        CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(width, INT_MAX)];
+        if (size.height>CONTENT_LABEL_DEFAULT_HEIGHT)
+        {
+            self.sharingContentShowAllButton.hidden=NO;
+            CGFloat height=model.isMainSharingContentLabelExpand?size.height:CONTENT_LABEL_DEFAULT_HEIGHT;
+            
+            [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+                make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
+                make.left.mas_equalTo(self.avatarImageView.mas_right);
+                make.height.mas_equalTo(height);
+            }];
+            
+            
+            [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+                
+                make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
+                make.left.mas_equalTo(self.avatarImageView.mas_right);
+            }];
+        }
+        else{
+            
+            [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+                make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
+                make.left.mas_equalTo(self.avatarImageView.mas_right);
+            }];
+            
+            self.sharingContentShowAllButton.hidden=YES;
+            [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
+                make.left.mas_equalTo(self.avatarImageView.mas_right);
+                make.height.mas_equalTo(0).priorityHigh();
+            }];
+        }
+    }
+    else{
+        [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.timestampLabel.mas_bottom);
+            make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+            make.height.mas_equalTo(0);
+        }];
+        
+        self.sharingContentShowAllButton.hidden=YES;
+        [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+            make.height.mas_equalTo(0).priorityHigh();
+        }];
+    }
     
-    self.sharingContentShowAllButton.selected=model.isMainSharingContentLabelExpand;
-    self.sharingContentShowAllButton.hidden=!model.shouldShowSharingContentShowAllButton;
-    [self.sharingContentShowAllButton mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom).offset(model.shouldShowSharingContentShowAllButton?DEFAULT_VIEW_SPACING:0);
-        make.height.mas_equalTo(model.showContentButton_Height).priorityHigh();
-    }];
-    
-        [self.sharingImagesContainerView setModel:model];
-//    [self.sharingImagesContainerView setImageArray:model.sharingImages];
-    [self.sharingImagesContainerView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
-        make.height.mas_equalTo(model.sharingImages_Height).priorityHigh();
-    }];
 
-
     
-    self.locationRecordButton.hidden=!model.shouldShowLocationRecord;
-     [self.locationRecordButton setTitle:model.locationRecord  forState:UIControlStateNormal];
-    [self.locationRecordButton mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom).offset(model.shouldShowLocationRecord?DEFAULT_VIEW_SPACING:0.0);
-        make.height.mas_equalTo(model.locationRecord_Height);
-    }];
+    if ([model.locationRecord isEqualToString:@"显示位置"]||isEmptyString(model.locationRecord )) {
+        self.locationRecordButton.hidden=YES;
+        [self.locationRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom);
+//                make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+            make.height.mas_equalTo(0);
+        }];
+    }
+    else{
+        self.locationRecordButton.hidden=NO;
+        [self.locationRecordButton setTitle:model.locationRecord  forState:UIControlStateNormal];
+        [self.locationRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+//             make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(DEFAULT_VIEW_SPACING);
+            make.left.mas_equalTo(self.avatarImageView.mas_right);
+        }];
+    }
     
     [self.sharingMainOperationsContainerView setModel:model];
     
     [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
         [self.likeTheSharingRecordScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.sharingMainOperationsContainerView.mas_bottom).offset(model.likeTheSharingUserRecords.count>0?DEFAULT_VIEW_SPACING:0.0);
-            make.height.mas_equalTo(model.likeTheSharingUserRecords_Height).priorityHigh();
+            make.height.mas_equalTo(model.likeTheSharingUserRecords.count>0?likeTheSharingRecordScrollViewHeight:0.0 ).priorityHigh();
         }];
 
     
     [self.bottomSeparatorLineView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(model.shouldShow_bottomSeparatorLineView?DEFAULT_VIEW_SPACING:0.0);
-        make.height.mas_equalTo(model.bottomSeparatorLineView_Height).priorityHigh();
+        make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(model.sharingComments.count>0?DEFAULT_VIEW_SPACING:0.0);
+        make.height.mas_equalTo(model.sharingComments.count>0?bottomSeparatorLineViewHeight:0.0).priorityHigh();
 //                           make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
     }];
     
-    [self.sharingCommentsTableView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(model.shouldShow_sharingComments?DEFAULT_VIEW_SPACING:0);
-//        make.height.mas_equalTo(model.sharingComments_Height).priorityHigh();
-          make.height.mas_equalTo(20).priorityHigh();
-    }];
-//    [self.sharingCommentsTableView setModels:model.sharingComments];
+  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+       [self.sharingCommentsTableView setModels:model.sharingComments];
+  });
+
 //   CGFloat  sharingCommentHeight=  [self.sharingCommentsTableView setCellModels:model.sharingComments];
-    
+    [self.sharingCommentsTableView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
+        make.height.mas_equalTo(model.sharingComments_Height).priorityHigh();
+//          make.height.mas_equalTo(sharingCommentHeight).priorityHigh();
+    }];
+//    if (model.sharingComments.count>0) {
+//        self.models=model.sharingComments;
+//        [self.sharingCommentsTableView reloadData];
+//    }
 }
 
 
@@ -318,10 +367,47 @@
     }
     return   _sharingCommentsTableView;
 }
+//
+//-( UITableView *)sharingCommentsTableView{
+//    if (!_sharingCommentsTableView) {
+//        _sharingCommentsTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+//        _sharingCommentsTableView.delegate = self;
+//        _sharingCommentsTableView.dataSource = self;
+//            [_sharingCommentsTableView registerNib:[UINib nibWithNibName:@"FLXKBaseCommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FLXKBaseCommentCell"];
+////        [_sharingCommentsTableView registerClass:[FLXKSharingBaseCell class] forCellReuseIdentifier:@"FLXKSharingBaseCell"];
+//        _sharingCommentsTableView.showsVerticalScrollIndicator = NO;
+//        _sharingCommentsTableView.backgroundColor = [UIColor clearColor];
+//        _sharingCommentsTableView.bounces =NO;
+//        _sharingCommentsTableView.scrollEnabled =NO;
+//        _sharingCommentsTableView.estimatedRowHeight=17;
+//        _sharingCommentsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        [self.contentView addSubview:_sharingCommentsTableView];
+//        
+//    }
+//    return _sharingCommentsTableView;
+//}
+
+#pragma mark - Delegate
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return _models.count;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    FLXKBaseCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FLXKBaseCommentCell" forIndexPath:indexPath];
+//    //    [self configureCell:cell atIndexPath:indexPath];
+//    [cell setModel:_models[indexPath.row]];
+//    return cell;
+//}
 
 
 #pragma mark - Private methods
-
+-(void)loadComments{
+    [self.sharingCommentsTableView reloadData];
+}
 
 -(void)showAllSharingContentAction:(UIButton*)sender{
     self.model.isMainSharingContentLabelExpand=!self.model.isMainSharingContentLabelExpand;
@@ -358,21 +444,18 @@
     
     
     [self.sharingContentShowAllButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
+        make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
         make.left.mas_equalTo(self.avatarImageView.mas_right);
         make.height.mas_equalTo(0).priorityHigh();
     }];
-//    [self.sharingContentShowAllButton setContentHuggingPriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisVertical];
     
 
     [self.sharingImagesContainerView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-          make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom);
+        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(DEFAULT_VIEW_SPACING);
         make.left.mas_equalTo(self.avatarImageView.mas_right);
-        make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
+                make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
           make.height.mas_equalTo(0).priorityHigh();
     }];
-    
     
     [self.locationRecordButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
@@ -423,128 +506,8 @@
     }
     
 }
-
-
-
 #pragma mark - Overriden methods
 
 #pragma mark - Navigation
-
-//
-//-(void)setModel:(FLXKSharingCellModel *)model{
-//    [super setModel:model];
-//    
-//    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
-//    self.nickNameLabel.text=model.nickName;
-//    self.timestampLabel.text=model.timestamp;
-//    
-//    self.mainSharingContentLabel.attributedText=[NSAttributedString attributedStringWithPlainString: self.model.mainSharingContent];
-//    if (self.model.mainSharingContent.length>0) {
-//        self.sharingContentShowAllButton.selected=model.isMainSharingContentLabelExpand;
-//        
-//        CGFloat width=[UIScreen mainScreen].bounds.size.width-avatarImageViewHeight;
-//        CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(width, INT_MAX)];
-//        if (size.height>CONTENT_LABEL_DEFAULT_HEIGHT)
-//        {
-//            self.sharingContentShowAllButton.hidden=NO;
-//            CGFloat height=model.isMainSharingContentLabelExpand?size.height:CONTENT_LABEL_DEFAULT_HEIGHT;
-//            
-//            [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//                make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//                make.left.mas_equalTo(self.avatarImageView.mas_right);
-//                make.height.mas_equalTo(height);
-//            }];
-//            
-//            
-//            [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                
-//                make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
-//                make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            }];
-//        }
-//        else{
-//            
-//            [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//                make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//                make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            }];
-//            
-//            self.sharingContentShowAllButton.hidden=YES;
-//            [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
-//                make.left.mas_equalTo(self.avatarImageView.mas_right);
-//                make.height.mas_equalTo(0).priorityHigh();
-//            }];
-//        }
-//    }
-//    else{
-//        [self.mainSharingContentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.timestampLabel.mas_bottom);
-//            make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(0);
-//        }];
-//        
-//        self.sharingContentShowAllButton.hidden=YES;
-//        [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(0).priorityHigh();
-//        }];
-//    }
-//    
-//    [self.sharingImagesContainerView setImageArray:model.sharingImages];
-//    CGFloat height=  self.sharingImagesContainerView.viewHeight;
-//    [self.sharingImagesContainerView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
-//        make.height.mas_equalTo(height).priorityHigh();
-//    }];
-//    
-//    
-//    if ([model.locationRecord isEqualToString:@"显示位置"]||isEmptyString(model.locationRecord )) {
-//        self.locationRecordButton.hidden=YES;
-//        [self.locationRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom);
-//            //                make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//            make.height.mas_equalTo(0);
-//        }];
-//    }
-//    else{
-//        self.locationRecordButton.hidden=NO;
-//        [self.locationRecordButton setTitle:model.locationRecord  forState:UIControlStateNormal];
-//        [self.locationRecordButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-//            make.top.mas_equalTo(self.sharingImagesContainerView.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//            //             make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(DEFAULT_VIEW_SPACING);
-//            make.left.mas_equalTo(self.avatarImageView.mas_right);
-//        }];
-//    }
-//    
-//    [self.sharingMainOperationsContainerView setModel:model];
-//    
-//    [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
-//    [self.likeTheSharingRecordScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.sharingMainOperationsContainerView.mas_bottom).offset(model.likeTheSharingUserRecords.count>0?DEFAULT_VIEW_SPACING:0.0);
-//        make.height.mas_equalTo(model.likeTheSharingUserRecords.count>0?likeTheSharingRecordScrollViewHeight:0.0 ).priorityHigh();
-//    }];
-//    
-//    
-//    [self.bottomSeparatorLineView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.likeTheSharingRecordScrollView.mas_bottom).offset(model.sharingComments.count>0?DEFAULT_VIEW_SPACING:0.0);
-//        make.height.mas_equalTo(model.sharingComments.count>0?bottomSeparatorLineViewHeight:0.0).priorityHigh();
-//        //                           make.bottom.mas_equalTo(self.contentView.mas_bottom).offset(-DEFAULT_VIEW_SPACING);
-//    }];
-//    
-//    [self.sharingCommentsTableView setModels:model.sharingComments];
-//    //   CGFloat  sharingCommentHeight=  [self.sharingCommentsTableView setCellModels:model.sharingComments];
-//    [self.sharingCommentsTableView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.bottomSeparatorLineView.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
-//        make.height.mas_equalTo(model.sharingComments_Height).priorityHigh();
-//    }];
-//    
-//    
-//}
 
 @end

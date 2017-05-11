@@ -46,6 +46,7 @@
 - (void)addCommentRequest;
 -(void)addFriendsharingComment:(NSDictionary*)parameters;
 - (void)reloadCurrentCell;
+-(void)loadComments;
 //分享
 
 

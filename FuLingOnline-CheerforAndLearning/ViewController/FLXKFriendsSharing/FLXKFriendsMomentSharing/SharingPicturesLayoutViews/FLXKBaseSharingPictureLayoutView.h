@@ -13,11 +13,13 @@
 #import "UIImageView+WebCache.h"
 
 #import "FLXKSharingImagesModel.h"
+#import "FLXKSharingCellModel.h"
 
 
 @interface FLXKBaseSharingPictureLayoutView : UIView
 
 @property(nonatomic)NSArray<FLXKSharingImagesModel*>* imageArray;
+@property(nonatomic)FLXKSharingCellModel* model;
 
 @property(nonatomic,assign)CGFloat viewHeight;
 

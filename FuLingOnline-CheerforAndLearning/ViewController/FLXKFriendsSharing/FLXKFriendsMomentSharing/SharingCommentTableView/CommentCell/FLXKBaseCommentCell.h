@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "SharingCommentCellModel.h"
 #import "UIView+Extension_IdentifierForReusable.h"
-#import "MLLinkLabel.h"
+//#import "MLLinkLabel.h"
+
+@class MLLinkLabel;
 
 @interface FLXKBaseCommentCell : UITableViewCell
 //@property (weak, nonatomic) IBOutlet UITextView *commentTextView;

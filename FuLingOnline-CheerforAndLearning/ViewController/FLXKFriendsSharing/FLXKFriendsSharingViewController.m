@@ -99,7 +99,9 @@
 -(void)setupNavigationTitleViewController{
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
     for (int i=0; i<1; i++) {
-        FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+//        FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
+//        [viewControllers addObject:vc];
+        FLXSuggestedSharingTableViewController* vc=[FLXSuggestedSharingTableViewController new];
         [viewControllers addObject:vc];
     }
     

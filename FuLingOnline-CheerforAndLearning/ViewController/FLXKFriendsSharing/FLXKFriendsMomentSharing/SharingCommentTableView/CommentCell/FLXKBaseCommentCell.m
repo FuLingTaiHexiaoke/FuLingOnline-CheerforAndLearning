@@ -8,9 +8,12 @@
 
 #import "FLXKBaseCommentCell.h"
 
+#import "Masonry.h"
+
+#import "MLLinkLabel.h"
 
 @interface FLXKBaseCommentCell()<UITextViewDelegate>
-
+@property(nonatomic,strong) MLLinkLabel* label;
 @end
 
 @implementation FLXKBaseCommentCell
@@ -18,10 +21,15 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setupUI];
+    }
+    return self;
 }
 
 // If you are not using auto layout, override this method, enable it by setting
@@ -34,12 +42,22 @@
 
 - (void)setModel:(SharingCommentCellModel *)model{
     _model=model;
-    self.commentTextView.attributedText=[SharingCommentCellModel getCommentString:model];
-    [self.commentTextView setDidClickLinkBlock:^(MLLink *link, NSString *linkText, MLLinkLabel *label) {
+    self.label.attributedText=model.resultContent;
+//    self.commentTextView.attributedText=[SharingCommentCellModel getCommentString:model];
+    [self.label setDidClickLinkBlock:^(MLLink *link, NSString *linkText, MLLinkLabel *label) {
         Router(Router_Launch_NotificationCenter)
         NSString *url = [NSString stringWithFormat:@"telprompt://%@",link.linkValue];
         NSLog(@"URL %@", url);
     }];
+}
+
+-(void)setupUI{
+    _label=[MLLinkLabel new];
+    [self.contentView addSubview:_label];
+    [_label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.contentView);
+    }];
+    
 }
 
 //-(NSAttributedString*)getCommentString:(SharingCommentCellModel *)model{

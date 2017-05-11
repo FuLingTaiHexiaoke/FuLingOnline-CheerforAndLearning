@@ -19,6 +19,7 @@
 @property(nonatomic)NSInteger isReply;
 @property(nonatomic)NSString* timestamp;
 @property(nonatomic)NSString* newsID;
+@property(nonatomic)NSAttributedString* resultContent;
 
 +(NSAttributedString*)getCommentString:(SharingCommentCellModel *)model;
 @end

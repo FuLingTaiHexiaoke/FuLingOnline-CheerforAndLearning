@@ -51,6 +51,7 @@
 		B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */; };
 		B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */; };
 		B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */; };
+		B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B924948C1E8B8C7C006878CC /* FLXKSharingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */; };
 		B92494981E8BA103006878CC /* FLXKSharingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92494971E8BA103006878CC /* FLXKSharingCellModel.m */; };
@@ -774,6 +775,8 @@
 		B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		B91C05471EA8B4C100E1CE1E /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
 		B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
+		B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m; sourceTree = "<group>"; };
+		B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h; sourceTree = "<group>"; };
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
@@ -2866,6 +2869,8 @@
 		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
 			isa = PBXGroup;
 			children = (
+				B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h */,
+				B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */,
 				B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */,
 				B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */,
 				B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */,
@@ -4405,6 +4410,7 @@
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
 				B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */,
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
+				B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m in Sources */,
 				B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */,

@@ -36,6 +36,8 @@
 
 #import "FLXKSharingFuLingOnlineStyleCell_UIStackView.h"
 
+#import "FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h"
+
 
 @interface FLXSuggestedSharingTableViewController ()
 //IBOutlet
@@ -66,8 +68,7 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    self.tableView.estimatedRowHeight=100;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
 }
 
 - (void)viewDidLoad {
@@ -139,19 +140,13 @@
 //}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    FLXKSharingFuLingOnlineStyleCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell forIndexPath:indexPath];
-    if (!cell) {
-        cell = [[FLXKSharingFuLingOnlineStyleCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-    }
-    else{
-//        NSLog(@"cell 重用了");
-//        cell.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
-    }
-    [cell.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.firstItem==cell.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
-            [cell.contentView removeConstraint:obj];
-        }
-    }];
+    FLXKSharingBaseCell *cell = [tableView dequeueReusableCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell forIndexPath:indexPath];
+//
+//    [cell.contentView.constraints enumerateObjectsUsingBlock:^(__kindof NSLayoutConstraint * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if (obj.firstItem==cell.contentView&& obj.firstAttribute==NSLayoutAttributeHeight) {
+//            [cell.contentView removeConstraint:obj];
+//        }
+//    }];
     [cell setModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
@@ -161,7 +156,29 @@
     };
     return cell;
 }
-//
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+        FLXKSharingBaseCell* currentCell = (FLXKSharingBaseCell*) cell;
+    
+//    [currentCell setModel:_models[indexPath.row]];
+//    [currentCell setIndexPath:indexPath];
+//    __weak __typeof(self) weakSelf=self;
+//    currentCell.addCommentRequestBlock=^(NSString* placeholder,FLXKSharingBaseCell* currentCell){
+//        [weakSelf showToolBarWithPlaceholder:placeholder];
+//        weakSelf.currentOperationCell=currentCell;
+//    };
+    
+
+//    [currentCell loadComments];
+}
+
+//-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+//    [self.tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//          FLXKSharingBaseCell* currentCell = (FLXKSharingBaseCell*) obj;
+//          [currentCell loadComments];
+//    }];
+//}
+
 - (void)configureCell:(FLXKSharingBaseCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
 [cell setModel:_models[indexPath.row]];
@@ -174,18 +191,20 @@
 //}
 
 //
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
-//                [self configureCell:cell atIndexPath:indexPath];
-//            }];
-    
-//    CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell cacheByIndexPath:indexPath configuration:^(id cell) {
-//                   [self configureCell:cell atIndexPath:indexPath];
-//    }];
-    return _models[indexPath.row].cell_Height;
-//    return height;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+////  CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell configuration:^(FLXKSharingBaseCell *cell) {
+////                [self configureCell:cell atIndexPath:indexPath];
+////            }];
+//    
+////    CGFloat height=   [tableView fd_heightForCellWithIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell cacheByIndexPath:indexPath configuration:^(id cell) {
+////                   [self configureCell:cell atIndexPath:indexPath];
+////    }];
+////        return height;
+//    
+//    return _models[indexPath.row].cell_Height;
+//
+//}
 
 //-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    return 100;
@@ -225,8 +244,8 @@
     
     self.tableView.separatorInset=UIEdgeInsetsMake(2,0,2,0);
     self.tableView.backgroundColor=[UIColor lightGrayColor];
-        [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-//       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellmasonry") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+//        [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     
     
@@ -236,7 +255,7 @@
     //            [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellstep2" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     self.tableView.estimatedRowHeight=100;
-      self.tableView.rowHeight = UITableViewAutomaticDimension;
+//      self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //   FLXKMessageToolBartest*  test=[[FLXKMessageToolBartest alloc]initWithCustomFrame:CGRectMake(0, 200, self.view.frame.size.width, 50)];
     

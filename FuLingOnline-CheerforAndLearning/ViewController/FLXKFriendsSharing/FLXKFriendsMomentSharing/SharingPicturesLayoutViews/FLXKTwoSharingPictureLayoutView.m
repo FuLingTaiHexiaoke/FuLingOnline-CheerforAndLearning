@@ -6,9 +6,9 @@
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 #pragma mark - Declarations and macros
-//#define default_space (5)
-//#define default_width (80+default_space)
-//#define default_height (80+default_space)
+#define default_space (5)
+#define default_width (80+default_space)
+#define default_height (80+default_space)
 
 #define Reuse_FLXKBaseImageLayoutCollectcionViewCell @"FLXKBaseImageLayoutCollectcionViewCell"
 
@@ -29,6 +29,7 @@
 //IBAction
 //DataSource
 @property (strong, nonatomic) NSMutableArray<FLXKSharingImagesModel*> * collectionViewDataSource;
+//@property (strong, nonatomic) NSArray<FLXKSharingImagesModel*> * collectionViewDataSource;
 //models
 //UI state record properties
 //subviews
@@ -114,65 +115,73 @@
 
 -(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
 //    //get height
-//    CGFloat height;
-//    CGFloat width;
-//    NSInteger count= imageArray.count;
-//    switch (count) {
-//        case 0:{
-//            width=0;
-//            height=0;
-//            break;
-//        }
-//        case 1:{
-//            FLXKSharingImagesModel *  obj = imageArray[0];
-//            width= obj.thumberImageWidth;
-//            height= obj.thumberImageHeight;
-//            break;
-//        }
-//        case 2:
-//        case 3:
-//            width=default_width*count;
-//            height=default_height*ceil(count/3.0);
-//            break;
-//        case 4:
-//            width=default_width*2;
-//            height=default_height*ceil(count/3.0);
-//            break;
-//        case 5:
-//        case 6:
-//        case 7:
-//        case 8:
-//        case 9:
-//            width=default_width*3;
-//            height=default_height*ceil(count/3.0);
-//            break;
-//        default:
-//            width=default_width;
-//            height=default_height;
-//            break;
-//    }
-//    if(count>1){
-//        width-=default_space;
-//        height-=default_space;
-//    }
-//    //set frame
-//    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.width.mas_equalTo(width);
-//        make.height.mas_equalTo(height);
-//        make.centerY.mas_equalTo(self.mas_centerY);
-//        make.left.mas_equalTo(self.mas_left);
-//    }];
-////    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-////        make.height.mas_equalTo(height);
-////    }];
-////         [self layoutIfNeeded];
-//    self.viewHeight=height;
-    
+    CGFloat height;
+    CGFloat width;
+    NSInteger count= imageArray.count;
+    switch (count) {
+        case 0:{
+            width=0;
+            height=0;
+            break;
+        }
+        case 1:{
+            FLXKSharingImagesModel *  obj = imageArray[0];
+            width= obj.thumberImageWidth;
+            height= obj.thumberImageHeight;
+            break;
+        }
+        case 2:
+        case 3:
+            width=default_width*count;
+            height=default_height*ceil(count/3.0);
+            break;
+        case 4:
+            width=default_width*2;
+            height=default_height*ceil(count/3.0);
+            break;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+            width=default_width*3;
+            height=default_height*ceil(count/3.0);
+            break;
+        default:
+            width=default_width;
+            height=default_height;
+            break;
+    }
+    if(count>1){
+        width-=default_space;
+        height-=default_space;
+    }
+    self.viewHeight=height;
+    //set frame
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(height);
+        make.centerY.mas_equalTo(self.mas_centerY);
+        make.left.mas_equalTo(self.mas_left);
+    }];
     
     //setup datasource
     self.collectionViewDataSource=[NSMutableArray arrayWithArray:imageArray];
+//      self.collectionViewDataSource=imageArray;
     [self.collectionView reloadData];
 
+}
+
+-(void)setModel:(FLXKSharingCellModel *)model{
+        [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(model.sharingImages_Width);
+            make.height.mas_equalTo(model.sharingImages_Height);
+            make.centerY.mas_equalTo(self.mas_centerY);
+            make.left.mas_equalTo(self.mas_left);
+        }];
+    
+        self.collectionViewDataSource=[NSMutableArray arrayWithArray:model.sharingImages];
+        [self.collectionView reloadData];
 }
 #pragma mark - View Event
 #pragma mark - Model Event
