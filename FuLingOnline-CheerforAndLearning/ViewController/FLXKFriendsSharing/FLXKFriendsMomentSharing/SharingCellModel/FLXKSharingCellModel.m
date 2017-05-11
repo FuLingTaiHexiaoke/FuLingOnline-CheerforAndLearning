@@ -145,25 +145,46 @@
 }
 
 -(CGFloat)cell_Height{
+//    CGFloat height;
+//    height+=_headerSection_Height>0?(_headerSection_Height+DEFAULT_VIEW_SPACING):0;
+//    if (_isMainSharingContentLabelExpand) {
+//        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+//    else if (_mainSharingContent_Height>_default_mainSharingContent_Height){
+//        height+=_default_mainSharingContent_Height>0?(_default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+//    else{
+//        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+//    }
+//    
+//    height+=_showContentButton_Height>0?(_showContentButton_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=_sharingImages_Height>0?(_sharingImages_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=_locationRecord_Height>0?(_locationRecord_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=self.sharingMainOperationsContainerView_Height>0?(self.sharingMainOperationsContainerView_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=_likeTheSharingUserRecords_Height>0?(_likeTheSharingUserRecords_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=_bottomSeparatorLineView_Height>0?(_bottomSeparatorLineView_Height+DEFAULT_VIEW_SPACING):0;
+//    height+=_sharingComments_Height>0?(_sharingComments_Height+DEFAULT_VIEW_SPACING):0;
+//    
+//    return height;
     CGFloat height;
-    height+=_headerSection_Height>0?(_headerSection_Height+DEFAULT_VIEW_SPACING):0;
-    if (_isMainSharingContentLabelExpand) {
-        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.headerSection_Height>0?(self.headerSection_Height+DEFAULT_VIEW_SPACING):0;
+    if (self.isMainSharingContentLabelExpand) {
+        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
     }
-    else if (_mainSharingContent_Height>_default_mainSharingContent_Height){
-        height+=_default_mainSharingContent_Height>0?(_default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    else if (self.mainSharingContent_Height>_default_mainSharingContent_Height){
+        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
     }
     else{
-        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
     }
     
-    height+=_showContentButton_Height?(_showContentButton_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_sharingImages_Height>0?(_sharingImages_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_locationRecord_Height>0?(_locationRecord_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_sharingMainOperationsContainerView_Height>0?(_sharingMainOperationsContainerView_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_likeTheSharingUserRecords_Height>0?(_likeTheSharingUserRecords_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_bottomSeparatorLineView_Height>0?(_bottomSeparatorLineView_Height+DEFAULT_VIEW_SPACING):0;
-    height+=_sharingComments_Height>0?(_sharingComments_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.showContentButton_Height>0?(self.showContentButton_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.sharingImages_Height>0?(self.sharingImages_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.locationRecord_Height>0?(self.locationRecord_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.sharingMainOperationsContainerView_Height>0?(self.sharingMainOperationsContainerView_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.likeTheSharingUserRecords_Height>0?(self.likeTheSharingUserRecords_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.bottomSeparatorLineView_Height>0?(self.bottomSeparatorLineView_Height+DEFAULT_VIEW_SPACING):0;
+    height+=self.sharingComments_Height>0?(self.sharingComments_Height+DEFAULT_VIEW_SPACING):0;
     
     return height;
 }
