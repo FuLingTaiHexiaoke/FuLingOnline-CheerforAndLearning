@@ -211,5 +211,165 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FrameworkLibrary/SDPhotoBrowser/SDPhotoBrowser.m"
+            timestampString = "516273916.048003"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "-highQualityImageURLForIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FrameworkLibrary/SDPhotoBrowser/SDPhotoBrowser.m"
+            timestampString = "516273979.916742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
+            landmarkName = "-highQualityImageURLForIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FrameworkLibrary/SDPhotoBrowser/SDPhotoBrowser.m"
+            timestampString = "516274339.010388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "298"
+            endingLineNumber = "298"
+            landmarkName = "-showFirstImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FrameworkLibrary/SDPhotoBrowser/SDPhotoBrowser.m"
+            timestampString = "516274509.91351"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-showFirstImage"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FrameworkLibrary/SDPhotoBrowser/SDPhotoBrowser.m"
+            timestampString = "516275003.120787"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "-layoutSubviews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKFriendsMomentSharing/SharingPicturesLayoutViews/FLXKTwoSharingPictureLayoutView.m"
+            timestampString = "516277662.716095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/IDMPhotoBrowser/Classes/IDMPhoto.m"
+            timestampString = "516277720.93852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-loadUnderlyingImageAndNotify"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[IDMPhoto loadUnderlyingImageAndNotify]"
+                  moduleName = "FuLingOnline-CheerforAndLearning"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hanjinbo/Documents/xiaoke/%E7%BB%83%E4%B9%A0%E9%A1%B9%E7%9B%AE/FuLingOnline-CheerforAndLearning/Pods/IDMPhotoBrowser/Classes/IDMPhoto.m"
+                  timestampString = "516278320.34528"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "664">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__40-[IDMPhoto loadUnderlyingImageAndNotify]_block_invoke"
+                  moduleName = "FuLingOnline-CheerforAndLearning"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hanjinbo/Documents/xiaoke/%E7%BB%83%E4%B9%A0%E9%A1%B9%E7%9B%AE/FuLingOnline-CheerforAndLearning/Pods/IDMPhotoBrowser/Classes/IDMPhoto.m"
+                  timestampString = "516278320.346596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SDWebImage/SDWebImage/SDWebImageManager.m"
+            timestampString = "516277858.138385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "-loadImageWithURL:options:progress:completed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

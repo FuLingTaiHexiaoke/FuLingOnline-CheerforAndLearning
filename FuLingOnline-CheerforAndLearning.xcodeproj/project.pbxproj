@@ -1639,6 +1639,7 @@
 		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
 			isa = PBXGroup;
 			children = (
+				B9FA22451EC5B20E0028F720 /* FrameworkLibrary */,
 				B955A71C1E7A3080008E3801 /* ToolKittyCodeBack.h */,
 				B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */,
 				B9C6AADF1E6547500003C50A /* Common Utilities */,
@@ -3486,6 +3487,13 @@
 				B9E17E271EA0C48E0027043A /* PsyZipArchive.m */,
 			);
 			path = PsyZipArchive;
+			sourceTree = "<group>";
+		};
+		B9FA22451EC5B20E0028F720 /* FrameworkLibrary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FrameworkLibrary;
 			sourceTree = "<group>";
 		};
 		B9FBB0911E8A59DC00CCAEA8 /* FLXKBase.xctemplate */ = {

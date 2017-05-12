@@ -20,7 +20,7 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "UIView+Extension_IdentifierForReusable.h"
 #import "FLXKHttpRequestModelHelper.h"
-
+#import "IDMPhotoBrowser.h"
 //child viewController
 
 
@@ -87,11 +87,58 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     if (DEBUG) {
         UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(150, 150, 50, 50)];
-        [btn1 addTarget:self action:@selector(setupFLXKSharingCellModel) forControlEvents:UIControlEventTouchUpInside];
+//        [btn1 addTarget:self action:@selector(setupFLXKSharingCellModel) forControlEvents:UIControlEventTouchUpInside];
+        [btn1 addTarget:self action:@selector(buttonWithImageOnScreenPressed:) forControlEvents:UIControlEventTouchUpInside];
+
         btn1.backgroundColor=[UIColor yellowColor];
         [self.view addSubview:btn1];
     }
 }
+- (void)buttonWithImageOnScreenPressed:(id)sender
+{
+    UIButton *buttonSender = (UIButton*)sender;
+    
+    // Create an array to store IDMPhoto objects
+    NSMutableArray *photos = [NSMutableArray new];
+    
+    IDMPhoto *photo;
+    
+    UIButton *button;
+    
+    photo = [IDMPhoto photoWithFilePath:[[NSBundle mainBundle] pathForResource:@"photo1l" ofType:@"jpg"]];
+    photo.caption = @"Grotto of the Madonna";
+
+    [photos addObject:photo];
+    
+    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/e36d5fe9-7f10-4617-999c-f3dc1716ce3e.jpg"]];
+    photo.caption = @"jianyue2";
+
+
+    [photos addObject:photo];
+    
+    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/51d8ebe9-f847-451d-9e74-f4405654668e.jpg"]];
+    button = [self.tableView.tableFooterView viewWithTag:103];
+    //    photo.placeholderImageView = button.imageView;
+    [photos addObject:photo];
+    
+    // Create and setup browser
+    //    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos animatedFromView:sender]; // using initWithPhotos:animatedFromView: method to use the zoom-in animation
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+//    browser.delegate = self;
+    //    browser.displayActionButton = NO;
+    //    browser.displayArrowButton = YES;
+    //    browser.displayCounterLabel = YES;
+    //    browser.usePopAnimation = YES;
+    //    browser.scaleImage = buttonSender.currentImage;
+    //    if(buttonSender.tag == 102) browser.useWhiteBackgroundColor = YES;
+    //    browser.trackTintColor = [UIColor yellowColor];
+    //    browser.progressTintColor = [UIColor redColor];
+    [browser setInitialPageIndex:buttonSender.tag-101];
+    // Show
+    [self presentViewController:browser animated:YES completion:nil];
+}
+
+
 
 -(void)viewWillAppear:(BOOL)animated{
 //    [self setupMessageToolBar];

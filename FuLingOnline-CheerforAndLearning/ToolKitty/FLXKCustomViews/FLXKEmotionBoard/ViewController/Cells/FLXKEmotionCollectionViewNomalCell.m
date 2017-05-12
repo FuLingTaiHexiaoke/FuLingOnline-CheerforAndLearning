@@ -67,7 +67,9 @@
         [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
     }
     else  if (item.emotionItemImageType==5) {
-        [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+//        [self.emotionButton setImage:[UIImage sd_animatedGIFWithData:[ sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+
+            [self.emotionButton setImage:[UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:item.emotionItemSmallImageUrl ofType:@"png"] ]] forState:UIControlStateNormal];
     }
 }
 

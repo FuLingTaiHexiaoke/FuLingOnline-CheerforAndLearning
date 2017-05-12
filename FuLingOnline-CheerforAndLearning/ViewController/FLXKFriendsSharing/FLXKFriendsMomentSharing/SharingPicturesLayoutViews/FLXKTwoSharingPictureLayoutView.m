@@ -15,6 +15,7 @@
 #import "FLXKTwoSharingPictureLayoutView.h"
 //utilites
 #import "FriendsMomentSharingConfig.h"
+#import "IDMPhotoBrowser.h"
 //child viewController
 //subviews
 //cells
@@ -101,16 +102,24 @@
 #pragma mark - UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    //    b_items* item= self.collectionViewDataSource[indexPath.item];
-    //    NSArray<b_sub_items*> *   subItems=[b_sub_items selectByCriteria:[NSString stringWithFormat: @" where item_id= %ld order by id  ",(long)item.id]];
-    //    if (subItems.count>0) {
-    //        [self performSegueWithIdentifier:@"Segue_PhotoShowingViewController" sender:item];
-    //    }
-    //    else{
-    //
-    //    }
-    
+    FLXKBaseImageLayoutCollectcionViewCell *cell=(FLXKBaseImageLayoutCollectcionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    NSMutableArray *photos = [NSMutableArray new];
+    for (FLXKSharingImagesModel *item in self.collectionViewDataSource) {
+        IDMPhoto *photo = [IDMPhoto photoWithURL:NSURL_BaseURL(item.actualPictureUrl)];
+        [photos addObject:photo];
+    }
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos animatedFromView:cell];
+    UIResponder * nextResponder=  self.nextResponder;
+    while (![nextResponder.class isSubclassOfClass:NSClassFromString(@"UIViewController")]) {
+        nextResponder=nextResponder.nextResponder;
+    }
+    [(UIViewController*)nextResponder presentViewController:browser animated:YES completion:nil];
 }
+
+#pragma mark - SDPhotoBrowserDelegate
+
+
+
 #pragma mark - Public methods
 
 -(void)setImageArray:(NSArray<FLXKSharingImagesModel *> *)imageArray{
