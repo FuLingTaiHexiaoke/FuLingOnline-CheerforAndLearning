@@ -171,17 +171,17 @@
 
 #pragma mark - getter/setter
 -(void)setModels:(NSArray<SharingCommentCellModel *> *)models{
-    if (models.count>9) {
-       _models= [models subarrayWithRange:NSMakeRange(0, 8)];
-    }
-    else{
-          _models=models;
-    }
+//    if (models.count>9) {
+//       _models= [models subarrayWithRange:NSMakeRange(0, 8)];
+//    }
+//    else{
+//          _models=models;
+//    }
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
 //       [self reloadData];
 //    });
 //
-//    _models=models;
+    _models=models;
  dispatch_async(dispatch_get_main_queue(), ^{
          [self reloadData];
  });

@@ -14,7 +14,7 @@
 #define DDINPUT_MIN_HEIGHT          44.0f
 
 
-#import "FLXSuggestedSharingTableViewController.h"
+#import "FLXSuggestedSharingTableViewControlleroffscreen.h"
 
 //utilites
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -40,7 +40,7 @@
 
 #import "FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h"
 
-@interface FLXSuggestedSharingTableViewController ()
+@interface FLXSuggestedSharingTableViewControlleroffscreen ()
 //IBOutlet
 //IBAction
 //models
@@ -54,7 +54,7 @@
 //child viewController
 @end
 
-@implementation FLXSuggestedSharingTableViewController{
+@implementation FLXSuggestedSharingTableViewControlleroffscreen{
     CADisplayLink *_link;
     NSUInteger _count;
     NSTimeInterval _lastTime;
@@ -98,7 +98,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-        [self setupMessageToolBar];
+//        [self setupMessageToolBar];
 //    [self.tableView reloadData];
 }
 
@@ -246,9 +246,9 @@
     self.tableView.separatorInset=UIEdgeInsetsMake(2,0,2,0);
     self.tableView.backgroundColor=[UIColor lightGrayColor];
 //        [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-//       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-           [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+//           [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
     
     //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellautolayouttest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];

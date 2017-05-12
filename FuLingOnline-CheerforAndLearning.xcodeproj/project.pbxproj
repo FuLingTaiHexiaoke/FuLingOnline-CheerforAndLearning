@@ -616,6 +616,8 @@
 		B9E17E311EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */; };
 		B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */; };
 		B9F225611EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */; };
+		B9FA220D1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */; };
+		B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */; };
 		B9FBB0991E8A59DC00CCAEA8 /* TemplateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */; };
 		B9FBB09A1E8A59DC00CCAEA8 /* TemplateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */; };
 		B9FBB09B1E8A59DC00CCAEA8 /* TemplateInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0971E8A59DC00CCAEA8 /* TemplateInfo.plist */; };
@@ -1521,6 +1523,10 @@
 		B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellmasonry.m; sourceTree = "<group>"; };
 		B9F225601EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellmasonry.h; sourceTree = "<group>"; };
 		B9F9A2EC1DB7359A002B1626 /* CodeBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeBack.h; sourceTree = "<group>"; };
+		B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m; sourceTree = "<group>"; };
+		B9FA220C1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h; sourceTree = "<group>"; };
+		B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLXSuggestedSharingTableViewControlleroffscreen.m; path = HearderFooterViews/FLXSuggestedSharingTableViewControlleroffscreen.m; sourceTree = "<group>"; };
+		B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLXSuggestedSharingTableViewControlleroffscreen.h; path = HearderFooterViews/FLXSuggestedSharingTableViewControlleroffscreen.h; sourceTree = "<group>"; };
 		B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon.png; sourceTree = "<group>"; };
 		B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TemplateIcon@2x.png"; sourceTree = "<group>"; };
 		B9FBB0971E8A59DC00CCAEA8 /* TemplateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TemplateInfo.plist; sourceTree = "<group>"; };
@@ -2869,6 +2875,8 @@
 		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
 			isa = PBXGroup;
 			children = (
+				B9FA220C1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h */,
+				B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */,
 				B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h */,
 				B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */,
 				B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */,
@@ -2888,6 +2896,8 @@
 			children = (
 				B9A3F9651E6BF3EE007CA4B2 /* Cells */,
 				B9A3F9661E6BF3EE007CA4B2 /* HearderFooterViews */,
+				B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.h */,
+				B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */,
 				B9A3F95C1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.h */,
 				B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */,
 				B9A3F95F1E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.h */,
@@ -4457,6 +4467,7 @@
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B9C263871E9B3182003D7B51 /* FLXKUserManagerViewController.m in Sources */,
 				B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */,
+				B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m in Sources */,
 				B90AEC3C1EC30AE200014FA8 /* SharingLikeCellModel.m in Sources */,
 				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
@@ -4552,6 +4563,7 @@
 				B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */,
 				B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
+				B9FA220D1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m in Sources */,
 				B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9C6AC961E6548550003C50A /* UILabel+flash.m in Sources */,
