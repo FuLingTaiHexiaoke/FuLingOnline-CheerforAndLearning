@@ -272,6 +272,9 @@
     if (!_mainSharingContentLabel) {
         _mainSharingContentLabel= [[MLLinkLabel alloc]init];
         _mainSharingContentLabel.numberOfLines=0;
+        _mainSharingContentLabel.opaque=YES;
+        _mainSharingContentLabel.layer.masksToBounds=YES;
+        _mainSharingContentLabel.backgroundColor = [UIColor whiteColor];
         _mainSharingContentLabel.font = [UIFont systemFontOfSize:CONTENT_LABEL_FONT_SIZE];
         [self.contentView addSubview:_mainSharingContentLabel];
     }

@@ -53,10 +53,19 @@
 
 -(void)setupUI{
     _label=[MLLinkLabel new];
+    _label.opaque=YES;
+    _label.layer.masksToBounds=YES;
+    _label.backgroundColor = [UIColor whiteColor];
+    _label.numberOfLines=0;
     [self.contentView addSubview:_label];
     [_label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.contentView);
     }];
+    
+//    self.contentView.opaque=YES;
+//        self.contentView.backgroundColor = [UIColor whiteColor];
+//    self.backgroundColor = [UIColor whiteColor];
+//    self.opaque=YES;
     
 }
 

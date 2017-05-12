@@ -65,9 +65,9 @@
 #pragma mark - Public methods
 
 - (void)reloadCurrentCell{
-    [self.tableView beginUpdates];
+//    [self.tableView beginUpdates];
  [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    [self.tableView endUpdates];
+//    [self.tableView endUpdates];
 }
 
 -(void)setModel:(FLXKSharingCellModel *)model{
@@ -135,6 +135,7 @@
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         [self.model.sharingComments addObject:model];
+        self.model.sharingComments=self.model.sharingComments;
         [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);

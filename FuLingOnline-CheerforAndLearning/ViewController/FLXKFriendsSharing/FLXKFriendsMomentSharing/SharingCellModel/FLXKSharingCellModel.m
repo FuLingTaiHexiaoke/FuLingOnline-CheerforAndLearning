@@ -179,6 +179,10 @@
     return avatarImageViewHeight;
 }
 
+//-(CGFloat)sharingComments_Height{
+//    
+//}
+
 //-(void)setSharingComments_Height:(CGFloat)sharingComments_Height{
 //    if (<#condition#>) {
 //        <#statements#>

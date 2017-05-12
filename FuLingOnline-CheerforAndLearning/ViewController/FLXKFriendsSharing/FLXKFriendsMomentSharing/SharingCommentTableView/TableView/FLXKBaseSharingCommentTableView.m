@@ -180,7 +180,8 @@
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
 //       [self reloadData];
 //    });
-//    
+//
+//    _models=models;
  dispatch_async(dispatch_get_main_queue(), ^{
          [self reloadData];
  });
