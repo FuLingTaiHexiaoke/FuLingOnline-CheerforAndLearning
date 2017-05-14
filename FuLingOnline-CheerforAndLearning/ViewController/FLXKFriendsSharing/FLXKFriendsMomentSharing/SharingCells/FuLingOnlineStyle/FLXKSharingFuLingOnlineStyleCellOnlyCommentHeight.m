@@ -209,7 +209,9 @@
     }
     
     [self.sharingMainOperationsContainerView setModel:model];
-    
+
+    self.likeTheSharingRecordScrollView.alpha=1.0;
+
     [self.likeTheSharingRecordScrollView setLikeTheSharingUserRecords:model.likeTheSharingUserRecords];
         [self.likeTheSharingRecordScrollView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.sharingMainOperationsContainerView.mas_bottom).offset(model.likeTheSharingUserRecords.count>0?DEFAULT_VIEW_SPACING:0.0);
@@ -408,13 +410,58 @@
 
 
 #pragma mark - Private methods
+-(void)hiddenSubviews{
+    [super hiddenSubviews];
+self.likeTheSharingRecordScrollView.alpha=1.0;
+//    self.likeTheSharingRecordScrollView.transform = CGAffineTransformIdentity;
+        if (self.model.shouldShow_likeTheSharingUserRecords) {
+                [UIView animateWithDuration:0.1 animations:^{
+self.likeTheSharingRecordScrollView.alpha=1.0;
+//                   self.likeTheSharingRecordScrollView.transform = CGAffineTransformIdentity ;
+                } completion:^(BOOL finished) {
+                              [self reloadCurrentCell];
+                }];
+        }
+    else{
+        [UIView animateWithDuration:0.1 animations:^{
+//            [self.likeTheSharingRecordScrollView removeFromSuperview];
+//            self.likeTheSharingRecordScrollView.transform = CGAffineTransformMakeScale(1, 0.1);
+            self.likeTheSharingRecordScrollView.alpha=0.0;
+        } completion:^(BOOL finished) {
+
+            [self reloadCurrentCell];
+        }];
+    }
+
+}
+
 -(void)loadComments{
     [self.sharingCommentsTableView reloadData];
 }
 
 -(void)showAllSharingContentAction:(UIButton*)sender{
     self.model.isMainSharingContentLabelExpand=!self.model.isMainSharingContentLabelExpand;
-    [super reloadCurrentCell];
+//
+//    self.sharingContentShowAllButton.selected= self.model.isMainSharingContentLabelExpand;
+//
+//    CGFloat width=[UIScreen mainScreen].bounds.size.width-avatarImageViewHeight;
+//    CGSize size=  [self.mainSharingContentLabel sizeThatFits:CGSizeMake(width, INT_MAX)];
+//        CGFloat height=self.model.isMainSharingContentLabelExpand?size.height:CONTENT_LABEL_DEFAULT_HEIGHT;
+//        [self.mainSharingContentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.mas_equalTo(height);
+//        }];
+////    [self.tableView beginUpdates];
+////         [self.contentView layoutIfNeeded];
+////      [ self.tableView endUpdates];
+//
+//    [UIView animateWithDuration:0.1 animations:^{
+//        [self.contentView layoutIfNeeded];
+//    } completion:^(BOOL finished) {
+////            [super reloadCurrentCell];
+//        [ self.tableView endUpdates];
+//    }];
+         [ self.tableView endUpdates];
+
 }
 -(void)setupUI{
     

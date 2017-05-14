@@ -136,6 +136,10 @@
     return sharingMainOperationsContainerViewHeight;
 }
 
+-(BOOL)shouldShow_likeTheSharingUserRecords{
+  return  self.likeTheSharingUserRecords.count>0?YES:NO;
+}
+
 -(CGFloat)likeTheSharingUserRecords_Height{
     if (self.likeTheSharingUserRecords.count>0) {
             return likeTheSharingRecordScrollViewHeight;
@@ -145,6 +149,8 @@
     }
 
 }
+
+
 
 -(CGFloat)bottomSeparatorLineView_Height{
     if (self.sharingComments_Height>0) {

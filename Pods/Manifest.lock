@@ -22,10 +22,10 @@ PODS:
     - BlocksKit/DynamicDelegate
   - Bugly (2.4.0)
   - DACircularProgress (2.3.1)
-  - IDMPhotoBrowser (1.11.1):
+  - IDMPhotoBrowser (1.9.1):
     - DACircularProgress
     - pop
-    - SDWebImage (= 4.0.0)
+    - SDWebImage
   - JHChainableAnimations (1.3.0)
   - KVOController (1.2.0)
   - libextobjc/EXTScope (0.4.1):
@@ -37,9 +37,9 @@ PODS:
   - pop (1.0.9)
   - Reveal-SDK (2)
   - RTRootNavigationController (0.5.21)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
   - Tweaks (2.0.0)
   - TZImagePickerController (1.6.4)
   - UITableView+FDTemplateLayoutCell (1.4)
@@ -53,7 +53,7 @@ DEPENDENCIES:
   - BlocksKit/Core (~> 2.2.0)
   - BlocksKit/UIKit (~> 2.2.0)
   - Bugly
-  - IDMPhotoBrowser (~> 1.10)
+  - IDMPhotoBrowser (~> 1.9.1)
   - JHChainableAnimations
   - KVOController
   - libextobjc/EXTScope (~> 0.4.1)
@@ -62,7 +62,7 @@ DEPENDENCIES:
   - MLLabel (~> 1.8)
   - Reveal-SDK
   - RTRootNavigationController
-  - SDWebImage
+  - SDWebImage (~> 3.8.2)
   - Tweaks
   - TZImagePickerController
   - UITableView+FDTemplateLayoutCell
@@ -74,7 +74,7 @@ SPEC CHECKSUMS:
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Bugly: 3b56d8365c5687f74fd6fbb50c5b7ede3cdac96c
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  IDMPhotoBrowser: 14505b91019a96e36479606cb582f864446dae01
+  IDMPhotoBrowser: 35e8ba559a88f2a8be4ae04d7fd424665344ba06
   JHChainableAnimations: 22085fcb04ca87349e584573558e637f659fd769
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
@@ -84,12 +84,12 @@ SPEC CHECKSUMS:
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   Reveal-SDK: 4d36a47c7091843eee525b72219e005b90bbac0b
   RTRootNavigationController: 1d4e675d08f4993e78762cbfdf8e3ed468b7cfe9
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   Tweaks: 524fa47636cce3bf3a4d9156e980f10ae9480e81
   TZImagePickerController: e13a695a4623a94ac094b43baa28f8046d6a29f9
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 81306ba3e83398047ad8baabe9a09aaf118eeb69
+PODFILE CHECKSUM: 8009765b8aabc5db7c84a59596c0016bd14eedb4
 
 COCOAPODS: 1.2.1

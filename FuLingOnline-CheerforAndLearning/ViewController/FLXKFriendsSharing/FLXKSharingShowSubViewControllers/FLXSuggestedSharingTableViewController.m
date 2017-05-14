@@ -22,8 +22,8 @@
 #import "FLXKHttpRequestModelHelper.h"
 #import "IDMPhotoBrowser.h"
 //child viewController
-
-
+//#import <SDWebImage/SDWebImageManager.h>
+#import "SDWebImageManager.h"
 //subviews
 #import "FLXKSuggestHeaderView.h"
 #import "FLXKMessageToolBar.h"
@@ -96,46 +96,62 @@
 }
 - (void)buttonWithImageOnScreenPressed:(id)sender
 {
-    UIButton *buttonSender = (UIButton*)sender;
-    
-    // Create an array to store IDMPhoto objects
-    NSMutableArray *photos = [NSMutableArray new];
-    
-    IDMPhoto *photo;
-    
-    UIButton *button;
-    
-    photo = [IDMPhoto photoWithFilePath:[[NSBundle mainBundle] pathForResource:@"photo1l" ofType:@"jpg"]];
-    photo.caption = @"Grotto of the Madonna";
 
-    [photos addObject:photo];
-    
-    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/e36d5fe9-7f10-4617-999c-f3dc1716ce3e.jpg"]];
-    photo.caption = @"jianyue2";
+//    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+////SDWebImageManager instanceMethodForSelector:@selector(downloadImageWithURL:options:progress:completed:)
+//    if ([SDWebImageManager instancesRespondToSelector:@selector(downloadImageWithURL:options:progress:completed:)]) {
+//manager
+//        [manager  loadImageWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/e36d5fe9-7f10-4617-999c-f3dc1716ce3e.jpg"] options:SDWebImageRetryFailed|SDWebImageHandleCookies progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+//
+//        } completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+//            NSLog(@"111");
+//        }];
+//    }
 
 
-    [photos addObject:photo];
-    
-    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/51d8ebe9-f847-451d-9e74-f4405654668e.jpg"]];
-    button = [self.tableView.tableFooterView viewWithTag:103];
-    //    photo.placeholderImageView = button.imageView;
-    [photos addObject:photo];
-    
-    // Create and setup browser
-    //    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos animatedFromView:sender]; // using initWithPhotos:animatedFromView: method to use the zoom-in animation
-    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
-//    browser.delegate = self;
-    //    browser.displayActionButton = NO;
-    //    browser.displayArrowButton = YES;
-    //    browser.displayCounterLabel = YES;
-    //    browser.usePopAnimation = YES;
-    //    browser.scaleImage = buttonSender.currentImage;
-    //    if(buttonSender.tag == 102) browser.useWhiteBackgroundColor = YES;
-    //    browser.trackTintColor = [UIColor yellowColor];
-    //    browser.progressTintColor = [UIColor redColor];
-    [browser setInitialPageIndex:buttonSender.tag-101];
-    // Show
-    [self presentViewController:browser animated:YES completion:nil];
+
+
+
+//    UIButton *buttonSender = (UIButton*)sender;
+//
+//    // Create an array to store IDMPhoto objects
+//    NSMutableArray *photos = [NSMutableArray new];
+//    
+//    IDMPhoto *photo;
+//    
+//    UIButton *button;
+//    
+//    photo = [IDMPhoto photoWithFilePath:[[NSBundle mainBundle] pathForResource:@"photo1l" ofType:@"jpg"]];
+//    photo.caption = @"Grotto of the Madonna";
+//
+//    [photos addObject:photo];
+//    
+//    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/e36d5fe9-7f10-4617-999c-f3dc1716ce3e.jpg"]];
+//    photo.caption = @"jianyue2";
+//
+//
+//    [photos addObject:photo];
+//    
+//    photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"http://t.i-hairs.com/upload/work/img/900/2016-03-23/51d8ebe9-f847-451d-9e74-f4405654668e.jpg"]];
+//    button = [self.tableView.tableFooterView viewWithTag:103];
+//    //    photo.placeholderImageView = button.imageView;
+//    [photos addObject:photo];
+//    
+//    // Create and setup browser
+//    //    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos animatedFromView:sender]; // using initWithPhotos:animatedFromView: method to use the zoom-in animation
+//    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+////    browser.delegate = self;
+//    //    browser.displayActionButton = NO;
+//    //    browser.displayArrowButton = YES;
+//    //    browser.displayCounterLabel = YES;
+//    //    browser.usePopAnimation = YES;
+//    //    browser.scaleImage = buttonSender.currentImage;
+//    //    if(buttonSender.tag == 102) browser.useWhiteBackgroundColor = YES;
+//    //    browser.trackTintColor = [UIColor yellowColor];
+//    //    browser.progressTintColor = [UIColor redColor];
+//    [browser setInitialPageIndex:buttonSender.tag-101];
+//    // Show
+//    [self presentViewController:browser animated:YES completion:nil];
 }
 
 
@@ -293,10 +309,10 @@
     self.tableView.separatorInset=UIEdgeInsetsMake(2,0,2,0);
     self.tableView.backgroundColor=[UIColor lightGrayColor];
 //        [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-//       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+       [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-           [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
-    
+//           [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
+
     
     //    [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellautolayouttest" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCellautolayouttest];
     //        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCellteststep1" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];

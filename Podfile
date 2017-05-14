@@ -5,7 +5,8 @@ target ‘FuLingOnline-CheerforAndLearning’ do
 pod 'AFNetworking', '~> 3.1.0'
 #pod 'AFNetworking'
 #pod 'SDWebImage', '~> 4.0.0'
-pod 'SDWebImage'
+#  pod 'SDWebImage', '~> 4.0.0'
+pod 'SDWebImage', '~>3.8.2'
 #pod 'CocoaAsyncSocket'
 #pod 'MJRefresh'
 
@@ -32,8 +33,9 @@ pod 'TZImagePickerController'
 pod 'MLLabel', '~> 1.8'
 #pod 'JMAnimatedImageView'
 pod 'YYKit', '~> 1.0.9'
-pod 'IDMPhotoBrowser', '~>1.10'
-
+   pod 'IDMPhotoBrowser', '~> 1.9.1'
+#   1.10.2 1.11.1
+#   pod 'IDMPhotoBrowser+WeChat', '~> 1.9.7'
 ##      custom views
 # pod 'HPGrowingTextView'
 

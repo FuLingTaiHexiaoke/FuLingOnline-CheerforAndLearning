@@ -59,7 +59,10 @@
 @property (strong, nonatomic)FLXKSharingCellModel* model;
 @property (strong, nonatomic)NSIndexPath * indexPath;
 
+-(void)hiddenSubviews;
 
 //UI state record properties
+@property(nonatomic,weak)UITableView* tableView;
+
 @end
 

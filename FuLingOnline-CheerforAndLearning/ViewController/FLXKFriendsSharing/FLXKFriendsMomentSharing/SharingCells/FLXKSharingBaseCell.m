@@ -25,7 +25,6 @@
 
 
 //UI state record properties
-@property(nonatomic,weak)UITableView* tableView;
 @end
 
 @implementation FLXKSharingBaseCell
@@ -68,6 +67,7 @@
 //    [self.tableView beginUpdates];
  [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
 //    [self.tableView endUpdates];
+//    [self.tableView reloadData];
 }
 
 -(void)setModel:(FLXKSharingCellModel *)model{
@@ -155,7 +155,9 @@
 #pragma mark - View Event
 //点赞
 -(void)addFriendsharingThumbup{
+    @weakify(self)
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        @strongify(self)
             if (self.model.isThumberuped) {
                 __block  NSInteger index;
                 [self.model.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -171,17 +173,28 @@
                 [self.model.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
             }
             self.model.isThumberuped=!self.model.isThumberuped;
-            [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    [UIView animateWithDuration:0.1 animations:^{
+//          [self hiddenSubviews];
+//    } completion:^(BOOL finished) {
+//     
+//                 [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
+//    }];
+
+    [self hiddenSubviews];
+//                 [self.tableView reloadRowsAtIndexPaths:@[self.indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
     }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":_model.newsID,@"isThumberuped":[NSNumber numberWithInteger:_model.isThumberuped]}];
+
 }
 
 
 #pragma mark - Model Event
 #pragma mark - Private methods
 
+-(void)hiddenSubviews{
 
+}
 
 - (UITableView *)tableView
 {

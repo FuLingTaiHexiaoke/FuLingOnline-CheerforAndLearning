@@ -45,8 +45,10 @@
 @property (assign, nonatomic)BOOL shouldShowSharingContentShowAllButton;
 @property (assign, nonatomic)BOOL shouldShowSharingImages;
 @property (assign, nonatomic)BOOL shouldShowLocationRecord;
+@property (assign, nonatomic)BOOL shouldShow_likeTheSharingUserRecords;
 @property (assign, nonatomic)BOOL shouldShow_bottomSeparatorLineView;
 @property (assign, nonatomic)BOOL shouldShow_sharingComments;
+
 
 
 @property (assign, nonatomic)BOOL isMainSharingContentLabelExpand;

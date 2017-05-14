@@ -106,9 +106,17 @@
     NSMutableArray *photos = [NSMutableArray new];
     for (FLXKSharingImagesModel *item in self.collectionViewDataSource) {
         IDMPhoto *photo = [IDMPhoto photoWithURL:NSURL_BaseURL(item.actualPictureUrl)];
+//         IDMPhoto *photo = [IDMPhoto photoWithURL:[NSURL URLWithString:@"https://cdn.pixabay.com/photo/2017/05/09/03/47/buildings-2297210_960_720.jpg"]];
         [photos addObject:photo];
     }
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos animatedFromView:cell];
+    [browser setInitialPageIndex:indexPath.item];
+    browser.displayCounterLabel=YES;
+    browser.displayActionButton=NO;
+    browser.displayDoneButton=NO;
+    browser.usePopAnimation=NO;
+//    browser.disableVerticalSwipe=YES;
+//       IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
     UIResponder * nextResponder=  self.nextResponder;
     while (![nextResponder.class isSubclassOfClass:NSClassFromString(@"UIViewController")]) {
         nextResponder=nextResponder.nextResponder;
