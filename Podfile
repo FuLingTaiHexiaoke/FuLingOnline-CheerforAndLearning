@@ -20,6 +20,7 @@ pod 'MJExtension'
 pod 'Tweaks'
 pod 'Masonry','~>1.0.2'
 pod 'UITableView+FDTemplateLayoutCell'
+pod 'HYBMasonryAutoCellHeight', '~>2.0.0'
 pod 'Reveal-SDK',:configurations => ['Debug']
 #pod 'JHChainableAnimations', '~> 2.0'
 pod 'JHChainableAnimations'

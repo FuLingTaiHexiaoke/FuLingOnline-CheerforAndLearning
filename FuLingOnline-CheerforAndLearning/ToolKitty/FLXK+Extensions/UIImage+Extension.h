@@ -10,4 +10,10 @@
 
 @interface UIImage (Extension)
 - (UIImage*) imageWithName:(NSString*)name;
+
+- (UIImage *)hyb_cropEqualScaleImageToSize:(CGSize)size;
+
+- (UIImage *)hyb_addCornerRadius:(CGFloat)cornerRadius;
+
+
 @end
