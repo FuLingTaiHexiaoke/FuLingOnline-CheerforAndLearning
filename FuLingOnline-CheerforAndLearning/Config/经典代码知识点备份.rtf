@@ -256,6 +256,18 @@ FLXKFriendsSharing\
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf6 #pragma mark -\cf0 \
 tempView.\cf4 bounds\cf0  = (\cf4 CGRect\cf0 )\{\cf4 CGPointZero\cf0 , targetTemp.\cf4 size\cf0 \};\
+\
+- (\cf2 instancetype\cf0 )initWithDict:(\cf4 NSDictionary\cf0  *)dict\
+\{\
+    \cf2 self\cf0  = [\cf2 super\cf0  \cf3 init\cf0 ];\
+    \cf2 if\cf0  (\cf2 self\cf0 ) \{\
+        [\cf2 self\cf0  \cf3 setValuesForKeysWithDictionary\cf0 :dict];\
+    \}\
+    \cf2 return\cf0  \cf2 self\cf0 ;\
+\}\
+-(\cf2 void\cf0 )setValue:(\cf2 id\cf0 )value forUndefinedKey:(\cf4 NSString\cf0  *)key\
+\{\
+   \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
 \f2\fs28 \cf11 \expnd0\expndtw0\kerning0
