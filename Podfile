@@ -8,7 +8,7 @@ pod 'AFNetworking', '~> 3.1.0'
 #  pod 'SDWebImage', '~> 4.0.0'
 pod 'SDWebImage', '~>3.8.2'
 #pod 'CocoaAsyncSocket'
-#pod 'MJRefresh'
+pod 'MJRefresh'
 
 
 ##      Utilities
@@ -20,7 +20,7 @@ pod 'MJExtension'
 pod 'Tweaks'
 pod 'Masonry','~>1.0.2'
 pod 'UITableView+FDTemplateLayoutCell'
-pod 'HYBMasonryAutoCellHeight', '~>2.0.0'
+#pod 'HYBMasonryAutoCellHeight', '~>2.0.1'
 pod 'Reveal-SDK',:configurations => ['Debug']
 #pod 'JHChainableAnimations', '~> 2.0'
 pod 'JHChainableAnimations'

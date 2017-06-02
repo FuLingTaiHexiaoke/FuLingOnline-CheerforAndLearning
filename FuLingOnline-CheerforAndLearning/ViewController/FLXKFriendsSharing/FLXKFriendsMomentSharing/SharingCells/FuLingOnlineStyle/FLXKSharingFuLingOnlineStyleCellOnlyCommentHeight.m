@@ -145,12 +145,11 @@
                 make.top.mas_equalTo(self.timestampLabel.mas_bottom).offset(DEFAULT_VIEW_SPACING);
                 make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
                 make.left.mas_equalTo(self.avatarImageView.mas_right);
-                make.height.mas_equalTo(height);
+                make.height.mas_equalTo(height).priorityHigh();;
             }];
             
             
             [self.sharingContentShowAllButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
                 make.top.mas_equalTo(self.mainSharingContentLabel.mas_bottom);
                 make.left.mas_equalTo(self.avatarImageView.mas_right);
             }];
@@ -176,7 +175,7 @@
             make.top.mas_equalTo(self.timestampLabel.mas_bottom);
             make.right.mas_equalTo(self.contentView.mas_right).offset(-DEFAULT_VIEW_SPACING);
             make.left.mas_equalTo(self.avatarImageView.mas_right);
-            make.height.mas_equalTo(0);
+            make.height.mas_equalTo(0).priorityHigh();;
         }];
         
         self.sharingContentShowAllButton.hidden=YES;
@@ -235,10 +234,10 @@
         make.height.mas_equalTo(model.sharingComments_Height).priorityHigh();
 //          make.height.mas_equalTo(sharingCommentHeight).priorityHigh();
     }];
-//    if (model.sharingComments.count>0) {
-//        self.models=model.sharingComments;
-//        [self.sharingCommentsTableView reloadData];
-//    }
+    if (model.sharingComments.count>0) {
+        self.models=model.sharingComments;
+        [self.sharingCommentsTableView reloadData];
+    }
 }
 
 

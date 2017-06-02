@@ -21,6 +21,7 @@
 #import "UIView+Extension_IdentifierForReusable.h"
 #import "FLXKHttpRequestModelHelper.h"
 #import "IDMPhotoBrowser.h"
+#import "MJRefresh.h"
 //child viewController
 //#import <SDWebImage/SDWebImageManager.h>
 #import "SDWebImageManager.h"
@@ -44,7 +45,8 @@
 //IBOutlet
 //IBAction
 //models
-@property (strong, nonatomic)NSArray<FLXKSharingCellModel *> *  models;
+@property (strong, nonatomic)NSMutableArray<FLXKSharingCellModel *> *  models;
+@property (assign, nonatomic)NSInteger currentPageIndex;
 @property(nonatomic,strong)JSMessageInputView *chatInputView;
 //UI state record properties
 //@property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
@@ -54,15 +56,7 @@
 //child viewController
 @end
 
-@implementation FLXSuggestedSharingTableViewController{
-    CADisplayLink *_link;
-    NSUInteger _count;
-    NSTimeInterval _lastTime;
-    UIFont *_font;
-    UIFont *_subFont;
-    
-    NSTimeInterval _llll;
-}
+@implementation FLXSuggestedSharingTableViewController
 
 #pragma mark -
 #pragma mark - ViewController LifeCircle
@@ -74,7 +68,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.currentPageIndex=1;
+    self.models=[NSMutableArray array];
     //setup ui
     [self setupUI];
     
@@ -305,7 +300,6 @@
     
 //        [self.tableView registerNib:[UINib nibWithNibName:@"FLXKSharingFuLingOnlineStyleCell_UIStackView" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
     
-    
     self.tableView.separatorInset=UIEdgeInsetsMake(2,0,2,0);
     self.tableView.backgroundColor=[UIColor lightGrayColor];
 //        [self.tableView registerClass:NSClassFromString(@"FLXKSharingFuLingOnlineStyleCell") forCellReuseIdentifier:Reuse_FLXKSharingFuLingOnlineStyleCell];
@@ -326,6 +320,16 @@
     
 //    _link = [CADisplayLink displayLinkWithTarget:self selector:@selector(tick:)];
 //    [_link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    @weakify(self)
+    self.tableView.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self)
+         self.currentPageIndex=1;
+        [self setupFLXKSharingCellModel];
+    } ];
+    self.tableView.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self)
+        [self setupFLXKSharingCellModel];
+    } ];
 }
 
 -(void)setupMessageToolBar{
@@ -373,34 +377,25 @@
     }];
 }
 
-//
-//
-//-(void)viewWillLayoutSubviews
-//{
-//    [super viewWillLayoutSubviews];
-//
-//    //    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//    //        if (obj.tag==1000) {
-//    //            CGRect r =obj.frame;
-//    //   NSLog(@"messageToolBar enumerateObjectsUsingBlock  %@", NSStringFromCGRect( r));
-//    //        }
-//    //    }];
-//
-//
-//
-//}
-
 
 -(void)setupFLXKSharingCellModel{
 
+    @weakify(self)
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+        @strongify(self)
         if (obj) {
-            _models=(NSArray<FLXKSharingCellModel *> *)obj;
+            if (self.currentPageIndex==1) {
+                [_models removeAllObjects];
+            }
+            [self.tableView.mj_header endRefreshing];
+            [self.tableView.mj_footer endRefreshing];
+            self.currentPageIndex+=1;
+            [_models addObjectsFromArray:(NSArray<FLXKSharingCellModel *> *)obj];
             [self.tableView reloadData];
         }
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
-    }] getFriendSharingModelWithCondition:@{@"page":@1,@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test"}];
+    }] getFriendSharingModelWithCondition:@{@"page":@(self.currentPageIndex),@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test"}];
     
 }
 
@@ -412,32 +407,5 @@
 }
 
 
-//- (void)tick:(CADisplayLink *)link {
-//    if (_lastTime == 0) {
-//        _lastTime = link.timestamp;
-//        return;
-//    }
-//    
-//    _count++;
-//    NSTimeInterval delta = link.timestamp - _lastTime;
-//    if (delta < 1) return;
-//    _lastTime = link.timestamp;
-//    float fps = _count / delta;
-//    _count = 0;
-//    
-//    CGFloat progress = fps / 60.0;
-//    //    UIColor *color = [UIColor colorWithHue:0.27 * (progress - 0.2) saturation:1 brightness:0.9 alpha:1];
-//    //
-//    //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d FPS",(int)round(fps)]];
-//    
-//    NSString* fps1=  [NSString stringWithFormat:@"%d FPS",(int)round(fps)];
-//        NSLog(@"FPS %@", fps1);
-//    //    [text yy_setColor:color range:NSMakeRange(0, text.length - 3)];
-//    //    [text yy_setColor:[UIColor whiteColor] range:NSMakeRange(text.length - 3, 3)];
-//    //    text.yy_font = _font;
-//    //    [text yy_setFont:_subFont range:NSMakeRange(text.length - 4, 1)];
-//    //
-//    //    self.attributedText = text;
-//}
 
 @end

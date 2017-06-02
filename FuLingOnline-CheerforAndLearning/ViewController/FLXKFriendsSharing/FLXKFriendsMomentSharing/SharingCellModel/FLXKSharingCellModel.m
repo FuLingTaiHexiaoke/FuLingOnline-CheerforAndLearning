@@ -137,17 +137,17 @@
 }
 
 -(BOOL)shouldShow_likeTheSharingUserRecords{
-  return  self.likeTheSharingUserRecords.count>0?YES:NO;
+    return  self.likeTheSharingUserRecords.count>0?YES:NO;
 }
 
 -(CGFloat)likeTheSharingUserRecords_Height{
     if (self.likeTheSharingUserRecords.count>0) {
-            return likeTheSharingRecordScrollViewHeight;
+        return likeTheSharingRecordScrollViewHeight;
     }
     else{
         return 0;
     }
-
+    
 }
 
 
@@ -155,7 +155,7 @@
 -(CGFloat)bottomSeparatorLineView_Height{
     if (self.sharingComments_Height>0) {
         _shouldShow_bottomSeparatorLineView=YES;
-            return bottomSeparatorLineViewHeight;
+        return bottomSeparatorLineViewHeight;
     }
     else{
         return 0;
@@ -165,18 +165,27 @@
 -(void)setSharingComments:(NSMutableArray<SharingCommentCellModel *> *)sharingComments{
     _sharingComments=sharingComments;
     if (sharingComments.count>0) {
-        _shouldShow_sharingComments=YES;
-        
-        __block CGFloat height;
-        UILabel* label=[[UILabel alloc]init];
-        label.numberOfLines=0;
-        label.font = [UIFont systemFontOfSize:COMMENT_CELL_LABEL_FONT_SIZE];
-        
-        [sharingComments enumerateObjectsUsingBlock:^(SharingCommentCellModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            label.attributedText=[SharingCommentCellModel getCommentString:obj];
-            obj.resultContent= label.attributedText;
+        NSInteger   maxCommentCount=sharingComments.count>4?4:sharingComments.count;
+        CGFloat height;
+        for (int i=0; i<maxCommentCount; i++) {
+            _shouldShow_sharingComments=YES;
+            
+            
+            UILabel* label=[[UILabel alloc]init];
+            label.numberOfLines=0;
+            label.font = [UIFont systemFontOfSize:COMMENT_CELL_LABEL_FONT_SIZE];
+            SharingCommentCellModel * commentModel=(SharingCommentCellModel *)sharingComments[i];
+            label.attributedText=[SharingCommentCellModel getCommentString:commentModel];
+            
+            commentModel.resultContent= label.attributedText;
             height+=  [label sizeThatFits:SIZE_FOR_TEXT_GET_HEIGHT].height;
-        }];
+            //            [sharingComments enumerateObjectsUsingBlock:^(SharingCommentCellModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            //                label.attributedText=[SharingCommentCellModel getCommentString:obj];
+            //                obj.resultContent= label.attributedText;
+            //                height+=  [label sizeThatFits:SIZE_FOR_TEXT_GET_HEIGHT].height;
+            //            }];
+            
+        }
         _sharingComments_Height=height;
     }
 }
@@ -186,7 +195,7 @@
 }
 
 //-(CGFloat)sharingComments_Height{
-//    
+//
 //}
 
 //-(void)setSharingComments_Height:(CGFloat)sharingComments_Height{
@@ -196,38 +205,38 @@
 //}
 
 -(CGFloat)cell_Height{
-//    CGFloat height;
-//    height+=_headerSection_Height>0?(_headerSection_Height+DEFAULT_VIEW_SPACING):0;
-//    if (_isMainSharingContentLabelExpand) {
-//        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
-//    else if (_mainSharingContent_Height>_default_mainSharingContent_Height){
-//        height+=_default_mainSharingContent_Height>0?(_default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
-//    else{
-//        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
-//    
-//    height+=_showContentButton_Height>0?(_showContentButton_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=_sharingImages_Height>0?(_sharingImages_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=_locationRecord_Height>0?(_locationRecord_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=self.sharingMainOperationsContainerView_Height>0?(self.sharingMainOperationsContainerView_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=_likeTheSharingUserRecords_Height>0?(_likeTheSharingUserRecords_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=_bottomSeparatorLineView_Height>0?(_bottomSeparatorLineView_Height+DEFAULT_VIEW_SPACING):0;
-//    height+=_sharingComments_Height>0?(_sharingComments_Height+DEFAULT_VIEW_SPACING):0;
-//    
-//    return height;
+    //    CGFloat height;
+    //    height+=_headerSection_Height>0?(_headerSection_Height+DEFAULT_VIEW_SPACING):0;
+    //    if (_isMainSharingContentLabelExpand) {
+    //        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
+    //    else if (_mainSharingContent_Height>_default_mainSharingContent_Height){
+    //        height+=_default_mainSharingContent_Height>0?(_default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
+    //    else{
+    //        height+=_mainSharingContent_Height>0?(_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
+    //
+    //    height+=_showContentButton_Height>0?(_showContentButton_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=_sharingImages_Height>0?(_sharingImages_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=_locationRecord_Height>0?(_locationRecord_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=self.sharingMainOperationsContainerView_Height>0?(self.sharingMainOperationsContainerView_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=_likeTheSharingUserRecords_Height>0?(_likeTheSharingUserRecords_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=_bottomSeparatorLineView_Height>0?(_bottomSeparatorLineView_Height+DEFAULT_VIEW_SPACING):0;
+    //    height+=_sharingComments_Height>0?(_sharingComments_Height+DEFAULT_VIEW_SPACING):0;
+    //
+    //    return height;
     CGFloat height=0.0;
     height+=self.headerSection_Height>0?(self.headerSection_Height+DEFAULT_VIEW_SPACING):0;
-//    if (self.isMainSharingContentLabelExpand) {
-//        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
-//    else if (self.mainSharingContent_Height>_default_mainSharingContent_Height){
-//        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
-//    else{
-//        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
-//    }
+    //    if (self.isMainSharingContentLabelExpand) {
+    //        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
+    //    else if (self.mainSharingContent_Height>_default_mainSharingContent_Height){
+    //        height+=self.default_mainSharingContent_Height>0?(self.default_mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
+    //    else{
+    //        height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
+    //    }
     height+=self.mainSharingContent_Height>0?(self.mainSharingContent_Height+DEFAULT_VIEW_SPACING):0;
     
     height+=self.showContentButton_Height>0?(self.showContentButton_Height+DEFAULT_VIEW_SPACING):0;

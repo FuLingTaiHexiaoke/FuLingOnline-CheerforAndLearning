@@ -67,17 +67,17 @@
                                  : self.currentRect.origin.x,
                                  rectCenter.y);
     
-    CGPoint c1 = CGPointMake(pointA.x + offset, pointA.y);
-    CGPoint c2 = CGPointMake(pointB.x, pointB.y - offset);
-    
-    CGPoint c3 = CGPointMake(pointB.x, pointB.y + offset);
-    CGPoint c4 = CGPointMake(pointC.x + offset, pointC.y);
-    
-    CGPoint c5 = CGPointMake(pointC.x - offset, pointC.y);
-    CGPoint c6 = CGPointMake(pointD.x, pointD.y + offset);
-    
-    CGPoint c7 = CGPointMake(pointD.x, pointD.y - offset);
-    CGPoint c8 = CGPointMake(pointA.x - offset, pointA.y);
+//    CGPoint c1 = CGPointMake(pointA.x + offset, pointA.y);
+//    CGPoint c2 = CGPointMake(pointB.x, pointB.y - offset);
+//    
+//    CGPoint c3 = CGPointMake(pointB.x, pointB.y + offset);
+//    CGPoint c4 = CGPointMake(pointC.x + offset, pointC.y);
+//    
+//    CGPoint c5 = CGPointMake(pointC.x - offset, pointC.y);
+//    CGPoint c6 = CGPointMake(pointD.x, pointD.y + offset);
+//    
+//    CGPoint c7 = CGPointMake(pointD.x, pointD.y - offset);
+//    CGPoint c8 = CGPointMake(pointA.x - offset, pointA.y);
     
     // 更新界面
     UIBezierPath *ovalPath = [UIBezierPath bezierPath];

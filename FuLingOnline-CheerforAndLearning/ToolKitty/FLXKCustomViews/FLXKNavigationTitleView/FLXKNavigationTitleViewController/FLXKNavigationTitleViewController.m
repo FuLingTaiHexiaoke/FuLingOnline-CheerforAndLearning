@@ -100,6 +100,7 @@
     _scrollView.pagingEnabled=YES;
     _scrollView.showsVerticalScrollIndicator=NO;
     _scrollView.showsHorizontalScrollIndicator=NO;
+    _scrollView.bounces=NO;
     [self.view addSubview:_scrollView];
     
     __block   UIView *lastView= nil;
