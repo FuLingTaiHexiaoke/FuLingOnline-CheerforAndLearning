@@ -29,16 +29,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
-                //add navigation title view
-            [self setupNavigationTitleSegmentsView];
+    //add navigation title view
+    [self setupNavigationTitleSegmentsView];
     
-            //setup a scrollview container
-            //add children to scrollview container
-            [self setupScrollViewWithVCs:self.viewControllers];
+    //setup a scrollview container
+    //add children to scrollview container
+    [self setupScrollViewWithVCs:self.viewControllers];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-
+    
 }
 
 #pragma mark -
@@ -119,9 +119,10 @@
     [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
         // 让scrollview的contentSize随着内容的增多而变化
-             make.leading.mas_equalTo(self.scrollView.mas_leading);
-        make.trailing.mas_equalTo(lastView.mas_trailing);
+//        make.leading.mas_equalTo(self.scrollView.mas_leading);
+//        make.trailing.mas_equalTo(lastView.mas_trailing);
     }];
+    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width*viewControllers.count,0);
 }
 
 - (UIColor *)randomColor {

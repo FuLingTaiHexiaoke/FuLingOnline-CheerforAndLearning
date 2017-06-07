@@ -76,36 +76,37 @@
 
 
 - (void)addThumbup:(UIButton*)sender {
-    if (self.model.isThumberuped==1) {
-            [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+    //外部处理逻辑
+    if(self.addThumbupBlock){
+        self.addThumbupBlock(sender,self.model);
     }
+    //内部处理逻辑
     else{
-        [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+        if (self.model.isThumberuped==1) {
+            [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
+        }
+        else{
+            [sender setImage:[UIImage imageNamed:@"sharing_thumbup_s"]  forState:UIControlStateNormal];
+        }
+        //此处的逻辑没有弄得太懂，为什么没有按照预想的变化
+        //    [UIView animateWithDuration:1.0 animations:^{
+        ////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
+        //        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
+        //    } completion:^(BOOL finished) {
+        //        sender.imageView.transform=CGAffineTransformIdentity;
+        //    }];
+        CABasicAnimation *theAnimation;
+        theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        theAnimation.duration=2;
+        theAnimation.fillMode = kCAFillModeForwards;
+        theAnimation.removedOnCompletion = NO;
+        theAnimation.fromValue = [NSNumber numberWithFloat:1];
+        theAnimation.toValue = [NSNumber numberWithFloat:4.0];
+        [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
+        
+        [self addFriendsharingThumbup];
+        
     }
-    //    [UIView animateWithDuration:1.0 animations:^{
-    ////        NSLog(@"NSStringFromCGAffineTransform %@",NSStringFromCGAffineTransform(sender.imageView.transform));
-    //        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
-    //    } completion:^(BOOL finished) {
-    //        sender.imageView.transform=CGAffineTransformIdentity;
-    //    }];
-    
-    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        sender.imageView.transform=CGAffineTransformScale(sender.imageView.transform, 0.4, 0.4);
-    } completion:^(BOOL finished) {
-        sender.imageView.transform=CGAffineTransformIdentity;
-    }];
-    
-    //    CABasicAnimation *theAnimation;
-    //    theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    //    theAnimation.duration=2;
-    //    theAnimation.fillMode = kCAFillModeForwards;
-    //    theAnimation.removedOnCompletion = NO;
-    //    theAnimation.fromValue = [NSNumber numberWithFloat:1];
-    //    theAnimation.toValue = [NSNumber numberWithFloat:4.0];
-    //    [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
-    
-    
-    [self addFriendsharingThumbup];
 }
 
 - (void)addCommentRequest{
@@ -118,7 +119,7 @@
     }
 }
 
-//评论
+//添加评论信息，由外部调用。
 -(void)addFriendsharingComment:(NSDictionary*)parameters{
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.fromUserID= [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test";

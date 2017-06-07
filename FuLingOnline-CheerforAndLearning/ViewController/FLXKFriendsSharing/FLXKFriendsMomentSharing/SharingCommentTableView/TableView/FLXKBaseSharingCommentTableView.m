@@ -182,9 +182,9 @@
 //    });
 //
     _models=models;
- dispatch_async(dispatch_get_main_queue(), ^{
-         [self reloadData];
- });
+// dispatch_async(dispatch_get_main_queue(), ^{
+//         [self reloadData];
+// });
 }
 #pragma mark - Overriden methods
 #pragma mark - Navigation

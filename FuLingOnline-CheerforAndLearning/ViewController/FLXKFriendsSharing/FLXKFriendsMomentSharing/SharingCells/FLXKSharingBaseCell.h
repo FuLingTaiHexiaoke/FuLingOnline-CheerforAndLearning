@@ -11,7 +11,7 @@
 #import <UIKit/UIKit.h>
 //utilites
 #import "NSAttributedString+EmotionExtension.h"
-//child viewController
+
 //subviews
 #import "FLXKBaseSharingPictureLayoutView.h"
 #import "FLXKBaseSharingCommentTableView.h"
@@ -23,46 +23,40 @@
 #import "SharingCommentCellModel.h"
 
 
+
+typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model);
+
+
 @interface FLXKSharingBaseCell : UITableViewCell
 
-//IBOutlet
-//IBAction
-//头像点击事件
-//名称
-//分享的文本内容
-//分享的图片
-//分享时间戳
-//删除分享
+#pragma mark - 对外开发接口
+//点赞
+@property (strong, nonatomic)AddThumbupBlock addThumbupBlock;
+//触发评论
+@property (strong, nonatomic)void(^addCommentRequestBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
+//添加评论信息，由外部调用。
+-(void)addFriendsharingComment:(NSDictionary*)parameters;
+//分享
+
+#pragma mark - 子类接口
+//刷新当前cell
+- (void)reloadCurrentCell;
+
+//当前cell所在的tableView
+@property(nonatomic,weak)UITableView* tableView;
 
 //点赞
 - (void)addThumbup:(UIButton*)sender;
--(void)addFriendsharingThumbup;
-
-
 //评论
-//触发评论
-@property (strong, nonatomic)void(^addCommentRequestBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
-
 - (void)addCommentRequest;
--(void)addFriendsharingComment:(NSDictionary*)parameters;
-- (void)reloadCurrentCell;
--(void)loadComments;
+
 //分享
-
-
-//child viewController
-//subviews
-//models
-@property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
-//-(void)setSharingCellModel:(FLXKSharingCellModel *)model  WithIndexPath:(NSIndexPath *)indexPath;
-
-@property (strong, nonatomic)FLXKSharingCellModel* model;
-@property (strong, nonatomic)NSIndexPath * indexPath;
 
 -(void)hiddenSubviews;
 
-//UI state record properties
-@property(nonatomic,weak)UITableView* tableView;
-
+#pragma mark - 数据
+@property (strong, nonatomic)FLXKSharingCellModel* model;//单元格数据模型
+@property (strong, nonatomic)NSIndexPath * indexPath;//单元格所在的行数
+@property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;//单元格评论数据模型
 @end
 
