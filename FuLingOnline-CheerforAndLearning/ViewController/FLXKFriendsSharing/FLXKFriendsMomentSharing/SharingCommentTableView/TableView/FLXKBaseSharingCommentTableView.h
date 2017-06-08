@@ -7,25 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-//utilites
 
-//models
-//#import "SharingCommentCellModel.h"
 @class SharingCommentCellModel;
-//subviews
-//child viewController
+
 @interface FLXKBaseSharingCommentTableView : UITableView
+
 //public method
 @property (strong, nonatomic)void(^addCommentRequsetBlock)(SharingCommentCellModel* model);
 
-//getter/setter
--(CGFloat)setCellModels:(NSArray<SharingCommentCellModel *> *)models;
-
-//IBOutlet
-
 //models
 @property (strong, nonatomic)NSArray<SharingCommentCellModel *> *  models;
-//UI state record properties
-//subviews
-//child viewController
+
 @end

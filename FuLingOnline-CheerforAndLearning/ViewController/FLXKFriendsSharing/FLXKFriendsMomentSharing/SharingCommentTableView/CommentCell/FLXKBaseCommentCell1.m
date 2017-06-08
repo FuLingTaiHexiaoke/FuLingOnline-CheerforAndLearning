@@ -10,7 +10,6 @@
 
 #import "NSAttributedString+EmotionExtension.h"
 
-//#import "NSAttributedString+EmotionExtension.h"
 
 #define FONT_COLOR [UIColor colorWithRed:73/255.0 green:119/255.0 blue:154/255.0 alpha:1.0]
 
@@ -22,20 +21,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-        self.commentTextView.backgroundColor=[UIColor blueColor];
-    // Initialization code
+    self.commentTextView.backgroundColor=[UIColor blueColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-}
-
-// If you are not using auto layout, override this method, enable it by setting
-// "fd_enforceFrameLayout" to YES.
-- (CGSize)sizeThatFits:(CGSize)size {
-    CGFloat totalHeight = 0;
-    totalHeight += [self.commentTextView sizeThatFits:size].height;
-    return CGSizeMake(size.width, totalHeight);
 }
 
 - (void)setModel:(SharingCommentCellModel *)model{
@@ -43,7 +33,6 @@
     self.commentTextView.scrollEnabled=NO;
     self.commentTextView.backgroundColor=[UIColor yellowColor];
     self.commentTextView.editable=NO;
-//    self.commentTextView.selectable=NO;
     self.commentTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.commentTextView.delegate = self;
     self.commentTextView.attributedText=[self getCommentString:model];
@@ -73,44 +62,13 @@
 }
 
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange interaction:(UITextItemInteraction)interaction{
-__block    NSMutableAttributedString* str=[[NSMutableAttributedString alloc]initWithAttributedString: textView.attributedText];
-//    [str removeAttribute:NSLinkAttributeName range:characterRange];
-   
+    __block    NSMutableAttributedString* str=[[NSMutableAttributedString alloc]initWithAttributedString: textView.attributedText];
     [str  setAttributes:@{NSBackgroundColorAttributeName:[UIColor whiteColor]} range:characterRange];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [str  setAttributes:@{NSBackgroundColorAttributeName:FONT_COLOR} range:characterRange];
+        [str  setAttributes:@{NSBackgroundColorAttributeName:FONT_COLOR} range:characterRange];
     });
     NSLog(@"URL %@", URL);
     return YES;
-}
-
-//-(BOOL)textViewShouldBeginEditing:(UITextView *)textView
-//{
-//    return NO;
-//}
-/* 选中文字后是否能够呼出菜单 */
-- (BOOL)canBecameFirstResponder {
-    return YES;
-}
-
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender
-{
-      return NO;
-//    if (action == @selector(copy:))
-//    {
-//        return YES;
-//    }
-//    else if (action == @selector(select:))
-//    {
-//        return YES;
-//    }
-//    else if (action == @selector(selectAll:))
-//    {
-//        return YES;
-//    }
-    
-//    return [super canPerformAction:action withSender:sender];
 }
 
 @end

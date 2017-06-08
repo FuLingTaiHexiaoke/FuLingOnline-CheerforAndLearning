@@ -12,8 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-//    self.userHeaderImageView.layer.cornerRadius=CGRectGetWidth( self.userHeaderImageView.bounds)/2;
-//    self.userHeaderImageView.layer.masksToBounds=YES;
+    
 }
 
 @end

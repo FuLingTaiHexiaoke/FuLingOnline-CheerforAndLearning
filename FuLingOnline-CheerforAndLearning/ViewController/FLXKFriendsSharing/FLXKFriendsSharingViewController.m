@@ -19,7 +19,7 @@
 
 //child viewController
 #import "FLXKNavigationTitleViewController.h"
-#import "FLXSuggestedSharingTableViewController.h"
+#import "FLXSuggestedSharingTableVC.h"
 
 //subviews
 #import "FLXKNavigationTitleSegmentsView.h"
@@ -101,7 +101,7 @@
     for (int i=0; i<1; i++) {
 //        FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
 //        [viewControllers addObject:vc];
-        FLXSuggestedSharingTableViewController* vc=[FLXSuggestedSharingTableViewController new];
+        FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
         [viewControllers addObject:vc];
     }
     

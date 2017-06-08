@@ -8,51 +8,17 @@
 #pragma mark - Declarations and macros
 
 #import "FLXKBaseSharingLikeCollectionView.h"
-//utilites
-//models
-//subviews
-//child viewController
-@interface FLXKBaseSharingLikeCollectionView ()<UICollectionViewDataSource,UICollectionViewDelegate>
-//IBOutlet
-//IBAction
-//models
-//UI state record properties
-//subviews
-//child viewController
+
+@interface FLXKBaseSharingLikeCollectionView ()
+
 @end
 
 @implementation FLXKBaseSharingLikeCollectionView
 
-#pragma mark - ViewController LifeCircle
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do view setup here.
-//}
-//
-//-(void)dealloc{
-//    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//}
-//
-
-#pragma mark - Delegate
-#pragma mark - Public methods
-#pragma mark - View Event
-#pragma mark - Model Event
-#pragma mark - Private methods
 #pragma mark - getter/setter
 -(void)setLikeTheSharingUserRecords:(NSArray<UserModel *> *)users{
     
 }
-#pragma mark - Overriden methods
 
-#pragma mark - Navigation
-
-// - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// [segue destinationViewController].
-// }
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface FLXKLabelTypeSharingLikeCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 
 @end

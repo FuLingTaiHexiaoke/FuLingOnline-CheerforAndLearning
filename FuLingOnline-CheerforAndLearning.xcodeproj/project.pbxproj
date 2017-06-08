@@ -51,13 +51,10 @@
 		B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */; };
 		B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */; };
 		B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */; };
-		B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */; };
+		B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m in Sources */ = {isa = PBXBuildFile; fileRef = B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m */; };
 		B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */; };
 		B924948C1E8B8C7C006878CC /* FLXKSharingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */; };
 		B92494981E8BA103006878CC /* FLXKSharingCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92494971E8BA103006878CC /* FLXKSharingCellModel.m */; };
-		B924949C1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924949B1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m */; };
-		B924949F1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B924949E1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m */; };
-		B92494A11E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92494A01E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib */; };
 		B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */; };
 		B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9141E2F66EC00A5D9F6 /* EmotionGroup.m */; };
 		B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B924D9161E2F66EC00A5D9F6 /* EmotionItem.m */; };
@@ -73,14 +70,11 @@
 		B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A861E9E2BCE00E2DC65 /* UserModel.m */; };
 		B9252A8A1E9E2E3200E2DC65 /* EditPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */; };
 		B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B92898B51E8EABE2005DF4A8 /* codeback.rtf */; };
-		B928AFC41EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m in Sources */ = {isa = PBXBuildFile; fileRef = B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */; };
-		B928AFC51EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */; };
 		B92A2FB01E8DF66500E8AA30 /* MZShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */; };
 		B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAD1E8DF66500E8AA30 /* R_ShapedButton.m */; };
 		B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAF1E8DF66500E8AA30 /* UIImage+ColorAtPixel.m */; };
 		B92A300B1E8E1FC000E8AA30 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A300A1E8E1FC000E8AA30 /* UIImage+Extension.m */; };
 		B92A30231E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */; };
-		B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */; };
 		B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */; };
 		B92A302B1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A302A1E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.m */; };
 		B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = B92B55B41DD9679E009A373A /* CALayer+FLXKAddition.m */; };
@@ -102,7 +96,6 @@
 		B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B930C1F91DE548D4004F729B /* FLXKTabBar.m */; };
 		B939D01E1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D01C1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m */; };
 		B939D01F1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B939D01D1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib */; };
-		B939D0221EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */; };
 		B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */; };
 		B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */; };
 		B93FF88B1E01285800070BD4 /* FLXKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B93FF88A1E01285800070BD4 /* FLXKBaseViewController.m */; };
@@ -133,8 +126,8 @@
 		B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66B91DE6ACD500AB42E4 /* HomeHeaderView.m */; };
 		B95A66BE1DE6B6A400AB42E4 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */; };
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
-		B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */; };
-		B95D18E31E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */; };
+		B95D18E11E9772DF00585895 /* FLXKSharingPicturesShowingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18E01E9772DF00585895 /* FLXKSharingPicturesShowingView.m */; };
+		B95D18E31E97733D00585895 /* FLXKSharingPicturesShowingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18E21E97733D00585895 /* FLXKSharingPicturesShowingView.xib */; };
 		B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */; };
 		B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */; };
 		B9614A451E82CC22008B7531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A441E82CC22008B7531 /* main.m */; };
@@ -146,7 +139,6 @@
 		B9614A561E82CC23008B7531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9614A541E82CC23008B7531 /* LaunchScreen.storyboard */; };
 		B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */; };
 		B96D30361E716A62003BDFD0 /* emotionDB.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B96D30321E716A62003BDFD0 /* emotionDB.xlsx */; };
-		B96FFDFF1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */; };
 		B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */; };
 		B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97261881E2DEC76008B6356 /* EntityGeneratorViewController.m */; };
 		B97261A11E2DEC76008B6356 /* EntityGeneratorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97261891E2DEC76008B6356 /* EntityGeneratorViewController.xib */; };
@@ -489,10 +481,6 @@
 		B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */; };
 		B9780F9B1EA99B9B003AF40A /* FLXKMessageToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */; };
 		B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */; };
-		B9780FA21EA9DC52003AF40A /* FLXKMessageToolBartest.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */; };
-		B9780FA31EA9DC52003AF40A /* FLXKMessageToolBartest.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */; };
-		B9780FA71EA9E06C003AF40A /* FLXKMessageToolBartest1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */; };
-		B9780FA81EA9E06C003AF40A /* FLXKMessageToolBartest1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */; };
 		B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
@@ -508,25 +496,19 @@
 		B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B97CC0911E7287AD000D548B /* FLXKAPPHelper.m */; };
 		B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */; };
 		B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */; };
+		B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
 		B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */; };
-		B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */; };
-		B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */; };
 		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
 		B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */; };
 		B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA281E8FADAC0032D8CB /* FLXKSharingImagesModel.m */; };
 		B99FC6101DF563B10093BBAE /* FLXKPublishNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */; };
 		B9A3F95A1E6BE99F007CA4B2 /* FriendsSharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */; };
-		B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */; };
 		B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */; };
 		B9A3F9641E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9631E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m */; };
 		B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */; };
 		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
 		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
-		B9B6B4C31EBDE5BC00B7C483 /* FLXKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6B4C11EBDE5BC00B7C483 /* FLXKCollectionViewController.m */; };
-		B9B6B4C41EBDE5BC00B7C483 /* FLXKCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B6B4C21EBDE5BC00B7C483 /* FLXKCollectionViewController.xib */; };
-		B9B6B4C71EBDE78A00B7C483 /* FLXKtestUICollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6B4C61EBDE78A00B7C483 /* FLXKtestUICollectionView.m */; };
-		B9B6B4C91EBDE79F00B7C483 /* FLXKtestUICollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B6B4C81EBDE79F00B7C483 /* FLXKtestUICollectionView.xib */; };
 		B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */; };
 		B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */; };
 		B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */; };
@@ -615,9 +597,7 @@
 		B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E2E1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m */; };
 		B9E17E311EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */; };
 		B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */; };
-		B9F225611EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */; };
-		B9FA220D1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */; };
-		B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */; };
+		B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */; };
 		B9FBB0991E8A59DC00CCAEA8 /* TemplateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */; };
 		B9FBB09A1E8A59DC00CCAEA8 /* TemplateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */; };
 		B9FBB09B1E8A59DC00CCAEA8 /* TemplateInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0971E8A59DC00CCAEA8 /* TemplateInfo.plist */; };
@@ -777,8 +757,8 @@
 		B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		B91C05471EA8B4C100E1CE1E /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
 		B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPTextViewInternal.m; sourceTree = "<group>"; };
-		B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m; sourceTree = "<group>"; };
-		B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h; sourceTree = "<group>"; };
+		B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellMansory.m; sourceTree = "<group>"; };
+		B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellMansory.h; sourceTree = "<group>"; };
 		B923B4D51DDABC9D00410CFC /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuLingOnline-CheerforAndLearning-Prefix.pch"; sourceTree = "<group>"; };
 		B923B4DB1DDB149B00410CFC /* FBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBAppDelegate.m; sourceTree = "<group>"; };
@@ -786,11 +766,6 @@
 		B924948B1E8B8C7C006878CC /* FLXKSharingBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingBaseCell.m; sourceTree = "<group>"; };
 		B92494961E8BA103006878CC /* FLXKSharingCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingCellModel.h; sourceTree = "<group>"; };
 		B92494971E8BA103006878CC /* FLXKSharingCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingCellModel.m; sourceTree = "<group>"; };
-		B924949A1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
-		B924949B1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingPictureLayoutView.m; sourceTree = "<group>"; };
-		B924949D1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKOneSharingPictureLayoutView.h; sourceTree = "<group>"; };
-		B924949E1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKOneSharingPictureLayoutView.m; sourceTree = "<group>"; };
-		B92494A01E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKOneSharingPictureLayoutView.xib; sourceTree = "<group>"; };
 		B924D8D61E2F648A00A5D9F6 /* FLXKEmotionDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKEmotionDBHelper.h; sourceTree = "<group>"; };
 		B924D8D71E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKEmotionDBHelper.m; sourceTree = "<group>"; };
 		B924D9131E2F66EC00A5D9F6 /* EmotionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroup.h; sourceTree = "<group>"; };
@@ -816,9 +791,6 @@
 		B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonInfoViewController.m; sourceTree = "<group>"; };
 		B9252A891E9E2E3200E2DC65 /* EditPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonInfoViewController.h; sourceTree = "<group>"; };
 		B92898B51E8EABE2005DF4A8 /* codeback.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = codeback.rtf; sourceTree = "<group>"; };
-		B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.m; sourceTree = "<group>"; };
-		B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.xib; sourceTree = "<group>"; };
-		B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell_UIStackView.h; sourceTree = "<group>"; };
 		B92A2FAA1E8DF66500E8AA30 /* MZShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZShapedButton.h; sourceTree = "<group>"; };
 		B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZShapedButton.m; sourceTree = "<group>"; };
 		B92A2FAC1E8DF66500E8AA30 /* R_ShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R_ShapedButton.h; sourceTree = "<group>"; };
@@ -829,7 +801,6 @@
 		B92A300A1E8E1FC000E8AA30 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseCommentCell.h; sourceTree = "<group>"; };
 		B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell.m; sourceTree = "<group>"; };
-		B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseCommentCell.xib; sourceTree = "<group>"; };
 		B92A30261E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingCommentTableView.h; sourceTree = "<group>"; };
 		B92A30271E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingCommentTableView.m; sourceTree = "<group>"; };
 		B92A30291E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension_IdentifierForReusable.h"; sourceTree = "<group>"; };
@@ -870,8 +841,6 @@
 		B939D01B1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLabelTypeSharingLikeCollectionViewCell.h; sourceTree = "<group>"; };
 		B939D01C1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLabelTypeSharingLikeCollectionViewCell.m; sourceTree = "<group>"; };
 		B939D01D1EC1B2C8004186F7 /* FLXKLabelTypeSharingLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKLabelTypeSharingLikeCollectionViewCell.xib; sourceTree = "<group>"; };
-		B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsSharingHttpRequestHelper.m; sourceTree = "<group>"; };
-		B939D0211EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsSharingHttpRequestHelper.h; sourceTree = "<group>"; };
 		B93AF5C11E30AADA00F51E26 /* EmotionGroupDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionGroupDetailModel.h; sourceTree = "<group>"; };
 		B93AF5C21E30AADA00F51E26 /* EmotionGroupDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionGroupDetailModel.m; sourceTree = "<group>"; };
 		B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHttpRequestModelHelper.h; sourceTree = "<group>"; };
@@ -923,9 +892,9 @@
 		B95A66BD1DE6B6A400AB42E4 /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		B95A66BF1DE6D64300AB42E4 /* ModelHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelHomeHeaderView.h; sourceTree = "<group>"; };
 		B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelHomeHeaderView.m; sourceTree = "<group>"; };
-		B95D18DF1E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKTwoSharingPictureLayoutView.h; sourceTree = "<group>"; };
-		B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKTwoSharingPictureLayoutView.m; sourceTree = "<group>"; };
-		B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKTwoSharingPictureLayoutView.xib; sourceTree = "<group>"; };
+		B95D18DF1E9772DF00585895 /* FLXKSharingPicturesShowingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingPicturesShowingView.h; sourceTree = "<group>"; };
+		B95D18E01E9772DF00585895 /* FLXKSharingPicturesShowingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingPicturesShowingView.m; sourceTree = "<group>"; };
+		B95D18E21E97733D00585895 /* FLXKSharingPicturesShowingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingPicturesShowingView.xib; sourceTree = "<group>"; };
 		B95D18E91E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseImageLayoutCollectcionViewCell.h; sourceTree = "<group>"; };
 		B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseImageLayoutCollectcionViewCell.m; sourceTree = "<group>"; };
 		B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseImageLayoutCollectcionViewCell.xib; sourceTree = "<group>"; };
@@ -947,8 +916,6 @@
 		B96D302E1E71609E003BDFD0 /* FLXKAppNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAppNotification.m; sourceTree = "<group>"; };
 		B96D30301E7168E6003BDFD0 /* FuLingOnline-CheerforAndLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FuLingOnline-CheerforAndLearning.entitlements"; sourceTree = "<group>"; };
 		B96D30321E716A62003BDFD0 /* emotionDB.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = emotionDB.xlsx; sourceTree = "<group>"; };
-		B96FFDFD1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingLikeCollectionViewCell.h; sourceTree = "<group>"; };
-		B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingLikeCollectionViewCell.m; sourceTree = "<group>"; };
 		B96FFE041E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingLikeCollectionView.h; sourceTree = "<group>"; };
 		B96FFE051E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingLikeCollectionView.m; sourceTree = "<group>"; };
 		B97261861E2DEC76008B6356 /* EntitiesBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntitiesBridge.h; sourceTree = "<group>"; };
@@ -1308,12 +1275,6 @@
 		B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBar.h; sourceTree = "<group>"; };
 		B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMessageInputView.m; sourceTree = "<group>"; };
 		B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMessageInputView.h; sourceTree = "<group>"; };
-		B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBartest.m; sourceTree = "<group>"; };
-		B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBartest.xib; sourceTree = "<group>"; };
-		B9780FA11EA9DC52003AF40A /* FLXKMessageToolBartest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBartest.h; sourceTree = "<group>"; };
-		B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBartest1.m; sourceTree = "<group>"; };
-		B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBartest1.xib; sourceTree = "<group>"; };
-		B9780FA61EA9E06C003AF40A /* FLXKMessageToolBartest1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBartest1.h; sourceTree = "<group>"; };
 		B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FLXKEmotionBoard.xcassets; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
@@ -1335,12 +1296,11 @@
 		B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		B97F4C4B1EA0714D0033CA71 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		B98237571EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
+		B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingPictureLayoutView.m; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
 		B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAnimationHelper.h; sourceTree = "<group>"; };
 		B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAnimationHelper.m; sourceTree = "<group>"; };
-		B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCell.h; sourceTree = "<group>"; };
-		B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCell.m; sourceTree = "<group>"; };
-		B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingFuLingOnlineStyleCell.xib; sourceTree = "<group>"; };
 		B99CAA211E8F83BB0032D8CB /* FLXKModelsBrigde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKModelsBrigde.h; sourceTree = "<group>"; };
 		B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKModelsBrigde.m; sourceTree = "<group>"; };
 		B99CAA241E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKLikeTheSharingRecordModel.h; sourceTree = "<group>"; };
@@ -1350,8 +1310,6 @@
 		B99FC60E1DF563B10093BBAE /* FLXKPublishNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKPublishNewsModel.h; sourceTree = "<group>"; };
 		B99FC60F1DF563B10093BBAE /* FLXKPublishNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKPublishNewsModel.m; sourceTree = "<group>"; };
 		B9A3F9591E6BE99F007CA4B2 /* FriendsSharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsSharing.storyboard; sourceTree = "<group>"; };
-		B9A3F95C1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXSuggestedSharingTableViewController.h; sourceTree = "<group>"; };
-		B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXSuggestedSharingTableViewController.m; sourceTree = "<group>"; };
 		B9A3F95F1E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXTopicGalaxyTableViewController.h; sourceTree = "<group>"; };
 		B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXTopicGalaxyTableViewController.m; sourceTree = "<group>"; };
 		B9A3F9621E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXActivePeopleRateTableViewController.h; sourceTree = "<group>"; };
@@ -1361,12 +1319,6 @@
 		B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestFooterView.h; sourceTree = "<group>"; };
 		B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestFooterView.m; sourceTree = "<group>"; };
 		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
-		B9B6B4C01EBDE5BC00B7C483 /* FLXKCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKCollectionViewController.h; sourceTree = "<group>"; };
-		B9B6B4C11EBDE5BC00B7C483 /* FLXKCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKCollectionViewController.m; sourceTree = "<group>"; };
-		B9B6B4C21EBDE5BC00B7C483 /* FLXKCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKCollectionViewController.xib; sourceTree = "<group>"; };
-		B9B6B4C51EBDE78A00B7C483 /* FLXKtestUICollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKtestUICollectionView.h; sourceTree = "<group>"; };
-		B9B6B4C61EBDE78A00B7C483 /* FLXKtestUICollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKtestUICollectionView.m; sourceTree = "<group>"; };
-		B9B6B4C81EBDE79F00B7C483 /* FLXKtestUICollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKtestUICollectionView.xib; sourceTree = "<group>"; };
 		B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingOperationContainerView.h; sourceTree = "<group>"; };
 		B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingOperationContainerView.m; sourceTree = "<group>"; };
 		B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell1.m; sourceTree = "<group>"; };
@@ -1520,13 +1472,9 @@
 		B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKHeaderImageSharingLikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9E17E321EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHeaderImageSharingLikeCollectionView.h; sourceTree = "<group>"; };
 		B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHeaderImageSharingLikeCollectionView.m; sourceTree = "<group>"; };
-		B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellmasonry.m; sourceTree = "<group>"; };
-		B9F225601EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellmasonry.h; sourceTree = "<group>"; };
 		B9F9A2EC1DB7359A002B1626 /* CodeBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeBack.h; sourceTree = "<group>"; };
-		B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m; sourceTree = "<group>"; };
-		B9FA220C1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h; sourceTree = "<group>"; };
-		B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLXSuggestedSharingTableViewControlleroffscreen.m; path = HearderFooterViews/FLXSuggestedSharingTableViewControlleroffscreen.m; sourceTree = "<group>"; };
-		B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLXSuggestedSharingTableViewControlleroffscreen.h; path = HearderFooterViews/FLXSuggestedSharingTableViewControlleroffscreen.h; sourceTree = "<group>"; };
+		B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLXSuggestedSharingTableVC.m; path = HearderFooterViews/FLXSuggestedSharingTableVC.m; sourceTree = "<group>"; };
+		B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLXSuggestedSharingTableVC.h; path = HearderFooterViews/FLXSuggestedSharingTableVC.h; sourceTree = "<group>"; };
 		B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon.png; sourceTree = "<group>"; };
 		B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TemplateIcon@2x.png"; sourceTree = "<group>"; };
 		B9FBB0971E8A59DC00CCAEA8 /* TemplateInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TemplateInfo.plist; sourceTree = "<group>"; };
@@ -1937,20 +1885,11 @@
 			isa = PBXGroup;
 			children = (
 				B95D18E81E977EE800585895 /* ImageLayoutCollectcionViewCells */,
-				B924949A1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.h */,
-				B924949B1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m */,
-				B924949D1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.h */,
-				B924949E1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m */,
-				B92494A01E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib */,
-				B95D18DF1E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.h */,
-				B95D18E01E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m */,
-				B95D18E21E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib */,
-				B9B6B4C01EBDE5BC00B7C483 /* FLXKCollectionViewController.h */,
-				B9B6B4C11EBDE5BC00B7C483 /* FLXKCollectionViewController.m */,
-				B9B6B4C21EBDE5BC00B7C483 /* FLXKCollectionViewController.xib */,
-				B9B6B4C51EBDE78A00B7C483 /* FLXKtestUICollectionView.h */,
-				B9B6B4C61EBDE78A00B7C483 /* FLXKtestUICollectionView.m */,
-				B9B6B4C81EBDE79F00B7C483 /* FLXKtestUICollectionView.xib */,
+				B98237571EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.h */,
+				B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */,
+				B95D18DF1E9772DF00585895 /* FLXKSharingPicturesShowingView.h */,
+				B95D18E01E9772DF00585895 /* FLXKSharingPicturesShowingView.m */,
+				B95D18E21E97733D00585895 /* FLXKSharingPicturesShowingView.xib */,
 			);
 			path = SharingPicturesLayoutViews;
 			sourceTree = "<group>";
@@ -2052,7 +1991,6 @@
 				B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */,
 				B92A30201E8E4FFF00E8AA30 /* FLXKBaseCommentCell.h */,
 				B92A30211E8E4FFF00E8AA30 /* FLXKBaseCommentCell.m */,
-				B92A30221E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib */,
 			);
 			path = CommentCell;
 			sourceTree = "<group>";
@@ -2080,8 +2018,6 @@
 		B92F57601E5547C40010A84A /* FLXKFriendsSharing */ = {
 			isa = PBXGroup;
 			children = (
-				B939D0211EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.h */,
-				B939D0201EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m */,
 				B92494871E8B8BC4006878CC /* FLXKFriendsMomentSharing */,
 				B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */,
 				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
@@ -2216,15 +2152,9 @@
 				B95A32531E31B95600E71D9D /* FLXKEmotionShowingScrollView.m */,
 				B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */,
 				B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */,
+				B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */,
 				B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */,
 				B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */,
-				B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */,
-				B9780FA11EA9DC52003AF40A /* FLXKMessageToolBartest.h */,
-				B9780F9F1EA9DC52003AF40A /* FLXKMessageToolBartest.m */,
-				B9780FA01EA9DC52003AF40A /* FLXKMessageToolBartest.xib */,
-				B9780FA61EA9E06C003AF40A /* FLXKMessageToolBartest1.h */,
-				B9780FA41EA9E06C003AF40A /* FLXKMessageToolBartest1.m */,
-				B9780FA51EA9E06C003AF40A /* FLXKMessageToolBartest1.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2312,8 +2242,6 @@
 		B96FFDFB1E8EAF5800ECAC58 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				B96FFDFD1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.h */,
-				B96FFDFE1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m */,
 				B9E17E2D1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.h */,
 				B9E17E2E1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m */,
 				B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */,
@@ -2876,18 +2804,8 @@
 		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
 			isa = PBXGroup;
 			children = (
-				B9FA220C1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.h */,
-				B9FA220B1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m */,
-				B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.h */,
-				B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m */,
-				B928AFC31EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.h */,
-				B928AFC11EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m */,
-				B928AFC21EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib */,
-				B9F225601EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.h */,
-				B9F2255F1EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m */,
-				B99CAA151E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.h */,
-				B99CAA161E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m */,
-				B99CAA171E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib */,
+				B91D14571EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.h */,
+				B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m */,
 			);
 			path = FuLingOnlineStyle;
 			sourceTree = "<group>";
@@ -2897,10 +2815,8 @@
 			children = (
 				B9A3F9651E6BF3EE007CA4B2 /* Cells */,
 				B9A3F9661E6BF3EE007CA4B2 /* HearderFooterViews */,
-				B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.h */,
-				B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m */,
-				B9A3F95C1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.h */,
-				B9A3F95D1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m */,
+				B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableVC.h */,
+				B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */,
 				B9A3F95F1E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.h */,
 				B9A3F9601E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m */,
 				B9A3F9621E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.h */,
@@ -3916,7 +3832,7 @@
 				B97507961E4C58F700A577E7 /* 058@2x.png in Resources */,
 				B97507AE1E4C58F700A577E7 /* 070@2x.png in Resources */,
 				B975077B1E4C58F700A577E7 /* 045.png in Resources */,
-				B95D18E31E97733D00585895 /* FLXKTwoSharingPictureLayoutView.xib in Resources */,
+				B95D18E31E97733D00585895 /* FLXKSharingPicturesShowingView.xib in Resources */,
 				B97507861E4C58F700A577E7 /* 050@2x.png in Resources */,
 				B97507A81E4C58F700A577E7 /* 067@2x.png in Resources */,
 				B97506F91E4C58F600A577E7 /* smiley_89.png in Resources */,
@@ -3927,7 +3843,6 @@
 				B97507451E4C58F600A577E7 /* 018.png in Resources */,
 				B97507751E4C58F700A577E7 /* 042.png in Resources */,
 				B97507361E4C58F600A577E7 /* 010@2x.png in Resources */,
-				B92494A11E8BA544006878CC /* FLXKOneSharingPictureLayoutView.xib in Resources */,
 				B97507551E4C58F600A577E7 /* 026.png in Resources */,
 				B97507671E4C58F700A577E7 /* 035.png in Resources */,
 				B975070B1E4C58F600A577E7 /* gif300_15.gif in Resources */,
@@ -3939,7 +3854,6 @@
 				B975070C1E4C58F600A577E7 /* gif300_16.gif in Resources */,
 				B97507C81E4C58F700A577E7 /* 083@2x.png in Resources */,
 				B97506E01E4C58F600A577E7 /* smiley_66.png in Resources */,
-				B928AFC51EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.xib in Resources */,
 				B975079F1E4C58F700A577E7 /* 063.png in Resources */,
 				B975079A1E4C58F700A577E7 /* 060@2x.png in Resources */,
 				B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */,
@@ -3957,7 +3871,6 @@
 				B97506BB1E4C58F600A577E7 /* smiley_32.png in Resources */,
 				B97506FF1E4C58F600A577E7 /* smiley_94.png in Resources */,
 				B97507A21E4C58F700A577E7 /* 064@2x.png in Resources */,
-				B92A30241E8E4FFF00E8AA30 /* FLXKBaseCommentCell.xib in Resources */,
 				B97507C71E4C58F700A577E7 /* 083.png in Resources */,
 				B97CC08C1E724A89000D548B /* gif_image_test.gif in Resources */,
 				B97506EF1E4C58F600A577E7 /* smiley_8.png in Resources */,
@@ -3968,7 +3881,6 @@
 				B97506B11E4C58F600A577E7 /* smiley_23.png in Resources */,
 				B9252A7D1E9DD16700E2DC65 /* PersonCenterCell.xib in Resources */,
 				B97CC08B1E724A89000D548B /* icon_certification_status1@2x.png in Resources */,
-				B9780FA81EA9E06C003AF40A /* FLXKMessageToolBartest1.xib in Resources */,
 				B9C6AD3F1E6548550003C50A /* star_gray3.png in Resources */,
 				B97507331E4C58F600A577E7 /* 009.png in Resources */,
 				B9C6ACAB1E6548550003C50A /* FontAwesome.ttf in Resources */,
@@ -3979,7 +3891,6 @@
 				B97507321E4C58F600A577E7 /* 008@2x.png in Resources */,
 				B97507121E4C58F600A577E7 /* gif300_5.gif in Resources */,
 				B97506AA1E4C58F600A577E7 /* smiley_17.png in Resources */,
-				B9780FA31EA9DC52003AF40A /* FLXKMessageToolBartest.xib in Resources */,
 				B975072B1E4C58F600A577E7 /* 005.png in Resources */,
 				B97506CF1E4C58F600A577E7 /* smiley_50.png in Resources */,
 				B97CC0801E7249B9000D548B /* FuLingOnline_aps_development.cer in Resources */,
@@ -4009,7 +3920,6 @@
 				B9252A7A1E9DD16700E2DC65 /* PersonCenterHeaderCell.xib in Resources */,
 				B97506BD1E4C58F600A577E7 /* smiley_34.png in Resources */,
 				B97507A91E4C58F700A577E7 /* 068.png in Resources */,
-				B9B6B4C41EBDE5BC00B7C483 /* FLXKCollectionViewController.xib in Resources */,
 				B97506F21E4C58F600A577E7 /* smiley_82.png in Resources */,
 				B9C6AC9B1E6548550003C50A /* FLXKSectionHeaderView.xib in Resources */,
 				B97507221E4C58F600A577E7 /* gif400_9.gif in Resources */,
@@ -4132,7 +4042,6 @@
 				B975079B1E4C58F700A577E7 /* 061.png in Resources */,
 				B9D6399C1E6D36B4004122B9 /* 知识点记录.rtf in Resources */,
 				B97506AC1E4C58F600A577E7 /* smiley_19.png in Resources */,
-				B9B6B4C91EBDE79F00B7C483 /* FLXKtestUICollectionView.xib in Resources */,
 				B97507731E4C58F700A577E7 /* 041.png in Resources */,
 				B97507101E4C58F600A577E7 /* gif300_3.gif in Resources */,
 				B97507621E4C58F600A577E7 /* 032@2x.png in Resources */,
@@ -4247,7 +4156,6 @@
 				B975074E1E4C58F600A577E7 /* 022@2x.png in Resources */,
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
 				B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */,
-				B99CAA1D1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.xib in Resources */,
 				B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */,
 				B97507CD1E4C58F700A577E7 /* _expression_cn.plist in Resources */,
 				B97507011E4C58F600A577E7 /* smiley_96.png in Resources */,
@@ -4422,29 +4330,25 @@
 			files = (
 				B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */,
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
-				B928AFC41EC0389C00FE26A1 /* FLXKSharingFuLingOnlineStyleCell_UIStackView.m in Sources */,
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
 				B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */,
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
-				B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeight.m in Sources */,
+				B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m in Sources */,
 				B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
 				B92F57051E499888001D8C2A /* NSAttributedString+EmotionExtension.m in Sources */,
 				B9C6AC9D1E6548550003C50A /* SectionHeaderViewModel.m in Sources */,
-				B96FFDFF1E8EB01200ECAC58 /* FLXKBaseSharingLikeCollectionViewCell.m in Sources */,
 				B9C6ACAE1E6548550003C50A /* UIImage+FontAwesome.m in Sources */,
 				B930986D1E568C0600306F39 /* NSDate+Extensions.m in Sources */,
 				B92B55B51DD9679E009A373A /* CALayer+FLXKAddition.m in Sources */,
 				B9252A791E9DD16700E2DC65 /* PersonCenterHeaderCell.m in Sources */,
-				B924949C1E8BA4A5006878CC /* FLXKBaseSharingPictureLayoutView.m in Sources */,
 				B9C6ACB11E6548550003C50A /* JRSegmentViewController.m in Sources */,
 				B9C6ACA91E6548550003C50A /* NSString+FontAwesome.m in Sources */,
 				B9C6AC8F1E6548550003C50A /* RRNTableViewHeaderFooterView.m in Sources */,
-				B924949F1E8BA4C0006878CC /* FLXKOneSharingPictureLayoutView.m in Sources */,
 				B9CDF0231E4F36690007F638 /* KYSpringLayerAnimation.m in Sources */,
 				B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
@@ -4457,7 +4361,6 @@
 				B90AEC031EC2B50600014FA8 /* YYFPSLabel.m in Sources */,
 				B92F57671E5547C40010A84A /* FLXKFriendsSharingViewController.m in Sources */,
 				B9C6ACA01E6548550003C50A /* ScanSuccessJumpVC.m in Sources */,
-				B939D0221EC1CB46004186F7 /* FriendsSharingHttpRequestHelper.m in Sources */,
 				B923B4DC1DDB149B00410CFC /* FBAppDelegate.m in Sources */,
 				B9D2CDA11E9F663C003D9FC0 /* FLXKSharedAppSingleton.m in Sources */,
 				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
@@ -4475,9 +4378,9 @@
 				B95A32541E31B95600E71D9D /* FLXKEmotionCollectionViewNomalCell.m in Sources */,
 				B9C263871E9B3182003D7B51 /* FLXKUserManagerViewController.m in Sources */,
 				B9730FF21E84C9AA00967ADD /* FLXKMoviePlayerViewController.m in Sources */,
-				B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableViewControlleroffscreen.m in Sources */,
+				B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableVC.m in Sources */,
 				B90AEC3C1EC30AE200014FA8 /* SharingLikeCellModel.m in Sources */,
-				B95D18E11E9772DF00585895 /* FLXKTwoSharingPictureLayoutView.m in Sources */,
+				B95D18E11E9772DF00585895 /* FLXKSharingPicturesShowingView.m in Sources */,
 				B90CD9811E763FFD00278EDB /* CustomContentViewController.m in Sources */,
 				B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */,
 				B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */,
@@ -4498,8 +4401,8 @@
 				B90CD9821E763FFD00278EDB /* LaunchScreenViewController.m in Sources */,
 				B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */,
 				B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */,
-				B9B6B4C71EBDE78A00B7C483 /* FLXKtestUICollectionView.m in Sources */,
 				B90CD9881E763FFD00278EDB /* NotificationExamplesTableViewController.m in Sources */,
+				B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */,
 				B90CD9851E763FFD00278EDB /* SimpleLocalViewController.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
 				B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */,
@@ -4516,7 +4419,6 @@
 				B9C6ACAA1E6548550003C50A /* README.md in Sources */,
 				B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */,
 				B9CDF0221E4F36690007F638 /* KYAnimatedPageControl.m in Sources */,
-				B9780FA71EA9E06C003AF40A /* FLXKMessageToolBartest1.m in Sources */,
 				B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
 				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
@@ -4539,7 +4441,6 @@
 				B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
-				B9B6B4C31EBDE5BC00B7C483 /* FLXKCollectionViewController.m in Sources */,
 				B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */,
 				B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */,
 				B924D9181E2F66EC00A5D9F6 /* EmotionItem.m in Sources */,
@@ -4564,14 +4465,11 @@
 				B90CD9831E763FFD00278EDB /* NotificationCenterViewController.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
 				B90CD97C1E763FFD00278EDB /* AccessoryVideoViewController.m in Sources */,
-				B9F225611EBC59E600CED45A /* FLXKSharingFuLingOnlineStyleCellmasonry.m in Sources */,
 				B9C6AD461E65493F0003C50A /* AudioServices+Extensions.m in Sources */,
 				B92F57691E5547C40010A84A /* FLXKNewsPublishController.m in Sources */,
 				B9C6AC921E6548550003C50A /* ArrowSectionHeaderView.m in Sources */,
 				B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */,
-				B99CAA1C1E8F74CE0032D8CB /* FLXKSharingFuLingOnlineStyleCell.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
-				B9FA220D1EC587E20028F720 /* FLXKSharingFuLingOnlineStyleCellOnlyCommentHeightoffScreen.m in Sources */,
 				B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9C6AC961E6548550003C50A /* UILabel+flash.m in Sources */,
@@ -4590,7 +4488,6 @@
 				B9E17E281EA0C48E0027043A /* FLXKJsonHelper.m in Sources */,
 				B924948C1E8B8C7C006878CC /* FLXKSharingBaseCell.m in Sources */,
 				B93FF8871E01267000070BD4 /* FLXKHttpRequestModelHelper.m in Sources */,
-				B9A3F95E1E6BEC0C007CA4B2 /* FLXSuggestedSharingTableViewController.m in Sources */,
 				B930986C1E568C0600306F39 /* NSBundle+Extensions.m in Sources */,
 				B93098701E568C0600306F39 /* UIColor+Extensions.m in Sources */,
 				B96D302F1E71609E003BDFD0 /* FLXKAppNotification.m in Sources */,
@@ -4599,7 +4496,6 @@
 				B90CD9861E763FFD00278EDB /* SoundAndBadgeViewController.m in Sources */,
 				B9C6ACB01E6548550003C50A /* JRSegmentControl.m in Sources */,
 				B90CD9841E763FFD00278EDB /* RemoveDefaultContentViewController.m in Sources */,
-				B9780FA21EA9DC52003AF40A /* FLXKMessageToolBartest.m in Sources */,
 				B97261A71E2DEC76008B6356 /* FMDatabase.m in Sources */,
 				B9252A8A1E9E2E3200E2DC65 /* EditPersonInfoViewController.m in Sources */,
 				B97261AA1E2DEC76008B6356 /* FMDatabaseQueue.m in Sources */,

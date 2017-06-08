@@ -7,21 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "UserModel.h"
-//utilites
 #import "UIImageView+WebCache.h"
-//models
-//subviews
-//child viewController
+#import "FriendsMomentSharingConfig.h"
+
 @interface FLXKBaseSharingLikeCollectionView : UICollectionView
-//IBOutlet
-//IBAction
-//models
+
 @property(nonatomic)NSArray<UserModel*>* likeTheSharingUserRecords;
-//UI state record properties
 @property(nonatomic,assign)CGFloat rowHeight;
-//subviews
-//child viewController
-//public actions
+
 @end
 

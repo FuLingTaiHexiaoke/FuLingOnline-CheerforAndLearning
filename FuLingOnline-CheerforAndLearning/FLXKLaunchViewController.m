@@ -27,8 +27,6 @@
 //utilities
 #import "EntityGeneratorViewController.h"
 
-#import "FLXSuggestedSharingTableViewController.h"
-#import "FLXSuggestedSharingTableViewControlleroffscreen.h"
 
 
 @interface FLXKLaunchViewController () <FBTweakObserver, FBTweakViewControllerDelegate>
@@ -282,13 +280,6 @@
 
 
     if (FBTweakValue(@"FLXKLaunchViewController", @"loadMainVC",  @"goNormal",0.0)>0) {
-//            FLXKtestTableViewController* vc=(FLXKtestTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"FLXKtestTableViewController"];
-//            //    [viewControllers addObject:vc];
-//            [self presentViewController:vc animated:YES completion:nil];
-
-        FLXSuggestedSharingTableViewControlleroffscreen* vc=[FLXSuggestedSharingTableViewControlleroffscreen new];
-        //    [viewControllers addObject:vc];
-            [self presentViewController:vc animated:YES completion:nil];
 
     }
     else{

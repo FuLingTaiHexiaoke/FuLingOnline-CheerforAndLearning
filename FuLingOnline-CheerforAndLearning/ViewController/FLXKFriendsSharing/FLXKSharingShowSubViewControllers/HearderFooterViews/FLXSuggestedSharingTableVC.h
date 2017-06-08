@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FLXSuggestedSharingTableViewControlleroffscreen : UITableViewController
+@interface FLXSuggestedSharingTableVC : UITableViewController
 
 @end

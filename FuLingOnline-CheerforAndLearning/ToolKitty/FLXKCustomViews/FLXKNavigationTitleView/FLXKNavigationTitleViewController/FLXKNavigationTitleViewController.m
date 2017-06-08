@@ -119,10 +119,10 @@
     [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
         // 让scrollview的contentSize随着内容的增多而变化
-//        make.leading.mas_equalTo(self.scrollView.mas_leading);
-//        make.trailing.mas_equalTo(lastView.mas_trailing);
+        make.leading.mas_equalTo(self.scrollView.mas_leading);
+        make.trailing.mas_equalTo(lastView.mas_trailing);
     }];
-    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width*viewControllers.count,0);
+//    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width*viewControllers.count,0);
 }
 
 - (UIColor *)randomColor {

@@ -7,17 +7,8 @@
 //
 
 #import "FLXKBaseSharingOperationContainerView.h"
-//utilites
-//models
-//subviews
-//child viewController
+
 @interface FuLingStyleMainOperationContainerView : FLXKBaseSharingOperationContainerView
-//IBOutlet
-//IBAction
-//models
-//UI state record properties
-//subviews
-//child viewController
-//public actions
+
 @end
 

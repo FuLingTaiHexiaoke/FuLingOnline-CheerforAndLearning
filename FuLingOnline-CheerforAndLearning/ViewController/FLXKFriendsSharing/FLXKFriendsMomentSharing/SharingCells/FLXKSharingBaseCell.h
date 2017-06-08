@@ -15,17 +15,15 @@
 //subviews
 #import "FLXKBaseSharingPictureLayoutView.h"
 #import "FLXKBaseSharingCommentTableView.h"
-//#import "FLXKBaseSharingLikeCollectionView.h"
+
 //subclass
-//#import "FLXKSharingFuLingOnlineStyleCell.h"
+
 //models
 #import "FLXKSharingCellModel.h"
 #import "SharingCommentCellModel.h"
 
-
-
-typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model);
-
+typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model,NSIndexPath * indexPath);
+typedef void(^AddCommentBlock)(NSString* placeholder,SharingCommentCellModel* currentCommentCellModel,FLXKSharingCellModel* model,NSIndexPath * indexPath);
 
 @interface FLXKSharingBaseCell : UITableViewCell
 
@@ -33,7 +31,7 @@ typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model);
 //点赞
 @property (strong, nonatomic)AddThumbupBlock addThumbupBlock;
 //触发评论
-@property (strong, nonatomic)void(^addCommentRequestBlock)(NSString* placeholder,FLXKSharingBaseCell* currentCell);
+@property (strong, nonatomic)AddCommentBlock addCommentBlock;
 //添加评论信息，由外部调用。
 -(void)addFriendsharingComment:(NSDictionary*)parameters;
 //分享
@@ -47,12 +45,13 @@ typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model);
 
 //点赞
 - (void)addThumbup:(UIButton*)sender;
+- (void)showLikeTheSharingPeopleInfo;
 //评论
 - (void)addCommentRequest;
 
 //分享
 
--(void)hiddenSubviews;
+
 
 #pragma mark - 数据
 @property (strong, nonatomic)FLXKSharingCellModel* model;//单元格数据模型

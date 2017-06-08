@@ -8,8 +8,7 @@
 
 #import "FLXKBaseSharingPictureLayoutView.h"
 //child views
-#import "FLXKOneSharingPictureLayoutView.h"
-#import "FLXKTwoSharingPictureLayoutView.h"
+#import "FLXKSharingPicturesShowingView.h"
 
 @implementation FLXKBaseSharingPictureLayoutView
 
@@ -21,11 +20,8 @@
         case 0:
             pictureLayoutView=[[FLXKBaseSharingPictureLayoutView alloc]init];
             break;
-//        case 1:
-//            pictureLayoutView=[[FLXKOneSharingPictureLayoutView alloc]init];
-//            break;
         default:
-            pictureLayoutView=[[FLXKTwoSharingPictureLayoutView alloc]init];
+            pictureLayoutView=[[FLXKSharingPicturesShowingView alloc]init];
             break;
     }
     
@@ -41,12 +37,5 @@
 -(void)setModel:(FLXKSharingCellModel *)model{
     
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
