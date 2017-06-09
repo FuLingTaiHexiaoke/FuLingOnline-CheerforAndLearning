@@ -646,7 +646,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         NSLayoutConstraint *widthCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0];
         [self.emotionEditingVCView addConstraint:widthCos];
         
-        [UIView animateWithDuration:animationDuration delay:0.0 options:animationCurve<<16 animations:^{
+        [UIView animateWithDuration:0.1 delay:0.0 options:animationCurve<<16 animations:^{
             [self.emotionEditingVCView layoutIfNeeded];
         } completion:^(BOOL finished) {
         }];

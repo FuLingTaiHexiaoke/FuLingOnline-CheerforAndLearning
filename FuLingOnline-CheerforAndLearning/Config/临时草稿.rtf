@@ -18,8 +18,11 @@
 \cf2 //\cf0 \
 \
 \cf3 #import \cf4 "FLXKTabBarBaseNavigationController.h"\cf3 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf3 #import \cf4 "UINavigationBar+Awesome.h"\cf3 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 \cf5 @interface\cf0  \cf6 FLXKTabBarBaseNavigationController\cf0  ()<\cf7 UINavigationControllerDelegate\cf0 >\
 \
@@ -27,8 +30,10 @@
 \
 \cf5 @implementation\cf0  FLXKTabBarBaseNavigationController\
 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf3 #pragma mark -\
 #pragma mark - ViewController LifeCircle\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 - (\cf5 void\cf0 )viewDidLoad \{\
     [\cf5 super\cf0  \cf8 viewDidLoad\cf0 ];\
@@ -41,9 +46,12 @@
 \}\
 \
 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf3 #pragma mark -\
 #pragma mark - UINavigationControllerDelegate\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf2 //- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated\{\cf0 \
 \cf2 //    if (self.childViewControllers.count==1) \{\cf0 \
 \cf2 //        [self.navigationBar setBarTintColor:[UIColor orangeColor]];\cf0 \
@@ -54,6 +62,7 @@
 \cf2 //\}\cf0 \
 \
 \cf3 #pragma mark - <UINavigationControllerDelegate>\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 - (\cf5 void\cf0 )navigationController:(\cf7 UINavigationController\cf0  *)navigationController willShowViewController:(\cf7 UIViewController\cf0  *)viewController animated:(\cf5 BOOL\cf0 )animated \{\
     \
@@ -62,6 +71,7 @@
      \cf5 id\cf0 <\cf7 UIViewControllerTransitionCoordinator\cf0 > transitionCoordinator = navigationController.\cf7 topViewController\cf0 .\cf7 transitionCoordinator\cf0 ;\
     \
     \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf2 //        [transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) \{\cf0 \
 \cf2 //            if (context.isInteractive) \{\cf0 \
 \cf2 //                if (self.childViewControllers.count==1) \{\cf0 \
@@ -164,7 +174,9 @@
 \
 \cf3 #pragma mark -\
 #pragma mark - Public Methods\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf2 //\cf0 \
 \cf2 //-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated\{\cf0 \
 \cf2 //    viewController.hidesBottomBarWhenPushed=YES;\cf0 \
@@ -173,12 +185,15 @@
 \
 \cf3 #pragma mark -\
 #pragma mark - Private Methods\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 \cf5 @end\cf0 \
 \
 \
 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf3 #pragma mark - <UINavigationControllerDelegate>\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
 - (\cf5 void\cf0 )navigationController:(\cf7 UINavigationController\cf0  *)navigationController willShowViewController:(\cf7 UIViewController\cf0  *)viewController animated:(\cf5 BOOL\cf0 )animated \{\
     \cf5 if\cf0  (\cf5 self\cf0 .\cf7 childViewControllers\cf0 .\cf7 count\cf0 ==\cf9 1\cf0 ) \{\
