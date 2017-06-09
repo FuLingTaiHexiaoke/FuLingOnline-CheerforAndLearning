@@ -41,7 +41,7 @@
 
 - (IBAction)addCommentRequestAction:(UIButton *)sender{
     if (self.addCommentRequestBlock) {
-        self.addCommentRequestBlock();
+        self.addCommentRequestBlock(sender);
     }
 }
 

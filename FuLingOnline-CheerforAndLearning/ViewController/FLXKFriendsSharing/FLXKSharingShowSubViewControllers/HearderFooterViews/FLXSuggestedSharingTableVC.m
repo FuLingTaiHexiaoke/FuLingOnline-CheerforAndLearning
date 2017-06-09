@@ -9,7 +9,7 @@
 //Resue identifier
 #define FLXKSuggestHeaderView1 @"Reuse_FLXKSuggestHeaderView"
 #define ReuseCellID @"FLXKSharingFuLingOnlineStyleCellMansory"
-#define DDINPUT_MIN_HEIGHT          44.0f
+#define DDINPUT_MIN_HEIGHT  44.0f
 
 
 #import "FLXSuggestedSharingTableVC.h"
@@ -35,14 +35,16 @@
 //记录当前评论信息
 @property(nonatomic,strong)SharingCommentCellModel* currentCommentCellModel;
 @property(nonatomic,strong)NSIndexPath* currentCommentCellIndex;
-@property(nonatomic,strong)FLXKSharingCellModel* currentCommentCellTopModel;
+//@property(nonatomic,strong)FLXKSharingCellModel* currentCommentCellTopModel;
 //记录当前点赞信息
-@property(nonatomic,strong)FLXKSharingCellModel* currentThumberUpCellTopModel;
+//@property(nonatomic,strong)FLXKSharingCellModel* currentThumberUpCellTopModel;
 @property(nonatomic,strong)NSIndexPath* currentThumberUpCellIndex;
 
 //subviews
 @property(nonatomic,strong)JSMessageInputView *chatInputView;
-@property(nonatomic,strong)   FLXKMessageToolBar* messageToolBar;
+@property(nonatomic,strong)FLXKMessageToolBar* messageToolBar;
+@property(nonatomic,assign)BOOL isToolBarShowing;
+
 
 @end
 
@@ -96,14 +98,12 @@
     [cell setModel:_models[indexPath.row]];
     [cell setIndexPath:indexPath];
     __weak __typeof(self) weakSelf=self;
-    cell.addCommentBlock=^(NSString* placeholder,SharingCommentCellModel* currentCommentCellModel,FLXKSharingCellModel* model,NSIndexPath * indexPath){
-        [weakSelf showToolBarWithPlaceholder:placeholder];
-        weakSelf.currentCommentCellModel=currentCommentCellModel;
-        weakSelf.currentCommentCellTopModel=model;
+    cell.addCommentBlock=^(NSString* placeholder,SharingCommentCellModel* model,UIView* tapedView,NSIndexPath * indexPath){
+        [weakSelf showToolBarWithPlaceholder:placeholder tapedView:tapedView];
         weakSelf.currentCommentCellIndex=indexPath;
+             weakSelf.currentCommentCellModel=model;
     };
-    cell.addThumbupBlock=^(UIButton* sender,FLXKSharingCellModel* model,NSIndexPath * indexPath){
-        weakSelf.currentThumberUpCellTopModel=model;
+    cell.addThumbupBlock=^(UIButton* sender,NSIndexPath * indexPath){
         weakSelf.currentThumberUpCellIndex=indexPath;
         [weakSelf   addFriendsharingThumbup];
         //显示动画效果
@@ -119,7 +119,8 @@
 }
 
 #pragma mark - Scroll Delegate
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+     _isToolBarShowing=NO;
     [self.messageToolBar hideToolBar];
 }
 
@@ -172,9 +173,14 @@
     }
 }
 //
--(void)showToolBarWithPlaceholder:(NSString*) placeholder{
-    
-    [_messageToolBar showToolBarWithPlaceholder:placeholder];
+-(void)showToolBarWithPlaceholder:(NSString*)placeholder tapedView:(UIView*)tapedView{
+    if (!_isToolBarShowing) {
+        [_messageToolBar showToolBarWithPlaceholder:placeholder tapedView:tapedView scrollView:self.tableView];
+    }
+    else{
+         [self.messageToolBar hideToolBar];
+    }
+    _isToolBarShowing=!_isToolBarShowing;
 }
 
 - (void)growingTextViewChangeHeight:(float)height
@@ -190,7 +196,8 @@
 }
 
 -(void)startThumberUpAnimation:(UIButton*)sender{
-    if (self.currentThumberUpCellTopModel.isThumberuped==1) {
+      FLXKSharingCellModel* model= self.models[self.currentCommentCellIndex.row];
+    if (model.isThumberuped==1) {
         [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
     }
     else{
@@ -241,33 +248,36 @@
 }
 //点赞
 -(void)addFriendsharingThumbup{
+    __block      FLXKSharingCellModel* model= self.models[self.currentThumberUpCellIndex.row];
     @weakify(self)
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         @strongify(self)
-        if (self.currentThumberUpCellTopModel.isThumberuped) {
+ 
+        if (model.isThumberuped) {
             __block  NSInteger index;
-            [self.currentThumberUpCellTopModel.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [model.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if ([obj.login_name isEqualToString:[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name ]) {
                     index=idx;
                     *stop=YES;
                 }
             }];
             
-            [self.currentThumberUpCellTopModel.likeTheSharingUserRecords removeObjectAtIndex:index];
+            [model.likeTheSharingUserRecords removeObjectAtIndex:index];
         }
         else{
-            [self.currentThumberUpCellTopModel.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
+            [model.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
         }
-        self.currentThumberUpCellTopModel.isThumberuped=!self.currentThumberUpCellTopModel.isThumberuped;
+        model.isThumberuped=!model.isThumberuped;
         [self.tableView reloadRowsAtIndexPaths:@[self.currentThumberUpCellIndex] withRowAnimation:UITableViewRowAnimationNone];
         //        [self.tableView reloadData];//这种效果更加不好
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
-    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":self.currentThumberUpCellTopModel.newsID,@"isThumberuped":[NSNumber numberWithInteger:self.currentThumberUpCellTopModel.isThumberuped]}];
+    }]addFriendsharingThumbup:@{@"thumberupUserID": [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name,@"newsID":model.newsID,@"isThumberuped":[NSNumber numberWithInteger:model.isThumberuped]}];
 }
 
 //添加评论信息，由外部调用。
 -(void)sendComment:(NSString *)message{
+        __block      FLXKSharingCellModel* cellModel= self.models[self.currentCommentCellIndex.row];
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.fromUserID= [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test";
     model.fromUserName=[FLXKSharedAppSingleton sharedSingleton].sharedUser.name?:@"test";
@@ -277,13 +287,13 @@
         model.isReply=1;
     }
     model.content=message;
-    model.newsID=self.currentCommentCellModel.newsID;
+    model.newsID=cellModel.newsID;
     
     NSDictionary*   parameters=[model modelToDic];
     
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
-        [self.currentThumberUpCellTopModel.sharingComments addObject:model];
-        self.currentThumberUpCellTopModel.sharingComments=self.currentThumberUpCellTopModel.sharingComments;
+        [cellModel.sharingComments addObject:model];
+        cellModel.sharingComments=cellModel.sharingComments;
         [self.tableView reloadRowsAtIndexPaths:@[self.currentCommentCellIndex] withRowAnimation:UITableViewRowAnimationNone];
         //            [self.tableView reloadData];//这种效果更加不好
     } failureCallback:^(NSError *err) {

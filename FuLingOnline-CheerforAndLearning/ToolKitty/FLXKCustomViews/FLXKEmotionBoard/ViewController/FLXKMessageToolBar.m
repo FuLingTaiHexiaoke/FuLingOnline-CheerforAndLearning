@@ -56,7 +56,7 @@
         sharedInstance  =[FLXKMessageToolBar sharedInstanceALL];
     }
     
-    sharedInstance.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:sharedInstance.growingTextView.internalTextView swithButton:sharedInstance.emotionButton swithButtonContainer:sharedInstance emotionEditingVCView:containerView emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image) shouldHideToolBar:YES];
+    sharedInstance.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:sharedInstance.growingTextView.internalTextView swithButton:sharedInstance.emotionButton swithButtonContainer:sharedInstance emotionEditingVCView:containerView emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image) shouldHideToolBar:YES SVO_ShouldAutoOffset:YES];
     
     return sharedInstance;
 }
@@ -120,49 +120,15 @@
 }
 
 
-
-//- (instancetype)initWithCustomFrame:(CGRect)frame{
-////    NSArray* nibViews =  [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self.class)  owner:nil options:nil];
-////    FLXKMessageToolBar*  messageToolBar=[nibViews objectAtIndex:0];
-////    messageToolBar.growingTextView.delegate=messageToolBar;
-////    HPGrowingTextView* textView= messageToolBar.growingTextView;
-////    textView.isScrollable = NO;
-////    textView.contentInset =  UIEdgeInsetsMake(5, 0, 5, 0);
-////
-////    textView.minNumberOfLines = 1;
-////    textView.maxNumberOfLines = 6;
-////    // you can also set the maximum height in points with maxHeight
-////    textView.returnKeyType = UIReturnKeyGo; //just as an example
-////    textView.font = [UIFont systemFontOfSize:15.0f];
-////    textView.delegate = self;
-////    textView.internalTextView.scrollIndicatorInsets = UIEdgeInsetsMake(5, 0, 5, 0);
-////    textView.backgroundColor = [UIColor whiteColor];
-////    textView.placeholder = @"Type to see the textView grow!";
-////
-////    return messageToolBar;
-//}
-
-//-(void)dealloc{
-//    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
-//}
-//
-
 #pragma mark - HPGrowingTextView Delegate
 - (void)growingTextView:(HPGrowingTextView *)growingTextView willChangeHeight:(float)height
 {
-    //get changed height
     float diff = (growingTextView.frame.size.height - height);
     
     CGRect r = self.frame;
     r.size.height -= diff;
     r.origin.y += diff;
-    
     CGFloat   newHeight=r.size.height;
-    
-    //change by outside
-    //    self.growingTextViewChangeHeight(newHeight);
-    
-    //change by self
     [self growingTextViewChangeHeight:newHeight];
 }
 
@@ -175,11 +141,13 @@
 }
 
 #pragma mark - Public methods
--(void)showToolBarWithPlaceholder:(NSString*)placeholder{
-//    self.growingTextView.internalTextView.text=nil;
+-(void)showToolBarWithPlaceholder:(NSString*)placeholder tapedView:(UIView*)tapedView scrollView:(UIScrollView*)scrollView{
+    //emotionKeyBoard
+    self.emotionKeyBoard.SVO_TapedView=tapedView;
+    self.emotionKeyBoard.SVO_ScrollView=scrollView;
+    
     self.growingTextView.placeholder =placeholder;
     [self.growingTextView.internalTextView becomeFirstResponder];
-    
 }
 
 -(void)hideToolBar{

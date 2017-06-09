@@ -13,7 +13,7 @@
 @interface FLXKBaseSharingCommentTableView : UITableView
 
 //public method
-@property (strong, nonatomic)void(^addCommentRequsetBlock)(SharingCommentCellModel* model);
+@property (strong, nonatomic)void(^addCommentRequsetBlock)(SharingCommentCellModel* model,UIView* tapedView);
 
 //models
 @property (strong, nonatomic)NSArray<SharingCommentCellModel *> *  models;

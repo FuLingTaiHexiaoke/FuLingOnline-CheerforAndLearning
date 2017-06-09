@@ -26,19 +26,16 @@ typedef NS_OPTIONS(NSUInteger, EmotionGroupShowingOption) {
 
 @interface FLXKEmotionBoard : UIView<UIScrollViewDelegate,FLXKEmotionCollectionViewDelegate>
 
+//自动调整SVO(scrollview.offset)的值，使scrollview中点击的view和ToolBar动态贴紧
+@property(nonatomic,weak)UIView* SVO_TapedView;
+@property(nonatomic,weak)UIScrollView* SVO_ScrollView;
+
+
 +(instancetype)sharedEmotionBoard;
-
 //便利方法，同事注册多个控件
-//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButtonContainer:(UIView *)swithButtonContainer swithButton:(UIView *)swithButton;
-
-//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
-
 +(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar;
 
-//+(instancetype)sharedEmotionBoardWithReload:(BOOL)reloadViews editingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption;
-
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView emotionSwithBarButtonItem:(UIBarButtonItem *)emotionSwithBarButtonItem swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView;
-
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset;
 
 
 -(void)removeNotifications;

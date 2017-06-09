@@ -22,8 +22,8 @@
 #import "FLXKSharingCellModel.h"
 #import "SharingCommentCellModel.h"
 
-typedef void(^AddThumbupBlock)(UIButton* sender,FLXKSharingCellModel* model,NSIndexPath * indexPath);
-typedef void(^AddCommentBlock)(NSString* placeholder,SharingCommentCellModel* currentCommentCellModel,FLXKSharingCellModel* model,NSIndexPath * indexPath);
+typedef void(^AddThumbupBlock)(UIButton* sender,NSIndexPath * indexPath);
+typedef void(^AddCommentBlock)(NSString* placeholder,SharingCommentCellModel* model,UIView* tapedView,NSIndexPath * indexPath);
 
 @interface FLXKSharingBaseCell : UITableViewCell
 
@@ -47,7 +47,7 @@ typedef void(^AddCommentBlock)(NSString* placeholder,SharingCommentCellModel* cu
 - (void)addThumbup:(UIButton*)sender;
 - (void)showLikeTheSharingPeopleInfo;
 //评论
-- (void)addCommentRequest;
+- (void)addCommentRequest:(UIView* )tapedView;
 
 //分享
 

@@ -375,8 +375,8 @@
         _sharingMainOperationsContainerView.addThumbupBlock=^(UIButton* sender){
             [super addThumbup:sender];
         };
-        _sharingMainOperationsContainerView.addCommentRequestBlock=^(){
-            [super addCommentRequest];
+        _sharingMainOperationsContainerView.addCommentRequestBlock=^(UIView* tapedView){
+            [super addCommentRequest:tapedView];
         };
         [self.contentView addSubview:_sharingMainOperationsContainerView];
     }
@@ -404,10 +404,10 @@
     if (!_sharingCommentsTableView) {
         _sharingCommentsTableView= [[FLXKBaseSharingCommentTableView alloc]init];
         __weak __typeof(self) weakSelf=self;
-        _sharingCommentsTableView.addCommentRequsetBlock=^(SharingCommentCellModel* model){
+        _sharingCommentsTableView.addCommentRequsetBlock=^(SharingCommentCellModel* model,UIView* tapedView){
             weakSelf.currentCommentCellModel=model;
             if ( weakSelf.addCommentBlock) {
-                weakSelf.addCommentBlock([NSString stringWithFormat:@"回复:%@",model.toUserName],model,weakSelf.model,weakSelf.indexPath);
+                weakSelf.addCommentBlock([NSString stringWithFormat:@"回复:%@",model.toUserName],model,tapedView,weakSelf.indexPath);
             }
         };
         [self.contentView addSubview:_sharingCommentsTableView];

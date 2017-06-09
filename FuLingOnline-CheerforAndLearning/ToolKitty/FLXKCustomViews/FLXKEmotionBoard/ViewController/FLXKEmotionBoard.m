@@ -61,10 +61,13 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 @property(nonatomic,weak)UIBarButtonItem* emotionSwithBarButtonItem;
 @property(nonatomic,weak)UIView *emotionSwithButtonContainer;
 @property(nonatomic,weak)UIView *emotionEditingVCView;
-@property(nonatomic,assign)BOOL shouldHideToolBar;
+@property(nonatomic,assign)BOOL shouldHideToolBar;//作用于约束计算，是否自动隐藏ToolBar输入框
 //预留工具箱、语音记录按钮属性
 @property(nonatomic,weak)UIButton* toolkitButton;
 @property(nonatomic,weak)UIButton* voiceRecordButton;
+
+//自动调整SVO(scrollview.offset)的值，使scrollview中点击的view和ToolBar动态贴紧
+@property(nonatomic,assign)BOOL SVO_ShouldAutoOffset;
 
 //models
 //@property(nonatomic,strong)NSMutableArray<EmotionGroupDetailModel *>* emotionGroupDetailModels;
@@ -80,7 +83,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
-    sharedEmotionBoard.editingTextView.textContentType=
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
     sharedEmotionBoard.emotionSwithButton=swithButton;
     sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
@@ -100,6 +102,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
     FLXKUserDefaultsSynchronize
     
+    return sharedEmotionBoard;
+}
+
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset{
+    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:editingTextView swithButton:swithButton swithButtonContainer:swithButtonContainer emotionEditingVCView:emotionEditingVCView emotionGroupShowingOption:emotionGroupShowingOption shouldHideToolBar:shouldHideToolBar];
+    sharedEmotionBoard.SVO_ShouldAutoOffset=SVO_ShouldAutoOffset;
     return sharedEmotionBoard;
 }
 
@@ -642,8 +650,28 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
             [self.emotionEditingVCView layoutIfNeeded];
         } completion:^(BOOL finished) {
         }];
+        
+        
+        //按钮和ToolBar贴紧操作
+        if (heightToChange>0    &&  _SVO_ShouldAutoOffset) {//显示的时候才调整tableview.offset
+            //获取SVO_TapedView在KeyWindow中的Rect
+            UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+            CGFloat   toolBarY  = Screen_Height-containerHeight-heightToChange;
+            CGRect   tapedViewFrame  = [_SVO_TapedView convertRect:_SVO_TapedView.bounds toView:keyWindow];
+            CGFloat   tapedViewY  = tapedViewFrame.origin.y+tapedViewFrame.size.height;
+            //计算偏差
+            CGFloat relativeLenght=toolBarY-tapedViewY;
+            CGPoint offset=_SVO_ScrollView.contentOffset;
+            offset.y -= relativeLenght;
+            //根据偏差进行位移
+            if (offset.y < 0) {
+                offset.y = 0;
+            }
+            [_SVO_ScrollView setContentOffset:offset animated:YES];
+        }
     }
     
+
 }
 
 @end

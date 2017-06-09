@@ -25,7 +25,7 @@ typedef NS_OPTIONS(NSUInteger, MessageToolBarShowingOption) {
 
 +(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder containerView:(UIView*)containerView showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption;
 
--(void)showToolBarWithPlaceholder:(NSString*)placeholder;
+-(void)showToolBarWithPlaceholder:(NSString*)placeholder tapedView:(UIView*)tapedView scrollView:(UIScrollView*)scrollView;
 -(void)hideToolBar;
 
 //IBOutlet

@@ -63,7 +63,7 @@
 - (void)addThumbup:(UIButton*)sender {
     //外部处理逻辑
     if(self.addThumbupBlock){
-        self.addThumbupBlock(sender,self.model,self.indexPath);
+        self.addThumbupBlock(sender,self.indexPath);
     }
     //内部处理逻辑
 //    else{
@@ -94,12 +94,12 @@
 //    }
 }
 
-- (void)addCommentRequest{
+- (void)addCommentRequest:(UIView* )tapedView{
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.newsID=self.model.newsID;
     self.currentCommentCellModel=model;
     if ( self.addCommentBlock) {
-        self.addCommentBlock(@"评论",model,self.model,self.indexPath);
+        self.addCommentBlock(@"评论",model,tapedView,self.indexPath);
     }
 }
 

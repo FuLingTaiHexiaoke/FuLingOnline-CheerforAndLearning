@@ -29,6 +29,6 @@
 
 //评论
 //触发评论
-@property (strong, nonatomic)void(^addCommentRequestBlock)();
+@property (strong, nonatomic)void(^addCommentRequestBlock)(UIView* tapedView);
 
 @end
