@@ -122,7 +122,9 @@
 }
 
 -(void)showTabBar{
-    Router(Router_TabBar_FriendsSharing_NewsPublish)
+//    Router(Router_TabBar_FriendsSharing_NewsPublish)
+    
+
 }
 
 

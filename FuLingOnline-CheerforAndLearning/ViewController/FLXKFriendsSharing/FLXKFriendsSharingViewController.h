@@ -1,13 +1,15 @@
 //
-//  FLXKFriendsSharingViewController.h
+//  FLXKNavigationTitleViewController.h
 //  FuLingOnline-CheerforAndLearning
 //
-//  Created by 肖科 on 17/2/13.
+//  Created by 肖科 on 17/2/28.
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
 
-#import "FLXKBaseViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface FLXKFriendsSharingViewController : FLXKBaseViewController
+@interface FLXKFriendsSharingViewController : UIViewController
+@property(nonatomic,strong)NSArray<UIViewController*>* viewControllers;
+@property(nonatomic,strong)NSArray<NSString*>* viewControllerTitles;
 
 @end

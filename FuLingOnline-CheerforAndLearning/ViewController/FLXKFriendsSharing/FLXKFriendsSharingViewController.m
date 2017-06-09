@@ -1,10 +1,12 @@
 //
-//  FLXKFriendsSharingViewController.m
+//  FLXKNavigationTitleViewController.m
 //  FuLingOnline-CheerforAndLearning
 //
-//  Created by 肖科 on 17/2/13.
+//  Created by 肖科 on 17/2/28.
 //  Copyright © 2017年 com.FuLing. All rights reserved.
 //
+
+#define SCREEN_WIDTH   [[UIScreen mainScreen] bounds].size.width
 
 #import "FLXKFriendsSharingViewController.h"
 
@@ -25,172 +27,121 @@
 #import "FLXKNavigationTitleSegmentsView.h"
 #import "FLXKMessageToolBar.h"
 
+@interface FLXKFriendsSharingViewController ()<UIScrollViewDelegate>
 
-
-@interface FLXKFriendsSharingViewController ()
-@property (weak, nonatomic) IBOutlet UIView *container;
-@property (weak, nonatomic) IBOutlet UIButton *switchButton;
-@property (weak, nonatomic) IBOutlet UITextView *publishTextView;
-
-//subviews
-@property (strong, nonatomic) UIView* emotionKeyBoard;
-@property (strong, nonatomic) FLXKNavigationTitleViewController* childVC;
-@property(nonatomic,strong)   FLXKMessageToolBar* messageToolBar;
+//UI
+@property(nonatomic,strong) FLXKNavigationTitleSegmentsView* titleView;
+@property(nonatomic,strong) UIScrollView* scrollView;
 @end
 
 @implementation FLXKFriendsSharingViewController
-#pragma mark - ViewController LifeCircle
 
+#pragma mark -
+#pragma mark - ViewController LifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //    self.navigationController.navigationBarHidden=NO;
+    self.view.backgroundColor=[UIColor whiteColor];
+    //add navigation title view
+    [self setupNavigationTitleSegmentsView];
     
-    [self setupOwnNavigationAppearance];
-    
-//    [self registerGestureForResignViewEditing];
-    
-    [self setupNavigationTitleViewController];
-    
-    //    if (DEBUG) {
-    //        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
-    //        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
-    //        btn1.backgroundColor=[UIColor grayColor];
-    //        [self.view addSubview:btn1];
-    //    }
+    //setup a scrollview container
+    //add children to scrollview container
+    [self setupScrollViewWithVCs:self.viewControllers];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
-    //    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.switchButton swithButtonContainer:self.container emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image)];
     
 }
 
-
-
--(void)dealloc{
-    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
-}
+#pragma mark -
+#pragma mark - Memory Warning
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Delegate
-#pragma mark - Public methods
-#pragma mark - View Event
-#pragma mark - Model Event
-#pragma mark - Private methods
 
-#pragma mark - NAVIGATION SETTING
--(void)setupOwnNavigationAppearance{
-//    self.title = @"Test VC";
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor =NAVIGATION_BAR_TOP_BARTINTCOLOR;
-    self.navigationController.navigationBar.tintColor =NAVIGATION_BAR_TOP_TINTCOLOR;
-    self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+#pragma mark -
+#pragma mark - UI Delegates
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CGFloat pageIndex=  scrollView.contentOffset.x/(SCREEN_WIDTH);
+    [_titleView setCurrentTitleIndex:pageIndex];
+}
+
+
+#pragma mark -
+#pragma mark - Public Methods
+
+
+
+#pragma mark -
+#pragma mark - Private Methods
+-(void)setupNavigationTitleSegmentsView{
+    _titleView= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 10, 150,FBTweakValue(@"NavTitle", @"titleView", @"titleViewH", 36.0))];
+    _titleView.viewControllerTitles=_viewControllerTitles;
+    _titleView.currentTitleIndex= 1;
+    _titleView.backgroundColor= [UIColor orangeColor];
+    _titleView.titleColor= [UIColor colorWithRed:169/255.0 green:71/255.0 blue:18/255.0 alpha:1.0];
+    _titleView.titleSelectedColor= [UIColor whiteColor];
+    _titleView.bottomLineColor=[UIColor whiteColor];
+    _titleView.bottomLineHeight=3;
     
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
+    __weak __typeof(self) weakSelf=self;
+    _titleView.titleSegmentSelectedBlock=^(NSInteger selectedIndex){
+        [UIView animateWithDuration:0.3 delay:0.0 usingSpringWithDamping:1.0f initialSpringVelocity:15.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            weakSelf.scrollView.contentOffset =CGPointMake((selectedIndex*SCREEN_WIDTH), 0);
+        } completion:^(BOOL finished) {
+            
+        }];
+    };
+    self.navigationItem.titleView=_titleView;
+}
+
+
+-(void)setupScrollViewWithVCs:(NSArray<UIViewController*>*)viewControllers{
+    _scrollView=[[UIScrollView alloc]init];
+    _scrollView.backgroundColor=[UIColor blueColor];
+    _scrollView.delegate=self;
+    _scrollView.pagingEnabled=YES;
+    _scrollView.showsVerticalScrollIndicator=NO;
+    _scrollView.showsHorizontalScrollIndicator=NO;
+    _scrollView.bounces=NO;
+    [self.view addSubview:_scrollView];
+    
+    __block   UIView *lastView= nil;
+    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self addChildViewController:obj];
+        [_scrollView addSubview:obj.view];
+        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.scrollView.mas_top);
+            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
+            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
+            make.width.mas_equalTo(self.scrollView.mas_width);
+            make.height.mas_equalTo(self.scrollView.mas_height);
+        }];
+        lastView= obj.view;
+    }];
+    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(self.view);
+        // 让scrollview的contentSize随着内容的增多而变化
+        make.leading.mas_equalTo(self.scrollView.mas_leading);
+        make.trailing.mas_equalTo(lastView.mas_trailing);
+    }];
 
 }
 
--(void)setupNavigationTitleViewController{
+-(NSArray<UIViewController *> *)viewControllers{
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
     for (int i=0; i<1; i++) {
-//        FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
-//        [viewControllers addObject:vc];
         FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
         [viewControllers addObject:vc];
     }
-    
-    //add child viewController
-    _childVC=[FLXKNavigationTitleViewController initWithTitles:@[@"话题",@"推荐",@"达人"] viewControllers:viewControllers parentVC:self];
-    [self addChildViewController:_childVC];
-    [self.view addSubview:_childVC.view];
-    [_childVC.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mas_topLayoutGuideBottom);
-        make.left.mas_equalTo(self.view.mas_left);
-        make.bottom.mas_equalTo(self.view.mas_bottom);
-        make.right.mas_equalTo(self.view.mas_right);
-    }];
-    
-    
-    //            FLXSuggestedSharingTableViewController* vc=(FLXSuggestedSharingTableViewController* ) [[UIStoryboard storyboardWithName:@"Main" bundle:nil]instantiateViewControllerWithIdentifier:@"StdID_FLXSuggestedSharingTableViewController"];
-    //    [self.navigationController pushViewController:vc animated:YES];
+    return viewControllers;
 }
 
-
-//-(void)setupMessageToolBar{
-//    if (_messageToolBar) {
-//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-//    }
-//    else{
-//        [_messageToolBar removeFromSuperview];
-//        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
-//        _messageToolBar.backgroundColor=[UIColor yellowColor];
-//        [self.tableView addSubview:_messageToolBar];
-//        @weakify(self)
-//
-//        _messageToolBar.sendMessageBlock=^(NSString* message){
-//            @strongify(self)
-//            [self sendComment:message];
-//        };
-//
-//        _messageToolBar.growingTextViewChangeHeight=^(CGFloat height){
-//            @strongify(self)
-//            [self growingTextViewChangeHeight:height];
-//        };
-//
-//        [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(48);
-//            make.width.mas_equalTo(self.view.mas_width);
-//            make.bottom.mas_equalTo(self.mas_bottomLayoutGuide).offset(100);
-//        }];
-//    }
-//}
-//
-//-(void)showToolBarWithPlaceholder:(NSString*) placeholder{
-//    [_messageToolBar showToolBarWithPlaceholder:placeholder];
-//}
-//
-//- (void)growingTextViewChangeHeight:(float)height
-//{
-//    [UIView animateWithDuration:0.1 delay:0.0 usingSpringWithDamping:10.0 initialSpringVelocity:5.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//
-//        [_messageToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//            make.height.mas_equalTo(height);
-//        }];
-//
-//        [self.view layoutIfNeeded];
-//    } completion:^(BOOL finished) {
-//
-//    }];
-//}
-
--(void)showTabBar{
-    Router(Router_TabBar_FriendsSharing_NewsPublish)
+-(NSArray<NSString *> *)viewControllerTitles{
+    return @[@"话题",@"推荐",@"达人"];
 }
-
-//-(void)sendComment:(NSString *)message{
-//    [self.currentOperationCell addFriendsharingComment:@{@"content":message}];
-//}
-
-#pragma mark - getter/setter
-#pragma mark - Overriden methods
-
-
-
-#pragma mark - Navigation
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 @end
