@@ -119,6 +119,10 @@
 }
 
 #pragma mark - Scroll Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
+}
+
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
      _isToolBarShowing=NO;
     [self.messageToolBar hideToolBar];

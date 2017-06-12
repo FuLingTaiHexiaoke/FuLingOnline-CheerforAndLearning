@@ -6,9 +6,10 @@
 //  Copyright (c) 2015年 湛家荣. All rights reserved.
 //
 
-#import "JRSegmentViewController.h"
+#import "FLXKFriendsSharingViewController2.h"
+#import "FLXSuggestedSharingTableVC.h"
 
-@interface JRSegmentViewController () <UIScrollViewDelegate, JRSegmentControlDelegate>
+@interface FLXKFriendsSharingViewController2 () <UIScrollViewDelegate, JRSegmentControlDelegate>
 {
     CGFloat vcWidth;  // 每个子视图控制器的视图的宽
     CGFloat vcHeight; // 每个子视图控制器的视图的高
@@ -22,11 +23,19 @@
 
 @end
 
-@implementation JRSegmentViewController
+@implementation FLXKFriendsSharingViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
+    for (int i=0; i<1; i++) {
+        FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
+        [viewControllers addObject:vc];
+    }
+    self.viewControllers= viewControllers;
+    self.titles=@[@"话题",@"推荐",@"达人"];
     [self setupScrollView];
     [self setupViewControllers];
     [self setupSegmentControl];
@@ -78,16 +87,16 @@
 - (void)setupScrollView
 {
     CGFloat Y = 0.0f;
-    if (self.navigationController != nil && ![self.navigationController isNavigationBarHidden]) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-        Y = 64.0f;
-    }
-    
+//    if (self.navigationController != nil && ![self.navigationController isNavigationBarHidden]) {
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//        Y = 64.0f;
+//    }
+//    
     vcWidth = self.view.frame.size.width;
     vcHeight = self.view.frame.size.height - Y;
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, Y, vcWidth, vcHeight)];
-    scrollView.contentSize = CGSizeMake(vcWidth * self.viewControllers.count,vcHeight);
+    scrollView.contentSize = CGSizeMake(vcWidth * self.viewControllers.count, 0);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator   = NO;
     scrollView.pagingEnabled = YES;

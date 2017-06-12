@@ -66,10 +66,10 @@
         <!--Item-->
         <scene sceneID="6Nd-Np-l0j">
             <objects>
-                <navigationController id="wY1-Lk-oJv" sceneMemberID="viewController">
+                <navigationController id="wY1-Lk-oJv" customClass="RTRootNavigationController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="p76-AI-r52"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="iqV-zu-kup">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iqV-zu-kup">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -106,7 +106,7 @@
                 <navigationController id="up3-kB-Vwn" customClass="RTRootNavigationController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="C8y-u9-aj1"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bpe-bq-xZ9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bpe-bq-xZ9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

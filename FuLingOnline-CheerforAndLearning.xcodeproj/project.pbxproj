@@ -497,6 +497,8 @@
 		B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */; };
 		B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */; };
 		B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */; };
+		B98A96961EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */; };
+		B98A96991EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
 		B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */; };
 		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
@@ -1298,6 +1300,10 @@
 		B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		B98237571EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
 		B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingPictureLayoutView.m; sourceTree = "<group>"; };
+		B98A96941EEE63BF003AB955 /* FLXKFriendsSharingViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController2.h; sourceTree = "<group>"; };
+		B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController2.m; sourceTree = "<group>"; };
+		B98A96971EEE72A6003AB955 /* FLXKFriendsSharingViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController1.h; sourceTree = "<group>"; };
+		B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController1.m; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
 		B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAnimationHelper.h; sourceTree = "<group>"; };
 		B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAnimationHelper.m; sourceTree = "<group>"; };
@@ -2022,6 +2028,10 @@
 				B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */,
 				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
 				B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */,
+				B98A96971EEE72A6003AB955 /* FLXKFriendsSharingViewController1.h */,
+				B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */,
+				B98A96941EEE63BF003AB955 /* FLXKFriendsSharingViewController2.h */,
+				B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */,
 				B92F57631E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.h */,
 				B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */,
 				B92F57651E5547C40010A84A /* FLXKNewsPublishController.h */,
@@ -4392,6 +4402,7 @@
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
 				B9E17E291EA0C48E0027043A /* PsyZipArchive.m in Sources */,
 				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
+				B98A96991EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m in Sources */,
 				B95987A21EAF2B8100A12E7F /* NSObject+ModelHelper.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
@@ -4449,6 +4460,7 @@
 				B9A3F9641E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
+				B98A96961EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m in Sources */,
 				B90CD9901E76436500278EDB /* NSURL+Extensions.m in Sources */,
 				B9C6ACAF1E6548550003C50A /* FLXKSegmentContainerViewController.m in Sources */,
 				B90CD97B1E763FFD00278EDB /* AccessoryImageViewController.m in Sources */,

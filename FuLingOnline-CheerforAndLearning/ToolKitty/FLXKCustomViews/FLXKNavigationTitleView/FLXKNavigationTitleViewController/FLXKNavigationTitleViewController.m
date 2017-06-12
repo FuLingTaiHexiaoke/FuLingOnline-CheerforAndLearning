@@ -13,7 +13,7 @@
 //subviews
 #import "FLXKNavigationTitleSegmentsView.h"
 //utilities
-#import "Masonry.h"
+//#import "Masonry.h"
 
 @interface FLXKNavigationTitleViewController ()<UIScrollViewDelegate>
 
@@ -95,34 +95,46 @@
 
 -(void)setupScrollViewWithVCs:(NSArray<UIViewController*>*)viewControllers{
     _scrollView=[[UIScrollView alloc]init];
-    _scrollView.backgroundColor=[UIColor blueColor];
+    _scrollView.backgroundColor=[UIColor groupTableViewBackgroundColor];
     _scrollView.delegate=self;
     _scrollView.pagingEnabled=YES;
     _scrollView.showsVerticalScrollIndicator=NO;
     _scrollView.showsHorizontalScrollIndicator=NO;
-    _scrollView.bounces=NO;
+    _scrollView.frame=self.view.frame;
     [self.view addSubview:_scrollView];
     
-    __block   UIView *lastView= nil;
-    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self addChildViewController:obj];
-        [_scrollView addSubview:obj.view];
-        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.scrollView.mas_top);
-            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
-            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
-            make.width.mas_equalTo(self.scrollView.mas_width);
-            make.height.mas_equalTo(self.scrollView.mas_height);
-        }];
-        lastView= obj.view;
-    }];
-    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-        // 让scrollview的contentSize随着内容的增多而变化
-        make.leading.mas_equalTo(self.scrollView.mas_leading);
-        make.trailing.mas_equalTo(lastView.mas_trailing);
-    }];
-//    self.scrollView.contentSize=CGSizeMake(self.view.frame.size.width*viewControllers.count,0);
+    //修改人:肖科    修改时间:2017-6-12  修改原因:以后在布局中能少用自动布局的地方，就尽量少用。不然很多参数不能及时确认，比如scrollView.contentSize，导致上拉刷新等操作被影响。
+    //修改内容:--修改如下。
+    // self.scrollView.contentSize
+    //    __block   UIView *lastView= nil;
+    //    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //        [self addChildViewController:obj];
+    //        [_scrollView addSubview:obj.view];
+    //        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+    //            make.top.mas_equalTo(self.scrollView.mas_top);
+    //            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
+    //            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
+    //            make.width.mas_equalTo(self.scrollView.mas_width);
+    //            make.height.mas_equalTo(self.scrollView.mas_height);
+    //        }];
+    //        lastView= obj.view;
+    //    }];
+    //    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    //        make.edges.mas_equalTo(self.view);
+    //        // 让scrollview的contentSize随着内容的增多而变化
+    //        make.leading.mas_equalTo(self.scrollView.mas_leading);
+    //        make.trailing.mas_equalTo(lastView.mas_trailing);
+    //    }];
+    
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.viewControllers.count, 0);
+    int cnt = (int)self.viewControllers.count;
+    for (int i = 0; i < cnt; i++) {
+        UIViewController *vc = self.viewControllers[i];
+        [self addChildViewController:vc];
+        vc.view.frame = CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, _scrollView.height);
+        [self.scrollView addSubview:vc.view];
+    }
+    //修改内容:修改如下--。
 }
 
 - (UIColor *)randomColor {

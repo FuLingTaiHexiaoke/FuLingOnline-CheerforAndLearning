@@ -13,7 +13,6 @@
 //utilites
 #import "UIViewController+Extensions.h"
 #import "FLXKEmotionBoard.h"
-#import "Masonry.h"
 #import "YYFPSLabel.h"
 
 //#import "UINavigationBar+Awesome.h"
@@ -40,6 +39,8 @@
 #pragma mark - ViewController LifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupOwnNavigationAppearance];
+    
     self.view.backgroundColor=[UIColor whiteColor];
     //add navigation title view
     [self setupNavigationTitleSegmentsView];
@@ -47,6 +48,13 @@
     //setup a scrollview container
     //add children to scrollview container
     [self setupScrollViewWithVCs:self.viewControllers];
+    
+    if (DEBUG) {
+        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+        btn1.backgroundColor=[UIColor grayColor];
+        [self.view addSubview:btn1];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -65,6 +73,11 @@
 #pragma mark -
 #pragma mark - UI Delegates
 #pragma mark - UIScrollViewDelegate
+#pragma mark - Scroll Delegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
+}
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat pageIndex=  scrollView.contentOffset.x/(SCREEN_WIDTH);
     [_titleView setCurrentTitleIndex:pageIndex];
@@ -78,9 +91,21 @@
 
 #pragma mark -
 #pragma mark - Private Methods
+
+-(void)setupOwnNavigationAppearance{
+    //    self.title = @"Test VC";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor =NAVIGATION_BAR_TOP_BARTINTCOLOR;
+    self.navigationController.navigationBar.tintColor =NAVIGATION_BAR_TOP_TINTCOLOR;
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+      self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
+}
+
 -(void)setupNavigationTitleSegmentsView{
     _titleView= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 10, 150,FBTweakValue(@"NavTitle", @"titleView", @"titleViewH", 36.0))];
-    _titleView.viewControllerTitles=_viewControllerTitles;
+    _titleView.viewControllerTitles=self.viewControllerTitles;
     _titleView.currentTitleIndex= 1;
     _titleView.backgroundColor= [UIColor orangeColor];
     _titleView.titleColor= [UIColor colorWithRed:169/255.0 green:71/255.0 blue:18/255.0 alpha:1.0];
@@ -99,37 +124,48 @@
     self.navigationItem.titleView=_titleView;
 }
 
-
 -(void)setupScrollViewWithVCs:(NSArray<UIViewController*>*)viewControllers{
     _scrollView=[[UIScrollView alloc]init];
-    _scrollView.backgroundColor=[UIColor blueColor];
+    _scrollView.backgroundColor=[UIColor groupTableViewBackgroundColor];
     _scrollView.delegate=self;
     _scrollView.pagingEnabled=YES;
     _scrollView.showsVerticalScrollIndicator=NO;
     _scrollView.showsHorizontalScrollIndicator=NO;
-    _scrollView.bounces=NO;
+    _scrollView.frame=self.view.frame;
     [self.view addSubview:_scrollView];
     
-    __block   UIView *lastView= nil;
-    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self addChildViewController:obj];
-        [_scrollView addSubview:obj.view];
-        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.scrollView.mas_top);
-            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
-            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
-            make.width.mas_equalTo(self.scrollView.mas_width);
-            make.height.mas_equalTo(self.scrollView.mas_height);
-        }];
-        lastView= obj.view;
-    }];
-    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(self.view);
-        // 让scrollview的contentSize随着内容的增多而变化
-        make.leading.mas_equalTo(self.scrollView.mas_leading);
-        make.trailing.mas_equalTo(lastView.mas_trailing);
-    }];
-
+    //修改人:肖科    修改时间:2017-6-12  修改原因:以后在布局中能少用自动布局的地方，就尽量少用。不然很多参数不能及时确认，比如scrollView.contentSize，导致上拉刷新等操作被影响。
+    //修改内容:--修改如下。
+    // self.scrollView.contentSize
+    //    __block   UIView *lastView= nil;
+    //    [viewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //        [self addChildViewController:obj];
+    //        [_scrollView addSubview:obj.view];
+    //        [obj.view mas_remakeConstraints:^(MASConstraintMaker *make) {
+    //            make.top.mas_equalTo(self.scrollView.mas_top);
+    //            make.left.mas_equalTo(lastView?lastView.mas_right:self.scrollView.mas_left);
+    //            make.bottom.mas_equalTo(self.scrollView.mas_bottom);
+    //            make.width.mas_equalTo(self.scrollView.mas_width);
+    //            make.height.mas_equalTo(self.scrollView.mas_height);
+    //        }];
+    //        lastView= obj.view;
+    //    }];
+    //    [self.scrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    //        make.edges.mas_equalTo(self.view);
+    //        // 让scrollview的contentSize随着内容的增多而变化
+    //        make.leading.mas_equalTo(self.scrollView.mas_leading);
+    //        make.trailing.mas_equalTo(lastView.mas_trailing);
+    //    }];
+    
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.viewControllers.count, 0);
+    int cnt = (int)self.viewControllers.count;
+    for (int i = 0; i < cnt; i++) {
+        UIViewController *vc = self.viewControllers[i];
+        [self addChildViewController:vc];
+        vc.view.frame = CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, _scrollView.height);
+        [self.scrollView addSubview:vc.view];
+    }
+    //修改内容:修改如下--。
 }
 
 -(NSArray<UIViewController *> *)viewControllers{
@@ -144,4 +180,17 @@
 -(NSArray<NSString *> *)viewControllerTitles{
     return @[@"话题",@"推荐",@"达人"];
 }
+
+-(void)showTabBar{
+    //    Router(Router_TabBar_FriendsSharing_NewsPublish)
+    NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
+    for (int i=0; i<1; i++) {
+        FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
+        [viewControllers addObject:vc];
+    }
+    UIViewController * vc=[FLXKNavigationTitleViewController initWithTitles:@[@"话题",@"推荐",@"达人"] viewControllers:viewControllers parentVC:self];
+    UINavigationController* nvc=[[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nvc animated:YES completion:nil];
+}
+
 @end
