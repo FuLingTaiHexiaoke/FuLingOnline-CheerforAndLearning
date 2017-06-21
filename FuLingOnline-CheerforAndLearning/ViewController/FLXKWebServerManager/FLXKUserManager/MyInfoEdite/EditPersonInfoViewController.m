@@ -36,16 +36,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *publishTextView;
 @property (weak, nonatomic) IBOutlet UILabel *publishPlaceholderLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *publishImageChoosingCollectionView;
-//@property (weak, nonatomic) IBOutlet UIView *publishToolBarPositionView;
-//@property (weak, nonatomic) IBOutlet UIView *publishToolBarView;
-//@property (weak, nonatomic) IBOutlet UIButton *publishLocationButton;
-//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *publishLocationLoadingIndicator;
-//@property (weak, nonatomic) IBOutlet UIButton *clearCurrentLocationButton;
-
-//@property (weak, nonatomic) IBOutlet UIButton *publishTopicChooseButton;
-//@property (weak, nonatomic) IBOutlet UILabel *publishTopicChooseLabel;
-//@property (weak, nonatomic) IBOutlet UIButton *publishEmotionChooseButton;
-//@property (weak, nonatomic) IBOutlet UILabel *publishEmotionChooseLabel;
 //status change
 //@property (assign, nonatomic)NSInteger isChangeInputView;
 @property (weak, nonatomic) IBOutlet UITextField *loginNameTextField;
@@ -109,14 +99,6 @@
     
     [self.publishTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
 }
-
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//
-//    self.emotionKeyBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:self.publishTextView swithButton:self.publishEmotionChooseButton swithButtonContainer:self.publishToolBarView emotionEditingVCView:self.view emotionGroupShowingOption:(EmotionGroup_basic_text_emotion_image|EmotionGroup_emoji_text_emotion_image|EmotionGroup_big_gif_image)];
-//
-//}
-
 
 -(void)dealloc{
     NSLog(@"%@ 销毁",NSStringFromClass(self.class));
@@ -270,31 +252,5 @@
     }];
     [self presentViewController:imagePickerVc animated:YES completion:nil];
 }
-
-//- (IBAction)getUserCurrentLocation:(UIButton *)sender {
-//    [_publishLocationLoadingIndicator startAnimating];
-//    self.publishLocationButton.enabled=NO;
-//    @weakify(self)
-//    [[CLLocationManager sharedLocationManager] getAddressesFromDeviceLocationWithCompleteBlock:^(NSArray<CLPlacemark *> *placemarks, NSError *error, BOOL *stopUpdating) {
-//        *stopUpdating=YES;
-//        @strongify(self)
-//        [_publishLocationLoadingIndicator stopAnimating];
-//        self.publishLocationButton.enabled=YES;
-//        self.clearCurrentLocationButton.hidden=NO;
-//        NSDictionary  *addressDictionary=placemarks[0].addressDictionary;
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self.publishLocationButton setTitle:[NSString stringWithFormat:@"%@·%@%@        ",addressDictionary[@"City"],addressDictionary[@"SubLocality"],addressDictionary[@"Name"]] forState:UIControlStateNormal];
-//            [self.publishLocationButton sizeToFit];
-//        });
-//    }];
-//}
-//
-//- (IBAction)clearCurrentLocationAction:(id)sender {
-//    self.clearCurrentLocationButton.hidden=YES;
-//    [self.publishLocationButton setTitle:@"显示位置" forState:UIControlStateNormal];
-//    [self.publishLocationButton sizeToFit];
-//    self.publishLocationButton.enabled=YES;
-//
-//}
 
 @end

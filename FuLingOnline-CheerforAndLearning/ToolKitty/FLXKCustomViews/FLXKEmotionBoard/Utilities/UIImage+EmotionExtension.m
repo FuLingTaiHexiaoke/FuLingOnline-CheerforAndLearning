@@ -11,16 +11,6 @@
 @implementation UIImage (EmotionExtension)
 
 +(UIImage*)ImageWithName:(NSString*)name{
-    //    NSString *imagePath = [[NSBundle bundleWithPath:[UIImage emotionBundlePath]] pathForResource:name ofType:@"png"inDirectory:@"EmotionItems/BasicEmotionImages"];
-    //    if (!imagePath) {
-    //        imagePath =[[NSBundle bundleWithPath:[UIImage emotionBundlePath]] pathForResource:name ofType:@"gif"inDirectory:@"EmotionItems/GifImageEmotions"];
-    //    }
-    //    if (!imagePath) {
-    //        imagePath = [[NSBundle bundleWithPath:[UIImage emotionBundlePath]] pathForResource:name ofType:@"png"inDirectory:@"EmotionGroup"];
-    //    }
-    //    return [UIImage imageWithContentsOfFile:imagePath];
-    //    return [UIImage imageNamed:name];
-    
     UIImage* image=  [[UIImage emotionReuseImagesDictionary]objectForKey:name];
     if (!image ) {
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];

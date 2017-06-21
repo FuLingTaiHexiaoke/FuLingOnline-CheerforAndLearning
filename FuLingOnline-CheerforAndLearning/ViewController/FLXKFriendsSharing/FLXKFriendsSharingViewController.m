@@ -14,6 +14,7 @@
 #import "UIViewController+Extensions.h"
 #import "FLXKEmotionBoard.h"
 #import "YYFPSLabel.h"
+#import "UIColor+Extensions.h"
 
 //#import "UINavigationBar+Awesome.h"
 
@@ -31,6 +32,7 @@
 //UI
 @property(nonatomic,strong) FLXKNavigationTitleSegmentsView* titleView;
 @property(nonatomic,strong) UIScrollView* scrollView;
+@property(nonatomic,assign) NSInteger initShowingVCIndex;
 @end
 
 @implementation FLXKFriendsSharingViewController
@@ -39,22 +41,20 @@
 #pragma mark - ViewController LifeCircle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupOwnNavigationAppearance];
     
+    self.initShowingVCIndex=1;
     self.view.backgroundColor=[UIColor whiteColor];
-    //add navigation title view
-    [self setupNavigationTitleSegmentsView];
     
-    //setup a scrollview container
-    //add children to scrollview container
+    [self setupOwnNavigationAppearance];
+    [self setupNavigationTitleSegmentsView];
     [self setupScrollViewWithVCs:self.viewControllers];
     
-    if (DEBUG) {
-        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
-        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
-        btn1.backgroundColor=[UIColor grayColor];
-        [self.view addSubview:btn1];
-    }
+    //    if (DEBUG) {
+    //        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(50, 150, 50, 50)];
+    //        [btn1 addTarget:self action:@selector(showTabBar) forControlEvents:UIControlEventTouchUpInside];
+    //        btn1.backgroundColor=[UIColor grayColor];
+    //        [self.view addSubview:btn1];
+    //    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -75,7 +75,7 @@
 #pragma mark - UIScrollViewDelegate
 #pragma mark - Scroll Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
+    //    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -100,13 +100,13 @@
     self.navigationController.navigationBar.translucent = NO;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
-      self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:[[YYFPSLabel alloc]initWithFrame:CGRectMake(0, 5, 60, 30)]];
 }
 
 -(void)setupNavigationTitleSegmentsView{
     _titleView= [[FLXKNavigationTitleSegmentsView alloc]initWithFrame:CGRectMake(0, 10, 150,FBTweakValue(@"NavTitle", @"titleView", @"titleViewH", 36.0))];
     _titleView.viewControllerTitles=self.viewControllerTitles;
-    _titleView.currentTitleIndex= 1;
+    _titleView.currentTitleIndex= self.initShowingVCIndex;
     _titleView.backgroundColor= [UIColor orangeColor];
     _titleView.titleColor= [UIColor colorWithRed:169/255.0 green:71/255.0 blue:18/255.0 alpha:1.0];
     _titleView.titleSelectedColor= [UIColor whiteColor];
@@ -132,6 +132,7 @@
     _scrollView.showsVerticalScrollIndicator=NO;
     _scrollView.showsHorizontalScrollIndicator=NO;
     _scrollView.frame=self.view.frame;
+    
     [self.view addSubview:_scrollView];
     
     //修改人:肖科    修改时间:2017-6-12  修改原因:以后在布局中能少用自动布局的地方，就尽量少用。不然很多参数不能及时确认，比如scrollView.contentSize，导致上拉刷新等操作被影响。
@@ -165,15 +166,24 @@
         vc.view.frame = CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, _scrollView.height);
         [self.scrollView addSubview:vc.view];
     }
+    [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH * self.initShowingVCIndex, 0)];
     //修改内容:修改如下--。
 }
 
 -(NSArray<UIViewController *> *)viewControllers{
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
-    for (int i=0; i<1; i++) {
-        FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
-        [viewControllers addObject:vc];
-    }
+    
+    UIViewController* vc=[UIViewController new];
+    vc.view.backgroundColor=[UIColor randomColor];
+    [viewControllers addObject:vc];
+    
+    vc=[FLXSuggestedSharingTableVC new];
+    [viewControllers addObject:vc];
+    
+    vc=[UIViewController new];
+    vc.view.backgroundColor=[UIColor randomColor];
+    [viewControllers addObject:vc];
+    
     return viewControllers;
 }
 
@@ -184,12 +194,20 @@
 -(void)showTabBar{
     //    Router(Router_TabBar_FriendsSharing_NewsPublish)
     NSMutableArray<UIViewController*>* viewControllers=[NSMutableArray array];
-    for (int i=0; i<1; i++) {
-        FLXSuggestedSharingTableVC* vc=[FLXSuggestedSharingTableVC new];
-        [viewControllers addObject:vc];
-    }
-    UIViewController * vc=[FLXKNavigationTitleViewController initWithTitles:@[@"话题",@"推荐",@"达人"] viewControllers:viewControllers parentVC:self];
-    UINavigationController* nvc=[[UINavigationController alloc]initWithRootViewController:vc];
+    
+    UIViewController* vc=[UIViewController new];
+    vc.view.backgroundColor=[UIColor randomColor];
+    [viewControllers addObject:vc];
+    
+    vc=[FLXSuggestedSharingTableVC new];
+    [viewControllers addObject:vc];
+    
+    vc=[UIViewController new];
+    vc.view.backgroundColor=[UIColor randomColor];
+    [viewControllers addObject:vc];
+    
+    UIViewController * vcs=[FLXKNavigationTitleViewController initWithTitles:@[@"话题",@"推荐",@"达人"] viewControllers:viewControllers parentVC:self];
+    UINavigationController* nvc=[[UINavigationController alloc]initWithRootViewController:vcs];
     [self presentViewController:nvc animated:YES completion:nil];
 }
 

@@ -16,26 +16,22 @@ typedef NS_OPTIONS(NSUInteger, MessageToolBarShowingOption) {
 
 
 #import <UIKit/UIKit.h>
-//utilites
-//models
-//subviews
-//child viewController
-@interface FLXKMessageToolBar : UIView
-//public actions
+#import "HPGrowingTextView.h"
 
-+(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder containerView:(UIView*)containerView showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption;
+@interface FLXKMessageToolBar : UIView
+@property (weak, nonatomic) IBOutlet HPGrowingTextView *growingTextView;
+
+@property(nonatomic,strong)void(^sendMessageBlock)(NSString* message);
+@property(nonatomic,strong)void(^growingTextViewChangeHeight)(CGFloat height);
+
++(instancetype)sharedMessageToolBarWithPlacehoder:(NSString*)placeholder containerView:(UIView*)containerView showingOption:(MessageToolBarShowingOption)messageToolBarShowingOption textViewFont:(UIFont*)textViewFont;
 
 -(void)showToolBarWithPlaceholder:(NSString*)placeholder tapedView:(UIView*)tapedView scrollView:(UIScrollView*)scrollView;
 -(void)hideToolBar;
 
-//IBOutlet
-//IBAction
-//models
-//UI state record properties
-@property(nonatomic,strong)void(^sendMessageBlock)(NSString* message);
-@property(nonatomic,strong)void(^growingTextViewChangeHeight)(CGFloat height);
-//subviews
-//child viewController
+#pragma mark - HPGrowingTextView Delegate
+//开放出去方便 emotionBoard 调用
+- (BOOL)growingTextViewShouldReturn:(HPGrowingTextView *)growingTextView;
 
 @end
 

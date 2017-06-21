@@ -32,19 +32,6 @@
 @implementation FLXKEmotionCollectionView
 //将这些model动态生成CollectionView
 
-//+(NSArray<FLXKEmotionCollectionView*>*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup{
-//    NSMutableArray<FLXKEmotionCollectionView*>* collectionViews=[NSMutableArray array];
-//    NSArray<EmotionItem*>* totalEmotionItems=  [EmotionItem selectByCriteria:[NSString stringWithFormat:@"where groupId=%ld",(long)groupId]];
-//    NSInteger leftItems=0;
-//    NSInteger PerPageItemsCount=emotionGroup.emotionGroupPerPageCount;
-//    for (NSInteger i=0; i<totalEmotionItems.count; i+=PerPageItemsCount) {
-//        leftItems=i+PerPageItemsCount<totalEmotionItems.count?PerPageItemsCount:totalEmotionItems.count-i;
-//        NSArray<EmotionItem*>*  subEmotionItems=  [totalEmotionItems objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(i, leftItems)]];
-//        FLXKEmotionCollectionView*  collectionView= [[FLXKEmotionCollectionView alloc]initWithFrame:CollectionViewFrame withEmotionItems:subEmotionItems emotionGroup:emotionGroup];
-//        [collectionViews addObject:collectionView];
-//    }
-//    return collectionViews;
-//}
 +(NSArray*) setupEmotionViewsWithGroupId:(NSInteger)groupId emotionGroup:(EmotionGroup*)emotionGroup withFrame:(CGRect)frame {
     NSMutableArray<FLXKEmotionCollectionView*>* collectionViews=[NSMutableArray array];
     NSMutableArray< NSArray<EmotionItem*>*>* subEmotionItemsPerView=[NSMutableArray array];

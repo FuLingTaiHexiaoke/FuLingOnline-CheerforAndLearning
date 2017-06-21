@@ -40,7 +40,7 @@
         <!--Edit Person Info View Controller-->
         <scene sceneID="fgz-8d-do0">
             <objects>
-                <viewController id="gh0-dF-AjD" customClass="EditPersonInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditPersonInfoViewController" id="gh0-dF-AjD" customClass="EditPersonInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UbA-5n-XZG"/>
                         <viewControllerLayoutGuide type="bottom" id="f2u-r6-YGg"/>

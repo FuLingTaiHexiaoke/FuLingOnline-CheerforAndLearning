@@ -41,11 +41,11 @@ static NSInteger lastViewIndex;
         [self.groupEmotionButton setTitle:emotionGroup.emotionGroupImageUrl forState:UIControlStateNormal];
     }
     else{
-        if (emotionGroup.emotionGroupImageType==5){
-            if (![emotionGroup.emotionGroupImageUrl containsString:@".gif"]) {
-                emotionGroup.emotionGroupImageUrl=[NSString stringWithFormat:@"%@.gif",emotionGroup.emotionGroupImageUrl ];
-            }
-        }
+//        if (emotionGroup.emotionGroupImageType==5){
+//            if (![emotionGroup.emotionGroupImageUrl containsString:@".gif"]) {
+//                emotionGroup.emotionGroupImageUrl=[NSString stringWithFormat:@"%@.gif",emotionGroup.emotionGroupImageUrl ];
+//            }
+//        }
         UIImage* image=[UIImage ImageWithName:emotionGroup.emotionGroupImageUrl];
         [self.groupEmotionButton setImage:image forState:UIControlStateNormal];
     }

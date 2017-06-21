@@ -17,11 +17,11 @@
 //utilites
 #import "MJRefresh.h"
 #import "FLXKHttpRequestModelHelper.h"
+#import "UITextView+Extensions.h"
 
 //subviews
 #import "FLXKSuggestHeaderView.h"
 #import "FLXKMessageToolBar.h"
-#import "JSMessageInputView.h"
 #import "FLXKSharingBaseCell.h"
 
 #import "FLXKSharingFuLingOnlineStyleCellMansory.h"
@@ -41,7 +41,6 @@
 @property(nonatomic,strong)NSIndexPath* currentThumberUpCellIndex;
 
 //subviews
-@property(nonatomic,strong)JSMessageInputView *chatInputView;
 @property(nonatomic,strong)FLXKMessageToolBar* messageToolBar;
 @property(nonatomic,assign)BOOL isToolBarShowing;
 
@@ -70,11 +69,11 @@
     //        btn1.backgroundColor=[UIColor yellowColor];
     //        [self.view addSubview:btn1];
     //    }
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [self setupMessageToolBar];
-    [self.tableView reloadData];
 }
 
 #pragma mark - Memory Warning
@@ -101,7 +100,7 @@
     cell.addCommentBlock=^(NSString* placeholder,SharingCommentCellModel* model,UIView* tapedView,NSIndexPath * indexPath){
         [weakSelf showToolBarWithPlaceholder:placeholder tapedView:tapedView];
         weakSelf.currentCommentCellIndex=indexPath;
-             weakSelf.currentCommentCellModel=model;
+        weakSelf.currentCommentCellModel=model;
     };
     cell.addThumbupBlock=^(UIButton* sender,NSIndexPath * indexPath){
         weakSelf.currentThumberUpCellIndex=indexPath;
@@ -109,22 +108,38 @@
         //显示动画效果
         [weakSelf startThumberUpAnimation:sender];
     };
+    
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    Router(Router_Launch_NotificationCenter)
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    NSInteger row=  indexPath.row%3;
+    switch (row) {
+        case 0:
+            Router(Router_Launch_NotificationCenter)
+            break;
+        case 1:
+            Router(Router_TabBar_FriendsSharing_NewsPublish_test1)
+            break;
+        case 2:
+            Router(Router_TabBar_FriendsSharing_NewsPublish_test2)
+            break;
+        default:
+            break;
+    }
 }
+
 
 #pragma mark - Scroll Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
+    //    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-     _isToolBarShowing=NO;
+    _isToolBarShowing=NO;
     [self.messageToolBar hideToolBar];
 }
 
@@ -149,12 +164,14 @@
         @strongify(self)
         [self setupFLXKSharingCellModel];
     } ];
+    [self.tableView.mj_header beginRefreshing];
     
 }
 
 -(void)setupMessageToolBar{
     if (!_messageToolBar) {
-        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON];
+        UIFont* font = [UIFont systemFontOfSize:FLXKMessageToolBar_Font_Size];
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON textViewFont:font];
         
         [self.view.superview.superview  addSubview:_messageToolBar];
         @weakify(self)
@@ -169,11 +186,25 @@
             [self growingTextViewChangeHeight:height];
         };
         //表情输入面板中的NSAutolayout会自动调整新的布局信息。忽略Masonry
+        
+        //修改人:肖科    修改时间:2017-4-25  修改原因:自定义UITextView得出的高度有偏差，具体原因还没有找到
+        //修改内容:--修改如下。
+        //         CGFloat height=  [UITextView getTextViewWithAttributes:@{NSAttachmentAttributeName:font} rows:0]+7+7;
+        //不知道为什么，突然这个方法就不行了。
+        //        CGFloat height=  [_messageToolBar.growingTextView.internalTextView getTextViewWithAttributes:@{NSAttachmentAttributeName:font} rows:0]+7+7;//有点硬编码了
+        CGFloat height=  _messageToolBar.growingTextView.minHeight+7+7;//有点硬编码了
+        //修改内容:修改如下--。
+        
         [_messageToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(48);
+            make.height.mas_equalTo(height);
             make.width.mas_equalTo(self.view.superview.superview.mas_width);
             make.bottom.mas_equalTo(((UIViewController*)(self.view.superview.superview.nextResponder)).mas_bottomLayoutGuide).offset(100);
         }];
+    }
+    //重新初始化控件
+    else{
+        UIFont* font = [UIFont systemFontOfSize:FLXKMessageToolBar_Font_Size];
+        _messageToolBar=  [FLXKMessageToolBar   sharedMessageToolBarWithPlacehoder:@"test" containerView:self.view.superview.superview  showingOption:MessageToolBarShowingOption_EMOTION_BUTTON textViewFont:font];
     }
 }
 //
@@ -182,7 +213,7 @@
         [_messageToolBar showToolBarWithPlaceholder:placeholder tapedView:tapedView scrollView:self.tableView];
     }
     else{
-         [self.messageToolBar hideToolBar];
+        [self.messageToolBar hideToolBar];
     }
     _isToolBarShowing=!_isToolBarShowing;
 }
@@ -200,7 +231,7 @@
 }
 
 -(void)startThumberUpAnimation:(UIButton*)sender{
-      FLXKSharingCellModel* model= self.models[self.currentCommentCellIndex.row];
+    FLXKSharingCellModel* model= self.models[self.currentCommentCellIndex.row];
     if (model.isThumberuped==1) {
         [sender setImage:[UIImage imageNamed:@"sharing_thumbup_n"]  forState:UIControlStateNormal];
     }
@@ -256,7 +287,7 @@
     @weakify(self)
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         @strongify(self)
- 
+        
         if (model.isThumberuped) {
             __block  NSInteger index;
             [model.likeTheSharingUserRecords enumerateObjectsUsingBlock:^(UserModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -281,7 +312,7 @@
 
 //添加评论信息，由外部调用。
 -(void)sendComment:(NSString *)message{
-        __block      FLXKSharingCellModel* cellModel= self.models[self.currentCommentCellIndex.row];
+    __block      FLXKSharingCellModel* cellModel= self.models[self.currentCommentCellIndex.row];
     SharingCommentCellModel* model=[SharingCommentCellModel new];
     model.fromUserID= [FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test";
     model.fromUserName=[FLXKSharedAppSingleton sharedSingleton].sharedUser.name?:@"test";

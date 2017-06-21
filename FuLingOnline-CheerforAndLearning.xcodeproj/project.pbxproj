@@ -480,7 +480,6 @@
 		B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */; };
 		B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */; };
 		B9780F9B1EA99B9B003AF40A /* FLXKMessageToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */; };
-		B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */; };
 		B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */; };
 		B97B38DB1DD0152800D8F004 /* FLXKAdImageInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */; };
 		B97B38DF1DD029D400D8F004 /* 临时草稿.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */; };
@@ -497,8 +496,7 @@
 		B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */; };
 		B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */; };
 		B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */; };
-		B98A96961EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */; };
-		B98A96991EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */; };
+		B98A969C1EEEA2E0003AB955 /* UITextView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A969B1EEEA2E0003AB955 /* UITextView+Extensions.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
 		B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */; };
 		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
@@ -1275,8 +1273,6 @@
 		B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBar.m; sourceTree = "<group>"; };
 		B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBar.xib; sourceTree = "<group>"; };
 		B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKMessageToolBar.h; sourceTree = "<group>"; };
-		B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSMessageInputView.m; sourceTree = "<group>"; };
-		B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSMessageInputView.h; sourceTree = "<group>"; };
 		B9780FA91EA9EF24003AF40A /* FLXKEmotionBoard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FLXKEmotionBoard.xcassets; sourceTree = "<group>"; };
 		B97B38D91DD0152800D8F004 /* FLXKAdImageInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAdImageInfoModel.h; sourceTree = "<group>"; };
 		B97B38DA1DD0152800D8F004 /* FLXKAdImageInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAdImageInfoModel.m; sourceTree = "<group>"; };
@@ -1300,10 +1296,8 @@
 		B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		B98237571EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
 		B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingPictureLayoutView.m; sourceTree = "<group>"; };
-		B98A96941EEE63BF003AB955 /* FLXKFriendsSharingViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController2.h; sourceTree = "<group>"; };
-		B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController2.m; sourceTree = "<group>"; };
-		B98A96971EEE72A6003AB955 /* FLXKFriendsSharingViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKFriendsSharingViewController1.h; sourceTree = "<group>"; };
-		B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKFriendsSharingViewController1.m; sourceTree = "<group>"; };
+		B98A969A1EEEA2E0003AB955 /* UITextView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extensions.h"; sourceTree = "<group>"; };
+		B98A969B1EEEA2E0003AB955 /* UITextView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extensions.m"; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
 		B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAnimationHelper.h; sourceTree = "<group>"; };
 		B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAnimationHelper.m; sourceTree = "<group>"; };
@@ -2028,10 +2022,6 @@
 				B9A3F95B1E6BEBA2007CA4B2 /* FLXKSharingShowSubViewControllers */,
 				B92F57611E5547C40010A84A /* FLXKFriendsSharingViewController.h */,
 				B92F57621E5547C40010A84A /* FLXKFriendsSharingViewController.m */,
-				B98A96971EEE72A6003AB955 /* FLXKFriendsSharingViewController1.h */,
-				B98A96981EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m */,
-				B98A96941EEE63BF003AB955 /* FLXKFriendsSharingViewController2.h */,
-				B98A96951EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m */,
 				B92F57631E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.h */,
 				B92F57641E5547C40010A84A /* FLXKNewsPublishCollectionViewCell.m */,
 				B92F57651E5547C40010A84A /* FLXKNewsPublishController.h */,
@@ -2075,6 +2065,8 @@
 				B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */,
 				B95987A01EAF2B8100A12E7F /* NSObject+ModelHelper.h */,
 				B95987A11EAF2B8100A12E7F /* NSObject+ModelHelper.m */,
+				B98A969A1EEEA2E0003AB955 /* UITextView+Extensions.h */,
+				B98A969B1EEEA2E0003AB955 /* UITextView+Extensions.m */,
 			);
 			path = "FLXK+Extensions";
 			sourceTree = "<group>";
@@ -2163,8 +2155,6 @@
 				B9780F991EA99B9B003AF40A /* FLXKMessageToolBar.h */,
 				B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */,
 				B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */,
-				B9780F9D1EA9D59F003AF40A /* JSMessageInputView.h */,
-				B9780F9C1EA9D59F003AF40A /* JSMessageInputView.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2864,6 +2854,13 @@
 			path = SharingOperationContainerViews;
 			sourceTree = "<group>";
 		};
+		B9BCE5751EF282BC00A51AFA /* ContentSharingLib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContentSharingLib;
+			sourceTree = "<group>";
+		};
 		B9C263811E9B3153003D7B51 /* FLXKWebServerManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -2945,6 +2942,7 @@
 				B9C6AAE01E6547580003C50A /* FLXKNotification */,
 				B9E17E221EA0C48E0027043A /* PsyJsonHelper */,
 				B9E17E251EA0C48E0027043A /* PsyZipArchive */,
+				B9BCE5751EF282BC00A51AFA /* ContentSharingLib */,
 			);
 			path = "Common Utilities";
 			sourceTree = "<group>";
@@ -4402,7 +4400,6 @@
 				B9C6ACA31E6548550003C50A /* SGAlertView.m in Sources */,
 				B9E17E291EA0C48E0027043A /* PsyZipArchive.m in Sources */,
 				B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */,
-				B98A96991EEE72A6003AB955 /* FLXKFriendsSharingViewController1.m in Sources */,
 				B95987A21EAF2B8100A12E7F /* NSObject+ModelHelper.m in Sources */,
 				B930C1FA1DE548D4004F729B /* FLXKTabBar.m in Sources */,
 				B9C6AC8E1E6548550003C50A /* RRNCollapsableTableViewController.m in Sources */,
@@ -4410,7 +4407,6 @@
 				B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */,
 				B93098751E568D2200306F39 /* CLLocationManager+blocks.m in Sources */,
 				B90CD9821E763FFD00278EDB /* LaunchScreenViewController.m in Sources */,
-				B9780F9E1EA9D59F003AF40A /* JSMessageInputView.m in Sources */,
 				B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */,
 				B90CD9881E763FFD00278EDB /* NotificationExamplesTableViewController.m in Sources */,
 				B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */,
@@ -4443,6 +4439,7 @@
 				B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B9C6AC901E6548550003C50A /* UITableView+rrn_extensions.m in Sources */,
+				B98A969C1EEEA2E0003AB955 /* UITextView+Extensions.m in Sources */,
 				B9C6AC941E6548550003C50A /* StarsSectionHeaderView.m in Sources */,
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */,
@@ -4460,7 +4457,6 @@
 				B9A3F9641E6BED8F007CA4B2 /* FLXActivePeopleRateTableViewController.m in Sources */,
 				B97261A91E2DEC76008B6356 /* FMDatabasePool.m in Sources */,
 				B93AF5C31E30AADA00F51E26 /* EmotionGroupDetailModel.m in Sources */,
-				B98A96961EEE63BF003AB955 /* FLXKFriendsSharingViewController2.m in Sources */,
 				B90CD9901E76436500278EDB /* NSURL+Extensions.m in Sources */,
 				B9C6ACAF1E6548550003C50A /* FLXKSegmentContainerViewController.m in Sources */,
 				B90CD97B1E763FFD00278EDB /* AccessoryImageViewController.m in Sources */,

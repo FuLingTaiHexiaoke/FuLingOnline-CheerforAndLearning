@@ -95,7 +95,7 @@
 #endif
     internalTextView.delegate = self;
     internalTextView.scrollEnabled = NO;
-    internalTextView.font = [UIFont fontWithName:@"Helvetica" size:13];
+    internalTextView.font = [UIFont fontWithName:@"Helvetica" size:15];
     internalTextView.contentInset = UIEdgeInsetsZero;
     internalTextView.showsHorizontalScrollIndicator = NO;
     internalTextView.text = @"-";
@@ -211,7 +211,7 @@
     for (int i = 1; i < n; ++i){
         [newText  appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"\n|W|"]];
     }
-    
+      [newText addAttributes:@{NSFontAttributeName:self.font} range:NSMakeRange(0, newText.length)];
     internalTextView.attributedText = newText;
     
     maxHeight = [self measureHeight];
@@ -289,6 +289,7 @@
     for (int i = 1; i < m; ++i){
         [newText  appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"\n|W|"]];
     }
+    [newText addAttributes:@{NSFontAttributeName:self.font} range:NSMakeRange(0, newText.length)];
     
     internalTextView.attributedText = newText;
     
@@ -301,7 +302,7 @@
     
     [self sizeToFit];
     
-    maxNumberOfLines = m;
+    minNumberOfLines = m;
 }
 
 
@@ -464,7 +465,6 @@
 
 -(void)resizeTextView:(NSInteger)newSizeH
 {
-    //    NSLog(@"resizeTextView newSizeH %ld", (long)newSizeH);
     if ([delegate respondsToSelector:@selector(growingTextView:willChangeHeight:)]) {
         [delegate growingTextView:self willChangeHeight:newSizeH];
     }
@@ -480,7 +480,6 @@
     //
     //    internalTextViewFrame.origin.y = contentInset.top - contentInset.bottom;
     //    internalTextViewFrame.origin.x = contentInset.left;
-    //    //        NSLog(@"internalTextViewFrame resizeTextView %@", NSStringFromCGRect(internalTextViewFrame));
     //    if(!CGRectEqualToRect(internalTextView.frame, internalTextViewFrame)) internalTextView.frame = internalTextViewFrame;
     //修改内容:注销下面的布局代码--。
 }
@@ -545,7 +544,7 @@
 -(void)setFont:(UIFont *)afont
 {
     internalTextView.font= afont;
-    
+
     [self setMaxNumberOfLines:maxNumberOfLines];
     [self setMinNumberOfLines:minNumberOfLines];
 }
@@ -733,10 +732,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
  replacementText:(NSString *)atext {
-    
     //weird 1 pixel bug when clicking backspace when textView is empty
     if(![textView hasText] && [atext isEqualToString:@""]) return NO;
-    
     //Added by bretdabaker: sometimes we want to handle this ourselves
     if ([delegate respondsToSelector:@selector(growingTextView:shouldChangeTextInRange:replacementText:)])
         return [delegate growingTextView:self shouldChangeTextInRange:range replacementText:atext];
@@ -751,10 +748,7 @@
             }
         }
     }
-    
     return YES;
-    
-    
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

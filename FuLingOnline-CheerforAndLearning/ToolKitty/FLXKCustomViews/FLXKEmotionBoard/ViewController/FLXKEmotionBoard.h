@@ -24,19 +24,30 @@ typedef NS_OPTIONS(NSUInteger, EmotionGroupShowingOption) {
     EmotionGroup_big_gif_image       = 1 << 4,
 };
 
+@protocol MessageSendDelegate <NSObject>
+
+@optional
+-(void)sendMessageFiredByEmotionBoard;
+
+@end
+
 @interface FLXKEmotionBoard : UIView<UIScrollViewDelegate,FLXKEmotionCollectionViewDelegate>
 
+@property(nonatomic,weak)id<MessageSendDelegate>  delegate;
 //自动调整SVO(scrollview.offset)的值，使scrollview中点击的view和ToolBar动态贴紧
+
 @property(nonatomic,weak)UIView* SVO_TapedView;
 @property(nonatomic,weak)UIScrollView* SVO_ScrollView;
 
 
 +(instancetype)sharedEmotionBoard;
 //便利方法，同事注册多个控件
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar;
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset;
 
+//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption delegate:(id<MessageSendDelegate>)delegate editingTextViewAttributes:(NSDictionary*)editingTextViewAttributes;
+
+//朋友圈对应的带输入框的表情键盘。是否自动调整tableview的offset，使其具有对齐功能
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption delegate:(id<MessageSendDelegate>)delegate editingTextViewAttributes:(NSDictionary*)editingTextViewAttributes shouldAutoHideToolBar:(BOOL)shouldAutoHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset;
 
 -(void)removeNotifications;
 

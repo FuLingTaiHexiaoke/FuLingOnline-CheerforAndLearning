@@ -206,6 +206,7 @@
 #pragma mark - 初始化控件布局信息
 
 -(void)setupUI{
+    self.selectionStyle=UITableViewCellSelectionStyleNone;
     
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.mas_equalTo(self.contentView).offset(DEFAULT_VIEW_SPACING);

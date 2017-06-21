@@ -139,10 +139,10 @@
     if (appRootVC.presentedViewController) {
         nextResponder = appRootVC.presentedViewController;
     }else{
-//        NSArray* a= [window subviews];
-//        [a enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            NSLog(@"nextResponder: %lu  : %@",(unsigned long)idx, [obj nextResponder]);
-//        }];
+        //        NSArray* a= [window subviews];
+        //        [a enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //            NSLog(@"nextResponder: %lu  : %@",(unsigned long)idx, [obj nextResponder]);
+        //        }];
         
         UIView *frontView = [[window subviews] objectAtIndex:0];
         nextResponder = [frontView nextResponder];
@@ -161,7 +161,7 @@
             UINavigationController * nav = (UINavigationController *)tabbar.viewControllers[tabbar.selectedIndex];
             desiredPresentingVC=nav.childViewControllers.lastObject;
         }
-          //先跳转到另外的tabbaritem再上push,containerVCName为目的tabbaritem基类
+        //先跳转到另外的tabbaritem再上push,containerVCName为目的tabbaritem基类
         else{
             __block  NSUInteger tabbarSelectedIndex=tabbar.selectedIndex;
             if (tabbar.childViewControllers) {
@@ -170,7 +170,23 @@
                     if ([obj isKindOfClass:UINavigationController.class]) {
                         UINavigationController*  navigationController= (UINavigationController*)obj;
                         [navigationController.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull innerObj, NSUInteger innerIdx, BOOL * _Nonnull innerStop) {
-                            if ([NSStringFromClass(innerObj.class) isEqualToString:desiredViewControllerContainerName]) {
+                            //这个判断是为RTRootNavigationController单独设置的。因为其支持动态NavigationBar的单独定制。
+                            if ([NSStringFromClass(innerObj.class) isEqualToString:@"RTContainerController"]) {
+                                [innerObj.childViewControllers enumerateObjectsUsingBlock:^(__kindof UINavigationController * _Nonnull obj_RT, NSUInteger idx_RT, BOOL * _Nonnull stop_RT) {
+                                    [obj_RT.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj_RT_Nav, NSUInteger idx_RT_Nav, BOOL * _Nonnull stop_RT_Nav) {
+                                        if ([NSStringFromClass(obj_RT_Nav.class) isEqualToString:desiredViewControllerContainerName]) {
+                                            desiredPresentingVC=obj_RT_Nav;
+                                            tabbarSelectedIndex=idx;
+                                            [navigationController popToViewController:innerObj animated:NO];
+                                            *stop_RT_Nav=YES;
+                                            *stop_RT=YES;
+                                            *innerStop=YES;
+                                            *stop=YES;
+                                        }
+                                    }];
+                                }];
+                            }
+                            else   if ([NSStringFromClass(innerObj.class) isEqualToString:desiredViewControllerContainerName]) {
                                 desiredPresentingVC=innerObj;
                                 tabbarSelectedIndex=idx;
                                 [navigationController popToViewController:innerObj animated:NO];
@@ -200,10 +216,10 @@
     else if ([currentViewControllerContainer isKindOfClass:[UINavigationController class]]){
         UINavigationController * nav = (UINavigationController *)currentViewControllerContainer;
         desiredPresentingVC = nav.childViewControllers.lastObject;
-//       finalCurrentVC= [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
-//           [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
+        //       finalCurrentVC= [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
+        //           [self getFinalVCFromCurrentVC:finalCurrentVC withFinalVCContainerName:containerVCName];
     }
-     //currentVCContainer 为 UIViewController
+    //currentVCContainer 为 UIViewController
     else{
         desiredPresentingVC = currentViewControllerContainer;
     }

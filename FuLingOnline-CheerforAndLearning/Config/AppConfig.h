@@ -11,6 +11,74 @@
 #ifndef config_h
 #define config_h
 
+//containerVCName为目的tabbaritem基类
+
+//xibType
+//0:no xib
+//1:single xib
+//2:in storyboard
+
+//#define Router(URLString) [[UIApplication sharedApplication]openURL:[NSURL URLWithString:(URLString)]];
+#define Router(URLString)  dispatch_barrier_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{\
+[FLXKAPPRouter openURL:[NSURL URLWithString:(URLString)] withScheme:@"FuLingOnLineScheme"];\
+});
+
+//#define Router(URLString)  [FLXKURLSchemaRouter openURL:[NSURL URLWithString:(URLString)] withScheme:@"FuLingOnLineScheme"];
+
+
+#define Router_FLXKTabBarController @"FuLingOnLineScheme://FLXKTabBarController?containerVCName=&xibType=2&stName=Main&stid=stid_FLXKTabBarController"
+#define Router_TabBar_FriendsSharing_NewsPublish @"FuLingOnLineScheme://FLXKNewsPublishController?containerVCName=FLXKFriendsSharingViewController&xibType=2&stName=Main&stid=stid_FLXKNewsPublishController"
+
+#define Router_Launch_NotificationCenter @"FuLingOnLineScheme://NotificationExamplesTableViewController?containerVCName=&xibType=0&stName=&stid="
+
+#define Router_TabBar_FriendsSharing_NewsPublish_test1 @"FuLingOnLineScheme://FLXKNewsPublishController?containerVCName=&xibType=2&stName=Main&stid=stid_FLXKNewsPublishController"
+
+#define Router_TabBar_FriendsSharing_NewsPublish_test2 @"FuLingOnLineScheme://EditPersonInfoViewController?containerVCName=HomeNewsViewController&xibType=2&stName=FLXKUserManager&stid=EditPersonInfoViewController"
+
+#pragma mark -
+#pragma mark - APP Network API
+
+
+//Http Request Part
+//#define BaseURL @"http://127.0.0.1:3000"
+#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
+
+#define NSURL_BaseURL(relativeString) [NSURL URLWithString:BaseURL(relativeString)]
+
+//#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
+
+//朋友圈
+#define Url_GetAdvertisementImageInfo BaseURL(@"launch/getAdvertisementImage")
+
+//https://127.0.0.1:3000/publishNewsController/PublishNewsModel
+#define Url_UploadPublishNews BaseURL(@"publishNewsController/PublishNewsModel")
+
+//#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
+#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/getNewsModel")
+
+//点赞
+#define Url_AddFriendsharingThumbup BaseURL(@"publishNewsController/PublishNewsModel/addThumberup")//添加点赞
+
+//评论
+#define Url_AddFriendsharingComment BaseURL(@"publishNewsController/PublishNewsModel/addComment")
+
+//用户
+#define Url_AddUser BaseURL(@"userController/User")
+
+#define Url_GetUser BaseURL(@"userController/User/")
+
+//==================================================Http Request Part======================================================
+
+#define HOST_URL [NSString stringWithFormat:@"https://%@:%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort")]
+
+#define APP_Update_HOST @"wap.psylife.cc"
+
+#define APP_Update_URL @"http://%@/Baojiao/interface/checkVersion.action?modelType=ios"
+
+#define APP_GetFriendSharingModel  [NSString stringWithFormat:@"%@/publishNewsController/PublishNewsModel/1",HOST_URL]
+
+
+
 //================================================== GLOBAL APPEARANCE COLOR======================================================
 #pragma mark -
 #pragma mark - GLOBAL APPEARANCE COLOR
@@ -60,67 +128,13 @@
 
 #define TITLE @"TITLE"
 
-//xibType
-//0:no xib
-//1:single xib
-//2:in storyboard
 
-//#define Router(URLString) [[UIApplication sharedApplication]openURL:[NSURL URLWithString:(URLString)]];
-#define Router(URLString)  dispatch_barrier_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{\
-[FLXKAPPRouter openURL:[NSURL URLWithString:(URLString)] withScheme:@"FuLingOnLineScheme"];\
-});
+//==================================================FBTweakValue======================================================
 
-//#define Router(URLString)  [FLXKURLSchemaRouter openURL:[NSURL URLWithString:(URLString)] withScheme:@"FuLingOnLineScheme"];
-
-#define Router_FLXKTabBarController @"FuLingOnLineScheme://FLXKTabBarController?containerVCName=&xibType=2&stName=Main&stid=stid_FLXKTabBarController"
-#define Router_TabBar_FriendsSharing_NewsPublish @"FuLingOnLineScheme://FLXKNewsPublishController?containerVCName=FLXKFriendsSharingViewController&xibType=2&stName=Main&stid=stid_FLXKNewsPublishController"
-#define Router_Launch_NotificationCenter @"FuLingOnLineScheme://NotificationExamplesTableViewController?containerVCName=&xibType=0&stName=&stid="
+#define FLXKMessageToolBar_Font_Size FBTweakValue(@"FLXKMessageToolBar", @"sharedInstance",  @"font", 15.0)
 
 
-
-#pragma mark -
-#pragma mark - APP Network API
-
-
-//Http Request Part
-//#define BaseURL @"http://127.0.0.1:3000"
-#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
-
-#define NSURL_BaseURL(relativeString) [NSURL URLWithString:BaseURL(relativeString)]
-
-//#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
-
-//朋友圈
-#define Url_GetAdvertisementImageInfo BaseURL(@"launch/getAdvertisementImage")
-
-//https://127.0.0.1:3000/publishNewsController/PublishNewsModel
-#define Url_UploadPublishNews BaseURL(@"publishNewsController/PublishNewsModel")
-
-//#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/1")
-#define Url_GetFriendSharingModel BaseURL(@"publishNewsController/PublishNewsModel/getNewsModel")
-
-//点赞
-#define Url_AddFriendsharingThumbup BaseURL(@"publishNewsController/PublishNewsModel/addThumberup")//添加点赞
-
-//评论
-#define Url_AddFriendsharingComment BaseURL(@"publishNewsController/PublishNewsModel/addComment")
-
-//用户
-#define Url_AddUser BaseURL(@"userController/User")
-
-#define Url_GetUser BaseURL(@"userController/User/")
-
-//==================================================Http Request Part======================================================
-
-#define HOST_URL [NSString stringWithFormat:@"https://%@:%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort")]
-
-#define APP_Update_HOST @"wap.psylife.cc"
-
-#define APP_Update_URL @"http://%@/Baojiao/interface/checkVersion.action?modelType=ios"
-
-#define APP_GetFriendSharingModel  [NSString stringWithFormat:@"%@/publishNewsController/PublishNewsModel/1",HOST_URL]
-
-
+//==================================================Font======================================================
 
 
 #endif

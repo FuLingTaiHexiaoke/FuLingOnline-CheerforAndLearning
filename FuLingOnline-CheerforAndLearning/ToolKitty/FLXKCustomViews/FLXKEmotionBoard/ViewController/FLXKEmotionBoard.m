@@ -57,11 +57,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 //控制bottombar类型控件的升降外部属性
 @property(nonatomic,weak)UITextView *editingTextView;
+@property(nonatomic,strong)NSDictionary* editingTextViewAttributes;
 @property(nonatomic,weak)UIButton* emotionSwithButton;
 @property(nonatomic,weak)UIBarButtonItem* emotionSwithBarButtonItem;
 @property(nonatomic,weak)UIView *emotionSwithButtonContainer;
 @property(nonatomic,weak)UIView *emotionEditingVCView;
-@property(nonatomic,assign)BOOL shouldHideToolBar;//作用于约束计算，是否自动隐藏ToolBar输入框
+@property(nonatomic,assign)BOOL shouldAutoHideToolBar;//作用于约束计算，是否自动隐藏ToolBar输入框
 //预留工具箱、语音记录按钮属性
 @property(nonatomic,weak)UIButton* toolkitButton;
 @property(nonatomic,weak)UIButton* voiceRecordButton;
@@ -77,21 +78,21 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
 
 #pragma mark - Public Methods
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption  {
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption delegate:(id<MessageSendDelegate>)delegate editingTextViewAttributes:(NSDictionary*)editingTextViewAttributes shouldAutoHideToolBar:(BOOL)shouldAutoHideToolBar {
     //add emotionGroupOptions
     [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
     
     FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
     sharedEmotionBoard.editingTextView=editingTextView;
+    sharedEmotionBoard.editingTextViewAttributes=editingTextViewAttributes;
     sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
     sharedEmotionBoard.emotionSwithButton=swithButton;
     sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
+    sharedEmotionBoard.shouldAutoHideToolBar=shouldAutoHideToolBar;
+    sharedEmotionBoard.delegate=delegate;
     //add action
     [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
     sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
-    
-    //    //add emotionGroupOptions
-    //    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
     
     NSNumber*  lastOptions=( NSNumber* ) FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey);
     if (lastOptions.integerValue!=emotionGroupShowingOption) {
@@ -105,40 +106,42 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     return sharedEmotionBoard;
 }
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset{
-    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:editingTextView swithButton:swithButton swithButtonContainer:swithButtonContainer emotionEditingVCView:emotionEditingVCView emotionGroupShowingOption:emotionGroupShowingOption shouldHideToolBar:shouldHideToolBar];
+//朋友圈对应的带输入框的表情键盘。是否自动调整tableview的offset，使其具有对齐功能
++(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption delegate:(id<MessageSendDelegate>)delegate editingTextViewAttributes:(NSDictionary*)editingTextViewAttributes shouldAutoHideToolBar:(BOOL)shouldAutoHideToolBar SVO_ShouldAutoOffset:(BOOL)SVO_ShouldAutoOffset {
+    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoardWithEditingTextView:editingTextView swithButton:swithButton swithButtonContainer:swithButtonContainer emotionEditingVCView:emotionEditingVCView emotionGroupShowingOption:emotionGroupShowingOption delegate:delegate editingTextViewAttributes:editingTextViewAttributes shouldAutoHideToolBar:shouldAutoHideToolBar];
     sharedEmotionBoard.SVO_ShouldAutoOffset=SVO_ShouldAutoOffset;
     return sharedEmotionBoard;
 }
 
-+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption shouldHideToolBar:(BOOL)shouldHideToolBar {
-    //add emotionGroupOptions
-    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
-    
-    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
-    sharedEmotionBoard.editingTextView=editingTextView;
-    sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
-    sharedEmotionBoard.emotionSwithButton=swithButton;
-    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
-    sharedEmotionBoard.shouldHideToolBar=shouldHideToolBar;
-    //add action
-    [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
-    sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
-    
-    //    //add emotionGroupOptions
-    //    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
-    
-    NSNumber*  lastOptions=( NSNumber* ) FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey);
-    if (lastOptions.integerValue!=emotionGroupShowingOption) {
-        [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
-        [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
-        //        [self reloadPages];
-    }
-    FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
-    FLXKUserDefaultsSynchronize
-    
-    return sharedEmotionBoard;
-}
+//+(instancetype)sharedEmotionBoardWithEditingTextView:(UITextView *)editingTextView swithButton:(UIButton *)swithButton swithButtonContainer:(UIView *)swithButtonContainer emotionEditingVCView:(UIView *)emotionEditingVCView emotionGroupShowingOption:(EmotionGroupShowingOption)emotionGroupShowingOption editingTextViewAttributes:(NSDictionary*)editingTextViewAttributes shouldAutoHideToolBar:(BOOL)shouldAutoHideToolBar {
+//    //add emotionGroupOptions
+//    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+//    
+//    FLXKEmotionBoard * sharedEmotionBoard=[FLXKEmotionBoard sharedEmotionBoard];
+//    sharedEmotionBoard.editingTextView=editingTextView;
+//    sharedEmotionBoard.editingTextViewAttributes=editingTextViewAttributes;
+//    sharedEmotionBoard.emotionSwithButtonContainer=swithButtonContainer;
+//    sharedEmotionBoard.emotionSwithButton=swithButton;
+//    sharedEmotionBoard.emotionEditingVCView=emotionEditingVCView;
+//    sharedEmotionBoard.shouldAutoHideToolBar=shouldAutoHideToolBar;
+//    //add action
+//    [sharedEmotionBoard.emotionSwithButton addTarget:sharedEmotionBoard action:@selector(changeInputViewType:) forControlEvents:UIControlEventTouchUpInside];
+//    sharedEmotionBoard.emotionSwithButton.tag=FLXKEmotionKeyboard;
+//    
+//    //    //add emotionGroupOptions
+//    //    [FLXKEmotionBoard setEmotionGroupOptions:emotionGroupShowingOption];
+//    
+//    NSNumber*  lastOptions=( NSNumber* ) FLXKUserDefaultsObjForKey(SelectedEmotionGroupOptionsUserDefaultsKey);
+//    if (lastOptions.integerValue!=emotionGroupShowingOption) {
+//        [sharedEmotionBoard.emotionContainerScrollView loadPagesAccordingEmotionGroupOptions];
+//        [sharedEmotionBoard.emotionGroupIndexCollectionView loadGroupsAccordingEmotionGroupOptions];
+//        //        [self reloadPages];
+//    }
+//    FLXKUserDefaultsSetObjForKey([NSNumber numberWithInteger:emotionGroupShowingOption], SelectedEmotionGroupOptionsUserDefaultsKey);
+//    FLXKUserDefaultsSynchronize
+//    
+//    return sharedEmotionBoard;
+//}
 
 
 -(void)reloadPages{
@@ -221,16 +224,6 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     
 }
 
--(void)willMoveToSuperview:(UIView *)newSuperview{
-    //    BOOL isHeightChanged=self.lastEmotionViewHeight==self.frame.size.height?NO:YES;
-    //    if (newSuperview && isHeightChanged) {
-    //        self.lastEmotionViewHeight=self.frame.size.height;
-    //        [self reloadPages];
-    //        self.pageControl.frame = CGRectMake(0, 0, self.pageControlPlaceholder.frame.size.width, self.pageControlPlaceholder.frame.size.height);
-    //          NSLog(@"pageControlPlaceholder.frame:%@",NSStringFromCGRect(self.pageControl.frame) );
-    //    }
-}
-
 -(void)keyboardWillShowNotification:(NSNotification*)notification{
     if (self.editingTextView.inputView) {
         [self.emotionGroupIndexCollectionView selecteItemAtContentOffset:0];
@@ -253,10 +246,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     InputViewType inputViewType=sender.tag;
     switch (inputViewType) {
         case FLXKSystemKeyboard:
-            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"emotion_b_keyboard" ] forState:UIControlStateNormal];
+            [self.emotionSwithButton setImage:[UIImage imageNamed:@"dd_emotion" ] forState:UIControlStateNormal];
             break;
         case FLXKEmotionKeyboard:
-            [self.emotionSwithButton setImage:[UIImage ImageWithName:@"emotion_b_keyboard_system" ] forState:UIControlStateNormal];
+            [self.emotionSwithButton setImage:[UIImage imageNamed:@"dd_input_normal" ] forState:UIControlStateNormal];
             break;
         case FLXKToolKitBoard:
             sender.tag=FLXKSystemKeyboard;
@@ -368,11 +361,11 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 1, self.editingTextView.selectedRange.length);
     
     //Reset text style
-//    [self resetTextStyle];
+    [self resetTextStyle];
     
     //notify to change the height and so on.
     if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
-            [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
     }
 }
 
@@ -384,10 +377,10 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.editingTextView.selectedRange = NSMakeRange(self.editingTextView.selectedRange.location + 2, self.editingTextView.selectedRange.length);
     
     //Reset text style
-//    [self resetTextStyle];
+    [self resetTextStyle];
     
     //notify to change the height and so on.
-//    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+    //    [self.editingTextView.delegate textViewDidChange:self.editingTextView];
     if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
         [self.editingTextView.delegate textViewDidChange:self.editingTextView];
     }
@@ -398,10 +391,12 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     //After changing text selection, should reset style.
     NSRange wholeRange = NSMakeRange(0, self.editingTextView.textStorage.length);
     
-    [self.editingTextView.textStorage removeAttribute:NSFontAttributeName range:wholeRange];
+    [self.editingTextViewAttributes.allKeys enumerateObjectsUsingBlock:^(NSString*  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self.editingTextView.textStorage removeAttribute:obj range:wholeRange];
+    }];
     
-    [self.editingTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15.0f] range:wholeRange];
-    
+    //    [self.editingTextView.textStorage addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:FLXKMessageToolBar_Font] range:wholeRange];
+    [self.editingTextView.textStorage addAttributes:self.editingTextViewAttributes range:wholeRange];
 }
 
 //-(void)deleteElementInTextView{
@@ -448,7 +443,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         }
         
         //notify to change the height and so on.
-//        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
+        //        [self.editingTextView.delegate textViewDidChange:self.editingTextView];
         if ([((UIResponder*)self.editingTextView.delegate)  canPerformAction:@selector(textViewDidChange:) withSender:self.editingTextView]) {
             [self.editingTextView.delegate textViewDidChange:self.editingTextView];
         }
@@ -486,6 +481,14 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
     self.pageControl.didSelectIndexBlock = ^(NSInteger index) {
         //        NSLog(@"Did Selected index : %ld", (long)index);
     };
+}
+
+#pragma mark -  UI Action
+- (IBAction)sendMessage:(id)sender {
+    if (self.shouldAutoHideToolBar && self.delegate && [self.delegate  respondsToSelector:@selector(sendMessageFiredByEmotionBoard)]) {
+        [self.editingTextView resignFirstResponder];
+        [self.delegate sendMessageFiredByEmotionBoard];
+    }
 }
 
 #pragma mark -  UIScrollViewDelegate
@@ -588,7 +591,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         //        //高度约束
         //        containerHeight=containerHeight==0?self.emotionSwithButtonContainer.frame.size.height:containerHeight;
         //
-        //        if (self.shouldHideToolBar) {
+        //        if (self.shouldAutoHideToolBar) {
         //            heightToChange= heightToChange>200?heightToChange:-100;
         //        }
         //
@@ -628,7 +631,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         NSLayoutConstraint *leftCos = [NSLayoutConstraint constraintWithItem:self.emotionSwithButtonContainer attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.emotionEditingVCView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0];
         [self.emotionEditingVCView addConstraint:leftCos];
         
-        if (self.shouldHideToolBar) {
+        if (self.shouldAutoHideToolBar) {
             heightToChange= heightToChange>200?heightToChange:-200;
         }
         else{
@@ -671,7 +674,7 @@ typedef NS_ENUM(NSUInteger, InputViewType) {
         }
     }
     
-
+    
 }
 
 @end

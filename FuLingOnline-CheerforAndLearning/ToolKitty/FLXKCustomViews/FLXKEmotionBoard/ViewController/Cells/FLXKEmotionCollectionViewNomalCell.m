@@ -24,7 +24,9 @@
     //add GestureRecognizer
     self.emotionImageView.hidden=YES;
     self.emotionImageView.userInteractionEnabled=YES;//must be set to yes for user Interaction Enable
-    
+    self.emotionButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.emotionButton.titleLabel.baselineAdjustment= UIBaselineAdjustmentAlignCenters;
+    self.emotionButton.titleLabel.minimumScaleFactor=0.5;
     
     UITapGestureRecognizer* tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(emotionTaped:)];
     
@@ -44,7 +46,7 @@
 //5:big_gif_image
 
 -(void)setItem:(EmotionItem *)item{
-//    [self.emotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    //    [self.emotionButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     if (!item) {
         //        self.emotionButton.hidden=YES;
         //        self.emotionImageView.hidden=NO;
@@ -55,52 +57,17 @@
     }
     _item=item;
     if ( item.emotionItemImageType==0) {
-        //            [self sendSubviewToBack:self.emotionButton];
-        //            self.emotionButton.hidden=YES;
-        //            self.emotionImageView.hidden=NO;
         [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
-        //            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
     }
     else  if (item.emotionItemImageType==1) {
-        //            self.emotionButton.hidden=NO;
-        //            self.emotionImageView.hidden=YES;
         [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
     }
     else  if (item.emotionItemImageType==5) {
-//        [self.emotionButton setImage:[UIImage sd_animatedGIFWithData:[ sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
+        //SDWebImage
+        [self.emotionButton setImage:[UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:item.emotionItemSmallImageUrl ofType:@"gif"] ]] forState:UIControlStateNormal];
 
-            [self.emotionButton setImage:[UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:item.emotionItemSmallImageUrl ofType:@"png"] ]] forState:UIControlStateNormal];
     }
 }
-
-//-(void)setEmotionItemP:(EmotionItem*) item withReuseImagesDictionary:(NSMutableDictionary<UIImage*,NSString*>*)reuseImagesDictionary{
-//
-//        if (!item) {
-//            //        self.emotionButton.hidden=YES;
-//            //        self.emotionImageView.hidden=NO;
-//            //        self.emotionImageView.userInteractionEnabled=YES;
-//            //        self.emotionImageView.image=[UIImage ImageWithName:@"del_emoji_normal"];
-//            [self.emotionButton setImage:[UIImage ImageWithName:@"del_emoji_normal"] forState:UIControlStateNormal];
-//            return;
-//        }
-//        _item=item;
-//        if ( item.emotionItemImageType==0) {
-//            //            [self sendSubviewToBack:self.emotionButton];
-//            //            self.emotionButton.hidden=YES;
-//            //            self.emotionImageView.hidden=NO;
-//            [self.emotionButton setImage:[UIImage ImageWithName:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
-//            //            self.emotionImageView.image=[UIImage imageNamed:item.emotionItemSmallImageUrl];
-//        }
-//        else  if (item.emotionItemImageType==1) {
-//            //            self.emotionButton.hidden=NO;
-//            //            self.emotionImageView.hidden=YES;
-//            [self.emotionButton setTitle:item.emotionItemName forState:UIControlStateNormal];
-//        }
-//        else  if (item.emotionItemImageType==5) {
-//            [self.emotionButton setImage:[UIImage sd_animatedGIFNamed:item.emotionItemSmallImageUrl] forState:UIControlStateNormal];
-//        }
-//
-//}
 
 -(void)emotionTaped:(UITapGestureRecognizer*)gestureRecognizer{
     if (self.emotionCellTapGestureBlock) {
