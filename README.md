@@ -7,7 +7,7 @@
 [3.朋友圈基本功能展示](#readme3)  
 ![3.朋友圈基本功能展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/%E6%9C%8B%E5%8F%8B%E5%9C%88%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA.gif)  
 [4.自定义表情键盘展示](#readme4)  
-![4.朋友圈滑动效果展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/EmotionBoardShowing.gif)  
+![4.朋友圈滑动效果展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/EmotionBoardShowing.gif)  
 [5.朋友圈信息发布页面](#readme5)  
 ![5.朋友圈滑动效果展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/%E6%9C%8B%E5%8F%8B%E5%9C%88%E4%BF%A1%E6%81%AF%E5%8F%91%E5%B8%83%E9%A1%B5%E9%9D%A2.jpg)  
 [6.用户添加页面](#readme6)  
