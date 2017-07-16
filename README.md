@@ -10,5 +10,5 @@
 ![4.朋友圈滑动效果展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/EmotionBoardShowing.gif)  
 [5.朋友圈信息发布页面](#readme5)  
 ![5.朋友圈滑动效果展示](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/%E6%9C%8B%E5%8F%8B%E5%9C%88%E4%BF%A1%E6%81%AF%E5%8F%91%E5%B8%83%E9%A1%B5%E9%9D%A2.jpg)  
-[6.用户添加页面](#readme6)  
+[6.用户添加页面]本来打算用XLForm替换的。只是精力实在有限。暂时将就用着(#readme6)  
 ![6.用户添加页面](https://github.com/FuLingTaiHexiaoke/FuLingOnline-CheerforAndLearning/blob/master/README_RESOURCE/%E7%94%A8%E6%88%B7%E6%B7%BB%E5%8A%A0%E9%A1%B5%E9%9D%A2.jpg) 
