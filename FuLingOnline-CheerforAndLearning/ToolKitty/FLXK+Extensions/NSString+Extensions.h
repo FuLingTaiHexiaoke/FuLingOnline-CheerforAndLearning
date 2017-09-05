@@ -19,4 +19,7 @@
 
 //文字固定宽度下，获取动态高度
 -(CGFloat)getBoundingHeightWithWidth:(CGFloat)width font:(UIFont * )font;
+
+//将数字1，2，3转化成A,B,C
+- (NSString*)convertNumToCharacter:(NSInteger)number;
 @end

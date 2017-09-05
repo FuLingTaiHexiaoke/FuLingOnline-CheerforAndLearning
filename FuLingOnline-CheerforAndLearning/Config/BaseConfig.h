@@ -120,11 +120,12 @@ dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
 return __singleton__; \
 }
 
+
 #define LOCAL_MSG_BEGIN_ID 1000000
 
 
 //快速定义一个weakSelf 用于block
-#define MTT_WEAKSELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define WEAKSELF(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 #define MAX_CHAT_TEXT_WIDTH (SCREEN_WIDTH - 70.0*2)
 
@@ -286,17 +287,6 @@ description:__VA_ARGS__];                             \
 //----------------------内存----------------------------
 
 
-//----------------------图片----------------------------
-
-//读取本地图片
-#define LOADIMAGE(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
-
-//定义UIImage对象
-#define IMAGE(A) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:A ofType:nil]]
-
-//定义UIImage对象
-#define ImageNamed(_pointer) [UIImage imageNamed:[UIUtil imageName:_pointer]]
-
 //建议使用前两种宏定义,性能高于后者
 //----------------------图片----------------------------
 
@@ -309,9 +299,6 @@ description:__VA_ARGS__];                             \
 //带有RGBA的颜色设置
 #define COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
 
-// 获取RGB颜色
-#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
-#define RGB(r,g,b) RGBA(r,g,b,1.0f)
 
 //背景色
 #define BACKGROUND_COLOR [UIColor colorWithRed:242.0/255.0 green:236.0/255.0 blue:231.0/255.0 alpha:1.0]
@@ -394,8 +381,51 @@ return nil; \
 return self; \
 }
 
+//从Xib实例化一个类
+#define InstantiateVCWithName(ViewControllerName) (UIViewController *)[[NSClassFromString(ViewControllerName) alloc]init];
+//从UIStoryboard实例化一个类
+#define InstantiateVCWithID(identifier) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:identifier]
 
 
 
+#define CLEANER_CharacterSet \
+((^{ \
+static dispatch_once_t once; \
+static NSMutableCharacterSet * __singleton__; \
+dispatch_once( &once, ^{ \
+__singleton__ = [NSMutableCharacterSet newlineCharacterSet]; \
+[__singleton__ addCharactersInString:@" "]; \
+[__singleton__ addCharactersInString:@" "]; \
+} ); \
+return __singleton__; \
+})())
+
+#define CleanString(str) [[str componentsSeparatedByCharactersInSet:CLEANER_CharacterSet] componentsJoinedByString:@""]
+
+
+//----------------------图片----------------------------
+
+//读取本地图片
+#define LOADIMAGE(file,ext) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:file ofType:ext]]
+
+//定义UIImage对象
+
+#define IMAGE(A) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:A ofType:nil]]
+#define ImageNamed(name)  [FLXKPathHelper imageNamed:name]//有沙盒默认路径
+#define ImageNamedInDirectory(name,directory)  [FLXKPathHelper imageNamed:name inDirectory:directory]//自定义沙盒路径
+
+//----------------------资源路径--------------------------
+
+#define MediaPathWithName(name)  [FLXKPathHelper mediaPathWithName:name]//有沙盒默认路径，pdf,mp3,mp4,txt等资源总文件夹
+#define MediaPathWithNameInDirectory(name,directory)  [FLXKPathHelper mediaPathWithName:name inDirectory:directory]//自定义沙盒路径，pdf,mp3,mp4,txt等资源总文件夹
+
+#define PDFPathWithName(name)  [FLXKPathHelper PDFPathWithName:name]//有沙盒默认路径
+#define PDFPathWithNameInDirectory(name,directory)  [FLXKPathHelper PDFPathWithName:name inDirectory:directory]//自定义沙盒路径
+
+#define AudioPathWithName(name)  [FLXKPathHelper audioPathWithName:name]//有沙盒默认路径
+#define AudioPathWithNameInDirectory(name,directory)  [FLXKPathHelper audioPathWithName:name inDirectory:directory]//自定义沙盒路径
+
+#define MoviePathWithName(name)  [FLXKPathHelper moviePathWithName:name]//有沙盒默认路径
+#define MoviePathWithNameInDirectory(name,directory)  [FLXKPathHelper moviePathWithName:name inDirectory:directory]//自定义沙盒路径
 
 #endif /* baseConfig_h */

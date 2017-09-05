@@ -33,3 +33,57 @@ typedef void(^animationDidStopBlock)(void);
 //水流动动画-圆圈形式(长江)
 -(void)createFlowingWater_CircleAminationLayerWithFrame:(CGRect)frame inView:(UIView*)viewContainer duration:(CGFloat)duration  isYangtze:(BOOL)isYangtze  animationDidStopBlock:(animationDidStopBlock)animationDidStopBlock;
 @end
+
+//
+//transform.scale = 比例轉換
+//
+//transform.scale.x = 闊的比例轉換
+//
+//transform.scale.y = 高的比例轉換
+//
+//transform.rotation.z = 平面圖的旋轉
+//
+//opacity = 透明度
+//
+//margin = 布局
+//
+//zPosition = 翻转
+//
+//backgroundColor = 背景颜色
+//
+//cornerRadius = 圆角
+//
+//borderWidth = 边框宽
+//
+//bounds = 大小
+//
+//contents = 内容
+//
+//contentsRect = 内容大小
+//
+//cornerRadius = 圆角
+//
+//frame = 大小位置
+//
+//hidden = 显示隐藏
+//
+//mask
+//
+//masksToBounds
+//
+//opacity
+//
+//position
+//
+//shadowColor
+//
+//shadowOffset
+//
+//shadowOpacity
+//
+//shadowRadius
+//
+//作者：iOS_windKing
+//链接：http://www.jianshu.com/p/d42012d3588c
+//來源：简书
+//著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

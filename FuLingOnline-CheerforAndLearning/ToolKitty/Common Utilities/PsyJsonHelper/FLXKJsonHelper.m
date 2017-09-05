@@ -110,7 +110,7 @@
 +(id _Nonnull)convertJsonStringToObjsFromFile:(nullable NSString*)filePath withType:(NSString* _Nonnull)type{
     
     if (filePath) {
-        filePath=[FLXKPathHelper checkOrCreatePath:filePath];
+        filePath=[FLXKPathHelper checkOrCreateFile:filePath];
         if (filePath) {
             //start to read data to file
             NSData* jsonData=[NSData dataWithContentsOfFile:filePath];
@@ -126,7 +126,7 @@
     }
     else{
         NSString* designedPath = [DefaultEntityDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@",type,DefaultFileExtension]];
-        designedPath=[FLXKPathHelper checkOrCreatePath:designedPath];
+        designedPath=[FLXKPathHelper checkOrCreateFile:designedPath];
         if (designedPath) {
             NSLog(@"%@",designedPath);
             //start to read data to file
@@ -202,7 +202,7 @@
 +(NSError* _Nonnull)writeJsonString:( NSString* _Nonnull )jsonString type:(NSString*)type ToFile:(nullable NSString*)filePath isAppend:(BOOL)isAppend{
     NSError* error=nil;
     if (filePath) {
-        filePath=[FLXKPathHelper checkOrCreatePath:filePath ];
+        filePath=[FLXKPathHelper checkOrCreateFile:filePath ];
         if (!filePath) {
               return  error=[FLXKJsonHelper errorWithDescription:@"文件创建失败"];
         }
@@ -235,7 +235,7 @@
     
       else{
         NSString* designedPath = [DefaultEntityDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@",type,DefaultFileExtension]];
-        designedPath=[FLXKPathHelper checkOrCreatePath:designedPath];
+        designedPath=[FLXKPathHelper checkOrCreateFile:designedPath];
         NSLog(@"%@",designedPath);
         //start to write data to file
         if (isAppend) {

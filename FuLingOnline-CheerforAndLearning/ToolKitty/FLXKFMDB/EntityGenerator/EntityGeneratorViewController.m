@@ -37,7 +37,7 @@
 //}
 
 //-(void)showEntityGenerator{
-//    EntityGeneratorViewController* entityGeneratorViewController=[[EntityGeneratorViewController alloc]initWithNibName:@"EntityGeneratorViewController" bundle:nil];
+//    UIViewController* entityGeneratorViewController=[[NSClassFromString(@"EntityGeneratorViewController" ) alloc]init];
 //    [self presentViewController:entityGeneratorViewController animated:YES completion:nil];
 //}
 
@@ -67,10 +67,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //    self.className.text=@"TestEntity";
-        UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
-        [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        btn.backgroundColor=[UIColor yellowColor];
-        [self.view addSubview:btn];
+    UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
+    [btn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    btn.backgroundColor=[UIColor yellowColor];
+    [self.view addSubview:btn];
+    
+    UITextView* textView=[[UITextView alloc]initWithFrame:CGRectMake(200, 200, 200, 200)];
+    textView.backgroundColor=[UIColor greenColor];
+    textView.text=EntityNames;
+    [self.view addSubview:textView];
 }
 
 -(void)back{
@@ -124,20 +129,20 @@
 
 - (IBAction)select:(id)sender {
     //    [TestEntity selectAll];
-  
+    
 }
 
 - (IBAction)selectWhere:(id)sender {
-//    [TestEntity selectByCriteria:@" where age>1"];
+    //    [TestEntity selectByCriteria:@" where age>1"];
 }
 
 //- (IBAction)delete:(id)sender {
 ////    [TestEntity deleteWithWhereString:@" where  age>1" success:nil failure:nil];
-//    
+//
 //       NSArray<b_Class*> *classes= [b_Class selectAll];
 ////    [PsyJsonHelper<b_Class*> convertObjsToJsonString:classes];
 //     [PsyJsonHelper<b_Class*>  appendJsonStringFromObjs:classes withType:@"b_Class" ToFile:nil];
-//    
+//
 //    NSArray<b_Class*> *userArray=   [PsyJsonHelper<b_Class*> convertJsonStringToObjsFromFile:nil withType:@"b_Class"];
 //    for (b_Class *user in userArray) {
 //        NSLog(@"name=%@, icon=%@", user.ClassName, user.ClassID);

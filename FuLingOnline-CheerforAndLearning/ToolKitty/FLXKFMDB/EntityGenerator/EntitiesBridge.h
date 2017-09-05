@@ -9,6 +9,8 @@
 #ifndef EntitiesBridge_h
 #define EntitiesBridge_h
 
+#define EntityNames @"ThirdLevelCommonImages\nThirdLevelCommonImages\nThirdLevelPDFVC\nThirdLevelMovieVC\nThirdLevelLearningTestVC\nSecondLevelPopButtons\n"
+
 #import "EmotionItem.h"
 #import "EmotionGroup.h"
 #import "EmotionRecentItems.h"

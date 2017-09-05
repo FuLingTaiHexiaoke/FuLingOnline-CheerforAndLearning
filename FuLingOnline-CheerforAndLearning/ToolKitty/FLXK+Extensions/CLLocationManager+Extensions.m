@@ -125,7 +125,7 @@ static void *updateAuthorizationDescriptionKey = &updateAuthorizationDescription
     
     //after networks all finished
     dispatch_group_notify(group, queue, ^{
-        //creaet wait semaphores
+        //creat wait semaphores
         for (int i=0; i<semaphore_count; i++) {
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         }

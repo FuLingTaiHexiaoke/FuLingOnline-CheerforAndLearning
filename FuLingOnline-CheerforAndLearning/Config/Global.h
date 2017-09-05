@@ -18,7 +18,7 @@
 #import "UIView+Extensions.h"
 #import "FLXKAPPRouter.h"
 #import "FLXKSharedAppSingleton.h"
-
+#import "FLXKPathHelper.h"
 
 //#import "WMFLogging.h"
 //#import "WMFDirectoryPaths.h"

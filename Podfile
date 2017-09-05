@@ -1,4 +1,7 @@
- #'use_frameworks!'
+#cd /Users/hanjinbo/Documents/xiaoke/练习项目/FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning
+#pod install --verbose --no-repo-update
+
+#'use_frameworks!'
 target ‘FuLingOnline-CheerforAndLearning’ do
 # use_frameworks!
 ##     网络请求
@@ -16,13 +19,13 @@ pod 'MJRefresh'
 pod 'libextobjc/EXTScope','~>0.4.1'
 pod 'BlocksKit/Core', '~> 2.2.0'
 pod 'BlocksKit/UIKit', '~> 2.2.0'
-pod 'KVOController'
+pod 'KVOController' #facebook kvo lib
 pod 'MJExtension'
-pod 'Tweaks'
+pod 'Tweaks' #facebook 参数调试控件，很方便
 pod 'Masonry','~>1.0.2'
 pod 'UITableView+FDTemplateLayoutCell'
 #pod 'HYBMasonryAutoCellHeight', '~>2.0.1'
-pod 'Reveal-SDK',:configurations => ['Debug']
+pod 'Reveal-SDK',:configurations => ['Debug'] #动态查看运行时界面层次结构
 #pod 'JHChainableAnimations', '~> 2.0'
 pod 'JHChainableAnimations'
 ##      UI BULDER
@@ -35,22 +38,38 @@ pod 'TZImagePickerController'
 pod 'MLLabel', '~> 1.8'
 #pod 'JMAnimatedImageView'
 pod 'YYKit', '~> 1.0.9'
-   pod 'IDMPhotoBrowser', '~> 1.9.1'
+#pod 'YYImage'
+pod 'IDMPhotoBrowser', '~> 1.9.1'
 #   1.10.2 1.11.1
 #   pod 'IDMPhotoBrowser+WeChat', '~> 1.9.7'
 ##      custom views
 # pod 'HPGrowingTextView'
 
 
-##      Diagnostics
-#百度
-pod 'BaiduMobStat'
-#腾讯
-pod 'Bugly'
+## 程序监测 Diagnostics
+pod 'BaiduMobStat' #百度
+pod 'Bugly' #腾讯
+pod 'FBMemoryProfiler' #facebook 内存和循环引用监测
+pod 'CocoaLumberjack'   #log日志记录
 
 end
 
-
+#target ‘YingYuanGeography’ do
+#    inhibit_all_warnings!         #禁止所有警告
+#    #  pod 'pop', :git => 'https://github.com/facebook/pop.git'
+#    #  pod 'MLTransition', '~> 2.1.2'#滑动返回
+#    pod 'AFNetworking', '~> 3.0'  #网络请求
+#    #  pod 'Canvas', '~> 0.1.2'      #动画
+#    #  pod 'KMCGeigerCounter'        #检测app fps是否流畅 左边值越大越不流畅
+#    #  pod 'ResearchKit', '~> 1.3.1' #苹果官方的医疗SKD
+#    #  pod 'ReactiveObjC', '~> 3.0.0'#链式编程
+#    #  pod 'Bugly'                   #腾讯bug管理系统
+#    pod 'MJExtension'             #MJ的字典模型互转
+#    pod 'Masonry'                 #自动适配
+#    #  pod 'GPUImage', '~> 0.1.7'    #图形处理
+#    pod 'ChameleonFramework', '~> 2.1.0' #变色龙颜色处理
+#    #  pod 'YYCache'                 #离线缓存
+#end
 
 
 #

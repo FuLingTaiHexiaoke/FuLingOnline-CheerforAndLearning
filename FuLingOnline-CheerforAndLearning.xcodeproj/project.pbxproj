@@ -69,6 +69,8 @@
 		B9252A831E9E0EA500E2DC65 /* FLXKUserManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9252A821E9E0EA500E2DC65 /* FLXKUserManager.storyboard */; };
 		B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A861E9E2BCE00E2DC65 /* UserModel.m */; };
 		B9252A8A1E9E2E3200E2DC65 /* EditPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */; };
+		B927626C1F4ACCAC007E65E3 /* CacheCleanerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B92762691F4ACCAC007E65E3 /* CacheCleanerPlugin.m */; };
+		B927626D1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = B927626B1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.m */; };
 		B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B92898B51E8EABE2005DF4A8 /* codeback.rtf */; };
 		B92A2FB01E8DF66500E8AA30 /* MZShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */; };
 		B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B92A2FAD1E8DF66500E8AA30 /* R_ShapedButton.m */; };
@@ -108,6 +110,8 @@
 		B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */; };
 		B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94BD68F1DAE480C0094CA9D /* images.xcassets */; };
 		B94C60281DF93D25005739A6 /* https_fulingonline.cer in Resources */ = {isa = PBXBuildFile; fileRef = B94C60271DF93D25005739A6 /* https_fulingonline.cer */; };
+		B94D40F31F21D30C00D28292 /* FLXKAddProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B94D40F01F21D30C00D28292 /* FLXKAddProperty.m */; };
+		B94D40F41F21D30C00D28292 /* FLXKSwizzleMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B94D40F21F21D30C00D28292 /* FLXKSwizzleMethod.m */; };
 		B94E83DD1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */; };
 		B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */; };
 		B955A71E1E7A3080008E3801 /* ToolKittyCodeBack.m in Sources */ = {isa = PBXBuildFile; fileRef = B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */; };
@@ -496,8 +500,16 @@
 		B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C491EA070CC0033CA71 /* NSArray+Extension.m */; };
 		B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */; };
 		B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */; };
+		B98365521F18CD8C003E28D3 /* 每天学习点记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = B98365511F18CD8C003E28D3 /* 每天学习点记录.txt */; };
+		B988AB101F59464000BBEB61 /* imagesetGenerator(1,2).sh in Resources */ = {isa = PBXBuildFile; fileRef = B988AB0F1F59464000BBEB61 /* imagesetGenerator(1,2).sh */; };
+		B988AB121F59464900BBEB61 /* imagesetGenerator.sh in Resources */ = {isa = PBXBuildFile; fileRef = B988AB111F59464900BBEB61 /* imagesetGenerator.sh */; };
 		B98A969C1EEEA2E0003AB955 /* UITextView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B98A969B1EEEA2E0003AB955 /* UITextView+Extensions.m */; };
 		B98C4E031E7FB2C000D671CB /* 经典代码知识点备份.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */; };
+		B995A8521F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B995A8511F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf */; };
+		B995A8601F5E8728006327DF /* defaultImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B995A85C1F5E8728006327DF /* defaultImage.png */; };
+		B995A8611F5E8728006327DF /* defaultMovie.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B995A85D1F5E8728006327DF /* defaultMovie.mp4 */; };
+		B995A8621F5E8728006327DF /* defaultMP3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B995A85E1F5E8728006327DF /* defaultMP3.mp3 */; };
+		B995A8631F5E8728006327DF /* defaultPDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B995A85F1F5E8728006327DF /* defaultPDF.pdf */; };
 		B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */; };
 		B99CAA231E8F83BB0032D8CB /* FLXKModelsBrigde.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA221E8F83BB0032D8CB /* FLXKModelsBrigde.m */; };
 		B99CAA261E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CAA251E8F8ED40032D8CB /* FLXKLikeTheSharingRecordModel.m */; };
@@ -509,6 +521,13 @@
 		B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */; };
 		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
 		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
+		B9AB1C4A1F467DDC0078BD9B /* TimeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C471F467DDC0078BD9B /* TimeCenter.m */; };
+		B9AB1C4B1F467DDC0078BD9B /* TimeCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C491F467DDC0078BD9B /* TimeCountDownView.m */; };
+		B9AB1C511F467DE30078BD9B /* JKPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C4E1F467DE20078BD9B /* JKPopMenuItem.m */; };
+		B9AB1C521F467DE30078BD9B /* LNERadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C501F467DE20078BD9B /* LNERadialMenu.m */; };
+		B9AB1C581F467DF70078BD9B /* LYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C551F467DF70078BD9B /* LYButton.m */; };
+		B9AB1C591F467DF70078BD9B /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C571F467DF70078BD9B /* LYTextField.m */; };
+		B9AB1C5D1F467E000078BD9B /* CircleProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C5C1F467E000078BD9B /* CircleProgressButton.m */; };
 		B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */; };
 		B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */; };
 		B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */; };
@@ -597,6 +616,13 @@
 		B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E2E1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m */; };
 		B9E17E311EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */; };
 		B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */; };
+		B9F5DBEC1F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */; };
+		B9F5DBED1F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */; };
+		B9F5DBEE1F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */; };
+		B9F5DBEF1F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */; };
+		B9F5DBF01F5D4EBE003A02D8 /* imagesetGenerator1_2.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBEA1F5D4EBE003A02D8 /* imagesetGenerator1_2.sh */; };
+		B9F5DBF11F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBEB1F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png */; };
+		B9F5DBF31F5D4F12003A02D8 /* imagesetGenerator.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */; };
 		B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */; };
 		B9FBB0991E8A59DC00CCAEA8 /* TemplateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */; };
 		B9FBB09A1E8A59DC00CCAEA8 /* TemplateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */; };
@@ -790,6 +816,10 @@
 		B9252A861E9E2BCE00E2DC65 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		B9252A881E9E2E3200E2DC65 /* EditPersonInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPersonInfoViewController.m; sourceTree = "<group>"; };
 		B9252A891E9E2E3200E2DC65 /* EditPersonInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPersonInfoViewController.h; sourceTree = "<group>"; };
+		B92762681F4ACCAC007E65E3 /* CacheCleanerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheCleanerPlugin.h; sourceTree = "<group>"; };
+		B92762691F4ACCAC007E65E3 /* CacheCleanerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheCleanerPlugin.m; sourceTree = "<group>"; };
+		B927626A1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetainCycleLoggerPlugin.h; sourceTree = "<group>"; };
+		B927626B1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetainCycleLoggerPlugin.m; sourceTree = "<group>"; };
 		B92898B51E8EABE2005DF4A8 /* codeback.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = codeback.rtf; sourceTree = "<group>"; };
 		B92A2FAA1E8DF66500E8AA30 /* MZShapedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZShapedButton.h; sourceTree = "<group>"; };
 		B92A2FAB1E8DF66500E8AA30 /* MZShapedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZShapedButton.m; sourceTree = "<group>"; };
@@ -860,6 +890,10 @@
 		B94BD6891DAE40560094CA9D /* FLXKLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKLaunchViewController.m; sourceTree = "<group>"; };
 		B94BD68F1DAE480C0094CA9D /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		B94C60271DF93D25005739A6 /* https_fulingonline.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = https_fulingonline.cer; sourceTree = "<group>"; };
+		B94D40EF1F21D30C00D28292 /* FLXKAddProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAddProperty.h; sourceTree = "<group>"; };
+		B94D40F01F21D30C00D28292 /* FLXKAddProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAddProperty.m; sourceTree = "<group>"; };
+		B94D40F11F21D30C00D28292 /* FLXKSwizzleMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSwizzleMethod.h; sourceTree = "<group>"; };
+		B94D40F21F21D30C00D28292 /* FLXKSwizzleMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSwizzleMethod.m; sourceTree = "<group>"; };
 		B94E83DC1DCC8B2900D2823B /* FLXKLaunchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FLXKLaunchViewController.storyboard; sourceTree = "<group>"; };
 		B94E83DE1DCC92DD00D2823B /* BaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
 		B94E83DF1DCC942A00D2823B /* ProjectRecordNote.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ProjectRecordNote.rtf; sourceTree = "<group>"; };
@@ -1296,9 +1330,18 @@
 		B97F4C4C1EA0714D0033CA71 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		B98237571EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingPictureLayoutView.h; sourceTree = "<group>"; };
 		B98237581EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingPictureLayoutView.m; sourceTree = "<group>"; };
+		B98365511F18CD8C003E28D3 /* 每天学习点记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "每天学习点记录.txt"; sourceTree = "<group>"; };
+		B988AB0F1F59464000BBEB61 /* imagesetGenerator(1,2).sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "imagesetGenerator(1,2).sh"; sourceTree = "<group>"; };
+		B988AB111F59464900BBEB61 /* imagesetGenerator.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator.sh; sourceTree = "<group>"; };
 		B98A969A1EEEA2E0003AB955 /* UITextView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Extensions.h"; sourceTree = "<group>"; };
 		B98A969B1EEEA2E0003AB955 /* UITextView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Extensions.m"; sourceTree = "<group>"; };
 		B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "经典代码知识点备份.rtf"; sourceTree = "<group>"; };
+		B995A8511F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "编程中遇到的问题及解决方法记录.rtf"; sourceTree = "<group>"; };
+		B995A8531F5E4A0A006327DF /* 编程中遇到的问题及解决方法记录.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "编程中遇到的问题及解决方法记录.h"; sourceTree = "<group>"; };
+		B995A85C1F5E8728006327DF /* defaultImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultImage.png; sourceTree = "<group>"; };
+		B995A85D1F5E8728006327DF /* defaultMovie.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = defaultMovie.mp4; sourceTree = "<group>"; };
+		B995A85E1F5E8728006327DF /* defaultMP3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = defaultMP3.mp3; sourceTree = "<group>"; };
+		B995A85F1F5E8728006327DF /* defaultPDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = defaultPDF.pdf; sourceTree = "<group>"; };
 		B99B4BB51EA74FF700C58A8C /* FLXKAnimationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKAnimationHelper.h; sourceTree = "<group>"; };
 		B99B4BB61EA74FF700C58A8C /* FLXKAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKAnimationHelper.m; sourceTree = "<group>"; };
 		B99CAA211E8F83BB0032D8CB /* FLXKModelsBrigde.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKModelsBrigde.h; sourceTree = "<group>"; };
@@ -1319,6 +1362,20 @@
 		B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestFooterView.h; sourceTree = "<group>"; };
 		B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestFooterView.m; sourceTree = "<group>"; };
 		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
+		B9AB1C461F467DDC0078BD9B /* TimeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCenter.h; sourceTree = "<group>"; };
+		B9AB1C471F467DDC0078BD9B /* TimeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCenter.m; sourceTree = "<group>"; };
+		B9AB1C481F467DDC0078BD9B /* TimeCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCountDownView.h; sourceTree = "<group>"; };
+		B9AB1C491F467DDC0078BD9B /* TimeCountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCountDownView.m; sourceTree = "<group>"; };
+		B9AB1C4D1F467DE20078BD9B /* JKPopMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPopMenuItem.h; sourceTree = "<group>"; };
+		B9AB1C4E1F467DE20078BD9B /* JKPopMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPopMenuItem.m; sourceTree = "<group>"; };
+		B9AB1C4F1F467DE20078BD9B /* LNERadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LNERadialMenu.h; sourceTree = "<group>"; };
+		B9AB1C501F467DE20078BD9B /* LNERadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LNERadialMenu.m; sourceTree = "<group>"; };
+		B9AB1C541F467DF70078BD9B /* LYButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYButton.h; sourceTree = "<group>"; };
+		B9AB1C551F467DF70078BD9B /* LYButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYButton.m; sourceTree = "<group>"; };
+		B9AB1C561F467DF70078BD9B /* LYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYTextField.h; sourceTree = "<group>"; };
+		B9AB1C571F467DF70078BD9B /* LYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTextField.m; sourceTree = "<group>"; };
+		B9AB1C5B1F467E000078BD9B /* CircleProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressButton.h; sourceTree = "<group>"; };
+		B9AB1C5C1F467E000078BD9B /* CircleProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressButton.m; sourceTree = "<group>"; };
 		B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingOperationContainerView.h; sourceTree = "<group>"; };
 		B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingOperationContainerView.m; sourceTree = "<group>"; };
 		B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell1.m; sourceTree = "<group>"; };
@@ -1472,6 +1529,13 @@
 		B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKHeaderImageSharingLikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9E17E321EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHeaderImageSharingLikeCollectionView.h; sourceTree = "<group>"; };
 		B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHeaderImageSharingLikeCollectionView.m; sourceTree = "<group>"; };
+		B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_jpg_NoImageSet.sh; sourceTree = "<group>"; };
+		B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_JPG_NoImageSet1.sh; sourceTree = "<group>"; };
+		B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_png_NoImageSet.sh; sourceTree = "<group>"; };
+		B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_PNG_NoImageSet1.sh; sourceTree = "<group>"; };
+		B9F5DBEA1F5D4EBE003A02D8 /* imagesetGenerator1_2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2.sh; sourceTree = "<group>"; };
+		B9F5DBEB1F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2017-09-04 下午5.00.19.png"; sourceTree = "<group>"; };
+		B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator.sh; sourceTree = "<group>"; };
 		B9F9A2EC1DB7359A002B1626 /* CodeBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeBack.h; sourceTree = "<group>"; };
 		B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLXSuggestedSharingTableVC.m; path = HearderFooterViews/FLXSuggestedSharingTableVC.m; sourceTree = "<group>"; };
 		B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLXSuggestedSharingTableVC.h; path = HearderFooterViews/FLXSuggestedSharingTableVC.h; sourceTree = "<group>"; };
@@ -1587,6 +1651,7 @@
 		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
 			isa = PBXGroup;
 			children = (
+				B988AB0E1F59462C00BBEB61 /* Shell */,
 				B9FA22451EC5B20E0028F720 /* FrameworkLibrary */,
 				B955A71C1E7A3080008E3801 /* ToolKittyCodeBack.h */,
 				B955A71D1E7A3080008E3801 /* ToolKittyCodeBack.m */,
@@ -1597,6 +1662,8 @@
 				B97A545D1E07EE6B0086D0F5 /* FLXKCustomViews */,
 				B941F75F1DE58AFC00598437 /* FLXKStyle */,
 				B92B55AF1DD96651009A373A /* FLXKAnimationHelper */,
+				B94D40EE1F21D30C00D28292 /* objc_runtime */,
+				B92762671F4AC9FF007E65E3 /* FLXKLogger */,
 			);
 			path = ToolKitty;
 			sourceTree = "<group>";
@@ -1611,8 +1678,13 @@
 		B900258F1DAE1E9A00B34438 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				B9F5DBE41F5D4EBE003A02D8 /* imagesetGenerator_shell */,
 				B96D30311E716A62003BDFD0 /* 备份 */,
 				B923B4DA1DDB148900410CFC /* back */,
+				B95342E51F2ED8F7002FA500 /* 展示内容文档 */,
+				B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */,
+				B995A8511F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf */,
+				B995A8531F5E4A0A006327DF /* 编程中遇到的问题及解决方法记录.h */,
 				B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */,
 				B923B4D51DDABC9D00410CFC /* Global.h */,
 				B9DF707B1DAF78F5004C23E6 /* AppConfig.h */,
@@ -1622,7 +1694,7 @@
 				B97B38DC1DD029D400D8F004 /* 临时草稿.rtf */,
 				B97B38DD1DD029D400D8F004 /* 整体逻辑思路.rtf */,
 				B97B38DE1DD029D400D8F004 /* 重点难点.rtf */,
-				B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */,
+				B98365511F18CD8C003E28D3 /* 每天学习点记录.txt */,
 				B98C4E021E7FB2C000D671CB /* 经典代码知识点备份.rtf */,
 			);
 			path = Config;
@@ -1952,6 +2024,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B92762671F4AC9FF007E65E3 /* FLXKLogger */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FLXKLogger;
+			sourceTree = "<group>";
+		};
 		B92898B41E8EA67D005DF4A8 /* SharingLikeCollectionViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -2033,6 +2112,10 @@
 		B930985D1E568C0600306F39 /* FLXK+Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B92762681F4ACCAC007E65E3 /* CacheCleanerPlugin.h */,
+				B92762691F4ACCAC007E65E3 /* CacheCleanerPlugin.m */,
+				B927626A1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.h */,
+				B927626B1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.m */,
 				B93098731E568D2200306F39 /* CLLocationManager+blocks.h */,
 				B93098741E568D2200306F39 /* CLLocationManager+blocks.m */,
 				B93098791E568D9A00306F39 /* CLLocationManager+Extensions.h */,
@@ -2129,6 +2212,24 @@
 				B941F7721DE59B2600598437 /* HomeNewsViewController.m */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B94D40EE1F21D30C00D28292 /* objc_runtime */ = {
+			isa = PBXGroup;
+			children = (
+				B94D40EF1F21D30C00D28292 /* FLXKAddProperty.h */,
+				B94D40F01F21D30C00D28292 /* FLXKAddProperty.m */,
+				B94D40F11F21D30C00D28292 /* FLXKSwizzleMethod.h */,
+				B94D40F21F21D30C00D28292 /* FLXKSwizzleMethod.m */,
+			);
+			path = objc_runtime;
+			sourceTree = "<group>";
+		};
+		B95342E51F2ED8F7002FA500 /* 展示内容文档 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "展示内容文档";
 			sourceTree = "<group>";
 		};
 		B95A32401E31AF7C00E71D9D /* Config */ = {
@@ -2327,6 +2428,10 @@
 		B9730F9E1E84AF7B00967ADD /* FLXKPathHelper */ = {
 			isa = PBXGroup;
 			children = (
+				B995A85C1F5E8728006327DF /* defaultImage.png */,
+				B995A85D1F5E8728006327DF /* defaultMovie.mp4 */,
+				B995A85E1F5E8728006327DF /* defaultMP3.mp3 */,
+				B995A85F1F5E8728006327DF /* defaultPDF.pdf */,
 				B9730F9F1E84AF9000967ADD /* FLXKPathHelper.h */,
 				B9730FA01E84AF9000967ADD /* FLXKPathHelper.m */,
 			);
@@ -2730,6 +2835,8 @@
 		B97A545D1E07EE6B0086D0F5 /* FLXKCustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				B9AB1C4C1F467DE20078BD9B /* RadialMenu */,
+				B9AB1C451F467DDC0078BD9B /* TimeCountDownView */,
 				B9C6AAEC1E65480F0003C50A /* CustomView1 */,
 				B9C6AAD21E651B040003C50A /* FLXKNavigationTitleView */,
 				B966A9B91E0D0F3800222095 /* FLXKEmotionBoard */,
@@ -2801,6 +2908,15 @@
 			path = FLXKAPPHelper;
 			sourceTree = "<group>";
 		};
+		B988AB0E1F59462C00BBEB61 /* Shell */ = {
+			isa = PBXGroup;
+			children = (
+				B988AB111F59464900BBEB61 /* imagesetGenerator.sh */,
+				B988AB0F1F59464000BBEB61 /* imagesetGenerator(1,2).sh */,
+			);
+			path = Shell;
+			sourceTree = "<group>";
+		};
 		B99CAA141E8F74CE0032D8CB /* FuLingOnlineStyle */ = {
 			isa = PBXGroup;
 			children = (
@@ -2842,6 +2958,48 @@
 				B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */,
 			);
 			path = HearderFooterViews;
+			sourceTree = "<group>";
+		};
+		B9AB1C451F467DDC0078BD9B /* TimeCountDownView */ = {
+			isa = PBXGroup;
+			children = (
+				B9AB1C461F467DDC0078BD9B /* TimeCenter.h */,
+				B9AB1C471F467DDC0078BD9B /* TimeCenter.m */,
+				B9AB1C481F467DDC0078BD9B /* TimeCountDownView.h */,
+				B9AB1C491F467DDC0078BD9B /* TimeCountDownView.m */,
+			);
+			path = TimeCountDownView;
+			sourceTree = "<group>";
+		};
+		B9AB1C4C1F467DE20078BD9B /* RadialMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B9AB1C4D1F467DE20078BD9B /* JKPopMenuItem.h */,
+				B9AB1C4E1F467DE20078BD9B /* JKPopMenuItem.m */,
+				B9AB1C4F1F467DE20078BD9B /* LNERadialMenu.h */,
+				B9AB1C501F467DE20078BD9B /* LNERadialMenu.m */,
+			);
+			path = RadialMenu;
+			sourceTree = "<group>";
+		};
+		B9AB1C531F467DF70078BD9B /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				B9AB1C541F467DF70078BD9B /* LYButton.h */,
+				B9AB1C551F467DF70078BD9B /* LYButton.m */,
+				B9AB1C561F467DF70078BD9B /* LYTextField.h */,
+				B9AB1C571F467DF70078BD9B /* LYTextField.m */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
+		B9AB1C5A1F467E000078BD9B /* CircleProgressButton */ = {
+			isa = PBXGroup;
+			children = (
+				B9AB1C5B1F467E000078BD9B /* CircleProgressButton.h */,
+				B9AB1C5C1F467E000078BD9B /* CircleProgressButton.m */,
+			);
+			path = CircleProgressButton;
 			sourceTree = "<group>";
 		};
 		B9B6BD661E99E7EF00EEFCEC /* SharingOperationContainerViews */ = {
@@ -2972,6 +3130,8 @@
 		B9C6AAEC1E65480F0003C50A /* CustomView1 */ = {
 			isa = PBXGroup;
 			children = (
+				B9AB1C5A1F467E000078BD9B /* CircleProgressButton */,
+				B9AB1C531F467DF70078BD9B /* CustomTextField */,
 				B92A2FA91E8DF66500E8AA30 /* MZShapedButton */,
 				B9C6AB8E1E6548550003C50A /* CollapsableTable */,
 				B9C6ABA31E6548550003C50A /* FLXKCollapsableTableViewController */,
@@ -3413,6 +3573,28 @@
 			path = PsyZipArchive;
 			sourceTree = "<group>";
 		};
+		B9F5DBE41F5D4EBE003A02D8 /* imagesetGenerator_shell */ = {
+			isa = PBXGroup;
+			children = (
+				B9F5DBE51F5D4EBE003A02D8 /* image */,
+				B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */,
+				B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */,
+				B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */,
+				B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */,
+				B9F5DBEA1F5D4EBE003A02D8 /* imagesetGenerator1_2.sh */,
+				B9F5DBEB1F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png */,
+			);
+			path = imagesetGenerator_shell;
+			sourceTree = "<group>";
+		};
+		B9F5DBE51F5D4EBE003A02D8 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		B9FA22451EC5B20E0028F720 /* FrameworkLibrary */ = {
 			isa = PBXGroup;
 			children = (
@@ -3822,6 +4004,7 @@
 				B97506DE1E4C58F600A577E7 /* smiley_64.png in Resources */,
 				B97507571E4C58F600A577E7 /* 027.png in Resources */,
 				B97507B71E4C58F700A577E7 /* 075.png in Resources */,
+				B9F5DBEF1F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh in Resources */,
 				B94BD6901DAE480C0094CA9D /* images.xcassets in Resources */,
 				B975070F1E4C58F600A577E7 /* gif300_2.gif in Resources */,
 				B95A32601E31BA6B00E71D9D /* FLXKNormalEmotionGroupCollectionViewCell.xib in Resources */,
@@ -3884,6 +4067,7 @@
 				B97506EF1E4C58F600A577E7 /* smiley_8.png in Resources */,
 				B97506DA1E4C58F600A577E7 /* smiley_60.png in Resources */,
 				B97507601E4C58F600A577E7 /* 031@2x.png in Resources */,
+				B995A8521F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf in Resources */,
 				B97507B11E4C58F700A577E7 /* 072.png in Resources */,
 				B975079D1E4C58F700A577E7 /* 062.png in Resources */,
 				B97506B11E4C58F600A577E7 /* smiley_23.png in Resources */,
@@ -3894,8 +4078,10 @@
 				B9C6ACAB1E6548550003C50A /* FontAwesome.ttf in Resources */,
 				B9C6AC931E6548550003C50A /* ArrowSectionHeaderView.xib in Resources */,
 				B975073B1E4C58F600A577E7 /* 013.png in Resources */,
+				B9F5DBF11F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png in Resources */,
 				B97507511E4C58F600A577E7 /* 024.png in Resources */,
 				B97506ED1E4C58F600A577E7 /* smiley_78.png in Resources */,
+				B995A8631F5E8728006327DF /* defaultPDF.pdf in Resources */,
 				B97507321E4C58F600A577E7 /* 008@2x.png in Resources */,
 				B97507121E4C58F600A577E7 /* gif300_5.gif in Resources */,
 				B97506AA1E4C58F600A577E7 /* smiley_17.png in Resources */,
@@ -3989,9 +4175,11 @@
 				B9C6AC951E6548550003C50A /* StarsSectionHeaderView.xib in Resources */,
 				B9D854C51DAC8BE2001AD79C /* LaunchScreen.storyboard in Resources */,
 				B97506C81E4C58F600A577E7 /* smiley_44.png in Resources */,
+				B995A8601F5E8728006327DF /* defaultImage.png in Resources */,
 				B975076E1E4C58F700A577E7 /* 038@2x.png in Resources */,
 				B97506D31E4C58F600A577E7 /* smiley_54.png in Resources */,
 				B975074B1E4C58F600A577E7 /* 021.png in Resources */,
+				B9F5DBED1F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh in Resources */,
 				B9C6AC971E6548550003C50A /* CollapsableTableViewAssets.xcassets in Resources */,
 				B9C6ACB71E6548550003C50A /* OpinionzAlertIconWarning.png in Resources */,
 				B97507B41E4C58F700A577E7 /* 073@2x.png in Resources */,
@@ -4021,9 +4209,11 @@
 				B975072F1E4C58F600A577E7 /* 007.png in Resources */,
 				B97507371E4C58F600A577E7 /* 011.png in Resources */,
 				B90CD98A1E763FFD00278EDB /* notification_sound.wav in Resources */,
+				B9F5DBF31F5D4F12003A02D8 /* imagesetGenerator.sh in Resources */,
 				B97506C21E4C58F600A577E7 /* smiley_39.png in Resources */,
 				B97507A61E4C58F700A577E7 /* 066@2x.png in Resources */,
 				B97506F71E4C58F600A577E7 /* smiley_87.png in Resources */,
+				B9F5DBF01F5D4EBE003A02D8 /* imagesetGenerator1_2.sh in Resources */,
 				B97507B61E4C58F700A577E7 /* 074@2x.png in Resources */,
 				B97507C91E4C58F700A577E7 /* 084.png in Resources */,
 				B975073A1E4C58F600A577E7 /* 012@2x.png in Resources */,
@@ -4063,6 +4253,7 @@
 				B97507291E4C58F600A577E7 /* 004.png in Resources */,
 				B97507701E4C58F700A577E7 /* 039@2x.png in Resources */,
 				B97506B71E4C58F600A577E7 /* smiley_29.png in Resources */,
+				B988AB101F59464000BBEB61 /* imagesetGenerator(1,2).sh in Resources */,
 				B97507881E4C58F700A577E7 /* 051@2x.png in Resources */,
 				B9C6ACA41E6548550003C50A /* SGQRCodeAssets.xcassets in Resources */,
 				B97506F11E4C58F600A577E7 /* smiley_81.png in Resources */,
@@ -4104,6 +4295,7 @@
 				B97506C11E4C58F600A577E7 /* smiley_38.png in Resources */,
 				B975072D1E4C58F600A577E7 /* 006.png in Resources */,
 				B97507591E4C58F600A577E7 /* 028.png in Resources */,
+				B988AB121F59464900BBEB61 /* imagesetGenerator.sh in Resources */,
 				B97B38E11DD029D400D8F004 /* 重点难点.rtf in Resources */,
 				B97507141E4C58F600A577E7 /* gif300_7.gif in Resources */,
 				B97506F51E4C58F600A577E7 /* smiley_85.png in Resources */,
@@ -4117,6 +4309,7 @@
 				B97507811E4C58F700A577E7 /* 048.png in Resources */,
 				B97506BE1E4C58F600A577E7 /* smiley_35.png in Resources */,
 				B97507CA1E4C58F700A577E7 /* 084@2x.png in Resources */,
+				B98365521F18CD8C003E28D3 /* 每天学习点记录.txt in Resources */,
 				B9C6ACA51E6548550003C50A /* sound.caf in Resources */,
 				B975076A1E4C58F700A577E7 /* 036@2x.png in Resources */,
 				B97507BD1E4C58F700A577E7 /* 078.png in Resources */,
@@ -4128,6 +4321,7 @@
 				B97506E21E4C58F600A577E7 /* smiley_68.png in Resources */,
 				B97507691E4C58F700A577E7 /* 036.png in Resources */,
 				B97507901E4C58F700A577E7 /* 055@2x.png in Resources */,
+				B995A8621F5E8728006327DF /* defaultMP3.mp3 in Resources */,
 				B975072A1E4C58F600A577E7 /* 004@2x.png in Resources */,
 				B975069B1E4C58F600A577E7 /* del_emoji_normal@2x.png in Resources */,
 				B97507801E4C58F700A577E7 /* 047@2x.png in Resources */,
@@ -4160,10 +4354,13 @@
 				B97506B51E4C58F600A577E7 /* smiley_27.png in Resources */,
 				B97506DF1E4C58F600A577E7 /* smiley_65.png in Resources */,
 				B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */,
+				B9F5DBEE1F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh in Resources */,
 				B97507031E4C58F600A577E7 /* smiley_98.png in Resources */,
+				B995A8611F5E8728006327DF /* defaultMovie.mp4 in Resources */,
 				B975074E1E4C58F600A577E7 /* 022@2x.png in Resources */,
 				B975079E1E4C58F700A577E7 /* 062@2x.png in Resources */,
 				B92898B61E8EABE2005DF4A8 /* codeback.rtf in Resources */,
+				B9F5DBEC1F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh in Resources */,
 				B9780FAA1EA9EF24003AF40A /* FLXKEmotionBoard.xcassets in Resources */,
 				B97507CD1E4C58F700A577E7 /* _expression_cn.plist in Resources */,
 				B97507011E4C58F600A577E7 /* smiley_96.png in Resources */,
@@ -4338,6 +4535,7 @@
 			files = (
 				B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */,
 				B9DF70791DAF76E7004C23E6 /* FLXKSocketHelper.m in Sources */,
+				B9AB1C5D1F467E000078BD9B /* CircleProgressButton.m in Sources */,
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
@@ -4345,6 +4543,7 @@
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
 				B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m in Sources */,
 				B96FFE061E8EB0C500ECAC58 /* FLXKBaseSharingLikeCollectionView.m in Sources */,
+				B927626C1F4ACCAC007E65E3 /* CacheCleanerPlugin.m in Sources */,
 				B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */,
 				B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */,
 				B924D9171E2F66EC00A5D9F6 /* EmotionGroup.m in Sources */,
@@ -4361,6 +4560,7 @@
 				B99B4BB71EA74FF700C58A8C /* FLXKAnimationHelper.m in Sources */,
 				B97261A61E2DEC76008B6356 /* README.markdown in Sources */,
 				B95A325A1E31B95600E71D9D /* FLXKEmotionGroupIndexCollectionView.m in Sources */,
+				B9AB1C4B1F467DDC0078BD9B /* TimeCountDownView.m in Sources */,
 				B93098721E568C0600306F39 /* UIViewController+Extensions.m in Sources */,
 				B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */,
 				B9C6ACA61E6548550003C50A /* SGQRCodeTool.m in Sources */,
@@ -4394,6 +4594,7 @@
 				B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */,
 				B95987991EAEEBB100A12E7F /* SharingCommentCellModel.m in Sources */,
 				B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */,
+				B927626D1F4ACCAC007E65E3 /* RetainCycleLoggerPlugin.m in Sources */,
 				B90CD9871E763FFD00278EDB /* TwoTitleLocalViewController.m in Sources */,
 				B97F4C4D1EA0714D0033CA71 /* NSDictionary+Extension.m in Sources */,
 				B9252A7B1E9DD16700E2DC65 /* PersonCenterCell.m in Sources */,
@@ -4413,6 +4614,7 @@
 				B90CD9851E763FFD00278EDB /* SimpleLocalViewController.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
 				B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */,
+				B9AB1C4A1F467DDC0078BD9B /* TimeCenter.m in Sources */,
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
 				B9C6ACA81E6548550003C50A /* FAImageView.m in Sources */,
 				B9CDF0201E4F36690007F638 /* GooeyCircle.m in Sources */,
@@ -4423,6 +4625,8 @@
 				B90CD9581E763FD400278EDB /* FLXKAPPRouter.m in Sources */,
 				B9C6AC9E1E6548550003C50A /* PsyQRScanView.m in Sources */,
 				B9252A781E9DD16700E2DC65 /* MeViewController.m in Sources */,
+				B9AB1C521F467DE30078BD9B /* LNERadialMenu.m in Sources */,
+				B9AB1C581F467DF70078BD9B /* LYButton.m in Sources */,
 				B9C6ACAA1E6548550003C50A /* README.md in Sources */,
 				B97261A01E2DEC76008B6356 /* EntityGeneratorViewController.m in Sources */,
 				B9CDF0221E4F36690007F638 /* KYAnimatedPageControl.m in Sources */,
@@ -4434,12 +4638,14 @@
 				B9C6ACA11E6548550003C50A /* SGGenerateQRCodeVC.m in Sources */,
 				B97CC0921E7287AD000D548B /* FLXKAPPHelper.m in Sources */,
 				B9C6ACAD1E6548550003C50A /* UIFont+FontAwesome.m in Sources */,
+				B94D40F41F21D30C00D28292 /* FLXKSwizzleMethod.m in Sources */,
 				B92494981E8BA103006878CC /* FLXKSharingCellModel.m in Sources */,
 				B94BD68A1DAE40560094CA9D /* FLXKLaunchViewController.m in Sources */,
 				B9A3F9611E6BEC8D007CA4B2 /* FLXTopicGalaxyTableViewController.m in Sources */,
 				B9D854BA1DAC8BE2001AD79C /* AppDelegate.m in Sources */,
 				B9C6AC901E6548550003C50A /* UITableView+rrn_extensions.m in Sources */,
 				B98A969C1EEEA2E0003AB955 /* UITextView+Extensions.m in Sources */,
+				B9AB1C511F467DE30078BD9B /* JKPopMenuItem.m in Sources */,
 				B9C6AC941E6548550003C50A /* StarsSectionHeaderView.m in Sources */,
 				B924D8D81E2F648A00A5D9F6 /* FLXKEmotionDBHelper.m in Sources */,
 				B92A30281E8E510600E8AA30 /* FLXKBaseSharingCommentTableView.m in Sources */,
@@ -4469,6 +4675,7 @@
 				B95A32561E31B95600E71D9D /* FLXKEmotionBoard.m in Sources */,
 				B9C6AD3C1E6548550003C50A /* CWStarRateView.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
+				B94D40F31F21D30C00D28292 /* FLXKAddProperty.m in Sources */,
 				B92A300B1E8E1FC000E8AA30 /* UIImage+Extension.m in Sources */,
 				B90CD9831E763FFD00278EDB /* NotificationCenterViewController.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
@@ -4479,6 +4686,7 @@
 				B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
 				B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */,
+				B9AB1C591F467DF70078BD9B /* LYTextField.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
 				B9C6AC961E6548550003C50A /* UILabel+flash.m in Sources */,
 				B9CDF0241E4F36690007F638 /* Line.m in Sources */,
@@ -4987,11 +5195,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TQ772LEHW3;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -5011,11 +5221,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TQ772LEHW3;
+				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

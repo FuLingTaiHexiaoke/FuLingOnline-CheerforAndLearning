@@ -33,6 +33,7 @@
 {
     
 }
+
 @property (weak, nonatomic) IBOutlet UIImageView *advImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *companyLogoView;
 @property (strong, nonatomic)  NSArray *adImageInfoArray;
@@ -51,6 +52,8 @@
     _companyLogoView.backgroundColor=RGB(54,196,126);
     [self loadAppAnimation];
     [self showTweaksButton];
+    
+
     
     if (DEBUG) {
         UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];

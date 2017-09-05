@@ -15,12 +15,29 @@
 
 //Diagnostics
 #import <Bugly/Bugly.h>
-#import "BaiduMobStat.h" 
+#import "BaiduMobStat.h"
+
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <CocoaLumberjack/DDTTYLogger.h>
+
+#if DEBUG
+#import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import "CacheCleanerPlugin.h"
+#import "RetainCycleLoggerPlugin.h"
+#import "FBStandardGraphEdgeFilters.h"
+#endif
 
 //utilities
 #import "FLXKAPPRouter.h"
 
+
+// Log levels: off, error, warn, info, verbose
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+
 @interface AppDelegate ()
+#if DEBUG
+@property (strong, nonatomic) FBMemoryProfiler* memoryProfiler;
+#endif
 
 @end
 
@@ -46,21 +63,23 @@
           [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
 #endif
     //系统奔溃检查（腾讯）
-//    [Bugly startWithAppId:@"900059996"];
-//    //系统奔溃检查（百度）
-//    [[BaiduMobStat defaultStat] startWithAppId:@"91c2c7b088"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
-
+    //    [Bugly startWithAppId:@"900059996"];
+    //    //系统奔溃检查（百度）
+    //    [[BaiduMobStat defaultStat] startWithAppId:@"91c2c7b088"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
+    
+ 
+    
     //注册消息推送
     [FLXKAppNotification ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:[launchOptions copy]];
     [FLXKAppNotification registerRemoteNotification:application];
     //我们可以通过本地通知开发日志事件功能
     //[FLXKAppNotification registerLocalNotification:5];
     //取消掉所有已经注册的本地通知
-//        [[FLXKAppNotification new]  requestLocationNotification];
+    //        [[FLXKAppNotification new]  requestLocationNotification];
     
-//    [FLXKAppNotification removeAllLocalNotification];
+    //    [FLXKAppNotification removeAllLocalNotification];
     
-
+    
     
     
     //收集AppLaunchDate，AppInstallDateIfNil，logAppNumberOfDaysSinceInstall
@@ -70,9 +89,14 @@
     //初始化基本控件Appearance
     //
     //
-    //
+#if DEBUG
+        [self setupDiagnostics];
+#endif
+    
     return YES;
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -153,15 +177,87 @@
 //    NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
 //    NSLog(@"URL scheme:%@", [url scheme]);
 //    NSLog(@"URL query: %@", [url query]);
-//    
+//
 //    return YES;
 //}
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options{
-//        NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
-//        NSLog(@"URL scheme:%@", [url scheme]);
-//        NSLog(@"URL query: %@", [url query]);
+    //        NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+    //        NSLog(@"URL scheme:%@", [url scheme]);
+    //        NSLog(@"URL query: %@", [url query]);
     
-        return YES;
+    return YES;
+}
+
+- (void)setupDiagnostics{
+    //添加Facebook内存监测控件
+    //    FBMemoryProfiler *memoryProfiler = [FBMemoryProfiler new];
+    NSArray *filters = @[FBFilterBlockWithObjectIvarRelation([UIView class], @"_subviewCache"),FBFilterBlockWithObjectIvarRelation([UIPanGestureRecognizer class], @"_internalActiveTouches")];
+    FBObjectGraphConfiguration *configuration = [[FBObjectGraphConfiguration alloc] initWithFilterBlocks:filters shouldInspectTimers:YES];
+    
+    FBMemoryProfiler *memoryProfiler =[[FBMemoryProfiler alloc] initWithPlugins:@[[CacheCleanerPlugin new],
+                                                                                  [RetainCycleLoggerPlugin new]]
+                                               retainCycleDetectorConfiguration:configuration];
+    [memoryProfiler enable];
+    // Store memory profiler somewhere to extend it's lifetime
+    _memoryProfiler = memoryProfiler;
+    
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
+    //            [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
+    
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+    [DDLog addLogger:fileLogger];
+    
+    DDLogVerbose(@"Verbose");
+    DDLogInfo(@"Info");
+    DDLogWarn(@"Warn");
+    DDLogError(@"Error");
+    
+    //    DDLog *aDDLogInstance = [DDLog new];
+    //    [aDDLogInstance addLogger:[DDTTYLogger sharedInstance]];
+    
+    //    DDLogVerboseToDDLog(aDDLogInstance, @"Verbose from aDDLogInstance");
+    //    DDLogInfoToDDLog(aDDLogInstance, @"Info from aDDLogInstance");
+    //    DDLogWarnToDDLog(aDDLogInstance, @"Warn from aDDLogInstance");
+    //    DDLogErrorToDDLog(aDDLogInstance, @"Error from aDDLogInstance");
+}
+
+/**
+ 系统偏好设置，根据setting.bundle配置文件注册NSUserDefaults数据。
+ */
+-(NSUserDefaults *)getSetting
+{
+    NSString* settingBundlePath=[[NSBundle mainBundle]pathForResource:@"Settings" ofType:@"bundle"];
+    NSString* rootPlistPath=nil;
+    if (DEBUG) {
+        rootPlistPath=[settingBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    }
+    else{
+        rootPlistPath=[settingBundlePath stringByAppendingPathComponent:@"Root.plist"];
+    }
+    if ([[NSFileManager defaultManager]fileExistsAtPath:rootPlistPath]) {
+        NSDictionary* settingDic=[NSDictionary dictionaryWithContentsOfFile:rootPlistPath];
+        NSArray* settingArray=[settingDic objectForKey:@"PreferenceSpecifiers"];
+        NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[settingArray count]];
+        for(NSDictionary *prefSpecification in settingArray){
+            NSString *key = [prefSpecification objectForKey:@"Key"];
+            if(key){
+                [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+            }
+        }
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    NSUserDefaults *udef =[NSUserDefaults standardUserDefaults];
+    
+    NSString *paduuid = [UIDevice currentDevice].identifierForVendor.UUIDString ;
+    [udef setObject:paduuid forKey:@"paduuid"];
+    [udef synchronize];
+    
+    return udef;
 }
 
 @end

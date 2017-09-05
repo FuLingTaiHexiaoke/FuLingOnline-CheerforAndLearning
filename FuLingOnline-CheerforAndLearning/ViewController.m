@@ -19,6 +19,16 @@
 
 //修改内容:修改如下--。
 
+
+//修改人:肖科    修改时间:2017-7-31  修改原因:判断title是否包含内容，包含则titleLabel显示，不包含则titleLabel不显示。
+//修改前源码:--源码如下。
+
+//修改前源码:源码如下--。
+
+//修改内容:--修改如下。
+
+//修改内容:修改如下--。
+
 #import "ViewController.h"
 
 @interface ViewController ()

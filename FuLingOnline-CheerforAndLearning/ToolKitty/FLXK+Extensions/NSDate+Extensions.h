@@ -10,4 +10,10 @@
 
 @interface NSDate (Extensions)
 +(NSString*)DateWithNormalFormat;
+
+/**
+ @abstract 根据时间间隔的秒数，转换成时间格式 例如：6000=1：20：30
+ @param timeInterval 间间隔的秒数
+ */
++(NSString*)DateStringWithTimeInterval:(NSTimeInterval)timeInterval;
 @end

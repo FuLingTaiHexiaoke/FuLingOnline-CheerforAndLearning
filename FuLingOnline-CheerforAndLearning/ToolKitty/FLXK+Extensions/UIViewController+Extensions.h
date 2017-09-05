@@ -15,4 +15,10 @@
 
 //手势
 -(void)registerGestureForResignViewEditing;
+
+/**
+ *  判断某个类是否有某个参数，防止 setvalue forkey 崩溃
+ *
+ */
+- (BOOL)hasVariableWithClass:(Class) myClass varName:(NSString *)name;
 @end

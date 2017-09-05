@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+Extensions.h"
+#import <objc/runtime.h>
 
 #define iOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
 
@@ -42,6 +43,33 @@
 -(void)resignViewEditing{
     [self.view endEditing:YES];
 }
+
+/**
+ 得到当前显示的VC
+ */
+- (UIViewController *)getTopMostVC{
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    //app默认windowLevel是UIWindowLevelNormal，如果不是，找到UIWindowLevelNormal的
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    UIViewController *appRootVC =window.rootViewController;
+    UIViewController *topVC = appRootVC;
+    while (topVC.presentedViewController) {
+        topVC = topVC.presentedViewController;
+    }
+    return topVC;
+}
+
 
 //得到当前显示的VC
 - (UIViewController *)getCurrentVC{
@@ -103,6 +131,22 @@
     }
 }
 
-
+/**
+ *  判断某个类是否有某个参数，防止 setvalue forkey 崩溃
+ *
+ */
+- (BOOL)hasVariableWithClass:(Class) myClass varName:(NSString *)name{
+    unsigned int outCount, i;
+    Ivar *ivars = class_copyIvarList(myClass, &outCount);
+    for (i = 0; i < outCount; i++) {
+        Ivar property = ivars[i];
+        NSString *keyName = [NSString stringWithCString:ivar_getName(property) encoding:NSUTF8StringEncoding];
+        keyName = [keyName stringByReplacingOccurrencesOfString:@"_" withString:@""];
+        if ([keyName isEqualToString:name]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
 @end

@@ -12,6 +12,8 @@
 
 + (UIColor *)randomColor;
 
++ (UIColor *)randomColorWithAlpha:(CGFloat)alpha;
+
 + (UIColor *)colorWithHex:(long)hexColor;
 
 + (UIColor *)colorWithHex:(long)hexColor alpha:(CGFloat)alpha;

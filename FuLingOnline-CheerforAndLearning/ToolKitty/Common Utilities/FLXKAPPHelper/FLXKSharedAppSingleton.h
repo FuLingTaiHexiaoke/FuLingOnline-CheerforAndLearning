@@ -27,3 +27,11 @@
 //public actions
 @end
 
+/**
+ 分数记录
+ 
+ @param score The location manager that sends the update
+ @param soreDescription The updated locations
+ @param testSortNum The updated addresses
+ @param testName Used if there was an error during update
+ */
