@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKSharingShowSubViewControllers/HearderFooterViews/FLXSuggestedSharingTableVC.m"
-            timestampString = "519730281.629966"
+            timestampString = "526375795.074981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
             landmarkName = "-setupMessageToolBar"
             landmarkType = "7">
             <Locations>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKSharingShowSubViewControllers/HearderFooterViews/FLXSuggestedSharingTableVC.m"
-            timestampString = "519730281.629966"
+            timestampString = "526375795.074981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FuLingOnline-CheerforAndLearning/ViewController/FLXKFriendsSharing/FLXKSharingShowSubViewControllers/HearderFooterViews/FLXSuggestedSharingTableVC.m"
-            timestampString = "519730281.629966"
+            timestampString = "526375795.074981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -351,6 +351,86 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2"
             endingLineNumber = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m"
+            timestampString = "526374052.387446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-fd_heightForCellWithIdentifier:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m"
+            timestampString = "526374053.289694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-fd_heightForCellWithIdentifier:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m"
+            timestampString = "526374074.383335"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-fd_heightForCellWithIdentifier:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m"
+            timestampString = "526374094.279959"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "-fd_heightForCellWithIdentifier:configuration:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FuLingOnline-CheerforAndLearning/ToolKitty/FLXKNetworkHelper/FLXKHttpHelper/FLXKHttpRequest.m"
+            timestampString = "526379927.024941"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "+setAFSecurityPolicy:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -49,6 +49,7 @@
 		B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9E81E764C2C00278EDB /* DCURLRouter.m */; };
 		B90CD9EE1E764C2C00278EDB /* DCURLRouter.plist in Resources */ = {isa = PBXBuildFile; fileRef = B90CD9E91E764C2C00278EDB /* DCURLRouter.plist */; };
 		B90CD9EF1E764C2C00278EDB /* UIViewController+DCURLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */; };
+		B9131C5D1F5F8F1A0095B7F5 /* imagesetGenerator.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9131C5C1F5F8F1A0095B7F5 /* imagesetGenerator.sh */; };
 		B91C05491EA8B4C100E1CE1E /* HPGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */; };
 		B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = B91C05481EA8B4C100E1CE1E /* HPTextViewInternal.m */; };
 		B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m in Sources */ = {isa = PBXBuildFile; fileRef = B91D14561EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m */; };
@@ -622,7 +623,6 @@
 		B9F5DBEF1F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */; };
 		B9F5DBF01F5D4EBE003A02D8 /* imagesetGenerator1_2.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBEA1F5D4EBE003A02D8 /* imagesetGenerator1_2.sh */; };
 		B9F5DBF11F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBEB1F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png */; };
-		B9F5DBF31F5D4F12003A02D8 /* imagesetGenerator.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */; };
 		B9FA22101EC58C000028F720 /* FLXSuggestedSharingTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */; };
 		B9FBB0991E8A59DC00CCAEA8 /* TemplateIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0951E8A59DC00CCAEA8 /* TemplateIcon.png */; };
 		B9FBB09A1E8A59DC00CCAEA8 /* TemplateIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9FBB0961E8A59DC00CCAEA8 /* TemplateIcon@2x.png */; };
@@ -779,6 +779,7 @@
 		B90CD9E91E764C2C00278EDB /* DCURLRouter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DCURLRouter.plist; sourceTree = "<group>"; };
 		B90CD9EA1E764C2C00278EDB /* UIViewController+DCURLRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DCURLRouter.h"; sourceTree = "<group>"; };
 		B90CD9EB1E764C2C00278EDB /* UIViewController+DCURLRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DCURLRouter.m"; sourceTree = "<group>"; };
+		B9131C5C1F5F8F1A0095B7F5 /* imagesetGenerator.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator.sh; sourceTree = "<group>"; };
 		B91C05451EA8B4C100E1CE1E /* HPGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPGrowingTextView.h; sourceTree = "<group>"; };
 		B91C05461EA8B4C100E1CE1E /* HPGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPGrowingTextView.m; sourceTree = "<group>"; };
 		B91C05471EA8B4C100E1CE1E /* HPTextViewInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPTextViewInternal.h; sourceTree = "<group>"; };
@@ -1535,7 +1536,6 @@
 		B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_PNG_NoImageSet1.sh; sourceTree = "<group>"; };
 		B9F5DBEA1F5D4EBE003A02D8 /* imagesetGenerator1_2.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2.sh; sourceTree = "<group>"; };
 		B9F5DBEB1F5D4EBE003A02D8 /* 屏幕快照 2017-09-04 下午5.00.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2017-09-04 下午5.00.19.png"; sourceTree = "<group>"; };
-		B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator.sh; sourceTree = "<group>"; };
 		B9F9A2EC1DB7359A002B1626 /* CodeBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeBack.h; sourceTree = "<group>"; };
 		B9FA220E1EC58C000028F720 /* FLXSuggestedSharingTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLXSuggestedSharingTableVC.m; path = HearderFooterViews/FLXSuggestedSharingTableVC.m; sourceTree = "<group>"; };
 		B9FA220F1EC58C000028F720 /* FLXSuggestedSharingTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLXSuggestedSharingTableVC.h; path = HearderFooterViews/FLXSuggestedSharingTableVC.h; sourceTree = "<group>"; };
@@ -3578,6 +3578,7 @@
 			children = (
 				B9F5DBE51F5D4EBE003A02D8 /* image */,
 				B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */,
+				B9131C5C1F5F8F1A0095B7F5 /* imagesetGenerator.sh */,
 				B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */,
 				B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */,
 				B9F5DBE91F5D4EBE003A02D8 /* imagesetGenerator1_2_PNG_NoImageSet1.sh */,
@@ -3590,7 +3591,6 @@
 		B9F5DBE51F5D4EBE003A02D8 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				B9F5DBF21F5D4F12003A02D8 /* imagesetGenerator.sh */,
 			);
 			path = image;
 			sourceTree = "<group>";
@@ -4209,7 +4209,6 @@
 				B975072F1E4C58F600A577E7 /* 007.png in Resources */,
 				B97507371E4C58F600A577E7 /* 011.png in Resources */,
 				B90CD98A1E763FFD00278EDB /* notification_sound.wav in Resources */,
-				B9F5DBF31F5D4F12003A02D8 /* imagesetGenerator.sh in Resources */,
 				B97506C21E4C58F600A577E7 /* smiley_39.png in Resources */,
 				B97507A61E4C58F700A577E7 /* 066@2x.png in Resources */,
 				B97506F71E4C58F600A577E7 /* smiley_87.png in Resources */,
@@ -4336,6 +4335,7 @@
 				B97507131E4C58F600A577E7 /* gif300_6.gif in Resources */,
 				B97506D11E4C58F600A577E7 /* smiley_52.png in Resources */,
 				B97507231E4C58F600A577E7 /* 001.png in Resources */,
+				B9131C5D1F5F8F1A0095B7F5 /* imagesetGenerator.sh in Resources */,
 				B97507941E4C58F700A577E7 /* 057@2x.png in Resources */,
 				B97506FD1E4C58F600A577E7 /* smiley_92.png in Resources */,
 				B975069C1E4C58F600A577E7 /* smiley_0.png in Resources */,

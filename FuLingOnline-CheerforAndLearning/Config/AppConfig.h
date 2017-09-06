@@ -41,7 +41,7 @@
 
 //Http Request Part
 //#define BaseURL @"http://127.0.0.1:3000"
-#define BaseURL(relativeString) [NSString stringWithFormat:@"http://%@:%@/%@",UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
+#define BaseURL(relativeString) [NSString stringWithFormat:@"%@://%@:%@/%@",UserDefaultsObjForKey(@"ServerHttpType"),UserDefaultsObjForKey(@"ServerIP"),UserDefaultsObjForKey(@"ServerPort"),relativeString]
 
 #define NSURL_BaseURL(relativeString) [NSURL URLWithString:BaseURL(relativeString)]
 

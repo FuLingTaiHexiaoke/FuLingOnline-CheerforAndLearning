@@ -62,8 +62,7 @@
 -(void)setModel:(FLXKSharingCellModel *)model{
     [super setModel:model];
 
-    
-    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:[UIImage imageNamed:@"Spark"]];
+    [self.avatarImageView sd_setImageWithURL:NSURL_BaseURL(model.avatarImageUrl) placeholderImage:ImageNamed(@"Spack")];
     self.nickNameLabel.text=model.nickName;
     self.timestampLabel.text=model.timestamp;
     
@@ -121,7 +120,7 @@
     
     //self.sharingImagesContainerView
     [self.sharingImagesContainerView setImageArray:model.sharingImages];
-    CGFloat height=  self.sharingImagesContainerView.viewHeight;
+//    CGFloat height=  self.sharingImagesContainerView.viewHeight;
     [self.sharingImagesContainerView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.sharingContentShowAllButton.mas_bottom).offset(model.sharingImages.count>0?DEFAULT_VIEW_SPACING:0);
         make.height.mas_equalTo(self.model.sharingImages_Height).priorityHigh();

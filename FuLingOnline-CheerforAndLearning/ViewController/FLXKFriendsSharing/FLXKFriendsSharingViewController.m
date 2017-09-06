@@ -66,7 +66,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -75,7 +74,6 @@
 #pragma mark - UIScrollViewDelegate
 #pragma mark - Scroll Delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //    NSLog(@"%@,%f",scrollView, scrollView.contentOffset.y);
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

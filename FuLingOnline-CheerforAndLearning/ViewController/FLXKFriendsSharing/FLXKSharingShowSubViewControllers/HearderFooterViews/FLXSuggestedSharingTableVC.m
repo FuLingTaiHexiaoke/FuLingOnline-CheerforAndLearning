@@ -18,6 +18,7 @@
 #import "MJRefresh.h"
 #import "FLXKHttpRequestModelHelper.h"
 #import "UITextView+Extensions.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 //subviews
 #import "FLXKSuggestHeaderView.h"
@@ -62,7 +63,7 @@
     [self setupUI];
     self.currentPageIndex=1;
     self.models=[NSMutableArray array];
-    [self setupFLXKSharingCellModel];
+    [self getFLXKSharingCellModel];
     //    if (DEBUG) {
     //        UIButton* btn1=[[UIButton alloc]initWithFrame:CGRectMake(150, 150, 50, 50)];
     //        [btn1 addTarget:self action:@selector(setupFLXKSharingCellModel) forControlEvents:UIControlEventTouchUpInside];
@@ -114,22 +115,32 @@
 
 #pragma mark - UITableViewDelegate
 
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+////  return  [tableView fd_heightForCellWithIdentifier:ReuseCellID cacheByIndexPath:indexPath configuration:^(id cell) {
+////       [cell setModel:_models[indexPath.row]];
+////    }];
+//    
+//    return  [tableView fd_heightForCellWithIdentifier:ReuseCellID  configuration:^(id cell) {
+//        [cell setModel:_models[indexPath.row]];
+//    }];
+//}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    NSInteger row=  indexPath.row%3;
-    switch (row) {
-        case 0:
-            Router(Router_Launch_NotificationCenter)
-            break;
-        case 1:
-            Router(Router_TabBar_FriendsSharing_NewsPublish_test1)
-            break;
-        case 2:
-            Router(Router_TabBar_FriendsSharing_NewsPublish_test2)
-            break;
-        default:
-            break;
-    }
+//    NSInteger row=  indexPath.row%3;
+//    switch (row) {
+//        case 0:
+//            Router(Router_Launch_NotificationCenter)
+//            break;
+//        case 1:
+//            Router(Router_TabBar_FriendsSharing_NewsPublish_test1)
+//            break;
+//        case 2:
+//            Router(Router_TabBar_FriendsSharing_NewsPublish_test2)
+//            break;
+//        default:
+//            break;
+//    }
 }
 
 
@@ -152,17 +163,18 @@
     self.tableView.backgroundColor=[UIColor lightGrayColor];
     [self.tableView registerClass:NSClassFromString(ReuseCellID) forCellReuseIdentifier:ReuseCellID];
     self.tableView.estimatedRowHeight=100;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;//for ios7 or older
     
     //注册刷新功能
     @weakify(self)
     self.tableView.mj_header=[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
         self.currentPageIndex=1;
-        [self setupFLXKSharingCellModel];
+        [self getFLXKSharingCellModel];
     } ];
     self.tableView.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         @strongify(self)
-        [self setupFLXKSharingCellModel];
+        [self getFLXKSharingCellModel];
     } ];
     [self.tableView.mj_header beginRefreshing];
     
@@ -248,15 +260,16 @@
     CABasicAnimation *theAnimation;
     theAnimation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
     theAnimation.duration=2;
-    theAnimation.fillMode = kCAFillModeBackwards;
-    theAnimation.removedOnCompletion = NO;
+    theAnimation.autoreverses=YES;
+//    theAnimation.fillMode = kCAFillModeBackwards;
+//    theAnimation.removedOnCompletion = NO;
     theAnimation.fromValue = [NSNumber numberWithFloat:1];
     theAnimation.toValue = [NSNumber numberWithFloat:4.0];
     [sender.imageView.layer addAnimation:theAnimation forKey:@"animateTransform"];
 }
 
 #pragma mark - 内部网络请求
--(void)setupFLXKSharingCellModel{
+-(void)getFLXKSharingCellModel{
     @weakify(self)
     [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
         @strongify(self)
@@ -277,7 +290,6 @@
         }
         
     } failureCallback:^(NSError *err) {
-        //        NSAssert(!err, err.description);
     }] getFriendSharingModelWithCondition:@{@"page":@(self.currentPageIndex),@"userID":[FLXKSharedAppSingleton sharedSingleton].sharedUser.login_name?:@"test"}];
     
 }
@@ -303,7 +315,7 @@
             [model.likeTheSharingUserRecords insertObject:[FLXKSharedAppSingleton sharedSingleton].sharedUser atIndex:0];
         }
         model.isThumberuped=!model.isThumberuped;
-        [self.tableView reloadRowsAtIndexPaths:@[self.currentThumberUpCellIndex] withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView reloadRowsAtIndexPaths:@[self.currentThumberUpCellIndex] withRowAnimation:UITableViewRowAnimationAutomatic];
         //        [self.tableView reloadData];//这种效果更加不好
     } failureCallback:^(NSError *err) {
         //        NSAssert(!err, err.description);
