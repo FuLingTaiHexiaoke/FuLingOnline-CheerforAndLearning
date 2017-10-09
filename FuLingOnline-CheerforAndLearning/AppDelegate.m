@@ -17,9 +17,6 @@
 #import <Bugly/Bugly.h>
 #import "BaiduMobStat.h"
 
-#import <CocoaLumberjack/CocoaLumberjack.h>
-#import <CocoaLumberjack/DDTTYLogger.h>
-
 #if DEBUG
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
 #import "CacheCleanerPlugin.h"
@@ -29,10 +26,6 @@
 
 //utilities
 #import "FLXKAPPRouter.h"
-
-
-// Log levels: off, error, warn, info, verbose
-static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 
 @interface AppDelegate ()
 #if DEBUG
@@ -57,17 +50,18 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    //输出路径
-#if DEBUG
-    NSLog(@"\n\nSimulator documents directory:\n\t%@\n\n",
-          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
-#endif
+    //iOS开源项目之日志框架CocoaLumberjack
+    [FLXKLoggerHelper addDDLogger];
+
     //系统奔溃检查（腾讯）
     //    [Bugly startWithAppId:@"900059996"];
-    //    //系统奔溃检查（百度）
+    //系统奔溃检查（百度）
     //    [[BaiduMobStat defaultStat] startWithAppId:@"91c2c7b088"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
-    
- 
+
+    //输出路径
+#if DEBUG
+    NSLog(@"\n\nSimulator documents directory:\n\t%@\n\n",[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]);
+#endif
     
     //注册消息推送
     [FLXKAppNotification ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:[launchOptions copy]];
@@ -76,7 +70,6 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
     //[FLXKAppNotification registerLocalNotification:5];
     //取消掉所有已经注册的本地通知
     //        [[FLXKAppNotification new]  requestLocationNotification];
-    
     //    [FLXKAppNotification removeAllLocalNotification];
     
     
@@ -90,8 +83,10 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
     //
     //
 #if DEBUG
-        [self setupDiagnostics];
+    [self setupDiagnostics];
 #endif
+    
+    
     
     return YES;
 }
@@ -200,30 +195,43 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
     [memoryProfiler enable];
     // Store memory profiler somewhere to extend it's lifetime
     _memoryProfiler = memoryProfiler;
-    
-    
-    [DDLog addLogger:[DDTTYLogger sharedInstance]]; // TTY = Xcode console
-    //            [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
-    
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
-    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [DDLog addLogger:fileLogger];
-    
-    DDLogVerbose(@"Verbose");
-    DDLogInfo(@"Info");
-    DDLogWarn(@"Warn");
-    DDLogError(@"Error");
-    
-    //    DDLog *aDDLogInstance = [DDLog new];
-    //    [aDDLogInstance addLogger:[DDTTYLogger sharedInstance]];
-    
-    //    DDLogVerboseToDDLog(aDDLogInstance, @"Verbose from aDDLogInstance");
-    //    DDLogInfoToDDLog(aDDLogInstance, @"Info from aDDLogInstance");
-    //    DDLogWarnToDDLog(aDDLogInstance, @"Warn from aDDLogInstance");
-    //    DDLogErrorToDDLog(aDDLogInstance, @"Error from aDDLogInstance");
 }
 
+///*
+// @abstract 主要是想，添加日志记录到本地txt功能，方便debug
+// */
+//- (void)setupDDTTYLogger{
+//    
+//    // TTY = Xcode console
+//    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+//    // ASL = Apple System Logs
+//    [DDLog addLogger:[DDASLLogger sharedInstance]];
+//    
+//    DDFileLogger *fileLogger = [[DDFileLogger alloc] init]; // File Logger
+//    fileLogger.rollingFrequency = 60 * 60 * 24*7; // 24*7 hour rolling
+//    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+//    [DDLog addLogger:fileLogger];
+//    
+//    //添加数据库输出
+//    DDAbstractDatabaseLogger *dbLogger = [[DDAbstractDatabaseLogger alloc] init];
+//    [fileLogger setLogFormatter:formatter];
+//    [DDLog addLogger:dbLogger];
+//    
+//    [[DDTTYLogger sharedInstance] setColorsEnabled:YES];// 启用颜色区分
+//    DDLogVerbose(@"Verbose");
+//    DDLogInfo(@"Info");
+//    DDLogWarn(@"Warn");
+//    DDLogError(@"Error");
+//    
+//    
+//    //    DDLog *aDDLogInstance = [DDLog new];
+//    //    [aDDLogInstance addLogger:[DDTTYLogger sharedInstance]];
+//    
+//    //    DDLogVerboseToDDLog(aDDLogInstance, @"Verbose from aDDLogInstance");
+//    //    DDLogInfoToDDLog(aDDLogInstance, @"Info from aDDLogInstance");
+//    //    DDLogWarnToDDLog(aDDLogInstance, @"Warn from aDDLogInstance");
+//    //    DDLogErrorToDDLog(aDDLogInstance, @"Error from aDDLogInstance");
+//}
 /**
  系统偏好设置，根据setting.bundle配置文件注册NSUserDefaults数据。
  */

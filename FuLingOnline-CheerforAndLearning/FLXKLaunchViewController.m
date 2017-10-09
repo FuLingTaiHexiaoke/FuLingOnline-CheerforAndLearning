@@ -53,7 +53,7 @@
     [self loadAppAnimation];
     [self showTweaksButton];
     
-
+    
     
     if (DEBUG) {
         UIButton* btn=[[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
@@ -78,6 +78,12 @@
     //get user
     [FLXKSharedAppSingleton getSharedAPPUser];
     
+    //    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //        [obj removeFromSuperview];
+    //    }];
+    //
+    [self addEmitAnimation];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -91,11 +97,11 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-        self.navigationController.navigationBarHidden=NO;
+    self.navigationController.navigationBarHidden=NO;
 }
 
 -(void)dealloc{
-     NSLog(@"%@ 销毁",NSStringFromClass(self.class));
+    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
 }
 
 #pragma mark - Memory Warning
@@ -184,7 +190,7 @@
             [self.advImageView sd_setImageWithURL:[NSURL URLWithString:BaseURL(_adImageInfoModel.imgUrl)] placeholderImage:[UIImage imageNamed:@"Spark"] options:SDWebImageAllowInvalidSSLCertificates];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        FLXKLog(@"%@",error.description);
+        NSLog(@"%@",error.description);
     }];
     
 }
@@ -280,20 +286,20 @@
 }
 
 - (void)loadMainVC {
-
-
+    
+    
     if (FBTweakValue(@"FLXKLaunchViewController", @"loadMainVC",  @"goNormal",0.0)>0) {
-
+        
     }
     else{
         UIViewController* rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
         [[UIApplication sharedApplication].keyWindow setRootViewController:rootVC];
-//        Router(Router_FLXKTabBarController)
+        //        Router(Router_FLXKTabBarController)
     }
-
-
-
-
+    
+    
+    
+    
 }
 
 
@@ -303,6 +309,112 @@
 }
 -(void)showRouter_Launch_NotificationCenter{
     Router(Router_Launch_NotificationCenter)
+}
+
+- (void)addEmitAnimation{
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    CAEmitterLayer* caELayer                   = [CAEmitterLayer layer];
+    // 发射源
+    caELayer.emitterPosition   = CGPointMake(self.view.frame.size.width / 2, self.view.frame.size.height/2);
+    // 发射源尺寸大小
+    caELayer.emitterSize       = CGSizeMake(FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @"emitterSize", 50.0), 50);
+    // 发射源的形状
+    caELayer.emitterShape      = kCAEmitterLayerLine;
+    // 发射源模式
+    caELayer.emitterMode       = kCAEmitterLayerOutline;
+    // 渲染模式
+    caELayer.renderMode        = kCAEmitterLayerOldestLast;
+    // 发射方向
+    caELayer.velocity          = 1;
+    // 随机产生粒子
+    caELayer.seed              = (arc4random() % 100) + 1;
+    
+    // 发射cell
+    CAEmitterCell *cell             = [CAEmitterCell emitterCell];
+    // 速率
+    cell.birthRate                  = FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @"cell.birthRate", 5.0);
+    // 发射的定点
+    cell.emissionLongitude=M_PI_2*(FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @"emissionLongitude", 1.0));
+    // 发射的角度
+    cell.emissionRange              = M_PI_4*(FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @"emissionRange", 1.0));
+    // 速度
+    cell.velocity                   = 50;
+    // 范围
+    cell.velocityRange              = 10;
+    // Y轴 加速度分量
+    cell.yAcceleration              =- FBTweakValue(@"addEmitAnimation1", @"cell",  @"yAcceleration", 15.0);
+    // 声明周期
+    cell.lifetime                   = FBTweakValue(@"addEmitAnimation1", @"cell",  @"lifetime", 5.0);
+    //是个CGImageRef的对象,既粒子要展现的图片
+    cell.contents                   = (id)
+    [[UIImage imageNamed:@"filled_star"] CGImage];
+    // 缩放比例
+    cell.scale                      = 0.5;
+    cell.scaleSpeed= -0.2;
+    //    // 粒子的颜色
+    //    cell.color                      = [[UIColor colorWithRed:0.6
+    //                                                       green:0.6
+    //                                                        blue:0.6
+    //                                                       alpha:1.0] CGColor];
+    //    // 一个粒子的颜色green 能改变的范围
+    //    cell.greenRange                 = 1.0;
+    //    // 一个粒子的颜色red 能改变的范围
+    //    cell.redRange                   = 1.0;
+    //    // 一个粒子的颜色blue 能改变的范围
+    //    cell.blueRange                  = 1.0;
+    
+    // 粒子透明度在生命周期内的改变速度
+    cell.alphaSpeed                  = -0.2;
+    // 子旋转角度范围
+    cell.spinRange                  = M_PI;
+    
+    // 爆炸
+    CAEmitterCell *burstSubCell            = [CAEmitterCell emitterCell];
+    // 粒子产生系数
+    burstSubCell.birthRate                 = 1.0;
+    
+    // 速度
+    burstSubCell.velocity                  = 0;
+    // 缩放比例
+    burstSubCell.scale                     = FBTweakValue(@"addEmitAnimation1", @"cell",  @"  burstSubCell.scale  ", 0.5);
+    //生命周期
+    burstSubCell.lifetime                  = FBTweakValue(@"addEmitAnimation1", @"cell",  @" burstSubCell.lifetime ", 0.5);
+    burstSubCell.beginTime=FBTweakValue(@"addEmitAnimation1", @"cell",  @" burstSubCell.beginTime", 4.8);;
+    
+    // 火花 and finally, the sparks
+    CAEmitterCell *sparkSubCell            = [CAEmitterCell emitterCell];
+    // 发射的定点
+    sparkSubCell.emissionLongitude=M_PI_2*(FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @"sparkSubCell.emissionLongitude", 1.0));
+    // 发射的角度
+    sparkSubCell.emissionRange              = M_PI_4*(FBTweakValue(@"addEmitAnimation1", @"addEmitAnimation",  @" sparkSubCell.emissionRange", 1.0));
+    //粒子产生系数，默认为1.0
+    sparkSubCell.birthRate                 = 400;
+    //速度
+    sparkSubCell.velocity                  = 125;
+    // 360 deg//周围发射角度
+    //    sparkSubCell.emissionRange             = 2 * M_PI;
+    // gravity//y方向上的加速度分量
+    sparkSubCell.yAcceleration             = 75;
+    //粒子生命周期
+    sparkSubCell.lifetime                  = FBTweakValue(@"addEmitAnimation1", @"cell",  @"sparkSubCell.lifetime  ", 0.5);
+    //是个CGImageRef的对象,既粒子要展现的图片
+    sparkSubCell.contents                  = (id)
+    [[UIImage imageNamed:@"filled_star"] CGImage];
+    //缩放比例速度
+    sparkSubCell.scaleSpeed                = -0.2;
+    //粒子透明度在生命周期内的改变速度
+    sparkSubCell.alphaSpeed                = -0.25;
+    //子旋转角度
+    sparkSubCell.spin                      = 2* M_PI;
+    //子旋转角度范围
+    sparkSubCell.spinRange                 = 2* M_PI;
+    
+    
+    caELayer.emitterCells = [NSArray arrayWithObject:cell];
+    cell.emitterCells = [NSArray arrayWithObjects:burstSubCell, nil];
+    burstSubCell.emitterCells = [NSArray arrayWithObject:sparkSubCell];
+    [self.view.layer addSublayer:caELayer];
 }
 
 @end

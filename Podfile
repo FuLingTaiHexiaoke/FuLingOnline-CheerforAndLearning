@@ -8,7 +8,6 @@ target ‘FuLingOnline-CheerforAndLearning’ do
 pod 'AFNetworking', '~> 3.1.0'
 #pod 'AFNetworking'
 #pod 'SDWebImage', '~> 4.0.0'
-#  pod 'SDWebImage', '~> 4.0.0'
 pod 'SDWebImage', '~>3.8.2'
 #pod 'UIActivityIndicator-for-SDWebImage'
 #pod 'CocoaAsyncSocket'
@@ -44,7 +43,7 @@ pod 'IDMPhotoBrowser', '~> 1.9.1'
 #   pod 'IDMPhotoBrowser+WeChat', '~> 1.9.7'
 ##      custom views
 # pod 'HPGrowingTextView'
-
+pod 'MBProgressHUD'
 
 ## 程序监测 Diagnostics
 pod 'BaiduMobStat' #百度

@@ -75,7 +75,7 @@
 #pragma mark - ViewController LifeCircle
 
 -(void)dealloc{
-  NSLog(@"%@ 销毁",NSStringFromClass(self.class));
+    NSLog(@"%@ 销毁",NSStringFromClass(self.class));
 }
 
 #pragma mark -

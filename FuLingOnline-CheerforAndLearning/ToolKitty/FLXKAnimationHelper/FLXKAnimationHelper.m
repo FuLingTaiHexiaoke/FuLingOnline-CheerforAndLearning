@@ -49,4 +49,31 @@
 //    
 //}
 
+//
+//- (void)pauseLayer:(CALayer *)layer
+//{
+//    NSLog(@"%f", CACurrentMediaTime()) ;
+//    NSLog(@"pauseLayer begin:%f", [t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil] ;
+//    layer.speed = 0.0 ;
+//    NSLog(@"pauseLayer after set speed to 0:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    layer.timeOffset = pausedTime ;
+//    NSLog(@"pauseLayer after set timeOffset:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//}
+//
+//- (void)resumeLayer:(CALayer *)layer
+//{
+//    NSLog(@"%f", CACurrentMediaTime()) ;
+//    NSLog(@"resumeLayer begin:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    CFTimeInterval pausedTime = layer.timeOffset ;
+//    layer.speed = 1.0 ;
+//    NSLog(@"resumeLayer after set speed to 1:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    layer.timeOffset = 0.0;
+//    NSLog(@"resumeLayer after set timeOffset to 0:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    layer.beginTime = 0.0 ;
+//    NSLog(@"resumeLayer after set beginTime to 0:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime ;
+//    layer.beginTime = timeSincePause ;
+//    NSLog(@"resumeLayer after set beginTime to timeSincePause:%f",[t1.layer convertTime:CACurrentMediaTime() fromLayer:nil]) ;
+//}
 @end

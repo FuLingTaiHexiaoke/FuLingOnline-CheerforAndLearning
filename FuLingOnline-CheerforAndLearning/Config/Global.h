@@ -20,6 +20,8 @@
 #import "FLXKSharedAppSingleton.h"
 #import "FLXKPathHelper.h"
 
+#import "DDLogMacros.h"//iOS开源项目之日志框架CocoaLumberjack
+
 //#import "WMFLogging.h"
 //#import "WMFDirectoryPaths.h"
 //#import "WMFGCDHelpers.h"

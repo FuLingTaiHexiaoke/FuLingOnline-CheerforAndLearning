@@ -110,4 +110,25 @@
 //    });
 //});
 
+-(UIImage*)imageWithColor:(UIColor*)color andSize:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context=UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    
+    CGRect rect=CGRectMake(0, 0, size.width, size.height);
+    UIBezierPath*bezierPath=[UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:size.width/2.0];
+    
+    CGContextAddPath(context, bezierPath.CGPath);
+    CGContextFillPath(context);
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    UIImage*theImage=UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
+- (NSString *)base64String {
+    NSData * data = [UIImagePNGRepresentation(self) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return [NSString stringWithUTF8String:[data bytes]];
+}
 @end
