@@ -419,11 +419,11 @@ static NSString *_NSStringByAppendingNameScale(NSString *string, CGFloat scale) 
     NSMutableArray<NSString*> *directoryComponents=[NSMutableArray arrayWithArray:[directoryPath componentsSeparatedByString:@"/"]] ;
     
     //去除掉文件名称(flxkdb.txt )
-    if (pathExtension && directoryComponents.count<2 ) {
+    if (isNotEmptyString(pathExtension) && directoryComponents.count<2 ) {
         return [FLXKPathHelper DocumentDirectory];
     }
     //目录+文件名称(test2/flxkdb.txt)
-    else if (pathExtension && directoryComponents.count>1 ){
+    else if (isNotEmptyString(pathExtension)  && directoryComponents.count>1 ){
         [directoryComponents removeLastObject];
     }
     //只有目录(test2/...)

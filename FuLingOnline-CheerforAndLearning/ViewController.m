@@ -7,6 +7,15 @@
 //
 
 
+//++2017-11-30如果其中某一个
+//修改时间:2017-4-24
+//修改人:肖科
+//修改内容:--注销下面的布局代码。
+//修改原因: reset the self.frame.height by autolayout outside,not it self
+//修改内容:注销下面的布局代码--。
+
+//--
+
 
 //修改时间:2017-4-24
 //修改人:肖科
@@ -41,6 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _imageview.image=[UIImage imageNamed:@"Spark"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -43,12 +43,14 @@
         //[center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
         [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
             if (granted) {
-                // 点击允许
-                [application registerForRemoteNotifications];
-//                NSLog(@"注册成功");
-                [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-//                    NSLog(@"%@", settings);
-                }];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [application registerForRemoteNotifications];
+//                    NSLog(@"注册成功");
+                    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+//                        NSLog(@"%@", settings);
+                    }];
+                });
+
             } else {
                 // 点击不允许
 //                NSLog(@"注册失败");

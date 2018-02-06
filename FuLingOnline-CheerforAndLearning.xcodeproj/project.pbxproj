@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236B4DB71FE39B960080EDE1 /* PsyProgressBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 236B4DB61FE39B960080EDE1 /* PsyProgressBarVC.m */; };
+		236B4DBA1FE39BB00080EDE1 /* PsyOverKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 236B4DB91FE39BB00080EDE1 /* PsyOverKeyWindow.m */; };
 		AAB530D27B37184B7A39C0B7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */; };
 		B90AEC031EC2B50600014FA8 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90AEC021EC2B50600014FA8 /* YYFPSLabel.m */; };
 		B90AEC3C1EC30AE200014FA8 /* SharingLikeCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B90AEC3B1EC30AE200014FA8 /* SharingLikeCellModel.m */; };
@@ -540,6 +542,7 @@
 		B9A3F9691E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F9681E6BF56D007CA4B2 /* FLXKSuggestHeaderView.m */; };
 		B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */; };
 		B9A3F96E1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */; };
+		B9A8A11D1F8F6E6900D55085 /* 设备录制+视频播放+音频播放.png in Resources */ = {isa = PBXBuildFile; fileRef = B9A8A11C1F8F6E6900D55085 /* 设备录制+视频播放+音频播放.png */; };
 		B9AB1C4A1F467DDC0078BD9B /* TimeCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C471F467DDC0078BD9B /* TimeCenter.m */; };
 		B9AB1C4B1F467DDC0078BD9B /* TimeCountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C491F467DDC0078BD9B /* TimeCountDownView.m */; };
 		B9AB1C511F467DE30078BD9B /* JKPopMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C4E1F467DE20078BD9B /* JKPopMenuItem.m */; };
@@ -547,6 +550,8 @@
 		B9AB1C581F467DF70078BD9B /* LYButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C551F467DF70078BD9B /* LYButton.m */; };
 		B9AB1C591F467DF70078BD9B /* LYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C571F467DF70078BD9B /* LYTextField.m */; };
 		B9AB1C5D1F467E000078BD9B /* CircleProgressButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AB1C5C1F467E000078BD9B /* CircleProgressButton.m */; };
+		B9AEFA5D1FB3E93500503049 /* UIImage+AIExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEFA5A1FB3E93500503049 /* UIImage+AIExtension.m */; };
+		B9AEFA5E1FB3E93500503049 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AEFA5B1FB3E93500503049 /* UIImage+ImageEffects.m */; };
 		B9B6BD6A1E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */; };
 		B9BEF95D1EB1E56200F042C5 /* FLXKBaseCommentCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */; };
 		B9BEF95E1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9BEF95B1EB1E56200F042C5 /* FLXKBaseCommentCell1.xib */; };
@@ -554,6 +559,7 @@
 		B9C263881E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C263861E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.m */; };
 		B9C2F5D01F667E5300427618 /* LTHomeAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C2F5CF1F667E5300427618 /* LTHomeAsyncSocket.m */; };
 		B9C2F5D21F667EA000427618 /* 乐悠悠-新版Socket通信协议(8).xlsx in Resources */ = {isa = PBXBuildFile; fileRef = B9C2F5D11F667EA000427618 /* 乐悠悠-新版Socket通信协议(8).xlsx */; };
+		B9C3CB801F8C6757007569F2 /* 好的demo记录.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B9C3CB7F1F8C6757007569F2 /* 好的demo记录.rtf */; };
 		B9C6AAD71E651B4A0003C50A /* FLXKNavigationTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */; };
 		B9C6AADA1E651C490003C50A /* FLXKNavigationTitleSegmentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AAD91E651C490003C50A /* FLXKNavigationTitleSegmentsView.m */; };
 		B9C6AADE1E6524E80003C50A /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = B9C6AADD1E6524E80003C50A /* UIView+Extensions.m */; };
@@ -636,6 +642,7 @@
 		B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E2E1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m */; };
 		B9E17E311EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */; };
 		B9E17E341EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */; };
+		B9F463FB1F9887320088A4CB /* TURLSessionProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F463F91F9887320088A4CB /* TURLSessionProtocol.m */; };
 		B9F5DBEC1F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */; };
 		B9F5DBED1F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */; };
 		B9F5DBEE1F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh in Resources */ = {isa = PBXBuildFile; fileRef = B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */; };
@@ -726,6 +733,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		236B4DB41FE39B660080EDE1 /* PsyProgressBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsyProgressBarVC.h; sourceTree = "<group>"; };
+		236B4DB51FE39B7E0080EDE1 /* PsyOverKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsyOverKeyWindow.h; sourceTree = "<group>"; };
+		236B4DB61FE39B960080EDE1 /* PsyProgressBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PsyProgressBarVC.m; sourceTree = "<group>"; };
+		236B4DB91FE39BB00080EDE1 /* PsyOverKeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PsyOverKeyWindow.m; sourceTree = "<group>"; };
 		4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FuLingOnline-CheerforAndLearning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83725F77059A9EA689863C90 /* Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		A2775D7B9EDAC79BDC6EF57F /* Pods-FuLingOnline-CheerforAndLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning.release.xcconfig"; sourceTree = "<group>"; };
@@ -1405,6 +1416,7 @@
 		B9A3F96A1E6BF583007CA4B2 /* FLXKSuggestFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSuggestFooterView.h; sourceTree = "<group>"; };
 		B9A3F96B1E6BF583007CA4B2 /* FLXKSuggestFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSuggestFooterView.m; sourceTree = "<group>"; };
 		B9A3F96D1E6C010D007CA4B2 /* FLXKSuggestHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSuggestHeaderView.xib; sourceTree = "<group>"; };
+		B9A8A11C1F8F6E6900D55085 /* 设备录制+视频播放+音频播放.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设备录制+视频播放+音频播放.png"; sourceTree = "<group>"; };
 		B9AB1C461F467DDC0078BD9B /* TimeCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCenter.h; sourceTree = "<group>"; };
 		B9AB1C471F467DDC0078BD9B /* TimeCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeCenter.m; sourceTree = "<group>"; };
 		B9AB1C481F467DDC0078BD9B /* TimeCountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeCountDownView.h; sourceTree = "<group>"; };
@@ -1419,6 +1431,10 @@
 		B9AB1C571F467DF70078BD9B /* LYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYTextField.m; sourceTree = "<group>"; };
 		B9AB1C5B1F467E000078BD9B /* CircleProgressButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressButton.h; sourceTree = "<group>"; };
 		B9AB1C5C1F467E000078BD9B /* CircleProgressButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressButton.m; sourceTree = "<group>"; };
+		B9AEFA591FB3E93400503049 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		B9AEFA5A1FB3E93500503049 /* UIImage+AIExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AIExtension.m"; sourceTree = "<group>"; };
+		B9AEFA5B1FB3E93500503049 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		B9AEFA5C1FB3E93500503049 /* UIImage+AIExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AIExtension.h"; sourceTree = "<group>"; };
 		B9B6BD671E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseSharingOperationContainerView.h; sourceTree = "<group>"; };
 		B9B6BD681E99E7EF00EEFCEC /* FLXKBaseSharingOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseSharingOperationContainerView.m; sourceTree = "<group>"; };
 		B9BEF95A1EB1E56200F042C5 /* FLXKBaseCommentCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseCommentCell1.m; sourceTree = "<group>"; };
@@ -1431,6 +1447,7 @@
 		B9C2F5CE1F667E5300427618 /* LTHomeAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHomeAsyncSocket.h; sourceTree = "<group>"; };
 		B9C2F5CF1F667E5300427618 /* LTHomeAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHomeAsyncSocket.m; sourceTree = "<group>"; };
 		B9C2F5D11F667EA000427618 /* 乐悠悠-新版Socket通信协议(8).xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "乐悠悠-新版Socket通信协议(8).xlsx"; sourceTree = "<group>"; };
+		B9C3CB7F1F8C6757007569F2 /* 好的demo记录.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "好的demo记录.rtf"; sourceTree = "<group>"; };
 		B9C6AAD51E651B4A0003C50A /* FLXKNavigationTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleViewController.h; sourceTree = "<group>"; };
 		B9C6AAD61E651B4A0003C50A /* FLXKNavigationTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKNavigationTitleViewController.m; sourceTree = "<group>"; };
 		B9C6AAD81E651C490003C50A /* FLXKNavigationTitleSegmentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKNavigationTitleSegmentsView.h; sourceTree = "<group>"; };
@@ -1574,6 +1591,8 @@
 		B9E17E2F1EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKHeaderImageSharingLikeCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9E17E321EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKHeaderImageSharingLikeCollectionView.h; sourceTree = "<group>"; };
 		B9E17E331EA0CE260027043A /* FLXKHeaderImageSharingLikeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKHeaderImageSharingLikeCollectionView.m; sourceTree = "<group>"; };
+		B9F463F91F9887320088A4CB /* TURLSessionProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TURLSessionProtocol.m; sourceTree = "<group>"; };
+		B9F463FA1F9887320088A4CB /* TURLSessionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TURLSessionProtocol.h; sourceTree = "<group>"; };
 		B9F5DBE61F5D4EBE003A02D8 /* imagesetGenerator1_2_jpg_NoImageSet.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_jpg_NoImageSet.sh; sourceTree = "<group>"; };
 		B9F5DBE71F5D4EBE003A02D8 /* imagesetGenerator1_2_JPG_NoImageSet1.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_JPG_NoImageSet1.sh; sourceTree = "<group>"; };
 		B9F5DBE81F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = imagesetGenerator1_2_png_NoImageSet.sh; sourceTree = "<group>"; };
@@ -1673,6 +1692,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		236B4DB31FE39B490080EDE1 /* code_back */ = {
+			isa = PBXGroup;
+			children = (
+				236B4DB51FE39B7E0080EDE1 /* PsyOverKeyWindow.h */,
+				236B4DB91FE39BB00080EDE1 /* PsyOverKeyWindow.m */,
+				236B4DB41FE39B660080EDE1 /* PsyProgressBarVC.h */,
+				236B4DB61FE39B960080EDE1 /* PsyProgressBarVC.m */,
+			);
+			path = code_back;
+			sourceTree = "<group>";
+		};
 		73427F28B1AE73D37DB133B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1697,6 +1727,8 @@
 		B900237B1DAE1E8300B34438 /* ToolKitty */ = {
 			isa = PBXGroup;
 			children = (
+				236B4DB31FE39B490080EDE1 /* code_back */,
+				B95F3C601F8E2332007C1CA1 /* 拍照+录制视频+录音+播放 */,
 				B9FA7E4A1F7B523400722D74 /* FLXK_Helper_Tools */,
 				B988AB0E1F59462C00BBEB61 /* Shell */,
 				B9FA22451EC5B20E0028F720 /* FrameworkLibrary */,
@@ -1730,6 +1762,7 @@
 				B923B4DA1DDB148900410CFC /* back */,
 				B95342E51F2ED8F7002FA500 /* 展示内容文档 */,
 				B9D6399B1E6D36B4004122B9 /* 知识点记录.rtf */,
+				B9C3CB7F1F8C6757007569F2 /* 好的demo记录.rtf */,
 				B995A8511F5E49E3006327DF /* 编程中遇到的问题及解决方法记录.rtf */,
 				B995A8531F5E4A0A006327DF /* 编程中遇到的问题及解决方法记录.h */,
 				B923B4D61DDACE6E00410CFC /* FuLingOnline-CheerforAndLearning-Prefix.pch */,
@@ -2186,6 +2219,10 @@
 				B930986B1E568C0600306F39 /* UIViewController+Extensions.m */,
 				B9C6AD441E65493F0003C50A /* AudioServices+Extensions.h */,
 				B9C6AD451E65493F0003C50A /* AudioServices+Extensions.m */,
+				B9AEFA5C1FB3E93500503049 /* UIImage+AIExtension.h */,
+				B9AEFA5A1FB3E93500503049 /* UIImage+AIExtension.m */,
+				B9AEFA591FB3E93400503049 /* UIImage+ImageEffects.h */,
+				B9AEFA5B1FB3E93500503049 /* UIImage+ImageEffects.m */,
 				B92A30091E8E1FC000E8AA30 /* UIImage+Extension.h */,
 				B92A300A1E8E1FC000E8AA30 /* UIImage+Extension.m */,
 				B92A30291E8E5C3300E8AA30 /* UIView+Extension_IdentifierForReusable.h */,
@@ -2377,6 +2414,15 @@
 				B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */,
 			);
 			path = ImageLayoutCollectcionViewCells;
+			sourceTree = "<group>";
+		};
+		B95F3C601F8E2332007C1CA1 /* 拍照+录制视频+录音+播放 */ = {
+			isa = PBXGroup;
+			children = (
+				B9A8A11C1F8F6E6900D55085 /* 设备录制+视频播放+音频播放.png */,
+			);
+			name = "拍照+录制视频+录音+播放";
+			path = "拍照+录制视频+录音";
 			sourceTree = "<group>";
 		};
 		B9614A421E82CC22008B7531 /* FuLingOnlineIdeaTest */ = {
@@ -3286,7 +3332,6 @@
 		B9C6ABA31E6548550003C50A /* FLXKCollapsableTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B9C6ABB01E6548550003C50A /* PsyQRScanView */,
 				B9C6ABA41E6548550003C50A /* CollapsableTableViewAssets.xcassets */,
 				B9C6ABA51E6548550003C50A /* FLXKCollapsableTableModel.h */,
 				B9C6ABA61E6548550003C50A /* FLXKCollapsableTableModel.m */,
@@ -3305,6 +3350,7 @@
 		B9C6ABAF1E6548550003C50A /* FLXKQRScanViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B9C6ABB01E6548550003C50A /* PsyQRScanView */,
 				B96801811F67B09B00A6E5E4 /* QRGeneratorView */,
 				B9C6ABB51E6548550003C50A /* PsyQRScanViewController */,
 				B9C6ABB71E6548550003C50A /* SGQRCode */,
@@ -3319,8 +3365,7 @@
 				B9C6ABB21E6548550003C50A /* PsyQRScanView.m */,
 				B9C6ABB31E6548550003C50A /* Sound */,
 			);
-			name = PsyQRScanView;
-			path = ../FLXKQRScanViewController/PsyQRScanView;
+			path = PsyQRScanView;
 			sourceTree = "<group>";
 		};
 		B9C6ABB31E6548550003C50A /* Sound */ = {
@@ -3640,8 +3685,10 @@
 			children = (
 				B9DF70731DAF76E7004C23E6 /* FLXKHttpRequest.h */,
 				B9DF70741DAF76E7004C23E6 /* FLXKHttpRequest.m */,
-				B9C2F5CE1F667E5300427618 /* LTHomeAsyncSocket.h */,
 				B9C2F5CF1F667E5300427618 /* LTHomeAsyncSocket.m */,
+				B9C2F5CE1F667E5300427618 /* LTHomeAsyncSocket.h */,
+				B9F463FA1F9887320088A4CB /* TURLSessionProtocol.h */,
+				B9F463F91F9887320088A4CB /* TURLSessionProtocol.m */,
 				B93FF8851E01267000070BD4 /* FLXKHttpRequestModelHelper.h */,
 				B93FF8861E01267000070BD4 /* FLXKHttpRequestModelHelper.m */,
 			);
@@ -4241,6 +4288,7 @@
 				B97506F21E4C58F600A577E7 /* smiley_82.png in Resources */,
 				B9C6AC9B1E6548550003C50A /* FLXKSectionHeaderView.xib in Resources */,
 				B97507221E4C58F600A577E7 /* gif400_9.gif in Resources */,
+				B9A8A11D1F8F6E6900D55085 /* 设备录制+视频播放+音频播放.png in Resources */,
 				B95A32571E31B95600E71D9D /* FLXKEmotionBoard.xib in Resources */,
 				B9C6AC9C1E6548550003C50A /* FLXKSectionHeaderView副本.xib in Resources */,
 				B90CD98B1E763FFD00278EDB /* notification_video.m4v in Resources */,
@@ -4471,6 +4519,7 @@
 				B97507231E4C58F600A577E7 /* 001.png in Resources */,
 				B9131C5D1F5F8F1A0095B7F5 /* imagesetGenerator.sh in Resources */,
 				B97507941E4C58F700A577E7 /* 057@2x.png in Resources */,
+				B9C3CB801F8C6757007569F2 /* 好的demo记录.rtf in Resources */,
 				B97506FD1E4C58F600A577E7 /* smiley_92.png in Resources */,
 				B975069C1E4C58F600A577E7 /* smiley_0.png in Resources */,
 				B97506D01E4C58F600A577E7 /* smiley_51.png in Resources */,
@@ -4567,9 +4616,15 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-resources.sh",
+				"${PODS_ROOT}/IDMPhotoBrowser/Classes/IDMPhotoBrowser.bundle",
+				"${PODS_ROOT}/IDMPhotoBrowser/Classes/IDMPBLocalizations.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4582,13 +4637,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FuLingOnline-CheerforAndLearning-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D905C02D18BD57D5F5971554 /* [CP] Embed Pods Frameworks */ = {
@@ -4597,9 +4655,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FuLingOnline-CheerforAndLearning/Pods-FuLingOnline-CheerforAndLearning-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-2/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4676,6 +4737,7 @@
 				B95A66BA1DE6ACD500AB42E4 /* HomeHeaderView.m in Sources */,
 				B9DA13F21E7D73A30020A52A /* FLXKTabBarBaseNavigationController.m in Sources */,
 				B9C6AD431E6548550003C50A /* UIButton+PPiAwesome.m in Sources */,
+				236B4DBA1FE39BB00080EDE1 /* PsyOverKeyWindow.m in Sources */,
 				B91C054A1EA8B4C100E1CE1E /* HPTextViewInternal.m in Sources */,
 				B92A2FB21E8DF66500E8AA30 /* UIImage+ColorAtPixel.m in Sources */,
 				B91D14581EC43CE1009B2653 /* FLXKSharingFuLingOnlineStyleCellMansory.m in Sources */,
@@ -4714,6 +4776,7 @@
 				B9C6ACA71E6548550003C50A /* SGScanningQRCodeView.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
 				B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */,
+				236B4DB71FE39B960080EDE1 /* PsyProgressBarVC.m in Sources */,
 				B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */,
 				B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */,
 				B959879F1EAF2A2300A12E7F /* NSObject+ModelConverter.m in Sources */,
@@ -4774,6 +4837,7 @@
 				B924D91B1E2F766F00A5D9F6 /* EmotionRecentItems.m in Sources */,
 				B9DF70781DAF76E7004C23E6 /* FLXKHttpRequest.m in Sources */,
 				B95A325B1E31B95600E71D9D /* FLXKEmotionShowingScrollView.m in Sources */,
+				B9F463FB1F9887320088A4CB /* TURLSessionProtocol.m in Sources */,
 				B90CD97E1E763FFD00278EDB /* ActionOperationInputViewController.m in Sources */,
 				B9C6AC991E6548550003C50A /* FLXKCollapsableTableViewController.m in Sources */,
 				B9C6ACA11E6548550003C50A /* SGGenerateQRCodeVC.m in Sources */,
@@ -4817,6 +4881,7 @@
 				B9C6AD3C1E6548550003C50A /* CWStarRateView.m in Sources */,
 				B97261A41E2DEC76008B6356 /* FLXKDBHelper.m in Sources */,
 				B94D40F31F21D30C00D28292 /* FLXKAddProperty.m in Sources */,
+				B9AEFA5E1FB3E93500503049 /* UIImage+ImageEffects.m in Sources */,
 				B92A300B1E8E1FC000E8AA30 /* UIImage+Extension.m in Sources */,
 				B90CD9831E763FFD00278EDB /* NotificationCenterViewController.m in Sources */,
 				B97261A31E2DEC76008B6356 /* TestEntity.m in Sources */,
@@ -4826,6 +4891,7 @@
 				B9C6AC921E6548550003C50A /* ArrowSectionHeaderView.m in Sources */,
 				B9252A871E9E2BCE00E2DC65 /* UserModel.m in Sources */,
 				B9D854B71DAC8BE2001AD79C /* main.m in Sources */,
+				B9AEFA5D1FB3E93500503049 /* UIImage+AIExtension.m in Sources */,
 				B99CAA291E8FADAC0032D8CB /* FLXKSharingImagesModel.m in Sources */,
 				B9AB1C591F467DF70078BD9B /* LYTextField.m in Sources */,
 				B95A32591E31B95600E71D9D /* FLXKEmotionCollectionView.m in Sources */,
@@ -5345,6 +5411,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ772LEHW3;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5354,7 +5421,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";
@@ -5375,6 +5442,7 @@
 				CODE_SIGN_ENTITLEMENTS = "FuLingOnline-CheerforAndLearning/FuLingOnline-CheerforAndLearning.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TQ772LEHW3;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5384,7 +5452,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/FuLingOnline-CheerforAndLearning/Config/FuLingOnline-CheerforAndLearning-Prefix.pch";
 				INFOPLIST_FILE = "FuLingOnline-CheerforAndLearning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.psylife.FuLingOnline-CheerforAndLearning";

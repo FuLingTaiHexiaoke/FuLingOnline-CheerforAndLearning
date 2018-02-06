@@ -34,7 +34,9 @@ typedef void (^taskProgress)(NSProgress * progress);
 //获取用户
 -(void)getUserModel;
 
-
+//downloadTest
+-(void)downloadTest;
+    
 //获取朋友圈cell model
 //-(void)getFriendSharingModel;
 

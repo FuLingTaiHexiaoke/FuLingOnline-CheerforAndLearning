@@ -63,6 +63,15 @@
     }] getUserModel];
     
 }
+
++(void)downloadTest{
+    [[FLXKHttpRequestModelHelper registerSuccessCallback:^(id obj) {
+       
+    } failureCallback:^(NSError *err) {
+        //        NSLog(@"failure");
+    }] downloadTest];
+    
+}
 #pragma mark - getter/setter
 #pragma mark - Overriden methods
 

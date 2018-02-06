@@ -26,6 +26,19 @@
    return labelRect.size.height;
     
     
+//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+//    [style setLineBreakMode:NSLineBreakByWordWrapping];
+//    style.paragraphSpacingBefore = 0.0f;
+//    style.paragraphSpacing = 0.0f;
+//    style.firstLineHeadIndent = 0.0;
+//    style.headIndent =  5.0;
+//    style.tailIndent = 0.0f;
+//    style.lineSpacing=0.0;
+//    NSDictionary *attribute = @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
+//    NSAttributedString* attributedString=[[NSAttributedString alloc]initWithString:question attributes:attribute];
+//    label.attributedText=attributedString;
+    
+    
 //    //   NSParagraphStyleAttributeName 段落的风格（设置首行，行间距，对齐方式什么的）看自己需要什么属性，写什么
 //    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
 //    paragraphStyle.lineSpacing = 10;// 字体的行间距
@@ -128,5 +141,35 @@
 //    
 //function:-[CircleProgressButton addCircleProgressAnimationToShaperLayer] line:204 content:同时打印两个整数：,f=5.000000
 }
+
+//for (int i=0; i<imagesNameArray.count; i++) {
+//    if ([selectedAnswer isEqualToString:imagesNameArray[i]]) {
+//        selectedAnswerIndex=[NSString stringWithFormat:@"%c", 65+i];
+//    }
+//    if ([itemRightAnswer isEqualToString:imagesNameArray[i]]) {
+//        itemRightAnswerIndex=[NSString stringWithFormat:@"%c", 65+i];
+//    }
+//}
+
+////文字固定宽度下，获取动态高度
+//-(CGFloat)getBoundingHeightWithString:(NSString*)string width:(CGFloat)width font:(UIFont*)font  {
+//    //init attribute
+//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+//    [style setLineBreakMode:NSLineBreakByWordWrapping];
+//    style.paragraphSpacingBefore = 0.0f;
+//    style.paragraphSpacing = 0.0f;
+//    NSDictionary *attribute = @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
+//    //get Rect
+//    CGSize size=CGSizeMake(width, CGFLOAT_MAX);
+//    CGRect labelRect= [string boundingRectWithSize:size options: (NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin)  attributes:attribute context:nil];
+//
+//    //reture height
+//    return labelRect.size.height;
+//
+//}
+
+
+
+//NSString* percentString= [NSString stringWithFormat:@"%.2f", percent];
 
 @end

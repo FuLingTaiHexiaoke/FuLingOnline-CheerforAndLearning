@@ -21,11 +21,14 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - Bugly (2.4.0)
-  - CocoaLumberjack (3.2.0):
-    - CocoaLumberjack/Default (= 3.2.0)
-    - CocoaLumberjack/Extensions (= 3.2.0)
-  - CocoaLumberjack/Default (3.2.0)
-  - CocoaLumberjack/Extensions (3.2.0):
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - CocoaLumberjack (3.3.0):
+    - CocoaLumberjack/Default (= 3.3.0)
+    - CocoaLumberjack/Extensions (= 3.3.0)
+  - CocoaLumberjack/Default (3.3.0)
+  - CocoaLumberjack/Extensions (3.3.0):
     - CocoaLumberjack/Default
   - DACircularProgress (2.3.1)
   - FBAllocationTracker (0.1.5)
@@ -66,7 +69,8 @@ DEPENDENCIES:
   - BlocksKit/Core (~> 2.2.0)
   - BlocksKit/UIKit (~> 2.2.0)
   - Bugly
-  - CocoaLumberjack
+  - ChameleonFramework
+  - CocoaLumberjack (~> 3.3.0)
   - FBMemoryProfiler
   - IDMPhotoBrowser (~> 1.9.1)
   - JHChainableAnimations
@@ -90,7 +94,8 @@ SPEC CHECKSUMS:
   BaiduMobStat: 38dbc9b5cb95c9d8570081a9f6d86390ceb02722
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
   Bugly: 3b56d8365c5687f74fd6fbb50c5b7ede3cdac96c
-  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
@@ -113,6 +118,6 @@ SPEC CHECKSUMS:
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 627bfcb0b8492ef0db6a3e89c43a14903bdf1500
+PODFILE CHECKSUM: 21d013e840faefa21569d928ea6eab2a4c5c7cd2
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

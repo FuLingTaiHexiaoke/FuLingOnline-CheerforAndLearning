@@ -54,6 +54,41 @@
     }];
 }
 
+//downloadTest
+-(void)downloadTest{
+
+    
+ NSURLSessionDownloadTask * task =   [FLXKHttpRequest download:@"http://wvideo.spriteapp.cn/video/2016/0116/569a048739c11_wpc.mp4" parameters:nil progress:^(NSProgress * progress) {
+     NSLog(@"下载进度:%.2f%%",100.0*progress.completedUnitCount/progress.totalUnitCount);
+     
+     //如果要计算下载速度xxkb/s 这种可以打开注释
+     //           //一秒中内的数据
+     //           downTask.readData                   += (downTask.completedUnitCount - progress.completedUnitCount);
+     //           downTask.completedUnitCount          = progress.completedUnitCount;
+     //           //获得当前时间
+     //           NSDate *nowdate                      = [NSDate date];
+     //           if ([nowdate timeIntervalSinceDate:downTask.lastDate] >= 1) {
+     //               //时间差
+     //               double time = [nowdate timeIntervalSinceDate:downTask.lastDate];
+     //               //计算速度
+     //               long long speed = downTask.readData/time;
+     //               downTask.speed  = speed;
+     //               //维护变量，将计算过的清零
+     //               downTask.readData = 0.0;
+     //               //维护变量，记录这次计算的时间
+     //               downTask.lastDate = nowdate;
+     //               AILog(@"下载速度:%@",[self transitionUnit:speed]);
+     //           }
+     
+    } saveDocument:[FLXKPathHelper checkOrCreateDirectory:@"dowloads"] success:^(NSURLSessionDataTask *task, id responseObject) {
+        self.successCallback(nil);
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        self.failureCallback(error);
+        
+    }];
+}
+
 ////获取朋友圈cell model
 //-(void)getFriendSharingModel{
 //    [FLXKHttpRequest  post:Url_GetFriendSharingModel parameters:<#(NSDictionary *)#> success:^(NSURLSessionDataTask *task, id responseObject) {

@@ -18,7 +18,7 @@
 
 typedef void (^successBlock)(NSURLSessionDataTask *task, id  responseObject);
 typedef void (^failureBlock)(NSURLSessionDataTask *task, NSError *error);
-typedef void (^taskProgress)(NSProgress *);
+typedef void (^taskProgress)(NSProgress * progress);
 @interface FLXKHttpRequest : NSObject
 
 //检查网络
@@ -49,7 +49,7 @@ typedef void (^taskProgress)(NSProgress *);
 +(void)upload:(NSString*)URLString parameters:(NSDictionary*)urlParameters filePathStringArray:(NSArray<NSString*>*)filePathStringArray success:(successBlock)success failure:(failureBlock)failure;
 
 //文件下载
-+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters savePathString:(NSString*)savePathString success:(successBlock)success failure:(failureBlock)failure;
++(NSURLSessionDownloadTask *)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters progress:(taskProgress)taskProgress saveDocument:(NSString*)saveDocument success:(successBlock)success failure:(failureBlock)failure;
 
 //暂时用不到此方法
 //+(void)download:(NSString*)URLString parameters:(NSDictionary*)urlParameters saveDocument:(NSString*)saveDocument success:(successBlock)success success:(failureBlock)failure;

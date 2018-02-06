@@ -197,7 +197,7 @@
     // configure output
     // create a new serial dispatch queue.
     dispatch_queue_t dispatchQueue;
-    dispatchQueue = dispatch_queue_create("captureOutputQueue", NULL);
+    dispatchQueue = dispatch_queue_create("captureOutputQueue", DISPATCH_QUEUE_SERIAL);
     [output setMetadataObjectsDelegate:self queue:dispatchQueue];
     //    [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     

@@ -37,19 +37,6 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<false/>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
-		<key>NSExceptionDomains</key>
-		<dict>
-			<key>NSExceptionAllowInsecureHTTPLoads</key>
-			<true/>
-			<key>NSExceptionRequiresForwardSecrecy</key>
-			<false/>
-			<key>NSIncludesSubdomains</key>
-			<true/>
-		</dict>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>为保证应用正常运行，请允许访问媒体资源库</string>

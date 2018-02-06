@@ -64,6 +64,7 @@
 #endif
     
     //注册消息推送
+    
     [FLXKAppNotification ShowRemoteNotificationWhenAppBecomeActiveWithLaunchOptions:[launchOptions copy]];
     [FLXKAppNotification registerRemoteNotification:application];
     //我们可以通过本地通知开发日志事件功能

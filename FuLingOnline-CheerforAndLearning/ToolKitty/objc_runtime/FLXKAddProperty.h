@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface FLXKAddProperty : NSObject
-
+@property (nonatomic, assign)UINavigationBar * km_transitionNavigationBar;
 @end

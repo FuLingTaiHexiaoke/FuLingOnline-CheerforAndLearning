@@ -19,6 +19,7 @@
 + (instancetype)sharedSingleton;
 
 +(void)getSharedAPPUser;
++(void)downloadTest;
 //models
 @property(nonatomic,strong) UserModel* sharedUser;
 //UI state record properties

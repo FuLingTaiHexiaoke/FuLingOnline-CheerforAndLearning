@@ -77,12 +77,13 @@
     
     //get user
     [FLXKSharedAppSingleton getSharedAPPUser];
+//    [FLXKSharedAppSingleton downloadTest];
     
     //    [self.view.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
     //        [obj removeFromSuperview];
     //    }];
     //
-    [self addEmitAnimation];
+//    [self addEmitAnimation];
     
 }
 

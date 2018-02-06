@@ -22,6 +22,10 @@
 
 #define InputViewFrame_Origin CGRectMake(0, FULL_HEIGHT-44.0, FULL_WIDTH, NAVBAR_HEIGHT)
 
+//#pragma clang diagnostic push
+//#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+//#pragma clang diagnostic pop
+
 //获取屏幕 宽度、高度
 //#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 //#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
@@ -79,6 +83,9 @@
 #define SCREEN_HEIGHT         [[UIScreen mainScreen] bounds].size.height
 // 屏幕宽度
 #define SCREEN_WIDTH          [[UIScreen mainScreen] bounds].size.width
+
+//#define SCREEN_HEIGHT MIN(self.view.frame.size.width,self.view.frame.size.height)
+//#define SCREEN_WIDTH MAX(self.view.frame.size.width,self.view.frame.size.height)
 
 #define PhotosMessageDir ([[NSString documentPath] stringByAppendingPathComponent:@"/PhotosMessageDir/"])
 #define IPHONE4 ( [ [ UIScreen mainScreen ] bounds ].size.height == 480 )
