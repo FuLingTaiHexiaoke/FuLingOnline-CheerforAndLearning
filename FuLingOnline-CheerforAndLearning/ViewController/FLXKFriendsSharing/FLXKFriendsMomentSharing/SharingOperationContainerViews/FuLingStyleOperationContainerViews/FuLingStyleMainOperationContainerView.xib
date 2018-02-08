@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCL-Vd-EDy" customClass="FuLingStyleMainOperationContainerView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8i-B6-jqJ">
+                    <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4h-xO-Ifb">
+                            <rect key="frame" x="35" y="4" width="55" height="22"/>
+                            <state key="normal" title=" 分享" image="sharing_thumbup_n">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="r4h-xO-Ifb" firstAttribute="centerX" secondItem="U8i-B6-jqJ" secondAttribute="centerX" id="I88-R7-imx"/>
+                        <constraint firstItem="r4h-xO-Ifb" firstAttribute="centerY" secondItem="U8i-B6-jqJ" secondAttribute="centerY" id="bQr-HD-8NS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3A-uX-6eQ">
+                    <rect key="frame" x="125" y="0.0" width="125" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5F-GH-agL">
+                            <rect key="frame" x="44.5" y="4" width="36" height="22"/>
+                            <state key="normal" title=" 赞" image="sharing_thumbup_n">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addThumbupAction:" destination="vCL-Vd-EDy" eventType="touchUpInside" id="Dc9-Sw-bX4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Z5F-GH-agL" firstAttribute="centerY" secondItem="N3A-uX-6eQ" secondAttribute="centerY" id="fC1-a2-hUk"/>
+                        <constraint firstItem="Z5F-GH-agL" firstAttribute="centerX" secondItem="N3A-uX-6eQ" secondAttribute="centerX" id="kqL-wI-eWK"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIO-Yf-DwZ">
+                    <rect key="frame" x="250" y="0.0" width="125" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHY-kP-VTh">
+                            <rect key="frame" x="35" y="4" width="55" height="22"/>
+                            <state key="normal" title=" 评论" image="sharing_comment_n">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addCommentRequestAction:" destination="vCL-Vd-EDy" eventType="touchUpInside" id="GGb-7H-xfV"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="wHY-kP-VTh" firstAttribute="centerY" secondItem="CIO-Yf-DwZ" secondAttribute="centerY" id="Ttu-2k-zQk"/>
+                        <constraint firstItem="wHY-kP-VTh" firstAttribute="centerX" secondItem="CIO-Yf-DwZ" secondAttribute="centerX" id="uKC-bj-EFb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="N3A-uX-6eQ" firstAttribute="leading" secondItem="U8i-B6-jqJ" secondAttribute="trailing" id="4Cm-KM-8C7"/>
+                <constraint firstItem="U8i-B6-jqJ" firstAttribute="top" secondItem="vCL-Vd-EDy" secondAttribute="top" id="Bwh-VZ-4dt"/>
+                <constraint firstItem="CIO-Yf-DwZ" firstAttribute="leading" secondItem="N3A-uX-6eQ" secondAttribute="trailing" id="EUr-Rh-Ywd"/>
+                <constraint firstItem="N3A-uX-6eQ" firstAttribute="height" secondItem="U8i-B6-jqJ" secondAttribute="height" id="Jzk-6o-nV2"/>
+                <constraint firstAttribute="bottom" secondItem="U8i-B6-jqJ" secondAttribute="bottom" id="KB0-8G-nu4"/>
+                <constraint firstItem="CIO-Yf-DwZ" firstAttribute="width" secondItem="U8i-B6-jqJ" secondAttribute="width" id="P3t-0f-VHp"/>
+                <constraint firstAttribute="trailing" secondItem="CIO-Yf-DwZ" secondAttribute="trailing" id="QIk-c9-gat"/>
+                <constraint firstItem="N3A-uX-6eQ" firstAttribute="width" secondItem="U8i-B6-jqJ" secondAttribute="width" id="SQ4-It-LSu"/>
+                <constraint firstItem="CIO-Yf-DwZ" firstAttribute="height" secondItem="U8i-B6-jqJ" secondAttribute="height" id="ehh-9Q-moz"/>
+                <constraint firstItem="N3A-uX-6eQ" firstAttribute="centerY" secondItem="U8i-B6-jqJ" secondAttribute="centerY" id="mbX-Hx-jPS"/>
+                <constraint firstItem="U8i-B6-jqJ" firstAttribute="leading" secondItem="vCL-Vd-EDy" secondAttribute="leading" id="uMs-7c-NwB"/>
+                <constraint firstItem="CIO-Yf-DwZ" firstAttribute="centerY" secondItem="U8i-B6-jqJ" secondAttribute="centerY" id="xmz-gn-epy"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="thumberupThisNewsButton" destination="Z5F-GH-agL" id="Oj7-iz-Q9Y"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="sharing_comment_n" width="13" height="13"/>
+        <image name="sharing_thumbup_n" width="13" height="13"/>
+    </resources>
+</document>

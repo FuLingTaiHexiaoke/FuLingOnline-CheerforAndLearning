@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235E1315202C4F3000B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235E1312202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.m */; };
+		235E1316202C4F3000B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235E1314202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.xib */; };
+		235E131A202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235E1317202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.xib */; };
+		235E131B202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 235E1319202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.m */; };
 		236B4DB71FE39B960080EDE1 /* PsyProgressBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 236B4DB61FE39B960080EDE1 /* PsyProgressBarVC.m */; };
 		236B4DBA1FE39BB00080EDE1 /* PsyOverKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 236B4DB91FE39BB00080EDE1 /* PsyOverKeyWindow.m */; };
 		AAB530D27B37184B7A39C0B7 /* libPods-FuLingOnline-CheerforAndLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAFBBF327DFF70EF47D9FC /* libPods-FuLingOnline-CheerforAndLearning.a */; };
@@ -149,8 +153,6 @@
 		B95A66C11DE6D64300AB42E4 /* ModelHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95A66C01DE6D64300AB42E4 /* ModelHomeHeaderView.m */; };
 		B95D18E11E9772DF00585895 /* FLXKSharingPicturesShowingView.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18E01E9772DF00585895 /* FLXKSharingPicturesShowingView.m */; };
 		B95D18E31E97733D00585895 /* FLXKSharingPicturesShowingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18E21E97733D00585895 /* FLXKSharingPicturesShowingView.xib */; };
-		B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */; };
-		B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */; };
 		B9614A451E82CC22008B7531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A441E82CC22008B7531 /* main.m */; };
 		B9614A481E82CC22008B7531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A471E82CC22008B7531 /* AppDelegate.m */; };
 		B9614A4B1E82CC22008B7531 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9614A4A1E82CC22008B7531 /* FirstViewController.m */; };
@@ -498,8 +500,6 @@
 		B97507D61E4C58F700A577E7 /* del_emoji_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */; };
 		B97507D71E4C58F700A577E7 /* inactive_page_image.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506971E4C58F600A577E7 /* inactive_page_image.png */; };
 		B97507D81E4C58F700A577E7 /* inactive_page_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B97506981E4C58F600A577E7 /* inactive_page_image@2x.png */; };
-		B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */; };
-		B97582A61EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */; };
 		B9773B901E4AE7A600EC7061 /* FLXKEmotionDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */; };
 		B9780F9A1EA99B9B003AF40A /* FLXKMessageToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */; };
 		B9780F9B1EA99B9B003AF40A /* FLXKMessageToolBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */; };
@@ -733,6 +733,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		235E1312202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseImageLayoutCollectcionViewCell.m; sourceTree = "<group>"; };
+		235E1313202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseImageLayoutCollectcionViewCell.h; sourceTree = "<group>"; };
+		235E1314202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseImageLayoutCollectcionViewCell.xib; sourceTree = "<group>"; };
+		235E1317202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuLingStyleMainOperationContainerView.xib; sourceTree = "<group>"; };
+		235E1318202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuLingStyleMainOperationContainerView.h; sourceTree = "<group>"; };
+		235E1319202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuLingStyleMainOperationContainerView.m; sourceTree = "<group>"; };
 		236B4DB41FE39B660080EDE1 /* PsyProgressBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsyProgressBarVC.h; sourceTree = "<group>"; };
 		236B4DB51FE39B7E0080EDE1 /* PsyOverKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PsyOverKeyWindow.h; sourceTree = "<group>"; };
 		236B4DB61FE39B960080EDE1 /* PsyProgressBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PsyProgressBarVC.m; sourceTree = "<group>"; };
@@ -977,9 +983,6 @@
 		B95D18DF1E9772DF00585895 /* FLXKSharingPicturesShowingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKSharingPicturesShowingView.h; sourceTree = "<group>"; };
 		B95D18E01E9772DF00585895 /* FLXKSharingPicturesShowingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKSharingPicturesShowingView.m; sourceTree = "<group>"; };
 		B95D18E21E97733D00585895 /* FLXKSharingPicturesShowingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKSharingPicturesShowingView.xib; sourceTree = "<group>"; };
-		B95D18E91E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLXKBaseImageLayoutCollectcionViewCell.h; sourceTree = "<group>"; };
-		B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKBaseImageLayoutCollectcionViewCell.m; sourceTree = "<group>"; };
-		B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKBaseImageLayoutCollectcionViewCell.xib; sourceTree = "<group>"; };
 		B9614A411E82CC21008B7531 /* FuLingOnlineIdeaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuLingOnlineIdeaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9614A441E82CC22008B7531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9614A461E82CC22008B7531 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1352,9 +1355,6 @@
 		B97506961E4C58F600A577E7 /* del_emoji_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "del_emoji_select@2x.png"; sourceTree = "<group>"; };
 		B97506971E4C58F600A577E7 /* inactive_page_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inactive_page_image.png; sourceTree = "<group>"; };
 		B97506981E4C58F600A577E7 /* inactive_page_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive_page_image@2x.png"; sourceTree = "<group>"; };
-		B97582A21EA491390089BE42 /* FuLingStyleMainOperationContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuLingStyleMainOperationContainerView.h; sourceTree = "<group>"; };
-		B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FuLingStyleMainOperationContainerView.m; sourceTree = "<group>"; };
-		B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FuLingStyleMainOperationContainerView.xib; sourceTree = "<group>"; };
 		B9773B8F1E4AE7A600EC7061 /* FLXKEmotionDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = FLXKEmotionDB.sqlite; sourceTree = "<group>"; };
 		B9780F971EA99B9B003AF40A /* FLXKMessageToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLXKMessageToolBar.m; sourceTree = "<group>"; };
 		B9780F981EA99B9B003AF40A /* FLXKMessageToolBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLXKMessageToolBar.xib; sourceTree = "<group>"; };
@@ -2409,9 +2409,9 @@
 		B95D18E81E977EE800585895 /* ImageLayoutCollectcionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				B95D18E91E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.h */,
-				B95D18EA1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m */,
-				B95D18EB1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib */,
+				235E1313202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.h */,
+				235E1312202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.m */,
+				235E1314202C4F2F00B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.xib */,
 			);
 			path = ImageLayoutCollectcionViewCells;
 			sourceTree = "<group>";
@@ -2966,9 +2966,9 @@
 		B975827E1EA486AB0089BE42 /* FuLingStyleOperationContainerViews */ = {
 			isa = PBXGroup;
 			children = (
-				B97582A21EA491390089BE42 /* FuLingStyleMainOperationContainerView.h */,
-				B97582A31EA491390089BE42 /* FuLingStyleMainOperationContainerView.m */,
-				B97582A41EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib */,
+				235E1318202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.h */,
+				235E1319202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.m */,
+				235E1317202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.xib */,
 			);
 			path = FuLingStyleOperationContainerViews;
 			sourceTree = "<group>";
@@ -4214,9 +4214,11 @@
 				B975070C1E4C58F600A577E7 /* gif300_16.gif in Resources */,
 				B97507C81E4C58F700A577E7 /* 083@2x.png in Resources */,
 				B97506E01E4C58F600A577E7 /* smiley_66.png in Resources */,
+				235E131A202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.xib in Resources */,
 				B975079F1E4C58F700A577E7 /* 063.png in Resources */,
 				B975079A1E4C58F700A577E7 /* 060@2x.png in Resources */,
 				B94E83E01DCC942A00D2823B /* ProjectRecordNote.rtf in Resources */,
+				235E1316202C4F3000B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */,
 				B975075B1E4C58F600A577E7 /* 029.png in Resources */,
 				B97507D71E4C58F700A577E7 /* inactive_page_image.png in Resources */,
 				B975075E1E4C58F600A577E7 /* 030@2x.png in Resources */,
@@ -4379,7 +4381,6 @@
 				B975071B1E4C58F600A577E7 /* gif400_2.gif in Resources */,
 				B975076B1E4C58F700A577E7 /* 037.png in Resources */,
 				B975078A1E4C58F700A577E7 /* 052@2x.png in Resources */,
-				B97582A61EA491390089BE42 /* FuLingStyleMainOperationContainerView.xib in Resources */,
 				B975076F1E4C58F700A577E7 /* 039.png in Resources */,
 				B97507681E4C58F700A577E7 /* 035@2x.png in Resources */,
 				B975072F1E4C58F600A577E7 /* 007.png in Resources */,
@@ -4536,7 +4537,6 @@
 				B97507401E4C58F600A577E7 /* 015@2x.png in Resources */,
 				B97506B51E4C58F600A577E7 /* smiley_27.png in Resources */,
 				B97506DF1E4C58F600A577E7 /* smiley_65.png in Resources */,
-				B95D18ED1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.xib in Resources */,
 				B9F5DBEE1F5D4EBE003A02D8 /* imagesetGenerator1_2_png_NoImageSet.sh in Resources */,
 				B97507031E4C58F600A577E7 /* smiley_98.png in Resources */,
 				B995A8611F5E8728006327DF /* defaultMovie.mp4 in Resources */,
@@ -4775,7 +4775,6 @@
 				B93098711E568C0600306F39 /* UIView+Extensions.m in Sources */,
 				B9C6ACA71E6548550003C50A /* SGScanningQRCodeView.m in Sources */,
 				B9CDF0251E4F36690007F638 /* RotateRect.m in Sources */,
-				B95D18EC1E977F4300585895 /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */,
 				236B4DB71FE39B960080EDE1 /* PsyProgressBarVC.m in Sources */,
 				B90CD9ED1E764C2C00278EDB /* DCURLRouter.m in Sources */,
 				B9E17E301EA0CAB20027043A /* FLXKHeaderImageSharingLikeCollectionViewCell.m in Sources */,
@@ -4817,6 +4816,7 @@
 				B98237591EE93F7200B05A74 /* FLXKBaseSharingPictureLayoutView.m in Sources */,
 				B90CD9851E763FFD00278EDB /* SimpleLocalViewController.m in Sources */,
 				B941F7631DE58AFC00598437 /* FLXKStyleManager.m in Sources */,
+				235E131B202C4F4800B5F1EB /* FuLingStyleMainOperationContainerView.m in Sources */,
 				B97261AB1E2DEC76008B6356 /* FMResultSet.m in Sources */,
 				B9AB1C4A1F467DDC0078BD9B /* TimeCenter.m in Sources */,
 				B940CE411DE42C65004427F0 /* FLXKTabBarController.m in Sources */,
@@ -4857,7 +4857,6 @@
 				B97F4C4A1EA070CC0033CA71 /* NSArray+Extension.m in Sources */,
 				B9730FA11E84AF9000967ADD /* FLXKPathHelper.m in Sources */,
 				B90CD97D1E763FFD00278EDB /* ActionNoOperationViewController.m in Sources */,
-				B97582A51EA491390089BE42 /* FuLingStyleMainOperationContainerView.m in Sources */,
 				B941F7731DE59B2600598437 /* HomeNewsViewController.m in Sources */,
 				B930987B1E568D9A00306F39 /* CLLocationManager+Extensions.m in Sources */,
 				B92A2FB11E8DF66500E8AA30 /* R_ShapedButton.m in Sources */,
@@ -4904,6 +4903,7 @@
 				B930986F1E568C0600306F39 /* UIAlertController+Extensions.m in Sources */,
 				B97261A81E2DEC76008B6356 /* FMDatabaseAdditions.m in Sources */,
 				B93FF88B1E01285800070BD4 /* FLXKBaseViewController.m in Sources */,
+				235E1315202C4F3000B5F1EB /* FLXKBaseImageLayoutCollectcionViewCell.m in Sources */,
 				B9C6ACA21E6548550003C50A /* SGScanningQRCodeVC.m in Sources */,
 				B9A3F96C1E6BF583007CA4B2 /* FLXKSuggestFooterView.m in Sources */,
 				B9C263881E9B3182003D7B51 /* FLXKUserManagerCollectionViewCell.m in Sources */,

@@ -3,94 +3,94 @@
 
 #'use_frameworks!'
 target ‘FuLingOnline-CheerforAndLearning’ do
-# use_frameworks!
-##     网络请求
-pod 'AFNetworking', '~> 3.1.0'
-#pod 'AFNetworking'
-#pod 'SDWebImage', '~> 4.0.0'
-pod 'SDWebImage', '~>3.8.2'
-#pod 'UIActivityIndicator-for-SDWebImage'
-#pod 'CocoaAsyncSocket'
-
-
-
-
-
-##      Utilities
-
-# ++++++++++++++++++++++ 语音录制+语音播放 ++++++++++++++++++++++
-
-#pod 'AudioKit' #感觉很牛b
-#pod 'AFSoundManager' #iOS audio playing (both local and streaming) and recording made easy,简洁高效。
-#pod 'IQAudioRecorderViewController'  #主要是录音功能，界面做得比较好。基于AVFoundation录制封装得比较好，适合直接使用
-#AVAudioPlayer MPMoviePlayerViewController
-
-# 视频录制+照片拍摄+扫码+视频播放
-#pod 'CRMediaPickerController' #基于UIImagePickerController录制+照片的封装
-# AVFoundation
-#SCRecorder-master SlowMotionVideoRecorder-master 很适合学习原理，但是封装的不怎么好，需要修改界面,CCCamera-master封装得好一点
-#pod 'QRCodeReaderViewController' #二维码扫描控件
-#pod 'ZFPlayer' #A simple video player for iOS, based on AVPlayer. Support the vertical, horizontal screen(lock screen direction). Support adjust volume, brigtness and video progress.
-#MPMoviePlayerViewController
-
-#pod 'PINCache' 'YYCache' #内存和硬盘缓存
-
-# ++++++++++++++++++++++ 动画 ++++++++++++++++++++++
-pod 'JHChainableAnimations'
-#pod 'Spring'
-
-
-# ++++++++++++++++++++++ 视图容器 ++++++++++++++++++++++
-#pod 'iCarousel'                #轮播效果类库
-pod 'RTRootNavigationController'
-pod 'TZImagePickerController'
-pod 'MLLabel', '~> 1.8'
-#pod 'LTNavigationBar'
-#pod 'JMAnimatedImageView'
-pod 'IDMPhotoBrowser', '~> 1.9.1'
-pod 'MJRefresh'
-
-# ++++++++++++++++++++++ 基础工具 ++++++++++++++++++++++
-pod 'libextobjc/EXTScope','~>0.4.1'
-pod 'BlocksKit/Core', '~> 2.2.0'
-pod 'BlocksKit/UIKit', '~> 2.2.0'
-pod 'KVOController' #facebook kvo lib
-pod 'MJExtension'
-pod 'Tweaks' #facebook 参数调试控件，很方便
-pod 'Masonry','~>1.0.2'
-pod 'UITableView+FDTemplateLayoutCell'
-#pod 'HYBMasonryAutoCellHeight', '~>2.0.1'
-pod 'Reveal-SDK',:configurations => ['Debug'] #动态查看运行时界面层次结构
-pod 'ChameleonFramework' #变色龙颜色处理
-pod 'YYKit', '~> 1.0.9'
-pod 'MBProgressHUD'
-#pod 'SVProgressHUD'
-#  pod 'ReactiveObjC', '~> 3.0.0'#链式编程
-##      UI BULDER
-
-
-#pod 'vfrReader', '~> 2.8.6'
-#pod 'FDFullscreenPopGesture', '1.1'
-#pod 'SwipeBack', '~> 1.1'
-
-
-
-#pod 'YYImage'
-
-#   1.10.2 1.11.1
-#   pod 'IDMPhotoBrowser+WeChat', '~> 1.9.7'
-##      custom views
-# pod 'HPGrowingTextView'
-
-
-
-
-# ++++++++++++++++++++++ 程序监测 ++++++++++++++++++++++
-pod 'BaiduMobStat' #百度
-pod 'Bugly' #腾讯
-pod 'FBMemoryProfiler' #facebook 内存和循环引用监测
-pod 'CocoaLumberjack' , '~> 3.3.0'  #log日志记录
-
+    # use_frameworks!
+    ##     网络请求
+    pod 'AFNetworking', '~> 3.1.0'
+    #pod 'AFNetworking'
+    #pod 'SDWebImage', '~> 4.0.0'
+    pod 'SDWebImage', '~>3.8.2'
+    #pod 'UIActivityIndicator-for-SDWebImage'
+    #pod 'CocoaAsyncSocket'
+    
+    
+    
+    
+    
+    ##      Utilities
+    
+    # ++++++++++++++++++++++ 语音录制+语音播放 ++++++++++++++++++++++
+    
+    #pod 'AudioKit' #感觉很牛b
+    #pod 'AFSoundManager' #iOS audio playing (both local and streaming) and recording made easy,简洁高效。
+    #pod 'IQAudioRecorderViewController'  #主要是录音功能，界面做得比较好。基于AVFoundation录制封装得比较好，适合直接使用
+    #AVAudioPlayer MPMoviePlayerViewController
+    
+    # 视频录制+照片拍摄+扫码+视频播放
+    #pod 'CRMediaPickerController' #基于UIImagePickerController录制+照片的封装
+    # AVFoundation
+    #SCRecorder-master SlowMotionVideoRecorder-master 很适合学习原理，但是封装的不怎么好，需要修改界面,CCCamera-master封装得好一点
+    #pod 'QRCodeReaderViewController' #二维码扫描控件
+    #pod 'ZFPlayer' #A simple video player for iOS, based on AVPlayer. Support the vertical, horizontal screen(lock screen direction). Support adjust volume, brigtness and video progress.
+    #MPMoviePlayerViewController
+    
+    #pod 'PINCache' 'YYCache' #内存和硬盘缓存
+    
+    # ++++++++++++++++++++++ 动画 ++++++++++++++++++++++
+    pod 'JHChainableAnimations'
+    #pod 'Spring'
+    
+    
+    # ++++++++++++++++++++++ 视图容器 ++++++++++++++++++++++
+    #pod 'iCarousel'                #轮播效果类库
+    pod 'RTRootNavigationController'
+    pod 'TZImagePickerController'
+    pod 'MLLabel', '~> 1.8'
+    #pod 'LTNavigationBar'
+    #pod 'JMAnimatedImageView'
+    pod 'IDMPhotoBrowser', '~> 1.9.1'
+    pod 'MJRefresh'
+    
+    # ++++++++++++++++++++++ 基础工具 ++++++++++++++++++++++
+    pod 'libextobjc/EXTScope','~>0.4.1'
+    pod 'BlocksKit/Core', '~> 2.2.0'
+    pod 'BlocksKit/UIKit', '~> 2.2.0'
+    pod 'KVOController' #facebook kvo lib
+    pod 'MJExtension'
+    pod 'Tweaks' #facebook 参数调试控件，很方便
+    pod 'Masonry','~>1.0.2'
+    pod 'UITableView+FDTemplateLayoutCell'
+    #pod 'HYBMasonryAutoCellHeight', '~>2.0.1'
+    pod 'Reveal-SDK',:configurations => ['Debug'] #动态查看运行时界面层次结构
+    pod 'ChameleonFramework' #变色龙颜色处理
+    pod 'YYKit', '~> 1.0.9'
+    pod 'MBProgressHUD'
+    #pod 'SVProgressHUD'
+    #  pod 'ReactiveObjC', '~> 3.0.0'#链式编程
+    ##      UI BULDER
+    #    pod 'Aspects'
+    
+    #pod 'vfrReader', '~> 2.8.6'
+    #pod 'FDFullscreenPopGesture', '1.1'
+    #pod 'SwipeBack', '~> 1.1'
+    
+    
+    
+    #pod 'YYImage'
+    
+    #   1.10.2 1.11.1
+    #   pod 'IDMPhotoBrowser+WeChat', '~> 1.9.7'
+    ##      custom views
+    # pod 'HPGrowingTextView'
+    
+    
+    
+    
+    # ++++++++++++++++++++++ 程序监测 ++++++++++++++++++++++
+    pod 'BaiduMobStat' #百度
+    pod 'Bugly' #腾讯
+    pod 'FBMemoryProfiler' #facebook 内存和循环引用监测
+    pod 'CocoaLumberjack' , '~> 3.3.0'  #log日志记录
+    
 end
 
 #target ‘YingYuanGeography’ do
